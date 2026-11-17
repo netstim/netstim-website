@@ -1,0 +1,42 @@
+{{- /* Updates as a timeline (the Lead-DBS newsroom's grammar): the newest post opens large beside its
+       picture, then every post as a row on a vertical line, grouped by year: the date, the title, the post's
+       first sentence or two, a small picture. Takes dict "page" and "posts" (newest first) and "lead". */ -}}
+{{ $posts := .posts }}
+<div class="timeline">
+  {{ $year := 0 }}
+  {{ range $i, $post := $posts }}
+    {{ $html := partial "strip-title.html" (dict "html" (string .Content) "title" .Title) }}
+    {{- /* the summary: the post's paragraphs (not its headings or captions), its first 180 characters */}}
+    {{ $paras := delimit (findRE `(?s)<p\b[^>]*>.*?</p>` $html 3) " " }}
+    {{ $text := $paras | replaceRE `(?s)<netstim-[^>]*>` "" | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace | truncate 180 }}
+    {{ $img := "" }}
+    {{ with findRESubmatch `<netstim-image data='([^']*)'` (string .RawContent) 1 }}{{ $img = transform.Unmarshal (htmlUnescape (index (index . 0) 1)) }}{{ end }}
+    {{ if and $.lead (eq $i 0) }}
+      <article class="timeline-lead">
+        <div class="timeline-lead__body">
+          <time class="timeline-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+          <h2 class="timeline-lead__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+          <p>{{ $text }}</p>
+        </div>
+        {{ with $img }}<div class="timeline-lead__image">{{ partial "picture.html" (merge . (dict "alt" "" "sizes" "(max-width: 767px) calc(100vw - 40px), 520px")) }}</div>{{ end }}
+      </article>
+    {{ else }}
+      {{ if ne .Date.Year $year }}
+        {{ if $year }}</ol></section>{{ end }}
+        {{ $year = .Date.Year }}
+        <section class="timeline-year" aria-labelledby="year-{{ $year }}">
+          <h2 class="timeline-year__label" id="year-{{ $year }}">{{ $year }}</h2>
+          <ol class="timeline-list">
+      {{ end }}
+      <li class="timeline-item">
+        <time class="timeline-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2" }}</time>
+        <div class="timeline-item__body">
+          <h3 class="timeline-item__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <p>{{ $text }}</p>
+        </div>
+        {{ with $img }}<div class="timeline-item__image">{{ partial "picture.html" (merge . (dict "alt" "" "sizes" "160px")) }}</div>{{ end }}
+      </li>
+    {{ end }}
+  {{ end }}
+  {{ if $year }}</ol></section>{{ end }}
+</div>

@@ -1,6 +1,12 @@
 <main id="main" tabindex="-1" class="page">
   {{ partial "page-head.html" . }}
-  {{ if eq .Params.family "people" }}{{ partial "people-page.html" . }}{{ else }}
+  {{ if eq .Params.family "people" }}{{ partial "people-page.html" . }}
+  {{ else if hasPrefix .RelPermalink ("blog/" | relURL) }}
+    {{ $all := (where site.RegularPages "Section" "posts").ByDate.Reverse }}
+    {{ $n := 1 }}{{ with findRESubmatch `/page/(\d+)/` .RelPermalink 1 }}{{ $n = int (index (index . 0) 1) }}{{ end }}
+    {{ $posts := cond (eq $n 1) $all (first 10 (after (mul (sub $n 1) 10) $all)) }}
+    <div class="wrap page-body">{{ partial "timeline.html" (dict "posts" $posts "lead" (eq $n 1)) }}</div>
+  {{ else }}
   {{ $sections := .Params.sections }}
   {{ $family := .Params.family }}
   {{ if in (slice "posters" "videos") $family }}{{ $sections = index hugo.Data $family }}{{ end }}
