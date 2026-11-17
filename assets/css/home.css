@@ -45,3 +45,41 @@
   .home-section:last-child .column-1-4 { width: calc(50% - 14px); }
   .home-section:last-child .column-1-2 { order: -1; width: 100%; }
 }
+/* the book: the real cover on a CSS 3D block (cover, spine, page edges), resting turned to show its spine,
+   turned toward the pointer by assets/js/main/book.js (--rx, --ry), lifted a little under the pointer */
+.home-book { background: var(--surface); border-top: 0; }
+.home-book + .home-section { border-top: 0; }
+.book-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: var(--split-gap); }
+.book-split h2 { font-size: var(--t-h2); max-width: 14ch; }
+.book-split__lead { margin-top: 20px; color: var(--muted); font-size: var(--t-lead); line-height: 1.45; }
+.book3d { --w: 320px; --h: calc(var(--w) * 1.2298); --d: 40px; --rx: 8deg; --ry: -34deg; --lift: 0px;
+  position: relative; display: grid; place-items: center; height: calc(var(--h) + 120px); perspective: 1400px; color: inherit; }
+.book3d:focus-visible { outline-offset: 8px; border-radius: var(--r-lg); }
+.book3d__obj { position: relative; width: var(--w); height: var(--h); transform-style: preserve-3d;
+  transform: translateY(calc(-1 * var(--lift))) rotateX(var(--rx)) rotateY(var(--ry));
+  transition: transform 700ms cubic-bezier(.2, .8, .2, 1); }
+.book3d__face { position: absolute; display: block; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+.book3d__front, .book3d__back { inset: 0; }
+.book3d__front { transform: translateZ(calc(var(--d) / 2)); border-radius: 2px 6px 6px 2px; overflow: hidden; box-shadow: inset 3px 0 0 rgb(0 0 0 / .08); }
+.book3d__front img { width: 100%; height: 100%; object-fit: cover; }
+.book3d__back { transform: rotateY(180deg) translateZ(calc(var(--d) / 2)); background: #e8eef4; border-radius: 6px 2px 2px 6px; }
+.book3d__spine { top: 0; left: calc(50% - var(--d) / 2); width: var(--d); height: 100%; background: #a8afb5; transform: rotateY(-90deg) translateZ(calc(var(--w) / 2)); }
+.book3d__pages { top: 3px; bottom: 3px; left: calc(50% - var(--d) / 2); width: var(--d); background: #f3f1ec; box-shadow: inset 0 0 0 1px rgb(0 0 0 / .06); transform: rotateY(90deg) translateZ(calc(var(--w) / 2 - 3px)); }
+.book3d__top, .book3d__bottom { left: 0; right: 3px; top: calc(50% - var(--d) / 2); height: var(--d); background: #f3f1ec; }
+.book3d__top { transform: rotateX(90deg) translateZ(calc(var(--h) / 2 - 1px)); }
+.book3d__bottom { transform: rotateX(-90deg) translateZ(calc(var(--h) / 2 - 1px)); }
+.book3d__shadow { position: absolute; left: 50%; bottom: 36px; width: calc(var(--w) * 1.05); height: 28px; margin-left: calc(var(--w) * -.525);
+  border-radius: 50%; background: rgb(0 0 0 / .1); box-shadow: 0 0 28px 14px rgb(0 0 0 / .12); opacity: .9; transform: scaleX(.9);
+  transition: transform 700ms cubic-bezier(.2, .8, .2, 1), opacity 700ms cubic-bezier(.2, .8, .2, 1); pointer-events: none; }
+@media (hover: hover) and (pointer: fine) {
+  .book3d:hover { --lift: 14px; }
+  .book3d:hover .book3d__shadow { transform: scaleX(.78); opacity: .55; }
+}
+[data-theme="dark"] .book3d__shadow { background: rgb(0 0 0 / .5); box-shadow: 0 0 28px 14px rgb(0 0 0 / .5); }
+@media (prefers-reduced-motion: reduce) {
+  .book3d__obj, .book3d__shadow { transition-duration: 0s; }
+}
+@media (max-width: 767px) {
+  .book-split { grid-template-columns: minmax(0, 1fr); }
+  .book3d { --w: 210px; --d: 28px; height: calc(var(--h) + 80px); }
+}
