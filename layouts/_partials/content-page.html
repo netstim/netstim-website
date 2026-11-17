@@ -16,7 +16,7 @@
   {{ if not $sections }}{{ $sections = slice (dict "rendered" .Content) }}{{ end }}
   {{ range $i, $s := $sections }}
     {{ with $s }}
-    <div class="wrap page-body prose">
+    <div class="wrap page-body prose{{ if $.Params.article }} page-body--article{{ end }}">
       {{ if $.Params.include_new_posts }}{{ partial "new-posts.html" $ }}{{ end }}
       {{ if isset . "rendered" }}
         {{ $html := .rendered }}{{ if eq $i 0 }}{{ $html = partial "strip-title.html" (dict "html" (string $html) "title" $.Title) }}{{ end }}

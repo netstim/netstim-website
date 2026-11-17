@@ -7,19 +7,22 @@ crumbs:
   url: '@root@'
 - title: Research
   url: '@root@research-interests/'
-- title: Connectomic DBS Book
+- title: Connectomic Deep Brain Stimulation
 sidebar: true
 wordpress_id: 1423
 date: '2021-11-21T18:26:32+00:00'
 modified: '2023-10-27T12:49:39+00:00'
 comment_anchor: true
 canonical: /research-interests/the-book/
+article: true
+book3d: true
+lead: Out now at Academic Press / Elsevier
 ---
 
 <div class="columns"><div class="column column-2-3"><p>We are excited that our book on connectomic deep brain stimulation can now be ordered <a href="https://www.elsevier.com/books/connectomic-deep-brain-stimulation/horn/978-0-12-821861-7">from the publisher (Academic Press)</a> and/or <a href="https://www.amazon.com/Connectomic-Deep-Brain-Stimulation-Andreas/dp/0128218614/">Amazon</a> etc.</p>
 <p>After a foreword by <strong>Andrea Kühn &amp; Michael Fox</strong>, chapters were written by internationally renowned experts for specific topics covering broad content from electrode localization methods, DBS modeling and connectomics. For instance, we were excited to have pioneers from the connectomics field (<strong>James M Shine &amp; Rick Betzel</strong>) write chapters about functional MRI and the connectomic revolution and diffusion MRI / tractography experts (<strong>Thijs Dhollander &amp; Marco Reisert</strong>) contribute to the book, as well.</p>
 <p>The team around <strong>Andreas Husch &amp; Frank Hertel</strong> are likely the world experts on electrode localizations and covered this topic, while few people in the world may have thought as much about sweetspot mapping as <strong>Till Dembek</strong> – who wrote the chapter on this topic. An integrative review about the mechanism of action of DBS was written by <strong>Wolf-Julian Neumann</strong> developing exciting concepts that bridge micro- to macroscales and static models with dynamical ones.</p>
-</div><div class="column column-1-3"><div class="image-block"><a aria-label="Connectomic Deep Brain Stimulation" href="https://www.elsevier.com/books/connectomic-deep-brain-stimulation/horn/978-0-12-821861-7" rel="noopener noreferrer" target="_blank"><netstim-image data='{"src":"media/4cb5be70722a-Connectomic-Deep-Brain-Stimulation-1249x1536.png","original":"https://www.netstim.org/wp-content/uploads/2021/03/Connectomic-Deep-Brain-Stimulation-837x1030.png","alt":"","width":837}'/></a></div></div></div>
+</div><div class="column column-1-3"></div></div>
 
 <div class="columns"><div class="column column-1-1"><div class="action-row centered-action"><a aria-label="Order the book here" class="action external" href="https://www.elsevier.com/books/connectomic-deep-brain-stimulation/horn/978-0-12-821861-7" rel="noopener noreferrer" target="_blank">Order the book here</a></div></div></div>
 

@@ -20,6 +20,7 @@ wordpress_id: 294
 date: '2018-12-01T16:18:13+00:00'
 modified: '2021-03-22T21:29:50+00:00'
 canonical: /about-us/about-us/andreashorn/
+article: true
 ---
 
 <h2>Andreas Horn <a href="https://orcid.org/0000-0002-0695-6025"><netstim-image data='{"src":"media/c6f428700b3d-7784c247e0cd-orcid_16x16.png","original":"https://orcid.org/sites/default/files/images/orcid_16x16.png","alt":"ORCID iD icon","width":0}'/></a></h2>

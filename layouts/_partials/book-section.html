@@ -2,8 +2,6 @@
        Stimulation" and "Out now at Academic Press / Elsevier", are now text). The book is drawn in CSS 3D
        from the real cover (assets/css/home.css, "the book"); assets/js/main/book.js turns it toward the
        pointer. Without script, or under reduced motion, it rests at its angle. */ -}}
-{{ $cover := resources.Get "media/4cb5be70722a-Connectomic-Deep-Brain-Stimulation-1249x1536.png" }}
-{{ $s := $cover.Resize "420x webp q86" }}{{ $l := $cover.Resize "840x webp q86" }}
 {{ $book := "research-interests/the-book/" | relURL }}
 <div class="book-split">
   <div class="book-split__text">
@@ -11,15 +9,5 @@
     <p class="book-split__lead">Out now at Academic Press / Elsevier</p>
     <div class="action-row"><a class="action" href="{{ $book }}">About the book</a></div>
   </div>
-  <a class="book3d" href="{{ $book }}" aria-label="Connectomic Deep Brain Stimulation, the book" data-book>
-    <span class="book3d__obj" aria-hidden="true">
-      <span class="book3d__face book3d__back"></span>
-      <span class="book3d__face book3d__spine"></span>
-      <span class="book3d__face book3d__pages"></span>
-      <span class="book3d__face book3d__top"></span>
-      <span class="book3d__face book3d__bottom"></span>
-      <span class="book3d__face book3d__front"><img src="{{ $s.RelPermalink }}" srcset="{{ $s.RelPermalink }} 420w, {{ $l.RelPermalink }} 840w" sizes="(max-width: 767px) 210px, 320px" width="{{ $s.Width }}" height="{{ $s.Height }}" alt="" loading="lazy" decoding="async" draggable="false" data-original="https://www.netstim.org/wp-content/uploads/2021/03/Connectomic-Deep-Brain-Stimulation-1249x1536.png"></span>
-    </span>
-    <span class="book3d__shadow" aria-hidden="true"></span>
-  </a>
+  {{ partial "book3d.html" . }}
 </div>

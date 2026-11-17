@@ -51,3 +51,19 @@
 .prose .jobs-photo { max-width: none; margin-bottom: 48px; }
 .prose .jobs-photo img { width: 100%; max-width: none; max-height: none; border-radius: var(--r-lg); }
 .attribution { display: block; margin-top: 8px; color: var(--muted); font-size: 13px; }
+/* an article (front matter article: true; the research pages, the book, Stimu-Latte, a profile page): one
+   reading column of 672px; the source's column splits stack in source order; figures run wider than the
+   text (up to 960px), never taller than 560px, on a quiet plate when they have no ground of their own */
+.page-body--article { --figure: 960px; }
+.page-body--article .columns { display: block; }
+.page-body--article .column { width: auto; }
+.page-body--article :is(p, ul, ol, h2, h3, h4, blockquote, .action-row, .notice) { max-width: var(--measure); }
+.page-body--article .column > * + * { margin-top: 20px; }
+.page-body--article .columns + .columns { margin-top: 32px; }
+.page-body--article .image-block { max-width: var(--figure); margin-block: 32px; }
+.page-body--article .image-block img { display: block; width: auto; max-width: 100%; max-height: 560px; margin: 0; border-radius: var(--r-md); }
+.page-body--article * + h2 { margin-top: 80px; }
+.page-body--article hr { margin: 80px 0 0; }
+.page-body--article hr + * h2:first-child, .page-body--article hr + h2 { margin-top: 48px; }
+.page-body--article .action-row { margin-top: 24px; }
+.page-body--article .slideshow { max-width: var(--figure); margin-block: 32px; }

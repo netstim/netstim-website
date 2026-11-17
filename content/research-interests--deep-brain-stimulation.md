@@ -13,6 +13,7 @@ wordpress_id: 151
 date: '2017-12-29T13:15:30+00:00'
 modified: '2023-10-27T13:01:50+00:00'
 canonical: /research-interests/deep-brain-stimulation/
+article: true
 ---
 
 ## DEEP BRAIN STIMULATION

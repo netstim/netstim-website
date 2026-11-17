@@ -1,32 +1,23 @@
+// Publications (layouts/_partials/bibliography.html): the filter box narrows the rows to those whose title,
+// authors or journal contain every typed word; a year without a match hides with its rows.
 const bibliography = document.querySelector('[data-bibliography]');
 if (bibliography) {
-  const rows = [...bibliography.querySelectorAll('.citation-list > li')];
-  const controls = bibliography.querySelector('nav');
-  const previous = bibliography.querySelector('[data-bib-back]');
-  const next = bibliography.querySelector('[data-bib-next]');
-  const status = bibliography.querySelector('[data-bib-page]');
-  const size = 20;
-  const total = Math.ceil(rows.length / size);
-  let page = 0;
-  function show(number) {
-    page = number;
-    const start = page * size;
-    rows.forEach((row, index) => { row.hidden = index < start || index >= start + size; });
-    status.textContent = `Page ${page + 1} of ${total}`;
-    previous.disabled = page === 0;
-    next.disabled = page === total - 1;
-  }
-  function go(step) {
-    show(page + step);
-    if ((step < 0 && previous.disabled) || (step > 0 && next.disabled)) {
-      (step < 0 ? next : previous).focus({preventScroll:true});
+  const input = bibliography.querySelector('[data-bib-filter]');
+  const count = bibliography.querySelector('[data-bib-count]');
+  const empty = bibliography.querySelector('[data-bib-empty]');
+  const years = [...bibliography.querySelectorAll('[data-bib-year]')];
+  const rows = [...bibliography.querySelectorAll('.pub-row')].map(row => ({ row, text: row.textContent.toLowerCase() }));
+  const total = rows.length;
+  input.addEventListener('input', () => {
+    const words = input.value.toLowerCase().split(/\s+/).filter(Boolean);
+    let shown = 0;
+    for (const { row, text } of rows) {
+      const match = words.every(word => text.includes(word));
+      row.hidden = !match;
+      if (match) shown += 1;
     }
-    bibliography.scrollIntoView({block:'start'});
-  }
-  previous.addEventListener('click', () => go(-1));
-  next.addEventListener('click', () => go(1));
-  if (total > 1) {
-    controls.hidden = false;
-    show(0);
-  }
+    for (const year of years) year.hidden = !year.querySelector('.pub-row:not([hidden])');
+    count.textContent = words.length ? `${shown} of ${total} publications` : `${total} publications`;
+    empty.hidden = shown > 0;
+  });
 }

@@ -40,9 +40,12 @@ try {
       await page.waitForURL(at('research-interests/normative-connectomes/'));
 
       await page.goto(at('research-interests/publications/'));
-      assert.equal(await page.locator('.citation-list li:visible').count(), 20);
-      await page.getByRole('button', {name:'Next', exact:true}).click();
-      assert.equal(await page.locator('[data-bib-page]').textContent(), 'Page 2 of 11');
+      const allRows = await page.locator('.pub-row:visible').count();
+      assert(allRows > 200);
+      await page.getByRole('searchbox', {name:'Filter publications'}).fill('dysfunctome');
+      assert(await page.locator('.pub-row:visible').count() < allRows);
+      assert.match(await page.locator('[data-bib-count]').textContent(), /of \d+ publications/);
+      await page.getByRole('searchbox', {name:'Filter publications'}).fill('');
       const cover = page.locator('.gallery a[data-lightbox]').first();
       await cover.click();
       const viewer = page.getByRole('dialog', {name:'Image viewer'});

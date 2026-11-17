@@ -12,6 +12,7 @@ wordpress_id: 2479
 date: '2025-10-13T13:59:40+00:00'
 modified: '2026-10-05T08:50:39+00:00'
 canonical: /research-interests/stimu-latte/
+article: true
 ---
 
 

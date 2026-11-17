@@ -13,6 +13,7 @@ wordpress_id: 110
 date: '2017-12-29T11:56:26+00:00'
 modified: '2025-08-07T09:13:11+00:00'
 canonical: /research-interests/normative-connectomes/
+article: true
 ---
 
 ## Normative Connectomes

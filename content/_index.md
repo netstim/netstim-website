@@ -78,7 +78,7 @@ community:
 - title: Stimu-Latte
   text: 'A monthly in-person journal club in Cologne, organised as part of the Forschungsschwerpunkt Neuromodulation: a local space for discussion and collaboration, all fueled by coffee.'
   image: media/5d84ece1bc6e-Stimulate_logo-2-1500x430.png
-  ground: '#c8a06e'
+  ground: '#c59c6b'
   url: '@root@research-interests/stimu-latte/'
   label: Upcoming sessions
 funding:
