@@ -1,0 +1,5 @@
+{{- $pages := where site.RegularPages "Section" "posts" -}}
+{{- with .Params.feed_author -}}
+  {{- $pages = where site.RegularPages "Params.author" . -}}
+{{- end -}}
+{{- partial "feed.xml" (dict "page" . "pages" $pages) -}}

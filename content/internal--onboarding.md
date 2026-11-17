@@ -28,4 +28,4 @@ canonical: /internal/onboarding/
 <p>As a member of our lab, you’ll be able to edit and shape this content, as well – yay!</p>
 </div></div>
 
-<div class="columns"><div class="column column-1-1"><div class="action-row"><a aria-label="Open that Lab-Manual" class="action external" href="https://netstim.gitbook.io/netstim-lab-manual/" rel="noopener noreferrer" target="_blank">Open that Lab-Manual</a></div></div></div>
+<div class="columns"><div class="column column-1-1"><div class="action-row centered-action"><a aria-label="Open that Lab-Manual" class="action external" href="https://netstim.gitbook.io/netstim-lab-manual/" rel="noopener noreferrer" target="_blank">Open that Lab-Manual</a></div></div></div>

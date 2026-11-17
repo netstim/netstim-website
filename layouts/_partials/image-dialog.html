@@ -1,0 +1,15 @@
+<dialog class="image-dialog" id="image-viewer" aria-labelledby="image-title">
+  <div class="dialog-top">
+    <h2 id="image-title">Image viewer</h2>
+    <form method="dialog"><button class="icon-button" aria-label="Close image" autofocus>{{ partial "icon.html" "close" }}</button></form>
+  </div>
+  <figure>
+    <img alt="">
+    <figcaption></figcaption>
+  </figure>
+  <div class="slide-controls" data-image-controls>
+    <button class="icon-button" type="button" data-image-previous aria-label="Previous image">‹</button>
+    <span role="status" data-image-index></span>
+    <button class="icon-button" type="button" data-image-next aria-label="Next image">›</button>
+  </div>
+</dialog>

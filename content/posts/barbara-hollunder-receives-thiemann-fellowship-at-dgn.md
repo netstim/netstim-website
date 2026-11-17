@@ -15,6 +15,7 @@ wordpress_id: 2372
 date: '2024-11-06T14:37:48+00:00'
 modified: '2024-11-06T14:38:29+00:00'
 author: andreashorn
+comment_anchor: true
 canonical: /barbara-hollunder-receives-thiemann-fellowship-at-dgn/
 ---
 

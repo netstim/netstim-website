@@ -15,6 +15,7 @@ wordpress_id: 1237
 date: '2020-10-08T19:19:59+00:00'
 modified: '2020-10-08T19:27:50+00:00'
 author: andreashorn
+comment_anchor: true
 canonical: /welcome-lukas-goede-and-clemens-neudorfer-to-the-netstim/
 ---
 

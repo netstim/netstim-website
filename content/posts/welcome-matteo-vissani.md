@@ -15,6 +15,7 @@ wordpress_id: 1247
 date: '2020-10-20T19:20:25+00:00'
 modified: '2020-10-20T19:21:08+00:00'
 author: andreashorn
+comment_anchor: true
 canonical: /welcome-matteo-vissani/
 ---
 

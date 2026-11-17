@@ -15,6 +15,7 @@ wordpress_id: 874
 date: '2019-04-06T08:10:09+00:00'
 modified: '2019-04-07T19:56:44+00:00'
 author: andreashorn
+comment_anchor: true
 canonical: /welcome-svenja-treu-to-the-netstim/
 ---
 

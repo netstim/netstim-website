@@ -1,0 +1,9 @@
+.search-dialog { width: min(560px, calc(100% - 24px)); padding: 16px 22px 24px; }
+.search-dialog input {
+  width: 100%; min-height: 46px; margin-top: 12px; padding: 8px 12px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 6px;
+}
+.search-dialog [data-search-status] { margin-top: 10px; color: var(--muted); font-size: 13px; }
+.search-dialog ol { list-style: none; padding: 0; }
+.search-dialog li + li { border-top: 1px solid var(--line); }
+.search-dialog li a { display: flex; align-items: center; min-height: 44px; padding-block: 6px; }

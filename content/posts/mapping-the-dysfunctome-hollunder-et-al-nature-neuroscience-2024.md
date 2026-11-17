@@ -15,14 +15,15 @@ wordpress_id: 2236
 date: '2024-02-22T16:46:18+00:00'
 modified: '2024-06-11T16:09:49+00:00'
 author: andreashorn
+comment_anchor: true
 canonical: /mapping-the-dysfunctome-hollunder-et-al-nature-neuroscience-2024/
 ---
 
-<div class="columns"><div class="column column-1-1"><h3>Mapping the Dysfunctome</h3>
+<div class="columns"><div class="column column-1-1"><h2>Mapping the Dysfunctome</h2>
 <p>We are excited about a major new publication from the lab, that took us about four years to complete and involved a long list of dear co-authors and collaborators from centers, world-wide.</p>
 <p>See below for a list of resources around tis new paper:</p>
 
-<div class="action-row"><a aria-label="Read the paper at Nature Neuroscience" class="action external" href="https://www.nature.com/articles/s41593-024-01570-1#citeas" rel="noopener noreferrer" target="_blank">Read the paper at Nature Neuroscience</a></div></div></div>
+<div class="action-row centered-action"><a aria-label="Read the paper at Nature Neuroscience" class="action external" href="https://www.nature.com/articles/s41593-024-01570-1#citeas" rel="noopener noreferrer" target="_blank">Read the paper at Nature Neuroscience</a></div></div></div>
 
 <div class="columns"><div class="column column-1-3">
 <div class="image-block"><netstim-image data='{"src":"media/1f54996ed175-twitter_GIFXpcJWUAAe5LD.jpg","original":"https://www.netstim.org/wp-content/uploads/2024/02/twitter_GIFXpcJWUAAe5LD.jpg","alt":"","width":620}'/></div>

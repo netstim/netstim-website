@@ -15,10 +15,11 @@ wordpress_id: 2461
 date: '2025-09-04T08:45:27+00:00'
 modified: '2025-09-04T08:47:04+00:00'
 author: andreashorn
+comment_anchor: true
 canonical: /new-perspective-in-nature-reviews-neurology/
 ---
 
-<div class="columns"><div class="column column-2-3"><h3><b>New Perspective in </b></h3>
+<div class="columns"><div class="column column-2-3"><h2><b>New Perspective in </b></h2>
 <h3><b>Nature Reviews Neurology</b></h3>
 <p>We are excited to share that our latest Perspective article, <b>“<a href="https://doi.org/10.1038/s41582-025-01131-5">From adaptive deep brain stimulation to adaptive circuit targeting</a>”</b> has just been published in <a href="https://doi.org/10.1038/s41582-025-01131-5"><i>Nature Reviews Neurology</i></a>.</p>
 <p>In this piece, Andreas Horn (Netstim Cologne) and Wolf-Julian Neumann (Charité – Universitätsmedizin Berlin) propose a unified framework that integrates two major recent advances in the field of deep brain stimulation (DBS):</p>

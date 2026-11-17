@@ -10,7 +10,7 @@ import re
 import shutil
 from urllib.parse import unquote, urljoin, urlsplit
 
-from bs4 import BeautifulSoup, NavigableString, Tag
+from bs4 import BeautifulSoup, Comment, NavigableString
 from markdownify import markdownify
 from PIL import Image
 import yaml
@@ -18,7 +18,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 LIVE = "https://www.netstim.org"
-LOCAL_HOSTS = {"netstim.org", "www.netstim.org", "andreas-horn.de", "www.andreas-horn.de"}
+LOCAL_HOSTS = {"netstim.org", "www.netstim.org", "andreas-horn.de", "www.andreas-horn.de", "netstim.berlin", "www.netstim.berlin"}
 IMAGE_TYPES = {".jpg", ".jpeg", ".png", ".webp", ".gif", ".svg", ".tif", ".tiff", ".bmp"}
 FRACTIONS = {
     "one_full": (1, 1), "one_half": (1, 2), "one_third": (1, 3), "two_third": (2, 3),
@@ -26,13 +26,22 @@ FRACTIONS = {
     "two_fifth": (2, 5), "three_fifth": (3, 5), "four_fifth": (4, 5),
     "one_sixth": (1, 6), "five_sixth": (5, 6),
 }
+LEGACY_REDIRECTS = {
+    "/the-book/": "/research-interests/the-book/",
+    "/about-us/publications/": "/research-interests/publications/",
+    "/about-us-2/publications/": "/research-interests/publications/",
+    "/about-us-2/research-interests/": "/research-interests/",
+    "/events/categories/imaging-meeting/": "/internal/events/categories/imaging-meeting/",
+    "/index.php": "/",
+}
+
 BODY_COLLECTIONS = {
     "/about-us/about-us/": "people", "/research-interests/posters/": "posters",
     "/research-interests/videos-talks/": "videos",
 }
 REMOVE = (
     "script,style,meta,input,.hidden,.avia_hidden_link_text,.av-click-to-play-overlay,"
-    ".hr-inner,.avia_button_icon,.iconfont,.av_font_icon,.av-icon-char,.avia-svg-icon,"
+    ".hr-inner,.avia_button_icon,.iconfont,.av_font_icon,.av-icon-char,.avia-svg-icon:not(a),svg,"
     ".post_author_timeline,.post_delimiter,.big-prev-fake,.post-format-icon,"
     ".avia-slideshow-arrows,.avia-slideshow-controls,.image-overlay,"
     ".avia-content-slider-navigation,.comment-reply-link,.comment-respond,.pingback-edit"
@@ -41,9 +50,20 @@ BLOCK_TAGS = {"p", "h2", "h3", "h4", "h5", "h6", "ul", "ol", "blockquote", "pre"
 INLINE_TAGS = {"a", "b", "strong", "i", "em", "code", "s", "del"}
 
 
+class BlockYaml(yaml.SafeDumper):
+    """Use YAML block scalars for snippets edited by the lab."""
+
+
+def block_string(dumper, value):
+    return dumper.represent_scalar("tag:yaml.org,2002:str", value, style="|" if "\n" in value else None)
+
+
+BlockYaml.add_representer(str, block_string)
+
+
 def dump(path, value):
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(yaml.safe_dump(value, allow_unicode=True, sort_keys=False, width=110))
+    path.write_text(yaml.dump(value, Dumper=BlockYaml, allow_unicode=True, sort_keys=False, width=110))
 
 
 def marker(node, name, values):
@@ -67,6 +87,8 @@ def content_markdown(node):
         markup = str(child)
         descendants = child.find_all()
         if (child.name in BLOCK_TAGS and not child.attrs and
+                not re.match(r"^\d+\.", child.get_text(strip=True)) and
+                not any(n.name in {"a", "b", "strong", "em", "i"} for n in descendants) and
                 all(n.name in INLINE_TAGS or n.name in {"p", "li", "ul", "ol", "br", "code"}
                     for n in descendants) and
                 not any(n.get("id") or n.get("class") or n.get("aria-label") or n.get("target") for n in descendants)
@@ -77,6 +99,10 @@ def content_markdown(node):
         if markup:
             blocks.append(markup)
     return "\n\n".join(blocks)
+
+
+def raw_has_comment(soup):
+    return bool(soup.select_one(".content .comment_meta_container"))
 
 
 class Migration:
@@ -168,7 +194,10 @@ class Migration:
             dest = ROOT / "static" / storage.lstrip("/")
         if not dest.exists():
             dest.parent.mkdir(parents=True, exist_ok=True)
-            if kind == "image" and origin.stat().st_size > 5_000_000 and origin.suffix.lower() in {".png", ".jpg", ".jpeg"}:
+            if kind == "image" and origin.parent.name == "external":
+                with Image.open(origin) as img:
+                    img.save(dest, format="PNG")
+            elif kind == "image" and origin.stat().st_size > 5_000_000 and origin.suffix.lower() in {".png", ".jpg", ".jpeg"}:
                 with Image.open(origin) as img:
                     img.thumbnail((1920, 2200), Image.Resampling.LANCZOS)
                     img.save(dest)
@@ -177,19 +206,27 @@ class Migration:
         return storage, url.geturl()
 
     def link(self, route, src):
-        if not src or src.startswith(("#", "mailto:", "tel:")):
+        if not src or src.startswith(("mailto:", "tel:")):
+            return src
+        if src in {"#respond", "#comments"}:
+            return "#respond"
+        if src.startswith("#"):
             return src
         url = urlsplit(urljoin(LIVE + route, src))
         if url.hostname not in LOCAL_HOSTS:
             return url.geturl()
         path = unquote(url.path)
         fragment = "#" + url.fragment if url.fragment else ""
-        if re.match(r"^/(?:published_manuscripts/|Horn_CV\.pdf$)", path):
+        if fragment == "#comments":
+            fragment = "#respond"
+        if path.startswith("/published_manuscripts/"):
             return LIVE + url.path + fragment
+        if path == "/Horn_CV.pdf":
+            return url.geturl()
         if url.hostname in {"andreas-horn.de", "www.andreas-horn.de"} and not path.startswith("/wp-content/uploads/"):
             return url.geturl()
         to = path.rstrip("/") + "/"
-        if to in self.crawl or to == "/the-book/":
+        if to in self.crawl or to in LEGACY_REDIRECTS:
             query = ("?" + url.query) if url.query else ""
             return "@root@" + to.lstrip("/") + query + fragment
         if self.source_file(path):
@@ -212,6 +249,20 @@ class Migration:
             row.append(child.extract())
 
     def clean(self, soup, parent, route):
+        for comment in parent.find_all(string=lambda text: isinstance(text, Comment)):
+            comment.extract()
+        for tag in parent.select(".comment_container"):
+            heading = tag.select_one(".comment-reply-title") or tag.find("h3")
+            if heading and heading.get_text(" ", strip=True) == "Leave a Reply":
+                for item in list(heading.next_siblings):
+                    item.extract()
+                heading.decompose()
+        for gallery in parent.select(".avia-gallery"):
+            for link in gallery.select("a[href]"):
+                img = link.find("img")
+                if img and img.get("data-avia-tooltip"):
+                    link["title"] = img["data-avia-tooltip"]
+                    link["aria-label"] = img["data-avia-tooltip"]
         # External video script templates contain the original embed URL and title.
         for tag in parent.select("script.av-video-tmpl"):
             tag.replace_with(BeautifulSoup(tag.string or "", "html.parser"))
@@ -221,6 +272,13 @@ class Migration:
                 frame["_watch"] = video.get("data-original_url", frame.get("src"))
         for tag in parent.select(".zp-Library"):
             marker(tag, "netstim-bibliography", {})
+        for link in parent.select("a[href]"):
+            svg = link.find("svg")
+            if not svg:
+                continue
+            name = svg.find("title")
+            if name and not link.get("aria-label"):
+                link["aria-label"] = name.get_text(" ", strip=True)
         for tag in reversed(parent.select(REMOVE)):
             if tag.parent:
                 tag.decompose()
@@ -231,6 +289,8 @@ class Migration:
             if not tag.parent:
                 continue
             classes = set(tag.get("class", []))
+            if "redraft-text" in classes and tag.name == "div":
+                tag.name = "p"
             if tag.name == "iframe":
                 src = tag.get("src", "")
                 watch = tag.get("_watch", src)
@@ -241,19 +301,22 @@ class Migration:
                         src = "https://www.youtube-nocookie.com" + url.path + "?" + url.query
                     marker(tag, "netstim-video", {"src": src, "href": watch, "title": title})
                 else:
-                    marker(tag, "netstim-embed", {"href": self.link(route, src), "title": title})
+                    marker(tag, "netstim-embed", {"src": src, "href": self.link(route, src),
+                                                     "title": title or "Podcast player", "audio": True})
                 continue
             if tag.name == "img":
                 src = tag.get("src", "")
                 storage, original = self.asset(route, src, "image")
                 alt = tag.get("alt") or ""
                 title = tag.get("title") or ""
+                if "avatar" in classes and not alt:
+                    alt = ""
                 if tag.parent.name == "a" and not tag.parent.get_text(strip=True) and not alt:
                     tag.parent["aria-label"] = tag.parent.get("aria-label") or tag.parent.get("title") or title or Path(urlsplit(original).path).stem.replace("-", " ")
                 width = tag.get("width")
                 if not width or not str(width).isdigit():
                     width = 0
-                marker(tag, "netstim-image", {"src": storage, "original": original, "alt": alt, "width": int(width)})
+                marker(tag, "netstim-image", {"src": storage, "original": original, "alt": alt, "width": int(width), **({"class": "avatar"} if "avatar" in classes else {})})
                 continue
             if tag.name.startswith("netstim-"):
                 continue
@@ -264,6 +327,8 @@ class Migration:
                 attrs["id"] = tag["name"]
             if tag.name == "a" and tag.get("href"):
                 attrs["href"] = self.link(route, tag["href"])
+                if (classes & {"lightbox"} or tag.find_parent(class_="avia-gallery")) and attrs["href"].startswith("@root@"):
+                    attrs["data-lightbox"] = ""
                 if tag.get("target") == "_blank":
                     attrs.update(target="_blank", rel="noopener noreferrer")
             elif tag.name == "source" and tag.get("src"):
@@ -289,10 +354,13 @@ class Migration:
                 "em-location": "event-location", "em-list": "event-list", "avia-copyright": "attribution",
                 "publication-type-badge": "publication-type", "aligncenter": "centered",
                 "wp-caption": "captioned", "wp-caption-text": "caption",
-                "pullquote": "pullquote",
+                "pullquote": "pullquote", "av-share-box": "share", "av-share-box-list": "share-links",
+                "av-share-link-description": "share-title", "avia-button-center": "centered-action",
             }.items():
                 if old in classes and (name != "post-item" or tag.name == "article"):
                     new.append(name)
+            if tag.name == "article" and tag.find_parent(id=re.compile(r"^comment-\d+$")):
+                new.append("comment-body")
             if tag.has_attr("_fraction"):
                 new.extend(("column", "column-" + tag["_fraction"]))
             if any(c.startswith("av-special-heading") for c in classes):
@@ -303,13 +371,25 @@ class Migration:
                     tag.decompose()
                     continue
                 tag.name = "hr"
+                tag.can_be_empty_element = True
                 tag.clear()
             if tag.name == "h1":
                 tag.name = "h2"
+            if tag.name == "h5" and "publication-type-badge" in classes:
+                tag.name = "p"
+            if tag.name in {"h2", "h3", "h4", "h5", "h6"} and not tag.get_text(strip=True):
+                tag.name = "span"
             if tag.name in {"header", "footer"} and not tag.find_parent("article"):
                 tag.name = "div"
             if tag.name in {"h4","h5","h6"} and "icon-heading" in new:
                 tag.name = "h3"
+            if tag.name == "a" and not tag.get_text(strip=True) and (tag.has_attr("data-av_icon") or attrs.get("aria-label")):
+                if tag.get("data-av_icon"):
+                    attrs["data-icon"] = tag["data-av_icon"]
+                attrs["aria-label"] = attrs.get("aria-label") or attrs.get("title") or tag.get("desc") or "External link"
+                new.append("icon-link")
+                if tag.get("data-av_iconfont") == "academicons":
+                    new.append("icon-academic")
             if tag.name == "nav":
                 attrs["aria-label"] = attrs.get("aria-label", "Pagination" if "pagination" in new else "Related pages")
             if tag.name == "a" and not attrs.get("href") and not attrs.get("id"):
@@ -322,6 +402,10 @@ class Migration:
             if tag.name in {"p","div","span"} and "event-location" in new:
                 for br in tag.select('br[style*="clear"]'):
                     br.decompose()
+            if "_blank" == attrs.get("target") and attrs.get("href", "").startswith("//"):
+                attrs["href"] = "https:" + attrs["href"]
+            if tag.name == "a" and ("archive-image" in new) and tag.parent.parent.get("aria-label"):
+                attrs["aria-label"] = tag.parent.parent["aria-label"]
             if tag.name == "a" and "action" in new and attrs.get("href", "").startswith(("https:", "http:")):
                 new.append("external")
             if tag.name == "span" and "current" in new:
@@ -337,13 +421,24 @@ class Migration:
         for tag in list(reversed(parent.find_all(["div", "span", "section", "p", "h2", "h3", "h4", "h5", "h6", "a", "header", "footer", "ul", "ol"]))):
             if not tag.parent:
                 continue
-            if not tag.get_text(strip=True) and not tag.find(["netstim-image", "netstim-video", "netstim-embed", "netstim-bibliography", "hr", "br"]) and not tag.get("id"):
+            if not tag.get_text(strip=True) and not tag.find(["netstim-image", "netstim-video", "netstim-embed", "netstim-bibliography", "hr", "br", "a"]) and not tag.get("id") and not (tag.name == "a" and tag.get("href") and tag.get("aria-label")):
                 tag.decompose()
             elif tag.name in {"div", "span", "section", "header", "footer"} and not tag.attrs:
                 tag.unwrap()
         for text in list(parent.find_all(string=re.compile(r"^\s*</?[il]+>"))):
             cleaned = re.sub(r"</?(?:i|li)>", "", str(text))
             text.replace_with(cleaned)
+        level = 1
+        seen = Counter()
+        for node in parent.find_all(True):
+            if node.get("id"):
+                ident = node["id"]
+                seen[ident] += 1
+                if seen[ident] > 1:
+                    node["id"] = f"{ident}-{seen[ident]}"
+            if re.fullmatch(r"h[2-6]", node.name):
+                level = min(level + 1, int(node.name[1]))
+                node.name = f"h{level}"
         return content_markdown(parent)
 
     def structure(self, route):
@@ -389,6 +484,22 @@ class Migration:
             front.update(wordpress_id=data["id"], date=data["date"] + "+00:00", modified=data["modified"] + "+00:00")
             if family == "post":
                 front["author"] = self.readers[data["author"]]
+        if family == "events" and "/locations/" in route and route != "/internal/events/locations/":
+            label = soup.select_one(".blog-author a")
+            posted = soup.select_one(".post-meta-infos time")
+            ident = re.search(r"post-entry-(\d+)", str(soup.select_one("article").get("class", [])))
+            if label and posted and ident:
+                front["author"] = label.get_text(strip=True)
+                front["date"] = posted["datetime"]
+                self.routes[int(ident[1])] = route
+        if route in {"/author/andreashorn/", "/author/janroediger/", "/category/uncategorized/"}:
+            front.update(layout="archive", outputs=["html", "rss"])
+            if route.startswith("/author/"):
+                front["feed_author"] = route.split("/")[2]
+        if family in {"post", "archive"} or route == "/research-interests/the-book/":
+            front["comment_anchor"] = not raw_has_comment(soup)
+        if route in ("/blog/", "/author/andreashorn/", "/author/janroediger/", "/category/uncategorized/"):
+            front["include_new_posts"] = True
         canonical = soup.select_one('link[rel="canonical"]')
         if canonical and urlsplit(canonical["href"]).hostname in LOCAL_HOSTS:
             front["canonical"] = urlsplit(canonical["href"]).path or route
@@ -403,9 +514,8 @@ class Migration:
             mode = "wide" if section_id.startswith("av_section_") else "main"
             if container.select_one(":scope > .sidebar"):
                 mode = "sidebar"
-            if col.select_one(".comment_container .comment-body"):
-                for c in col.select(".comment_meta_container"):
-                    c["id"] = "comments"
+            for c in col.select(".comment_meta_container"):
+                c["id"] = "respond"
             if family == "archive":
                 for article in col.find_all("article", recursive=False):
                     if article.select_one(".post-title a[href]"):
@@ -500,7 +610,7 @@ class Migration:
         dump(ROOT / "data/events.yaml", events)
         self.publications()
         self.manifest["feeds"] = sorted(self.feeds | {"/blog/feed/", "/feed/rss2/", "/feed/rss/", "/feed/atom/", "/feed/rdf/"})
-        self.manifest["redirects"] = {"/the-book/": "/research-interests/the-book/", "/index.php": "/"}
+        self.manifest["redirects"] = LEGACY_REDIRECTS
         (ROOT / "tests/migration.json").write_text(json.dumps(self.manifest, indent=2, ensure_ascii=False) + "\n")
         print(Counter(self.manifest["route_families"].values()))
         print("Feed URLs:", *self.manifest["feeds"], sep="\n")

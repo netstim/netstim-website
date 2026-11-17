@@ -15,6 +15,7 @@ wordpress_id: 1396
 date: '2021-11-04T16:32:14+00:00'
 modified: '2021-11-04T16:33:29+00:00'
 author: andreashorn
+comment_anchor: true
 canonical: /welcome-josef-mana/
 ---
 

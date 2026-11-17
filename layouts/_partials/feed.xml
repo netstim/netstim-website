@@ -1,0 +1,18 @@
+{{- printf "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" | safeHTML }}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ if not .page.IsHome }}{{ .page.Title }} – {{ end }}{{ site.Title }}</title>
+    <link>{{ .page.Permalink }}</link>
+    <description>{{ site.Title }}</description>
+    <atom:link href="{{ (.page.OutputFormats.Get "rss").Permalink }}" rel="self" type="application/rss+xml" />
+    {{ range first site.Config.Services.RSS.Limit .pages.ByDate.Reverse }}
+      <item>
+        <title>{{ .Title }}</title>
+        <link>{{ .Permalink }}</link>
+        <guid isPermaLink="true">{{ .Permalink }}</guid>
+        <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</pubDate>
+        <description>{{ .Summary | plainify }}</description>
+      </item>
+    {{ end }}
+  </channel>
+</rss>

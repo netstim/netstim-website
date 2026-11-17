@@ -15,10 +15,11 @@ wordpress_id: 362
 date: '2019-01-12T09:32:42+00:00'
 modified: '2019-01-12T09:43:57+00:00'
 author: andreashorn
+comment_anchor: true
 canonical: /defining-a-tract-based-target-for-obsessive-compulsive-disorder/
 ---
 
-In one of the [potentially most impactful studies](https://www.biologicalpsychiatryjournal.com/article/S0006-3223(19)30003-4/pdf) we’ve been involved, Carlos Baldermann (University Cologne) delineated a tract that – if stimulated with DBS – improves symptoms of obsessive compulsive disorder.
+<p>In one of the <a href="https://www.biologicalpsychiatryjournal.com/article/S0006-3223(19)30003-4/pdf">potentially most impactful studies</a> we’ve been involved, Carlos Baldermann (University Cologne) delineated a tract that – if stimulated with DBS – improves symptoms of obsessive compulsive disorder.</p>
 
 <div class="image-block"><netstim-image data='{"src":"media/11b3ab6164a4-ocd.png","original":"https://www.netstim.org/wp-content/uploads/2019/01/ocd.png","alt":"","width":1028}'/></div>
 
@@ -30,7 +31,7 @@ About half patients had patient-specific tractography, for the other half we us
 
 <div class="image-block"><netstim-image data='{"src":"media/a1a3b760326b-Bildschirmfoto-2019-01-11-um-23.16.27-1500x737.png","original":"https://www.netstim.org/wp-content/uploads/2019/01/Bildschirmfoto-2019-01-11-um-23.16.27-1030x506.png","alt":"","width":1030}'/></div>
 
-Identifying “good” and “bad” fibers using a novel method we introduced into [Lead-DBS](http://www.lead-dbs.org) within this study that compares connected and unconnected fibertracts in terms of clinical improvements.
+<p>Identifying “good” and “bad” fibers using a novel method we introduced into <a href="http://www.lead-dbs.org">Lead-DBS</a> within this study that compares connected and unconnected fibertracts in terms of clinical improvements.</p>
 
 <div class="image-block"><netstim-image data='{"src":"media/068f3a27ccb8-Bildschirmfoto-2019-01-11-um-23.19.57-1500x553.png","original":"https://www.netstim.org/wp-content/uploads/2019/01/Bildschirmfoto-2019-01-11-um-23.19.57-1030x380.png","alt":"","width":1030}'/></div>
 

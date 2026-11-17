@@ -15,6 +15,7 @@ wordpress_id: 2433
 date: '2025-05-29T14:54:05+00:00'
 modified: '2025-05-29T14:54:05+00:00'
 author: andreashorn
+comment_anchor: true
 canonical: /patricia-zvarova-named-forbes-30-under-30-in-slovakia/
 ---
 

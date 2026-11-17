@@ -1,0 +1,24 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>{{ if not .IsHome }}{{ .Title }} · {{ end }}{{ site.Title }}</title>
+{{ $route := strings.TrimPrefix ("" | relURL) .RelPermalink }}
+{{ $canonical := .Params.canonical | default (printf "/%s" $route) }}
+<link rel="canonical" href="{{ site.Params.liveSite }}{{ $canonical }}">
+<meta property="og:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }}{{ end }}">
+<meta property="og:url" content="{{ site.Params.liveSite }}{{ $canonical }}">
+<meta property="og:site_name" content="{{ site.Title }}">
+{{ if site.Params.preview }}<meta name="robots" content="noindex, follow">{{ end }}
+<link rel="icon" type="image/png" sizes="32x32" href="{{ "wp-content/uploads/2025/06/cropped-netstim_institute_icon-32x32.png" | relURL }}">
+<link rel="apple-touch-icon" href="{{ "wp-content/uploads/2025/06/cropped-netstim_institute_icon-180x180.png" | relURL }}">
+<link rel="alternate" type="application/rss+xml" title="{{ site.Title }}" href="{{ "index.xml" | relURL }}">
+{{ $shell := slice "base" "site" "header" "page" "components" "footer" "search" }}
+{{ $families := partial "page-family.html" . }}
+{{ $stylesheets := slice }}
+{{ range $shell | append $families }}
+  {{ $stylesheets = $stylesheets | append (resources.Get (printf "css/%s.css" .)) }}
+{{ end }}
+{{ $css := $stylesheets | resources.Concat (printf "css/%s.css" (delimit $families "-")) | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+{{ $theme := resources.Get "js/main/theme-init.js" | minify | fingerprint }}
+<script src="{{ $theme.RelPermalink }}" integrity="{{ $theme.Data.Integrity }}"></script>

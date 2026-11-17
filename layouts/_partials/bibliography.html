@@ -1,0 +1,13 @@
+<section class="bibliography" aria-label="Bibliography" data-bibliography>
+  <h3>Top Level Items</h3>
+  <ol class="citation-list">
+    {{ range hugo.Data.publications }}
+      <li id="zp-ID-5249585-{{ .key }}"><span>{{ .citation | safeHTML }}</span></li>
+    {{ end }}
+  </ol>
+  <nav class="bibliography-controls" aria-label="Publication pages" hidden>
+    <button type="button" data-bib-back>Previous</button>
+    <span role="status" data-bib-page></span>
+    <button type="button" data-bib-next>Next</button>
+  </nav>
+</section>

@@ -15,6 +15,7 @@ wordpress_id: 2022
 date: '2022-12-17T03:38:09+00:00'
 modified: '2024-09-25T01:56:42+00:00'
 author: andreashorn
+comment_anchor: true
 canonical: /radio-interview-about-alzheimer-dbs-study/
 ---
 

@@ -15,6 +15,7 @@ wordpress_id: 949
 date: '2019-06-27T18:41:14+00:00'
 modified: '2019-06-27T18:42:37+00:00'
 author: andreashorn
+comment_anchor: true
 canonical: /neuroimage-2018-best-paper-w/
 ---
 

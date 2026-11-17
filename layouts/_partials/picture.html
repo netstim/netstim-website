@@ -1,0 +1,27 @@
+{{- $alt := .alt | default "" -}}
+{{- $source := .original | default .src -}}
+{{- with .src -}}
+  {{- $width := $.width | default 0 -}}
+  {{- with resources.Get . -}}
+    {{- if and (eq .ResourceType "image") (in (slice "jpeg" "png" "webp") .MediaType.SubType) -}}
+      {{- $max := math.Min 1600 .Width | int -}}
+      {{- $build := .Resize (printf "%dx webp q85" $max) -}}
+      {{- $sizes := slice -}}
+      {{- range slice 80 180 360 600 900 1200 -}}
+        {{- if lt . $max -}}
+          {{- $size := $build.Resize (printf "%dx webp q84" .) -}}
+          {{- $sizes = $sizes | append (printf "%s %dw" $size.RelPermalink .) -}}
+        {{- end -}}
+      {{- end -}}
+      {{- $sizes = $sizes | append (printf "%s %dw" $build.RelPermalink $max) -}}
+      {{- $display := $width | default $max -}}
+      <img{{ with $.class }} class="{{ . }}"{{ end }} src="{{ $build.RelPermalink }}" srcset="{{ delimit $sizes ", " }}" sizes="{{ if le $display 190 }}{{ $display }}px{{ else }}(max-width: 767px) calc(100vw - 48px), {{ math.Min $display 840 | int }}px{{ end }}" alt="{{ $alt }}" width="{{ $display }}" height="{{ math.Round (div (mul (float $display) (float .Height)) (float .Width)) | int }}" loading="lazy" decoding="async" data-original="{{ $source }}">
+    {{- else -}}
+      <img{{ with $.class }} class="{{ . }}"{{ end }} src="{{ .RelPermalink }}" alt="{{ $alt }}"{{ if $width }} width="{{ $width }}"{{ end }} loading="lazy" decoding="async" data-original="{{ $source }}">
+    {{- end -}}
+  {{- else -}}
+    {{- errorf "Missing image resource %s" . -}}
+  {{- end -}}
+{{- else -}}
+  <span class="unavailable-image" role="img" aria-label="{{ $alt | default "Image unavailable" }}" data-original="{{ $source }}">{{ $alt }}</span>
+{{- end -}}

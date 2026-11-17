@@ -1,0 +1,44 @@
+baseURL = "https://www.netstim.org/"
+title = "Network Stimulation Laboratory"
+locale = "en"
+uglyURLs = false
+enableGitInfo = true
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term"]
+
+[frontmatter]
+  lastmod = ["lastmod", ":git", "modified", "date", "publishDate"]
+
+[params]
+  liveSite = "https://www.netstim.org"
+  preview = false
+
+[permalinks.page]
+  posts = "/:slug/"
+
+[outputFormats.searchindex]
+  mediaType = "application/json"
+  baseName = "search-index"
+  isPlainText = true
+  notAlternative = true
+  permalinkable = false
+
+[outputs]
+  home = ["html", "rss", "searchindex"]
+  section = ["html"]
+  page = ["html"]
+
+[services.rss]
+  limit = 10
+
+[markup.goldmark.renderer]
+  unsafe = true # Imported tables, archived rich text and semantic grid layouts.
+[markup.goldmark.parser.attribute]
+  block = true
+[markup.goldmark.extensions.typographer]
+  disable = true
+
+[privacy.youtube]
+  privacyEnhanced = true
+[privacy.vimeo]
+  enableDNT = true

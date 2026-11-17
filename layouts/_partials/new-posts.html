@@ -1,0 +1,15 @@
+{{- $posts := where (where site.RegularPages "Section" "posts") "Params.wordpress_id" "eq" nil -}}
+{{- with .Params.feed_author -}}
+  {{- $posts = where $posts "Params.author" . -}}
+{{- end -}}
+{{- range $posts.ByDate.Reverse }}
+  <article class="post-item">
+    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    <p class="post-meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      {{ with .Params.author }} / {{ . }}{{ end }}
+    </p>
+    {{ with .Summary }}<p>{{ . | plainify }}</p>{{ end }}
+    <p><a class="read-link" href="{{ .RelPermalink }}">Read more</a></p>
+  </article>
+{{- end }}

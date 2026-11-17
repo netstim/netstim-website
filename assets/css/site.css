@@ -1,0 +1,16 @@
+.wrap { width: min(calc(100% - 2 * var(--gutter)), var(--container)); margin-inline: auto; }
+.preview-banner { text-align: center; padding: 4px 12px; color: var(--muted); background: var(--surface); border-bottom: 1px solid var(--line); font-size: 13px; }
+.icon-button {
+  display: grid; place-items: center; flex: 0 0 auto; width: 44px; height: 44px;
+  appearance: none; border: 0; border-radius: 6px; padding: 0; background: transparent;
+}
+@media (hover: hover) {
+  .icon-button:hover { background: var(--surface); color: var(--action); }
+}
+dialog {
+  color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 12px;
+  padding: 0; max-height: min(740px, calc(100dvh - 32px)); overscroll-behavior: contain;
+}
+dialog::backdrop { background: rgb(12 18 23 / .48); }
+.dialog-top { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.dialog-top h2 { font-size: 22px; }

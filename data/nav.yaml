@@ -40,6 +40,6 @@ logo: media/0a5bca3040a8-netstim_institute_logo_en-1.png
 logo_alt: Network Stimulation Laboratory
 footer:
 - title: Imprint
-  url: http://www.netstim.berlin/impressum-datenschutzerklarung/
+  url: '@root@impressum-datenschutzerklarung/'
 - title: Privacy Policy
   url: '@root@privacy-policy/'

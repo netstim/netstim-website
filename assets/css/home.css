@@ -1,0 +1,7 @@
+.family-home .page-content > .columns:first-child h2:first-child {
+  text-transform: lowercase;
+  font-size: clamp(32px, 3.2vw, 44px);
+  letter-spacing: -.047em;
+  margin-bottom: 22px;
+}
+.family-home .page-content > .columns:first-child h2:first-child::first-letter { text-transform: uppercase; }

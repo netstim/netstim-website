@@ -15,6 +15,7 @@ wordpress_id: 1041
 date: '2020-01-21T21:17:11+00:00'
 modified: '2020-01-21T21:17:57+00:00'
 author: andreashorn
+comment_anchor: true
 canonical: /welcome-barbara-hollunder/
 ---
 

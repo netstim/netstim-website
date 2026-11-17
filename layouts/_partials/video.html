@@ -1,0 +1,7 @@
+{{- $title := .title | default "Video" -}}
+<div class="video-embed{{ if .audio }} video-embed--audio{{ end }}" data-embed="{{ .src }}" data-embed-title="{{ $title }}">
+  <a class="video-start" href="{{ partial "url.html" .href }}" aria-label="Play {{ $title }}">
+    <span class="play-icon">{{ partial "icon.html" "play" }}</span>
+    <span>{{ $title }}</span>
+  </a>
+</div>

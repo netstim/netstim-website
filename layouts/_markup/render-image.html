@@ -1,0 +1,5 @@
+{{- if resources.Get .Destination -}}
+  {{- partial "picture.html" (dict "src" .Destination "alt" .PlainText) -}}
+{{- else -}}
+  <img src="{{ partial "url.html" .Destination }}" alt="{{ .PlainText }}"{{ with .Title }} title="{{ . }}"{{ end }} loading="lazy">
+{{- end -}}

@@ -1,0 +1,9 @@
+{{- $family := .Params.family | default "page" -}}
+{{- if in (slice "post" "archive") $family -}}
+  {{- return (slice "content" "updates") -}}
+{{- else if in (slice "events" "publications" "posters" "videos" "people") $family -}}
+  {{- return (slice "content" $family) -}}
+{{- else if eq $family "home" -}}
+  {{- return (slice "content" "home") -}}
+{{- end -}}
+{{- return (slice "content") -}}

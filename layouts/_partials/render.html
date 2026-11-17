@@ -1,0 +1,21 @@
+{{- /* Imported HTML uses private markers so embedded assets share the same Hugo renderers as Markdown. */ -}}
+{{- $body := partial "url.html" (string .) -}}
+{{- $body = replaceRE `<p>\s*(<netstim-(?:video|embed|bibliography)\b[^>]*>)\s*</p>` "$1" $body -}}
+{{- range findRE `<netstim-(?:image|video|embed|bibliography) data=("[^"]*"|'[^']*')\s*/?>` $body | uniq -}}
+  {{- $marker := . -}}
+  {{- $type := replaceRE `^<netstim-([a-z]+) .*\z` "$1" $marker -}}
+  {{- $raw := replaceRE `^<netstim-[a-z]+ data=("|')(.*)("|')\s*/?>\z` "$2" $marker -}}
+  {{- $payload := transform.Unmarshal (htmlUnescape $raw) -}}
+  {{- $replacement := "" -}}
+  {{- if eq $type "image" -}}
+    {{- $replacement = partial "picture.html" $payload -}}
+  {{- else if eq $type "video" -}}
+    {{- $replacement = partial "video.html" $payload -}}
+  {{- else if eq $type "embed" -}}
+    {{- $replacement = partial "video.html" $payload -}}
+  {{- else -}}
+    {{- $replacement = partial "bibliography.html" . -}}
+  {{- end -}}
+  {{- $body = replace $body $marker (string $replacement) -}}
+{{- end -}}
+{{- return ($body | safeHTML) -}}

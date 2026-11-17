@@ -1,0 +1,29 @@
+.post-item { margin: 0 0 26px; }
+.post-item::after { content: ""; display: block; clear: both; }
+.family-archive .post-item { padding-bottom: 22px; border-bottom: 1px solid var(--line); }
+.archive-media { float: left; width: 81px; margin: 0 18px 8px 0; }
+.archive-image { display: block; }
+.archive-image img { width: 81px; height: 81px; object-fit: cover; border-radius: var(--radius); }
+.post-image img { width: 100%; border-radius: var(--radius); margin-bottom: 24px; }
+.family-archive .post-item h2 { font-size: clamp(19px, 2vw, 23px); line-height: 1.25; }
+.post-item h2 a { color: var(--ink); text-decoration: none; }
+.post-meta { display: block; font-size: 12px; line-height: 1.45; color: var(--muted); margin: 8px 0 12px; }
+.post-meta > span + span, .post-meta > time + span { margin-left: .25em; }
+.read-link { display: inline-flex; align-items: center; min-height: 44px; }
+.archive-subtitle { margin: 24px 0; }
+.author-box { display: flow-root; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+.author-avatar, .comment-body .avatar { float: left; margin: 0 14px 8px 0; border-radius: var(--radius); }
+.pagination { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; margin-top: 24px; }
+.pagination a, .pagination .current { display: inline-grid; place-items: center; width: 44px; height: 44px; border-radius: 999px; }
+.pagination .current { background: var(--surface); font-weight: 650; }
+.pagination-meta { margin-right: 8px; color: var(--muted); font-size: 13px; }
+.comment-summary { margin: 24px 0 12px; }
+.comment-list { padding: 0; list-style: none; }
+.comment-body { display: flow-root; border-block-start: 1px solid var(--line); padding: 16px 0; }
+@media (max-width: 450px) {
+  .archive-media { width: 64px; margin-right: 12px; }
+  .archive-image img { width: 64px; height: 64px; }
+}
+@media (hover: hover) {
+  .post-item h2 a:hover { color: var(--action); }
+}

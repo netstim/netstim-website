@@ -1,0 +1,16 @@
+.bibliography { padding-block: 20px 24px; }
+.citation-list { list-style: none; padding: 0; counter-reset: citation; margin-top: 10px; }
+.citation-list li {
+  counter-increment: citation; display: grid; grid-template-columns: 2.5em minmax(0, 1fr);
+  gap: 10px; padding-block: 13px; border-bottom: 1px solid var(--line); font-size: 14px;
+}
+.citation-list li::before { content: counter(citation) "."; color: var(--muted); font-variant-numeric: tabular-nums; }
+.bibliography-controls { display: flex; align-items: center; gap: 12px; justify-content: space-between; padding-top: 16px; font-size: 13px; }
+.bibliography-controls button {
+  min-width: 44px; min-height: 44px; padding: 0 10px; background: transparent; color: var(--action);
+  border: 0; text-decoration: underline; text-underline-offset: .18em;
+}
+.bibliography-controls button:disabled { color: var(--muted); text-decoration: none; }
+.family-publications .gallery a { align-content: start; }
+.family-publications .page-content > h2 { text-transform: lowercase; }
+.family-publications .page-content > h2::first-letter { text-transform: uppercase; }

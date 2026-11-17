@@ -13,6 +13,8 @@ crumbs:
   url: '@root@internal/events/locations/'
 - title: Bonhoefferraum
 sidebar: true
+author: janroediger
+date: '2019-02-21T12:45:37+00:00'
 canonical: /internal/events/locations/bonhoefferraum/
 ---
 

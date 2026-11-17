@@ -1,0 +1,12 @@
+<dialog class="search-dialog" id="site-search" aria-labelledby="search-title" data-search-index="{{ "search-index.json" | relURL }}">
+  <div class="dialog-top">
+    <h2 id="search-title">Search</h2>
+    <form method="dialog"><button class="icon-button" aria-label="Close search">{{ partial "icon.html" "close" }}</button></form>
+  </div>
+  <search>
+    <label class="sr-only" for="search-query">Search the site</label>
+    <input autofocus id="search-query" name="s" type="search" placeholder="Search the site" autocomplete="off">
+    <p data-search-status role="status"></p>
+    <ol data-search-results></ol>
+  </search>
+</dialog>

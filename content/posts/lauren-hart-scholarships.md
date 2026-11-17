@@ -15,6 +15,7 @@ wordpress_id: 2426
 date: '2025-05-28T19:24:01+00:00'
 modified: '2025-05-28T19:24:56+00:00'
 author: andreashorn
+comment_anchor: true
 canonical: /lauren-hart-scholarships/
 ---
 

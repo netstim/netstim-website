@@ -19,7 +19,3 @@ canonical: /impressum-datenschutzerklarung/
 02445 Brookline, MA</dd><dt>Email Address</dt><dd><a href="mailto:mail@andreas-horn.de">mail@andreas-horn.de</a></dd><dt>Phone</dt><dd>+1 (857) 381-6717</dd></dl>
  
 </article>
-
-end post-entry
-
-end content

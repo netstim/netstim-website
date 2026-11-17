@@ -15,6 +15,7 @@ wordpress_id: 1822
 date: '2022-03-09T00:29:06+00:00'
 modified: '2022-03-09T00:29:06+00:00'
 author: andreashorn
+comment_anchor: true
 canonical: /welcome-lauren-hart/
 ---
 

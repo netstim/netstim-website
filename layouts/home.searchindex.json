@@ -1,0 +1,18 @@
+{{- $pages := slice -}}
+{{- range site.RegularPages | append site.Home -}}
+  {{- $text := .Plain -}}
+  {{- $family := .Params.family -}}
+  {{- if in (slice "people" "posters" "videos") $family -}}
+    {{- $text = delimit (apply (index hugo.Data $family) "index" "." "body") " " | plainify | htmlUnescape -}}
+  {{- end -}}
+  {{- if eq $family "events" -}}
+    {{- $text = delimit (apply (index hugo.Data.events .Params.url) "index" "." "body") " " | plainify | htmlUnescape -}}
+  {{- end -}}
+  {{- if eq $family "publications" -}}
+    {{- $text = printf "%s %s" $text (delimit (apply hugo.Data.publications "index" "." "title") " ") -}}
+  {{- end -}}
+  {{- if ne $family "archive" -}}
+    {{- $pages = $pages | append (dict "title" .Title "url" .RelPermalink "text" (replaceRE "\\s+" " " $text)) -}}
+  {{- end -}}
+{{- end -}}
+{{- $pages | jsonify -}}

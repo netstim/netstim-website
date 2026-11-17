@@ -42,7 +42,3 @@ canonical: /privacy-policy/
 <p>Visitor comments may be checked through an automated spam detection service.</p>
  
 </article>
-
-end post-entry
-
-end content

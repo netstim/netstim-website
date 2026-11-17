@@ -1,0 +1,16 @@
+<ul class="nav-list">
+  {{ range $i, $item := .items }}
+    {{ $href := partial "url.html" $item.url }}
+    {{ $active := eq $.page.RelPermalink $href }}
+    {{ $id := printf "%s-%d" $.id $i }}
+    <li class="nav-item">
+      <div class="nav-row">
+        <a href="{{ $href }}"{{ if $active }} aria-current="page"{{ end }}>{{ $item.title }}</a>
+        {{ with $item.children }}<button class="icon-button disclosure" type="button" data-disclosure aria-label="{{ $item.title }} pages" aria-controls="{{ $id }}" aria-expanded="false">{{ partial "icon.html" "chevron" }}</button>{{ end }}
+      </div>
+      {{ with $item.children }}
+        <div class="nav-panel" id="{{ $id }}" hidden>{{ partial "nav.html" (dict "page" $.page "items" . "id" $id) }}</div>
+      {{ end }}
+    </li>
+  {{ end }}
+</ul>
