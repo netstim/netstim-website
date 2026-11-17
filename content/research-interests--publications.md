@@ -1,0 +1,44 @@
+---
+title: Publications
+url: /research-interests/publications/
+family: publications
+crumbs:
+- title: Home
+  url: '@root@'
+- title: Science
+  url: '@root@research-interests/'
+- title: Publications
+related:
+- title: Connectomic DBS Book
+  url: '@root@research-interests/the-book/'
+- title: Publications
+  url: '@root@research-interests/publications/'
+- title: Posters
+  url: '@root@research-interests/posters/'
+- title: Videos & Talks
+  url: '@root@research-interests/videos-talks/'
+- title: Deep Brain Stimulation
+  url: '@root@research-interests/deep-brain-stimulation/'
+- title: Normative Connectomes
+  url: '@root@research-interests/normative-connectomes/'
+- title: STIMU-LATTE
+  url: '@root@research-interests/stimu-latte/'
+sidebar: true
+wordpress_id: 30
+date: '2017-12-27T11:27:42+00:00'
+modified: '2026-10-22T17:01:14+00:00'
+canonical: /research-interests/publications/
+---
+
+## **COVERARTS**
+
+<div class="gallery"><a aria-label="Annals of Neurology, Volume 84, Number 4" href="@root@wp-content/uploads/2018/11/2018-Annals_of_Neurology-1-783x1030.png" title="Annals of Neurology, Volume 84, Number 4"><netstim-image data='{"src":"media/3943237f1e12-2018-Annals_of_Neurology-1.png","original":"https://www.netstim.org/wp-content/uploads/2018/11/2018-Annals_of_Neurology-1.png","alt":"","width":2477}'/></a><a aria-label="Brain Volume 142, Issue 10 Cover" href="@root@wp-content/uploads/2019/09/IMG_5825.png" title="Brain Volume 142, Issue 10 Cover"><netstim-image data='{"src":"media/1248dda95d07-IMG_5825.png","original":"https://www.netstim.org/wp-content/uploads/2019/09/IMG_5825.png","alt":"","width":520}'/></a><a aria-label="BPS Volume 84, I1" href="@root@wp-content/uploads/2018/06/Weigand_et_al_BPS_cover.jpg" title="BPS Volume 84, I1"><netstim-image data='{"src":"media/225d0cc8e013-Weigand_et_al_BPS_cover.jpg","original":"https://www.netstim.org/wp-content/uploads/2018/06/Weigand_et_al_BPS_cover.jpg","alt":"","width":574}'/></a><a aria-label="NeuroImage Volume 107" href="@root@wp-content/uploads/2017/12/neuroimage_coverart_horn_lead_dbs_2015-1-766x1030.png" title="NeuroImage Volume 107"><netstim-image data='{"src":"media/8f770ed4a151-neuroimage_coverart_horn_lead_dbs_2015-1.png","original":"https://www.netstim.org/wp-content/uploads/2017/12/neuroimage_coverart_horn_lead_dbs_2015-1.png","alt":"","width":1032}'/></a><a aria-label="NeuroImage Volume 150" href="@root@wp-content/uploads/2018/01/ni_cover.png" title="NeuroImage Volume 150"><netstim-image data='{"src":"media/a25efc7b35a1-ni_cover.png","original":"https://www.netstim.org/wp-content/uploads/2018/01/ni_cover.png","alt":"","width":637}'/></a><a aria-label="Nature Neuroscience Volume 27 issue 3, March 2024" href="@root@wp-content/uploads/2024/02/twitter_GIFXpcJWUAAe5LD.jpg" title="Nature Neuroscience Volume 27 issue 3, March 2024"><netstim-image data='{"src":"media/1f54996ed175-twitter_GIFXpcJWUAAe5LD.jpg","original":"https://www.netstim.org/wp-content/uploads/2024/02/twitter_GIFXpcJWUAAe5LD.jpg","alt":"","width":620}'/></a><a aria-label="NeuroImage Volume 219 Cover" href="@root@wp-content/uploads/2020/09/Coverart_NI_2020_Treu_et_al-769x1030.png" title="NeuroImage Volume 219 Cover"><netstim-image data='{"src":"media/6d27467a0117-Coverart_NI_2020_Treu_et_al.png","original":"https://www.netstim.org/wp-content/uploads/2020/09/Coverart_NI_2020_Treu_et_al.png","alt":"","width":1490}'/></a><a aria-label="Neurology Volume 92, Number 14" href="@root@wp-content/uploads/2019/04/92.14-Apr-2-781x1030.png" title="Neurology Volume 92, Number 14"><netstim-image data='{"src":"media/c00d4b62961b-92.14-Apr-2.png","original":"https://www.netstim.org/wp-content/uploads/2019/04/92.14-Apr-2.png","alt":"","width":1237}'/></a><a aria-label="Annals of Neurology Volume 87, Issue 6 Cover" href="@root@wp-content/uploads/2020/05/Bildschirmfoto-2020-05-21-um-18.18.28-790x1030.png" title="Annals of Neurology Volume 87, Issue 6 Cover"><netstim-image data='{"src":"media/1389619eca96-Bildschirmfoto-2020-05-21-um-18.18.28.png","original":"https://www.netstim.org/wp-content/uploads/2020/05/Bildschirmfoto-2020-05-21-um-18.18.28.png","alt":"","width":1770}'/></a><a aria-label="BPS Volume 85, I9" href="@root@wp-content/uploads/2019/04/S0006322318X00092-753x1030.png" title="BPS Volume 85, I9"><netstim-image data='{"src":"media/f767bfdbfa72-S0006322318X00092.png","original":"https://www.netstim.org/wp-content/uploads/2019/04/S0006322318X00092.png","alt":"","width":1368}'/></a><a aria-label="NeuroImage Volume 221 Cover" href="@root@wp-content/uploads/2020/12/NI_2020b-792x1030.png" title="NeuroImage Volume 221 Cover"><netstim-image data='{"src":"media/fffb634541d4-NI_2020b.png","original":"https://www.netstim.org/wp-content/uploads/2020/12/NI_2020b.png","alt":"","width":5084}'/></a><a aria-label="NeuroImage Volume 224 Cover" href="@root@wp-content/uploads/2020/12/NI_2020c-772x1030.png" title="NeuroImage Volume 224 Cover"><netstim-image data='{"src":"media/3e3bebe7fbb4-NI_2020c.png","original":"https://www.netstim.org/wp-content/uploads/2020/12/NI_2020c.png","alt":"","width":4959}'/></a><a aria-label="Screen Shot 2022-05-20 at 8.24.35 AM" href="@root@wp-content/uploads/2022/05/Screen-Shot-2022-05-20-at-8.24.35-AM-777x1030.png" title="Screen Shot 2022-05-20 at 8.24.35 AM"><netstim-image data='{"src":"media/abc096aed12d-Screen-Shot-2022-05-20-at-8.24.35-AM.png","original":"https://www.netstim.org/wp-content/uploads/2022/05/Screen-Shot-2022-05-20-at-8.24.35-AM.png","alt":"","width":1288}'/></a><a aria-label="Neurology Volume 87 no. 17" href="@root@wp-content/uploads/2017/12/neurology_10_16_lead_dbs-1-811x1030.png" title="Neurology Volume 87 no. 17"><netstim-image data='{"src":"media/3242f73c7371-neurology_10_16_lead_dbs-1.png","original":"https://www.netstim.org/wp-content/uploads/2017/12/neurology_10_16_lead_dbs-1.png","alt":"","width":1142}'/></a><a aria-label="Annals of Neurology/ Volume 91, Number 5, May 2022 - 2022 - Annals of Neurology" href="@root@wp-content/uploads/2022/04/Screen-Shot-2022-04-17-at-2.27.26-PM-801x1030.png" title="Annals of Neurology/ Volume 91, Number 5, May 2022 - 2022 - Annals of Neurology"><netstim-image data='{"src":"media/58b1fb73b1db-Screen-Shot-2022-04-17-at-2.27.26-PM.png","original":"https://www.netstim.org/wp-content/uploads/2022/04/Screen-Shot-2022-04-17-at-2.27.26-PM.png","alt":"","width":1184}'/></a><a aria-label="Clinical Neurophysiology Volume 129 Cover" href="@root@wp-content/uploads/2018/03/A0EB8F00-EE7D-4E84-AF37-EDABCA068828-10244-000007D3ADD69C7A_tmp.png" title="Clinical Neurophysiology Volume 129 Cover"><netstim-image data='{"src":"media/48ec5654e20e-A0EB8F00-EE7D-4E84-AF37-EDABCA068828-10244-000007D3ADD69C7A_tmp.png","original":"https://www.netstim.org/wp-content/uploads/2018/03/A0EB8F00-EE7D-4E84-AF37-EDABCA068828-10244-000007D3ADD69C7A_tmp.png","alt":"","width":586}'/></a><a aria-label="Perspektiven Neurologie" href="@root@wp-content/uploads/2017/12/perspektiven_neurologie_cover-1-749x1030.jpg" title="Perspektiven Neurologie"><netstim-image data='{"src":"media/3756cb2ab55b-perspektiven_neurologie_cover-1.jpg","original":"https://www.netstim.org/wp-content/uploads/2017/12/perspektiven_neurologie_cover-1.jpg","alt":"","width":1024}'/></a><a aria-label="BPS 2026" href="@root@wp-content/uploads/2026/01/BPS_small.png" title="BPS 2026"><netstim-image data='{"src":"media/80f168c6667e-BPS_small.png","original":"https://www.netstim.org/wp-content/uploads/2026/01/BPS_small.png","alt":"","width":733}'/></a><a href="@root@wp-content/uploads/2026/10/AoN_Luo-783x1030.png" title="AoN_Luo"><netstim-image data='{"src":"media/cdc557cd7d63-AoN_Luo.png","original":"https://www.netstim.org/wp-content/uploads/2026/10/AoN_Luo.png","alt":"Annals of Neurology cover, November 2026, showing deep brain stimulation electrodes and brain networks","width":1178}'/></a></div>
+
+<div class="columns"><div class="column column-1-1"><h2><strong>PUBLICATIONS</strong></h2>
+<a id="zotpress-lib-79dba5b0098bd35c40ebe35903c37972"></a>
+<netstim-bibliography data="{}"></netstim-bibliography><!-- .zp-Browse -->
+</div></div>
+
+---
+
+<div class="action-row"><a aria-label="Also check out our Conference Posters" class="action" href="@root@research-interests/posters/">Also check out our Conference Posters</a></div>

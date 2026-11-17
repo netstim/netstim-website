@@ -1,0 +1,96 @@
+---
+title: Normative Connectomes
+url: /research-interests/normative-connectomes/
+family: page
+crumbs:
+- title: Home
+  url: '@root@'
+- title: Science
+  url: '@root@research-interests/'
+- title: Normative Connectomes
+related:
+- title: Connectomic DBS Book
+  url: '@root@research-interests/the-book/'
+- title: Publications
+  url: '@root@research-interests/publications/'
+- title: Posters
+  url: '@root@research-interests/posters/'
+- title: Videos & Talks
+  url: '@root@research-interests/videos-talks/'
+- title: Deep Brain Stimulation
+  url: '@root@research-interests/deep-brain-stimulation/'
+- title: Normative Connectomes
+  url: '@root@research-interests/normative-connectomes/'
+- title: STIMU-LATTE
+  url: '@root@research-interests/stimu-latte/'
+sidebar: true
+wordpress_id: 110
+date: '2017-12-29T11:56:26+00:00'
+modified: '2025-08-07T09:13:11+00:00'
+canonical: /research-interests/normative-connectomes/
+---
+
+## Normative Connectomes
+
+Since 2014, we worked on estimating “**average wiring diagrams**” of the human brain. Based on diffusion-weighted or resting-state functional MRI data of large cohorts of subjects/patients, this line of work focused on running whole-brain tractography or functional connectivity analyses, warping individual connectomes into standard space and then **averaging the results** across the group of subjects.
+
+In **2014**, [we published a first article](https://www.ncbi.nlm.nih.gov/pubmed/24099851) under the lead of [Felix Blankenburg](https://www.researchgate.net/profile/Felix_Blankenburg) describing the effort of a **first structural-functional MNI connectome**. There is a [small additional article](https://www.sciencedirect.com/science/article/pii/S2352340915001912) associated with the data release of this first connectome. **2016**, we [**replicated results** based on a much larger cohort of healthy subjects and **validated** the use of such normative connectomes by replicating multiple connectomic studies directly within template space and based on the group connectome](https://www.google.de/search?q=blankenburg+horn+neuroimage&oq=blankenburg+horn+neuroimage&aqs=chrome..69i57.4419j0j1&sourceid=chrome&ie=UTF-8) only.
+
+In **2017**, a [first article under the lead of](http://onlinelibrary.wiley.com/doi/10.1002/hbm.23594/abstract)[Andrea A Kühn](https://www.researchgate.net/profile/Andrea_Kuehn2) [**made use** of such normative connectomes](http://onlinelibrary.wiley.com/doi/10.1002/hbm.23594/abstract) by combining connectivity measures with **electrophysiological recordings** of the subcortex. This novel connectome in use here was based on high-quality multishell diffusion [data acquired within the human connectome project](https://www.humanconnectome.org/study/hcp-young-adult/document/mgh-adult-diffusion-data-acquisition-details) ([Setsompop 2013](https://www.ncbi.nlm.nih.gov/pubmed/23707579)).
+
+<p><a href="https://www.ncbi.nlm.nih.gov/pubmed/28163141">A second article</a> published under the lead of <a href="https://www.researchgate.net/profile/Michael_Fox11">Michael D Fox</a> explored <strong>connectivity profiles</strong> of literature based <strong>deep brain stimulation targets</strong> using normative connectomes. This made use of a 1000-healthy subject <strong>functional connectome </strong>based on data off the Harvard <a href="http://neuroinformatics.harvard.edu/gsp/">genomic superstruct project</a> that is also used on <a href="https://www.researchgate.net/deref/http%3A%2F%2Fneurosynth.org" rel="noopener noreferrer" target="_blank">neurosynth.org</a> and was both preprocessed and provided by <a href="https://www.researchgate.net/profile/BT_Thomas_Yeo">Thomas Yeo</a> (<a href="https://www.researchgate.net/publication/51201884_The_organization_of_the_human_cerebral_cortex_estimated_by_functional_correlation">Yeo 2011</a>).</p>
+
+Finally, within work of a [third article](https://www.ncbi.nlm.nih.gov/pubmed/28586141), both functional and structural average connectomes from **patients** suffering from **Parkinson’s Disease** were created (using data of the [PPMI project](http://www.ppmi-info.org/); [ppmi-info.org](http://www.ppmi-info.org/)).
+
+Most normative connectomes are available for direct download within the Lead Neuroimaging Suite ([leadsuite.io](http://leadsuite.io/))
+
+<div class="image-block"><netstim-image data='{"src":"media/35ea28e051e9-Bildschirmfoto-2017-12-29-um-13.12.18-1500x1107.png","original":"https://www.netstim.org/wp-content/uploads/2017/12/Bildschirmfoto-2017-12-29-um-13.12.18-1030x760.png","alt":"","width":1030}'/></div>
+
+## List of currently available connectomes
+
+<ul>
+<li><strong>Structural normative connectomes</strong>
+<ul>
+<li>Structural group connectome of <strong>19 subjects </strong>[Gibbs-tracker] (<a href="https://www.ncbi.nlm.nih.gov/pubmed/24099851" rel="noopener noreferrer" target="_blank">Horn 2013</a>)<br/>
+[<a href="http://www.lead-dbs.org/release/download.php?id=group2013">Direct download current version v1.0</a>]</li>
+<li>Structural group connectome of <strong>169 NKI-RS subjects</strong> [Gibbs-tracker] (<a href="https://www.ncbi.nlm.nih.gov/pubmed/26327244" rel="noopener noreferrer" target="_blank">Horn 2016</a>)<br/>
+[<a href="http://www.lead-dbs.org/release/download.php?id=group2016">Direct download current version v1.0</a>; <a href="https://www.nitrc.org/projects/gibbsconnectome/" rel="noopener noreferrer" target="_blank">Download via NITRC</a>]</li>
+<li>Structural group connectome of <strong>32 Adult Diffusion MGH-USC HCP subjects</strong> [GQI fiber tracking] (Dataset: <a href="http://doi.org/10.1016/j.neuroimage.2013.05.078" rel="noopener noreferrer" target="_blank">Setsompop 2013</a>; processing: <a href="https://www.ncbi.nlm.nih.gov/pubmed/28163141" rel="noopener noreferrer" target="_blank">Horn 2017</a>)<br/>
+[<a href="http://www.lead-dbs.org/release/download.php?id=group2017">Direct download current version v1.2</a>; older versions: <a href="https://filedn.com/lsPIJ4ragTWjjmV6PvlDQLu/data/older_versions/groupconnectome_HCP_MGH_32fold_horn_2017_v1.1.zip">v1.1</a>, <a href="https://filedn.com/lsPIJ4ragTWjjmV6PvlDQLu/data/older_versions/groupconnectome_HCP_MGH_30fold_horn_2017_v1.0.zip">v1.0</a>]</li>
+<li>Structural group connectome of <strong>85 PPMI PD-patients</strong> [GQI fiber tracking] (Dataset: <a href="http://doi.org/10.1016/j.pneurobio.2011.09.005" rel="noopener noreferrer" target="_blank">Marek 2011</a>; processing: <a href="https://www.ncbi.nlm.nih.gov/pubmed/28536045" rel="noopener noreferrer" target="_blank">Ewert 2017</a>)<br/>
+[<a href="http://www.lead-dbs.org/release/download.php?id=group2017_ppmi">Direct download current version v1.1</a>; older versions: <a href="https://filedn.com/lsPIJ4ragTWjjmV6PvlDQLu/data/older_versions/groupconnectome_ppmi_90_ewert_2017_v1.0.zip">v1.0</a>]</li>
+<li>Structural group connectome of <strong>985 HCP subjects</strong> [GQI fiber tracking]: dTOR-985 (<a href="https://doi.org/10.1038/s41597-024-03197-0" rel="noopener noreferrer" target="_blank">Elias 2024</a>)<br/>
+[Scripts and datasets on <a href="https://doi.org/10.6084/m9.figshare.c.6844890.v1" rel="noopener noreferrer" target="_blank">FigShare</a>; <a href="https://www.lead-dbs.org/release/download.php?id=dTOR985_Quarter">Quarter version</a>; <a href="https://www.lead-dbs.org/release/download.php?id=dTOR985_Half">Half version</a>; <a href="https://www.lead-dbs.org/release/download.php?id=dTOR985_Full">Full version</a>]</li>
+</ul>
+</li>
+</ul>
+
+<ul>
+<li><strong>Functional normative connectomes</strong>
+<ul>
+<li>Resting-state functional group connectome of <strong>1000 <a href="https://www.neuroinfo.org/gsp/">GSP</a> healthy subjects</strong>, can be directly used for network mapping within Lead-DBS (Lead Mapper and NetworkMapping Explorer), preprocessed by Bassam Al-Fatly (<a href="https://doi.org/10.7910/DVN/KKTJQC">Cohen 2023</a>). Install: download and extract all <strong>*.tar</strong> files from the <a href="https://doi.org/10.7910/DVN/KKTJQC">Harvard Dataverse</a> repository, rename the extracted connectome folder to <strong>GSP 1000 v2 (Cohen 2023)</strong>, then download <strong>dataset_info.json</strong>, <strong>dataset_info.mat</strong> and <strong>dataset_volsurf.mat</strong> from the same repository and place them into the renamed connectome folder.</li>
+<li>Resting-state functional group connectome of <strong>74 PPMI PD-patients, 15 controls</strong> (Dataset: <a href="http://doi.org/10.1016/j.pneurobio.2011.09.005" rel="noopener noreferrer" target="_blank">Marek 2011</a>; processing: <a href="http://onlinelibrary.wiley.com/doi/10.1002/ana.24974/abstract" rel="noopener noreferrer" target="_blank">Horn 2017</a>)<br/>
+[<a href="http://www.lead-dbs.org/release/download.php?id=fgroup2017_ppmi">Direct download current version v1.0</a>]</li>
+<li>Resting-state functional group connectome of <strong>75 Toronto PD-patients</strong> (Detailed description: <a href="https://doi.org/10.5281/zenodo.4310182" rel="noopener noreferrer" target="_blank">Zenodo</a>; processing: <a href="http://onlinelibrary.wiley.com/doi/10.1002/ana.24974/abstract" rel="noopener noreferrer" target="_blank">Horn 2017</a>)<br/>
+[<a href="https://www.lead-dbs.org/release/download.php?id=TorPD">Direct download current version v1.0</a>]</li>
+<li>
+Resting-state functional group connectome of <strong>100 typically developing children</strong> (6-18 yrs) assembled from <a href="https://fcon_1000.projects.nitrc.org/indi/CoRR/html/nyu_2.html" rel="noopener noreferrer" target="_blank">NYU 2</a> sub-cohort of the <a href="https://fcon_1000.projects.nitrc.org/indi/CoRR/html/index.html" rel="noopener noreferrer" target="_blank">Consortium for Reliability and Reproducibility</a>. The raw data was preprocessed using a set of multiple neuroimaging pipelines (SPM, FSL and Lead-DBS). The timeseries were normalized to the <a href="https://nist.mni.mcgill.ca/pediatric-atlases-4-5-18-5y/" rel="noopener noreferrer" target="_blank">pediatric MNI space</a> and integrated in Lead-DBS as a ready-to-read timeseries matrices using Lead-Connectome Mapper. The connectome is suitable to use with data normalized to the aforementioned pediatric space. For further details, please refer to <a href="https://doi.org/10.1016/j.nicl.2023.103449" rel="noopener noreferrer" target="_blank">Al-Fatly 2023</a>. [<a href="https://www.lead-dbs.org/release/download.php?id=PedrsfMRI">Direct download</a>]
+</li>
+</ul>
+</li>
+</ul>
+
+<div class="action-row"><a aria-label="Download normative connectomes (via Lead Neuroimaging Suite)" class="action external" href="http://www.lead-dbs.org/?page_id=23" rel="noopener noreferrer" target="_blank">Download normative connectomes (via Lead Neuroimaging Suite)</a></div>
+
+## Applications
+
+Normative connectomes **cannot replace patient/subject-specific connectivity information** but are **useful** in scenarios where subject-specific data is **not available** and cannot be acquired. This often includes **clinical applications** such as:
+
+- **Deep Brain Stimulation**: After surgery, patients cannot be scanned in the MRI without restrictions, acquiring high quality data is difficult if not impossible (e.g. Horn [2017a](http://onlinelibrary.wiley.com/doi/10.1002/ana.24974/abstract),[b](https://www.ncbi.nlm.nih.gov/pubmed/28163141),[c](http://onlinelibrary.wiley.com/doi/10.1002/hbm.23594/abstract)).
+- Other forms of Brain Stimulation: Similar concepts may apply to noninvasive brain stimulation such as TMS (e.g. [Weigand 2017](http://doi.org/10.1016/j.biopsych.2017.10.028))
+- **Stroke**: After stroke, patients can undergo MRI scans, but their brain structure is modified by the stroke event. If researchers are interested in how connectivity was before the stroke event, normative connectomes may at least give a useful hint (e.g. [Boes 2015](http://doi.org/10.1093/brain/awv228), [Laganiere 2016](http://doi.org/10.1212/WNL.0000000000002741), [Fischer 2016](http://doi.org/10.1212/WNL.0000000000003404), [Darby 2016](http://doi.org/10.1093/brain/aww288) & [2017](http://doi.org/10.1073/pnas.1706587115), [Fasano 2017](http://doi.org/10.1002/ana.24845))
+- **Analysing large databases**: It is often difficult if not impossible to acquire connectivity data from large cohorts of patients/subjects that are analysed retrospectively. Still, such databases can sometimes yield highly valuable information and the combination with normative connectomes can yield further information (e.g. [Horn 2017a](http://onlinelibrary.wiley.com/doi/10.1002/ana.24974/abstract)).
+
+## Examples / Figures
+
+<div class="gallery"><a aria-label="Use of a structural connectome to analyze connectivity between DBS electrodes and other brain regions" href="@root@wp-content/uploads/2017/12/connectome_black-1030x883.png" title="Use of a structural connectome to analyze connectivity between DBS electrodes and other brain regions"><netstim-image data='{"src":"media/53c98ce457d1-connectome_black-845x684.png","original":"https://www.netstim.org/wp-content/uploads/2017/12/connectome_black-495x400.png","alt":"","width":495}'/></a><a aria-label="First normative structural connectome created (Horn 2014)" href="@root@wp-content/uploads/2017/12/The_Human_Connectome-1030x804.png" title="First normative structural connectome created (Horn 2014)"><netstim-image data='{"src":"media/226e8726f54c-The_Human_Connectome-845x684.png","original":"https://www.netstim.org/wp-content/uploads/2017/12/The_Human_Connectome-495x400.png","alt":"","width":495}'/></a><a aria-label="Use of a structural connectome to analyze connectivity between DBS electrodes and other brain regions" href="@root@wp-content/uploads/2017/12/connectome_example.png" title="Use of a structural connectome to analyze connectivity between DBS electrodes and other brain regions"><netstim-image data='{"src":"media/11fe84150513-connectome_example-845x684.png","original":"https://www.netstim.org/wp-content/uploads/2017/12/connectome_example-495x400.png","alt":"","width":495}'/></a><a aria-label="Use of normative connectome to visualize structural connections of the default mode network (Horn 2014)" href="@root@wp-content/uploads/2017/12/fig_4.001.png" title="Use of normative connectome to visualize structural connections of the default mode network (Horn 2014)"><netstim-image data='{"src":"media/284aba151dbf-fig_4.001-495x400.png","original":"https://www.netstim.org/wp-content/uploads/2017/12/fig_4.001-495x400.png","alt":"","width":495}'/></a><a aria-label="Validation of a structural connectome in standard space (Horn 2016)" href="@root@wp-content/uploads/2017/12/fig_8-1030x412.png" title="Validation of a structural connectome in standard space (Horn 2016)"><netstim-image data='{"src":"media/16c6d04e0cec-fig_8-495x400.png","original":"https://www.netstim.org/wp-content/uploads/2017/12/fig_8-495x400.png","alt":"","width":495}'/></a><a aria-label="Functional connectivity predictive of clinical outcome of DBS patients suffering from Parkinson’s Disease – created using a normative functional connectome (Horn 2017)" href="@root@wp-content/uploads/2017/12/fMRI-997x1030.png" title="Functional connectivity predictive of clinical outcome of DBS patients suffering from Parkinson’s Disease – created using a normative functional connectome (Horn 2017)"><netstim-image data='{"src":"media/8db648f2a4ad-fMRI-845x684.png","original":"https://www.netstim.org/wp-content/uploads/2017/12/fMRI-495x400.png","alt":"","width":495}'/></a></div>

@@ -1,0 +1,702 @@
+- mode: main
+  body: '<div class="columns"><div class="column column-1-1"><h2>People</h2>
+
+
+    <p>Thank you very much for your interest in our group.</p>
+
+    <p>Our research focusses on the following central questions:</p>
+
+    <ul>
+
+    <li>How does the human brain respond to focal stimuli applied by invasive and noninvasive neuromodulation methods
+
+    <ul>
+
+    <li>Specifically, we study the effects of deep brain stimulation on small brain nuclei</li>
+
+    </ul>
+
+    </li>
+
+    <li>How do distributed brain networks respond to such stimuli
+
+    <ul>
+
+    <li>We use noninvasive techniques like resting-state fMRI and diffusion-weighted MRI to address this question</li>
+
+    </ul>
+
+    </li>
+
+    <li>How does DBS electrode placement affect
+
+    <ul>
+
+    <li>Clinical</li>
+
+    <li>Neural</li>
+
+    <li>or behavioral response</li>
+
+    </ul>
+
+    </li>
+
+    </ul>
+
+    <p>In second line, we’re highly interested in structural and functional connectomics as well as detailed anatomical
+    definitions of the human brain.</p>
+
+
+
+    <div class="image-block"><netstim-image data=''{"src":"media/12be6d1b284a-group_cut-1536x604.png","original":"https://www.netstim.org/wp-content/uploads/2025/12/group_cut-705x277.png","alt":"","width":705}''/><small
+    class="attribution">©Michael Wodak/MedizinFotoKöln</small></div>
+
+    <p>Some of our lab members take part in developing the open-source toolbox Lead-DBS – which has <a href="http://www.lead-dbs.org/about">become
+    a multi-institutional endeavor</a>.</p>
+
+
+    <div class="action-row"><a aria-label="Find out more about Lead-DBS" class="action external" href="http://www.lead-dbs.org"
+    rel="noopener noreferrer" target="_blank">Find out more about Lead-DBS</a></div></div></div>
+
+
+    <div class="columns"><div class="column column-3-4"><h2>Current Members</h2>
+
+    </div></div>'
+- mode: wide
+  body: '<div class="columns"><div class="column column-3-4"><h2>Andreas Horn</h2>
+
+    </div></div>
+
+
+    <div class="columns"><div class="column column-3-4"><p>Before bringing to life the NetStim Lab in April 2019,
+    Andreas worked as a postdoc at the <a href="http://www.brainnetworkstim.com/">Laboratory for Brain Network Imaging
+    and Modulation</a> headed by Prof. Michael Fox at Harvard. Prior to that, he completed an MD/PhD with Prof.
+    Andrea Kühn in the <a href="https://neurologie.charite.de/forschung/arbeitsgruppen/bewegungsstoerungen_andrea_kuehn/">Movement
+    Disorders and Neuromodulation Section</a> at Charité Berlin, conjointly with a scientific appointment at the
+    laboratory of Prof. Felix Blankenburg (Bernstein Center for Computational Neuroscience / Max Planck Institute
+    for Human Development). Andreas also holds a Dr. med., which he obtained under the guidance of Prof. Cornelius
+    Weiller in Freiburg. As a PI he is affiliated with the PhD program of the <a href="https://www.ecn-berlin.de/">Einstein
+    Center for Neurosciences Berlin</a> and the <a href="https://medical-neurosciences.charite.de/en/">International
+    Graduate Program Medical Neurosciences</a> at Charité Berlin, and teaches medical as well as postgraduate-level
+    courses.</p>
+
+    <p>Within the scope of his scientific work, Andreas is keenly interested in the interactions between the basal
+    ganglia and the cerebral cortex. Phylogenetically, both originate from the peduncular hypothalamus and form
+    a system optimized in controlling our environment, first and foremost by means of action (e.g., motor output).
+    Hence, Andreas strives to explore network connectivity and causality in this system, the human connectome and
+    its structure-function relationship. As a clinical case of connectomics, he studies effects of deep brain stimulation
+    (DBS) on aberrant circuitries that lead to movement disorders. These interests are often realized by furthering
+    development of the Lead-DBS toolbox, which Andreas envisions as a collaborative platform for the refinement
+    and scientific application of methods to study how DBS interacts with the brain.</p>
+
+    <p>When not in the lab, Andreas may be found marveling at the invigorating powers of the coffee machine in the
+    kitchen or hidden in the lab’s cooler eating ice cream. He may (or may not) have played in dubious rock bands
+    with doubtful musical output back in the days, but nonetheless his love for music has lived on until today.
+    Apart from that, Andreas also has a thing for podcasts (he even hosts one himself – it’s called <a href="http://stimulatingbrains.org/">Stimulating
+    Brains</a>!) and the ramblings of Jerome Salinger, whom he credits as his favorite author. Ningfei Li gave him
+    a drone once, which is amazing, but if you see Andy and his drone you better watch out because he has only been
+    crashing into trees with it so far.</p>
+
+
+    <div class="action-row"><a aria-label="More about Andreas" class="action" href="@root@about-us/about-us/andreashorn/">More
+    about Andreas</a></div>
+
+    <div class="action-row"><a aria-label="CV" class="action external" href="https://www.netstim.org/Horn_CV.pdf"
+    rel="noopener noreferrer" target="_blank">CV</a></div></div><div class="column column-1-4">
+
+    <div class="image-block"><netstim-image data=''{"src":"media/d0b57f54e082-horn_andreas_06293h-1-1365x2048.jpg","original":"https://www.netstim.org/wp-content/uploads/2025/12/horn_andreas_06293h-1-200x300.jpg","alt":"","width":200}''/><small
+    class="attribution">©Michael Wodak/MedizinFotoKöln</small></div></div></div>
+
+
+    <div class="columns"><div class="column column-1-3"><article class="icon-box"><header aria-label="Icon: Research
+    Gate"><h3 class="icon-heading"><a href="https://www.researchgate.net/profile/Andreas_Horn" rel="noopener noreferrer"
+    target="_blank" title="Research Gate">Research Gate</a></h3></header></article>
+
+    <article class="icon-box"><header aria-label="Icon: Google Scholar"><h3 class="icon-heading"><a href="https://scholar.google.de/citations?user=1jF_5-0AAAAJ&amp;hl=en"
+    rel="noopener noreferrer" target="_blank" title="Google Scholar">Google Scholar</a></h3></header></article></div><div
+    class="column column-1-3"><article class="icon-box"><header aria-label="Icon: Twitter"><h3 class="icon-heading"><a
+    href="http://www.twitter.com/andreashorn_" rel="noopener noreferrer" target="_blank" title="Twitter">Twitter</a></h3></header></article>
+
+    <article class="icon-box"><header aria-label="Icon: Publons"><h3 class="icon-heading"><a href="http://publons.com/a/1317885/"
+    rel="noopener noreferrer" target="_blank" title="Publons">Publons</a></h3></header></article></div><div class="column
+    column-1-3"><article class="icon-box"><header aria-label="Icon: ORCiD"><h3 class="icon-heading"><a href="https://orcid.org/0000-0002-0695-6025"
+    rel="noopener noreferrer" target="_blank" title="ORCiD">ORCiD</a></h3></header></article>
+
+    <article class="icon-box"><header aria-label="Icon: Researcher ID"><h3 class="icon-heading"><a href="http://researcherid.com/rid/B-8988-2017"
+    rel="noopener noreferrer" target="_blank" title="Researcher ID">Researcher ID</a></h3></header></article></div></div>'
+- mode: wide
+  body: '<div class="columns"><div class="column column-3-4"><h2>Ilkem Aysu Sahin</h2>
+
+    </div></div>
+
+
+    <div class="columns"><div class="column column-3-4"><p>Aysu is an MD/PhD student at NetStim, Berlin since October
+    2022. She has a PhD fellowship from Einstein Center of Neurosciences, where she also is a student representative.
+    In 2025, she moved to Cologne to continue her research as a postdoctoral fellow at the University of Cologne,
+    employed by the Uniklinik Köln.</p>
+
+    <p>During her medical studies at Hacettepe University, Turkey, she was fascinated by the complexity of the human
+    brain and amazed by the avenues that medical imaging has created. Her broad interests include movement disorders
+    and connectomics. She believes in the value of neuromodulation in improving patients’ lives as well as its potential
+    to shed light onto disease mechanisms. Her current project focuses on understanding the connections responsible
+    for clinical improvement after deep brain stimulation for Tourette’s syndrome across different targets.</p>
+
+    <p>After her PhD, she wants to continue her career in medicine and become a clinician scientist who is equipped
+    with computational tools to tackle clinical questions. Brainstorming and problem solving as a team are highlights
+    of being a scientist for her. She is passionate about high quality education and would like to improve as a
+    teacher along her PhD. In her free time, she enjoys rock climbing and even more to cheer on climbing friends
+    from a hammock. She is interested in art and is currently trying to learn how to draw.</p>
+
+    <blockquote>
+
+
+    </blockquote>
+
+
+    <blockquote>
+
+
+    </blockquote>
+
+    </div><div class="column column-1-4">
+
+    <div class="image-block"><netstim-image data=''{"src":"media/5ef9e316d435-sahin_ilkem_aysu_06039h-1365x2048.jpg","original":"https://www.netstim.org/wp-content/uploads/2025/12/sahin_ilkem_aysu_06039h-200x300.jpg","alt":"","width":200}''/><small
+    class="attribution">©Michael Wodak/MedizinFotoKöln</small></div></div></div>
+
+
+    <div class="columns"><div class="column column-1-3"><article class="icon-box"><header aria-label="Icon: Research
+    Gate"><h3 class="icon-heading"><a href="https://www.researchgate.net/profile/Ilkem-Sahin?ev=hdr_xprf" rel="noopener
+    noreferrer" target="_blank" title="Research Gate">Research Gate</a></h3></header></article></div><div class="column
+    column-1-3"><article class="icon-box"><header aria-label="Icon: LinkedIn"><h3 class="icon-heading"><a href="https://www.linkedin.com/in/ilkem-aysu-sahin/"
+    rel="noopener noreferrer" target="_blank" title="LinkedIn">LinkedIn</a></h3></header></article></div><div class="column
+    column-1-3"><article class="icon-box"><header aria-label="Icon: ORCiD"><h3 class="icon-heading"><a href="https://orcid.org/0009-0005-9951-374X"
+    rel="noopener noreferrer" target="_blank" title="ORCiD">ORCiD</a></h3></header></article></div></div>'
+- mode: wide
+  body: '<div class="columns"><div class="column column-3-4"><h2>Patricia Zvarova</h2>
+
+    </div></div>
+
+
+    <div class="columns"><div class="column column-3-4"><p>Patricia joined the Netstim lab as a fast-track PhD student
+    in October 2022, supported by the Einstein Center for Neuroscience fellowship. At the time, she was completing
+    her MSc degree in Medical Neurosciences at Charité, while already working on her PhD project. She also holds
+    a BSc (Hons) degree in Neuroscience, which she earned at the University of St Andrews in Scotland. In 2025,
+    she moved to Cologne to continue her research as a postdoctoral fellow at the University of Cologne, employed
+    by the Uniklinik Köln.</p>
+
+    <p>Patricia’s research interests primarily focus on understanding and developing methods for analysing neuroimaging
+    data. Recently, she also discovered a passion for coding. Currently, she is investigating the extent to which
+    neuroimaging data can explain variance in clinical improvement of patients after Deep Brain Stimulation (DBS).
+    Specifically, she is working with a sample of Parkinson’s disease patients. Her second project includes exploring
+    the ways by which we can improve the way we study brain functional connectivity. What she enjoys the most about
+    academia is the opportunity to delve into the knowledge that no one else might have learned before, and that
+    there is always an opportunity to learn something new.</p>
+
+    <p>Beyond her academic interests, Patricia enjoys reading, playing the guitar, painting, hiking, and powerlifting
+    (a random mix of hobbies in no particular order). As a child, her favourite book was an encyclopedia of dog
+    breeds. Feel free to quiz her on this topic – she loves dogs.</p>
+
+    </div><div class="column column-1-4">
+
+    <div class="image-block"><netstim-image data=''{"src":"media/b7f8fb26f18f-zvarova_patricia_06056h-1365x2048.jpg","original":"https://www.netstim.org/wp-content/uploads/2025/12/zvarova_patricia_06056h-200x300.jpg","alt":"","width":200}''/><small
+    class="attribution">©Michael Wodak/MedizinFotoKöln</small></div></div></div>
+
+
+    <div class="columns"><div class="column column-1-3"><article class="icon-box"><header aria-label="Icon: Research
+    Gate"><h3 class="icon-heading"><a href="https://www.researchgate.net/profile/Patricia-Zvarova/" rel="noopener
+    noreferrer" target="_blank" title="Research Gate">Research Gate</a></h3></header></article>
+
+    <article class="icon-box"><header aria-label="Icon: Github"><h3 class="icon-heading"><a href="https://github.com/patrizvar"
+    rel="noopener noreferrer" target="_blank" title="Github">Github</a></h3></header></article></div><div class="column
+    column-1-3"><article class="icon-box"><header aria-label="Icon: ORCiD"><h3 class="icon-heading"><a href="https://orcid.org/0009-0004-7831-8796"
+    rel="noopener noreferrer" target="_blank" title="ORCiD">ORCiD</a></h3></header></article>
+
+    <article class="icon-box"><header aria-label="Icon: LinkedIn"><h3 class="icon-heading"><a href="https://www.linkedin.com/in/patriciazvarova/"
+    rel="noopener noreferrer" target="_blank" title="LinkedIn">LinkedIn</a></h3></header></article></div><div class="column
+    column-1-3"><article class="icon-box"><header aria-label="Icon: Google Scholar"><h3 class="icon-heading"><a
+    href="https://scholar.google.com/citations?user=moL9DN0AAAAJ&amp;hl=en" rel="noopener noreferrer" target="_blank"
+    title="Google Scholar">Google Scholar</a></h3></header></article></div></div>'
+- mode: wide
+  body: '<div class="columns"><div class="column column-3-4"><h2>Pepsi the dog</h2>
+
+    </div></div>
+
+
+    <div class="columns"><div class="column column-3-4"><p>Pepsi joined the NetStim Lab in April 2026 as a Mental
+    Health Coach and Senior Scientist. While her formal background remains largely undocumented, her recent behavior
+    suggests considerable expertise in selective obedience and subtle emotional influence.<br/>
+
+    <br/>Her primary research interests focus on the processing of complex sensory information within the olfactory
+    system, as well as the activation of the nucleus accumbens. She regards with particular emphasis the temporal
+    dynamics of reward processing, most notably when induced by treats. Moreover, she is currently conducting an
+    observational study investigating whether the mere act of watching a door influences its likelihood of opening
+    more quickly. Preliminary results were, as expected, highly promising and have been submitted to <i>Nature</i>,
+    pending peer review and sufficient treat-based funding.<br/>
+
+    <br/>Outside of her scientific endeavors, Pepsi is known for her remarkable stage presence. Acting as an unofficial
+    double of Shakira, she demonstrates exceptional hip movements and vocal expression.</p>
+
+    </div><div class="column column-1-4">
+
+    <div class="image-block"><netstim-image data=''{"src":"media/1c6cdb003f13-Pepsi.png","original":"https://www.netstim.org/wp-content/uploads/2026/04/Pepsi-185x300.png","alt":"","width":185}''/></div></div></div>
+
+
+    <div class="columns"><div class="column column-1-3"><article class="icon-box"><header aria-label="Icon: LinkedIn"><h3
+    class="icon-heading"><a href="https://www.linkedin.com/in/pepsi-the-dog-542b6b403/" rel="noopener noreferrer"
+    target="_blank" title="LinkedIn">LinkedIn</a></h3></header></article></div></div>'
+- mode: wide
+  body: '<div class="columns"><div class="column column-3-4"><h2>Maike Mustin</h2>
+
+    </div></div>
+
+
+    <div class="columns"><div class="column column-3-4"><p>Maike joined the Netstim Lab in 2025 as a postdoctoral
+    researcher at Uniklinik Köln.</p>
+
+    </div><div class="column column-1-4">
+
+    <div class="image-block"><netstim-image data=''{"src":"media/a12ea1229a35-mustin_maike_06057h-1365x2048.jpg","original":"https://www.netstim.org/wp-content/uploads/2025/12/mustin_maike_06057h-200x300.jpg","alt":"","width":200}''/><small
+    class="attribution">©Michael Wodak/MedizinFotoKöln</small></div></div></div>
+
+
+    <div class="columns"><div class="column column-1-3"><article class="icon-box"><header aria-label="Icon: LinkedIn"><h3
+    class="icon-heading"><a href="https://www.linkedin.com/in/maike-mustin/?originalSubdomain=de" rel="noopener
+    noreferrer" target="_blank" title="LinkedIn">LinkedIn</a></h3></header></article>
+
+    <article class="icon-box"><header aria-label="Icon: Github"><h3 class="icon-heading"><a href="https://github.com/maike-mustin/"
+    rel="noopener noreferrer" target="_blank" title="Github">Github</a></h3></header></article></div></div>'
+- mode: wide
+  body: '<div class="columns"><div class="column column-3-4"><h2>Adriana Arrais</h2>
+
+    </div></div>
+
+
+    <div class="columns"><div class="column column-3-4"><p>Adriana joined the Netstim Lab in 2025 as a PhD student
+    at the University of Cologne, working at Uniklinik Köln. With a Bachelor’s and a Master’s degree in Bioengineering
+    from the Faculty of Engineering of the University of Porto, she is driven by a strong passion for developing
+    impactful technologies that improve quality of life and advance healthcare provision.</p>
+
+    <p>Her research focuses on personalized modeling of basal ganglia circuitry and on understanding how individual
+    brain connectivity can explain variability in motor outcomes following deep brain stimulation.</p>
+
+    <p>Beyond her enthusiasm for exploration and learning in research, Adriana enjoys physical exercise and the
+    quiet pleasure of a well-read book, finds renewal in nature, and believes that karaoke or a good laugh with
+    friends remains one of life’s most reliable forms of therapy.</p>
+
+    </div><div class="column column-1-4">
+
+    <div class="image-block"><netstim-image data=''{"src":"media/f37dba08280a-arrais_adriana_06048h-1365x2048.jpg","original":"https://www.netstim.org/wp-content/uploads/2025/12/arrais_adriana_06048h-200x300.jpg","alt":"","width":200}''/><small
+    class="attribution">©Michael Wodak/MedizinFotoKöln</small></div></div></div>
+
+
+    <div class="columns"><div class="column column-1-3"><article class="icon-box"><header aria-label="Icon: LinkedIn"><h3
+    class="icon-heading"><a href="https://www.linkedin.com/in/adrianarrais/?originalSubdomain=pt" rel="noopener
+    noreferrer" target="_blank" title="LinkedIn">LinkedIn</a></h3></header></article>
+
+    <article class="icon-box"><header aria-label="Icon: Research Gate"><h3 class="icon-heading"><a href="https://www.researchgate.net/profile/Adriana-Arrais"
+    rel="noopener noreferrer" target="_blank" title="Research Gate">Research Gate</a></h3></header></article></div></div>'
+- mode: wide
+  body: '<div class="columns"><div class="column column-3-4"><h2>Christine Paulus</h2>
+
+    </div></div>
+
+
+    <div class="columns"><div class="column column-3-4"><p>Christine joined the Netstim Lab in 2025 as a PhD student
+    at the Faculty of Medicine at the University of Cologne, working at Uniklinik Köln and the Institute of Neuroscience
+    and Medicine at Forschungszentrum Jülich. She holds a Bachelor’s degree in Psychology and a Research Master’s
+    degree in Cognitive and Clinical Neuroscience from Maastricht University. She is passionate about neuromodulation,
+    with a particular interest in symptom-specific deep brain stimulation.<br/>Her first project focuses on understanding
+    the network dynamics underlying language disorders such as aphasia. Specifically, she investigates how brain
+    connectivity can explain variability in language outcomes following stroke, with the goal of identifying network-based
+    markers that predict outcomes in independent lesion and deep brain stimulation cohorts.<br/>Beyond her enthusiasm
+    for network neuroscience and neuromodulation, Christine enjoys running, dinner evenings, and coffee dates with
+    friends.</p>
+
+    </div><div class="column column-1-4">
+
+    <div class="image-block"><netstim-image data=''{"src":"media/aad9d963d300-paulus_christine_lisa_marie_06035h-1365x2048.jpg","original":"https://www.netstim.org/wp-content/uploads/2025/12/paulus_christine_lisa_marie_06035h-200x300.jpg","alt":"","width":200}''/><small
+    class="attribution">©Michael Wodak/MedizinFotoKöln</small></div></div></div>
+
+
+    <div class="columns"><div class="column column-1-3"><article class="icon-box"><header aria-label="Icon: LinkedIn"><h3
+    class="icon-heading"><a href="https://www.linkedin.com/in/christine-paulus-689a56263/details/education/" rel="noopener
+    noreferrer" target="_blank" title="LinkedIn">LinkedIn</a></h3></header></article></div></div>'
+- mode: wide
+  body: '<div class="columns"><div class="column column-3-4"><h2>Ellen Younger</h2>
+
+    </div></div>
+
+
+    <div class="columns"><div class="column column-3-4"><p>Ellen joined the NetStim lab in 2026 as a postdoctoral
+    researcher, working across the Departments of Functional and Stereotactic Neurosurgery and Neuropediatrics at
+    the Uniklinik Köln. She holds a BPsych(Hons) and PhD in Neuroscience from Deakin University in Melbourne, Australia.</p>
+
+    <p>Ellen’s research interests include identifying disease-related brain networks and optimising therapeutic
+    brain stimulation, particularly in relation movement disorders. Her current project focuses on analysing deep
+    brain stimulation (DBS) electrode placements for childhood dystonia, with the aim of improving treatment outcomes
+    for patients with cerebral palsy and other dystonia-related conditions.</p>
+
+    <p>Outside research, Ellen is excited to travel and enjoy exploring her new surroundings in Germany.</p>
+
+    </div><div class="column column-1-4">
+
+    <div class="image-block"><netstim-image data=''{"src":"media/e7e57d70d846-bw_younger_ellen_00012h-1365x2048.png","original":"https://www.netstim.org/wp-content/uploads/2026/03/bw_younger_ellen_00012h-200x300.png","alt":"","width":200}''/><small
+    class="attribution">©Michael Wodak/MedizinFotoKöln</small></div></div></div>
+
+
+    <div class="columns"><div class="column column-1-3"><article class="icon-box"><header aria-label="Icon: Research
+    Gate"><h3 class="icon-heading"><a href="https://www.researchgate.net/profile/Ellen-Younger-2" rel="noopener
+    noreferrer" target="_blank" title="Research Gate">Research Gate</a></h3></header></article></div></div>'
+- mode: wide
+  body: '<div class="columns"><div class="column column-3-4"><h2>Jan Philipp Payonk</h2>
+
+    </div></div>
+
+
+    <div class="columns"><div class="column column-3-4"><p>Jan Philipp joined the NetStim Lab in 2026 as a postdoctoral
+    researcher in the Department of Functional and Stereotactic Neurosurgery at the Uniklinik Köln. He holds a Bachelor’s
+    and a Master’s degree in Mathematics from the University of Rostock, where he also received his PhD in Electrical
+    Engineering for his work on multi-scale in silico modeling of deep brain stimulation.</p>
+
+    <p>His research focuses on computational modeling of deep brain stimulation. He is particularly interested in
+    using experimental data to validate computational models and in combining modeling with clinical data to explore
+    dysfunctional brain circuits.</p>
+
+    <p>If you meet Jan Philipp outside the lab, chances are he’s either on the basketball court or on the hunt for
+    good food, and he’s always happy to talk about either one.</p>
+
+    </div><div class="column column-1-4">
+
+    <div class="image-block"><netstim-image data=''{"src":"media/a909312aef04-payonk-1463x2048.jpg","original":"https://www.netstim.org/wp-content/uploads/2026/03/payonk-214x300.jpg","alt":"","width":214}''/></div></div><div
+    class="column column-1-3"><article class="icon-box"><header aria-label="Icon: LinkedIn"><h3 class="icon-heading"><a
+    href="https://de.linkedin.com/in/jan-philipp-payonk-71b791279" rel="noopener noreferrer" target="_blank" title="LinkedIn">LinkedIn</a></h3></header></article></div></div>'
+- mode: wide
+  body: '<div class="columns"><div class="column column-3-4"><h2>Frauke Raaff</h2>
+
+    </div></div>
+
+
+    <div class="columns"><div class="column column-3-4"><p>Frauke joined the NetStim Lab in 2026 as the administrative
+    executive, working at Uniklinik Köln. She holds a Bachelor of Arts in Literary and Linguistic Studies from RWTH
+    Aachen University and is also a Certified Foreign Language Correspondent in English. After working as a research
+    assistant at RWTH centralized Biomaterial Bank Aachen and Schneider C. Lab (Gastroenterology) at Uniklinik Aachen
+    for almost 3,5 years and completing interdisciplinary modules in Neurolinguistics and Neuropsychology as part
+    of her course of studies, she is looking forward to the upcoming years at NetStim Lab.</p>
+
+    <p>When Frauke is not busy writing e-mails and maintaining office operations, she enjoys reading a good book,
+    exploring the outdoors with her dog Nils – a Corgi-Jack Russell Terrier Mix – and learning new languages. Recently,
+    she is trying to pick up Italian again, which she started learning back in High School. If you want to really
+    get her talking, ask her about Doctor Who. She’s been a Whovian for nearly two decades and it’s her comfort
+    show.</p>
+
+    </div></div>
+
+
+    <div class="columns"><div class="column column-1-3"><article class="icon-box"><header aria-label="Icon: LinkedIn"><h3
+    class="icon-heading"><a href="https://de.linkedin.com/in/frauke-raaff-8882a6226" rel="noopener noreferrer" target="_blank"
+    title="LinkedIn">LinkedIn</a></h3></header></article></div></div>'
+- mode: wide
+  body: '<div class="columns"><div class="column column-3-4"><h2>Lara Krüger</h2>
+
+    </div></div>
+
+
+    <div class="columns"><div class="column column-3-4"><p>Lara joined the NetStim lab in March 2026 for a research
+    rotation and her Master’s thesis as part of her M.Sc. in Clinical and Experimental Neurosciences at the University
+    of Cologne. She previously obtained her Bachelor’s degree in Psychology (cum laude) from Radboud University
+    in the Netherlands.<br/>Her research interests lie in neurological and psychiatric disorders and how neural
+    networks differ between healthy and pathological states. She plans to pursue a PhD in Neuroscience, after completing
+    her Master’s degree.<br/>In her free time, she can often be found (not entirely successfully) trying to relearn
+    French, enjoying dinner parties with friends, or watching handball. She enjoys exploring new sports places and
+    appreciates a good espresso – occasionally in the form of an espresso martini.</p>
+
+    </div><div class="column column-1-4">
+
+    <div class="image-block"><netstim-image data=''{"src":"media/db52efc3eae3-a49406be-7492-426b-b5e8-0415cc9b85a5-1536x1022.jpg","original":"https://www.netstim.org/wp-content/uploads/2026/04/a49406be-7492-426b-b5e8-0415cc9b85a5-300x200.jpg","alt":"","width":300}''/></div></div></div>'
+- mode: wide
+  body: '<div class="columns"><div class="column column-3-4"><h2>Richard Demann</h2>
+
+    </div></div>
+
+
+    <div class="columns"><div class="column column-3-4"><p>Richard joined the NetStim Lab in November 2025. He is
+    a medical student at the University of Cologne and previously spent time in labs at TU Munich, UCSF, and the
+    Mayo Clinic.<br/>Outside the lab, he enjoys reading, podcasts, and good food, and is slowly being buried by
+    his ever-growing mountain of Anki reviews.</p>
+
+    </div><div class="column column-1-4"><div class="image-block"><netstim-image data=''{"src":"media/32a303f35201-IMG_7312-1-1536x1536.jpeg","original":"https://www.netstim.org/wp-content/uploads/2026/05/IMG_7312-1-300x300.jpeg","alt":"","width":300}''/></div></div></div>
+
+
+    <div class="columns"><div class="column column-1-3"><article class="icon-box"><header aria-label="Icon: LinkedIn"><h3
+    class="icon-heading"><a href="https://de.linkedin.com/in/richard-demann-40791b213" rel="noopener noreferrer"
+    target="_blank" title="LinkedIn">LinkedIn</a></h3></header></article></div></div>'
+- mode: wide
+  body: '<div class="columns"><div class="column column-3-4"><h2>Benjamin Selaskowski</h2>
+
+    </div></div>
+
+
+    <div class="columns"><div class="column column-3-4"><p>Benjamin joined the NetStim Lab as a postdoctoral researcher
+    in January 2026. He initially studied biomedical engineering for a few semesters before switching to psychology.
+    During the five years he lived in the Netherlands, he completed a Bachelor of Science in Psychology at Radboud
+    University and the Donders Institute in Nijmegen, and a Master of Science at the University of Groningen. He
+    then worked as a neuropsychologist in the Department of Neurology at the University Hospital Göttingen, before
+    moving to the University Hospital Bonn, where he became involved in developing and evaluating digital therapeutic
+    methods for mental disorders and in non-invasive brain stimulation. In 2024, he received his PhD in Medical
+    Psychology from the University of Bonn.</p>
+
+    <p>
+
+    <p>At the Institute for Network Stimulation, his research is supported by DFG funding, giving him the opportunity
+    to focus on his main area of interest, the development of personalized protocols in TMS. He is interested in
+    how individualized brain mapping and circuit dynamics can guide stimulation targeting and improve treatment
+    response.</p>
+
+    <p>
+
+    <p>Benjamin has played tennis since the age of four, competed in teams for years and trained as a coach, though
+    he makes it onto the court only occasionally these days. He also enjoys reading other than scientific articles,
+    or listening to audiobooks and podcasts. He particularly enjoys traveling to France and generally to the sea.
+    Occasionally, he tries to recall his childhood piano lessons, only to give up in frustration.</p>
+
+    </p></p></div><div class="column column-1-4"><div class="image-block"><netstim-image data=''{"src":"media/be5aaff15edc-selaskowski_benjamin_netstim.jpeg","original":"https://www.netstim.org/wp-content/uploads/2026/06/selaskowski_benjamin_netstim-240x300.jpeg","alt":"","width":240}''/></div></div></div>
+
+
+    <div class="columns"><div class="column column-1-3"><article class="icon-box"><header aria-label="Icon: LinkedIn"><h3
+    class="icon-heading"><a href="https://de.linkedin.com/in/benjamin-selaskowski" rel="noopener noreferrer" target="_blank"
+    title="LinkedIn">LinkedIn</a></h3></header></article></div></div>'
+- mode: wide
+  body: '<div class="columns"><div class="column column-3-4"><h2>Michael Ferres</h2>
+
+    </div></div>
+
+
+    <div class="columns"><div class="column column-3-4"><p>Michael joined the NetStim lab in 2026 as a PhD Student
+    parallel to his training as a children’s psychotherapist at the UKK. He completed his masters degree in psychology
+    at the University of Bonn under Benjamin Selaskowski and joined his project to continue working on connectivity
+    analyses in the context of TMS intervention.<br/>His research interests encompass TMS stimulation targets and
+    possible individualization, TMS treatment effects and identifying lifespan differences in impairment of cognitive
+    control.<br/>Besides his interest in clinical psychology, Michael enjoys football, swimming, playing and crafting
+    the classical guitar and cooking authentic Italian dishes.</p>
+
+    </div></div>'
+- mode: wide
+  body: '<div class="columns"><div class="column column-3-4"><h2>Celine Kölsch</h2>
+
+    </div></div>
+
+
+    <div class="columns"><div class="column column-3-4">
+
+    <p>Celine joined the NetStim Lab in August 2026, where she supports a clinical study investigating personalized
+    transcranial magnetic stimulation in adults with attention-deficit/hyperactivity disorder. She holds a Bachelor
+    of Science and a Master of Science in Psychology from the University of Trier and is currently completing her
+    training as a psychotherapist in Cologne alongside her research.</p>
+
+
+
+    <p>In parallel, Celine is pursuing her PhD at the University of Oldenburg, where her research focuses on the
+    safety, tolerability, and adverse effects of non-invasive brain stimulation in the treatment of mental disorders.</p>
+
+
+
+    <p>Despite what her last name might suggest, Celine is not originally from Cologne. She grew up in a small wine
+    village along the Moselle and even served as a wine princess there. Outside of research and clinical work, she
+    enjoys fitness and staying active, travelling, and spending time with friends and family.</p>
+
+
+    </div></div>'
+- mode: wide
+  body: '<div class="columns"><div class="column column-3-4"><h2>Helen Friedrich</h2>
+
+    </div></div>
+
+
+    <div class="columns"><div class="column column-3-4"><p>Helen is an MD student who joined the lab in Boston in
+    April 2023, where she focuses on her MD thesis project aimed at creating a detailed brain atlas for DBS imaging.</p>
+
+    <p>Her journey into medicine began with a foundation in psychology, where her work with neuropsychiatric patients
+    sparked a profound interest in neurology and functional neuroanatomy. This experience led her to explore imaging
+    research with the goal to bridge clinical practice with scientific inquiry. In her bachelor’s thesis, she used
+    fMRI and eye-tracking to probe brain networks involved in social attention.</p>
+
+    <p>Working with neuropsychiatric patients was a key motivator in her decision to transition into medical school.
+    She pursues an additional degree in translational medicine to lay the foundation for a clinician-scientist career.
+    Her favorite topics are anatomy and intensive care medicine.</p>
+
+    <p>Helen is excited to immerse in Boston’s academic environment and is committed to making a meaningful contribution
+    to the field through her atlas project.</p>
+
+    <p>Beyond her interest in the brain, Helen is passionate about interior design and loves spending time in the
+    mountains, either hiking or skiing.</p>
+
+    </div><div class="column column-1-4">
+
+    <div class="image-block"><netstim-image data=''{"src":"media/460a43f6a7f8-Helen_Friedrich.jpg","original":"https://www.netstim.org/wp-content/uploads/2023/12/Helen_Friedrich-180x300.jpg","alt":"","width":180}''/></div></div></div>
+
+
+    <div class="columns"><div class="column column-1-3"><article class="icon-box"><header aria-label="Icon: Research
+    Gate"><h3 class="icon-heading"><a href="https://www.researchgate.net/profile/Helen-Friedrich" rel="noopener
+    noreferrer" target="_blank" title="Research Gate">Research Gate</a></h3></header></article></div></div>'
+- mode: main
+  body: '<div class="columns"><div class="column column-3-4"><h2>Lab Alumni</h2>
+
+    </div></div>'
+- mode: wide
+  body: '<div class="columns"><div class="column column-1-5"><h2>Ningfei Li</h2>
+
+
+    <div class="image-block"><netstim-image data=''{"src":"media/890aba146760-IMG_5434-1044x1500.jpeg","original":"https://www.netstim.org/wp-content/uploads/2020/02/IMG_5434-209x300.jpeg","alt":"","width":209}''/></div>
+
+    <article class="icon-box"></article>
+
+    <article class="icon-box"></article>
+
+    <article class="icon-box"></article>
+
+    <article class="icon-box"></article></div><div class="column column-1-5"><h2>Zhongke Mei</h2>
+
+
+
+    <div class="image-block"><netstim-image data=''{"src":"media/c79d070d18bd-bw_Zhognke_Mei.png","original":"https://www.netstim.org/wp-content/uploads/2026/03/bw_Zhognke_Mei-240x300.png","alt":"","width":240}''/></div></div><div
+    class="column column-1-5"><h2>Nanditha Rajamani</h2>
+
+
+
+    <div class="image-block"><netstim-image data=''{"src":"media/63056f95b81e-F435FBC1-6659-45BF-A2D6-5813C6D15579_1_105_c.jpeg","original":"https://www.netstim.org/wp-content/uploads/2021/05/F435FBC1-6659-45BF-A2D6-5813C6D15579_1_105_c-225x300.jpeg","alt":"","width":225}''/></div></div><div
+    class="column column-1-5"><h2>Garance Meyer</h2>
+
+
+
+    <div class="image-block"><netstim-image data=''{"src":"media/8330daa42dff-76F5B7F2-3C72-48FD-9D3E-5CB5B6BEBF0C_4_5005_c.jpeg","original":"https://www.netstim.org/wp-content/uploads/2022/03/76F5B7F2-3C72-48FD-9D3E-5CB5B6BEBF0C_4_5005_c-231x300.jpeg","alt":"","width":231}''/></div>
+
+    <article class="icon-box"></article></div><div class="column column-1-5"><h2>Lukas Goede</h2>
+
+
+
+    <div class="image-block"><netstim-image data=''{"src":"media/293362fa185a-LukasGoede.png","original":"https://www.netstim.org/wp-content/uploads/2020/08/LukasGoede-199x300.png","alt":"","width":199}''/></div>
+
+    <article class="icon-box"></article></div></div>
+
+
+    <div class="columns"><div class="column column-1-5"><h2>Barbara Hollunder</h2>
+
+
+
+    <div class="image-block"><netstim-image data=''{"src":"media/99fbb24d360f-0847405F-899C-47EE-9E4D-6B67074A0CE7_1_201_a-1144x1500.jpeg","original":"https://www.netstim.org/wp-content/uploads/2020/01/0847405F-899C-47EE-9E4D-6B67074A0CE7_1_201_a-229x300.jpeg","alt":"","width":229}''/></div>
+
+    <article class="icon-box"></article>
+
+    <article class="icon-box"></article>
+
+    <article class="icon-box"></article></div><div class="column column-1-5"><h2>Jordy Tasserie</h2>
+
+
+
+    <div class="image-block"><netstim-image data=''{"src":"media/8c18a64402ee-CAB7E1F4-742E-4F7E-A6DE-AABF882A78E8_1_201_a-1.jpeg","original":"https://www.netstim.org/wp-content/uploads/2023/09/CAB7E1F4-742E-4F7E-A6DE-AABF882A78E8_1_201_a-1-265x300.jpeg","alt":"","width":265}''/></div>
+
+    <article class="icon-box"></article>
+
+    <article class="icon-box"></article>
+
+    <article class="icon-box"></article></div><div class="column column-1-5"><h2>Clemens Neudorfer</h2>
+
+
+
+    <div class="image-block"><netstim-image data=''{"src":"media/d6a7241ed45a-IMG_8604_bw-1536x1311.jpg","original":"https://www.netstim.org/wp-content/uploads/2022/03/IMG_8604_bw-300x256.jpg","alt":"","width":300}''/></div></div><div
+    class="column column-1-5"><h2>Konstantin Butenko</h2>
+
+
+
+    <div class="image-block"><netstim-image data=''{"src":"media/c356e9fa8943-PXL_20220325_134245807_2-1535x2048.jpg","original":"https://www.netstim.org/wp-content/uploads/2022/03/PXL_20220325_134245807_2-225x300.jpg","alt":"","width":225}''/></div></div><div
+    class="column column-1-5"><h2>Roi Sar-el</h2>
+
+
+
+    <div class="image-block"><netstim-image data=''{"src":"media/a5e4b74da3a6-96056BB0-F6FF-47B7-98A1-DD4F1AFBD407_4_5005_c.jpeg","original":"https://www.netstim.org/wp-content/uploads/2023/12/96056BB0-F6FF-47B7-98A1-DD4F1AFBD407_4_5005_c.jpeg","alt":"","width":264}''/></div></div></div>
+
+
+    <div class="columns"><div class="column column-1-5"><h2>Bahne Bahners</h2>
+
+
+
+    <div class="image-block"><netstim-image data=''{"src":"media/d1227a5791cd-5-DSC_2164-1367x2048.jpg","original":"https://www.netstim.org/wp-content/uploads/2024/01/5-DSC_2164-200x300.jpg","alt":"","width":200}''/></div></div><div
+    class="column column-1-5"><h2>Lauren Hart</h2>
+
+
+
+    <div class="image-block"><netstim-image data=''{"src":"media/38898c55b2b1-E43C3D42-A1C8-4332-8B45-3F3EABD3A233_1_201_a.jpeg","original":"https://www.netstim.org/wp-content/uploads/2022/03/E43C3D42-A1C8-4332-8B45-3F3EABD3A233_1_201_a-284x300.jpeg","alt":"","width":284}''/></div></div><div
+    class="column column-1-5"><h2>Julianna Pijar</h2>
+
+
+
+    <div class="image-block"><netstim-image data=''{"src":"media/0deba3469ce5-E8BBDB22-031B-4219-B889-B1B2527FC70E_1_201_a-1238x1536.jpeg","original":"https://www.netstim.org/wp-content/uploads/2023/10/E8BBDB22-031B-4219-B889-B1B2527FC70E_1_201_a-242x300.jpeg","alt":"","width":242}''/></div></div><div
+    class="column column-1-5"><h2>Bassam Al-Fatly</h2>
+
+
+
+    <div class="image-block"><netstim-image data=''{"src":"media/fabe0068208f-Bassam.png","original":"https://www.netstim.org/wp-content/uploads/2020/07/Bassam-264x300.png","alt":"","width":264}''/></div>
+
+    <article class="icon-box"></article></div><div class="column column-1-5"><h2>Simón Oxenford</h2>
+
+
+
+    <div class="image-block"><netstim-image data=''{"src":"media/0595556c8c10-IMG_5429-1196x1500.jpeg","original":"https://www.netstim.org/wp-content/uploads/2020/02/IMG_5429-239x300.jpeg","alt":"","width":239}''/></div>
+
+    <article class="icon-box"></article></div></div>
+
+
+    <div class="columns"><div class="column column-1-5"><h2>Till Dembek</h2>
+
+
+
+    <div class="image-block"><netstim-image data=''{"src":"media/f89cd16af51e-Dr.-Till-Dembek.jpeg","original":"https://www.netstim.org/wp-content/uploads/2023/09/Dr.-Till-Dembek.jpeg","alt":"","width":170}''/></div></div><div
+    class="column column-1-5"><h2>Luise Poser</h2>
+
+
+
+    <div class="image-block"><netstim-image data=''{"src":"media/4d070a3d0f8b-Luise-1578x2048.jpg","original":"https://www.netstim.org/wp-content/uploads/2022/12/Luise-231x300.jpg","alt":"","width":231}''/></div></div><div
+    class="column column-1-5"><h2>Leon Sobesky</h2>
+
+
+
+    <div class="image-block"><netstim-image data=''{"src":"media/b2682c89824a-leon_sobesky.png","original":"https://www.netstim.org/wp-content/uploads/2019/01/leon_sobesky-200x300.png","alt":"","width":200}''/></div></div><div
+    class="column column-1-5"><h2>Jan Roediger</h2>
+
+
+
+    <div class="image-block"><netstim-image data=''{"src":"media/c395627b94fe-Ich-1136x1500.jpg","original":"https://www.netstim.org/wp-content/uploads/2019/02/Ich-227x300.jpg","alt":"","width":227}''/></div>
+
+    <article class="icon-box"></article></div><div class="column column-1-5"><h2>Meera Chikermane</h2>
+
+
+
+    <div class="image-block"><netstim-image data=''{"src":"media/68dc6d3dc528-IMG_20230706_090534-1536x2048.jpg","original":"https://www.netstim.org/wp-content/uploads/2023/07/IMG_20230706_090534-225x300.jpg","alt":"","width":225}''/></div></div></div>
+
+
+    <div class="columns"><div class="column column-1-5"><h2>Ana Sofía Ríos Infante</h2>
+
+
+
+    <div class="image-block"><netstim-image data=''{"src":"media/a7750a5fb8b4-IMG_5432-1203x1500.jpeg","original":"https://www.netstim.org/wp-content/uploads/2020/02/IMG_5432-241x300.jpeg","alt":"","width":241}''/></div></div><div
+    class="column column-1-5"><h2>Qiang Wang</h2>
+
+
+
+    <div class="image-block"><netstim-image data=''{"src":"media/b040e810f203-image_from_ios.jpg","original":"https://www.netstim.org/wp-content/uploads/2019/02/image_from_ios-266x300.jpg","alt":"","width":266}''/></div></div><div
+    class="column column-1-5"><h2>Min Jae Kim</h2>
+
+
+
+    <div class="image-block"><netstim-image data=''{"src":"media/4f57027be79b-04213C61-E505-409F-920E-374775DB96C0_1_201_a.jpeg","original":"https://www.netstim.org/wp-content/uploads/2022/11/04213C61-E505-409F-920E-374775DB96C0_1_201_a-247x300.jpeg","alt":"","width":247}''/></div>
+
+    <article class="icon-box"></article>
+
+    <article class="icon-box"></article></div><div class="column column-1-5"><h2>Savir Madan</h2>
+
+
+
+    <div class="image-block"><netstim-image data=''{"src":"media/a20594b0589d-Savir_BW.png","original":"https://www.netstim.org/wp-content/uploads/2025/08/Savir_BW-262x300.png","alt":"","width":262}''/></div></div></div>'
+- mode: sidebar
+  body: ''

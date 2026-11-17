@@ -1,0 +1,68 @@
+/internal/events/:
+- mode: sidebar
+  body: "<article class=\"post-item\">\n\n<div id=\"em-wrapper\"><p><div id=\"em-view-1\">\n<div class=\"event-list\"\
+    \ id=\"em-events-list-grouped-1\">\n\tNo Events\t</div>\n</div></p>\n<p>Powered by <a href=\"https://wp-events-plugin.com\"\
+    \ rel=\"noopener noreferrer\" target=\"_blank\">Events Manager</a></p></div> \n</article>\n\nend post-entry\n\
+    \nend content"
+/internal/events/categories/:
+- mode: sidebar
+  body: "<article class=\"post-item\">\n\n<div id=\"em-wrapper\"><p><div id=\"em-view-4\">\n<div class=\"event-list\"\
+    \ id=\"em-categories-list-4\">\n<ul><li><a href=\"@root@internal/events/categories/imaging-meeting/\">Imaging\
+    \ Meeting</a></li><li><a href=\"@root@internal/events/categories/workshops/\">Workshops</a></li></ul> </div>\n\
+    </div></p>\n<p>Powered by <a href=\"https://wp-events-plugin.com\" rel=\"noopener noreferrer\" target=\"_blank\"\
+    >Events Manager</a></p></div> \n</article>\n\nend post-entry\n\nend content"
+/internal/events/categories/imaging-meeting/:
+- mode: sidebar
+  body: "<article class=\"post-item\">\n\n<div id=\"em-view-8\">\n<div id=\"em-category-8\">\n<p>These are our weekly\
+    \ imaging meeting, where we catch up and discuss ideas, papers or methodological topics.<br/>\nYou are welcome\
+    \ to join us!</p>\n<h3>Upcoming Events</h3>No events in this category\t</div>\n</div> \n</article>\n\nend post-entry\n\
+    \nend content"
+/internal/events/categories/workshops/:
+- mode: sidebar
+  body: "<article class=\"post-item\">\n\n<div id=\"em-view-8\">\n<div id=\"em-category-8\">\n<h3>Upcoming Events</h3>No\
+    \ events in this category\t</div>\n</div> \n</article>\n\nend post-entry\n\nend content"
+/internal/events/locations/:
+- mode: sidebar
+  body: "<article class=\"post-item\">\n\n<div id=\"em-wrapper\"><p><div id=\"em-view-3\">\n<div class=\"event-list\"\
+    \ id=\"em-locations-list-3\">\n<ul><li><a href=\"@root@internal/events/locations/bonhoefferraum/\">Bonhoefferraum</a><ul><li>Bonhoefferweg\
+    \ 3, Berlin</li></ul></li><li><a href=\"@root@internal/events/locations/charite/\">Charité</a><ul><li>Luisenstraße\
+    \ 58-60, Berlin</li></ul></li><li><a href=\"@root@internal/events/locations/multifunktionsraum/\">Multifunktionsraum</a><ul><li>Luisenstraße\
+    \ 58-60, Berlin</li></ul></li></ul> </div>\n</div></p>\n<p>Powered by <a href=\"https://wp-events-plugin.com\"\
+    \ rel=\"noopener noreferrer\" target=\"_blank\">Events Manager</a></p></div> \n</article>\n\nend post-entry\n\
+    \n<div class=\"comments\">\n<div class=\"comment-summary\">\n\n\n0\nreplies\n\n\n\n\n</div>\n<h3>Leave a Reply</h3>Want\
+    \ to join the discussion?<br/>Feel free to contribute! <!-- #respond -->\n\n</div>\n\nend content"
+/internal/events/locations/bonhoefferraum/:
+- mode: sidebar
+  body: "<article class=\"post-item\"><div class=\"standard-content\"><header aria-label=\"Post: Bonhoefferraum\"\
+    ><h2>Bonhoefferraum</h2><span class=\"post-meta\"><time datetime=\"2019-02-21T12:45:37+00:00\">February 21,\
+    \ 2019</time>/<a href=\"@root@internal/events/locations/bonhoefferraum/#respond\">0 Comments</a>/by <a href=\"\
+    @root@author/janroediger/\">janroediger</a></span></header><div id=\"em-view-515578924\">\n<div class=\"event-location\"\
+    >\n<div class=\"map-status\"><i>Map Unavailable</i></div>\n<p>\n<strong>Address</strong><br/>\n\tBonhoefferweg\
+    \ 3<br/>\n\tBerlin<br/>\n<br/>\n<br/>\n<br/>\n\tGermany\n</p>\n\n<h3>Upcoming Events</h3>\n<p>No events in this\
+    \ location</p> </div>\n</div><h5>Share this entry</h5></div></article>\n\n<div class=\"comments\">\n<div class=\"\
+    comment-summary\">\n\n\n0\nreplies\n\n\n\n\n</div>\n<h3>Leave a Reply</h3>Want to join the discussion?<br/>Feel\
+    \ free to contribute! <!-- #respond -->\n\n</div>\n\nend content"
+/internal/events/locations/charite/:
+- mode: sidebar
+  body: "<article class=\"post-item\"><div class=\"post-image\"><a aria-label=\"charite\" href=\"@root@wp-content/uploads/2019/02/charite-1030x426.png\"\
+    \ title=\"charite\"><netstim-image data='{\"src\":\"media/1a19a406cb31-charite-845x321.png\",\"original\":\"\
+    https://www.netstim.org/wp-content/uploads/2019/02/charite-845x321.png\",\"alt\":\"\",\"width\":845}'/></a></div><div\
+    \ class=\"standard-content\"><header aria-label=\"Post: Charité\"><h2>Charité</h2><span class=\"post-meta\"\
+    ><time datetime=\"2019-02-20T21:49:29+00:00\">February 20, 2019</time>/<a href=\"@root@internal/events/locations/charite/#respond\"\
+    >0 Comments</a>/by <a href=\"@root@author/janroediger/\">janroediger</a></span></header><div id=\"em-view-1346546875\"\
+    >\n<div class=\"event-location\">\n<div class=\"map-status\"><i>Map Unavailable</i></div>\n<p>\n<strong>Address</strong><br/>\n\
+    \tLuisenstraße 58-60<br/>\n\tBerlin<br/>\n<br/>\n<br/>\n<br/>\n\tGermany\n</p>\n\n<h3>Upcoming Events</h3>\n\
+    <p>No events in this location</p> </div>\n</div><h5>Share this entry</h5></div></article>\n\n<div class=\"comments\"\
+    >\n<div class=\"comment-summary\">\n\n\n0\nreplies\n\n\n\n\n</div>\n<h3>Leave a Reply</h3>Want to join the discussion?<br/>Feel\
+    \ free to contribute! <!-- #respond -->\n\n</div>\n\nend content"
+/internal/events/locations/multifunktionsraum/:
+- mode: sidebar
+  body: "<article class=\"post-item\"><div class=\"standard-content\"><header aria-label=\"Post: Multifunktionsraum\"\
+    ><h2>Multifunktionsraum</h2><span class=\"post-meta\"><time datetime=\"2019-02-20T18:59:54+00:00\">February\
+    \ 20, 2019</time>/<a href=\"@root@internal/events/locations/multifunktionsraum/#respond\">0 Comments</a>/by\
+    \ <a href=\"@root@author/janroediger/\">janroediger</a></span></header><div id=\"em-view-135152213\">\n<div\
+    \ class=\"event-location\">\n<div class=\"map-status\"><i>Map Unavailable</i></div>\n<p>\n<strong>Address</strong><br/>\n\
+    \tLuisenstraße 58-60<br/>\n\tBerlin<br/>\n<br/>\n<br/>\n<br/>\n\tGermany\n</p>\n\n<h3>Upcoming Events</h3>\n\
+    <p>No events in this location</p> </div>\n</div><h5>Share this entry</h5></div></article>\n\n<div class=\"comments\"\
+    >\n<div class=\"comment-summary\">\n\n\n0\nreplies\n\n\n\n\n</div>\n<h3>Leave a Reply</h3>Want to join the discussion?<br/>Feel\
+    \ free to contribute! <!-- #respond -->\n\n</div>\n\nend content"
