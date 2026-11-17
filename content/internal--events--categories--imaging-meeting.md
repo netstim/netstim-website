@@ -1,5 +1,5 @@
 ---
-title: Categories
+title: Imaging meeting
 url: /internal/events/categories/imaging-meeting/
 family: events
 crumbs:
@@ -11,7 +11,7 @@ crumbs:
   url: '@root@internal/events/'
 - title: Categories
   url: '@root@internal/events/categories/'
-- title: Categories
+- title: Imaging meeting
 related:
 - title: Events
   url: '@root@internal/events/'

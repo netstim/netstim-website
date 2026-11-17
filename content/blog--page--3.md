@@ -1,11 +1,11 @@
 ---
-title: Updates
+title: News
 url: /blog/page/3/
 family: archive
 crumbs:
 - title: Home
   url: '@root@'
-- title: Updates
+- title: News
 sidebar: true
 comment_anchor: true
 ---

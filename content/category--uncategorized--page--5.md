@@ -5,7 +5,7 @@ family: archive
 crumbs:
 - title: Home
   url: '@root@'
-- title: Updates
+- title: News
   url: '@root@blog/'
 - title: Uncategorized
 sidebar: true

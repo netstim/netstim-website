@@ -1,5 +1,5 @@
 ---
-title: Updates
+title: Charité
 url: /internal/events/locations/charite/
 family: events
 crumbs:

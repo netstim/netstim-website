@@ -5,10 +5,8 @@ family: post
 crumbs:
 - title: Home
   url: '@root@'
-- title: Updates
+- title: News
   url: '@root@blog/'
-- title: Uncategorized
-  url: '@root@category/uncategorized/'
 - title: Defining a tract-based target for Obsessive Compulsive Disorder
 sidebar: true
 wordpress_id: 362

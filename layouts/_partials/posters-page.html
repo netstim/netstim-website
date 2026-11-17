@@ -1,0 +1,29 @@
+{{- /* Posters (data/poster_list.yaml, newest first): a grid of posters, each on a quiet plinth with its
+       authors and meeting, then its title. A poster opens in a dialog: the poster large on the left (a link
+       to the full-size file), title, affiliations and references on the right. The old anchors (#GoedeSummit…)
+       stay: each card carries its id, and opening the page at one opens that poster (assets/js/main/people.js). */ -}}
+<div class="wrap page-body">
+  <ul class="poster-grid">
+  {{ range hugo.Data.poster_list }}
+    <li id="{{ .id }}"><button type="button" class="poster-card" data-person="poster-{{ .id }}" aria-haspopup="dialog">
+      <span class="poster-card__plinth" data-morph>{{ partial "picture.html" (merge .image (dict "alt" "" "sizes" "(max-width: 639px) 45vw, 300px")) }}</span>
+      <span class="poster-card__who">{{ .who }}</span>
+      <span class="poster-card__title">{{ .title }}</span>
+    </button></li>
+  {{ end }}
+  </ul>
+  {{ range hugo.Data.poster_list }}
+  <dialog class="person-dialog poster-dialog" id="poster-{{ .id }}" aria-labelledby="poster-{{ .id }}-title" tabindex="-1" autofocus>
+    <form method="dialog" class="person-dialog__close"><button class="icon-button" aria-label="Close">{{ partial "icon.html" "close" }}</button></form>
+    <div class="poster-dialog__poster">
+      <a href="{{ partial "url.html" (.full | default .image.original) }}" class="poster-dialog__frame" data-morph target="_blank" rel="noopener">{{ partial "picture.html" (merge .image (dict "alt" (printf "Poster: %s" .title) "sizes" "(max-width: 767px) 90vw, 560px")) }}</a>
+      <a class="text-action" href="{{ partial "url.html" (.full | default .image.original) }}" target="_blank" rel="noopener">Open the full-size poster ↗</a>
+    </div>
+    <div class="poster-dialog__text prose">
+      <p class="poster-dialog__who">{{ .who }}</p>
+      <h2 id="poster-{{ .id }}-title">{{ .title }}</h2>
+      <div class="poster-dialog__details">{{ partial "render.html" ($.RenderString (dict "display" "block") .details) }}</div>
+    </div>
+  </dialog>
+  {{ end }}
+</div>

@@ -1,5 +1,5 @@
 ---
-title: Categories
+title: Workshops
 url: /internal/events/categories/workshops/
 family: events
 crumbs:
@@ -11,7 +11,7 @@ crumbs:
   url: '@root@internal/events/'
 - title: Categories
   url: '@root@internal/events/categories/'
-- title: Categories
+- title: Workshops
 related:
 - title: Events
   url: '@root@internal/events/'

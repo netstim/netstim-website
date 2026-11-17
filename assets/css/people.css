@@ -2,7 +2,6 @@
    frame, the face in the upper third, black and white, so photos from different shoots read as one set.
    A grid of cards (name only); a card opens the profile, photo left and text right (stacked on a phone).
    The alumni follow as a denser grid with the name under each photo. */
-.page-lead { max-width: 40rem; margin-top: 20px; color: var(--muted); font-size: var(--t-lead); line-height: 1.45; letter-spacing: -.015em; }
 .portrait-frame { display: block; aspect-ratio: 4 / 5; overflow: hidden; border-radius: var(--r-md); background: var(--surface); }
 :is(.portrait-frame img, .people-alumni .image-block img) {
   width: 100%; height: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 22%; filter: grayscale(1) contrast(1.04); border-radius: var(--r-md);
@@ -21,29 +20,15 @@
   .person-card:hover .portrait-frame img { transform: scale(1.035); }
   .person-card:hover .person-card__name { color: var(--action); }
 }
-/* the profile */
+/* the profile: a large panel; photo, name and links in the left column, the text in two columns beside
+   them (one on a narrow screen), so a long biography reads without scrolling on a desktop */
 .person-dialog {
-  width: min(1040px, calc(100% - 48px)); max-height: min(760px, calc(100dvh - 48px)); padding: 0; overflow: auto;
+  width: min(1200px, calc(100% - 48px)); height: fit-content; max-height: calc(100dvh - 48px); padding: 0; overflow: auto;
   border: 0; border-radius: var(--r-lg); box-shadow: var(--shadow-3);
 }
-.person-dialog[open] { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: start; }
-.person-dialog__photo { position: sticky; top: 0; padding: 32px 0 32px 32px; }
-.person-dialog__photo .portrait-frame { border-radius: var(--r-md); }
-.person-dialog__credit { margin-top: 10px; color: var(--muted); font-size: 13px; }
-.person-dialog__text { padding: 40px 48px 40px 40px; }
-.person-dialog__text h2 { font-size: var(--t-h2); padding-right: 40px; }
-.person-dialog__text .columns { display: block; }
-.person-dialog__text .column { width: auto; }
-.person-dialog__text .columns + .columns { margin-top: 16px; }
-.person-dialog__text .icon-box { display: inline-block; border: 0; padding: 0; margin: 4px 20px 0 0; }
-.person-dialog__text .icon-box header { display: flex; align-items: center; gap: 2px; }
-.person-dialog__text .icon-box .icon-link { width: 32px; height: 44px; }
-.person-dialog__text .icon-heading { margin: 0; font-size: 14px; font-weight: 500; letter-spacing: 0; }
-.person-dialog__text .icon-heading a { color: var(--ink); text-decoration: none; }
-.person-dialog__text .icon-box + .icon-box { margin-top: 4px; }
+.person-dialog[open] { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 0 48px; align-items: start; padding: 40px 48px; }
 .person-dialog__close { position: absolute; top: 16px; right: 16px; z-index: 1; }
 .person-dialog__close .icon-button { background: var(--bg); }
-.person-dialog[open] .person-dialog__text { animation: person-in 320ms cubic-bezier(.2, .65, .3, 1) both; }
 @keyframes person-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
 ::view-transition-group(person-photo) { animation-duration: 380ms; animation-timing-function: cubic-bezier(.2, .8, .2, 1); }
 ::view-transition-old(root), ::view-transition-new(root) { animation-duration: 260ms; }
@@ -65,12 +50,55 @@
 }
 @media (max-width: 767px) {
   .people-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 16px; }
-  .person-dialog { width: 100%; max-width: none; height: 100dvh; max-height: none; margin: 0; border-radius: 0; }
-  .person-dialog[open] { display: block; }
-  .person-dialog__photo { position: static; padding: 20px 20px 0; }
-  .person-dialog__photo .portrait-frame { width: min(60%, 240px); }
-  .person-dialog__text { padding: 24px 20px 40px; }
+  .person-dialog { width: 100%; max-width: none; height: 100dvh; margin: 0; border-radius: 0; }
+  .person-dialog[open] { display: block; padding: 20px 20px 40px; }
   .people-alumni .columns { flex-direction: row; flex-wrap: wrap; gap: 28px 16px; }
   .people-alumni .column { width: calc(50% - 8px); }
 }
 .person-dialog:focus-visible { outline: none; }
+/* the profile sheet (people-page.html): floats in from the right on a desktop, full screen on a phone. One
+   reading column: photo, name, actions, text, then the profile links as rows and the photo credit. */
+.person-sheet {
+  position: fixed; inset: 12px 12px 12px auto; width: min(600px, calc(100% - 24px)); height: auto; max-width: none; max-height: none;
+  margin: 0; padding: 0; overflow-y: auto; border: 0; border-radius: var(--r-lg); background: var(--bg); box-shadow: var(--shadow-3);
+}
+.person-sheet::backdrop { background: rgb(12 16 19 / .32); }
+.person-sheet:focus-visible { outline: none; }
+.person-sheet__close { position: sticky; top: 0; z-index: 2; display: flex; justify-content: flex-end; height: 0; }
+.person-sheet__close .icon-button { margin: 16px 16px 0 0; background: rgb(255 255 255 / .85); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); color: #111; }
+.person-sheet__photo { padding: 16px 16px 0; }
+.person-sheet__photo .portrait-frame { aspect-ratio: 4 / 3; border-radius: var(--r-md); }
+.person-sheet__photo .portrait-frame img { aspect-ratio: auto; object-position: 50% 25%; }
+.person-sheet__body { padding: 32px 40px 48px; }
+.person-sheet__body h2 { font-size: var(--t-h2); font-weight: 450; letter-spacing: -.04em; }
+.person-sheet__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; margin-top: 20px; }
+.person-sheet__actions .action-row { margin: 0; }
+.person-sheet__actions .action-row:first-child .action { min-height: 44px; padding: 10px 20px; background: var(--pill); color: var(--pill-ink); text-decoration: none; }
+.person-sheet__actions .action-row + .action-row .action { min-height: 44px; padding: 0; background: none; color: var(--ink); text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 5px; }
+.person-sheet__text { margin-top: 32px; font-size: 17px; line-height: 1.65; }
+.person-sheet__text :is(.columns, .column) { display: contents; }
+.person-sheet__text p + p { margin-top: 18px; }
+.person-sheet__links { list-style: none; margin: 40px 0 0; padding: 0; border-bottom: 1px solid var(--line); }
+.person-sheet__links a { display: flex; align-items: center; justify-content: space-between; min-height: 52px; border-top: 1px solid var(--line); color: var(--ink); font-size: 15px; font-weight: 500; text-decoration: none; }
+.person-sheet__links a span:last-child { color: var(--muted); }
+.person-sheet__credit { margin-top: 24px; color: var(--muted); font-size: 13px; }
+@media (hover: hover) {
+  .person-sheet__links a:hover { color: var(--action); }
+}
+/* motion: the photo zooms from the card (view transition "person-photo"); the sheet slides in from the right */
+::view-transition-new(person-panel) { animation: sheet-in 360ms cubic-bezier(.2, .8, .2, 1) both; }
+::view-transition-old(person-panel) { animation: sheet-out 240ms cubic-bezier(.4, 0, 1, 1) both; }
+@keyframes sheet-in { from { opacity: 0; transform: translateX(48px); } }
+@keyframes sheet-out { to { opacity: 0; transform: translateX(48px); } }
+.person-sheet[open] { transition: transform 360ms cubic-bezier(.2, .8, .2, 1), opacity 360ms cubic-bezier(.2, .8, .2, 1); }
+@starting-style { .person-sheet[open] { opacity: 0; transform: translateX(48px); } }
+@media (max-width: 767px) {
+  .person-sheet { inset: 0; width: 100%; border-radius: 0; }
+  .person-sheet__photo { padding: 0; }
+  .person-sheet__photo .portrait-frame { border-radius: 0; aspect-ratio: 1; }
+  .person-sheet__body { padding: 24px 20px calc(40px + env(safe-area-inset-bottom)); }
+  .person-sheet__text { font-size: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .person-sheet[open] { transition-duration: 0s; }
+}

@@ -5,10 +5,8 @@ family: post
 crumbs:
 - title: Home
   url: '@root@'
-- title: Updates
+- title: News
   url: '@root@blog/'
-- title: Uncategorized
-  url: '@root@category/uncategorized/'
 - title: New PNAS Study on Lesion induced criminal behavior
 sidebar: true
 wordpress_id: 197

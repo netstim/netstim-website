@@ -5,24 +5,14 @@ family: publications
 crumbs:
 - title: Home
   url: '@root@'
-- title: Science
-  url: '@root@research-interests/'
 - title: Publications
 related:
-- title: Connectomic DBS Book
-  url: '@root@research-interests/the-book/'
 - title: Publications
   url: '@root@research-interests/publications/'
 - title: Posters
   url: '@root@research-interests/posters/'
 - title: Videos & Talks
   url: '@root@research-interests/videos-talks/'
-- title: Deep Brain Stimulation
-  url: '@root@research-interests/deep-brain-stimulation/'
-- title: Normative Connectomes
-  url: '@root@research-interests/normative-connectomes/'
-- title: STIMU-LATTE
-  url: '@root@research-interests/stimu-latte/'
 sidebar: true
 wordpress_id: 30
 date: '2017-12-27T11:27:42+00:00'

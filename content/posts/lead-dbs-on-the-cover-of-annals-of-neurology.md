@@ -5,10 +5,8 @@ family: post
 crumbs:
 - title: Home
   url: '@root@'
-- title: Updates
+- title: News
   url: '@root@blog/'
-- title: Uncategorized
-  url: '@root@category/uncategorized/'
 - title: Lead-DBS on the cover of Annals of Neurology
 sidebar: true
 wordpress_id: 279

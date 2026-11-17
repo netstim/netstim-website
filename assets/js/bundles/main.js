@@ -6,3 +6,4 @@ import '../main/gallery.js';
 import '../main/publications.js';
 import '../main/people.js';
 import '../main/book.js';
+import '../main/news.js';

@@ -1,5 +1,5 @@
 ---
-title: Locations
+title: Event locations
 url: /internal/events/locations/
 family: events
 crumbs:
@@ -9,7 +9,7 @@ crumbs:
   url: '@root@internal/'
 - title: Events
   url: '@root@internal/events/'
-- title: Locations
+- title: Event locations
 related:
 - title: Events
   url: '@root@internal/events/'

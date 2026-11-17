@@ -5,10 +5,8 @@ family: post
 crumbs:
 - title: Home
   url: '@root@'
-- title: Updates
+- title: News
   url: '@root@blog/'
-- title: Uncategorized
-  url: '@root@category/uncategorized/'
 - title: Brain Sciences Special Issue “Modulatory Effects of Deep Brain Stimulation...
 sidebar: true
 wordpress_id: 253

@@ -5,10 +5,8 @@ family: post
 crumbs:
 - title: Home
   url: '@root@'
-- title: Updates
+- title: News
   url: '@root@blog/'
-- title: Uncategorized
-  url: '@root@category/uncategorized/'
 - title: Lead-DBS updates in 2018
 sidebar: true
 wordpress_id: 233

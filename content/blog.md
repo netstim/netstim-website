@@ -1,11 +1,11 @@
 ---
-title: Updates
+title: News
 url: /blog/
 family: archive
 crumbs:
 - title: Home
   url: '@root@'
-- title: Updates
+- title: News
 sidebar: true
 wordpress_id: 48
 date: '2017-12-27T23:19:24+00:00'

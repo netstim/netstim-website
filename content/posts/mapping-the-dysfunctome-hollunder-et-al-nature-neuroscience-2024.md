@@ -5,10 +5,8 @@ family: post
 crumbs:
 - title: Home
   url: '@root@'
-- title: Updates
+- title: News
   url: '@root@blog/'
-- title: Uncategorized
-  url: '@root@category/uncategorized/'
 - title: Mapping the Dysfunctome (Hollunder et al., Nature Neuroscience 2024)
 sidebar: true
 wordpress_id: 2236

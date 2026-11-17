@@ -5,16 +5,9 @@ family: page
 crumbs:
 - title: Home
   url: '@root@'
-- title: Internal
+- title: For lab members
   url: '@root@internal/'
 - title: Lab Manual
-related:
-- title: Events
-  url: '@root@internal/events/'
-- title: Lab Manual
-  url: '@root@internal/onboarding/'
-- title: Links
-  url: '@root@internal/links/'
 sidebar: true
 wordpress_id: 357
 date: '2019-01-12T08:44:11+00:00'

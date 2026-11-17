@@ -1,3 +1,38 @@
-.family-posters .page-body > h2 { font-size: clamp(23px, 2.3vw, 32px); }
-.family-posters .column h3 { font-size: clamp(18px, 1.5vw, 22px); }
-.family-posters .column p { line-height: 1.55; }
+/* Posters (layouts/_partials/posters-page.html): four across, each poster contained on a quiet plinth of one
+   height, so portrait and landscape posters line up; authors and meeting, then the title. The dialog reuses
+   the profile dialog of people.css: the poster large on the left, its text on the right. */
+.poster-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 48px 24px; }
+.poster-grid > li { min-width: 0; scroll-margin-top: calc(var(--nav) + 24px); }
+.poster-card { display: grid; gap: 8px; width: 100%; padding: 0; border: 0; background: none; color: var(--ink); font: inherit; text-align: left; cursor: pointer; }
+.poster-card__plinth { display: grid; place-items: center; margin-bottom: 8px; aspect-ratio: 4 / 5; padding: 20px; border-radius: var(--r-md); background: #f0f1f2; }
+.poster-card__plinth img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; box-shadow: 0 1px 2px rgb(0 0 0 / .08), 0 10px 24px -12px rgb(0 0 0 / .35); transition: transform 400ms cubic-bezier(.2, .65, .3, 1); }
+.poster-card__who { color: var(--muted); font-size: 13px; }
+.poster-card__title { font-size: 16px; font-weight: 500; line-height: 1.35; letter-spacing: -.01em; }
+.poster-card:focus-visible { outline-offset: 6px; border-radius: var(--r-md); }
+@media (hover: hover) {
+  .poster-card:hover .poster-card__plinth img { transform: translateY(-4px); }
+  .poster-card:hover .poster-card__title { color: var(--action); }
+}
+.poster-dialog[open] { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); }
+.poster-dialog__poster { position: sticky; top: 0; display: grid; gap: 12px; justify-items: start; }
+.poster-dialog__frame { display: grid; place-items: center; width: 100%; max-height: calc(100dvh - 180px); padding: 20px; border-radius: var(--r-md); background: #f0f1f2; }
+.poster-dialog__frame img { max-width: 100%; max-height: calc(100dvh - 220px); width: auto; height: auto; object-fit: contain; }
+.poster-dialog__who { color: var(--muted); font-size: 14px; }
+.poster-dialog__text h2 { margin-top: 8px; padding-right: 40px; font-size: 28px; font-weight: 450; line-height: 1.15; letter-spacing: -.03em; }
+.poster-dialog__details { margin-top: 24px; color: var(--muted); font-size: 13px; line-height: 1.55; }
+.poster-dialog__details :is(h2, h3, h4) { margin: 24px 0 8px; color: var(--ink); font-size: 14px; font-weight: 600; letter-spacing: 0; }
+.poster-dialog__details p + p { margin-top: 8px; }
+.poster-dialog__details ol, .poster-dialog__details ul { padding-left: 1.2em; }
+@media (max-width: 1023px) {
+  .poster-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 767px) {
+  .poster-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 16px; }
+  .poster-card__plinth { padding: 12px; }
+  .poster-dialog__poster { position: static; }
+  .poster-dialog__frame { max-height: none; }
+  .poster-dialog__frame img { max-height: 60dvh; }
+  .poster-dialog__text { margin-top: 24px; }
+}
+.poster-dialog__details li + li { margin-top: 6px; }
+.poster-dialog__details li > p { margin: 0; }

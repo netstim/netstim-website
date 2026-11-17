@@ -1,28 +1,12 @@
 ---
-title: STIMU-LATTE
+title: Stimu-Latte journal club
 url: /research-interests/stimu-latte/
 family: page
 crumbs:
 - title: Home
   url: '@root@'
-- title: Science
-  url: '@root@research-interests/'
+- title: Community
 - title: STIMU-LATTE
-related:
-- title: Connectomic DBS Book
-  url: '@root@research-interests/the-book/'
-- title: Publications
-  url: '@root@research-interests/publications/'
-- title: Posters
-  url: '@root@research-interests/posters/'
-- title: Videos & Talks
-  url: '@root@research-interests/videos-talks/'
-- title: Deep Brain Stimulation
-  url: '@root@research-interests/deep-brain-stimulation/'
-- title: Normative Connectomes
-  url: '@root@research-interests/normative-connectomes/'
-- title: STIMU-LATTE
-  url: '@root@research-interests/stimu-latte/'
 sidebar: true
 wordpress_id: 2479
 date: '2025-10-13T13:59:40+00:00'
@@ -30,15 +14,12 @@ modified: '2026-10-05T08:50:39+00:00'
 canonical: /research-interests/stimu-latte/
 ---
 
-## Stimu-latte: The Journal Club
 
-```
-Please, note the time change to 4 PM and the location change to Library Neurology!
-```
+<p class="notice">Please, note the time change to 4 PM and the location change to Library Neurology!</p>
 
-<p class="text-centered">We are proud to present our new in-person journal club series: <em>Stimu-latte!</em> This post-doc-run journal club takes place<strong> once a month</strong> on <strong>Wednesdays</strong> at 4<strong>:00 PM.</strong> We will gather in a friendly environment and discuss the latest developments on neuromodulation over a cup of coffee. Neuromodulation enthusiasts from all career levels are welcome! On this page, you can find upcoming and previous sessions. Looking forward to stimulating discussions!</p>
+<p>We are proud to present our new in-person journal club series: <em>Stimu-latte!</em> This post-doc-run journal club takes place<strong> once a month</strong> on <strong>Wednesdays</strong> at 4<strong>:00 PM.</strong> We will gather in a friendly environment and discuss the latest developments on neuromodulation over a cup of coffee. Neuromodulation enthusiasts from all career levels are welcome! On this page, you can find upcoming and previous sessions. Looking forward to stimulating discussions!</p>
 
-<p class="text-centered"><strong>Where: </strong>Library Neurology.<br/>
+<p><strong>Where: </strong>Library Neurology.<br/>
 <strong> When:</strong> Wednesdays, 4 PM.<br/>
 <br/><strong>Sign up below to join the mailing list.</strong></p>
 
@@ -46,7 +27,7 @@ Please, note the time change to 4 PM and the location change to Library Neurolog
 
 <div class="image-block"><netstim-image data='{"src":"media/b73226f6c24d-October_2026-2.png","original":"https://www.netstim.org/wp-content/uploads/2026/10/October_2026-2-713x1030.png","alt":"","width":713}'/></div>
 
-<h2 class="text-centered">List of previous talks</h2>
+<h2>List of previous talks</h2>
 
 <ul>
 <li>October 21, 2025 – Ricardo Loucao, PhD presenting <b>Clinical deep brain stimulation strategies for orientation-selective pathway activation, </b>Slopsema et al., <i>J Neural Eng, </i>2019</li>

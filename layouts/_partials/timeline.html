@@ -1,42 +1,51 @@
-{{- /* Updates as a timeline (the Lead-DBS newsroom's grammar): the newest post opens large beside its
-       picture, then every post as a row on a vertical line, grouped by year: the date, the title, the post's
-       first sentence or two, a small picture. Takes dict "page" and "posts" (newest first) and "lead". */ -}}
-{{ $posts := .posts }}
-<div class="timeline">
+{{- /* News (the Lead-DBS newsroom's grammar, with x.ai's featured cards): the three newest posts as cards
+       with their pictures (one large, two beside it); then the archive by year: a large year numeral that
+       stays in view, and a row per post (date, title, its first line, an arrow). Rows carry no thumbnail;
+       on a desktop, the post's picture follows the pointer over its row (assets/js/main/news.js).
+       Takes dict "posts" (newest first) and "featured" (whether to open with the cards). */ -}}
+{{ $arrow := partial "icon.html" "arrow" }}
+{{ $items := slice }}
+{{ range .posts }}
+  {{ $html := partial "strip-title.html" (dict "html" (string .Content) "title" .Title) }}
+  {{ $paras := delimit (findRE `(?s)<p\b[^>]*>.*?</p>` $html 3) " " }}
+  {{ $text := $paras | replaceRE `(?s)<netstim-[^>]*>` "" | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace }}
+  {{ $img := "" }}
+  {{ with findRESubmatch `<netstim-image data='([^']*)'` (string .RawContent) 1 }}{{ $img = transform.Unmarshal (htmlUnescape (index (index . 0) 1)) }}{{ end }}
+  {{ $items = $items | append (dict "page" . "text" $text "img" $img) }}
+{{ end }}
+{{ $rest := $items }}
+{{ if .featured }}
+  {{ $rest = after 3 $items }}
+  <div class="news-featured">
+    {{ range $i, $it := first 3 $items }}{{ with $it.page }}
+    <article class="news-card{{ if eq $i 0 }} news-card--lead{{ end }}">
+      <div class="news-card__image{{ with $it.img }}{{ if hasSuffix (lower .src) ".png" }} news-card__image--figure{{ end }}{{ end }}">{{ with $it.img }}{{ partial "picture.html" (merge . (dict "alt" "" "sizes" (cond (eq $i 0) "(max-width: 767px) 100vw, 800px" "(max-width: 767px) 100vw, 420px") "eager" (eq $i 0))) }}{{ end }}</div>
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+      {{ if eq $i 0 }}<p>{{ $it.text | truncate 200 }}</p>{{ end }}
+    </article>
+    {{ end }}{{ end }}
+  </div>
+{{ end }}
+<div class="news-archive">
   {{ $year := 0 }}
-  {{ range $i, $post := $posts }}
-    {{ $html := partial "strip-title.html" (dict "html" (string .Content) "title" .Title) }}
-    {{- /* the summary: the post's paragraphs (not its headings or captions), its first 180 characters */}}
-    {{ $paras := delimit (findRE `(?s)<p\b[^>]*>.*?</p>` $html 3) " " }}
-    {{ $text := $paras | replaceRE `(?s)<netstim-[^>]*>` "" | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace | truncate 180 }}
-    {{ $img := "" }}
-    {{ with findRESubmatch `<netstim-image data='([^']*)'` (string .RawContent) 1 }}{{ $img = transform.Unmarshal (htmlUnescape (index (index . 0) 1)) }}{{ end }}
-    {{ if and $.lead (eq $i 0) }}
-      <article class="timeline-lead">
-        <div class="timeline-lead__body">
-          <time class="timeline-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
-          <h2 class="timeline-lead__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-          <p>{{ $text }}</p>
-        </div>
-        {{ with $img }}<div class="timeline-lead__image">{{ partial "picture.html" (merge . (dict "alt" "" "sizes" "(max-width: 767px) calc(100vw - 40px), 520px")) }}</div>{{ end }}
-      </article>
-    {{ else }}
-      {{ if ne .Date.Year $year }}
-        {{ if $year }}</ol></section>{{ end }}
-        {{ $year = .Date.Year }}
-        <section class="timeline-year" aria-labelledby="year-{{ $year }}">
-          <h2 class="timeline-year__label" id="year-{{ $year }}">{{ $year }}</h2>
-          <ol class="timeline-list">
-      {{ end }}
-      <li class="timeline-item">
-        <time class="timeline-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2" }}</time>
-        <div class="timeline-item__body">
-          <h3 class="timeline-item__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-          <p>{{ $text }}</p>
-        </div>
-        {{ with $img }}<div class="timeline-item__image">{{ partial "picture.html" (merge . (dict "alt" "" "sizes" "160px")) }}</div>{{ end }}
-      </li>
+  {{ range $rest }}{{ $it := . }}{{ with .page }}
+    {{ if ne .Date.Year $year }}
+      {{ if $year }}</ol></section>{{ end }}
+      {{ $year = .Date.Year }}
+      <section class="news-year" aria-labelledby="year-{{ $year }}">
+        <h2 class="news-year__label" id="year-{{ $year }}">{{ $year }}</h2>
+        <ol class="news-rows">
     {{ end }}
-  {{ end }}
+    <li class="news-row"{{ with $it.img }}{{ with resources.Get .src }}{{ $t := .Resize "480x webp q80" }} data-preview="{{ $t.RelPermalink }}"{{ end }}{{ end }}>
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2" }}</time>
+      <div class="news-row__body">
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <p>{{ $it.text | truncate 140 }}</p>
+      </div>
+      {{ $arrow }}
+    </li>
+  {{ end }}{{ end }}
   {{ if $year }}</ol></section>{{ end }}
 </div>
+<img class="news-preview" alt="" aria-hidden="true" hidden data-news-preview>

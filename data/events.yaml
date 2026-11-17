@@ -1,15 +1,13 @@
 /internal/events/:
 - mode: sidebar
   body: "<article class=\"post-item\">\n\n<div id=\"em-wrapper\"><p><div id=\"em-view-1\">\n<div class=\"event-list\"\
-    \ id=\"em-events-list-grouped-1\">\n\tNo Events\t</div>\n</div></p>\n<p>Powered by <a href=\"https://wp-events-plugin.com\"\
-    \ rel=\"noopener noreferrer\" target=\"_blank\">Events Manager</a></p></div> \n</article>"
+    \ id=\"em-events-list-grouped-1\">\n\tNo Events\t</div>\n</div></p></div> \n</article>"
 /internal/events/categories/:
 - mode: sidebar
   body: "<article class=\"post-item\">\n\n<div id=\"em-wrapper\"><p><div id=\"em-view-4\">\n<div class=\"event-list\"\
     \ id=\"em-categories-list-4\">\n<ul><li><a href=\"@root@internal/events/categories/imaging-meeting/\">Imaging\
     \ Meeting</a></li><li><a href=\"@root@internal/events/categories/workshops/\">Workshops</a></li></ul> </div>\n\
-    </div></p>\n<p>Powered by <a href=\"https://wp-events-plugin.com\" rel=\"noopener noreferrer\" target=\"_blank\"\
-    >Events Manager</a></p></div> \n</article>"
+    </div></p></div> \n</article>"
 /internal/events/categories/imaging-meeting/:
 - mode: sidebar
   body: "<article class=\"post-item\">\n\n<div id=\"em-view-8\">\n<div id=\"em-category-8\">\n<p>These are our weekly\
@@ -25,8 +23,7 @@
     \ id=\"em-locations-list-3\">\n<ul><li><a href=\"@root@internal/events/locations/bonhoefferraum/\">Bonhoefferraum</a><ul><li>Bonhoefferweg\
     \ 3, Berlin</li></ul></li><li><a href=\"@root@internal/events/locations/charite/\">Charité</a><ul><li>Luisenstraße\
     \ 58-60, Berlin</li></ul></li><li><a href=\"@root@internal/events/locations/multifunktionsraum/\">Multifunktionsraum</a><ul><li>Luisenstraße\
-    \ 58-60, Berlin</li></ul></li></ul> </div>\n</div></p>\n<p>Powered by <a href=\"https://wp-events-plugin.com\"\
-    \ rel=\"noopener noreferrer\" target=\"_blank\">Events Manager</a></p></div> \n</article>\n\n<div class=\"comments\"\
+    \ 58-60, Berlin</li></ul></li></ul> </div>\n</div></p></div> \n</article>\n\n<div class=\"comments\"\
     >\n<div class=\"comment-summary\" id=\"respond\">\n\n\n0\nreplies\n\n\n\n\n</div>\n<h2>Leave a Reply</h2>Want\
     \ to join the discussion?<br/>Feel free to contribute! \n\n</div>"
 /internal/events/locations/bonhoefferraum/:

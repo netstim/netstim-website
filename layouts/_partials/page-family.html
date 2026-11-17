@@ -1,8 +1,14 @@
 {{- $family := .Params.family | default "page" -}}
 {{- if in (slice "post" "archive") $family -}}
   {{- return (slice "content" "updates") -}}
-{{- else if in (slice "events" "publications" "posters" "videos" "people") $family -}}
+{{- else if eq $family "posters" -}}
+  {{- return (slice "content" "people" "posters") -}}
+{{- else if in (slice "events" "publications" "videos" "people") $family -}}
   {{- return (slice "content" $family) -}}
+{{- else if eq $family "research" -}}
+  {{- return (slice "content" "home" "research") -}}
+{{- else if eq $family "about" -}}
+  {{- return (slice "content" "home" "about") -}}
 {{- else if eq $family "home" -}}
   {{- return (slice "content" "home") -}}
 {{- end -}}

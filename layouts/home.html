@@ -1,32 +1,143 @@
 {{ define "main" }}
-{{- /* The home page: the source's sections in their order, each on the page's rhythm. The first is the
-       greeting beside the illustration; the old sidebar's Latest Updates follow it as a section of rows. */ -}}
-{{ $parts := split (partial "render.html" .Content) "<hr>" }}
+{{- /* The home page: a summary of the site, in the Lead-DBS grammar. All words and pictures: the front matter
+       of content/_index.md (each sentence is the site's own; see docs/information-architecture.md).
+       1 statement on a black render panel, 2 research, 3 journals, 4 the book, 5 news, 6 team, 7 community,
+       8 funders. */ -}}
+{{ $p := .Params }}
+{{ $arrow := partial "icon.html" "arrow" }}
 <main id="main" tabindex="-1" class="home">
-  {{ range $i, $part := $parts }}
-    <section class="home-section{{ if eq $i 0 }} home-opening{{ end }}{{ if in $part "ws_header.png" }} home-book{{ end }}">
-      {{ if eq $i 0 }}{{ $part = replaceRE `(?s)<h2>(.*?)</h2>` `<h1 class="home-display">$1</h1>` $part 1 }}{{ end }}
-      {{ if in $part "ws_header.png" }}<div class="wrap">{{ partial "book-section.html" . }}</div>
-      {{ else }}<div class="wrap prose">{{ $part | safeHTML }}</div>{{ end }}
-    </section>
-    {{ if eq $i 0 }}
-      <section class="home-section home-updates" aria-labelledby="updates-h">
-        <div class="wrap">
-          <div class="section-head">
-            <h2 id="updates-h">Latest Updates</h2>
-            <a class="text-action" href="{{ "blog/" | relURL }}">All updates {{ partial "icon.html" "arrow" }}</a>
+
+  {{ with $p.hero }}
+  <section class="home-hero" aria-labelledby="hero-h">
+    <div class="wrap">
+      <div class="home-hero__panel">
+        <div class="home-hero__media">{{ partial "picture.html" (dict "src" .image "alt" "" "width" 1612 "sizes" "(max-width: 767px) 100vw, 720px" "eager" true) }}</div>
+        <div class="home-hero__text">
+          <h1 id="hero-h">{{ .title }}</h1>
+          <p class="home-hero__lead">{{ .lead }}</p>
+          <div class="btn-row">
+            <a class="btn btn--light" href="{{ partial "url.html" .primary.url }}">{{ .primary.label }}</a>
+            <a class="text-action text-action--light" href="{{ partial "url.html" .secondary.url }}">{{ .secondary.label }} {{ $arrow }}</a>
           </div>
-          <ul class="update-grid">
-          {{ range hugo.Data.updates }}
-            <li><a class="update-card" href="{{ partial "url.html" .url }}">
-              <span class="update-card__media">{{ partial "picture.html" (merge .image (dict "sizes" "(max-width: 639px) 72px, 120px")) }}</span>
-              <span class="update-card__text"><span class="update-card__title">{{ .title }}</span><span class="update-card__date">{{ index (split .time " - ") 0 }}</span></span>
-            </a></li>
-          {{ end }}
-          </ul>
         </div>
-      </section>
-    {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ with $p.research }}
+  <section class="home-section" aria-labelledby="research-h">
+    <div class="wrap">
+      <div class="section-head">
+        <div><h2 id="research-h">{{ .title }}</h2><p class="section-head__text">{{ .text }}</p></div>
+        <a class="text-action" href="{{ "research-interests/" | relURL }}">Research overview {{ $arrow }}</a>
+      </div>
+      <ul class="card-grid card-grid--3">
+        {{ range .cards }}{{ $href := partial "url.html" .url }}{{ $ext := hasPrefix $href "http" }}
+        <li><a class="media-card" href="{{ $href }}"{{ if $ext }} rel="noopener"{{ end }}>
+          <span class="media-card__frame media-card__frame--{{ .ground }}{{ if eq .fit "contain" }} media-card__frame--contain{{ end }}">{{ partial "picture.html" (dict "src" .image "alt" "" "width" 1200 "sizes" "(max-width: 767px) 100vw, 400px") }}</span>
+          <span class="media-card__title">{{ .title }}{{ if $ext }}<span aria-hidden="true"> ↗</span>{{ end }}</span>
+          <span class="media-card__text">{{ .text }}</span>
+        </a></li>
+        {{ end }}
+      </ul>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ with $p.journals }}
+  <section class="home-section home-journals" aria-labelledby="journals-h">
+    <div class="wrap">
+      <h2 id="journals-h" class="home-journals__label">{{ .title }}</h2>
+      <ul class="journal-wall">
+        {{ range .items }}<li><a href="{{ .url }}" rel="noopener">{{ .title }}</a></li>{{ end }}
+      </ul>
+      <a class="text-action" href="{{ partial "url.html" .link.url }}">{{ .link.label }} {{ $arrow }}</a>
+    </div>
+  </section>
+  {{ end }}
+
+  <section class="home-section home-book" aria-label="The book">
+    <div class="wrap">{{ partial "book-section.html" . }}</div>
+  </section>
+
+  {{ $posts := first 4 (where site.RegularPages "Section" "posts").ByDate.Reverse }}
+  <section class="home-section" aria-labelledby="news-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="news-h">News</h2>
+        <a class="text-action" href="{{ "blog/" | relURL }}">All news {{ $arrow }}</a>
+      </div>
+      <div class="home-news">
+        {{ range $i, $post := $posts }}
+          {{ $img := "" }}
+          {{ with findRESubmatch `<netstim-image data='([^']*)'` (string .RawContent) 1 }}{{ $img = transform.Unmarshal (htmlUnescape (index (index . 0) 1)) }}{{ end }}
+          {{ if eq $i 0 }}
+          <article class="home-news__lead">
+            {{ with $img }}<div class="home-news__image">{{ partial "picture.html" (merge . (dict "alt" "" "sizes" "(max-width: 767px) 100vw, 640px")) }}</div>{{ end }}
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+            <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          </article>
+          <ol class="home-news__rows">
+          {{ else }}
+            <li class="home-news__row">
+              <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+              <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+              {{ with $img }}<div class="home-news__thumb">{{ partial "picture.html" (merge . (dict "alt" "" "sizes" "120px")) }}</div>{{ end }}
+            </li>
+          {{ end }}
+        {{ end }}
+          </ol>
+      </div>
+    </div>
+  </section>
+
+  {{ with $p.team }}
+  <section class="home-section" aria-labelledby="team-h">
+    <div class="wrap">
+      <div class="home-team">
+        <div class="home-team__photo">{{ partial "picture.html" (dict "src" .image "alt" "The Netstim team on the steps in front of a university building" "width" 1536 "sizes" "(max-width: 767px) 100vw, 1280px") }}</div>
+        <div class="home-team__text">
+          <h2 id="team-h">{{ .title }}</h2>
+          <p>{{ .text }}</p>
+          <div class="btn-row">
+            <a class="btn" href="{{ partial "url.html" .primary.url }}">{{ .primary.label }}</a>
+            <a class="text-action" href="{{ partial "url.html" .secondary.url }}">{{ .secondary.label }} {{ $arrow }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ with $p.community }}
+  <section class="home-section" aria-labelledby="community-h">
+    <div class="wrap">
+      <div class="section-head"><h2 id="community-h">Community</h2></div>
+      <ul class="card-grid card-grid--2">
+        {{ range . }}{{ $href := partial "url.html" .url }}{{ $ext := hasPrefix $href "http" }}
+        <li><a class="community-card" href="{{ $href }}"{{ if $ext }} rel="noopener"{{ end }}>
+          <span class="community-card__art" style="--ground: {{ .ground | safeCSS }}">{{ partial "picture.html" (dict "src" .image "alt" "" "width" 1200 "sizes" "(max-width: 767px) 100vw, 600px") }}</span>
+          <span class="media-card__title">{{ .title }}</span>
+          <span class="media-card__text">{{ .text }}</span>
+          <span class="community-card__go">{{ .label }}{{ if $ext }} ↗{{ else }} {{ $arrow }}{{ end }}</span>
+        </a></li>
+        {{ end }}
+      </ul>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ with $p.funding }}
+  <section class="home-section home-funding" aria-labelledby="funding-h">
+    <div class="wrap">
+      <h2 id="funding-h" class="sr-only">Funding</h2>
+      <p class="home-funding__text">{{ .text }} <a href="{{ partial "url.html" .link.url }}">{{ .link.label }}</a></p>
+      <ul class="logo-band">
+        {{ range .logos }}<li>{{ partial "picture.html" (dict "src" .src "alt" (.alt | default "") "width" .width "sizes" "200px" "original" .original) }}</li>{{ end }}
+      </ul>
+    </div>
+  </section>
   {{ end }}
 </main>
 {{ end }}

@@ -5,10 +5,8 @@ family: post
 crumbs:
 - title: Home
   url: '@root@'
-- title: Updates
+- title: News
   url: '@root@blog/'
-- title: Uncategorized
-  url: '@root@category/uncategorized/'
 - title: Andreas Horn to receive Heinz Maier Leibnitz Prize
 sidebar: true
 wordpress_id: 1818

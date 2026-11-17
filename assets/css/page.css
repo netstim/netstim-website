@@ -2,6 +2,7 @@
    its body on the 1280px canvas. Text-only pages read at a 672px measure; column layouts use the canvas. */
 .page-head { padding: 56px 0 0; }
 .page-head h1 { max-width: 22ch; }
+.page-lead { max-width: 40rem; margin-top: 20px; color: var(--muted); font-size: var(--t-lead); line-height: 1.45; letter-spacing: -.015em; }
 .breadcrumb ol { list-style: none; margin: 0 0 16px; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 0 8px; font-size: 14px; color: var(--muted); }
 .breadcrumb li + li::before { content: "/"; margin-right: 8px; opacity: .6; }
 .breadcrumb a { display: inline-flex; align-items: center; min-height: 32px; color: var(--muted); text-decoration: none; }

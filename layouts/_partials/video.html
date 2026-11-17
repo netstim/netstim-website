@@ -1,7 +1,15 @@
+{{- /* A click-to-load video: nothing is fetched from YouTube or Vimeo until the visitor presses play. The
+       still is the video's own thumbnail, fetched once and kept in assets/media/video/ (yt-<id>.jpg,
+       vimeo-<id>.jpg); without one the frame stays black with the title. */ -}}
 {{- $title := .title | default "Video" -}}
-<div class="video-embed{{ if .audio }} video-embed--audio{{ end }}" data-embed="{{ .src }}" data-embed-title="{{ $title }}">
+{{- $still := "" -}}
+{{- with findRESubmatch `youtube(?:-nocookie)?\.com/embed/([A-Za-z0-9_-]+)` .src 1 }}{{ $still = printf "media/video/yt-%s.jpg" (index (index . 0) 1) }}{{ end -}}
+{{- with findRESubmatch `player\.vimeo\.com/video/([0-9]+)` .src 1 }}{{ $still = printf "media/video/vimeo-%s.jpg" (index (index . 0) 1) }}{{ end -}}
+{{- $img := "" }}{{ with $still }}{{ $img = resources.Get . }}{{ end -}}
+<div class="video-embed{{ if .audio }} video-embed--audio{{ end }}{{ if $img }} video-embed--still{{ end }}" data-embed="{{ .src }}" data-embed-title="{{ $title }}">
   <a class="video-start" href="{{ partial "url.html" .href }}" aria-label="Play {{ $title }}">
+    {{ with $img }}{{ $s := .Resize "800x webp q80" }}{{ $l := .Resize "1280x webp q80" }}<img class="video-still" src="{{ $s.RelPermalink }}" srcset="{{ $s.RelPermalink }} 800w, {{ $l.RelPermalink }} 1280w" sizes="(max-width: 767px) 100vw, 640px" width="{{ $s.Width }}" height="{{ $s.Height }}" alt="" loading="lazy" decoding="async">{{ end }}
     <span class="play-icon">{{ partial "icon.html" "play" }}</span>
-    <span>{{ $title }}</span>
+    {{ if not $img }}<span>{{ $title }}</span>{{ end }}
   </a>
 </div>

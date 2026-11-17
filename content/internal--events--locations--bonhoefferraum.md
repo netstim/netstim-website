@@ -1,5 +1,5 @@
 ---
-title: Updates
+title: Bonhoefferraum
 url: /internal/events/locations/bonhoefferraum/
 family: events
 crumbs:

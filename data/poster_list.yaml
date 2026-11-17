@@ -1,0 +1,1810 @@
+- id: MustinSummit2026
+  who: Sahin et al. (OHBM 2026)
+  title: White-matter substrates of deep brain stimulation response across targets in Tourette syndrome
+  image:
+    src: media/5b1db9eaea51-OHBM2026.png
+    original: https://www.netstim.org/wp-content/uploads/2026/06/OHBM2026.png
+    alt: ''
+    width: 731
+  full: '@root@wp-content/uploads/2026/06/OHBM2026.png'
+  details: '<h3><strong>Affiliations</strong></h3>
+
+    <p>1. Einstein Center for Neurosciences Berlin, Charité – Universitätsmedizin Berlin, Berlin<br/>
+
+    10117, Germany<br/>
+
+    2. Institute for Network Stimulation, Department of Stereotactic and Functional<br/>
+
+    Neurosurgery, University Hospital Cologne, Cologne, Germany<br/>
+
+    3. Movement Disorders and Neuromodulation Unit, Department of Neurology with<br/>
+
+    Experimental Neurology, Charité – Universitätsmedizin Berlin, Corporate Member of Freie<br/>
+
+    Universität Berlin and Humboldt-Universität zu Berlin, Berlin 10117, Germany<br/>
+
+    4. Department of Neurology, Norman Fixel Institute for Neurological Diseases, University<br/>
+
+    of Florida, Gainesville, FL, USA; Department of Neurology, University of Florida, Gainesville,<br/>
+
+    FL, USA.<br/>
+
+    5. Center for Brain Circuit Therapeutics, Department of Neurology, Mass General Brigham,<br/>
+
+    Harvard Medical School, Boston, MA, USA<br/>
+
+    6. Julius-Maximilian-University Wuerzburg, Germany<br/>
+
+    7. Northwestern Polytechnical University, China<br/>
+
+    8. Department of Neurosurgery, Massachusetts General Hospital, Harvard Medical School,<br/>
+
+    Boston, MA, USA<br/>
+
+    9. Institute of Neuroradiology, Charité-Universitätsmedizin Berlin, Corporate Member of<br/>
+
+    Freie Universität Berlin, Humboldt-Universität zu Berlin, and Berlin Institute of Health (BIH),<br/>
+
+    Berlin, Germany.<br/>
+
+    10. Department of Psychiatry and Psychotherapy, Medical Center – University of Freiburg,<br/>
+
+    Faculty of Medicine, University of Freiburg, Freiburg, Germany.<br/>
+
+    11. University of Cologne, Faculty of Medicine and University Hospital Cologne,<br/>
+
+    Department of Neurology, Cologne, Germany<br/>
+
+    12. Department of Psychiatry and Psychotherapy, Faculty of Medicine and University<br/>
+
+    Hospital Cologne, University of Cologne, Cologne, Germany<br/>
+
+    13. Alexianer Hospital Cologne, Alexianer Köln GmbH, Cologne, Germany<br/>
+
+    14. Department of Psychiatry and Psychotherapy III, LVR Klinik Bonn, Bonn 53111,<br/>
+
+    Germany.<br/>
+
+    15. Department of Stereo tactic and Functional Neurosurgery, Faculty of Medicine and<br/>
+
+    University Hospital Cologne, University of Cologne, Cologne, Germany<br/>
+
+    16. Sorbonne University, Inserm U1127, CNRS UMR7225, UM75, Paris Brain Institute,<br/>
+
+    Movement Investigation and Therapeutics Team, 75013 Paris, France.<br/>
+
+    17. Department of Clinical Neurophysiology, Hopital Saint Antoine, 75012 Paris, France<br/>
+
+    18. Sorbonne University, Paris Brain Institute – ICM, Inserm, CNRS, Department of<br/>
+
+    Radiology, Hôpital de la Pitié Salpêtrière (DMU 6), AP-HP, 75013, Paris, France.<br/>
+
+    19. Inserm 1127, Sorbonne Université, UPMC Univ Paris 06, UMRS 1127, CNRS, UMR<br/>
+
+    7225, Paris Brain Institute, Paris, France.<br/>
+
+    20. Department of Neurophysiology, CHU Rouen, Rouen University, 76000 Rouen, France<br/>
+
+    21. Department of Neurosurgery, Maastricht University Medical Centre, 6229 HX<br/>
+
+    Maastricht, The Netherlands<br/>
+
+    22. Department of Neurosurgery, Zuyderland Medical Center, Academic Neurosurgical<br/>
+
+    Center Limburg, Heerlen, The Netherlands<br/>
+
+    23. Department of Psychiatry, Maastricht University Medical Centre, 6229 HX Maastricht,<br/>
+
+    The Netherlands<br/>
+
+    24. Department of Neurosurgery, Rujin Hospital, Shanghai Jiao Tong University School of<br/>
+
+    Medicine, Shanghai, China<br/>
+
+    25. Beijing Neurosurgical Institute, Capital Medical University, Beijing, China.<br/>
+
+    26. Department of Neurosurgery, Chinese PLA General Hospital, Beijing, 100853, China<br/>
+
+    27. Department of Neurosurgery, Hainan Hospital of Chinese PLA General Hospital, Sanya,<br/>
+
+    Hainan, 572000, China<br/>
+
+    28. Neurosurgical Department, IRCCS Istituto Ortopedico Galeazzi, Milan, Lombardia, Italy<br/>
+
+    29. Tourette’s Syndrome and Movement Disorders Center, IRCCS Istituto Ortopedico<br/>
+
+    Galeazzi, Milan, Lombardia, Italy<br/>
+
+    30. Center for Neuromodulation, Departments of Neurology and Neurosurgery, New York<br/>
+
+    University Medical Center, New York, New York, USA<br/>
+
+    31. Department of Neurology, University of California San Francisco, San Francisco,<br/>
+
+    California, USA<br/>
+
+    32. Department of Clinical and Movement Neurosciences, UCL Queen Square Institute of<br/>
+
+    Neurology, London, UK<br/>
+
+    33. National Hospital for Neurology and Neurosurgery, UCL Queen Square Institute of<br/>
+
+    Neurology, London, UK<br/>
+
+    34. Department of Radiology and Nuclear Medicine, Maastricht University Medical Center,<br/>
+
+    the Netherlands<br/>
+
+    35. Mental Health and Neuroscience Research Institute, Maastricht University, the<br/>
+
+    Netherlands<br/>
+
+    36. Parkinson and Movement Disorders Unit, Fondazione IRCCS Istituto Neurologico Carlo<br/>
+
+    Besta, Milan, Italy<br/>
+
+    37. The BioRobotics Institute, Scuola Superiore Sant’Anna, Pisa, Italy<br/>
+
+    38. Department of Excellence in Robotics and AI, Scuola Superiore Sant’Anna, Pisa, Italy<br/>
+
+    39. Division of Neurosurgery, Department of Surgery, Medical School, Federal University of<br/>
+
+    Goiás, Goiânia, Brazil.<br/>
+
+    40. Division of Neurosurgery, Department of Surgery, University of Toronto, Toronto,<br/>
+
+    Ontario, Canada.<br/>
+
+    41. Krembil Research Institute, Toronto, Ontario, Canada.<br/>
+
+    42. CERVO Brain Research Centre, Quebec City, Quebec, Canada<br/>
+
+    43. Department of Neurology and Neurosurgery, Montreal Neurological Institute, McGill<br/>
+
+    University Health Centre, McGill University, Montreal, QC, Canada.<br/>
+
+    44. Department of Neurosurgery, Shands at University of Florida, University of Florida,<br/>
+
+    Gainesville.<br/>
+
+    45. Department of Neurosurgery, University of Florida, Gainesville, FL, USA; J Crayton<br/>
+
+    Pruitt Family Department of Biomedical Engineering, University of Florida, Gainesville, FL,<br/>
+
+    USA.</p>
+
+    <h3><strong>References</strong></h3>
+
+    <p>1. Kikinis R, Pieper SD, Vosburgh KG. 3D Slicer: A Platform for Subject-Specific Image<br/>
+
+    Analysis, Visualization, and Clinical Support. In: Jolesz FA, ed. Intraoperative Imaging and<br/>
+
+    Image-Guided Therapy. Springer; 2014:277-289. doi:10.1007/978-1-4614-7657-3_19<br/>
+
+    2. Friedrich H, Sahin IA, Rajamani N, et al. A precise atlas of the human subcortex. bioRxiv.<br/>
+
+    Preprint posted online February 15, 2026:2026.02.13.705755.<br/>
+
+    doi:10.64898/2026.02.13.705755<br/>
+
+    3. Kuo JS, Carpenter MB. Organization of pallidothalamic projections in the rhesus monkey.<br/>
+
+    Journal of Comparative Neurology. 1973;151(3):201-235. doi:10.1002/cne.901510302<br/>
+
+    4. Amunts K, Lepage C, Borgeat L, et al. BigBrain: An Ultrahigh-Resolution 3D Human Brain<br/>
+
+    Model. Science. 2013;340(6139):1472-1475. doi:10.1126/science.1235381<br/>
+
+    5. Edlow BL, Mareyam A, Horn A, et al. 7 Tesla MRI of the ex vivo human brain at 100 micron<br/>
+
+    resolution. Sci Data. 2019;6(1):244. doi:10.1038/s41597-019-0254-8</p>'
+- id: ZvarovaOHBM2026
+  who: Zvarova et al. (OHBM 2026)
+  title: 'Lead-DBS v4.0: A Unified Framework for Localization, Programming and Connectomic DBS Analysis'
+  image:
+    src: media/37ede5a60913-LeadDBS4_v1.png
+    original: https://www.netstim.org/wp-content/uploads/2026/06/LeadDBS4_v1.png
+    alt: ''
+    width: 728
+  full: '@root@wp-content/uploads/2026/06/LeadDBS4_v1.png'
+  details: '<h3><strong>Affiliations</strong></h3>
+
+    <p><sup>1</sup>Network Stimulation Institute, Department of Stereotactic and Functional Neurosurgery, University Hospital Cologne, Germany</p>
+
+    <p><sup>2</sup>Center for Brain Circuit Therapeutics, Department of Neurology, Brigham and Women’s Hospital, Harvard Medical School, Boston MA 02115, USA</p>
+
+    <p><sup>3</sup>Movement Disorder and Neuromodulation Unit, Department of Neurology, Charité-Universitätsmedizin Berlin, corporate member of Freie Universität Berlin and Humboldt-Universität zu Berlin,
+    Berlin, Germany</p>
+
+    <p><sup>4</sup>Department of Neurology, Faculty of Medicine and University Hospital Cologne, University of Cologne, Cologne, Germany</p>
+
+    <p><sup>5</sup>Department of Radiology, University of Massachusetts Chan Medical School, Worcester, MA, USA</p>
+
+    <p><sup>6</sup>Department of Medical Imaging and Radiation Sciences, Faculty of Medicine and Health Science, University of Sherbrooke, Sherbrooke, Qc, Canada</p>
+
+    <p><sup>7</sup>Northwestern Polytechnical University, China</p>
+
+    <h3><strong>References</strong></h3>
+
+    <ol>
+
+    <li>Madan, S. <em>et al.</em> SPARK-DBS: Toward standardized analysis of deep brain stimulation data. <em>Brain Stimulation</em> 103114 (2026) doi:10.1016/j.brs.2026.103114.</li>
+
+    <li>Friedrich, H. <em>et al.</em> A precise atlas of the human subcortex. <em>bioRxiv</em> (2026)</li>
+
+    <li>Butenko, K. <em>et al.</em> Activation metrics for structural connectivity recruitment in deep brain stimulation. <em>Brain Commun</em> <strong>7</strong>, fcaf301 (2025).</li>
+
+    <li>Madan, S. <em>et al.</em> Lead-Tutor: An open-access educational resource for deep brain stimulation electrode localizations. <em>Aperture Neuro</em> <strong>5</strong>, (2025).</li>
+
+    </ol>'
+- id: MustinSummit2026-2
+  who: Neudorfer*, Mustin* et al. (3rd DBS Expert Summit 2026)
+  title: 'Translating the Transcriptome: A Connectomics Approach for Gene-Network Mapping and Clinical Application'
+  image:
+    src: media/be38c8dcb3c5-Poster_Transcriptome_Wurzburg.png
+    original: https://www.netstim.org/wp-content/uploads/2026/02/Poster_Transcriptome_Wurzburg-729x1030.png
+    alt: ''
+    width: 729
+  full: '@root@wp-content/uploads/2026/02/Poster_Transcriptome_Wurzburg-729x1030.png'
+  details: '<h3><strong>Affiliations</strong></h3>
+
+    <p><sup>1</sup>Department of Neurosurgery, Massachusetts General Hospital, Harvard Medical School, Boston, MA, USA.</p>
+
+    <p><sup>2</sup>Center for Brain Circuit Therapeutics Department of Neurology Brigham &amp; Women’s Hospital, Harvard Medical School, Boston, MA, USA.</p>
+
+    <p><sup>3</sup>Movement Disorders and Neuromodulation Unit, Department of Neurology, Charité – Universitätsmedizin Berlin, corporate member of Freie Universität Berlin and Humboldt-Universität zu Berlin,
+    Berlin, Germany.</p>
+
+    <p><sup>4</sup>Einstein Center for Neurosciences Berlin, Charité – Universitätsmedizin Berlin, Berlin, Germany.</p>
+
+    <p><sup>5</sup>Berlin School of Mind and Brain, Humboldt-Universität zu Berlin, Berlin, Germany.</p>
+
+    <p><sup>6</sup>Department of Neurology, Tufts Medical Center, Boston, MA, USA.</p>
+
+    <p><sup>7</sup>Clinical Brain Networks Group, QIMR Berghofer Medical Research Institute, Herston, Brisbane, Queensland, Australia.</p>
+
+    <p><sup>8</sup>Neurosciences Queensland, St. Andrew’s War Memorial Hospital, Spring Hill, Queensland, Australia.</p>
+
+    <p><sup>9</sup>Queensland Brain Institute, University of Queensland, St. Lucia, Brisbane, Queensland, Australia.</p>
+
+    <p><sup>10</sup>Australian e-Health Research Centre, Commonwealth Scientific and Industrial Research Organisation Health and Biosecurity, Herston, Queensland, Australia.</p>
+
+    <p><sup>11</sup>Department of Clinical and Movement Neurosciences, University College London Queen Square Institute of Neurology, London, United Kingdom.</p>
+
+    <p><sup>12</sup>National Hospital for Neurology and Neurosurgery, University College London Queen Square Institute of Neurology, London, United Kingdom.</p>
+
+    <p><sup>13</sup>Centre for Mental Health, Swinburne University of Melbourne, Victoria, Australia.</p>
+
+    <p><sup>14</sup>St. Vincent’s Hospital, Melbourne, Victoria, Australia.</p>
+
+    <p><sup>15</sup>Department of Psychiatry, University of Melbourne, Melbourne, Australia.</p>
+
+    <p><sup>16</sup>Movement Disorders and Neuromodulation Centre, Department of Neurology, University of California, San Francisco, San Francisco, CA, USA.</p>
+
+    <p><sup>17</sup>Department of Neurological Surgery, University of California, San Francisco, San Francisco, CA, USA.</p>
+
+    <p><sup>18</sup>Department of Neurology, Amsterdam University Medical Center, Amsterdam, Netherlands.</p>
+
+    <p><sup>19</sup>Department of Neurosurgery, Hospital Clínico San Carlos, Instituto de Investigacion Sanitaria San Carlos, Universidad Complutense de Madrid, Madrid, Spain.</p>
+
+    <p><sup>20</sup>Department of Neurosurgery, Baylor College of Medicine, Houston, TX, USA.</p>
+
+    <p><sup>21</sup>Menninger Department of Psychiatry and Behavioral Sciences, Baylor College of Medicine, Houston, TX, USA.</p>
+
+    <p><sup>22</sup>Department of Stereotactic and Functional Neurosurgery, Faculty of Medicine and University Hospital Cologne, University of Cologne, Cologne, Germany.</p>
+
+    <p><sup>23</sup>Nash Family Center for Advanced Circuit Therapeutics, Icahn School of Medicine at Mount Sinai, New York, New York.</p>
+
+    <p><sup>24</sup>Department of Neuroscience, Icahn School of Medicine at Mount Sinai, New York, New York.</p>
+
+    <p><sup>25</sup>Department of Psychiatry, Icahn School of Medicine at Mount Sinai, New York, New York.</p>
+
+    <p><sup>26</sup>Department of Psychiatry, Massachusetts General Hospital, Harvard Medical School, Boston, Massachusetts, USA.</p>
+
+    <p><sup>27</sup>Cognitive Neuroscience Unit, School of Psychology, Deakin University, Geelong, VIC, Australia.</p>
+
+    <p><sup>28</sup>Turku Brain and Mind Center, University of Turku, Turku, Finland.</p>
+
+    <p><sup>29</sup>Department of Neurosurgery, Charité – Universitätsmedizin Berlin, Berlin, Germany.</p>
+
+    <p><sup>30</sup>Cluster of Excellence Matters of Activity. Image Space Material, Humboldt-Universität zu Berlin, Berlin, Germany.</p>
+
+    <p><sup>31</sup>Department of Neurology, Toronto Western Hospital, Toronto, Canada.</p>
+
+    <p><sup>32</sup>Psychiatric and Neurodevelopmental Genetics Unit, Center for Genomic Medicine, Massachusetts General Hospital, Boston, MA, USA.</p>
+
+    <p><sup>33</sup>Center for Genomic Medicine, Department of Medicine, Massachusetts General Hospital, Boston, MA, USA.</p>
+
+    <p><sup>34</sup>Department of Psychiatry, Massachusetts General Hospital, Harvard Medical School, Boston, MA, USA.</p>
+
+    <p><sup>35</sup>Institute of Neurogenetics, University of Lubeck, Lubeck, Germany.</p>'
+- id: GoedeSummit
+  who: Goede et al. (3rd DBS Expert Summit 2026)
+  title: Action vs. rest tremor map to different networks within primary motor cortex
+  image:
+    src: media/ad36927e1442-goede-dbsexpertsummit-2026-1449x2048.png
+    original: https://www.netstim.org/wp-content/uploads/2026/02/goede-dbsexpertsummit-2026-729x1030.png
+    alt: ''
+    width: 729
+  full: '@root@wp-content/uploads/2026/02/goede-dbsexpertsummit-2026-729x1030.png'
+  details: '<h3><strong>Affiliations</strong></h3>
+
+    <ol>
+
+    <li>Department of Neurology with Experimental Neurology, Movement Disorders and Neuromodulation Unit, Charité – Universitätsmedizin Berlin, corporate member of Freie Universität Berlin and Humboldt-
+    Universität zu Berlin, Berlin, Germany</li>
+
+    </ol>
+
+    <ol start="2">
+
+    <li>Center for Brain Circuit Therapeutics, Department of Neurology, Brigham &amp; Women’s Hospital, Harvard Medical School, Boston, MA, USA</li>
+
+    </ol>
+
+    <ol start="3">
+
+    <li>Einstein Center for Neurosciences Berlin, Charité – Universitätsmedizin Berlin, corporate member of Freie Universität Berlin and Humboldt- Universität zu Berlin, Berlin, Germany</li>
+
+    </ol>
+
+    <ol start="4">
+
+    <li>Institute for Network Stimulation, Department of Stereotactic and Functional Neurosurgery, University Hospital Cologne, Germany</li>
+
+    </ol>
+
+    <ol start="5">
+
+    <li>Department of Neurosurgery, Chinese PLA General Hospital, Beijing, 100853, China</li>
+
+    </ol>
+
+    <ol start="6">
+
+    <li>Department of Neurosurgery, Hainan Hospital of Chinese PLA General Hospital, Sanya, Hainan, 572000, China</li>
+
+    </ol>
+
+    <ol start="7">
+
+    <li>Department of Neurosurgery, The National Key Clinic Specialty, Shenzhen Key Laboratory of Neurosurgery, the First Affiliated Hospital of Shenzhen University, Shenzhen Second</li>
+
+    </ol>
+
+    <ol start="8">
+
+    <li>Department of Neurology, University Hospital Würzburg, Würzburg, Germany</li>
+
+    </ol>
+
+    <ol start="9">
+
+    <li>MGH Neurosurgery &amp; Center for Neurotechnology and Neurorecovery (CNTR) at MGH Neurology Massachusetts General Hospital, Harvard Medical School, Boston, MA, USA</li>
+
+    </ol>
+
+    <p>References:</p>
+
+    <ol>
+
+    <li>Goede, L.L., Al-Fatly, B., Li, N., Sobesky, L.K., Bahners, B.H., Zvarova, P., Neudorfer, C., Reich, M., Volkmann, J., Zhang, C., et al. (2025). Convergent mapping of a tremor treatment network.
+    Nat Commun <em>16</em>, 4772. <a href="https://doi.org/10.1038/s41467-025-60089-6">https://doi.org/10.1038/s41467-025-60089-6</a>.</li>
+
+    </ol>
+
+    <ol start="2">
+
+    <li>Penfield, W., and Boldrey, E. (1937). Somatic motor and sensory representation in the cerebral cortex of man as studied by electrical stimulation. Brain <em>60</em>, 389–443. <a href="https://doi.org/10.1093/brain/60.4.389">https://doi.org/10.1093/brain/60.4.389</a>.</li>
+
+    </ol>
+
+    <ol start="3">
+
+    <li>Vogt, C., and Vogt, O. (1926). Die vergleichend-architektonische und die vergleichend-reizphysiologische Felderung der Großhirnrinde unter besonderer Berücksichtigung der menschlichen. Naturwissenschaften
+    <em>14</em>, 1190–1194. <a href="https://doi.org/10.1007/BF01451766">https://doi.org/10.1007/BF01451766</a>.</li>
+
+    </ol>
+
+    <ol start="4">
+
+    <li>Gordon, E.M., Chauvin, R.J., Van, A.N., Rajesh, A., Nielsen, A., Newbold, D.J., Lynch, C.J., Seider, N.A., Krimmel, S.R., Scheidter, K.M., et al. (2023). A somato-cognitive action network alternates
+    with effector regions in motor cortex. Nature <em>617</em>, 351–359. <a href="https://doi.org/10.1038/s41586-023-05964-2">https://doi.org/10.1038/s41586-023-05964-2</a>.</li>
+
+    </ol>
+
+    <ol start="5">
+
+    <li>Dosenbach, N.U.F., Raichle, M.E., and Gordon, E.M. (2025). The brain’s action-mode network. Rev. Neurosci. <a href="https://doi.org/10.1038/s41583-024-00895-x">https://doi.org/10.1038/s41583-024-00895-x</a>.</li>
+
+    </ol>
+
+    <ol start="6">
+
+    <li>Neudorfer, C., Butenko, K., Oxenford, S., Rajamani, N., Achtzehn, J., Goede, L., Hollunder, B., Ríos, A.S., Hart, L., Tasserie, J., et al. (2023). Lead-DBS v3.0: Mapping deep brain stimulation effects
+    to local anatomy and global networks. NeuroImage <em>268</em>, 119862. <a href="https://doi.org/10.1016/j.neuroimage.2023.119862">https://doi.org/10.1016/j.neuroimage.2023.119862</a>.</li>
+
+    </ol>'
+- id: SahinDBSExpertSummit2026
+  who: Sahin et al. (3rd DBS Expert Summit 2026)
+  title: 'Deep Brain Stimulation for Tourette Syndrome: from voxels to networks'
+  image:
+    src: media/0a4d76479396-Sahinetal_Wurzburg2026-v2.png
+    original: https://www.netstim.org/wp-content/uploads/2026/02/Sahinetal_Wurzburg2026-v2.png
+    alt: ''
+    width: 729
+  full: '@root@wp-content/uploads/2026/02/Sahinetal_Wurzburg2026-v2.png'
+  details: '<h3><strong>Affiliations</strong></h3>
+
+    <ol>
+
+    <li>Einstein Center for Neurosciences Berlin, Charité – Universitätsmedizin Berlin, Berlin 10117, Germany</li>
+
+    <li>Institute for Network Stimulation, Department of Stereotactic and Functional Neurosurgery, University Hospital Cologne, Cologne, Germany</li>
+
+    <li>Movement Disorders and Neuromodulation Unit, Department of Neurology with Experimental Neurology, Charité – Universitätsmedizin Berlin, Corporate Member of Freie Universität Berlin and Humboldt-Universität
+    zu Berlin, Berlin 10117, Germany</li>
+
+    <li>Department of Neurology, Norman Fixel Institute for Neurological Diseases, University of Florida, Gainesville, FL, USA; Department of Neurology, University of Florida, Gainesville, FL, USA.</li>
+
+    <li>Center for Brain Circuit Therapeutics, Department of Neurology, Mass General Brigham, Harvard Medical School, Boston, MA, USA</li>
+
+    <li>Julius-Maximilian-University Wuerzburg, Germany</li>
+
+    <li>Northwestern Polytechnical University, China</li>
+
+    <li>Department of Neurosurgery, Massachusetts General Hospital, Harvard Medical School, Boston, MA, USA</li>
+
+    <li>Institute of Neuroradiology, Charité-Universitätsmedizin Berlin, Corporate Member of Freie Universität Berlin, Humboldt-Universität zu Berlin, and Berlin Institute of Health (BIH), Berlin, Germany.</li>
+
+    <li>Department of Psychiatry and Psychotherapy, Medical Center – University of Freiburg, Faculty of Medicine, University of Freiburg, Freiburg, Germany.</li>
+
+    <li>University of Cologne, Faculty of Medicine and University Hospital Cologne, Department of Neurology, Cologne, Germany</li>
+
+    <li>Department of Psychiatry and Psychotherapy, Faculty of Medicine and University Hospital Cologne, University of Cologne, Cologne, Germany</li>
+
+    <li>Alexianer Hospital Cologne, Alexianer Köln GmbH, Cologne, Germany</li>
+
+    <li>Department of Psychiatry and Psychotherapy III, LVR Klinik Bonn, Bonn 53111, Germany.</li>
+
+    <li>Department of Stereo tactic and Functional Neurosurgery, Faculty of Medicine and University Hospital Cologne, University of Cologne, Cologne, Germany</li>
+
+    <li>Sorbonne University, Inserm U1127, CNRS UMR7225, UM75, Paris Brain Institute, Movement Investigation and Therapeutics Team, 75013 Paris, France.</li>
+
+    <li>Department of Clinical Neurophysiology, Hopital Saint Antoine, 75012 Paris, France</li>
+
+    <li>Sorbonne University, Paris Brain Institute – ICM, Inserm, CNRS, Department of Radiology, Hôpital de la Pitié Salpêtrière (DMU 6), AP-HP, 75013, Paris, France.</li>
+
+    <li>Inserm 1127, Sorbonne Université, UPMC Univ Paris 06, UMRS 1127, CNRS, UMR 7225, Paris Brain Institute, Paris, France.</li>
+
+    <li>Department of Neurophysiology, CHU Rouen, Rouen University, 76000 Rouen, France</li>
+
+    <li>Department of Neurosurgery, Maastricht University Medical Centre, 6229 HX Maastricht, The Netherlands</li>
+
+    <li>Department of Neurosurgery, Zuyderland Medical Center, Academic Neurosurgical Center Limburg, Heerlen, The Netherlands</li>
+
+    <li>Department of Psychiatry, Maastricht University Medical Centre, 6229 HX Maastricht, The Netherlands</li>
+
+    <li>Department of Neurosurgery, Rujin Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China</li>
+
+    <li>Beijing Neurosurgical Institute, Capital Medical University, Beijing, China.</li>
+
+    <li>Department of Neurosurgery, Chinese PLA General Hospital, Beijing, 100853, China</li>
+
+    <li>Department of Neurosurgery, Hainan Hospital of Chinese PLA General Hospital, Sanya, Hainan, 572000, China</li>
+
+    <li>Neurosurgical Department, IRCCS Istituto Ortopedico Galeazzi, Milan, Lombardia, Italy</li>
+
+    <li>Tourette’s Syndrome and Movement Disorders Center, IRCCS Istituto Ortopedico Galeazzi, Milan, Lombardia, Italy</li>
+
+    <li>Center for Neuromodulation, Departments of Neurology and Neurosurgery, New York University Medical Center, New York, New York, USA</li>
+
+    <li>Department of Neurology, University of California San Francisco, San Francisco, California, USA</li>
+
+    <li>Department of Clinical and Movement Neurosciences, UCL Queen Square Institute of Neurology, London, UK</li>
+
+    <li>National Hospital for Neurology and Neurosurgery, UCL Queen Square Institute of Neurology, London, UK</li>
+
+    <li>Department of Radiology and Nuclear Medicine, Maastricht University Medical Center, the Netherlands</li>
+
+    <li>Mental Health and Neuroscience Research Institute, Maastricht University, the Netherlands</li>
+
+    <li>Parkinson and Movement Disorders Unit, Fondazione IRCCS Istituto Neurologico Carlo Besta, Milan, Italy</li>
+
+    <li>The BioRobotics Institute, Scuola Superiore Sant’Anna, Pisa, Italy</li>
+
+    <li>Department of Excellence in Robotics and AI, Scuola Superiore Sant’Anna, Pisa, Italy</li>
+
+    <li>Division of Neurosurgery, Department of Surgery, Medical School, Federal University of Goiás, Goiânia, Brazil.</li>
+
+    <li>Division of Neurosurgery, Department of Surgery, University of Toronto, Toronto, Ontario, Canada.</li>
+
+    <li>Krembil Research Institute, Toronto, Ontario, Canada.</li>
+
+    <li>CERVO Brain Research Centre, Quebec City, Quebec, Canada</li>
+
+    <li>Department of Neurology and Neurosurgery, Montreal Neurological Institute, McGill University Health Centre, McGill University, Montreal, QC, Canada.</li>
+
+    <li>Department of Neurosurgery, Shands at University of Florida, University of Florida, Gainesville.</li>
+
+    <li>Department of Neurosurgery, University of Florida, Gainesville, FL, USA; J Crayton Pruitt Family Department of Biomedical Engineering, University of Florida, Gainesville, FL, USA.</li>
+
+    </ol>
+
+    <p>Backdrops &amp; 3D Atlas Structures:</p>
+
+    <ol>
+
+    <li>Friedrich H, Sahin IA, Rajamani N, et al. A precise atlas of the human subcortex. <em>bioRxiv</em>. Preprint posted online February 15, 2026:2026.02.13.705755. doi:10.64898/2026.02.13.705755</li>
+
+    <li>Amunts K, Lepage C, Borgeat L, et al. BigBrain: An Ultrahigh-Resolution 3D Human Brain Model. <em>Science</em>. 2013;340(6139):1472-1475. doi:10.1126/science.1235381</li>
+
+    <li>Edlow BL, Mareyam A, Horn A, et al. 7 Tesla MRI of the ex vivo human brain at 100 micron resolution. <em>Sci Data</em>. 2019;6(1):244. doi:10.1038/s41597-019-0254-8</li>
+
+    </ol>'
+- id: ZvarovaDBSExpertSummit2026
+  who: Zvarova et al. (3rd DBS Expert Summit 2026)
+  title: 'Imaging-Informed Guidance for Subthalamic DBS: Translating Group Models to Individual Contacts'
+  image:
+    src: media/4a3344e4a2be-poster_v1.png
+    original: https://www.netstim.org/wp-content/uploads/2026/02/poster_v1.png
+    alt: ''
+    width: 729
+  full: '@root@wp-content/uploads/2026/02/poster_v1.png'
+  details: '<h3><strong>Affiliations</strong></h3>
+
+    <p><sup>1</sup>Movement Disorder and Neuromodulation Unit, Department of Neurology, Charité-Universitätsmedizin Berlin, corporate member of Freie Universität Berlin and Humboldt-Universität zu Berlin,
+    Berlin, Germany</p>
+
+    <p><sup>2</sup>Einstein Center for Neurosciences Berlin, Charité – Universitätsmedizin Berlin, Berlin, Germany</p>
+
+    <p><sup>3</sup>Center for Brain Circuit Therapeutics, Department of Neurology, Brigham and Women’s Hospital, Harvard Medical School, Boston MA 02115, USA</p>
+
+    <p><sup>4</sup>Network Stimulation Institute, Department of Stereotactic and Functional Neurosurgery, University Hospital Cologne, Germany</p>
+
+    <p><sup>5</sup>Department of Neurology, Faculty of Medicine and University Hospital Cologne, University of Cologne, Cologne, Germany</p>
+
+    <p><sup>6</sup>Department of Neurology, Center for Movement Disorders and Neuromodulation, Medical Faculty and University Hospital Düsseldorf, Heinrich Heine University Düsseldorf</p>
+
+    <p><sup>7</sup>Institute of Clinical Neuroscience and Medical Psychology, Medical Faculty and University Hospital Düsseldorf, Heinrich Heine University Düsseldorf</p>
+
+    <p><sup>8</sup>Berlin School of Mind and Brain, Humboldt-Universität zu Berlin, Berlin, Germany</p>
+
+    <p><sup>9</sup>Brigham &amp; Women’s Hospital, Harvard Medical School, Department of Psychiatry</p>
+
+    <p><sup>10</sup>Department of Neurology, University Clinic of Würzburg, Josef-Schneider-Str. 11, 97080, Würzburg, Germany</p>
+
+    <p><sup>11</sup>Department of Neurology, Amsterdam University Medical Center, University of Amsterdam, Amsterdam, The Netherlands</p>
+
+    <p><sup>12</sup>Department of Neurosurgery, Chinese PLA General Hospital, Beijing, 100853, China</p>
+
+    <p><sup>13</sup>Department of Neurosurgery, Hainan Hospital of Chinese PLA General Hospital, Sanya, Hainan, 572000, China</p>
+
+    <p><sup>14</sup>Department of Neurosurgery, The National Key Clinic Specialty, Shenzhen Key Laboratory of Neurosurgery, the First Affiliated Hospital of Shenzhen University, Shenzhen Second People’s
+    Hospital, Shenzhen, 518035, China</p>
+
+    <p><sup>15</sup>Bernstein Center for Computational Neuroscience Berlin, Berlin, Germany</p>
+
+    <p><sup>16</sup>NeuroCure Clinical Research Centre, Charité – Universitätsmedizin Berlin, corporate member of Freie Universität Berlin and Humboldt-Universität zu Berlin, Berlin, Germany</p>
+
+    <p><sup>17</sup>Clinical Neurotechnology Laboratory, Department of Psychiatry and Neurosciences</p>
+
+    <p>(CCM), Charité – Universitätsmedizin Berlin, Berlin, Germany</p>
+
+    <p><sup>18</sup>Berlin Center for Advanced Neuroimaging (BCAN), Charité— Universitätsmedizin Berlin, Berlin, Germany</p>
+
+    <p><sup>19</sup>Hertie Institute for AI in Brain Health, University of Tübingen, Germany</p>
+
+    <p><sup>20</sup>Department of Stereotactic and Functional Neurosurgery, Faculty of Medicine and University Hospital Cologne, University of Cologne, Cologne, Germany</p>
+
+    <p><sup>21</sup>MGH Neurosurgery &amp; Center for Neurotechnology and Neurorecovery (CNTR) at MGH Neurology Massachusetts General Hospital, Harvard Medical School, Boston, MA 02114, USA</p>
+
+    <h3>References</h3>
+
+    <p>[1-4]</p>
+
+    <p>Richards M, Marder K, Cote L, Mayeux R. Interrater reliability of the unified Parkinson’s disease rating scale motor examination. <i>Movement Disorders</i>. 1994;9(1):89-91. doi:10.1002/mds.870090114</p>
+
+    <p>Bennett DA, Shannon KM, Beckett LA, Goetz CG, Wilson RS. Metric properties of nurses’ ratings of parkinsonian signs with a modified Unified Parkinson’s Disease Rating Scale. <i>Neurology</i>. 1997;49(6):1580-1587.
+    doi:10.1212/WNL.49.6.1580</p>
+
+    <p>Siderowf A, McDermott M, Kieburtz K, et al. Test-Retest reliability of the Unified Parkinson’s Disease Rating Scale in patients with early Parkinson’s disease: Results from a multicenter clinical
+    trial. <i>Mov Disord</i>. 2002;17(4):758-763. doi:10.1002/mds.10011</p>
+
+    <p>Metman LV, Myre B, Verwey N, et al. Test-retest reliability of UPDRS-III, dyskinesia scales, and timed motor tests in patients with advanced Parkinson’s disease: An argument against multiple baseline
+    assessments. <i>Mov Disord</i>. 2004;19(9):1079-1084. doi:10.1002/mds.20101</p>
+
+    <p>[5]</p>
+
+    <p>Cavallieri F, Fraix V, Bove F, et al. Predictors of Long-Term Outcome of Subthalamic Stimulation in Parkinson Disease. <i>Annals of Neurology</i>. 2020;89(3):587-597. doi:10.1002/ana.25994</p>
+
+    <p>[6-8]</p>
+
+    <p>Maks CB, Butson CR, Walter BL, Vitek JL, McIntyre CC. Deep brain stimulation activation volumes and their association with neurophysiological mapping and therapeutic outcomes. <i>J Neurol Neurosurg
+    Psychiatry</i>. 2009;80(6):659-666. doi:10.1136/jnnp.2007.126219</p>
+
+    <p>Noecker AM, Frankemolle-Gilbert AM, Howell B, et al. StimVision v2: Examples and Applications in Subthalamic Deep Brain Stimulation for Parkinson’s Disease. <i>Neuromodulation</i>. 2021;24(2):248-258.
+    doi:10.1111/ner.13350</p>
+
+    <p>Rajamani N, Friedrich H, Butenko K, et al. Deep brain stimulation of symptom-specific networks in Parkinson’s disease. <i>Nat Commun</i>. 2024;15(1):4662. doi:10.1038/s41467-024-48731-1</p>
+
+    <p>[9]</p>
+
+    <p>Alonso F, Zsigmond P, Wårdell K. Influence of Virchow-Robin spaces on the electric field distribution in subthalamic nucleus deep brain stimulation. <i>Clinical Neurology and Neurosurgery</i>. 2021;204:106596.
+    doi:10.1016/j.clineuro.2021.106596</p>
+
+    <p>[10]</p>
+
+    <p>Muthuraman M, Deuschl G, Koirala N, Riedel C, Volkmann J, Groppa S. Effects of DBS in parkinsonian patients depend on the structural integrity of frontal cortex. <i>Sci Rep</i>. 2017;7(1):43571.
+    doi:10.1038/srep43571</p>
+
+    <p>[11]</p>
+
+    <p>Soulas T, Sultan S, Gurruchaga JM, Palfi S, Fénelon G. Depression and Coping as Predictors of Change After Deep Brain Stimulation in Parkinson’s Disease. <i>World Neurosurgery</i>. 2011;75(3):525-532.
+    doi:10.1016/j.wneu.2010.06.015</p>'
+- id: HollunderOHBM2024
+  who: Meyer et al. (NYC Neuromodulation 2024)
+  title: Deep Brain Stimulation sites causing or improving psychosis
+  image:
+    src: media/97646c49637a-Slide1-1451x2048.jpeg
+    original: https://www.netstim.org/wp-content/uploads/2024/07/Slide1-730x1030.jpeg
+    alt: ''
+    width: 730
+  full: '@root@wp-content/uploads/2024/07/Slide1-730x1030.jpeg'
+  details: '<h3><strong>Affiliations</strong></h3>
+
+    <p>GM Meyer, AR Pines, FLWVJ Schaper, C Neudorfer, SH Siddiqi, A Horn:<i>Center for Brain Circuit Therapeutics, Department of Neurology, Brigham &amp; Women’s Hospital, Harvard Medical School, Boston,
+    MA, USA</i></p>
+
+    <p>Roldan A, Aracil-Bolanos I, JA Aibar-Durán, I Corripio: <i>Institut d’Investigacio Biomedica-Sant Pau (IIB-SANT PAU), Hospital de la Santa Creu i Sant Pau, Barcelona, Spain</i></p>
+
+    <p>Roldan A: <i>Spanish National Network for Research in Mental Health (CIBERSAM), Madrid, Spain</i></p>
+
+    <p>C Neudorfer, DD Dougherty, A Horn: <i>Massachusetts General Hospital, Boston, MA, USA</i></p>
+
+    <p>S Järvenpää, K Lehtimäki, J Peltola: <i>Tampere University Hospital and University of Tampere, Faculty of Medicine and Health Technology, Tampere, Finland</i></p>
+
+    <p>H Kamo, G Oyama, N Hattori: <i>School of Medicine, Juntendo University, Tokyo, Japan</i></p>
+
+    <p>S Piacentini, LM Romito: <i>Fondazione IRCCS Istituto Neurologico Carlo Besta, Milano, Italy</i></p>
+
+    <p>PE Mosley: <i>QIMR Berghofer Medical Research Institute, Queensland Brain Institute and CSIRO;</i> <i>Neurosciences Queensland, St Andrew’s War Memorial Hospital; Queensland Brain Institute, University
+    of Queensland, St Lucia; Australian eHealth Research Centre, CSIRO Health and Biosecurity, Queensland, Australia</i></p>
+
+    <p>AS Widge: <i>Department of Psychiatry, University of Minnesota, Minneapolis, MN, USA</i></p>
+
+    <p>Y Temel, RPW Rouhl: <i>Department of Neurology, Maastricht University Medical Center and School for Mental Health and Neuroscience, Maastricht University, Maastricht, Netherlands</i></p>
+
+    <p>RPW Rouhl, A Colon: <i>Academic Center for Epileptology Kempenhaeghe/MUMC+, Heeze and Maastricht, Netherlands</i></p>
+
+    <p>A Colon: <i>Centre d’Etudes et Traitement d’Epilepsie (CETE), CHU Martinique, France</i></p>
+
+    <p>M Maarouf: <i>Division of Stereotaxis and Functional Neurosurgery, University of Cologne, Cologne, Germany</i></p>
+
+    <p>A Macerollo, J Osman Farah: <i>The Walton Centre NHS Foundation Trust for Neurology and Neurosurgery, Liverpool, UK</i></p>
+
+    <p>A Macerollo: <i>Institute of Systems, Molecular and Integrative Biology, University of Liverpool, Liverpool, UK; Department of Psychology, Manchester Metropolitan University, Manchester, UK</i></p>
+
+    <p>H Akram, T Foltynie: <i>University College London</i> <i>Queen Square Institute of Neurology, London, UK</i></p>
+
+    <p>CC Zhang: <i>Ruijin Hospital, Shanghai Jiao Tong University School of Medicine, Shangai, China</i></p>
+
+    <p>I Corripio: <i>Vic University Hospital, Barcelona, Spain</i></p>
+
+    <p>A Horn: <i>Department of Neurology,and Einstein Center for Neurosciences, Charité – Universitätsmedizin Berlin, Berlin, Germany; Berlin School of Mind and Brain, Humboldt-Universität zu Berlin, Berlin,
+    Germany</i></p>
+
+    <h3>References</h3>
+
+    <p>Psychosis with dislodged GPi electrode<br/>
+
+    #1 – Piacentini, S. <i>et al.</i> <i>Mov Disord</i> <b>23</b>, 147–150 (2008).</p>
+
+    <p>Psychosis with NAc-DBS<br/>
+
+    Graat, I. <i>et al.</i> <i>Brain Stimul</i> <b>12</b>, 770–771 (2019).<br/>
+
+    #2 – Testo, A. A. <i>et al.</i> <i>Brain Stimul</i> <b>13</b>, 1317–1319 (2020).</p>
+
+    <p>Psychosis and suicidality with GPi-DBS<br/>
+
+    #3 – Hanna, S., Palmadottir, V., Penar, P. L. &amp; Boyd, J. T. <i>Clin Park Relat Disord</i> <b>8</b>, 100175 (2022).</p>
+
+    <p>Psychosis with ANT-DBS<br/>
+
+    #8-9 – Järvenpää, S. <i>et al.</i> <i>Epilepsy Behav</i> <b>88</b>, 373–379 (2018).<br/>
+
+    #10 – Schaper, F. L. W. V. J. <i>et al.</i> <i>Neurosurgery</i> <b>87</b>, 602–610 (2020).<br/>
+
+    #11 – Olaciregui Dague, K., Witt, J.-A., von Wrede, R., Helmstaedter, C. &amp; Surges, R. <i>Frontiers in Neurology</i> <b>14</b>, (2023).<br/>
+
+    #12 – Costa-Gertrudes, R. <i>et al.</i> <i>Stereotact Funct Neurosurg</i> <b>100</b>, 108–120 (2022).</p>
+
+    <p>Psychosis with STN-DBS<br/>
+
+    #4 – Mosley, P. E., Marsh, R., Perry, A., Coyne, T. &amp; Silburn, P. <i>JNP</i> <b>30</b>, 246–249 (2018).<br/>
+
+    #5 – Neudorfer, C. <i>et al.</i> <i>Neuromodulation</i> <b>22</b>, 493–502 (2019).<br/>
+
+    #6 -Ito, M. <i>et al.</i> <i>Psychiatry Clin Neurosci</i> <b>74</b>, 328–329 (2020).<br/>
+
+    #7 -Macerollo, A. <i>et al.</i> <i>Neurol Sci</i> <b>41</b>, 2639–2640 (2020).<br/>
+
+    Raucher-Chéné, D., Charrel, C.-L., Maindreville, A. D. de &amp; Limosin, F. <i>Journal of the Neurological Sciences</i> <b>273</b>, 116–117 (2008).<br/>
+
+    Herzog, J. <i>et al.</i> <i>Mov Disord</i> <b>18</b>, 1382–1384 (2003).<br/>
+
+    Kulisevsky, J. <i>et al.</i> <i>Neurology</i> <b>59</b>, 1421–1424 (2002).</p>
+
+    <p>Clinical trials of DBS for schizophrenia<br/>
+
+    #13-20 – Corripio, I. <i>et al.</i> <i>EBioMedicine</i> <b>51</b>, 102568 (2020).<br/>
+
+    #21 – Cascella, N. <i>et al.</i> <i>Biol Psychiatry</i> <b>90</b>, e57–e59 (2021).<br/>
+
+    #22-23 – Wang, Y. <i>et al.</i> <i>Neurosurg Focus</i> <b>49</b>, E9 (2020).<br/>
+
+    Zhou, B. <i>et al.</i> <i>Clin Psychopharmacol Neurosci</i> <b>18</b>, 636–640 (2020).</p>
+
+    <p>NBM-DBS improving hallucinations<br/>
+
+    #24-25 – Gratwicke, J. <i>et al.</i> <i>JAMA Neurol</i> <b>75</b>, 169–178 (2018).</p>'
+- id: HollunderOHBM2024-2
+  who: Hollunder et al. (OHBM 2024)
+  title: Symptom Network Modulation of Deep Brain Stimulation in Obsessive-Compulsive Disorder
+  image:
+    src: media/d3fc331e79ec-Poster_Hollunder_OHBM_2024-1437x2048.jpg
+    original: https://www.netstim.org/wp-content/uploads/2024/06/Poster_Hollunder_OHBM_2024-723x1030.jpg
+    alt: ''
+    width: 723
+  full: '@root@wp-content/uploads/2024/06/Poster_Hollunder_OHBM_2024-723x1030.jpg'
+  details: '<p><a href="@root@wp-content/uploads/2024/06/Poster_Hollunder_OHBM_2024.pdf">Poster PDF</a></p>
+
+    <h3><strong>Affiliations</strong></h3>
+
+    <ol>
+
+    <li>Department of Neurology, Charité – Universitätsmedizin Berlin, Berlin, Germany</li>
+
+    <li>Einstein Center for Neurosciences Berlin, Charité – Universitätsmedizin Berlin, Berlin, Germany</li>
+
+    <li>Berlin School of Mind and Brain, Humboldt-Universität zu Berlin, Berlin, Germany</li>
+
+    <li>Center for Brain Circuit Therapeutics, Department of Neurology, Brigham &amp; Women’s Hospital, Harvard Medical School, Boston, MA, USA</li>
+
+    <li>Department of Neurosurgery, Massachusetts General Hospital, Harvard Medical School, Boston, MA, USA</li>
+
+    <li>Biological and Health Psychology, School of Psychology, Universidad Autónoma de Madrid, Spain</li>
+
+    <li>Clinical Brain Networks Group, QIMR Berghofer Medical Research Institute, Herston, Queensland, Australia</li>
+
+    <li>Neurosciences Queensland, St Andrew’s War Memorial Hospital, Spring Hill, Queensland, Australia</li>
+
+    <li>Queensland Brain Institute, University of Queensland, St Lucia, Queensland, Australia</li>
+
+    <li>Australian eHealth Research Centre, CSIRO Health and Biosecurity, Herston, Queensland, Australia</li>
+
+    <li>Department of Clinical and Movement Neurosciences, UCL Queen Square Institute of Neurology, London, UK</li>
+
+    <li>National Hospital for Neurology and Neurosurgery, UCL Queen Square Institute of Neurology, London, UK</li>
+
+    <li>Centre for Mental Health, Swinburne University of Technology, Melbourne, VIC, Australia</li>
+
+    <li>Vincent’s Hospital Melbourne, Melbourne, Australia</li>
+
+    <li>Department of Psychiatry, Massachusetts General Hospital, Harvard Medical School, Boston, MA, USA</li>
+
+    <li>Division of Neurosurgery, Department of Surgery, University of Toronto, Toronto, ON, Canada</li>
+
+    <li>Department of Neurosurgery, Hospital Clinico San Carlos, Instituto de Investigacion Sanitaria San Carlos, Universidad Complutense de Madrid, Madrid, Spain</li>
+
+    <li>Laboratory for Clinical Neuroscience, Center for Biomedical Technology, Universidad Politécnica de Madrid, IdISSC, Madrid, Spain</li>
+
+    <li>Centre for Complex Interventions, Centre for Addiction and Mental Health, Toronto, ON, Canada</li>
+
+    <li>Institute of Medical Sciences, University of Toronto, Toronto, ON, Canada</li>
+
+    <li>Department of Psychiatry, University of Toronto, Toronto, ON, Canada</li>
+
+    <li>Centre for Mental Health, Swinburne University, Melbourne, Australia</li>
+
+    <li>Department of Psychiatry, University of Melbourne, Melbourne, Australia</li>
+
+    <li>Department of Neurosurgery, Brigham &amp; Women’s Hospital, Harvard Medical School, Boston, MA, USA</li>
+
+    <li>NeuroCure Cluster of Excellence, Charité – Universitätsmedizin Berlin, Berlin, Germany</li>
+
+    <li>Department of Psychiatry and Psychotherapy, Faculty of Medicine and University Hospital Cologne, University of Cologne, Cologne, Germany</li>
+
+    <li>Johanniter Hospital Oberhausen, EVKLN, Department of Psychiatry, Psychotherapy and Psychosomatics, Oberhausen, Germany</li>
+
+    <li>Department of Stereotactic and Functional Neurosurgery, Faculty of Medicine and University Hospital Cologne, University of Cologne, Cologne, Germany</li>
+
+    <li>Univ Grenoble Alpes, Grenoble, France</li>
+
+    <li>Inserm, U1216, Grenoble Institut des Neurosciences, Grenoble, France</li>
+
+    <li>Department of Psychiatry, Icahn School of Medicine, Mount Sinai Hospital, New York, USA</li>
+
+    <li>Krembil Brain Institute, Toronto, ON, Canada</li>
+
+    <li>Psychiatry Department, CHU Grenoble Alpes, Grenoble, France</li>
+
+    <li>Department of Neurology, Faculty of Medicine and University Hospital Cologne, University of Cologne, Cologne, Germany</li>
+
+    </ol>
+
+    <h3>References</h3>
+
+    <p><strong>[1]</strong> Figee, M., &amp; Mayberg, H. (2021). The future of personalized brain stimulation. <em>Nature Medicine</em>, <em>27</em>, 196–197. <a href="https://doi.org/10.1038/s41591-021-01243-7">https://doi.org/10.1038/s41591-021-01243-7</a></p>
+
+    <p><strong>[2] </strong>Baldermann, J. C. <em>et al.</em> (2019). Connectivity profile predictive of effective deep brain stimulation in obsessive-compulsive disorder. <em>Biological Psychiatry</em>,
+    <em>85</em>(9), 735–743. <a href="https://doi.org/10.1016/j.biopsych.2018.12.019">https://doi.org/10.1016/j.biopsych.2018.12.019</a></p>
+
+    <p><strong>[3]</strong> Baldermann, J. C. <em>et al.</em> (2021). Connectomic deep brain stimulation for obsessive-compulsive disorder. <em>Biological Psychiatry</em>, <em>90</em>(10), 678–688. <a href="https://doi.org/10.1016/j.biopsych.2021.07.010">https://doi.org/10.1016/j.biopsych.2021.07.010</a></p>
+
+    <p><strong>[4]</strong> Li, N. <em>et al</em>. (2020). A unified connectomic target for deep brain stimulation in obsessive-compulsive disorder. <em>Nature Communications</em>, <em>11</em>, 3364. <a
+    href="https://doi.org/10.1038/s41467-020-16734-3">https://doi.org/10.1038/s41467-020-16734-3</a></p>
+
+    <p><strong>[5]</strong> Hollunder, B. <em>et al.</em> (2022). Toward personalized medicine in connectomic deep brain stimulation. <em>Progress in Neurobiology</em>, <em>210</em>(210), 102211. <a href="https://doi.org/10.1016/j.pneurobio.2021.102211">https://doi.org/10.1016/j.pneurobio.2021.102211</a></p>
+
+    <p><strong>[6]</strong> Neudorfer, C. <em>et al.</em> Lead-DBS v3.0: Mapping deep brain stimulation effects to local anatomy and global networks. <em>Neuroimage</em> 268, 119862 (2023). <a href="https://doi.org/10.1016/j.neuroimage.2023.119862">https://doi.org/10.1016/j.neuroimage.2023.119862</a></p>
+
+    <p><strong>[7]</strong> Irmen, F. <em>et al.</em> (2020). Left prefrontal connectivity links subthalamic stimulation with depressive symptoms. <em>Annals of Neurology</em>, <em>87</em>(6), 962–975.
+    <a href="https://doi.org/10.1038/s41467-020-16734-3">https://doi.org/10.1002/ana.25734</a></p>'
+- id: ZvarovaOHBM2024
+  who: Zvarova et al. 2024
+  title: Utility of Imaging Predictors in Deep Brain Stimulation
+  image:
+    src: media/e448150e1076-Poster_Zvarova_OHBM_2024-1449x2048.jpg
+    original: https://www.netstim.org/wp-content/uploads/2024/06/Poster_Zvarova_OHBM_2024-729x1030.jpg
+    alt: ''
+    width: 729
+  full: '@root@wp-content/uploads/2024/06/Poster_Zvarova_OHBM_2024-729x1030.jpg'
+  details: '<div title="Page 1">
+
+
+
+
+    <h2>Utility of Imaging Predictors in Deep Brain Stimulation</h2>
+
+
+
+
+
+
+
+    <p><a href="@root@wp-content/uploads/2024/06/Poster_Zvarova_OHBM_2024.pdf">Poster PDF</a></p>
+
+    <h2><strong>AFFILIATIONS:</strong></h2>
+
+    <p>Patricia Zvarova<sup>1,2</sup>, Ningfei Li<sup>1</sup>, Ilkem Aysu Sahin<sup>1,2</sup>, Konstantin Butenko<sup>3</sup>, Barbara Hollunder<sup>1,2,4</sup>, Garance Meyer<sup>3</sup>, Simón Oxenford<sup>1</sup>,
+    Jan Niklas Petry-Schmelzer<sup>5</sup>, Christina van der Linden<sup>5</sup>, Martin Reich<sup>6</sup>, Jens Volkmann<sup>6</sup>, Vincent J. J. Odekeren<sup>7</sup>, Rob M.A de Bie<sup>7</sup>, Xin
+    Xu<sup>8</sup>, Zhipei Ling<sup>9</sup>, Chen Yao<sup>10</sup>, Andrea Kühn<sup>1,2,4,11</sup>, Nanditha Rajamani<sup>1*</sup>, Andreas Horn<sup>1,2,3,12*</sup></p>
+
+    <ol>
+
+    <li>Movement Disorders and Neuromodulation Unit, Department of Neurology, Charité – Universitätsmedizin Berlin, Berlin, Germany</li>
+
+    <li>Einstein Center for Neurosciences Berlin, Charité – Universitätsmedizin Berlin, Berlin, Germany</li>
+
+    <li>Center for Brain Circuit Therapeutics, Department of Neurology, Brigham &amp; Women’s Hospital, Harvard Medical School, Boston, MA, USA</li>
+
+    <li>Berlin School of Mind and Brain, Humboldt-Universität zu Berlin, Berlin, Germany</li>
+
+    <li>University of Cologne, Faculty of Medicine and University Hospital Cologne, Department of Neurology, Cologne, Germany</li>
+
+    <li>Department of Neurology, University Clinic of Würzburg, Josef-Schneider-Str. 11, 97080 Würzburg, Germany</li>
+
+    <li>Department of Neurology, Amsterdam University Medical Center, Amsterdam, The Netherlands</li>
+
+    <li>Department of Neurosurgery, Chinese PLA General Hospital, Beijing 100853, China</li>
+
+    <li>Department of Neurosurgery, Hainan Hospital of Chinese PLA General Hospital, Sanya, Hainan 572000, China</li>
+
+    <li>Department of Neurosurgery, The National Key Clinic Specialty, Shenzhen Key Laboratory of Neurosurgery, the First Affiliated Hospital of Shenzhen University, Shenzhen Second People’s Hospital, Shenzhen
+    518035, China</li>
+
+    <li>NeuroCure Cluster of Excellence, Charité – Universitätsmedizin Berlin, Berlin, Germany</li>
+
+    <li>Center for Brain Circuit Therapeutics, Brigham &amp; Women’s Hospital, Boston, MA, USA</li>
+
+    </ol>
+
+    <h2><strong>References:</strong></h2>
+
+    <ul>
+
+    <li>Metman, L.V. <em>et al.</em> (2004) ‘Test-retest reliability of UPDRS-III, dyskinesia scales, and timed motor tests in patients with advanced Parkinson’s disease: An argument against multiple baseline
+    assessments’, <em>Movement Disorders</em>, 19(9), pp. 1079– Available at: <a href="https://doi.org/10.1002/mds.20101">https://doi.org/10.1002/mds.20101</a>.</li>
+
+    <li>Bennett, D.A. <em>et al.</em> (1997) ‘Metric properties of nurses’ ratings of parkinsonian signs with a modified Unified Parkinson’s Disease Rating Scale’, <em>Neurology</em>, 49(6), pp. 1580– Available
+    at: <a href="https://doi.org/10.1212/WNL.49.6.1580">https://doi.org/10.1212/WNL.49.6.1580</a>.; Siderowf, A. et al. (2002) ‘Test-Retest reliability of the Unified Parkinson’s Disease Rating Scale in
+    patients with early Parkinson’s disease: Results from a multicenter clinical trial’, Movement Disorders, 17(4), pp. 758–763. Available at: https://doi.org/10.1002/mds.10011.; Richards, M. <em>et al.</em>
+    (1994) ‘Interrater reliability of the unified Parkinson’s disease rating scale motor examination’, <em>Movement Disorders</em>, 9(1), pp. 89–91. Available at: https://doi.org/10.1002/mds.870090114.</li>
+
+    <li>Cavallieri, F. <em>et al.</em> (2020) ‘Predictors of Long-Term Outcome of Subthalamic Stimulation in Parkinson Disease’, <em>Annals of Neurology</em>, 89(3), pp. 587– Available at: https://doi.org/10.1002/ana.25994.</li>
+
+    <li>Soulas, T. <em>et al.</em> (2011) ‘Depression and Coping as Predictors of Change After Deep Brain Stimulation in Parkinson’s Disease’, <em>World Neurosurgery</em>, 75(3), pp. 525– Available at:
+    <a href="https://doi.org/10.1016/j.wneu.2010.06.015">https://doi.org/10.1016/j.wneu.2010.06.015</a>.</li>
+
+    <li>Muthuraman, M. et al. (2017) ‘Effects of DBS in parkinsonian patients depend on the structural integrity of frontal cortex’, Scientific Reports, 7(1), p. 43571. Available at: https://doi.org/10.1038/srep43571</li>
+
+    </ul>'
+- id: SahinBrainConference2024
+  who: Sahin et al. 2024
+  title: Basal Ganglia Pathways Associated with Clinical Improvement Following Deep Brain Stimulation For Tourette Syndrome
+  image:
+    src: media/17024296d6f2-PosterInProgress_afterEditsforAndy2_page-0001-1-1449x2048.jpeg
+    original: https://www.netstim.org/wp-content/uploads/2024/06/PosterInProgress_afterEditsforAndy2_page-0001-1-729x1030.jpeg
+    alt: ''
+    width: 729
+  full: '@root@wp-content/uploads/2024/06/PosterInProgress_afterEditsforAndy2_page-0001-1-729x1030.jpeg'
+  details: '<div title="Page 1">
+
+
+
+
+    <h2>Basal Ganglia Pathways Associated with Clinical Improvement Following Deep Brain Stimulation For Tourette Syndrome</h2>
+
+
+
+
+
+
+
+    <p><a href="@root@wp-content/uploads/2024/06/PosterInProgress_afterEditsforAndy2.pdf">Poster PDF</a></p>
+
+    <p><strong><u>Author(s):</u></strong> Ilkem Aysu Sahin<sup>1,2</sup>, Simón Oxenford<sup>1</sup>, Ningfei Li<sup>1</sup>, Patricia Zvarova<sup>1,2</sup>, Nanditha Rajamani<sup>1</sup>, Barbara Hollunder<sup>1,2,3</sup>,
+    Konstantin Butenko<sup>4</sup>, Helen Friedrich<sup>4,21</sup>, Veerle Visser-Vandewalle<sup>5</sup>, Juan Carlos Baldermann<sup>6,7</sup>, Christina Hennen<sup>6,7</sup>, Yulia Worbe<sup>8</sup>, Nadya
+    Pyatigorskaya<sup>9</sup>, Linda Ackermans<sup>10</sup>, Albert F.G. Leentjens<sup>11</sup>, Chencheng Zhang<sup>12</sup>, Bomin Sun<sup>12</sup>, Luigi M. Romito<sup>13</sup>, Matteo Vissani<sup>14,15,16</sup>,
+    Alberto Mazzoni<sup>14,15</sup>, Osvaldo Vilela-Filho<sup>17</sup>,  Kara A. Johnson<sup>18,19</sup>, Michael S. Okun<sup>18,19</sup>, Christopher R. Butson<sup>18,20</sup>, Andreas Horn<sup>1, 4, 22</sup></p>
+
+    <p><strong><u>Affiliations</u></strong></p>
+
+    <ol>
+
+    <li>Movement Disorder and Neuromodulation Unit, Department of Neurology, Charité – Universitätsmedizin Berlin, corporate member of Freie Universität Berlin and Humboldt- Universität zu Berlin, 10117
+    Berlin, Germany</li>
+
+    <li>Charité – Universitätsmedizin Berlin, Einstein Center for Neurosciences Berlin, 10117, Berlin, Germany</li>
+
+    <li>Berlin School of Mind and Brain, Humboldt-Universität zu Berlin, Berlin, Germany</li>
+
+    <li>Center for Brain Circuit Therapeutics Department of Neurology Brigham &amp; Women’s Hospital, Harvard Medical School, Boston MA 02115, USA</li>
+
+    <li>Department of Stereotactic and Functional Neurosurgery, University Hospital of Cologne, Cologne, Germany.</li>
+
+    <li>University of Cologne, Faculty of Medicine and University Hospital Cologne, Department of Psychiatry and Psychotherapy, Cologne, Germany</li>
+
+    <li>University of Cologne, Faculty of Medicine and University Hospital Cologne, Department of Neurology, Cologne, Germany</li>
+
+    <li>Sorbonne University, ICM, Inserm, CNRS, Department of Neurophysiology, Hôpital Saint Antoine (DMU 6), AP-HP, 75013 Paris, France</li>
+
+    <li>Sorbonne University, Paris Brain Institute – ICM, Inserm, CNRS, Department of Radiology, Hôpital de la Pitié Salpêtrière (DMU 6), AP-HP, 75013, Paris, France.</li>
+
+    <li>Department of Neurosurgery, Maastricht University Medical Centre, 6229 HX Maastricht, The Netherlands</li>
+
+    <li>Department of Psychiatry, Maastricht University Medical Centre, 6229 HX Maastricht, The Netherlands</li>
+
+    <li>Department of Neurosurgery, Rujin Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China</li>
+
+    <li>Parkinson and Movement Disorders Unit, Fondazione IRCCS Istituto Neurologico Carlo Besta, Milan, Italy</li>
+
+    <li>The BioRobotics Institute, Scuola Superiore Sant’Anna, Pisa, Italy</li>
+
+    <li>Department of Excellence in Robotics and AI, Scuola Superiore Sant’Anna, Pisa, Italy</li>
+
+    <li>Department of Neurosurgery, Massachusetts General Hospital, Harvard Medical School, Boston, MA, USA</li>
+
+    <li>Division of Neurosurgery, Department of Surgery, Medical School, Federal University of Goiás, Goiânia, Brazil.</li>
+
+    <li>Norman Fixel Institute for Neurological Diseases, University of Florida, Gainesville, FL, USA.</li>
+
+    <li>Department of Neurology, University of Florida, Gainesville, FL, USA.</li>
+
+    <li>Scientific Computing and Imaging Institute Department of Bioengineering, University of Utah, Salt Lake City, UT, USA.</li>
+
+    <li>University of Würzburg, Faculty of Medicine, Josef-Schneider-Str. 2, 97080, Würzburg, Germany</li>
+
+    <li>MGH Neurosurgery &amp; Center for Neurotechnology and Neurorecovery (CNTR) at MGH Neurology Massachusetts General Hospital, Harvard Medical School, Boston, MA 02114, USA</li>
+
+    </ol>
+
+    <p><strong>References</strong></p>
+
+    <ol>
+
+    <li>Johnson KA, Worbe Y, Foote KD, Butson CR, Gunduz A, Okun MS. Tourette syndrome: clinical features, pathophysiology, and treatment. <em>Lancet Neurol</em>. 2023;22(2):147-158. doi:10.1016/S1474-4422(22)00303-9</li>
+
+    <li>Fedorov A, Beichel R, Kalpathy-Cramer J, et al. 3D Slicer as an image computing platform for the Quantitative Imaging Network. <em>Magn Reson Imaging</em>. 2012;30(9):1323-1341. doi:10.1016/j.mri.2012.05.001.
+    <a href="http://www.slicer.org">http://www.slicer.org</a></li>
+
+    <li>Petersen MV, Mlakar J, Haber SN, et al. Holographic Reconstruction of Axonal Pathways in the Human Brain. <em>Neuron</em>. 2019;104(6):1056-1064.e3. doi:10.1016/j.neuron.2019.09.030</li>
+
+    </ol>'
+- id: friedrich2023
+  who: Friedrich et al. 2023
+  title: High-resolution brain atlas for deep brain stimulation imaging
+  image:
+    src: media/ef0e1a1c96dd-Mesoscale_Poster_HF_final_wtract-1536x1152.jpeg
+    original: https://www.netstim.org/wp-content/uploads/2023/10/Mesoscale_Poster_HF_final_wtract-1030x773.jpeg
+    alt: ''
+    width: 1030
+  full: '@root@wp-content/uploads/2023/10/Mesoscale_Poster_HF_final_wtract-1030x773.jpeg'
+  details: '<div title="Page 1">
+
+
+
+
+    <h2>High-resolution brain atlas for deep brain stimulation imaging</h2>
+
+
+
+
+
+
+
+    <p><a href="@root@wp-content/uploads/2023/10/Mesoscale_Poster_HF_final_wtract.pdf">Poster PDF</a></p>
+
+    <h3>Mesoscale Brain Mapping Symposium 2023 | Poster Abstract</h3>
+
+    <h3>A High Resolution Brain Atlas for Deep Brain Stimulation Imaging</h3>
+
+    <p>Helen Friedrich<sup>1,2</sup>, Simon Oxenford<sup>3</sup>, Eduardo J. L. Alho<sup>4</sup>, Brian L. Edlow<sup>5,6</sup>, Clemens Neudorfer<sup>1,3,7</sup>, Andreas Horn<sup>1,3,5,7</sup></p>
+
+    <p>Contact: hfriedrich@bwh.harvard.edu; ahorn1@bwh.harvard.edu</p>
+
+    <p><sup>1 </sup>Center for Brain Circuit Therapeutics Department of Neurology Brigham &amp; Women’s Hospital, Harvard Medical School, Boston MA 02115, USA</p>
+
+    <p><sup>2 </sup>Julius-Maximilian-University Wuerzburg, Germany</p>
+
+    <p><sup>3 </sup>Movement Disorder and Neuromodulation Unit, Department of Neurology, Charité – Universitätsmedizin Berlin, corporate member of Freie Universität Berlin and Humboldt- Universität zu Berlin,
+    Department of Neurology, 10117 Berlin, Germany</p>
+
+    <p><sup>4</sup> Clinic of Pain and Functional Neurosurgery, São Paulo, Brazil</p>
+
+    <p><sup>5 </sup>Center for Neurotechnology and Neurorecovery, Department of Neurology, Massachusetts General Hospital, Boston, MA 02114, USA</p>
+
+    <p><sup>6 </sup>Athinoula A. Martinos Center for Biomedical Imaging, Massachusetts General Hospital, Charlestown, MA, USA</p>
+
+    <p><sup>7 </sup>Brain Modulation Lab, Department of Neurosurgery, Massachusetts General Hospital, Boston, MA, 02114, USA</p>
+
+    <h4>Background</h4>
+
+    <p>The success of deep brain stimulation therapy is defined by the exact placement of electrodes in relation to their targets. Overlaps between stimulation volumes and anatomical structures may account
+    for clinical outcomes. To investigate this, precise definitions of anatomical structures are critical. These target structures frequently comprise anatomical structures or tracts that are often not
+    discernable on conventional neuroimaging.</p>
+
+    <h5>Methods</h5>
+
+    <p>We aimed to create a high-resolution atlas including both grey and white matter based on a 100-micron ex-vivo MRI brain scan (Edlow et al., 2019). Histological data, postmortem fiber dissections,
+    and expert opinions of clinicians and anatomists were used to inform and enrich anatomical validity. Segmentations of gray- (n=15) and white- (n=16) matter structures at the level of the subthalamus
+    were carried out on the high resolution MRI scan and converted into MNI ICBM 2009b NLIN ASYM space. This spatial transform from MRI native to template space was carried out using a manually curated
+    warpfield that accounts for proper definitions of target structures in standard space.</p>
+
+    <h5>Results &amp; Conclusions</h5>
+
+    <p>The main result of this work should be seen in a high-resolution atlas of the human subthalamus comprising a total of 31 gray and white matter regions per hemisphere. Together with the ex-vivo MRI
+    template and a precise manual registration to MNI space, this dataset is deformable to patient MRIs and can be readily applied in DBS imaging studies.</p>'
+- id: Goede-MD-2023
+  who: Goede et al. (MDS 2023)
+  title: 'Connectomic DBS informed multifocal transcranial direct current stimulation (tDCS) in Parkinson’s Disease: a crossover double-blinded study'
+  image:
+    src: media/20192764688f-Poster_MDS-image-1152x2048.png
+    original: https://www.netstim.org/wp-content/uploads/2023/08/Poster_MDS-image-579x1030.png
+    alt: ''
+    width: 579
+  full: '@root@wp-content/uploads/2023/08/Poster_MDS-image-579x1030.png'
+  details: '<div title="Page 1">
+
+
+
+
+    <h2>Connectomic DBS informed multifocal transcranial direct current stimulation (tDCS) in Parkinson’s Disease:</h2>
+
+    <h2>a crossover double-blinded study</h2>
+
+
+
+
+
+
+
+    <p><a href="@root@wp-content/uploads/2023/08/Poster_MDS.pdf">Poster PDF</a></p>
+
+    <h3>Affiliations</h3>
+
+    <p>Department of Neurology with Experimental Neurology, Charité-Universitätsmedizin Berlin, corporate member of Freie Universität Berlin and Humboldt-Universität zu Berlin, Berlin, Germany</p>
+
+    <p>Berlin Institute of Health at Charité – Universitätsmedizin Berlin, BIH Biomedical Innovation Academy, BIH Charité Junior Clinician Scientist Program, Berlin, Germany</p>
+
+    <p>Center for Brain Circuit Therapeutics, Departments of Neurology, Psychiatry, and Radiology, Brigham and Women’s Hospital, Harvard Medical School, Boston, MA, USA</p>
+
+    <p>MGH Neurosurgery &amp; Center for Neurotechnology and Neurorecovery (CNTR) at MGH Neurology Massachusetts General Hospital, Harvard Medical School, Boston, MA 02114, USA</p>
+
+    <p>Bernstein Center for Computational Neuroscience, Humboldt-Universität, Berlin, Germany</p>
+
+    <p>NeuroCure, Exzellenzcluster, Charité-Universitätsmedizin Berlin, Berlin, Germany</p>
+
+    <p>DZNE, German Center for Neurodegenerative Diseases, Berlin, Germany</p>
+
+    <p>Berlin School of Mind and Brain, Humboldt-Universität zu Berlin, Berlin, Germany</p>
+
+    <p>Dr. Goede is participant in the BIH Charité Junior Clinician Scientist Program</p>
+
+    <p>funded by the Charité – Universitätsmedizin Berlin, and the Berlin Institute of Health at Charité (BIH).</p>
+
+    <p>Dr. Lofredi is participant in the BIH Charité Clinician Scientist Program</p>
+
+    <p>funded by the Charité – Universitätsmedizin Berlin, and the Berlin Institute of Health at Charité (BIH).</p>
+
+    <p>Funded by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) – Project-ID 424778381 – TRR 295 and Emmy Noether Stipend 410169619 to A.H.</p>
+
+    <h3>References</h3>
+
+    <p><strong>[1] </strong><span lang="EN-US">Fox MD, Buckner RL, Liu H, Chakravarty MM, Lozano AM, Pascual-Leone A. Resting-state networks link invasive and noninvasive brain stimulation across diverse
+    psychiatric and neurological diseases. Proceedings of the National Academy of Sciences. 2014;111:E4367–E4375. </span></p>
+
+    <p><strong>[2] </strong>Horn A, Reich M, Vorwerk J, et al. <span lang="EN-US">Connectivity Predicts deep brain stimulation outcome in Parkinson disease: DBS Outcome in PD.  </span>Ann Neurol. 2017;82:67–78.</p>
+
+    <p><strong>[3] </strong>Sobesky L, Goede L, Odekerken VJJ, et al. Subthalamic and pallidal deep brain stimulation: are we modulating the same network? Brain. 2022;145:251–262.</p>
+
+    <p><strong>[4] </strong>Fischer DB, Fried PJ, Ruffini G, et al. Multifocal tDCS targeting the resting state motor network increases cortical excitability beyond traditional tDCS targeting unilateral
+    motor cortex. NeuroImage. 2017;157:34–44.</p>'
+- id: Hollunder-OHBM2023
+  who: Hollunder et al. (OHBM 2023)
+  title: Mapping Dysfunctional Circuits in the Frontal Cortex Using Deep Brain Stimulation
+  image:
+    src: media/f78061946345-STN-Project_Hollunder_et_al_OHBM_2023-1437x2048.png
+    original: https://www.netstim.org/wp-content/uploads/2023/07/STN-Project_Hollunder_et_al_OHBM_2023-723x1030.png
+    alt: ''
+    width: 723
+  full: '@root@wp-content/uploads/2023/07/STN-Project_Hollunder_et_al_OHBM_2023-723x1030.png'
+  details: '<p><a href="@root@wp-content/uploads/2023/07/STN-Project_Hollunder_et_al_OHBM_2023.pdf">Poster PDF</a></p>
+
+    <h3>Affiliations</h3>
+
+    <ol>
+
+    <li>Department of Neurology, Charité – Universitätsmedizin Berlin, Berlin, Germany</li>
+
+    <li>Einstein Center for Neurosciences Berlin, Charité – Universitätsmedizin Berlin, Berlin, Germany</li>
+
+    <li>Berlin School of Mind and Brain, Humboldt-Universität zu Berlin, Berlin, Germany</li>
+
+    <li>Movement Disorders and Neuromodulation Centre, Department of Neurology, University of California San Francisco, San Francisco, CA, USA</li>
+
+    <li>Center for Brain Circuit Therapeutics, Department of Neurology, Brigham &amp; Women’s Hospital, Harvard Medical School, Boston, MA, USA</li>
+
+    <li>Department of Neurosurgery, Massachusetts General Hospital, Harvard Medical School, Boston, MA, USA</li>
+
+    <li>Department of Psychiatry and Psychotherapy, Charité – Universitätsmedizin Berlin, Berlin, Germany</li>
+
+    <li>Grenoble Alpes, Grenoble, France</li>
+
+    <li>Inserm, U1216, Grenoble Institut des Neurosciences, Grenoble, France</li>
+
+    <li>Psychiatry Department, Centre Hospitalier Universitaire Grenoble Alpes, Grenoble, France</li>
+
+    <li>Department of Clinical and Movement Neurosciences, University College London Queen Square Institute of Neurology, London, UK</li>
+
+    <li>National Hospital for Neurology and Neurosurgery, University College London Queen Square Institute of Neurology, London, UK</li>
+
+    <li>The BioRobotics Institute, Scuola Superiore Sant’Anna, Pisa, Italy</li>
+
+    <li>Department of Excellence in Robotics and AI, Scuola Superiore Sant’Anna, Pisa, Italy</li>
+
+    <li>Department of Neurosurgery, Rujin Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China</li>
+
+    <li>Department of Neurology, University Hospital Würzburg, Würzburg, Germany</li>
+
+    <li>Department of Bioengineering, University of Pittsburgh, Pittsburgh, PA, USA</li>
+
+    <li>Department of Psychiatry and Psychotherapy, Faculty of Medicine and University Hospital Cologne, University of Cologne, Cologne, Germany</li>
+
+    <li>Department of Neurology, Faculty of Medicine and University Hospital Cologne, University of Cologne, Cologne, Germany</li>
+
+    <li>Department of Stereotactic and Functional Neurosurgery, Faculty of Medicine and University Hospital Cologne, University of Cologne, Cologne, Germany</li>
+
+    <li>Clinic of Pain and Functional Neurosurgery, São Paulo, Brazil</li>
+
+    <li>Department of Neurology and Neurosurgery, University of Caxias do Sul, Rio Grande do Sul, Brazil</li>
+
+    <li>NeuroCure Cluster of Excellence, Charité – Universitätsmedizin Berlin, Berlin, Germany</li>
+
+    <li>Department of Psychiatry, Massachusetts General Hospital, Harvard Medical School, Boston, MA, USA</li>
+
+    <li>The Edmond and Lily Safra Center for Brain Sciences, The Hebrew University, Jerusalem, Israel</li>
+
+    <li>Department of Medical Neurobiology, Institute of Medical Research Israel-Canada, The Hebrew University, Hassadah Medical School, Jerusalem, Israel</li>
+
+    <li>Department of Neurosurgery, Hadassah Medical Center, Jerusalem, Israel</li>
+
+    <li>Department of Neurology, Emory University School of Medicine, Atlanta, GA, USA</li>
+
+    <li>Parkinson and Movement Disorders Unit, Fondazione IRCCS Istituto Neurologico Carlo Besta, Milan, Italy</li>
+
+    <li>Department of Neurosurgery, Centre Hospitalier Universitaire Grenoble Alpes, Grenoble, France</li>
+
+    <li>Department of Neurological Surgery, University of California San Francisco, San Francisco, CA, USA</li>
+
+    </ol>
+
+    <h3>References</h3>
+
+    <p><strong>[1] </strong>Neudorfer, C. <em>et al.</em> Lead-DBS v3.0: Mapping deep brain stimulation effects to local anatomy and global networks. <em>Neuroimage</em> 268, 119862 (2023).</p>
+
+    <p><strong>[2] </strong>Horn, A. <em>et al.</em> Optimal deep brain stimulation sites and networks for cervical vs. generalized dystonia. <em>Proc. Natl. Acad. Sci.</em> 119, e2114985119 (2022).</p>
+
+    <p><strong>[3] </strong>Irmen, F. <em>et al.</em> Left prefrontal connectivity links subthalamic stimulation with depressive symptoms. <em>Ann. Neurol.</em> 87, 962–975 (2020).</p>
+
+    <p><strong>[4] </strong>Wang, F. <em>et al.</em> In vivo human whole-brain Connectom diffusion MRI dataset at 760 µm isotropic resolution. <em>Sci. Data</em>8, 122 (2021).</p>
+
+    <p><strong>[5] </strong>Van Essen, D. C. <em>et al.</em> The WU-Minn Human Connectome Project: An overview. <em>Neuroimage</em> 80, 62–79 (2013).</p>
+
+    <p><strong>[6] </strong>Li, N. <em>et al.</em> A unified connectomic target for deep brain stimulation in obsessive-compulsive disorder. <em>Nat. Commun.</em> 11, 3364 (2020).</p>
+
+    <p><strong>[7] </strong>Petersen, M. V <em>et al.</em> Holographic reconstruction of axonal pathways in the human brain. <em>Neuron</em> 104, 1056-1064.e3 (2019).</p>
+
+    <p><strong>[8] </strong>Ewert, S. <em>et al.</em> Toward defining deep brain stimulation targets in MNI space: A subcortical atlas based on multimodal MRI, histology and structural connectivity. <em>Neuroimage
+    </em>170, 271–282 (2018).</p>'
+- id: Meyer-OHBM2023
+  who: Meyer et al. (OHBM 2023)
+  title: 'Subthalamic Deep Brain Stimulation: Mapping Non-Motor Outcomes to Structural Connections'
+  image:
+    src: media/3f5dfe5cf754-GMeyerOHBMPosterHighRes-1593x2048.jpg
+    original: https://www.netstim.org/wp-content/uploads/2023/06/GMeyerOHBMPosterHighRes-801x1030.jpg
+    alt: ''
+    width: 801
+  full: '@root@wp-content/uploads/2023/06/GMeyerOHBMPosterHighRes-801x1030.jpg'
+  details: '<p><a href="@root@wp-content/uploads/2023/06/GMeyerOHBMPosterHighRes.pdf">Poster PDF</a></p>
+
+    <h3>References</h3>
+
+    <p><strong>[1]</strong> Irmen, F. et al. 2020. Left Prefrontal Connectivity Links Subthalamic Stimulation with Depressive Symptoms. Annals of Neurology 87, 962–975.</p>
+
+    <p><strong>[2] </strong>Mosley, P.E. et al. 2020. The structural connectivity of subthalamic deep brain stimulation correlates with impulsivity in Parkinson’s. Brain 143, 2235–2254.</p>
+
+    <p><strong>[3]</strong> Neudorfer, C. et al. 2023. Lead-DBS v3.0: Mapping deep brain stimulation effects to local anatomy and global networks. NeuroImage 268, 119862.</p>'
+- id: Kim-DBS-Society
+  who: Kim et al. (DBS Society Congress 2023)
+  title: Optimal Functional Connectivity Profiles in Subthalamic DBS
+  image:
+    src: media/85353c9356d9-DBS_Society_Poster_2023_MJK-1449x2048.jpeg
+    original: https://www.netstim.org/wp-content/uploads/2023/06/DBS_Society_Poster_2023_MJK-729x1030.jpeg
+    alt: ''
+    width: 729
+  full: '@root@wp-content/uploads/2023/06/DBS_Society_Poster_2023_MJK-729x1030.jpeg'
+  details: '<p><a href="@root@wp-content/uploads/2023/06/DBS_Society_Poster_2023_MJK.pdf">Poster PDF</a></p>
+
+    <h3>References</h3>
+
+    <p><strong>[1]</strong> Horn A, Fox MD. Opportunities of connectomic neuromodulation. NeuroImage 2020;221:117180.</p>
+
+    <p><strong>[2] </strong>Horn A, Reich M, Vorwerk J, et al. Connectivity Predicts deep brain stimulation outcome in Parkinson disease. Annals of Neurology 2017;82(1):67-78.</p>
+
+    <p><strong>[3]</strong> Al-Fatly B, Ewert S, Kübler D, Kroneberg D, Horn A, Kühn AA. Connectivity profile of thalamic deep brain stimulation to effectively treat essential tremor. Brain 2019;142(10):3086-3098.</p>
+
+    <p><strong>[4]</strong> Li N, Baldermann JC, Kibleur A, et al. A unified connectomic target for deep brain stimulation in obsessive-compulsive disorder. Nature Communications 2020;11(1):3364. (2018).</p>'
+- id: Sahin-DBS-Society
+  who: Sahin et al. (DBS Society Congress 2023)
+  title: Optimal Connections in Thalamic, Pallidal and Subthalamic DBS for Tourette’s Syndrome
+  image:
+    src: media/6a7f4cc09d51-Sahin_Grenoble_final-1365x2048.jpeg
+    original: https://www.netstim.org/wp-content/uploads/2023/06/Sahin_Grenoble_final-687x1030.jpeg
+    alt: ''
+    width: 687
+  full: '@root@wp-content/uploads/2023/06/Sahin_Grenoble_final-687x1030.jpeg'
+  details: '<p><a href="@root@wp-content/uploads/2023/06/Sahin_Grenoble_final.pdf">Poster PDF</a></p>
+
+    <h3>References</h3>
+
+    <p><strong>[1]</strong> Bronfeld, M. &amp; Bar-Gad, I. Tic Disorders: What Happens in the Basal Ganglia? Neuroscientist 19, 101–108 (2013).</p>
+
+    <p><strong>[2] </strong>Augustine, F. &amp; Singer, H. S. Merging the Pathophysiology and Pharmacotherapy of Tics. Tremor Other Hyperkinet Mov (N Y) 8, 595 (2019).</p>
+
+    <p><strong>[3]</strong> Billnitzer, A. &amp; Jankovic, J. Current Management of Tics and Tourette Syndrome: Behavioral, Pharmacologic, and Surgical Treatments. Neurotherapeutics 17, 1681–1693 (2020).</p>
+
+    <p><strong>[4]</strong> Martinez-Ramirez, D. et al. Efficacy and Safety of Deep Brain Stimulation in Tourette Syndrome: The International Tourette Syndrome Deep Brain Stimulation Public Database and
+    Registry. JAMA Neurology 75, 353–359 (2018).</p>
+
+    <p><strong>[5]</strong> Baldermann, J. C. et al. Deep Brain Stimulation for Tourette-Syndrome: A Systematic Review and Meta-Analysis. Brain Stimulation: Basic, Translational, and Clinical Research in
+    Neuromodulation 9, 296–304 (2016).</p>
+
+    <p><strong>[6]</strong> Neudorfer, C. et al. Lead-DBS v3.0: Mapping deep brain stimulation effects to local anatomy and global networks. NeuroImage 268, 119862 (2023).</p>
+
+    <p><strong>[7]</strong> Petersen, M. V. et al. Holographic Reconstruction of Axonal Pathways in the Human Brain. Neuron 104, 1056-1064.e3 (2019).</p>'
+- id: Hollunder-DBS-Society
+  who: Hollunder et al. (OHBM & DBS Society Congress 2023)
+  title: Symptom Network Modulation of Deep Brain Stimulation in Obsessive-Compulsive Disorder
+  image:
+    src: media/55fb7044aec3-Hollunder_DBS-Society_Poster-2-1365x2048.png
+    original: https://www.netstim.org/wp-content/uploads/2023/06/Hollunder_DBS-Society_Poster-2-687x1030.png
+    alt: ''
+    width: 687
+  full: '@root@wp-content/uploads/2023/06/Hollunder_DBS-Society_Poster-2-687x1030.png'
+  details: '<p><a href="@root@wp-content/uploads/2023/06/Hollunder_DBS-Society_Poster-1.pdf">Poster PDF</a></p>
+
+    <h3><strong>Affiliations</strong></h3>
+
+    <ol>
+
+    <li>Department of Neurology, Charité – Universitätsmedizin Berlin, Berlin, Germany</li>
+
+    <li>Einstein Center for Neurosciences Berlin, Charité – Universitätsmedizin Berlin, Berlin, Germany</li>
+
+    <li>Berlin School of Mind and Brain, Humboldt-Universität zu Berlin, Berlin, Germany</li>
+
+    <li>Center for Brain Circuit Therapeutics, Department of Neurology, Brigham &amp; Women’s Hospital, Harvard Medical School, Boston, MA, USA</li>
+
+    <li>Department of Neurosurgery, Massachusetts General Hospital, Harvard Medical School, Boston, MA, USA</li>
+
+    <li>Biological and Health Psychology, School of Psychology, Universidad Autónoma de Madrid, Spain</li>
+
+    <li>Clinical Brain Networks Group, QIMR Berghofer Medical Research Institute, Herston, Queensland, Australia</li>
+
+    <li>Neurosciences Queensland, St Andrew’s War Memorial Hospital, Spring Hill, Queensland, Australia</li>
+
+    <li>Queensland Brain Institute, University of Queensland, St Lucia, Queensland, Australia</li>
+
+    <li>Australian eHealth Research Centre, CSIRO Health and Biosecurity, Herston, Queensland, Australia</li>
+
+    <li>Department of Clinical and Movement Neurosciences, UCL Queen Square Institute of Neurology, London, UK</li>
+
+    <li>National Hospital for Neurology and Neurosurgery, UCL Queen Square Institute of Neurology, London, UK</li>
+
+    <li>Centre for Mental Health, Swinburne University of Technology, Melbourne, VIC, Australia</li>
+
+    <li>Vincent’s Hospital Melbourne, Melbourne, Australia</li>
+
+    <li>Department of Psychiatry, Massachusetts General Hospital, Harvard Medical School, Boston, MA, USA</li>
+
+    <li>Division of Neurosurgery, Department of Surgery, University of Toronto, Toronto, ON, Canada</li>
+
+    <li>Department of Neurosurgery, Hospital Clinico San Carlos, Instituto de Investigacion Sanitaria San Carlos, Universidad Complutense de Madrid, Madrid, Spain</li>
+
+    <li>Laboratory for Clinical Neuroscience, Center for Biomedical Technology, Universidad Politécnica de Madrid, IdISSC, Madrid, Spain</li>
+
+    <li>Centre for Complex Interventions, Centre for Addiction and Mental Health, Toronto, ON, Canada</li>
+
+    <li>Institute of Medical Sciences, University of Toronto, Toronto, ON, Canada</li>
+
+    <li>Department of Psychiatry, University of Toronto, Toronto, ON, Canada</li>
+
+    <li>Centre for Mental Health, Swinburne University, Melbourne, Australia</li>
+
+    <li>Department of Psychiatry, University of Melbourne, Melbourne, Australia</li>
+
+    <li>Department of Neurosurgery, Brigham &amp; Women’s Hospital, Harvard Medical School, Boston, MA, USA</li>
+
+    <li>NeuroCure Cluster of Excellence, Charité – Universitätsmedizin Berlin, Berlin, Germany</li>
+
+    <li>Department of Psychiatry and Psychotherapy, Faculty of Medicine and University Hospital Cologne, University of Cologne, Cologne, Germany</li>
+
+    <li>Johanniter Hospital Oberhausen, EVKLN, Department of Psychiatry, Psychotherapy and Psychosomatics, Oberhausen, Germany</li>
+
+    <li>Department of Stereotactic and Functional Neurosurgery, Faculty of Medicine and University Hospital Cologne, University of Cologne, Cologne, Germany</li>
+
+    <li>Univ Grenoble Alpes, Grenoble, France</li>
+
+    <li>Inserm, U1216, Grenoble Institut des Neurosciences, Grenoble, France</li>
+
+    <li>Department of Psychiatry, Icahn School of Medicine, Mount Sinai Hospital, New York, USA</li>
+
+    <li>Krembil Brain Institute, Toronto, ON, Canada</li>
+
+    <li>Psychiatry Department, CHU Grenoble Alpes, Grenoble, France</li>
+
+    <li>Department of Neurology, Faculty of Medicine and University Hospital Cologne, University of Cologne, Cologne, Germany</li>
+
+    </ol>
+
+    <h3>References</h3>
+
+    <p><strong>[1]</strong> Figee, M., &amp; Mayberg, H. (2021). The future of personalized brain stimulation. <em>Nature Medicine</em>, <em>27</em>, 196–197. <a href="https://doi.org/10.1038/s41591-021-01243-7">https://doi.org/10.1038/s41591-021-01243-7</a></p>
+
+    <p><strong>[2] </strong>Baldermann, J. C. <em>et al.</em> (2019). Connectivity profile predictive of effective deep brain stimulation in obsessive-compulsive disorder. <em>Biological Psychiatry</em>,
+    <em>85</em>(9), 735–743. <a href="https://doi.org/10.1016/j.biopsych.2018.12.019">https://doi.org/10.1016/j.biopsych.2018.12.019</a></p>
+
+    <p><strong>[3]</strong> Baldermann, J. C. <em>et al.</em> (2021). Connectomic deep brain stimulation for obsessive-compulsive disorder. <em>Biological Psychiatry</em>, <em>90</em>(10), 678–688. <a href="https://doi.org/10.1016/j.biopsych.2021.07.010">https://doi.org/10.1016/j.biopsych.2021.07.010</a></p>
+
+    <p><strong>[4]</strong> Li, N. <em>et al</em>. (2020). A unified connectomic target for deep brain stimulation in obsessive-compulsive disorder. <em>Nature Communications</em>, <em>11</em>, 3364. <a
+    href="https://doi.org/10.1038/s41467-020-16734-3">https://doi.org/10.1038/s41467-020-16734-3</a></p>
+
+    <p><strong>[5]</strong> Hollunder, B. <em>et al.</em> (2022). Toward personalized medicine in connectomic deep brain stimulation. <em>Progress in Neurobiology</em>, <em>210</em>(210), 102211. <a href="https://doi.org/10.1016/j.pneurobio.2021.102211">https://doi.org/10.1016/j.pneurobio.2021.102211</a></p>
+
+    <p><strong>[6]</strong> Neudorfer, C. <em>et al.</em> Lead-DBS v3.0: Mapping deep brain stimulation effects to local anatomy and global networks. <em>Neuroimage</em> 268, 119862 (2023). <a href="https://doi.org/10.1016/j.neuroimage.2023.119862">https://doi.org/10.1016/j.neuroimage.2023.119862</a></p>
+
+    <p><strong>[7]</strong> Irmen, F. <em>et al.</em> (2020). Left prefrontal connectivity links subthalamic stimulation with depressive symptoms. <em>Annals of Neurology</em>, <em>87</em>(6), 962–975.
+    <a href="https://doi.org/10.1038/s41467-020-16734-3">https://doi.org/10.1002/ana.25734</a></p>'
+- id: Zvarova-DBS-Society
+  who: Zvarova et al. (DBS Society Congress 2023)
+  title: A Novel Database Lookup Method for Deep Brain Stimulation Network Mapping
+  image:
+    src: media/15db779e9133-Grenoble-Patricia-final1-1365x2048.jpeg
+    original: https://www.netstim.org/wp-content/uploads/2023/06/Grenoble-Patricia-final1-687x1030.jpeg
+    alt: ''
+    width: 687
+  full: '@root@wp-content/uploads/2023/06/Grenoble-Patricia-final1-687x1030.jpeg'
+  details: '<p><a href="@root@wp-content/uploads/2023/06/Grenoble-Patricia-final1.pdf" rel="noopener noreferrer" target="_blank">Poster PDF</a></p>
+
+    <h3>References</h3>
+
+    <p><strong>[1]</strong> Horn, A., Reich, M., Vorwerk, J., Li, N., Wenzel, G., Fang, Q., Schmitz-Hübsch, T., Nickl, R., Kupsch, A., Volkmann, J., Kühn, A.A., Fox, M.D., 2017. Connectivity Predicts deep
+    brain stimulation outcome in Parkinson disease: DBS Outcome in PD. Ann Neurol. 82, 67–78. <a href="https://doi.org/10.1002/ana.24974">https://doi.org/10.1002/ana.24974</a></p>
+
+    <p><strong>[2]</strong> Van Essen, D.C., Ugurbil, K., Auerbach, E., Barch, D., Behrens, T.E.J., Bucholz, R., Chang, A., Chen, L., Corbetta, M., Curtiss, S.W., Della Penna, S., Feinberg, D., Glasser,
+    M.F., Harel, N., Heath, A.C., Larson-Prior, L., Marcus, D., Michalareas, G., Moeller, S., Oostenveld, R., Petersen, S.E., Prior, F., Schlaggar, B.L., Smith, S.M., Snyder, A.Z., Xu, J., Yacoub, E., 2012.
+    The Human Connectome Project: A data acquisition perspective. Neuroimage 62, 2222–2231. <a href="https://doi.org/10.1016/j.neuroimage.2012.02.018">https://doi.org/10.1016/j.neuroimage.2012.02.018</a></p>
+
+    <p><strong>[3]</strong> Ewert, S., Plettig, P., Li, N., Chakravarty, M. M., Collins, D. L., Herrington, T. M., Kühn, A. A., &amp; Horn, A. (2018). Toward defining deep brain stimulation targets in MNI
+    space: A subcortical atlas based on multimodal MRI, histology and structural connectivity. NeuroImage, 170, 271–282. <a href="https://doi.org/10.1016/j.neuroimage.2017.05.015">https://doi.org/10.1016/j.neuroimage.2017.05.015</a></p>'
+- id: HollunderLiOptoDBS
+  who: Hollunder & Li et al. (Opto-DBS 2022)
+  title: Segregating the Prefrontal Cortex by Means of DBS
+  image:
+    src: media/0a5b2ce0a9d3-Hollunder-Li-et-al_Opto-DBS_P21-1433x2048.png
+    original: https://www.netstim.org/wp-content/uploads/2022/06/Hollunder-Li-et-al_Opto-DBS_P21-721x1030.png
+    alt: ''
+    width: 721
+  full: '@root@wp-content/uploads/2022/06/Hollunder-Li-et-al_Opto-DBS_P21-721x1030.png'
+  details: '<p><a href="@root@wp-content/uploads/2022/06/Hollunder-Li-et-al_Opto-DBS_P21.pdf" rel="noopener noreferrer" target="_blank">Poster PDF</a></p>
+
+    <p><a href="https://youtu.be/Iy_yRP5sLG8">Poster Pitch Video</a></p>
+
+    <h3>Affiliations</h3>
+
+    <ol>
+
+    <li>Movement Disorders and Neuromodulation Unit, Department of Neurology, Charité – Universitätsmedizin Berlin, Berlin, Germany</li>
+
+    <li>Einstein Center for Neurosciences Berlin, Charité – Universitätsmedizin Berlin, Berlin, Germany</li>
+
+    <li>Berlin School of Mind and Brain, Humboldt-Universität zu Berlin, Berlin, Germany</li>
+
+    <li>Movement Disorders and Neuromodulation Centre, Department of Neurology, University of California San Francisco, San Francisco, CA, USA</li>
+
+    <li>Université Grenoble Alpes, Grenoble, France</li>
+
+    <li>Inserm, U1216, Grenoble Institut des Neurosciences, Grenoble, France</li>
+
+    <li>Psychiatry Department, CHU Grenoble Alpes, Grenoble, France</li>
+
+    <li>Department of Clinical and Movement Neurosciences, UCL Queen Square Institute of Neurology, London, UK</li>
+
+    <li>National Hospital for Neurology and Neurosurgery, UCL Queen Square Institute of Neurology, London, UK</li>
+
+    <li>The BioRobotics Institute, Scuola Superiore Sant’Anna, Pisa, Italy</li>
+
+    <li>Department of Excellence in Robotics and AI, Scuola Superiore Sant’Anna, Pisa, Italy</li>
+
+    <li>Department of Neurosurgery, Massachusetts General Hospital, Harvard Medical School, Boston, MA, USA</li>
+
+    <li>Department of Neurosurgery, Rujin Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China</li>
+
+    <li>Department of Neurology, University Hospital Würzburg, Würzburg, Germany</li>
+
+    <li>Department of Neurology, Charité – Universitätsmedizin Berlin, Berlin, Germany</li>
+
+    <li>NeuroCure Cluster of Excellence, Charité – Universitätsmedizin Berlin, Berlin, Germany</li>
+
+    <li>Parkinson and Movement Disorders Unit, Fondazione IRCCS Istituto Neurologico Carlo Besta, Milan, Italy</li>
+
+    <li>Department of Neurological Surgery, University of California San Francisco, San Francisco, CA, USA</li>
+
+    <li>Center for Brain Circuit Therapeutics, Brigham &amp; Women’s Hospital, Boston, MA, USA</li>
+
+    </ol>
+
+    <h4>References</h4>
+
+    <p>Benarroch, E. E. (2008). Subthalamic nucleus and its connections: Anatomic substrate for the network effects of deep brain stimulation. <em>Neurology</em>, <em>70</em>(21), 1991–1996. <a href="https://doi.org/10.1212/01.wnl.0000313022.39329.65"
+    rel="noopener noreferrer" target="_blank">https://doi.org/10.1212/01.wnl.0000313022.39329.65</a></p>
+
+    <p>Bonelli, R. M., &amp; Cummings, J. L. (2007). Frontal-subcortical circuitry and behavior. <em>Dialogues in Clinical Neuroscience</em>, <em>9</em>(2), 141–151. <a href="https://doi.org/10.31887/dcns.2007.9.2/rbonelli"
+    rel="noopener noreferrer" target="_blank">https://doi.org/10.31887/dcns.2007.9.2/rbonelli</a></p>
+
+    <p>Ganos, C., Al-Fatly, B., Fischer, J.-F., Baldermann, J. C., Hennen, C., Visser-Vandewalle, V., … &amp; Horn, A. (2022). A neural network for tics: insights from causal brain lesions and deep brain
+    stimulation, <em>Brain</em>, awac009. <a href="https://doi.org/10.1093/brain/awac009" rel="noopener noreferrer" target="_blank">https://doi.org/10.1093/brain/awac009</a></p>
+
+    <p>Haber, S. N., Liu, H., Seidlitz, J., &amp; Bullmore, E. (2021). Prefrontal connectomics: From anatomy to human imaging. <em>Neuropsychopharmacology</em>. <a href="https://doi.org/10.1038/s41386-021-01156-6"
+    rel="noopener noreferrer" target="_blank">https://doi.org/10.1038/s41386-021-01156-6</a></p>
+
+    <p>Haynes, W. I. A., &amp; Haber, S. N. (2013). The organization of prefrontal-subthalamic inputs in primates provides an anatomical substrate for both functional specificity and integration: Implications
+    for basal ganglia models and deep brain stimulation. <em>Journal of Neuroscience</em>, <em>33</em>(11), 4804–4814. <a href="https://doi.org/10.1523/JNEUROSCI.4674-12.2013" rel="noopener noreferrer"
+    target="_blank">https://doi.org/10.1523/JNEUROSCI.4674-12.2013</a></p>
+
+    <p>Horn, A., Li, N., Dembek, T. A., Kappel, A., Boulay, C., Ewert, S., Tietze, A., Husch, A., Perera, T., Neumann, W. J., Reisert, M., Si, H., Oostenveld, R., Rorden, C., Yeh, F. C., Fang, Q., Herrington,
+    T. M., Vorwerk, J., &amp; Kühn, A. A. (2019). Lead-DBS v2: Towards a comprehensive pipeline for deep brain stimulation imaging. <em>NeuroImage</em>, <em>184</em>(July 2018), 293–316. <a href="https://doi.org/10.1016/j.neuroimage.2018.08.068"
+    rel="noopener noreferrer" target="_blank">https://doi.org/10.1016/j.neuroimage.2018.08.068</a></p>
+
+    <p>Horn, A., Reich, M., Vorwerk, J., Li, N., Wenzel, G., Fang, Q., Schmitz-Hübsch, T., Nickl, R., Kupsch, A., Volkmann, J., Kühn, A. A., &amp; Fox, M. D. (2017). Connectivity predicts deep brain stimulation
+    outcome in Parkinson disease. <em>Annals of Neurology</em>, <em>82</em>(1), 67–78. <a href="https://doi.org/10.1002/ana.24974" rel="noopener noreferrer" target="_blank">https://doi.org/10.1002/ana.24974</a></p>
+
+    <p>Li, N., Baldermann, J. C., Kibleur, A., Treu, S., Akram, H., Elias, G. J. B., Boutet, A., Lozano, A. M., Al-Fatly, B., Strange, B., Barcia, J. A., Zrinzo, L., Joyce, E., Chabardes, S., Visser-Vandewalle,
+    V., Polosan, M., Kuhn, J., Kühn, A. A., &amp; Horn, A. (2020). A unified connectomic target for deep brain stimulation in obsessive-compulsive disorder. <em>Nature Communications</em>, <em>11</em>,
+    3364. <a href="https://doi.org/10.1038/s41467-020-16734-3" rel="noopener noreferrer" target="_blank">https://doi.org/10.1038/s41467-020-16734-3</a></p>
+
+    <p>Li, N., Hollunder, B., Baldermann, J. C., Kibleur, A., Treu, S., Akram, H., Al-Fatly, B., Strange, B. A., Barcia, J. A., Zrinzo, L., Joyce, E. M., Chabardes, S., Visser-Vandewalle, V., Polosan, M.,
+    Kuhn, J., Kühn, A. A., &amp; Horn, A. (2021). A unified functional network target for deep brain stimulation in obsessive-compulsive disorder. <em>Biological Psychiatry</em>, <em>90</em>(10), 701–713.
+    <a href="https://doi.org/10.1038/s41467-020-16734-3" rel="noopener noreferrer" target="_blank">https://doi.org/10.1016/j.biopsych.2021.04.006</a></p>
+
+    <p>Wang, F., Dong, Z., Tian, Q., Liao, C., Fan, Q., Hoge, W. S., Keil, B., Polimeni, J. R., Wald, L. L., Huang, S. Y., &amp; Setsompop, K. (2021). In vivo human whole-brain Connectom diffusion MRI dataset
+    at 760 µm isotropic resolution. <em>Scientific Data</em>, <em>8</em>, 122. <a href="https://doi.org/10.1038/s41467-020-16734-3" rel="noopener noreferrer" target="_blank">https://doi.org/10.1038/s41597-021-00904-z</a></p>'
+- id: HollunderLiOHBM
+  who: Hollunder & Li et al. (OHBM 2022)
+  title: Segregating the prefrontal cortex  by means of DBS
+  image:
+    src: media/dd7242066926-OHBM_Poster-scaled.jpeg
+    original: https://www.netstim.org/wp-content/uploads/2022/05/OHBM_Poster-scaled.jpeg
+    alt: ''
+    width: 2560
+  full: '@root@wp-content/uploads/2022/05/OHBM_Poster-1030x729.jpeg'
+  details: '<p><a href="@root@wp-content/uploads/2022/05/Hollunder_Li_et_al_Poster_OHBM_2022.pdf" rel="noopener noreferrer" target="_blank">Poster PDF</a></p>
+
+    <p><a href="https://youtu.be/Iy_yRP5sLG8">Poster Pitch Video</a></p>
+
+    <h3>Affiliations</h3>
+
+    <ol>
+
+    <li>Movement Disorders and Neuromodulation Unit, Department of Neurology, Charité – Universitätsmedizin Berlin, Berlin, Germany</li>
+
+    <li>Einstein Center for Neurosciences Berlin, Charité – Universitätsmedizin Berlin, Berlin, Germany</li>
+
+    <li>Berlin School of Mind and Brain, Humboldt-Universität zu Berlin, Berlin, Germany</li>
+
+    <li>Movement Disorders and Neuromodulation Centre, Department of Neurology, University of California San Francisco, San Francisco, CA, USA</li>
+
+    <li>Université Grenoble Alpes, Grenoble, France</li>
+
+    <li>Inserm, U1216, Grenoble Institut des Neurosciences, Grenoble, France</li>
+
+    <li>Psychiatry Department, CHU Grenoble Alpes, Grenoble, France</li>
+
+    <li>Department of Clinical and Movement Neurosciences, UCL Queen Square Institute of Neurology, London, UK</li>
+
+    <li>National Hospital for Neurology and Neurosurgery, UCL Queen Square Institute of Neurology, London, UK</li>
+
+    <li>The BioRobotics Institute, Scuola Superiore Sant’Anna, Pisa, Italy</li>
+
+    <li>Department of Excellence in Robotics and AI, Scuola Superiore Sant’Anna, Pisa, Italy</li>
+
+    <li>Department of Neurosurgery, Massachusetts General Hospital, Harvard Medical School, Boston, MA, USA</li>
+
+    <li>Department of Neurosurgery, Rujin Hospital, Shanghai Jiao Tong University School of Medicine, Shanghai, China</li>
+
+    <li>Department of Neurology, University Hospital Würzburg, Würzburg, Germany</li>
+
+    <li>Department of Neurology, Charité – Universitätsmedizin Berlin, Berlin, Germany</li>
+
+    <li>NeuroCure Cluster of Excellence, Charité – Universitätsmedizin Berlin, Berlin, Germany</li>
+
+    <li>Parkinson and Movement Disorders Unit, Fondazione IRCCS Istituto Neurologico Carlo Besta, Milan, Italy</li>
+
+    <li>Department of Neurological Surgery, University of California San Francisco, San Francisco, CA, USA</li>
+
+    <li>Center for Brain Circuit Therapeutics, Brigham &amp; Women’s Hospital, Boston, MA, USA</li>
+
+    </ol>
+
+    <h4>References</h4>
+
+    <p>Benarroch, E. E. (2008). Subthalamic nucleus and its connections: Anatomic substrate for the network effects of deep brain stimulation. <em>Neurology</em>, <em>70</em>(21), 1991–1996. <a href="https://doi.org/10.1212/01.wnl.0000313022.39329.65"
+    rel="noopener noreferrer" target="_blank">https://doi.org/10.1212/01.wnl.0000313022.39329.65</a></p>
+
+    <p>Bonelli, R. M., &amp; Cummings, J. L. (2007). Frontal-subcortical circuitry and behavior. <em>Dialogues in Clinical Neuroscience</em>, <em>9</em>(2), 141–151. <a href="https://doi.org/10.31887/dcns.2007.9.2/rbonelli"
+    rel="noopener noreferrer" target="_blank">https://doi.org/10.31887/dcns.2007.9.2/rbonelli</a></p>
+
+    <p>Ganos, C., Al-Fatly, B., Fischer, J.-F., Baldermann, J. C., Hennen, C., Visser-Vandewalle, V., … &amp; Horn, A. (2022). A neural network for tics: insights from causal brain lesions and deep brain
+    stimulation, <em>Brain</em>, awac009. <a href="https://doi.org/10.1093/brain/awac009" rel="noopener noreferrer" target="_blank">https://doi.org/10.1093/brain/awac009</a></p>
+
+    <p>Haber, S. N., Liu, H., Seidlitz, J., &amp; Bullmore, E. (2021). Prefrontal connectomics: From anatomy to human imaging. <em>Neuropsychopharmacology</em>. <a href="https://doi.org/10.1038/s41386-021-01156-6"
+    rel="noopener noreferrer" target="_blank">https://doi.org/10.1038/s41386-021-01156-6</a></p>
+
+    <p>Haynes, W. I. A., &amp; Haber, S. N. (2013). The organization of prefrontal-subthalamic inputs in primates provides an anatomical substrate for both functional specificity and integration: Implications
+    for basal ganglia models and deep brain stimulation. <em>Journal of Neuroscience</em>, <em>33</em>(11), 4804–4814. <a href="https://doi.org/10.1523/JNEUROSCI.4674-12.2013" rel="noopener noreferrer"
+    target="_blank">https://doi.org/10.1523/JNEUROSCI.4674-12.2013</a></p>
+
+    <p>Horn, A., Li, N., Dembek, T. A., Kappel, A., Boulay, C., Ewert, S., Tietze, A., Husch, A., Perera, T., Neumann, W. J., Reisert, M., Si, H., Oostenveld, R., Rorden, C., Yeh, F. C., Fang, Q., Herrington,
+    T. M., Vorwerk, J., &amp; Kühn, A. A. (2019). Lead-DBS v2: Towards a comprehensive pipeline for deep brain stimulation imaging. <em>NeuroImage</em>, <em>184</em>(July 2018), 293–316. <a href="https://doi.org/10.1016/j.neuroimage.2018.08.068"
+    rel="noopener noreferrer" target="_blank">https://doi.org/10.1016/j.neuroimage.2018.08.068</a></p>
+
+    <p>Horn, A., Reich, M., Vorwerk, J., Li, N., Wenzel, G., Fang, Q., Schmitz-Hübsch, T., Nickl, R., Kupsch, A., Volkmann, J., Kühn, A. A., &amp; Fox, M. D. (2017). Connectivity predicts deep brain stimulation
+    outcome in Parkinson disease. <em>Annals of Neurology</em>, <em>82</em>(1), 67–78. <a href="https://doi.org/10.1002/ana.24974" rel="noopener noreferrer" target="_blank">https://doi.org/10.1002/ana.24974</a></p>
+
+    <p>Li, N., Baldermann, J. C., Kibleur, A., Treu, S., Akram, H., Elias, G. J. B., Boutet, A., Lozano, A. M., Al-Fatly, B., Strange, B., Barcia, J. A., Zrinzo, L., Joyce, E., Chabardes, S., Visser-Vandewalle,
+    V., Polosan, M., Kuhn, J., Kühn, A. A., &amp; Horn, A. (2020). A unified connectomic target for deep brain stimulation in obsessive-compulsive disorder. <em>Nature Communications</em>, <em>11</em>,
+    3364. <a href="https://doi.org/10.1038/s41467-020-16734-3" rel="noopener noreferrer" target="_blank">https://doi.org/10.1038/s41467-020-16734-3</a></p>
+
+    <p>Li, N., Hollunder, B., Baldermann, J. C., Kibleur, A., Treu, S., Akram, H., Al-Fatly, B., Strange, B. A., Barcia, J. A., Zrinzo, L., Joyce, E. M., Chabardes, S., Visser-Vandewalle, V., Polosan, M.,
+    Kuhn, J., Kühn, A. A., &amp; Horn, A. (2021). A unified functional network target for deep brain stimulation in obsessive-compulsive disorder. <em>Biological Psychiatry</em>, <em>90</em>(10), 701–713.
+    <a href="https://doi.org/10.1038/s41467-020-16734-3" rel="noopener noreferrer" target="_blank">https://doi.org/10.1016/j.biopsych.2021.04.006</a></p>
+
+    <p>Wang, F., Dong, Z., Tian, Q., Liao, C., Fan, Q., Hoge, W. S., Keil, B., Polimeni, J. R., Wald, L. L., Huang, S. Y., &amp; Setsompop, K. (2021). In vivo human whole-brain Connectom diffusion MRI dataset
+    at 760 µm isotropic resolution. <em>Scientific Data</em>, <em>8</em>, 122. <a href="https://doi.org/10.1038/s41467-020-16734-3" rel="noopener noreferrer" target="_blank">https://doi.org/10.1038/s41597-021-00904-z</a></p>'
+- id: GoedeSummit2022
+  who: Goede et al. (DBS Expert Summit 2022)
+  title: 'DBS for Tremor: Network Effects'
+  image:
+    src: media/0d45c49a8a0a-DBSExpertSummit_Poster_Goede_Small.png
+    original: https://www.netstim.org/wp-content/uploads/2022/03/DBSExpertSummit_Poster_Goede_Small.png
+    alt: ''
+    width: 2000
+  full: '@root@wp-content/uploads/2022/03/DBSExpertSummit_Poster_Goede_Small-579x1030.png'
+  details: '<br/>
+
+
+    <br/>'
+- id: GoedeDGKN
+  who: Goede et al. (DGKN 2022)
+  title: 'DBS for Tremor: Network Effects'
+  image:
+    src: media/57bcbfbef217-DGKN_Poster_Goede_Small.png
+    original: https://www.netstim.org/wp-content/uploads/2022/03/DGKN_Poster_Goede_Small.png
+    alt: ''
+    width: 2000
+  full: '@root@wp-content/uploads/2022/03/DGKN_Poster_Goede_Small-729x1030.png'
+  details: '<p><a href="@root@wp-content/uploads/2022/03/DGKN_Poster_Goede.pdf" rel="noopener noreferrer" target="_blank">Poster PDF</a></p>
+
+    <h3>Affiliations</h3>
+
+    <p>Lukas L. Goede<sup>1,5</sup>, Bassam Al-Fatly<sup>1</sup>, Clemens Neudorfer<sup>4</sup>, Ningfei Li<sup>1</sup>, Vincent J.J. Odekerken<sup>2</sup>, Martin Reich<sup>3</sup>, Jens Volkmann<sup>3</sup>,
+    Rob M.A. de Bie<sup>2</sup>, Andrea A. Kühn<sup>1</sup>, Andreas Horn<sup>1,4</sup></p>
+
+    <p><sup>1</sup> Movement Disorder and Neuromodulation Unit, Department of Neurology, Charité Campus Mitte, Charité – Universitätsmedizin Berlin, Berlin, Germany</p>
+
+    <p><sup>2</sup> Department of Neurology, Amsterdam University Medical Center, Amsterdam, The Netherlands</p>
+
+    <p><sup>3 </sup>Department of Neurology, University Clinic of Würzburg, Würzburg, Germany</p>
+
+    <p><sup>4</sup> Center for Brain Circuit Therapeutics, Department of Neurology Brigham &amp; Women’s Hospital, Harvard Medical School, Boston, United States; MAMGH Neurosurgery &amp; Center for Neurotechnology
+    and Neurorecovery (CNTR) at MGH Neurology, Massachusetts General Hospital, Harvard Medical School, Boston, MA, United States</p>
+
+    <p><sup>5 </sup>BIH – Berlin Institute of Health at Charité – Universitätsmedizin Berlin,</p>
+
+    <p>BIH Biomedical Innovation Academy, BIH Charité Junior Clinician Scientist Program, Charitéplatz 1, 10117 Berlin, Germany</p>
+
+    <h4>References</h4>
+
+    <p>Deuschl G, Bain P, Brin M. Consensus Statement of the Movement Disorder Society on Tremor. Mov Disord. 2008 Oct 20;13(S3):2–23.</p>
+
+    <p>Horn A, Li N, Dembek TA, Kappel A, Boulay C, Ewert S, et al. Lead-DBS v2: Towards a comprehensive pipeline for deep brain stimulation imaging. NeuroImage. 2019 Jan;184:293–316.</p>
+
+    <p>Horn A, Reich M, Vorwerk J, Li N, Wenzel G, Fang Q, et al. Connectivity Predicts deep brain stimulation outcome in Parkinson disease: DBS Outcome in PD. Ann Neurol. 2017 Jul;82(1):67–78.</p>
+
+    <p>Buckner RL, Krienen FM, Castellanos A, Diaz JC, Yeo BTT. The organization of the human cerebellum estimated by intrinsic functional connectivity. Journal of Neurophysiology. 2011 Nov;106(5):2322–45.</p>
+
+    <p>Middlebrooks EH, Okromelidze L, Wong JK, et al. Connectivity Correlates Predicting Deep Brain Stimulation Outcome in Essential Tremor: Evidence for a common treatment pathway. NeuroImage Clin. 2021.</p>'
+- id: HollunderLiSummit
+  who: Hollunder & Li et al. (DBS Expert Summit 2022)
+  title: Segregating the prefrontal cortex  by means of DBS
+  image:
+    src: media/92f118478bdf-DBSExpertSummit_Poster_Hollunder-Li_Small.png
+    original: https://www.netstim.org/wp-content/uploads/2022/03/DBSExpertSummit_Poster_Hollunder-Li_Small.png
+    alt: ''
+    width: 2000
+  full: '@root@wp-content/uploads/2022/03/DBSExpertSummit_Poster_Hollunder-Li_Small-579x1030.png'
+  details: '<p><a href="@root@wp-content/uploads/2022/03/DBSExpertSummit_Poster_Hollunder-Li.pdf" rel="noopener noreferrer" target="_blank">Poster PDF</a></p>
+
+    <h3>References</h3>
+
+    <p>Benarroch, E. E. (2008). Subthalamic nucleus and its connections: Anatomic substrate for the network effects of deep brain stimulation. <em>Neurology</em>, <em>70</em>(21), 1991–1996. <a href="https://doi.org/10.1212/01.wnl.0000313022.39329.65"
+    rel="noopener noreferrer" target="_blank">https://doi.org/10.1212/01.wnl.0000313022.39329.65</a></p>
+
+    <p>Bonelli, R. M., &amp; Cummings, J. L. (2007). Frontal-subcortical circuitry and behavior. <em>Dialogues in Clinical Neuroscience</em>, <em>9</em>(2), 141–151. <a href="https://doi.org/10.31887/dcns.2007.9.2/rbonelli"
+    rel="noopener noreferrer" target="_blank">https://doi.org/10.31887/dcns.2007.9.2/rbonelli</a></p>
+
+    <p>Ganos, C., Al-Fatly, B., Fischer, J.-F., Baldermann, J. C., Hennen, C., Visser-Vandewalle, V., … &amp; Horn, A. (2022). A neural network for tics: insights from causal brain lesions and deep brain
+    stimulation, <em>Brain</em>, awac009. <a href="https://doi.org/10.1093/brain/awac009" rel="noopener noreferrer" target="_blank">https://doi.org/10.1093/brain/awac009</a></p>
+
+    <p>Haber, S. N., Liu, H., Seidlitz, J., &amp; Bullmore, E. (2021). Prefrontal connectomics: From anatomy to human imaging. <em>Neuropsychopharmacology</em>. <a href="https://doi.org/10.1038/s41386-021-01156-6"
+    rel="noopener noreferrer" target="_blank">https://doi.org/10.1038/s41386-021-01156-6</a></p>
+
+    <p>Haynes, W. I. A., &amp; Haber, S. N. (2013). The organization of prefrontal-subthalamic inputs in primates provides an anatomical substrate for both functional specificity and integration: Implications
+    for basal ganglia models and deep brain stimulation. <em>Journal of Neuroscience</em>, <em>33</em>(11), 4804–4814. <a href="https://doi.org/10.1523/JNEUROSCI.4674-12.2013" rel="noopener noreferrer"
+    target="_blank">https://doi.org/10.1523/JNEUROSCI.4674-12.2013</a></p>
+
+    <p>Horn, A., Li, N., Dembek, T. A., Kappel, A., Boulay, C., Ewert, S., Tietze, A., Husch, A., Perera, T., Neumann, W. J., Reisert, M., Si, H., Oostenveld, R., Rorden, C., Yeh, F. C., Fang, Q., Herrington,
+    T. M., Vorwerk, J., &amp; Kühn, A. A. (2019). Lead-DBS v2: Towards a comprehensive pipeline for deep brain stimulation imaging. <em>NeuroImage</em>, <em>184</em>(July 2018), 293–316. <a href="https://doi.org/10.1016/j.neuroimage.2018.08.068"
+    rel="noopener noreferrer" target="_blank">https://doi.org/10.1016/j.neuroimage.2018.08.068</a></p>
+
+    <p>Horn, A., Reich, M., Vorwerk, J., Li, N., Wenzel, G., Fang, Q., Schmitz-Hübsch, T., Nickl, R., Kupsch, A., Volkmann, J., Kühn, A. A., &amp; Fox, M. D. (2017). Connectivity predicts deep brain stimulation
+    outcome in Parkinson disease. <em>Annals of Neurology</em>, <em>82</em>(1), 67–78. <a href="https://doi.org/10.1002/ana.24974" rel="noopener noreferrer" target="_blank">https://doi.org/10.1002/ana.24974</a></p>
+
+    <p>Li, N., Baldermann, J. C., Kibleur, A., Treu, S., Akram, H., Elias, G. J. B., Boutet, A., Lozano, A. M., Al-Fatly, B., Strange, B., Barcia, J. A., Zrinzo, L., Joyce, E., Chabardes, S., Visser-Vandewalle,
+    V., Polosan, M., Kuhn, J., Kühn, A. A., &amp; Horn, A. (2020). A unified connectomic target for deep brain stimulation in obsessive-compulsive disorder. <em>Nature Communications</em>, <em>11</em>,
+    3364. <a href="https://doi.org/10.1038/s41467-020-16734-3" rel="noopener noreferrer" target="_blank">https://doi.org/10.1038/s41467-020-16734-3</a></p>
+
+    <p>Li, N., Hollunder, B., Baldermann, J. C., Kibleur, A., Treu, S., Akram, H., Al-Fatly, B., Strange, B. A., Barcia, J. A., Zrinzo, L., Joyce, E. M., Chabardes, S., Visser-Vandewalle, V., Polosan, M.,
+    Kuhn, J., Kühn, A. A., &amp; Horn, A. (2021). A unified functional network target for deep brain stimulation in obsessive-compulsive disorder. <em>Biological Psychiatry</em>, <em>90</em>(10), 701–713.
+    <a href="https://doi.org/10.1038/s41467-020-16734-3" rel="noopener noreferrer" target="_blank">https://doi.org/10.1016/j.biopsych.2021.04.006</a></p>
+
+    <p>Wang, F., Dong, Z., Tian, Q., Liao, C., Fan, Q., Hoge, W. S., Keil, B., Polimeni, J. R., Wald, L. L., Huang, S. Y., &amp; Setsompop, K. (2021). In vivo human whole-brain Connectom diffusion MRI dataset
+    at 760 µm isotropic resolution. <em>Scientific Data</em>, <em>8</em>, 122. <a href="https://doi.org/10.1038/s41467-020-16734-3" rel="noopener noreferrer" target="_blank">https://doi.org/10.1038/s41597-021-00904-z</a></p>'
+- id: ManaSummit
+  who: Mana et al. (DBS Expert Summit 2022)
+  title: Instrumental activities of daily living improve in Parkinson’s Disease after STN DBS
+  image:
+    src: media/35c1a998e180-DBSExpertSummit_Poster_Josef.png
+    original: https://www.netstim.org/wp-content/uploads/2022/03/DBSExpertSummit_Poster_Josef.png
+    alt: ''
+    width: 2880
+  full: '@root@wp-content/uploads/2022/03/DBSExpertSummit_Poster_Josef-579x1030.png'
+  details: '<p><a href="@root@wp-content/uploads/2022/03/DBSExpertSummit_Poster_Josef.pdf" rel="noopener noreferrer" target="_blank">Poster PDF</a></p>
+
+    <h3>References</h3>
+
+    <p>Brennan, L., Siderowf, A., Rubright, J.D., Rick, J., Dahodwala, N., Duda, J.E., Hurtig, H., Stern, M., Xie, S.X., Rennert, L., Karlawish, J., Shea, J.A., Trojanowski, J.Q., and Weintraub, D. (2016a).
+    Development and initial testing of the Penn Parkinson’s Daily Activities Questionnaire. <i>Mov Disord</i> 31<b>,</b> 126-134. <a href="https://doi.org/10.1002/mds.2633" rel="noopener noreferrer" target="_blank">https://doi.org/10.1002/mds.2633</a></p>
+
+    <p>Brennan, L., Siderowf, A., Rubright, J.D., Rick, J., Dahodwala, N., Duda, J.E., Hurtig, H., Stern, M., Xie, S.X., Rennert, L., Karlawish, J., Shea, J.A., Trojanowski, J.Q., and Weintraub, D. (2016b).
+    The Penn Parkinson’s Daily Activities Questionnaire-15: Psychometric properties of a brief assessment of cognitive instrumental activities of daily living in Parkinson’s disease. <i>Parkinsonism Relat
+    Disord</i> 25<b>,</b> 21-26. <a href="https://doi.org/10.1016/j.parkreldis.2016.02.020" rel="noopener noreferrer" target="_blank">https://doi.org/10.1016/j.parkreldis.2016.02.020</a></p>'
+- id: RiosSummit
+  who: Rios et al. (DBS Expert Summit 2022)
+  title: Optimal stimulation sites and networks for DBS of the fornix in Alzheimer’s Diesease
+  image:
+    src: media/e5ec56e57a27-DBSExpertSummit_Poster_Rios_Small.png
+    original: https://www.netstim.org/wp-content/uploads/2022/03/DBSExpertSummit_Poster_Rios_Small.png
+    alt: ''
+    width: 2000
+  full: '@root@wp-content/uploads/2022/03/DBSExpertSummit_Poster_Rios_Small-579x1030.png'
+  details: '<p><a href="@root@wp-content/uploads/2022/03/DBSExpertSummit_Poster_Rios.pdf" rel="noopener noreferrer" target="_blank">Poster PDF</a></p>
+
+    <h3><strong>References </strong></h3>
+
+    <p>Chen, Guangyu et al. “Staging Alzheimer’s Disease Risk by Sequencing Brain Function and Structure, Cerebrospinal Fluid, and Cognition Biomarkers.” <i>Journal of Alzheimer’s disease : JAD</i> vol.
+    54,3 (2016): 983-993. <a href="https://content.iospress.com/articles/journal-of-alzheimers-disease/jad160537" rel="noopener noreferrer" target="_blank">doi:10.3233/JAD-160537</a></p>
+
+    <p>Laxton, Adrian W et al. “A phase I trial of deep brain stimulation of memory circuits in Alzheimer’s disease.” <i>Annals of neurology</i> vol. 68,4 (2010): 521-34. <a href="https://onlinelibrary.wiley.com/doi/10.1002/ana.22089"
+    rel="noopener noreferrer" target="_blank">doi:10.1002/ana.22089</a></p>
+
+    <p>Lozano, Andres M et al. “A Phase II Study of Fornix Deep Brain Stimulation in Mild Alzheimer’s Disease.” <i>Journal of Alzheimer’s disease : JAD</i> vol. 54,2 (2016): 777-87. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5026133/"
+    rel="noopener noreferrer" target="_blank">doi:10.3233/JAD-160017</a></p>
+
+    <p>Horn, Andreas et al. “Connectivity Predicts deep brain stimulation outcome in Parkinson disease.” <i>Annals of neurology</i> vol. 82,1 (2017): 67-78. <a href="https://onlinelibrary.wiley.com/doi/full/10.1002/ana.24974"
+    rel="noopener noreferrer" target="_blank">doi:10.1002/ana.24974</a></p>
+
+    <p>Li, Ningfei et al. “A unified connectomic target for deep brain stimulation in obsessive-compulsive disorder.” <i>Nature communications</i>vol. 11,1 3364. 3 Jul. 2020, <a href="https://www.nature.com/articles/s41467-020-16734-3"
+    rel="noopener noreferrer" target="_blank">doi:10.1038/s41467-020-16734-3</a></p>
+
+    <p>Choi, Ki Sueng et al. “Mapping the “Depression Switch” During Intraoperative Testing of Subcallosal Cingulate Deep Brain Stimulation.” <i>JAMA neurology</i> vol. 72,11 (2015): 1252-60. <a href="https://jamanetwork.com/journals/jamaneurology/fullarticle/2443180"
+    rel="noopener noreferrer" target="_blank">doi:10.1001/jamaneurol.2015.2564</a></p>
+
+    <p>Horn, Andreas et al. “Lead-DBS v2: Towards a comprehensive pipeline for deep brain stimulation imaging.” <i>NeuroImage</i> vol. 184 (2019): 293-316. <a href="https://www.sciencedirect.com/science/article/abs/pii/S1053811918307663"
+    rel="noopener noreferrer" target="_blank">doi:10.1016/j.neuroimage.2018.08.068</a></p>
+
+    <p>Wang, Fuyixue et al. “In vivo human whole-brain Connectom diffusion MRI dataset at 760 µm isotropic resolution.” <i>Scientific data</i> vol. 8,1 122. 29 Apr. 2021, <a href="https://www.nature.com/articles/s41597-021-00904-z"
+    rel="noopener noreferrer" target="_blank">doi:10.1038/s41597-021-00904-z</a></p>
+
+    <p>Yeo, B T Thomas et al. “The organization of the human cerebral cortex estimated by intrinsic functional connectivity.” <i>Journal of neurophysiology</i> vol. 106,3 (2011): 1125-65. <a href="https://journals.physiology.org/doi/full/10.1152/jn.00338.2011?rfr_dat=cr_pub++0pubmed&amp;url_ver=Z39.88-2003&amp;rfr_id=ori%3Arid%3Acrossref.org"
+    rel="noopener noreferrer" target="_blank">doi:10.1152/jn.00338.2011</a></p>
+
+    <h4>For figure background and structures</h4>
+
+    <p>Edlow, Brian L et al. “7 Tesla MRI of the ex vivo human brain at 100 micron resolution.” <i>Scientific data</i> vol. 6,1 244. 30 Oct. 2019, <a href="https://www.nature.com/articles/s41597-019-0254-8"
+    rel="noopener noreferrer" target="_blank">doi:10.1038/s41597-019-0254-8</a></p>
+
+    <p>Amunts, Katrin et al. “Julich-Brain: A 3D probabilistic atlas of the human brain’s cytoarchitecture.” <i>Science (New York, N.Y.)</i>vol. 369,6506 (2020): 988-992. <a href="https://www.science.org/doi/full/10.1126/science.abb4588"
+    rel="noopener noreferrer" target="_blank">doi:10.1126/science.abb4588</a></p>
+
+    <p>Neudorfer, Clemens et al. “A high-resolution in vivo magnetic resonance imaging atlas of the human hypothalamic region.” <i>Scientific data</i>vol. 7,1 305. 15 Sep. 2020, <a href="https://www.nature.com/articles/s41597-020-00644-6"
+    rel="noopener noreferrer" target="_blank">doi:10.1038/s41597-020-00644-6</a></p>
+
+    <p>Amaral, Robert S C et al. “Manual segmentation of the fornix, fimbria, and alveus on high-resolution 3T MRI: Application via fully-automated mapping of the human memory circuit white and grey matter
+    in healthy and pathological aging.” <i>NeuroImage</i> vol. 170 (2018): 132-150.<a href="https://www.sciencedirect.com/science/article/abs/pii/S105381191630581X?via%3Dihub" rel="noopener noreferrer"
+    target="_blank"> doi:10.1016/j.neuroimage.2016.10.027</a></p>'
+- id: OxenfordSummit
+  who: Oxenford et al. (DBS Expert Summit 2022)
+  title: Precision neuroimaging via manual refinement of the deformation fields
+  image:
+    src: media/625483245030-DBSExpertSummit_Poster_Oxenford_Small.png
+    original: https://www.netstim.org/wp-content/uploads/2022/03/DBSExpertSummit_Poster_Oxenford_Small.png
+    alt: ''
+    width: 2000
+  full: '@root@wp-content/uploads/2022/03/DBSExpertSummit_Poster_Oxenford_Small-579x1030.png'
+  details: '<p><a href="@root@wp-content/uploads/2022/03/DBSExpertSummit_Poster_Oxenford.pdf" rel="noopener noreferrer" target="_blank">Poster PDF</a></p>
+
+    <p><a href="https://www.youtube.com/watch?v=VcBXu5BURVI">WarpDrive Demo</a></p>'

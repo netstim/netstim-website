@@ -1,5 +1,5 @@
 ---
-title: Updates
+title: Multifunktionsraum
 url: /internal/events/locations/multifunktionsraum/
 family: events
 crumbs:

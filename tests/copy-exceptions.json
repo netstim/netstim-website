@@ -2,58 +2,149 @@
   "/": {
     "text": [
       {
-        "before": "home",
-        "after": "",
-        "context": "home dear reader , welcome"
+        "before": "home dear reader",
+        "after": "two lines of research our two main lines of research are deep brain stimulation and connectomics",
+        "context": "home dear reader , welcome to the"
+      },
+      {
+        "before": "welcome to",
+        "after": "combined in a “ connectomic deep brain stimulation ” framework . deep brain stimulation",
+        "context": "home dear reader , welcome to the website of the"
+      },
+      {
+        "before": "website",
+        "after": "main focus of our work : deep brain stimulation , predominantly in movement disorders such as parkinson ’ s disease , essential tremor and dystonia . normative connectomes since 2014 , we have worked on estimating “ average wiring diagrams ”",
+        "context": ", welcome to the website of the institute for"
+      },
+      {
+        "before": "institute for network",
+        "after": "human brain . lead - dbs ↗ as a methodological backbone of our work , together with others , we develop the open - source toolbox lead - dbs . members of our lab published in peer - reviewed international journals such as nature neuroscience nature communications annals of neurology brain pnas biological psychiatry neuroimage human brain mapping all publications connectomic deep brain",
+        "context": "the website of the institute for network stimulation – which is"
+      },
+      {
+        "before": "– which is based",
+        "after": "out now",
+        "context": "institute for network stimulation – which is based at the university hospital"
       },
       {
         "before": "",
-        "after": "connectomic deep brain stimulation out now at academic press / elsevier about the book",
-        "context": "in touch on bluesky about us scientific focus"
+        "after": "academic press / elsevier about",
+        "context": "which is based at the university hospital cologne"
       },
       {
-        "before": "- 8 : 45 am",
-        "after": "",
-        "context": "september 4 , 2025 - 8 : 45 am patricia zvarova named forbes"
+        "before": "university hospital cologne .",
+        "after": "book news september 4 , 2025 new perspective in nature reviews neurology may 29 , 2025 patricia zvarova named forbes 30 under 30 in slovakia ! may 28 , 2025 lauren hart receives multiple phd scholarships november 6 , 2024 barbara hollunder receives thiemann fellowship at dgn the team",
+        "context": "is based at the university hospital cologne . we are a scientific"
       },
       {
-        "before": "- 2 : 54 pm",
-        "after": "",
-        "context": "may 29 , 2025 - 2 : 54 pm lauren hart receives multiple"
+        "before": "",
+        "after": "meet",
+        "context": "invasive brain stimulation . the goal of our"
       },
       {
-        "before": "- 7 : 24 pm",
-        "after": "",
-        "context": "may 28 , 2025 - 7 : 24 pm barbara hollunder receives thiemann"
+        "before": "goal of our research is to analyse and modulate brain networks to improve clinical treatment in neurological and psychiatric brain disorders . the primary tools we use to pursue these goals are structural imaging and noninvasive connectivity measures derived from functional and diffusion weighted mri . get in touch on bluesky about us scientific focus as a methodological “ backbone ” of our work , together with others , we develop an open - source software called lead - dbs . lead - dbs is a toolbox facilitating deep brain stimulation electrode reconstructions and computer simulations based on postoperative mri & ct imaging . visit lead - dbs . org learn more about our work on deep brain stimulation further scientific contributions include estimating and validating normative brain connectomes – i . e . “ average wiring diagrams ” of the human brain . these atlases describe which area is how strongly connected to which other areas of the brain . over the years , we have created several – they are all freely available to the scientific",
+        "after": "team jobs",
+        "context": "brain stimulation . the goal of our research is to analyse and modulate brain networks to improve clinical treatment in neurological and psychiatric brain disorders . the primary tools we use to pursue these goals are structural imaging and noninvasive connectivity measures derived from functional and diffusion weighted mri . get in touch on bluesky about us scientific focus as a methodological “ backbone ” of our work , together with others , we develop an open - source software called lead - dbs . lead - dbs is a toolbox facilitating deep brain stimulation electrode reconstructions and computer simulations based on postoperative mri & ct imaging . visit lead - dbs . org learn more about our work on deep brain stimulation further scientific contributions include estimating and validating normative brain connectomes – i . e . “ average wiring diagrams ” of the human brain . these atlases describe which area is how strongly connected to which other areas of the brain . over the years , we have created several – they are all freely available to the scientific community and were applied"
       },
       {
-        "before": "- 2 : 37 pm",
+        "before": "and were applied in a context where subject - or patient - specific connectograms are not available . browse connectomes publications members of our lab published in peer - reviewed international journals such as nature neuroscience , nature communications , annals of neurology , brain , pnas , biological psychiatry , neuroimage and human brain mapping . browse publications",
         "after": "",
-        "context": "november 6 , 2024 - 2 : 37 pm andreas horn receives international"
+        "context": "to the scientific community and were applied in a context where subject - or patient - specific connectograms are not available . browse connectomes publications members of our lab published in peer - reviewed international journals such as nature neuroscience , nature communications , annals of neurology , brain , pnas , biological psychiatry , neuroimage and human brain mapping . browse publications stimulating brains : a"
       },
       {
-        "before": "- 5 : 08 pm",
+        "before": ": a podcast and talk series about brain stimulation and the stimulating brains of our field",
         "after": "",
-        "context": "october 20 , 2024 - 5 : 08 pm netstim paper featured in"
+        "context": "browse publications stimulating brains : a podcast and talk series about brain stimulation and the stimulating brains of our field our lab hosts a"
       },
       {
-        "before": "- 10 : 05 pm",
+        "before": ". in it , we interview stimulating researchers",
+        "after": ": interviews",
+        "context": "series about brain stimulation . in it , we interview stimulating researchers about the past ,"
+      },
+      {
+        "before": "as well as feature",
+        "after": "and",
+        "context": "future of neuromodulation , as well as feature talks by senior colleagues"
+      },
+      {
+        "before": "stimulating brains :",
         "after": "",
-        "context": "september 30 , 2024 - 10 : 05 pm"
+        "context": "in the field . stimulating brains : tune in stimu -"
+      },
+      {
+        "before": "",
+        "after": "↗",
+        "context": "brains : tune in stimu - latte :"
+      },
+      {
+        "before": ": the journal club additionally , we run stimu - latte ,",
+        "after": "",
+        "context": "in stimu - latte : the journal club additionally , we run stimu - latte , a monthly in -"
+      },
+      {
+        "before": ", which provides",
+        "after": ":",
+        "context": "of the forschungsschwerpunkt neuromodulation , which provides a local space for"
+      },
+      {
+        "before": "!",
+        "after": ". upcoming sessions",
+        "context": "all fueled by coffee ! funding the netstim institute"
+      },
+      {
+        "before": "includes grants from the german research council , the dystonia research foundation , the berlin institute of health , stiftung charite , the thiemann foundation for parkinson ’ s disease research , the foundation for ocd research ( ffor ) , the german research council and the eu joint programme – neurodegenerative disease research ( jpnd ) . latest updates new perspective in nature reviews neurology september 4 , 2025 - 8 : 45 am patricia zvarova named forbes 30 under 30 in slovakia ! may 29 , 2025 - 2 : 54 pm lauren hart receives multiple phd scholarships may 28 , 2025 - 7 : 24 pm barbara hollunder receives thiemann fellowship at dgn november 6 , 2024 - 2 : 37 pm andreas horn receives international brain stimulation early career award october 20 , 2024 - 5 : 08 pm netstim paper featured in neurology podcast september 30 , 2024 - 10 : 05 pm",
+        "after": "",
+        "context": ") . past funding includes grants from the german research council , the dystonia research foundation , the berlin institute of health , stiftung charite , the thiemann foundation for parkinson ’ s disease research , the foundation for ocd research ( ffor ) , the german research council and the eu joint programme – neurodegenerative disease research ( jpnd ) . latest updates new perspective in nature reviews neurology september 4 , 2025 - 8 : 45 am patricia zvarova named forbes 30 under 30 in slovakia ! may 29 , 2025 - 2 : 54 pm lauren hart receives multiple phd scholarships may 28 , 2025 - 7 : 24 pm barbara hollunder receives thiemann fellowship at dgn november 6 , 2024 - 2 : 37 pm andreas horn receives international brain stimulation early career award october 20 , 2024 - 5 : 08 pm netstim paper featured in neurology podcast september 30 , 2024 - 10 : 05 pm"
       }
     ],
     "links": {
-      "missing": {},
+      "missing": {
+        "https://bsky.app/profile/netstim.org": 1,
+        "/about-us/": 2,
+        "http://www.lead-dbs.org": 2,
+        "/research-interests/normative-connectomes/": 1,
+        "http://andreas-horn.de/?page_id=30": 1,
+        "http://www.stimulatingbrains.org": 1,
+        "/andreas-horn-receives-international-brain-stimulation-early-career-award/": 1,
+        "/netstim-paper-featured-in-neurology-podcast/": 1
+      },
       "added": {
-        "/research-interests/the-book/": 1
+        "https://www.lead-dbs.org": 1,
+        "/research-interests/the-book/": 1,
+        "/about-us/about-us/": 1,
+        "/about-us/jobs/": 1,
+        "/about-us/#funding": 1
       }
     },
     "images": {
       "missing": {
-        "/wp-content/uploads/2021/11/ws_header.png": 1
+        "/wp-content/uploads/2018/12/drrt-997x1030.png": 1,
+        "/wp-content/uploads/2021/11/ws_header.png": 1,
+        "/wp-content/uploads/2025/05/IMG_2207-1-1030x655.png": 1,
+        "/wp-content/uploads/2018/12/mesh_lead-1-554x1030.png": 1,
+        "/wp-content/uploads/2017/12/lead_dbs_brainstem_connectome_meola2016-Kopie-2-500x1030.png": 1,
+        "/wp-content/uploads/2020/09/dbs-574x1030.png": 1,
+        "/wp-content/uploads/2025/05/StimBrains_Logo_Vertical_Portfolio_transparentBG-1030x453.png": 1,
+        "/wp-content/uploads/2025/10/Stimulate_logo-2-1500x430.png": 1,
+        "/wp-content/uploads/2025/09/figure_act_dbs-36x36.png": 1,
+        "/wp-content/uploads/2025/05/IMG_8073-36x36.jpg": 1,
+        "/wp-content/uploads/2025/05/IMG_2528-36x36.jpg": 1,
+        "/wp-content/uploads/2024/11/image-36x36.png": 1,
+        "/wp-content/uploads/2024/10/Horn_3_portrait_square_small-36x36.png": 1,
+        "/wp-content/uploads/2024/09/t-36x36.png": 1
       },
       "added": {
-        "/wp-content/uploads/2021/03/Connectomic-Deep-Brain-Stimulation-1249x1536.png": 1
+        "/media/full-abb_1.jpg": 1,
+        "/media/full-The_Human_Connectome.png": 1,
+        "/media/595e8a2d1bb1-logo-1-1500x1083.png": 1,
+        "/wp-content/uploads/2021/03/Connectomic-Deep-Brain-Stimulation-1249x1536.png": 1,
+        "/wp-content/uploads/2025/09/figure_act_dbs-1030x989.png": 1,
+        "/wp-content/uploads/2025/05/d98e74f6-2fe3-43a3-a898-f549b42b7a65-1-268x300.jpg": 1,
+        "/wp-content/uploads/2025/05/IMG_2528-1030x773.jpg": 1,
+        "/wp-content/uploads/2024/11/image.png": 1,
+        "/media/c56653209355-IMG_2207-1-1536x977.png": 1,
+        "/media/a473d51a1584-StimBrains_Logo_Vertical_Portfolio_transparentBG-1536x676.png": 1,
+        "/media/5d84ece1bc6e-Stimulate_logo-2-1500x430.png": 1
       }
     }
   },
@@ -78,42 +169,84 @@
   "/about-us/": {
     "text": [
       {
-        "before": "about us",
+        "before": "us about us",
+        "after": "the lab dear reader , welcome to the website of",
+        "context": "about us about us the institute for network"
+      },
+      {
+        "before": "",
+        "after": "– which",
+        "context": "institute for network stimulation is based at the"
+      },
+      {
+        "before": "of",
+        "after": "hospital",
+        "context": "based at the university of cologne . we are"
+      },
+      {
+        "before": "people",
+        "after": "the goal of our research is to analyse and modulate brain networks to improve clinical treatment in neurological and psychiatric brain disorders . the primary tools we use to pursue these goals are structural imaging and noninvasive connectivity measures derived from functional and diffusion weighted mri . get in touch on bluesky funding the netstim institute is currently funded by the schilling foundation and the national institute of mental health ( nimh ) . past funding includes grants from the german research council , the dystonia research foundation , the berlin institute of health , stiftung charite , the thiemann foundation for parkinson ’ s disease research , the foundation for ocd research ( ffor ) , the german research council and the eu joint programme – neurodegenerative disease research ( jpnd ) . about the lab team",
+        "context": "invasive brain stimulation . people jobs research interests publications"
+      },
+      {
+        "before": "research interests publications jobs people",
         "after": "",
-        "context": "about us about us the institute"
+        "context": "stimulation . people jobs research interests publications jobs people"
       }
-    ]
+    ],
+    "links": {
+      "missing": {
+        "/about-us/about-us/": 2,
+        "/about-us/jobs/": 1,
+        "/research-interests/": 1,
+        "/research-interests/publications/": 1
+      },
+      "added": {
+        "https://bsky.app/profile/netstim.org": 1,
+        "/about-us/": 1
+      }
+    }
   },
   "/about-us/about-us/": {
     "text": [
       {
-        "before": "people thank you very much for your interest in our group . our research focusses on",
-        "after": "andreas horn ilkem aysu sahin patricia zvarova pepsi",
+        "before": "people people thank you very much for your interest in our group . our research focusses on",
+        "after": "team andreas horn ilkem aysu sahin patricia zvarova pepsi",
         "context": "people people thank you very much for your interest in our group . our research focusses on the following central questions"
       },
       {
-        "before": "following central questions : how does the human brain respond to focal stimuli applied by invasive and noninvasive neuromodulation methods specifically , we study the effects of deep brain stimulation on small brain nuclei how do distributed brain networks respond to such stimuli we use noninvasive techniques like resting - state fmri and diffusion - weighted mri to address this question how does dbs electrode placement affect clinical neural or behavioral response in second line , we ’ re highly interested in structural and functional connectomics as well as detailed anatomical definitions of the human brain .",
-        "after": "dog maike mustin adriana arrais christine paulus ellen younger jan philipp payonk fr frauke raaff lara krüger richard demann benjamin selaskowski mf michael ferres ck celine kölsch helen friedrich",
-        "context": "research focusses on the following central questions : how does the human brain respond to focal stimuli applied by invasive and noninvasive neuromodulation methods specifically , we study the effects of deep brain stimulation on small brain nuclei how do distributed brain networks respond to such stimuli we use noninvasive techniques like resting - state fmri and diffusion - weighted mri to address this question how does dbs electrode placement affect clinical neural or behavioral response in second line , we ’ re highly interested in structural and functional connectomics as well as detailed anatomical definitions of the human brain . © michael wodak /"
+        "before": "following central questions : how does the human brain respond to focal stimuli applied by invasive and noninvasive neuromodulation methods specifically , we study the effects of deep brain stimulation on small brain nuclei how do distributed brain networks respond to such stimuli we use noninvasive techniques like resting - state fmri and diffusion - weighted mri to address this question how does dbs electrode placement affect clinical neural or behavioral response in second line , we ’ re highly interested in structural and functional connectomics as well as detailed anatomical definitions of the human brain . ©",
+        "after": "dog maike mustin adriana arrais christine paulus ellen younger jan philipp payonk fr frauke raaff lara krüger richard demann benjamin selaskowski mf",
+        "context": "research focusses on the following central questions : how does the human brain respond to focal stimuli applied by invasive and noninvasive neuromodulation methods specifically , we study the effects of deep brain stimulation on small brain nuclei how do distributed brain networks respond to such stimuli we use noninvasive techniques like resting - state fmri and diffusion - weighted mri to address this question how does dbs electrode placement affect clinical neural or behavioral response in second line , we ’ re highly interested in structural and functional connectomics as well as detailed anatomical definitions of the human brain . © michael wodak / medizinfotoköln"
       },
       {
-        "before": "some of our lab members take part in developing the open - source toolbox lead - dbs – which has become a multi - institutional endeavor . find out more about lead - dbs current members",
-        "after": "",
-        "context": "michael wodak / medizinfotoköln some of our lab members take part in developing the open - source toolbox lead - dbs – which has become a multi - institutional endeavor . find out more about lead - dbs current members andreas horn before bringing"
+        "before": "wodak / medizinfotoköln some of our lab members take part in developing the open - source toolbox lead - dbs – which has become a multi - institutional endeavor . find out",
+        "after": "ferres ck celine kölsch helen friedrich andreas horn",
+        "context": "brain . © michael wodak / medizinfotoköln some of our lab members take part in developing the open - source toolbox lead - dbs – which has become a multi - institutional endeavor . find out more about lead -"
       },
       {
-        "before": "© michael wodak / medizinfotoköln",
+        "before": "lead - dbs current members",
         "after": "",
-        "context": "more about andreas cv © michael wodak / medizinfotoköln research gate google scholar"
+        "context": "find out more about lead - dbs current members andreas horn before bringing"
+      },
+      {
+        "before": "horn",
+        "after": "cv",
+        "context": "dbs current members andreas horn before bringing to life"
+      },
+      {
+        "before": "more about andreas cv",
+        "after": "icon : research gate ↗ icon : google scholar ↗ icon : twitter ↗ icon : publons ↗ icon : orcid ↗ icon : researcher id ↗ photo",
+        "context": "it so far . more about andreas cv © michael wodak /"
+      },
+      {
+        "before": "research gate google scholar twitter publons orcid researcher id",
+        "after": "",
+        "context": "michael wodak / medizinfotoköln research gate google scholar twitter publons orcid researcher id ilkem aysu sahin aysu"
       },
       {
         "before": "",
-        "after": "© michael wodak / medizinfotoköln",
-        "context": "publons orcid researcher id ilkem aysu sahin aysu"
-      },
-      {
-        "before": "",
-        "after": "research gate linkedin orcid",
+        "after": "icon : research gate ↗ icon : linkedin ↗ icon : orcid ↗ photo",
         "context": "how to draw . © michael wodak /"
       },
       {
@@ -122,18 +255,28 @@
         "context": "michael wodak / medizinfotoköln research gate linkedin orcid patricia zvarova patricia joined"
       },
       {
-        "before": "© michael wodak / medizinfotoköln",
+        "before": "",
+        "after": "icon : research gate ↗ icon : github ↗ icon : orcid ↗ icon : linkedin ↗ icon : google scholar ↗ photo",
+        "context": "she loves dogs . © michael wodak /"
+      },
+      {
+        "before": "research gate github orcid linkedin google scholar",
         "after": "",
-        "context": "she loves dogs . © michael wodak / medizinfotoköln research gate github orcid"
+        "context": "michael wodak / medizinfotoköln research gate github orcid linkedin google scholar pepsi the dog pepsi"
       },
       {
         "before": "",
-        "after": "© michael wodak / medizinfotoköln",
+        "after": "icon :",
+        "context": "and vocal expression . linkedin maike mustin maike"
+      },
+      {
+        "before": "",
+        "after": "↗",
         "context": "vocal expression . linkedin maike mustin maike joined"
       },
       {
         "before": "",
-        "after": "linkedin github",
+        "after": "icon : linkedin ↗ icon : github ↗ photo",
         "context": "at uniklinik köln . © michael wodak /"
       },
       {
@@ -143,7 +286,7 @@
       },
       {
         "before": "",
-        "after": "linkedin research gate",
+        "after": "icon : linkedin ↗ icon : research gate ↗ photo",
         "context": "forms of therapy . © michael wodak /"
       },
       {
@@ -153,7 +296,7 @@
       },
       {
         "before": "",
-        "after": "linkedin",
+        "after": "icon : linkedin ↗ photo",
         "context": "dates with friends . © michael wodak /"
       },
       {
@@ -162,32 +305,117 @@
         "context": "michael wodak / medizinfotoköln linkedin ellen younger ellen joined"
       },
       {
-        "before": "© michael wodak / medizinfotoköln",
+        "before": "",
+        "after": "icon : research gate ↗ photo",
+        "context": "surroundings in germany . © michael wodak /"
+      },
+      {
+        "before": "research gate",
         "after": "",
-        "context": "surroundings in germany . © michael wodak / medizinfotoköln research gate jan philipp"
+        "context": "michael wodak / medizinfotoköln research gate jan philipp payonk jan"
       },
       {
         "before": "",
-        "after": "fr",
+        "after": "icon :",
+        "context": "about either one . linkedin frauke raaff frauke"
+      },
+      {
+        "before": "",
+        "after": "↗ fr",
         "context": "either one . linkedin frauke raaff frauke joined"
       },
       {
         "before": "",
-        "after": "mf",
+        "after": "icon :",
+        "context": "her comfort show . linkedin lara krüger lara"
+      },
+      {
+        "before": "",
+        "after": "↗",
+        "context": "comfort show . linkedin lara krüger lara joined"
+      },
+      {
+        "before": "",
+        "after": "icon :",
+        "context": "of anki reviews . linkedin benjamin selaskowski benjamin"
+      },
+      {
+        "before": "",
+        "after": "↗",
+        "context": "anki reviews . linkedin benjamin selaskowski benjamin joined"
+      },
+      {
+        "before": "",
+        "after": "icon :",
+        "context": "up in frustration . linkedin michael ferres michael"
+      },
+      {
+        "before": "",
+        "after": "↗ mf",
         "context": "in frustration . linkedin michael ferres michael joined"
       },
       {
         "before": "",
         "after": "ck",
         "context": "authentic italian dishes . celine kölsch celine joined"
+      },
+      {
+        "before": "",
+        "after": "icon :",
+        "context": "hiking or skiing . research gate lab alumni"
+      },
+      {
+        "before": "",
+        "after": "↗",
+        "context": "skiing . research gate lab alumni ningfei li"
+      },
+      {
+        "before": "",
+        "after": "about the lab team",
+        "context": "jae kim savir madan jobs people"
+      },
+      {
+        "before": "people",
+        "after": "",
+        "context": "kim savir madan jobs people"
       }
     ],
     "links": {
       "missing": {
         "http://www.lead-dbs.org/about": 1,
-        "http://www.lead-dbs.org": 1
+        "http://www.lead-dbs.org": 1,
+        "https://www.researchgate.net/profile/Andreas_Horn": 1,
+        "https://scholar.google.de/citations?user=1jF_5-0AAAAJ&hl=en": 2,
+        "http://www.twitter.com/andreashorn_": 1,
+        "http://publons.com/a/1317885/": 1,
+        "https://orcid.org/0000-0002-0695-6025": 1,
+        "http://researcherid.com/rid/B-8988-2017": 1,
+        "https://www.researchgate.net/profile/Ilkem-Sahin?ev=hdr_xprf": 1,
+        "https://www.linkedin.com/in/ilkem-aysu-sahin/": 1,
+        "https://orcid.org/0009-0005-9951-374X": 1,
+        "https://www.researchgate.net/profile/Patricia-Zvarova/": 1,
+        "https://github.com/patrizvar": 1,
+        "https://orcid.org/0009-0004-7831-8796": 1,
+        "https://www.linkedin.com/in/patriciazvarova/": 1,
+        "https://scholar.google.com/citations?user=moL9DN0AAAAJ&hl=en": 2,
+        "https://www.linkedin.com/in/pepsi-the-dog-542b6b403/": 1,
+        "https://www.linkedin.com/in/maike-mustin/?originalSubdomain=de": 1,
+        "https://github.com/maike-mustin/": 1,
+        "https://www.linkedin.com/in/adrianarrais/?originalSubdomain=pt": 1,
+        "https://www.researchgate.net/profile/Adriana-Arrais": 1,
+        "https://www.linkedin.com/in/christine-paulus-689a56263/details/education/": 1,
+        "https://www.researchgate.net/profile/Ellen-Younger-2": 1,
+        "https://de.linkedin.com/in/jan-philipp-payonk-71b791279": 1,
+        "https://de.linkedin.com/in/frauke-raaff-8882a6226": 1,
+        "https://de.linkedin.com/in/richard-demann-40791b213": 1,
+        "https://de.linkedin.com/in/benjamin-selaskowski": 1,
+        "https://www.researchgate.net/profile/Helen-Friedrich": 1
       },
-      "added": {}
+      "added": {
+        "https://scholar.google.de/citations?user=1jF_5-0AAAAJ&amp;hl=en": 1,
+        "https://scholar.google.com/citations?user=moL9DN0AAAAJ&amp;hl=en": 1,
+        "/about-us/": 1
+      }
     },
     "images": {
       "missing": {
@@ -222,20 +450,38 @@
   "/about-us/jobs/": {
     "text": [
       {
+        "before": "currently no open posts",
+        "after": "© michael wodak / medizinfotoköln",
+        "context": "jobs currently no open posts unsolicited applications we are"
+      },
+      {
+        "before": ". how we do things we aim at building a modern , flexible and friendly laboratory environment and our lab has the goal of becoming a scientific “ teal organization ” . feel free to explore our internal pages a litte , e . g . the lab manual",
+        "after": "",
+        "context": "find a good way . how we do things we aim at building a modern , flexible and friendly laboratory environment and our lab has the goal of becoming a scientific “ teal organization ” . feel free to explore our internal pages a litte , e . g . the lab manual . what you can"
+      },
+      {
         "before": "",
-        "after": "thank you very much for your interest in our group . our research focusses on the following central questions : how does the human brain respond to focal stimuli applied by invasive and noninvasive neuromodulation methods specifically , we study the effects of deep brain stimulation on small brain nuclei how do distributed brain networks respond to such stimuli we use noninvasive techniques like resting - state fmri and diffusion - weighted mri to address this question how does dbs electrode placement affect clinical neural or behavioral response in second line , we ’ re highly interested in structural and functional connectomics as well as detailed anatomical definitions of the human brain . © michael wodak / medizinfotoköln some of our lab members take part in developing the open - source toolbox lead - dbs – which has become a multi - institutional endeavor . find out more about lead - dbs",
-        "context": "jobs currently no open posts"
+        "after": "some of our lab members take part in developing the open - source toolbox lead - dbs – which has become a multi - institutional endeavor . find out more about lead - dbs how we do things we aim at building a modern , flexible and friendly laboratory environment and our lab has the goal of becoming a scientific “ teal organization ” . feel free to explore our internal pages a litte , e . g . the lab manual . what we work on thank you very much for your interest in our group . our research focusses on the following central questions : how does the human brain respond to focal stimuli applied by invasive and noninvasive neuromodulation methods specifically , we study the effects of deep brain stimulation on small brain nuclei how do distributed brain networks respond to such stimuli we use noninvasive techniques like resting - state fmri and diffusion - weighted mri to address this question how does dbs electrode placement affect clinical neural or behavioral response in second line , we ’ re highly interested in structural and functional connectomics as well as detailed anatomical definitions of the human brain . about the lab team",
+        "context": "a better picture ? jobs people"
+      },
+      {
+        "before": "people",
+        "after": "",
+        "context": "better picture ? jobs people"
       }
     ],
     "links": {
       "missing": {},
       "added": {
+        "http://www.lead-dbs.org": 1,
         "http://www.lead-dbs.org/about": 1,
-        "http://www.lead-dbs.org": 1
+        "/about-us/": 1
       }
     },
     "images": {
-      "missing": {},
+      "missing": {
+        "/wp-content/uploads/2019/02/lead_dbs_brainstem_connectome_meola2016-Kopie-2-500x1030.png": 1
+      },
       "added": {
         "/wp-content/uploads/2025/12/group_cut-705x277.png": 1
       }
@@ -253,58 +499,43 @@
   "/blog/": {
     "text": [
       {
-        "before": "",
-        "after": "september 4 , 2025",
+        "before": "updates",
+        "after": "news september 4 , 2025",
         "context": "updates new perspective in nature"
       },
       {
         "before": "september 4",
-        "after": "we are excited to share that our latest perspective article",
+        "after": "we are excited to share that our latest perspective article , “ from adaptive deep brain stimulation to adaptive circuit targeting ” has just been published in nature reviews neurology . in this piece , … may 29",
         "context": "in nature reviews neurology september 4 , 2025 / in"
       },
       {
-        "before": "",
-        "after": "“ from adaptive deep brain stimulation to adaptive circuit targeting ” has just been published in nature reviews …",
-        "context": "neurology september 4 , 2025 / in uncategorized"
-      },
-      {
         "before": "/ in uncategorized / by andreashorn read more",
-        "after": "may 29",
+        "after": "",
         "context": "september 4 , 2025 / in uncategorized / by andreashorn read more patricia zvarova named forbes"
       },
       {
-        "before": "",
-        "after": "we are excited to report that patricia zvarova – who is in the process of completing her phd with us in berlin , boston and now cologne – has been included in the prestigious forbes …",
-        "context": "30 in slovakia ! may 29 , 2025"
-      },
-      {
-        "before": "29 , 2025 / 0 comments / in uncategorized / by andreashorn read more",
+        "before": "29",
         "after": "28",
-        "context": "in slovakia ! may 29 , 2025 / 0 comments / in uncategorized / by andreashorn read more lauren hart receives multiple"
+        "context": "in slovakia ! may 29 , 2025 / 0"
       },
       {
-        "before": "may 28",
-        "after": "we are excited to report that lauren hart",
-        "context": "receives multiple phd scholarships may 28 , 2025 / 0"
+        "before": "/ 0 comments / in uncategorized / by andreashorn read more",
+        "after": "",
+        "context": "may 29 , 2025 / 0 comments / in uncategorized / by andreashorn read more lauren hart receives multiple"
       },
       {
-        "before": "2025 / 0 comments /",
-        "after": "who spent about three years with us as a research assistant got into a phd program at sherbrooke university",
-        "context": "scholarships may 28 , 2025 / 0 comments / in uncategorized / by"
-      },
-      {
-        "before": "uncategorized / by andreashorn read more",
-        "after": "canada . moreover , she … 2024 nov 6",
-        "context": "0 comments / in uncategorized / by andreashorn read more barbara hollunder receives thiemann"
+        "before": "may 28 , 2025 / 0 comments / in uncategorized / by andreashorn read more",
+        "after": "2024 nov 6",
+        "context": "receives multiple phd scholarships may 28 , 2025 / 0 comments / in uncategorized / by andreashorn read more barbara hollunder receives thiemann"
       },
       {
         "before": "november 6 , 2024 / 0 comments / in uncategorized / by andreashorn read more",
-        "after": "we are excited to share that barbara has been recognized with the 2025 thiemann fellowship . she will use the funds for a postdoctoral stay under the supervision of dr . michael d … oct 20",
+        "after": "we are excited to share that barbara has been recognized with the 2025 thiemann fellowship . she will use the funds for a postdoctoral stay … oct 20",
         "context": "thiemann fellowship at dgn november 6 , 2024 / 0 comments / in uncategorized / by andreashorn read more andreas horn receives international"
       },
       {
         "before": "october 20 , 2024 / 0 comments / in uncategorized / by andreashorn read more",
-        "after": "we are excited to share that andreas has been recognized with the 2025 international brain stimulation early career award . he presented a plenary lecture at the brain stimulation … sep 30",
+        "after": "we are excited to share that andreas has been recognized with the 2025 international brain stimulation early career award . he presented a … sep 30",
         "context": "stimulation early career award october 20 , 2024 / 0 comments / in uncategorized / by andreashorn read more netstim paper featured in"
       },
       {
@@ -314,12 +545,12 @@
       },
       {
         "before": "uncategorized / by andreashorn read more",
-        "after": "parkinson disease on the neurology podcast – thanks dr . jeff ratliff for the kind … sep 25",
+        "after": "parkinson disease on the neurology podcast – … sep 25",
         "context": "0 comments / in uncategorized / by andreashorn read more bahne bahners ‘ junior"
       },
       {
         "before": "september",
-        "after": "we are excited that bahne bahners was recognized as ‘ junior awardee ’ for his abstract ‘ understanding the optimal brain fingerprint to improve dbs outcomes in parkinson ’ s disease ’ … sep",
+        "after": "we are excited that bahne bahners was recognized as ‘ junior awardee ’ for his abstract ‘ understanding the optimal brain fingerprint to … sep",
         "context": "in podcast @ mds september 25 , 2024 /"
       },
       {
@@ -334,7 +565,7 @@
       },
       {
         "before": "uncategorized / by andreashorn read more",
-        "after": "the life sciences category of the falling walls foundation for the labs work on mapping the human dysfunctome . jun 21",
+        "after": "the life sciences category of the falling walls foundation for the labs work … jun 21",
         "context": "0 comments / in uncategorized / by andreashorn read more toward personalized dbs ("
       },
       {
@@ -344,12 +575,12 @@
       },
       {
         "before": "2024 / 0 comments / in uncategorized / by andreashorn read more",
-        "after": "that took us about four years to complete and involved a long list of dear co - authors and collaborators from centers , … feb 22",
+        "after": "that took us about four years to complete and involved a long list of dear … feb 22",
         "context": ") june 21 , 2024 / 0 comments / in uncategorized / by andreashorn read more mapping the dysfunctome ("
       },
       {
         "before": "february",
-        "after": "we are excited about a major new publication from the lab , that took us about four years to complete and involved a long list of dear co - authors and collaborators from centers , … 2022 dec 17 radio interview about alzheimer dbs study tune in below for a brief radio interview ( german ) with swr2 wissen with lab pi andreas horn about the ríos et al . 2022 nature communications publication on connectomic analysis of … mar 11 poster prizes for nanditha rajamani & lukas goede we are excited to announce that nanditha rajamani received this year ’ s poster prize at the dbs expert summit and lukas goede the one at the german society for neuroscience congress … mar 9 welcome lauren hart lauren has joined us as a first research assistant within the center for brain circuit therapeutics at brigham & women ’ s hospital in boston . lauren will help coordinate multiple … mar 8 andreas horn to receive heinz maier leibnitz prize andreas horn at harvard medical school , march 2022 we are excited to announce that andreas horn will receive one of this years ’ maier - leibnitz prizes for his work on connectomic … mar 8 christos ganos interviewed in the neurology podcast we ’ re excited that our recent article on dbs and lesion network mapping in tics has received some attention in the field – culminating recently in an interview about the study with … 2021 nov 4 welcome josef mana josef is enrolled as a phd student at charles university in prague and is visiting us for a lab rotation during his phd . he is pursuing his phd in the laboratory of robert jech … mar 17 connectomic deep brain stimulation book available now ! we are excited that our book on connectomic deep brain stimulation can now be ordered from the publisher ( academic press ) and / or amazon etc . after a foreword by andrea kühn & … mar 4 lead - dbs v2 . 5 out now ! we ’ re more than happy that lead - dbs v2 . 5 is out now ! three new guis to analyze relationships between stimulation site and clinical or behavioral changes following dbs on a group … mar 4 two international dbs review papers out we ’ re happy that our laboratory could play a small role in two larger international review papers about dbs technology . the first one , organized by the wssfn and spearheaded by … mar 4 coverarts for neuroimage we ’ re excited that after results from the paper about our novel toolbox , lead group , spearheaded by svenja treu was featured on the coverart of the neuroimage , two additional … 2020 oct 20 welcome matteo vissani matteo is enrolled as a phd student at scuola superiore sant ’ anna in pisa and is visiting us for a lab rotation during his phd . he has published exciting work on treating persons … oct 8 welcome lukas goede and clemens neudorfer to the netstim check clemens ’ publications on rg lukas is in clinical training for neurology at charité and is doing a postdoctoral research fellowship with us on a 50 % basis . he is looking into … sep 26 coverart for neuroimage we ’ re excited that results from the paper about our novel toolbox , lead group , spearheaded by svenja treu was featured on the coverart of the neuroimage . svenja described methods & … jun 6 new transregional collaborative research center for neuromodulation we are thrilled about having received a center grant by the german research foundation ( dfg ) to retune brain disorders using deep brain stimulation under the lead of andrea kühn … may 21 coverart for annals of neurology we ’ re excited that results from the connectomic dbs study spearheaded by friederike irmen was featured on the coverart of the journal . friederike used structural connectivity … jan 21 welcome barbara hollunder to the netstim barbara is enrolled at the einstein center for neurosciences phd program and did her msc in psychology at the university of vienna on cognitive sciences and neuroscience . there , … 2019 dec 11 coverart for brain we ’ re excited that results from the connectomic dbs study spearheaded by bassam al - fatly was featured on the coverart of the journal . bassam used structural and functional … jun 27 neuroimage 2018 best paper award we ’ re extremely pleased that one of our papers was awarded with the elsevier neuroimage best paper award 2018 at the annual organization for human brain mapping ( ohbm ) meeting 2019 … jun 13 coverart for biological psychiatry we ’ re excited that results from the connectomic dbs study spearheaded by carlos baldermann in biological psychiatry was featured on the coverart of the journal . carlos used … apr 6 welcome svenja treu to the netstim svenja is a cognitive neuroscientist , affiliated to the laboratory for clinical neuroscience directed by prof . bryan strange at universidad politécnica de madrid ( upm ) . svenja … jan 12 defining a tract - based target for obsessive compulsive disorder in one of the potentially most impactful studies we ’ ve been involved , carlos baldermann ( university cologne ) delineated a tract that – if stimulated with dbs – improves symptoms of … 2018 nov 4 updates we ’ re really excited that the current cover of aon was made with lead - dbs . it shows pallidal and thalamic electrodes simultaneously implanted in a patient suffering from tourette ’ s … nov 4 updates we are thrilled that the lead - dbs v2 methodological paper is out in neuroimage . [ an unpaywalled preprint can be found here ] . lead - dbs was developed since 2012 and the first methods … jul 20 updates i am editing a special issue in the # openaccess journal brain sciences about “ modulatory effects of deep brain stimulation on distributed brain networks “ . in case you are working … jul 20 lesion network mapping for parkinsonism and tremor relief in two articles published this month , juho joutsa and michael d fox have applied their lesion network mapping approach to symptoms that are highly relevant to the field of dbs . the … mar 27 updates three months into 2018 , there have been several studies that used lead - dbs to answer very interesting questions briefly summarized below . 1 . siobhan ewert and todd herrington could … 2017 dec 29 updates we just published a new study spearheaded by r . ryan darby that used the lesion network mapping approach developed by michael fox to analyse lesion induced criminal behavior . the … dec 9 updates in a new bps study ( prospective validation that subgenual connectivity predicts … ) spearheaded by anne weigand and led by michael d fox , we were able to explain tms treatment … nov",
+        "after": "we are excited about a major new publication from the lab , that took us about four years to complete and involved a long list of dear … 2022 dec 17 radio interview about alzheimer dbs study tune in below for a brief radio interview ( german ) with swr2 wissen with lab pi andreas horn about the ríos et al . 2022 nature … mar 11 poster prizes for nanditha rajamani & lukas goede we are excited to announce that nanditha rajamani received this year ’ s poster prize at the dbs expert summit and lukas goede the one at the … mar 9 welcome lauren hart lauren has joined us as a first research assistant within the center for brain circuit therapeutics at brigham & women ’ s hospital in boston . … mar 8 andreas horn to receive heinz maier leibnitz prize andreas horn at harvard medical school , march 2022 we are excited to announce that andreas horn will receive one of this years ’ … mar 8 christos ganos interviewed in the neurology podcast we ’ re excited that our recent article on dbs and lesion network mapping in tics has received some attention in the field – culminating … 2021 nov 4 welcome josef mana josef is enrolled as a phd student at charles university in prague and is visiting us for a lab rotation during his phd . he is pursuing his … mar 17 connectomic deep brain stimulation book available now ! we are excited that our book on connectomic deep brain stimulation can now be ordered from the publisher ( academic press ) and / or amazon etc . … mar 4 lead - dbs v2 . 5 out now ! we ’ re more than happy that lead - dbs v2 . 5 is out now ! three new guis to analyze relationships between stimulation site and clinical or … mar 4 two international dbs review papers out we ’ re happy that our laboratory could play a small role in two larger international review papers about dbs technology . the first one , … mar 4 coverarts for neuroimage we ’ re excited that after results from the paper about our novel toolbox , lead group , spearheaded by svenja treu was featured on the coverart … 2020 oct 20 welcome matteo vissani matteo is enrolled as a phd student at scuola superiore sant ’ anna in pisa and is visiting us for a lab rotation during his phd . he has … oct 8 welcome lukas goede and clemens neudorfer to the netstim check clemens ’ publications on rg lukas is in clinical training for neurology at charité and is doing a postdoctoral research fellowship … sep 26 coverart for neuroimage we ’ re excited that results from the paper about our novel toolbox , lead group , spearheaded by svenja treu was featured on the coverart of … jun 6 new transregional collaborative research center for neuromodulation we are thrilled about having received a center grant by the german research foundation ( dfg ) to retune brain disorders using deep brain … may 21 coverart for annals of neurology we ’ re excited that results from the connectomic dbs study spearheaded by friederike irmen was featured on the coverart of the journal . … jan 21 welcome barbara hollunder to the netstim barbara is enrolled at the einstein center for neurosciences phd program and did her msc in psychology at the university of vienna on … 2019 dec 11 coverart for brain we ’ re excited that results from the connectomic dbs study spearheaded by bassam al - fatly was featured on the coverart of the journal . bassam … jun 27 neuroimage 2018 best paper award we ’ re extremely pleased that one of our papers was awarded with the elsevier neuroimage best paper award 2018 at the annual organization for … jun 13 coverart for biological psychiatry we ’ re excited that results from the connectomic dbs study spearheaded by carlos baldermann in biological psychiatry was featured on the … apr 6 welcome svenja treu to the netstim svenja is a cognitive neuroscientist , affiliated to the laboratory for clinical neuroscience directed by prof . bryan strange at universidad … jan 12 defining a tract - based target for obsessive compulsive disorder in one of the potentially most impactful studies we ’ ve been involved , carlos baldermann ( university cologne ) delineated a tract that – if … 2018 nov 4 updates we ’ re really excited that the current cover of aon was made with lead - dbs . it shows pallidal and thalamic electrodes simultaneously … nov 4 updates we are thrilled that the lead - dbs v2 methodological paper is out in neuroimage . [ an unpaywalled preprint can be found here ] . lead - dbs was … jul 20 updates i am editing a special issue in the # openaccess journal brain sciences about “ modulatory effects of deep brain stimulation on distributed … jul 20 lesion network mapping for parkinsonism and tremor relief in two articles published this month , juho joutsa and michael d fox have applied their lesion network mapping approach to symptoms that are … mar 27 updates three months into 2018 , there have been several studies that used lead - dbs to answer very interesting questions briefly summarized below . 1 . … 2017 dec 29 updates we just published a new study spearheaded by r . ryan darby that used the lesion network mapping approach developed by michael fox to analyse … dec 9 updates in a new bps study ( prospective validation that subgenual connectivity predicts … ) spearheaded by anne weigand and led by michael d fox , we … nov",
         "context": "nature neuroscience 2024 ) february 22 , 2024 /"
       },
       {
@@ -359,7 +590,7 @@
       },
       {
         "before": "2024",
-        "after": "we included the pallidal theta activity sweet spot defined in a localized pallidal physiomarker in cervical dystonia … nov 13 updates in a new study ( a localized pallidal physiomarker in cervical dystonia ) led by wolf - julian neumann with siobhan ewert , julius huebl , christof brücke , gerd - helge schneider and … sep 16 updates till dembek created a segmented lead mesh that allows us to run our fem - calculations ( see connectivity predicts deep brain stimulation outcome in park … ; model implemented based on … sep 10 updates we are proud to release lead - dbs 2 . 0 to the community – an open source tool to localize deep brain stimulation ( dbs ) electrodes in the human brain . a detailed description of all … aug 12 updates summary of novel subcortical atlas that is “ made for lead - dbs ” , based on multispectral high - resolution mni template , histology and structural connectivity ( ewert et al . , 2017 ) … aug 8 updates summary here http :",
+        "after": "we included the pallidal theta activity sweet spot defined in a localized … nov 13 updates in a new study ( a localized pallidal physiomarker in cervical dystonia ) led by wolf - julian neumann with siobhan ewert , julius huebl , … sep 16 updates till dembek created a segmented lead mesh that allows us to run our fem - calculations ( see connectivity predicts deep brain stimulation … sep 10 updates we are proud to release lead - dbs 2 . 0 to the community – an open source tool to localize deep brain stimulation ( dbs ) electrodes in the human … aug 12 updates summary of novel subcortical atlas that is “ made for lead - dbs ” , based on multispectral high - resolution mni template , histology and … aug 8 updates summary here http :",
         "context": ") february 22 , 2024 / 0 comments /"
       },
       {
@@ -458,53 +689,15 @@
       "added": {
         "/wp-content/uploads/2025/09/figure_act_dbs-1030x989.png": 1,
         "/wp-content/uploads/2025/05/d98e74f6-2fe3-43a3-a898-f549b42b7a65-1-268x300.jpg": 1,
-        "/wp-content/uploads/2025/05/IMG_2528-1030x773.jpg": 1,
-        "/wp-content/uploads/2024/11/image.png": 1,
-        "/wp-content/uploads/2024/10/GkxNGYxaoAAD5uo-773x1030.jpg": 1,
-        "/wp-content/uploads/2024/09/RH209672-scaled.jpeg": 1,
-        "/wp-content/uploads/2024/09/fw24-science-summit-ls-andreashorn-electrode-placements.png": 1,
-        "/wp-content/uploads/2024/06/featuredImage2-300x245.png": 1,
-        "/wp-content/uploads/2024/02/twitter_GIFXpcJWUAAe5LD.jpg": 1,
-        "/wp-content/uploads/2022/12/Option1-1030x687.png": 1,
-        "/wp-content/uploads/2022/03/twitter_FNfgxcyXMAomJ9M.jpg": 1,
-        "/wp-content/uploads/2022/03/lauren_pic-300x293.jpg": 1,
-        "/wp-content/uploads/2022/03/26a52847b2945e1c4747f7bd051ad0b3d1b9af540ba09f5df73c2a84f5ce319b-184x300.jpg": 1,
-        "/wp-content/uploads/2022/03/csm_Tic-Netzwerk_Charite_Al-Fatly_9be9aff46a-272x300.jpg": 1,
-        "/wp-content/uploads/2021/11/IMG_3446-929x1030.png": 1,
-        "/wp-content/uploads/2021/03/Connectomic-Deep-Brain-Stimulation-837x1030.png": 1,
-        "/wp-content/uploads/2021/03/t-1-1030x782-1.png": 1,
-        "/wp-content/uploads/2021/03/Bildschirmfoto-2021-03-04-um-09.02.22.png": 1,
-        "/wp-content/uploads/2021/03/coverarts.png": 1,
-        "/wp-content/uploads/2020/10/IMG_9352-225x300.jpg": 1,
-        "/wp-content/uploads/2020/10/IMG_9232-225x300.jpg": 1,
-        "/wp-content/uploads/2020/09/Coverart_NI_2020_Treu_et_al-769x1030.png": 1,
-        "/wp-content/uploads/2020/06/csm_Logo_Retune_FINAL_112b08e9c6-300x130.jpg": 1,
-        "/wp-content/uploads/2020/05/Bildschirmfoto-2020-05-21-um-18.18.28-230x300.png": 1,
-        "/wp-content/uploads/2020/01/0847405F-899C-47EE-9E4D-6B67074A0CE7_1_201_a-229x300.jpeg": 1,
-        "/wp-content/uploads/2019/09/IMG_5825-232x300.png": 1,
-        "/wp-content/uploads/2019/06/IMG_4316-2-1030x556.jpeg": 1,
-        "/wp-content/uploads/2019/04/S0006322318X00092-219x300.png": 1,
-        "/wp-content/uploads/2019/04/DSC06599-300x300.jpg": 1,
-        "/wp-content/uploads/2019/01/ocd.png": 1,
-        "/wp-content/uploads/2018/11/2018-Annals_of_Neurology-1-1-845x321.png": 1,
-        "/wp-content/uploads/2018/11/1-s2.0-S221315821830305X-gr1-1.jpg": 1,
-        "/wp-content/uploads/2018/07/banner-DBS-800x321.png": 1,
-        "/wp-content/uploads/2018/03/Lofredi_et_al_2018_eLife-845x321.png": 1,
-        "/wp-content/uploads/2017/12/F1.medium.gif": 1,
-        "/wp-content/uploads/2017/12/Figure-3-Functional-connectivity-between-the-TMS-site-and-the-subgenual-cingulate-is-an-845x321.png": 1,
-        "/wp-content/uploads/2017/12/neumann_horn-845x321.png": 2,
-        "/wp-content/uploads/2017/12/directional_vta-767x321.png": 1,
-        "/wp-content/uploads/2017/12/two_oh_in_a_nutshell-845x321.png": 1,
-        "/wp-content/uploads/2017/12/distal_atlas-845x321.png": 1,
-        "/wp-content/uploads/2017/12/bucknersuit-845x321.png": 1
+        "/wp-content/uploads/2025/05/IMG_2528-1030x773.jpg": 1
       }
     }
   },
   "/blog/page/2/": {
     "text": [
       {
-        "before": "",
-        "after": "2022 dec 17",
+        "before": "updates",
+        "after": "news 2022 dec 17",
         "context": "updates radio interview about alzheimer"
       },
       {
@@ -514,12 +707,12 @@
       },
       {
         "before": "/ 0 comments / in uncategorized / by andreashorn read more",
-        "after": "nature communications publication on connectomic analysis of … mar 11",
+        "after": "nature … mar 11",
         "context": "december 17 , 2022 / 0 comments / in uncategorized / by andreashorn read more poster prizes for nanditha"
       },
       {
         "before": "march 11 , 2022 / 0 comments / in uncategorized / by andreashorn read more",
-        "after": "we are excited to announce that nanditha rajamani received this year ’ s poster prize at the dbs expert summit and lukas goede the one at the german society for neuroscience congress … mar 9",
+        "after": "we are excited to announce that nanditha rajamani received this year ’ s poster prize at the dbs expert summit and lukas goede the one at the … mar 9",
         "context": "rajamani & lukas goede march 11 , 2022 / 0 comments / in uncategorized / by andreashorn read more welcome lauren hart march"
       },
       {
@@ -529,7 +722,7 @@
       },
       {
         "before": "uncategorized / by andreashorn read more",
-        "after": "boston . lauren will help coordinate multiple … mar 8",
+        "after": "boston . … mar 8",
         "context": "0 comments / in uncategorized / by andreashorn read more andreas horn to receive"
       },
       {
@@ -539,7 +732,7 @@
       },
       {
         "before": "",
-        "after": "2022 we are excited to announce that andreas horn will receive one of this years ’ maier - leibnitz prizes for his work on connectomic … mar",
+        "after": "2022 we are excited to announce that andreas horn will receive one of this years ’ … mar",
         "context": "maier leibnitz prize march 8 , 2022 /"
       },
       {
@@ -554,7 +747,7 @@
       },
       {
         "before": "uncategorized / by andreashorn read more",
-        "after": "tics has received some attention in the field – culminating recently in an interview about the study with … 2021 nov 4",
+        "after": "tics has received some attention in the field – culminating … 2021 nov 4",
         "context": "0 comments / in uncategorized / by andreashorn read more welcome josef mana november"
       },
       {
@@ -564,7 +757,7 @@
       },
       {
         "before": "uncategorized / by andreashorn read more",
-        "after": "prague and is visiting us for a lab rotation during his phd . he is pursuing his phd in the laboratory of robert jech … mar 17",
+        "after": "prague and is visiting us for a lab rotation during his phd . he is pursuing his … mar 17",
         "context": "0 comments / in uncategorized / by andreashorn read more connectomic deep brain stimulation"
       },
       {
@@ -573,18 +766,13 @@
         "context": "book available now ! march 17 , 2021 / 0 comments /"
       },
       {
-        "before": "0 comments / in uncategorized /",
-        "after": "or amazon etc . after a foreword",
-        "context": "17 , 2021 / 0 comments / in uncategorized / by andreashorn read more"
-      },
-      {
-        "before": "andreashorn read more",
-        "after": "andrea kühn & … mar 4",
-        "context": "in uncategorized / by andreashorn read more lead - dbs v2"
+        "before": "0 comments / in uncategorized / by andreashorn read more",
+        "after": "or amazon etc . … mar 4",
+        "context": "17 , 2021 / 0 comments / in uncategorized / by andreashorn read more lead - dbs v2"
       },
       {
         "before": "march",
-        "after": "we ’ re more than happy that lead - dbs v2 . 5 is out now ! three new guis to analyze relationships between stimulation site and clinical or behavioral changes following dbs on a group … mar",
+        "after": "we ’ re more than happy that lead - dbs v2 . 5 is out now ! three new guis to analyze relationships between stimulation site and clinical or … mar",
         "context": "5 out now ! march 4 , 2021 /"
       },
       {
@@ -594,7 +782,7 @@
       },
       {
         "before": "march",
-        "after": "we ’ re happy that our laboratory could play a small role in two larger international review papers about dbs technology . the first one , organized by the wssfn and spearheaded by … mar",
+        "after": "we ’ re happy that our laboratory could play a small role in two larger international review papers about dbs technology . the first one , … mar",
         "context": "dbs review papers out march 4 , 2021 /"
       },
       {
@@ -613,14 +801,9 @@
         "context": "neuroimage march 4 , 2021 / 0 comments / in uncategorized / by andreashorn read more"
       },
       {
-        "before": "andreashorn read more page 2",
-        "after": "svenja treu was featured on the coverart",
-        "context": "in uncategorized / by andreashorn read more page 2 of 5 2 4"
-      },
-      {
-        "before": "5 2 4 5",
-        "after": "the neuroimage , two additional …",
-        "context": "more page 2 of 5 2 4 5"
+        "before": "andreashorn read more page 2 of 5 2 4 5",
+        "after": "svenja treu was featured on the coverart …",
+        "context": "in uncategorized / by andreashorn read more page 2 of 5 2 4 5"
       }
     ],
     "links": {
@@ -662,26 +845,17 @@
         "/wp-content/uploads/2021/11/IMG_3446-1-180x180.png": 1,
         "/wp-content/uploads/2021/03/Connectomic-Deep-Brain-Stimulation-180x180.png": 1,
         "/wp-content/uploads/2021/03/t-1-1030x782-1-180x180.png": 1,
+        "/wp-content/uploads/2021/03/Bildschirmfoto-2021-03-04-um-09.02.22.png": 1,
         "/wp-content/uploads/2021/03/2coverarts.png": 1
       },
-      "added": {
-        "/wp-content/uploads/2022/12/Option1-1030x687.png": 1,
-        "/wp-content/uploads/2022/03/twitter_FNfgxcyXMAomJ9M.jpg": 1,
-        "/wp-content/uploads/2022/03/lauren_pic-300x293.jpg": 1,
-        "/wp-content/uploads/2022/03/26a52847b2945e1c4747f7bd051ad0b3d1b9af540ba09f5df73c2a84f5ce319b-184x300.jpg": 1,
-        "/wp-content/uploads/2022/03/csm_Tic-Netzwerk_Charite_Al-Fatly_9be9aff46a-272x300.jpg": 1,
-        "/wp-content/uploads/2021/11/IMG_3446-929x1030.png": 1,
-        "/wp-content/uploads/2021/03/Connectomic-Deep-Brain-Stimulation-837x1030.png": 1,
-        "/wp-content/uploads/2021/03/t-1-1030x782-1.png": 1,
-        "/wp-content/uploads/2021/03/coverarts.png": 1
-      }
+      "added": {}
     }
   },
   "/blog/page/3/": {
     "text": [
       {
-        "before": "",
-        "after": "2020 oct 20",
+        "before": "updates",
+        "after": "news 2020 oct 20",
         "context": "updates welcome matteo vissani october"
       },
       {
@@ -691,7 +865,7 @@
       },
       {
         "before": "uncategorized / by andreashorn read more",
-        "after": "pisa and is visiting us for a lab rotation during his phd . he has published exciting work on treating persons … oct 8",
+        "after": "pisa and is visiting us for a lab rotation during his phd . he has … oct 8",
         "context": "0 comments / in uncategorized / by andreashorn read more welcome lukas goede and"
       },
       {
@@ -701,7 +875,7 @@
       },
       {
         "before": "uncategorized / by andreashorn read more",
-        "after": "clinical training for neurology at charité and is doing a postdoctoral research fellowship with us on a 50 % basis . he is looking into … sep 26",
+        "after": "clinical training for neurology at charité and is doing a postdoctoral research fellowship … sep 26",
         "context": "0 comments / in uncategorized / by andreashorn read more coverart for neuroimage september"
       },
       {
@@ -716,7 +890,7 @@
       },
       {
         "before": "andreashorn read more",
-        "after": "svenja treu was featured on the coverart of the neuroimage . svenja described methods & … jun 6",
+        "after": "svenja treu was featured on the coverart of … jun 6",
         "context": "in uncategorized / by andreashorn read more new transregional collaborative research"
       },
       {
@@ -726,12 +900,12 @@
       },
       {
         "before": "andreashorn read more",
-        "after": "the german research foundation ( dfg ) to retune brain disorders using deep brain stimulation under the lead of andrea kühn … may 21",
+        "after": "the german research foundation ( dfg ) to retune brain disorders using deep brain … may 21",
         "context": "in uncategorized / by andreashorn read more coverart for annals of"
       },
       {
         "before": "may",
-        "after": "we ’ re excited that results from the connectomic dbs study spearheaded by friederike irmen was featured on the coverart of the journal . friederike used structural connectivity … jan",
+        "after": "we ’ re excited that results from the connectomic dbs study spearheaded by friederike irmen was featured on the coverart of the journal . … jan",
         "context": "for annals of neurology may 21 , 2020 /"
       },
       {
@@ -740,14 +914,14 @@
         "context": "of neurology may 21 , 2020 / 0 comments / in uncategorized / by andreashorn read more welcome barbara hollunder to"
       },
       {
-        "before": "january 21",
-        "after": "barbara is enrolled at the einstein center for neurosciences phd program and did her msc in psychology at the university of vienna on cognitive sciences and neuroscience . there",
-        "context": "hollunder to the netstim january 21 , 2020 / 0"
+        "before": "january 21 , 2020 / 0 comments /",
+        "after": "barbara is enrolled at the einstein center for neurosciences phd program and did her msc",
+        "context": "hollunder to the netstim january 21 , 2020 / 0 comments / in uncategorized / by"
       },
       {
-        "before": "2020 / 0 comments / in uncategorized / by andreashorn read more",
-        "after": "… 2019 dec 11",
-        "context": "netstim january 21 , 2020 / 0 comments / in uncategorized / by andreashorn read more coverart for brain december"
+        "before": "uncategorized / by andreashorn read more",
+        "after": "psychology at the university of vienna on … 2019 dec 11",
+        "context": "0 comments / in uncategorized / by andreashorn read more coverart for brain december"
       },
       {
         "before": "december 11 , 2019 / 0 comments / in uncategorized /",
@@ -756,18 +930,13 @@
       },
       {
         "before": "andreashorn read more",
-        "after": "bassam al - fatly was featured on the coverart of the journal . bassam used structural and functional … jun 27",
+        "after": "bassam al - fatly was featured on the coverart of the journal . bassam … jun 27",
         "context": "in uncategorized / by andreashorn read more neuroimage 2018 best paper"
       },
       {
-        "before": "june 27 ,",
-        "after": "we ’ re extremely pleased that one of our papers was awarded with the elsevier neuroimage best paper award 2018 at the annual organization for human brain mapping ( ohbm ) meeting",
-        "context": "2018 best paper award june 27 , 2019 / 0 comments"
-      },
-      {
-        "before": "/ 0 comments / in uncategorized / by andreashorn read more",
-        "after": "… jun 13",
-        "context": "june 27 , 2019 / 0 comments / in uncategorized / by andreashorn read more coverart for biological psychiatry"
+        "before": "june 27 , 2019 / 0 comments / in uncategorized / by andreashorn read more",
+        "after": "we ’ re extremely pleased that one of our papers was awarded with the elsevier neuroimage best paper award 2018 at the annual organization for … jun 13",
+        "context": "2018 best paper award june 27 , 2019 / 0 comments / in uncategorized / by andreashorn read more coverart for biological psychiatry"
       },
       {
         "before": "june 13 , 2019 / 0 comments /",
@@ -776,7 +945,7 @@
       },
       {
         "before": "uncategorized / by andreashorn read more",
-        "after": "biological psychiatry was featured on the coverart of the journal . carlos used … apr 6",
+        "after": "biological psychiatry was featured on the … apr 6",
         "context": "0 comments / in uncategorized / by andreashorn read more welcome svenja treu to"
       },
       {
@@ -791,7 +960,7 @@
       },
       {
         "before": "andreashorn read more page 3 of 5 1 3 5",
-        "after": "prof . bryan strange at universidad politécnica de madrid ( upm ) . svenja …",
+        "after": "prof . bryan strange at universidad …",
         "context": "in uncategorized / by andreashorn read more page 3 of 5 1 3 5"
       }
     ],
@@ -837,25 +1006,14 @@
         "/wp-content/uploads/2019/04/S0006322318X00092-180x180.png": 1,
         "/wp-content/uploads/2019/04/DSC06599-180x180.jpg": 1
       },
-      "added": {
-        "/wp-content/uploads/2020/10/IMG_9352-225x300.jpg": 1,
-        "/wp-content/uploads/2020/10/IMG_9232-225x300.jpg": 1,
-        "/wp-content/uploads/2020/09/Coverart_NI_2020_Treu_et_al-769x1030.png": 1,
-        "/wp-content/uploads/2020/06/csm_Logo_Retune_FINAL_112b08e9c6-300x130.jpg": 1,
-        "/wp-content/uploads/2020/05/Bildschirmfoto-2020-05-21-um-18.18.28-230x300.png": 1,
-        "/wp-content/uploads/2020/01/0847405F-899C-47EE-9E4D-6B67074A0CE7_1_201_a-229x300.jpeg": 1,
-        "/wp-content/uploads/2019/09/IMG_5825-232x300.png": 1,
-        "/wp-content/uploads/2019/06/IMG_4316-2-1030x556.jpeg": 1,
-        "/wp-content/uploads/2019/04/S0006322318X00092-219x300.png": 1,
-        "/wp-content/uploads/2019/04/DSC06599-300x300.jpg": 1
-      }
+      "added": {}
     }
   },
   "/blog/page/4/": {
     "text": [
       {
-        "before": "",
-        "after": "2019 jan 12",
+        "before": "updates",
+        "after": "news 2019 jan 12",
         "context": "updates defining a tract -"
       },
       {
@@ -864,19 +1022,9 @@
         "context": "for obsessive compulsive disorder january 12 , 2019 / 0"
       },
       {
-        "before": "2019 / 0 comments / in uncategorized / by andreashorn read more lead -",
-        "after": "carlos baldermann ( university cologne ) delineated a tract that – if stimulated with",
-        "context": "disorder january 12 , 2019 / 0 comments / in uncategorized / by andreashorn read more lead - dbs on the cover"
-      },
-      {
-        "before": "on the cover",
-        "after": "– improves symptoms",
-        "context": "more lead - dbs on the cover of annals of neurology"
-      },
-      {
-        "before": "annals of neurology november",
-        "after": "… 2018 nov",
-        "context": "on the cover of annals of neurology november 4 , 2018 /"
+        "before": "2019 / 0 comments / in uncategorized / by andreashorn read more lead - dbs on the cover of annals of neurology november",
+        "after": "carlos baldermann ( university cologne ) delineated a tract that – if … 2018 nov",
+        "context": "disorder january 12 , 2019 / 0 comments / in uncategorized / by andreashorn read more lead - dbs on the cover of annals of neurology november 4 , 2018 /"
       },
       {
         "before": ", 2018 / 0 comments / in uncategorized / by andreashorn",
@@ -884,9 +1032,9 @@
         "context": "of neurology november 4 , 2018 / 0 comments / in uncategorized / by andreashorn we ’ re really"
       },
       {
-        "before": "syndrom and the picture is part of an electrophysiological berlin - hannover study spearheaded by wolf - julian neumann and led by andrea kühn . it is the sixth coverart made with lead - dbs that we know of – a gallery can be found here . important methodological",
+        "before": "implanted in a patient suffering from tourette ’ s syndrom and the picture is part of an electrophysiological berlin - hannover study spearheaded by wolf - julian neumann and led by andrea kühn . it is the sixth coverart made with lead - dbs that we know of – a gallery can be found here . important methodological",
         "after": "… nov 4",
-        "context": "from tourette ’ s syndrom and the picture is part of an electrophysiological berlin - hannover study spearheaded by wolf - julian neumann and led by andrea kühn . it is the sixth coverart made with lead - dbs that we know of – a gallery can be found here . important methodological updates for lead -"
+        "context": "and thalamic electrodes simultaneously implanted in a patient suffering from tourette ’ s syndrom and the picture is part of an electrophysiological berlin - hannover study spearheaded by wolf - julian neumann and led by andrea kühn . it is the sixth coverart made with lead - dbs that we know of – a gallery can be found here . important methodological updates for lead -"
       },
       {
         "before": "for lead - dbs november 4 , 2018 / 0 comments / in uncategorized / by andreashorn",
@@ -894,9 +1042,9 @@
         "context": ". important methodological updates for lead - dbs november 4 , 2018 / 0 comments / in uncategorized / by andreashorn we are thrilled that"
       },
       {
-        "before": "paper published in 2014 . since then , nearly everything has changed – and this led us to writing up the aforementioned updated methods paper . in the manuscript , we describe tools for multispectral nonlinear registration , structural / functional connectivity analyses , brain shift correction , reconstruction of microelectrode recordings and orientation detection of segmented dbs leads . the long author list reflects how many people have contributed to lead - dbs development since then . one particularly important processing step is nonlinear registration ( patient brains to an atlas or the other way around ) . currently , ten approaches to do so are readily built into lead - dbs and each comes with adjustable settings . thus , it became very important to investigate and quantify results that may originate from those different approaches . in a marathon effort spearheaded by siobhan ewert and led by todd m herrington that involved > 11 , 000 nonlinear warps , the two most promising normalization approaches were identified – ants based multispectral syn registration as well as multispectram spm - based segmentation – which are now the default choices in lead - dbs . in fact , automatic segmentations of the stn / gpi performed using those approaches were marginally if not at all significantly worse than manual expert segmentations . their article can be found here . finally , a new study out of bern / oxford validated the default stn atlas defined in lead - dbs ( siobhan ewert ’ s distal atlas ) using microelectrode recordings . this important work showed that anatomical and electrophysiological accuracy was highest for the distal atlas when comparing it to two different atlases of the stn . the article can be found here . brain sciences special issue “ modulatory effects of deep brain stimulation on distributed brain networks ” july",
+        "before": "developed since 2012 and the first methods paper published in 2014 . since then , nearly everything has changed – and this led us to writing up the aforementioned updated methods paper . in the manuscript , we describe tools for multispectral nonlinear registration , structural / functional connectivity analyses , brain shift correction , reconstruction of microelectrode recordings and orientation detection of segmented dbs leads . the long author list reflects how many people have contributed to lead - dbs development since then . one particularly important processing step is nonlinear registration ( patient brains to an atlas or the other way around ) . currently , ten approaches to do so are readily built into lead - dbs and each comes with adjustable settings . thus , it became very important to investigate and quantify results that may originate from those different approaches . in a marathon effort spearheaded by siobhan ewert and led by todd m herrington that involved > 11 , 000 nonlinear warps , the two most promising normalization approaches were identified – ants based multispectral syn registration as well as multispectram spm - based segmentation – which are now the default choices in lead - dbs . in fact , automatic segmentations of the stn / gpi performed using those approaches were marginally if not at all significantly worse than manual expert segmentations . their article can be found here . finally , a new study out of bern / oxford validated the default stn atlas defined in lead - dbs ( siobhan ewert ’ s distal atlas ) using microelectrode recordings . this important work showed that anatomical and electrophysiological accuracy was highest for the distal atlas when comparing it to two different atlases of the stn . the article can be found here . brain sciences special issue “ modulatory effects of deep brain stimulation on distributed brain networks ” july",
         "after": "… jul",
-        "context": "and the first methods paper published in 2014 . since then , nearly everything has changed – and this led us to writing up the aforementioned updated methods paper . in the manuscript , we describe tools for multispectral nonlinear registration , structural / functional connectivity analyses , brain shift correction , reconstruction of microelectrode recordings and orientation detection of segmented dbs leads . the long author list reflects how many people have contributed to lead - dbs development since then . one particularly important processing step is nonlinear registration ( patient brains to an atlas or the other way around ) . currently , ten approaches to do so are readily built into lead - dbs and each comes with adjustable settings . thus , it became very important to investigate and quantify results that may originate from those different approaches . in a marathon effort spearheaded by siobhan ewert and led by todd m herrington that involved > 11 , 000 nonlinear warps , the two most promising normalization approaches were identified – ants based multispectral syn registration as well as multispectram spm - based segmentation – which are now the default choices in lead - dbs . in fact , automatic segmentations of the stn / gpi performed using those approaches were marginally if not at all significantly worse than manual expert segmentations . their article can be found here . finally , a new study out of bern / oxford validated the default stn atlas defined in lead - dbs ( siobhan ewert ’ s distal atlas ) using microelectrode recordings . this important work showed that anatomical and electrophysiological accuracy was highest for the distal atlas when comparing it to two different atlases of the stn . the article can be found here . brain sciences special issue “ modulatory effects of deep brain stimulation on distributed brain networks ” july 20 , 2018 /"
+        "context": "lead - dbs was developed since 2012 and the first methods paper published in 2014 . since then , nearly everything has changed – and this led us to writing up the aforementioned updated methods paper . in the manuscript , we describe tools for multispectral nonlinear registration , structural / functional connectivity analyses , brain shift correction , reconstruction of microelectrode recordings and orientation detection of segmented dbs leads . the long author list reflects how many people have contributed to lead - dbs development since then . one particularly important processing step is nonlinear registration ( patient brains to an atlas or the other way around ) . currently , ten approaches to do so are readily built into lead - dbs and each comes with adjustable settings . thus , it became very important to investigate and quantify results that may originate from those different approaches . in a marathon effort spearheaded by siobhan ewert and led by todd m herrington that involved > 11 , 000 nonlinear warps , the two most promising normalization approaches were identified – ants based multispectral syn registration as well as multispectram spm - based segmentation – which are now the default choices in lead - dbs . in fact , automatic segmentations of the stn / gpi performed using those approaches were marginally if not at all significantly worse than manual expert segmentations . their article can be found here . finally , a new study out of bern / oxford validated the default stn atlas defined in lead - dbs ( siobhan ewert ’ s distal atlas ) using microelectrode recordings . this important work showed that anatomical and electrophysiological accuracy was highest for the distal atlas when comparing it to two different atlases of the stn . the article can be found here . brain sciences special issue “ modulatory effects of deep brain stimulation on distributed brain networks ” july 20 , 2018 /"
       },
       {
         "before": ", 2018 / 0 comments / in uncategorized / by andreashorn",
@@ -904,9 +1052,9 @@
         "context": "networks ” july 20 , 2018 / 0 comments / in uncategorized / by andreashorn i am editing a"
       },
       {
-        "before": "on topics that combine brain stimulation with connectomics , would like to write a review or short report in that domain , please consider submitting to this issue – deadline is july 2019 . http : / / www . mdpi . com / journal / brainsci / special_issues / deep_brain_stimulation dear colleagues , the field of deep brain stimulation ( dbs ) is currently experiencing a paradigm - shift , from studying impacts on local brain tissue toward the analysis of modulatory effects on distributed brain networks . with the rise of modern non - invasive neuroimaging methods , this local - to - global shift bears promising potential to better - understand brain disorders , brain function , and to translate novel concepts into clinical practice . already , network - based targets that may guide surgical planning and dbs programming are being introduced and prospectively validated with the potential to revolutionize the field . in this special issue , we will discuss the indications , potentials , efficacy and validation of network - based brain stimulation concepts with a special focus on dbs . these include the combination of dbs imaging with resting - state functional magnetic resonance imaging , diffusion - weighted imaging based tractography and electrophysiological measures such as electroencephalography , magnetoencephalography and local field potential recordings .",
+        "before": "brain networks “ . in case you are working on topics that combine brain stimulation with connectomics , would like to write a review or short report in that domain , please consider submitting to this issue – deadline is july 2019 . http : / / www . mdpi . com / journal / brainsci / special_issues / deep_brain_stimulation dear colleagues , the field of deep brain stimulation ( dbs ) is currently experiencing a paradigm - shift , from studying impacts on local brain tissue toward the analysis of modulatory effects on distributed brain networks . with the rise of modern non - invasive neuroimaging methods , this local - to - global shift bears promising potential to better - understand brain disorders , brain function , and to translate novel concepts into clinical practice . already , network - based targets that may guide surgical planning and dbs programming are being introduced and prospectively validated with the potential to revolutionize the field . in this special issue , we will discuss the indications , potentials , efficacy and validation of network - based brain stimulation concepts with a special focus on dbs . these include the combination of dbs imaging with resting - state functional magnetic resonance imaging , diffusion - weighted imaging based tractography and electrophysiological measures such as electroencephalography , magnetoencephalography and local field potential recordings .",
         "after": "… jul 20",
-        "context": "case you are working on topics that combine brain stimulation with connectomics , would like to write a review or short report in that domain , please consider submitting to this issue – deadline is july 2019 . http : / / www . mdpi . com / journal / brainsci / special_issues / deep_brain_stimulation dear colleagues , the field of deep brain stimulation ( dbs ) is currently experiencing a paradigm - shift , from studying impacts on local brain tissue toward the analysis of modulatory effects on distributed brain networks . with the rise of modern non - invasive neuroimaging methods , this local - to - global shift bears promising potential to better - understand brain disorders , brain function , and to translate novel concepts into clinical practice . already , network - based targets that may guide surgical planning and dbs programming are being introduced and prospectively validated with the potential to revolutionize the field . in this special issue , we will discuss the indications , potentials , efficacy and validation of network - based brain stimulation concepts with a special focus on dbs . these include the combination of dbs imaging with resting - state functional magnetic resonance imaging , diffusion - weighted imaging based tractography and electrophysiological measures such as electroencephalography , magnetoencephalography and local field potential recordings . lesion network mapping for"
+        "context": "brain stimulation on distributed brain networks “ . in case you are working on topics that combine brain stimulation with connectomics , would like to write a review or short report in that domain , please consider submitting to this issue – deadline is july 2019 . http : / / www . mdpi . com / journal / brainsci / special_issues / deep_brain_stimulation dear colleagues , the field of deep brain stimulation ( dbs ) is currently experiencing a paradigm - shift , from studying impacts on local brain tissue toward the analysis of modulatory effects on distributed brain networks . with the rise of modern non - invasive neuroimaging methods , this local - to - global shift bears promising potential to better - understand brain disorders , brain function , and to translate novel concepts into clinical practice . already , network - based targets that may guide surgical planning and dbs programming are being introduced and prospectively validated with the potential to revolutionize the field . in this special issue , we will discuss the indications , potentials , efficacy and validation of network - based brain stimulation concepts with a special focus on dbs . these include the combination of dbs imaging with resting - state functional magnetic resonance imaging , diffusion - weighted imaging based tractography and electrophysiological measures such as electroencephalography , magnetoencephalography and local field potential recordings . lesion network mapping for"
       },
       {
         "before": "july 20",
@@ -914,14 +1062,9 @@
         "context": "parkinsonism and tremor relief july 20 , 2018 / 0"
       },
       {
-        "before": "2018 / 0 comments / in uncategorized / by andreashorn read more lead -",
-        "after": "juho joutsa and michael d fox have applied their lesion network mapping approach to symptoms that are highly relevant to the field of",
-        "context": "relief july 20 , 2018 / 0 comments / in uncategorized / by andreashorn read more lead - dbs updates in 2018"
-      },
-      {
-        "before": "",
-        "after": ". the … mar 27",
-        "context": "more lead - dbs updates in 2018 march"
+        "before": "2018 / 0 comments / in uncategorized / by andreashorn read more lead - dbs",
+        "after": "juho joutsa and michael d fox have applied their lesion network mapping approach to symptoms that are … mar 27",
+        "context": "relief july 20 , 2018 / 0 comments / in uncategorized / by andreashorn read more lead - dbs updates in 2018 march"
       },
       {
         "before": "in 2018 march 27 , 2018 / 0 comments / in uncategorized / by andreashorn",
@@ -929,9 +1072,9 @@
         "context": "lead - dbs updates in 2018 march 27 , 2018 / 0 comments / in uncategorized / by andreashorn three months into 2018"
       },
       {
-        "before": "recently show that automated segmentations of the stn and gpi performed with lead - dbs are nearly as precise as manual expert segmentations of the same structures in both a high - definition mri sample as well as a “ typical clinical ” quality sample . in total , they ran > 11 . 000 nonlinear brain deformations and segmented 120 brains manually to evaluate i ) which deformation algorithm & preset yields best results and ii ) how much error is still obtained when using the best strategy . their optimal normalization strategy has now become the default preset of lead - dbs . poster toward optimized nonlinear deformation algorithms for subcor",
+        "before": "siobhan ewert and todd herrington could recently show that automated segmentations of the stn and gpi performed with lead - dbs are nearly as precise as manual expert segmentations of the same structures in both a high - definition mri sample as well as a “ typical clinical ” quality sample . in total , they ran > 11 . 000 nonlinear brain deformations and segmented 120 brains manually to evaluate i ) which deformation algorithm & preset yields best results and ii ) how much error is still obtained when using the best strategy . their optimal normalization strategy has now become the default preset of lead - dbs . poster toward optimized nonlinear deformation algorithms for subcor",
         "after": "",
-        "context": "and todd herrington could recently show that automated segmentations of the stn and gpi performed with lead - dbs are nearly as precise as manual expert segmentations of the same structures in both a high - definition mri sample as well as a “ typical clinical ” quality sample . in total , they ran > 11 . 000 nonlinear brain deformations and segmented 120 brains manually to evaluate i ) which deformation algorithm & preset yields best results and ii ) how much error is still obtained when using the best strategy . their optimal normalization strategy has now become the default preset of lead - dbs . poster toward optimized nonlinear deformation algorithms for subcor … 2 . roxanne"
+        "context": "below . 1 . siobhan ewert and todd herrington could recently show that automated segmentations of the stn and gpi performed with lead - dbs are nearly as precise as manual expert segmentations of the same structures in both a high - definition mri sample as well as a “ typical clinical ” quality sample . in total , they ran > 11 . 000 nonlinear brain deformations and segmented 120 brains manually to evaluate i ) which deformation algorithm & preset yields best results and ii ) how much error is still obtained when using the best strategy . their optimal normalization strategy has now become the default preset of lead - dbs . poster toward optimized nonlinear deformation algorithms for subcor … 2 . roxanne"
       },
       {
         "before": "2 . roxanne lofredi and andrea a kühn have demonstrated that movement velocity is encoded in subthalamic gamma bursts in a recent article that then applied the subcortical electrophysiology mapping ( sem ) concept based on electrode localizations performed with lead - dbs to localize the origin of this gamma activity . article dopamine - dependent scaling of subthalamic gamma bursts with … 3 . along the same lines : xinyi geng and shouyan wang have published a paper to put intraoperative lfp findings into an anatomical context following the same ( sem ) concept . in their paper , they indirectly replicate main findings of two other recent studies article toward an electrophysiological ” sweet spot ” for deep brain … by our group & article localization of beta and high - frequency oscillations within … by bernadette van wijk and vladimir litvak ( which had already extended the concept to pac and high - frequency oscillations ) that used lead - dbs to localize beta power within the stn . the work by geng et al . further extends beyond these and for instance includes space - relationships for theta and gamma power . article intra - operative characterisation of subthalamic oscillations … further info on the idea of “ subcortical electrophysiology mapping ( sem ) ” may be found in our blog post ( http : / / www . lead - dbs . org / ? p = 2301 ) or knowledge - base article ( http : / / www . lead - dbs . org / ? page_id = 2403 ) . 4 . franz hell and kai bötzel published a very interesting study using drift - diffusion models , joint lfp - and eeg - recordings , as well as interventional dbs . based on their findings , they propose that “ motor and executive control networks with complementary oscillatory mechanisms are tonically active , react to stimuli and release inhibition at the response when uncertainty is resolved and return to their default state afterwards . ” lead - dbs was used to localize electrodes implanted to the sensorimotor functional zone of the stn . article subthalamic stimulation , oscillatory activity and connectivi … 5 . canan peisker and jens kuhn published a study of nac - dbs to treat substance use disorder . they used lead - dbs to localize the electrodes implanted to the accumbens and investigated wether delay discounting would be modulated by nac - dbs and concluded to the null - hypothesis . article nucleus accumbens deep brain stimulation in patients with su … 6 . philip e mosley and alistair perry published both a case report ( persistence of mania after cessation of stn dbs ) and a larger study that involved electrode localizations made with lead - dbs . the latter represents a comprehensive study about the relationship between non - motor ( side ) effects of dbs and electrode placement . article persistence of mania after cessation of stimulation followin … article the site of stimulation moderates neuropsychiatric symptoms … new pnas study on lesion induced criminal behavior december",
@@ -944,9 +1087,9 @@
         "context": "criminal behavior december 29 , 2017 / 0 comments / in uncategorized / by andreashorn we just published a"
       },
       {
-        "before": "study has been featured on multiple news outlets such as wsfa , der spiegel , the independent and el país . findings show that lesions leading to criminal behavior are connected to a common brain network . this criminality - associated connectivity pattern was unique compared with lesions causing four other neuropsychiatric syndromes . explaining tms treatment response in depression by means of functional connectivity december",
+        "before": "lesion induced criminal behavior . the study has been featured on multiple news outlets such as wsfa , der spiegel , the independent and el país . findings show that lesions leading to criminal behavior are connected to a common brain network . this criminality - associated connectivity pattern was unique compared with lesions causing four other neuropsychiatric syndromes . explaining tms treatment response in depression by means of functional connectivity december",
         "after": "… dec",
-        "context": "criminal behavior . the study has been featured on multiple news outlets such as wsfa , der spiegel , the independent and el país . findings show that lesions leading to criminal behavior are connected to a common brain network . this criminality - associated connectivity pattern was unique compared with lesions causing four other neuropsychiatric syndromes . explaining tms treatment response in depression by means of functional connectivity december 9 , 2017 /"
+        "context": "michael fox to analyse lesion induced criminal behavior . the study has been featured on multiple news outlets such as wsfa , der spiegel , the independent and el país . findings show that lesions leading to criminal behavior are connected to a common brain network . this criminality - associated connectivity pattern was unique compared with lesions causing four other neuropsychiatric syndromes . explaining tms treatment response in depression by means of functional connectivity december 9 , 2017 /"
       },
       {
         "before": ", 2017 / 1 comment / in uncategorized / by andreashorn",
@@ -954,9 +1097,9 @@
         "context": "functional connectivity december 9 , 2017 / 1 comment / in uncategorized / by andreashorn in a new bps"
       },
       {
-        "before": "response by functional connectivity between the stimulation site in the left dorsolateral prefrontal cortex and the subgenual cingulate cortex . specifically , strength of anticorrelations between dlpfc and subgenual were predictive of beneficial outcome . this relationship had been hypothesized by michael d fox and colleagues in 2012 ( efficacy of transcranial magnetic stimulation targets for de",
+        "before": "were able to explain tms treatment response by functional connectivity between the stimulation site in the left dorsolateral prefrontal cortex and the subgenual cingulate cortex . specifically , strength of anticorrelations between dlpfc and subgenual were predictive of beneficial outcome . this relationship had been hypothesized by michael d fox and colleagues in 2012 ( efficacy of transcranial magnetic stimulation targets for de",
         "after": "",
-        "context": "to explain tms treatment response by functional connectivity between the stimulation site in the left dorsolateral prefrontal cortex and the subgenual cingulate cortex . specifically , strength of anticorrelations between dlpfc and subgenual were predictive of beneficial outcome . this relationship had been hypothesized by michael d fox and colleagues in 2012 ( efficacy of transcranial magnetic stimulation targets for de … ) and was"
+        "context": "d fox , we were able to explain tms treatment response by functional connectivity between the stimulation site in the left dorsolateral prefrontal cortex and the subgenual cingulate cortex . specifically , strength of anticorrelations between dlpfc and subgenual were predictive of beneficial outcome . this relationship had been hypothesized by michael d fox and colleagues in 2012 ( efficacy of transcranial magnetic stimulation targets for de … ) and was"
       },
       {
         "before": ") and was now prospectively validated in a sample of 25 patients treated at bidmc with tms . moreover , to exclude sham effects , a cohort of 16 patients treated by stephan f taylor in michigan was retrospectively analyzed and showed the same relationship . electrophysiological atlas of gpi activity ( neumann 2017 ) included in lead - dbs v2 . 0 . 0 . 6 november",
@@ -969,9 +1112,9 @@
         "context": ". 6 november 22 , 2017 / 0 comments / in uncategorized / by andreashorn inside a new version"
       },
       {
-        "before": "as well as optimal stimulation targets defined in thomas schönecker ‘ s article postoperative mri localisation of electrodes and clinical ef",
+        "before": "pallidal physiomarker in cervical dystonia as well as optimal stimulation targets defined in thomas schönecker ‘ s article postoperative mri localisation of electrodes and clinical ef",
         "after": "",
-        "context": "physiomarker in cervical dystonia as well as optimal stimulation targets defined in thomas schönecker ‘ s article postoperative mri localisation of electrodes and clinical ef … and philip starr"
+        "context": "defined in a localized pallidal physiomarker in cervical dystonia as well as optimal stimulation targets defined in thomas schönecker ‘ s article postoperative mri localisation of electrodes and clinical ef … and philip starr"
       },
       {
         "before": "and philip starr ’ s article microelectrode - guided implantation of deep brain stimulators … . since all three spots fall into a very similar region of the gpi , this atlas gives some summarizing evidence for an optimal target inside the gpi . of note , the target falls into the sensorimotor part of the gpi as defined in toward defining deep brain stimulation targets in mni space : … by siobhan ewert et al . we further included the cit168 subcortical atlas defined in a high - resolution probabilistic in vivo atlas of human subco … that wolfgang pauli and colleagues from caltech graciously shared for inclusion in lead - dbs . furthermore , the new schäfer parcellations defined in local - global parcellation of the human cerebral cortex from … that further subdivide the famous 7 / 17 rs - fmri brain parcellation established by b . t . thomas yeo et al in the organization of the human cerebral cortex estimated by f … have been added for dbs connectivity analyses . last but not least , we included lrnlab . org ‘ s ( pis stephen coombes & david villaincourt ) hmat three - dimensional locations and boundaries of motor and prem … and s - matt a template and probabilistic atlas of the human sensorimotor … templates of the sensorimotor cortex and - tract as brain parcellations for connectivity analyses in lead - dbs and lead - connectome ( for more information on these very helpful templates see http : / / lrnlab . org / ) . for an updated list of subcortical atlases in lead - dbs see http : / / www . lead - dbs . org / ? page_id = 45 , for a list of whole - brain / connectivity brain parcellations see http : / / www . lead - dbs . org / ? page_id = 1004 . new sem study out : “ relating pallidal theta activity to dystonic symptoms and anatomy of the gpi ” november",
@@ -984,9 +1127,9 @@
         "context": "gpi ” november 13 , 2017 / 0 comments / in uncategorized / by andreashorn in a new study"
       },
       {
-        "before": "andrea a kühn , we were able to relate pallidal theta power to dystonic symptom severity for the first time . furthermore , using the “ subcortical electrophysiology mapping ( sem ) ” approach developed as part of lead - dbs ( implemented inside the “ lead group ” module ) , we were able to robustly localize theta activity to an anatomical subpart of the internal pallidum that most likely corresponds to its sensorimotor functional zone ( based on an atlas developed by siobhan ewert et al . ( toward defining deep brain stimulation targets in mni space :",
+        "before": "christof brücke , gerd - helge schneider and andrea a kühn , we were able to relate pallidal theta power to dystonic symptom severity for the first time . furthermore , using the “ subcortical electrophysiology mapping ( sem ) ” approach developed as part of lead - dbs ( implemented inside the “ lead group ” module ) , we were able to robustly localize theta activity to an anatomical subpart of the internal pallidum that most likely corresponds to its sensorimotor functional zone ( based on an atlas developed by siobhan ewert et al . ( toward defining deep brain stimulation targets in mni space :",
         "after": "",
-        "context": "- helge schneider and andrea a kühn , we were able to relate pallidal theta power to dystonic symptom severity for the first time . furthermore , using the “ subcortical electrophysiology mapping ( sem ) ” approach developed as part of lead - dbs ( implemented inside the “ lead group ” module ) , we were able to robustly localize theta activity to an anatomical subpart of the internal pallidum that most likely corresponds to its sensorimotor functional zone ( based on an atlas developed by siobhan ewert et al . ( toward defining deep brain stimulation targets in mni space : … ) . the"
+        "context": ", julius huebl , christof brücke , gerd - helge schneider and andrea a kühn , we were able to relate pallidal theta power to dystonic symptom severity for the first time . furthermore , using the “ subcortical electrophysiology mapping ( sem ) ” approach developed as part of lead - dbs ( implemented inside the “ lead group ” module ) , we were able to robustly localize theta activity to an anatomical subpart of the internal pallidum that most likely corresponds to its sensorimotor functional zone ( based on an atlas developed by siobhan ewert et al . ( toward defining deep brain stimulation targets in mni space : … ) . the"
       },
       {
         "before": ") . the same approach had been used before to localize beta power in pd within the subthalamic nucleus ( toward an electrophysiological ” sweet spot ” for deep brain … ) and additionally high frequency oscillations in intraoperative lfp recordings ( localization of beta and high - frequency oscillations within … ) . the approach is described in detail in a blog post ( http : / / www . lead - dbs . org / ? p = 2301 ) and the lead - dbs knowledge base ( http : / / www . lead - dbs . org / ? page_id = 2403 ) on our website . we hope that the technique may be applied to localize other lfp signatures to anatomy in the future – again using co - registered recordings of large patient cohorts . page 4 of 5 1 2 4",
@@ -1097,34 +1240,30 @@
         "/wp-content/uploads/2017/12/schaefer-997x1030-290x300.png": 1,
         "/wp-content/uploads/2017/12/neumann_horn-181x300.png": 1
       },
-      "added": {
-        "/wp-content/uploads/2019/01/ocd.png": 1,
-        "/wp-content/uploads/2018/11/2018-Annals_of_Neurology-1-1-845x321.png": 1,
-        "/wp-content/uploads/2018/11/1-s2.0-S221315821830305X-gr1-1.jpg": 1,
-        "/wp-content/uploads/2018/07/banner-DBS-800x321.png": 1,
-        "/wp-content/uploads/2018/03/Lofredi_et_al_2018_eLife-845x321.png": 1,
-        "/wp-content/uploads/2017/12/F1.medium.gif": 1,
-        "/wp-content/uploads/2017/12/Figure-3-Functional-connectivity-between-the-TMS-site-and-the-subgenual-cingulate-is-an-845x321.png": 1,
-        "/wp-content/uploads/2017/12/neumann_horn-845x321.png": 2
-      }
+      "added": {}
     }
   },
   "/blog/page/5/": {
     "text": [
       {
-        "before": "vta - model support for segmented leads september",
-        "after": "2017 sep",
-        "context": "updates vta - model support for segmented leads september 16 , 2017 /"
+        "before": "",
+        "after": "news 2017 sep 16",
+        "context": "updates vta - model"
       },
       {
-        "before": ", 2017 / 0 comments / in uncategorized / by andreashorn",
-        "after": "updates",
-        "context": "segmented leads september 16 , 2017 / 0 comments / in uncategorized / by andreashorn till dembek created a"
+        "before": "vta - model support for segmented leads september 16 , 2017 / 0 comments / in uncategorized / by andreashorn",
+        "after": "",
+        "context": "updates vta - model support for segmented leads september 16 , 2017 / 0 comments / in uncategorized / by andreashorn till dembek created a"
       },
       {
-        "before": "simbio with great help from johannes vorwerk ) to create vtas for these electrodes . lead - dbs 2 . 0 out now september",
-        "after": "… sep",
-        "context": "model implemented based on simbio with great help from johannes vorwerk ) to create vtas for these electrodes . lead - dbs 2 . 0 out now september 10 , 2017 /"
+        "before": "outcome in park",
+        "after": "",
+        "context": "predicts deep brain stimulation outcome in park … ; model implemented"
+      },
+      {
+        "before": "; model implemented based on simbio with great help from johannes vorwerk ) to create vtas for these electrodes . lead - dbs 2 . 0 out now september",
+        "after": "sep",
+        "context": "outcome in park … ; model implemented based on simbio with great help from johannes vorwerk ) to create vtas for these electrodes . lead - dbs 2 . 0 out now september 10 , 2017 /"
       },
       {
         "before": ", 2017 / 0 comments / in uncategorized / by andreashorn",
@@ -1132,9 +1271,9 @@
         "context": "out now september 10 , 2017 / 0 comments / in uncategorized / by andreashorn we are proud to"
       },
       {
-        "before": "major new features is available here [ http : / / www . lead - dbs . org / ? p = 3174 ] , but in a nutshell they are : distal atlas : a detailed brain atlas of the human subcortex based on histology ( graciously provided by m . mallar chakravarty and louis collins ) , mri and structural connectivity . it is available in three different nomenclatures , thus serving as a rosetta stone for thalamic nomenclatures ( see siobhan ewert ‘ s article toward defining deep brain stimulation targets in mni space :",
+        "before": "brain . a detailed description of all major new features is available here [ http : / / www . lead - dbs . org / ? p = 3174 ] , but in a nutshell they are : distal atlas : a detailed brain atlas of the human subcortex based on histology ( graciously provided by m . mallar chakravarty and louis collins ) , mri and structural connectivity . it is available in three different nomenclatures , thus serving as a rosetta stone for thalamic nomenclatures ( see siobhan ewert ‘ s article toward defining deep brain stimulation targets in mni space :",
         "after": "",
-        "context": "detailed description of all major new features is available here [ http : / / www . lead - dbs . org / ? p = 3174 ] , but in a nutshell they are : distal atlas : a detailed brain atlas of the human subcortex based on histology ( graciously provided by m . mallar chakravarty and louis collins ) , mri and structural connectivity . it is available in three different nomenclatures , thus serving as a rosetta stone for thalamic nomenclatures ( see siobhan ewert ‘ s article toward defining deep brain stimulation targets in mni space : … ; for a"
+        "context": "electrodes in the human brain . a detailed description of all major new features is available here [ http : / / www . lead - dbs . org / ? p = 3174 ] , but in a nutshell they are : distal atlas : a detailed brain atlas of the human subcortex based on histology ( graciously provided by m . mallar chakravarty and louis collins ) , mri and structural connectivity . it is available in three different nomenclatures , thus serving as a rosetta stone for thalamic nomenclatures ( see siobhan ewert ‘ s article toward defining deep brain stimulation targets in mni space : … ; for a"
       },
       {
         "before": "; for a summary see here [ http : / / www . lead - dbs . org / ? page_id = 2911 ] ) . fem - based vta model ( beta ) : to model the physical effects of dbs in the brain , we teamed up with johannes vorwerk ( simbio / fieldtrip toolboxes ) and qianqian fang ( iso2mesh toolbox ) . further help was provided by ningfei li ( integration inside lead - dbs ) , robert oostenveld ( initial counseling and help with fieldtrip - related code ) . this is the first open - source pipeline to model volumes of tissue activated ( vta ) as a one - step solution ( see connectivity predicts deep brain stimulation outcome in park … and this page [ http : / / www . lead - dbs . org / ? page_id = 3291 ] for details ) . human motor thalamus atlas : graciously provided by igor & kristy ilinsky , the human motor thalamus settles controversies about motor projections in the human thalamus . it is based on specialized histological stains and was precisely co - registered to icbm 2009b space . for more information about the dataset , see [ http : / / www . humanmotorthalamus . com ] . pacer : a fully automated method to precisely reconstruct dbs electrode localizations based on postoperative ct data will soon be published by andreas husch ( hertel group , luxembourg ) and was graciously provided to lead - dbs . for more information about pacer , see [ https : / / adhusch . github . io / pacer / ] . mer - mapping : ari kappel ( richardson lab , pittsburgh ) and chadwick boulay ( sachs lab , ottawa ) created an intuitive and precise tool to combine dbs reconstructions with microelectrode recordings within lead - dbs . multiple novel atlases : in total , lead - dbs now comes with 23 subcortical atlases [ http : / / www . lead - dbs . org / ? page_id = 45 ] and 14 whole - brain parcellations [ http : / / www . lead - dbs . org / ? page_id = 1004 ] suited for connectomics . enhanced workflows : we re - designed large parts of the registration pipeline . for normalization strategies , all spm routines , ants , fsl ’ s fnirt and a maget - brain like procedure are available directly in matlab ( and without the need to install anything else ) . we hope you like our new release – and please don ’ t hesitate to spread the word to colleagues in the dbs field . to download lead - dbs now , see [ http : / / www . lead - dbs . org ] . distal atlas methods summary , data out soon august",
@@ -1147,9 +1286,9 @@
         "context": "out soon august 12 , 2017 / 0 comments / in uncategorized / by andreashorn summary of novel subcortical"
       },
       {
-        "before": "here : http : / / www . lead - dbs . org / ? page_id = 2911 dataset out soon , original publication here : http : / / www . sciencedirect . com / science / journal / aip / 10538119 ? sdc = 1 major update of lead - dbs out ( v . 1 . 6 . 5 ) august",
+        "before": "structural connectivity ( ewert et al . , 2017 ) here : http : / / www . lead - dbs . org / ? page_id = 2911 dataset out soon , original publication here : http : / / www . sciencedirect . com / science / journal / aip / 10538119 ? sdc = 1 major update of lead - dbs out ( v . 1 . 6 . 5 ) august",
         "after": "… aug",
-        "context": ". , 2017 ) here : http : / / www . lead - dbs . org / ? page_id = 2911 dataset out soon , original publication here : http : / / www . sciencedirect . com / science / journal / aip / 10538119 ? sdc = 1 major update of lead - dbs out ( v . 1 . 6 . 5 ) august 8 , 2017 /"
+        "context": "template , histology and structural connectivity ( ewert et al . , 2017 ) here : http : / / www . lead - dbs . org / ? page_id = 2911 dataset out soon , original publication here : http : / / www . sciencedirect . com / science / journal / aip / 10538119 ? sdc = 1 major update of lead - dbs out ( v . 1 . 6 . 5 ) august 8 , 2017 /"
       },
       {
         "before": ", 2017 / 0 comments / in uncategorized / by andreashorn",
@@ -1215,12 +1354,7 @@
         "/wp-content/uploads/2017/12/bucknersuit-300x172.png": 1,
         "/wp-content/uploads/2017/12/ppn_alho-1030x784-300x228.png": 1
       },
-      "added": {
-        "/wp-content/uploads/2017/12/directional_vta-767x321.png": 1,
-        "/wp-content/uploads/2017/12/two_oh_in_a_nutshell-845x321.png": 1,
-        "/wp-content/uploads/2017/12/distal_atlas-845x321.png": 1,
-        "/wp-content/uploads/2017/12/bucknersuit-845x321.png": 1
-      }
+      "added": {}
     }
   },
   "/connectomic-deep-brain-stimulation-book-available-for-preorder/": {
@@ -1231,6 +1365,187 @@
         "context": "connectomic deep brain stimulation book available now ! connectomic deep brain stimulation"
       }
     ]
+  },
+  "/internal/": {
+    "text": [
+      {
+        "before": "internal internal content the pages you can find here are primarily targeted",
+        "after": "",
+        "context": "internal internal content the pages you can find here are primarily targeted for members of the"
+      },
+      {
+        "before": "",
+        "after": "lab",
+        "context": "are primarily targeted for members of the netstim"
+      },
+      {
+        "before": "of the netstim laboratory in cologne . however , following our open - science policy , they are open to the public and anyone interested in what we do and how we do things .",
+        "after": "",
+        "context": "primarily targeted for members of the netstim laboratory in cologne . however , following our open - science policy , they are open to the public and anyone interested in what we do and how we do things . lab manual lab meetings"
+      },
+      {
+        "before": "",
+        "after": "onboarding , code of conduct and everything else , on gitbook ↗",
+        "context": "things . lab manual lab meetings links events"
+      },
+      {
+        "before": "",
+        "after": "the weekly imaging meeting → events upcoming lab events →",
+        "context": "lab manual lab meetings links events lab manual"
+      },
+      {
+        "before": "events lab manual links",
+        "after": "groups we work with →",
+        "context": "manual lab meetings links events lab manual links"
+      }
+    ],
+    "links": {
+      "missing": {
+        "/events/categories/imaging-meeting/": 1,
+        "/internal/links/": 1,
+        "/internal/onboarding/": 1
+      },
+      "added": {
+        "/internal/events/categories/imaging-meeting/": 1
+      }
+    }
+  },
+  "/internal/events/": {
+    "text": [
+      {
+        "before": "powered by events manager events lab manual links",
+        "after": "",
+        "context": "events no events powered by events manager events lab manual links"
+      }
+    ],
+    "links": {
+      "missing": {
+        "https://wp-events-plugin.com": 1,
+        "/internal/events/": 1,
+        "/internal/onboarding/": 1,
+        "/internal/links/": 1
+      },
+      "added": {}
+    }
+  },
+  "/internal/events/categories/": {
+    "text": [
+      {
+        "before": "",
+        "after": "event",
+        "context": "categories imaging meeting workshops"
+      },
+      {
+        "before": "powered by events manager",
+        "after": "",
+        "context": "categories imaging meeting workshops powered by events manager events lab manual links"
+      }
+    ],
+    "links": {
+      "missing": {
+        "https://wp-events-plugin.com": 1
+      },
+      "added": {}
+    }
+  },
+  "/internal/events/categories/imaging-meeting/": {
+    "text": [
+      {
+        "before": "categories",
+        "after": "imaging meeting",
+        "context": "categories these are our weekly"
+      }
+    ]
+  },
+  "/internal/events/categories/workshops/": {
+    "text": [
+      {
+        "before": "categories",
+        "after": "workshops",
+        "context": "categories upcoming events no events"
+      }
+    ]
+  },
+  "/internal/events/locations/": {
+    "text": [
+      {
+        "before": "",
+        "after": "event",
+        "context": "locations bonhoefferraum bonhoefferweg 3"
+      },
+      {
+        "before": "powered by events manager",
+        "after": "",
+        "context": "- 60 , berlin powered by events manager 0 replies leave a"
+      }
+    ],
+    "links": {
+      "missing": {
+        "https://wp-events-plugin.com": 1
+      },
+      "added": {}
+    }
+  },
+  "/internal/events/locations/bonhoefferraum/": {
+    "text": [
+      {
+        "before": "updates",
+        "after": "bonhoefferraum",
+        "context": "updates bonhoefferraum february 21 ,"
+      }
+    ]
+  },
+  "/internal/events/locations/charite/": {
+    "text": [
+      {
+        "before": "updates",
+        "after": "charité",
+        "context": "updates charité february 20 ,"
+      }
+    ]
+  },
+  "/internal/events/locations/multifunktionsraum/": {
+    "text": [
+      {
+        "before": "updates",
+        "after": "multifunktionsraum",
+        "context": "updates multifunktionsraum february 20 ,"
+      }
+    ]
+  },
+  "/internal/links/": {
+    "text": [
+      {
+        "before": "events lab manual links",
+        "after": "",
+        "context": "interest to ours . events lab manual links"
+      }
+    ],
+    "links": {
+      "missing": {
+        "/internal/events/": 1,
+        "/internal/onboarding/": 1,
+        "/internal/links/": 1
+      },
+      "added": {}
+    }
+  },
+  "/internal/onboarding/": {
+    "text": [
+      {
+        "before": "events lab manual links",
+        "after": "",
+        "context": "that lab - manual events lab manual links"
+      }
+    ],
+    "links": {
+      "missing": {
+        "/internal/events/": 1,
+        "/internal/onboarding/": 1,
+        "/internal/links/": 1
+      },
+      "added": {}
+    }
   },
   "/lauren-hart-scholarships/": {
     "text": [
@@ -1268,14 +1583,111 @@
       }
     ]
   },
+  "/research-interests/": {
+    "text": [
+      {
+        "before": "science",
+        "after": "",
+        "context": "science research interests our two"
+      },
+      {
+        "before": "interests our two main lines of research are deep brain stimulation and connectomics . thus ,",
+        "after": "",
+        "context": "science research interests our two main lines of research are deep brain stimulation and connectomics . thus , our aim is to"
+      },
+      {
+        "before": "feel free to explore our work on the following pages . learn more about",
+        "after": "",
+        "context": "brain stimulation surgery . feel free to explore our work on the following pages . learn more about deep brain stimulation learn"
+      },
+      {
+        "before": "learn more about",
+        "after": "electrodes implanted into deep areas of the brain , and lead - dbs , the open - source toolbox we build to reconstruct their placement .",
+        "context": "about deep brain stimulation learn more about normative connectomes identifiers research"
+      },
+      {
+        "before": "identifiers research gate google scholar twitter publons orcid researcher id",
+        "after": "“ average wiring diagrams ” of the human brain , estimated since 2014 and freely available to the scientific community .",
+        "context": "more about normative connectomes identifiers research gate google scholar twitter publons orcid researcher id connectomic dbs book publications"
+      },
+      {
+        "before": "",
+        "after": "deep brain stimulation the book : chapters by internationally renowned experts on electrode localization ,",
+        "context": "orcid researcher id connectomic dbs book publications posters"
+      },
+      {
+        "before": "book",
+        "after": "modeling and connectomics .",
+        "context": "researcher id connectomic dbs book publications posters videos &"
+      },
+      {
+        "before": "",
+        "after": ",",
+        "context": "connectomic dbs book publications posters videos & talks"
+      },
+      {
+        "before": "",
+        "after": "and talks publications peer - reviewed articles and the journal covers our work appeared on posters conference posters from the lab",
+        "context": "dbs book publications posters videos & talks deep"
+      },
+      {
+        "before": "deep brain stimulation normative connectomes stimu - latte",
+        "after": "recorded talks by lab members",
+        "context": "posters videos & talks deep brain stimulation normative connectomes stimu - latte"
+      }
+    ],
+    "links": {
+      "missing": {
+        "http://andreas-horn.de/?page_id=151": 1,
+        "http://andreas-horn.de/?page_id=110": 1,
+        "/research-interests/deep-brain-stimulation/": 1,
+        "/research-interests/normative-connectomes/": 1,
+        "https://www.researchgate.net/profile/Andreas_Horn": 2,
+        "https://scholar.google.de/citations?user=1jF_5-0AAAAJ&hl=en": 2,
+        "https://twitter.com/netstim_org": 2,
+        "http://publons.com/a/1317885/": 2,
+        "https://orcid.org/0000-0002-0695-6025": 2,
+        "http://researcherid.com/rid/B-8988-2017": 2,
+        "/research-interests/stimu-latte/": 1
+      },
+      "added": {}
+    },
+    "images": {
+      "missing": {
+        "/wp-content/uploads/2017/12/connectomic_dbs.png": 1
+      },
+      "added": {
+        "/research-interests/media/full-abb_1.jpg": 1,
+        "/research-interests/media/full-The_Human_Connectome.png": 1,
+        "/research-interests/media/4cb5be70722a-Connectomic-Deep-Brain-Stimulation-1249x1536.png": 1
+      }
+    }
+  },
   "/research-interests/deep-brain-stimulation/": {
     "text": [
       {
         "before": "deep brain stimulation",
         "after": "",
         "context": "deep brain stimulation deep brain stimulation the"
+      },
+      {
+        "before": "connectomic dbs book publications posters videos & talks deep brain stimulation normative connectomes stimu - latte",
+        "after": "",
+        "context": "about connectivity benefit mapping connectomic dbs book publications posters videos & talks deep brain stimulation normative connectomes stimu - latte"
       }
-    ]
+    ],
+    "links": {
+      "missing": {
+        "/research-interests/the-book/": 1,
+        "/research-interests/publications/": 1,
+        "/research-interests/posters/": 1,
+        "/research-interests/videos-talks/": 1,
+        "/research-interests/deep-brain-stimulation/": 1,
+        "/research-interests/normative-connectomes/": 1,
+        "/research-interests/stimu-latte/": 1
+      },
+      "added": {}
+    }
   },
   "/research-interests/normative-connectomes/": {
     "text": [
@@ -1283,7 +1695,359 @@
         "before": "normative connectomes",
         "after": "",
         "context": "normative connectomes normative connectomes since 2014"
+      },
+      {
+        "before": "connectomic dbs book publications posters videos & talks deep brain stimulation normative connectomes stimu - latte",
+        "after": "",
+        "context": ". examples / figures connectomic dbs book publications posters videos & talks deep brain stimulation normative connectomes stimu - latte"
       }
-    ]
+    ],
+    "links": {
+      "missing": {
+        "/research-interests/the-book/": 1,
+        "/research-interests/publications/": 1,
+        "/research-interests/posters/": 1,
+        "/research-interests/videos-talks/": 1,
+        "/research-interests/deep-brain-stimulation/": 1,
+        "/research-interests/normative-connectomes/": 1,
+        "/research-interests/stimu-latte/": 1
+      },
+      "added": {}
+    }
+  },
+  "/research-interests/posters/": {
+    "text": [
+      {
+        "before": "",
+        "after": "sahin et al . ( ohbm 2026 ) white - matter substrates of deep brain stimulation response across targets in tourette syndrome zvarova et al . ( ohbm 2026 ) lead - dbs v4 . 0 : a unified framework for localization , programming and connectomic dbs analysis neudorfer * , mustin * et al . ( 3rd dbs expert summit 2026 ) translating the transcriptome : a connectomics approach for gene - network mapping and clinical application goede et al . ( 3rd dbs expert summit 2026 ) action vs . rest tremor map to different networks within primary motor cortex sahin et al . ( 3rd dbs expert summit 2026 ) deep brain stimulation for tourette syndrome : from voxels to networks zvarova et al . ( 3rd dbs expert summit 2026 ) imaging - informed guidance for subthalamic dbs : translating group models to individual contacts meyer et al . ( nyc neuromodulation 2024 ) deep brain stimulation sites causing or improving psychosis hollunder et al . ( ohbm 2024 ) symptom network modulation of deep brain stimulation in obsessive - compulsive disorder zvarova et al . 2024 utility of imaging predictors in deep brain stimulation sahin et al . 2024 basal ganglia pathways associated with clinical improvement following deep brain stimulation for tourette syndrome friedrich et al . 2023 high - resolution brain atlas for deep brain stimulation imaging goede et al . ( mds 2023 ) connectomic dbs informed multifocal transcranial direct current stimulation ( tdcs ) in parkinson ’ s disease : a crossover double - blinded study hollunder et al . ( ohbm 2023 ) mapping dysfunctional circuits in the frontal cortex using deep brain stimulation meyer et al . ( ohbm 2023 ) subthalamic deep brain stimulation : mapping non - motor outcomes to structural connections kim et al . ( dbs society congress 2023 ) optimal functional connectivity profiles in subthalamic dbs sahin et al . ( dbs society congress 2023 ) optimal connections in thalamic , pallidal and subthalamic dbs for tourette ’ s syndrome hollunder et al . ( ohbm & dbs society congress 2023 ) symptom network modulation of deep brain stimulation in obsessive - compulsive disorder zvarova et al . ( dbs society congress 2023 ) a novel database lookup method for deep brain stimulation network mapping hollunder & li et al . ( opto - dbs 2022 ) segregating the prefrontal cortex by means of dbs hollunder & li et al . ( ohbm 2022 ) segregating the prefrontal cortex by means of dbs goede et al . ( dbs expert summit 2022 ) dbs for tremor : network effects goede et al . ( dgkn 2022 ) dbs for tremor : network effects hollunder & li et al . ( dbs expert summit 2022 ) segregating the prefrontal cortex by means of dbs mana et al . ( dbs expert summit 2022 ) instrumental activities of daily living improve in parkinson ’ s disease after stn dbs rios et al . ( dbs expert summit 2022 ) optimal stimulation sites and networks for dbs of the fornix in alzheimer ’ s diesease oxenford et al . ( dbs expert summit 2022 ) precision neuroimaging via manual refinement of the deformation fields open the full - size poster ↗",
+        "context": "posters sahin et al ."
+      },
+      {
+        "before": "",
+        "after": "open the full - size poster ↗",
+        "context": "- 0254 - 8 zvarova et al ."
+      },
+      {
+        "before": "",
+        "after": "open the full - size poster ↗",
+        "context": "( 2025 ) . neudorfer * , mustin"
+      },
+      {
+        "before": "",
+        "after": "open the full - size poster ↗",
+        "context": "lubeck , germany . goede et al ."
+      },
+      {
+        "before": "",
+        "after": "open the full - size poster ↗",
+        "context": "2023 . 119862 . sahin et al ."
+      },
+      {
+        "before": "",
+        "after": "open the full - size poster ↗",
+        "context": "- 0254 - 8 zvarova et al ."
+      },
+      {
+        "before": "",
+        "after": "open the full - size poster ↗",
+        "context": ". 06 . 015 meyer et al ."
+      },
+      {
+        "before": "",
+        "after": "open the full - size poster ↗",
+        "context": "( 2018 ) . hollunder et al ."
+      },
+      {
+        "before": "",
+        "after": "open the full - size poster ↗",
+        "context": "/ ana . 25734 zvarova et al ."
+      },
+      {
+        "before": "",
+        "after": "utility of imaging predictors in deep brain stimulation",
+        "context": "et al . 2024 utility of imaging predictors"
+      },
+      {
+        "before": "",
+        "after": "open the full - size poster ↗",
+        "context": ". 1038 / srep43571 sahin et al ."
+      },
+      {
+        "before": "",
+        "after": "basal ganglia pathways associated with clinical improvement following deep brain stimulation for tourette syndrome",
+        "context": "et al . 2024 basal ganglia pathways associated"
+      },
+      {
+        "before": "",
+        "after": "open the full - size poster ↗",
+        "context": ". 09 . 030 friedrich et al ."
+      },
+      {
+        "before": "",
+        "after": "high - resolution brain atlas for deep brain stimulation imaging",
+        "context": "et al . 2023 high - resolution brain"
+      },
+      {
+        "before": "",
+        "after": "open the full - size poster ↗",
+        "context": "dbs imaging studies . goede et al ."
+      },
+      {
+        "before": "",
+        "after": "connectomic dbs informed multifocal transcranial direct current stimulation ( tdcs ) in parkinson ’ s disease : a crossover double - blinded study",
+        "context": "( mds 2023 ) connectomic dbs informed multifocal"
+      },
+      {
+        "before": "",
+        "after": "open the full - size poster ↗",
+        "context": "34 – 44 . hollunder et al ."
+      },
+      {
+        "before": "",
+        "after": "open the full - size poster ↗",
+        "context": "( 2018 ) . meyer et al ."
+      },
+      {
+        "before": "",
+        "after": "open the full - size poster ↗",
+        "context": "268 , 119862 . kim et al ."
+      },
+      {
+        "before": "",
+        "after": "open the full - size poster ↗",
+        "context": "( 2018 ) . sahin et al ."
+      },
+      {
+        "before": "",
+        "after": "open the full - size poster ↗",
+        "context": "( 2019 ) . hollunder et al ."
+      },
+      {
+        "before": "",
+        "after": "open the full - size poster ↗",
+        "context": "/ ana . 25734 zvarova et al ."
+      },
+      {
+        "before": "",
+        "after": "open the full - size poster ↗",
+        "context": ". 05 . 015 hollunder & li et"
+      },
+      {
+        "before": "",
+        "after": "open the full - size poster ↗",
+        "context": "- 00904 - z hollunder & li et"
+      },
+      {
+        "before": "",
+        "after": "open the full - size poster ↗",
+        "context": "- 00904 - z goede et al ."
+      },
+      {
+        "before": "",
+        "after": "open the full - size poster ↗",
+        "context": "tremor : network effects goede et al ."
+      },
+      {
+        "before": "",
+        "after": "open the full - size poster ↗",
+        "context": "clin . 2021 . hollunder & li et"
+      },
+      {
+        "before": "",
+        "after": "open the full - size poster ↗",
+        "context": "- 00904 - z mana et al ."
+      },
+      {
+        "before": "",
+        "after": "open the full - size poster ↗",
+        "context": ". 02 . 020 rios et al ."
+      },
+      {
+        "before": "",
+        "after": "open the full - size poster ↗",
+        "context": ". 10 . 027 oxenford et al ."
+      },
+      {
+        "before": "connectomic dbs book",
+        "after": "",
+        "context": "poster pdf warpdrive demo connectomic dbs book publications posters videos &"
+      },
+      {
+        "before": "deep brain stimulation normative connectomes stimu - latte",
+        "after": "",
+        "context": "posters videos & talks deep brain stimulation normative connectomes stimu - latte"
+      }
+    ],
+    "links": {
+      "missing": {
+        "/research-interests/the-book/": 1,
+        "/research-interests/deep-brain-stimulation/": 1,
+        "/research-interests/normative-connectomes/": 1,
+        "/research-interests/stimu-latte/": 1
+      },
+      "added": {
+        "/wp-content/uploads/2026/06/OHBM2026.png": 1,
+        "/wp-content/uploads/2026/06/LeadDBS4_v1.png": 1,
+        "/wp-content/uploads/2026/02/Poster_Transcriptome_Wurzburg-729x1030.png": 1,
+        "/wp-content/uploads/2026/02/goede-dbsexpertsummit-2026-729x1030.png": 1,
+        "/wp-content/uploads/2026/02/Sahinetal_Wurzburg2026-v2.png": 1,
+        "/wp-content/uploads/2026/02/poster_v1.png": 1,
+        "/wp-content/uploads/2024/07/Slide1-730x1030.jpeg": 1,
+        "/wp-content/uploads/2024/06/Poster_Hollunder_OHBM_2024-723x1030.jpg": 1,
+        "/wp-content/uploads/2024/06/Poster_Zvarova_OHBM_2024-729x1030.jpg": 1,
+        "/wp-content/uploads/2024/06/PosterInProgress_afterEditsforAndy2_page-0001-1-729x1030.jpeg": 1,
+        "/wp-content/uploads/2023/10/Mesoscale_Poster_HF_final_wtract-1030x773.jpeg": 1,
+        "/wp-content/uploads/2023/08/Poster_MDS-image-579x1030.png": 1,
+        "/wp-content/uploads/2023/07/STN-Project_Hollunder_et_al_OHBM_2023-723x1030.png": 1,
+        "/wp-content/uploads/2023/06/GMeyerOHBMPosterHighRes-801x1030.jpg": 1,
+        "/wp-content/uploads/2023/06/DBS_Society_Poster_2023_MJK-729x1030.jpeg": 1,
+        "/wp-content/uploads/2023/06/Sahin_Grenoble_final-687x1030.jpeg": 1,
+        "/wp-content/uploads/2023/06/Hollunder_DBS-Society_Poster-2-687x1030.png": 1,
+        "/wp-content/uploads/2023/06/Grenoble-Patricia-final1-687x1030.jpeg": 1,
+        "/wp-content/uploads/2022/06/Hollunder-Li-et-al_Opto-DBS_P21-721x1030.png": 1,
+        "/wp-content/uploads/2022/05/OHBM_Poster-1030x729.jpeg": 1,
+        "/wp-content/uploads/2022/03/DBSExpertSummit_Poster_Goede_Small-579x1030.png": 1,
+        "/wp-content/uploads/2022/03/DGKN_Poster_Goede_Small-729x1030.png": 1,
+        "/wp-content/uploads/2022/03/DBSExpertSummit_Poster_Hollunder-Li_Small-579x1030.png": 1,
+        "/wp-content/uploads/2022/03/DBSExpertSummit_Poster_Josef-579x1030.png": 1,
+        "/wp-content/uploads/2022/03/DBSExpertSummit_Poster_Rios_Small-579x1030.png": 1,
+        "/wp-content/uploads/2022/03/DBSExpertSummit_Poster_Oxenford_Small-579x1030.png": 1
+      }
+    },
+    "images": {
+      "missing": {},
+      "added": {
+        "/wp-content/uploads/2026/06/OHBM2026.png": 1,
+        "/wp-content/uploads/2026/06/LeadDBS4_v1.png": 1,
+        "/wp-content/uploads/2026/02/Poster_Transcriptome_Wurzburg-729x1030.png": 1,
+        "/wp-content/uploads/2026/02/goede-dbsexpertsummit-2026-729x1030.png": 1,
+        "/wp-content/uploads/2026/02/Sahinetal_Wurzburg2026-v2.png": 1,
+        "/wp-content/uploads/2026/02/poster_v1.png": 1,
+        "/wp-content/uploads/2024/07/Slide1-730x1030.jpeg": 1,
+        "/wp-content/uploads/2024/06/Poster_Hollunder_OHBM_2024-723x1030.jpg": 1,
+        "/wp-content/uploads/2024/06/Poster_Zvarova_OHBM_2024-729x1030.jpg": 1,
+        "/wp-content/uploads/2024/06/PosterInProgress_afterEditsforAndy2_page-0001-1-729x1030.jpeg": 1,
+        "/wp-content/uploads/2023/10/Mesoscale_Poster_HF_final_wtract-1030x773.jpeg": 1,
+        "/wp-content/uploads/2023/08/Poster_MDS-image-579x1030.png": 1,
+        "/wp-content/uploads/2023/07/STN-Project_Hollunder_et_al_OHBM_2023-723x1030.png": 1,
+        "/wp-content/uploads/2023/06/GMeyerOHBMPosterHighRes-801x1030.jpg": 1,
+        "/wp-content/uploads/2023/06/DBS_Society_Poster_2023_MJK-729x1030.jpeg": 1,
+        "/wp-content/uploads/2023/06/Sahin_Grenoble_final-687x1030.jpeg": 1,
+        "/wp-content/uploads/2023/06/Hollunder_DBS-Society_Poster-2-687x1030.png": 1,
+        "/wp-content/uploads/2023/06/Grenoble-Patricia-final1-687x1030.jpeg": 1,
+        "/wp-content/uploads/2022/06/Hollunder-Li-et-al_Opto-DBS_P21-721x1030.png": 1,
+        "/wp-content/uploads/2022/05/OHBM_Poster-scaled.jpeg": 1,
+        "/wp-content/uploads/2022/03/DBSExpertSummit_Poster_Goede_Small.png": 1,
+        "/wp-content/uploads/2022/03/DGKN_Poster_Goede_Small.png": 1,
+        "/wp-content/uploads/2022/03/DBSExpertSummit_Poster_Hollunder-Li_Small.png": 1,
+        "/wp-content/uploads/2022/03/DBSExpertSummit_Poster_Josef.png": 1,
+        "/wp-content/uploads/2022/03/DBSExpertSummit_Poster_Rios_Small.png": 1,
+        "/wp-content/uploads/2022/03/DBSExpertSummit_Poster_Oxenford_Small.png": 1
+      }
+    }
+  },
+  "/research-interests/publications/": {
+    "text": [
+      {
+        "before": "connectomic dbs book",
+        "after": "",
+        "context": "out our conference posters connectomic dbs book publications posters videos &"
+      },
+      {
+        "before": "deep brain stimulation normative connectomes stimu - latte",
+        "after": "",
+        "context": "posters videos & talks deep brain stimulation normative connectomes stimu - latte"
+      }
+    ],
+    "links": {
+      "missing": {
+        "/research-interests/the-book/": 1,
+        "/research-interests/deep-brain-stimulation/": 1,
+        "/research-interests/normative-connectomes/": 1,
+        "/research-interests/stimu-latte/": 1
+      },
+      "added": {}
+    }
+  },
+  "/research-interests/stimu-latte/": {
+    "text": [
+      {
+        "before": "stimu - latte : the",
+        "after": "",
+        "context": "stimu - latte stimu - latte : the journal club please ,"
+      },
+      {
+        "before": "connectomic dbs book publications posters videos & talks deep brain stimulation normative connectomes stimu - latte",
+        "after": "",
+        "context": ", cell reports 2026 connectomic dbs book publications posters videos & talks deep brain stimulation normative connectomes stimu - latte"
+      }
+    ],
+    "links": {
+      "missing": {
+        "/research-interests/the-book/": 1,
+        "/research-interests/publications/": 1,
+        "/research-interests/posters/": 1,
+        "/research-interests/videos-talks/": 1,
+        "/research-interests/deep-brain-stimulation/": 1,
+        "/research-interests/normative-connectomes/": 1,
+        "/research-interests/stimu-latte/": 1
+      },
+      "added": {}
+    }
+  },
+  "/research-interests/the-book/": {
+    "text": [
+      {
+        "before": "dbs book",
+        "after": "deep brain stimulation",
+        "context": "connectomic dbs book we are excited that"
+      },
+      {
+        "before": "connectomic dbs book publications posters videos & talks deep brain stimulation normative connectomes stimu - latte",
+        "after": "",
+        "context": "& morten kringelbach ) connectomic dbs book publications posters videos & talks deep brain stimulation normative connectomes stimu - latte"
+      }
+    ],
+    "links": {
+      "missing": {
+        "/research-interests/the-book/": 1,
+        "/research-interests/publications/": 1,
+        "/research-interests/posters/": 1,
+        "/research-interests/videos-talks/": 1,
+        "/research-interests/deep-brain-stimulation/": 1,
+        "/research-interests/normative-connectomes/": 1,
+        "/research-interests/stimu-latte/": 1
+      },
+      "added": {}
+    },
+    "images": {
+      "missing": {
+        "/wp-content/uploads/2021/11/ws_header-2-1030x225.png": 1
+      },
+      "added": {}
+    }
+  },
+  "/research-interests/videos-talks/": {
+    "text": [
+      {
+        "before": "connectomic dbs book",
+        "after": "",
+        "context": "at scientific data . connectomic dbs book publications posters videos &"
+      },
+      {
+        "before": "deep brain stimulation normative connectomes stimu - latte",
+        "after": "",
+        "context": "posters videos & talks deep brain stimulation normative connectomes stimu - latte"
+      }
+    ],
+    "links": {
+      "missing": {
+        "/research-interests/the-book/": 1,
+        "/research-interests/deep-brain-stimulation/": 1,
+        "/research-interests/normative-connectomes/": 1,
+        "/research-interests/stimu-latte/": 1
+      },
+      "added": {}
+    }
   }
 }

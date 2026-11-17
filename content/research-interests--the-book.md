@@ -1,28 +1,13 @@
 ---
-title: Connectomic DBS Book
+title: Connectomic Deep Brain Stimulation
 url: /research-interests/the-book/
 family: page
 crumbs:
 - title: Home
   url: '@root@'
-- title: Science
+- title: Research
   url: '@root@research-interests/'
 - title: Connectomic DBS Book
-related:
-- title: Connectomic DBS Book
-  url: '@root@research-interests/the-book/'
-- title: Publications
-  url: '@root@research-interests/publications/'
-- title: Posters
-  url: '@root@research-interests/posters/'
-- title: Videos & Talks
-  url: '@root@research-interests/videos-talks/'
-- title: Deep Brain Stimulation
-  url: '@root@research-interests/deep-brain-stimulation/'
-- title: Normative Connectomes
-  url: '@root@research-interests/normative-connectomes/'
-- title: STIMU-LATTE
-  url: '@root@research-interests/stimu-latte/'
 sidebar: true
 wordpress_id: 1423
 date: '2021-11-21T18:26:32+00:00'
@@ -30,9 +15,6 @@ modified: '2023-10-27T12:49:39+00:00'
 comment_anchor: true
 canonical: /research-interests/the-book/
 ---
-
-<div class="columns"><div class="column column-1-1">
-<div class="image-block"><netstim-image data='{"src":"media/b46378cae88e-ws_header-2-1536x335.png","original":"https://www.netstim.org/wp-content/uploads/2021/11/ws_header-2-1030x225.png","alt":"","width":1030}'/></div></div></div>
 
 <div class="columns"><div class="column column-2-3"><p>We are excited that our book on connectomic deep brain stimulation can now be ordered <a href="https://www.elsevier.com/books/connectomic-deep-brain-stimulation/horn/978-0-12-821861-7">from the publisher (Academic Press)</a> and/or <a href="https://www.amazon.com/Connectomic-Deep-Brain-Stimulation-Andreas/dp/0128218614/">Amazon</a> etc.</p>
 <p>After a foreword by <strong>Andrea Kühn &amp; Michael Fox</strong>, chapters were written by internationally renowned experts for specific topics covering broad content from electrode localization methods, DBS modeling and connectomics. For instance, we were excited to have pioneers from the connectomics field (<strong>James M Shine &amp; Rick Betzel</strong>) write chapters about functional MRI and the connectomic revolution and diffusion MRI / tractography experts (<strong>Thijs Dhollander &amp; Marco Reisert</strong>) contribute to the book, as well.</p>

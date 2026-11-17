@@ -20,23 +20,36 @@
   <ul class="people-grid" aria-label="Current members">
   {{ range $people }}
     <li><button type="button" class="person-card" data-person="person-{{ .id }}" aria-haspopup="dialog">
-      {{ if .img }}<span class="portrait-frame">{{ partial "picture.html" (merge .img (dict "alt" "" "sizes" "(max-width: 639px) 45vw, 220px")) }}</span>
+      {{ if .img }}<span class="portrait-frame" data-morph>{{ partial "picture.html" (merge .img (dict "alt" "" "sizes" "(max-width: 639px) 45vw, 220px")) }}</span>
       {{ else }}{{ $initials := "" }}{{ range first 2 (split .name " ") }}{{ $initials = print $initials (substr . 0 1) }}{{ end }}<span class="portrait-frame portrait-frame--initials" aria-hidden="true">{{ $initials }}</span>{{ end }}
       <span class="person-card__name">{{ .name }}</span>
     </button></li>
   {{ end }}
   </ul>
   {{ range $people }}
-  <dialog class="person-dialog" id="person-{{ .id }}" aria-labelledby="person-{{ .id }}-name" tabindex="-1" autofocus>
-    <form method="dialog" class="person-dialog__close"><button class="icon-button" aria-label="Close">{{ partial "icon.html" "close" }}</button></form>
-    <div class="person-dialog__photo">
-      {{ if .img }}<span class="portrait-frame">{{ partial "picture.html" (merge .img (dict "alt" (printf "Portrait of %s" .name) "sizes" "(max-width: 767px) 60vw, 380px")) }}</span>
+  {{- /* the profile as a sheet from the right: photo, name, actions, the text in one reading column, then the
+         profile links as rows (taken out of the text: identifiers, "More about", CV) */}}
+  {{ $links := findRE `(?s)<article class="icon-box">.*?</article>` .text }}
+  {{ $actions := findRE `(?s)<div class="action-row[^"]*">.*?</div>` .text }}
+  {{ $body := .text }}{{ range $links }}{{ $body = replace $body . "" }}{{ end }}{{ range $actions }}{{ $body = replace $body . "" }}{{ end }}
+  <dialog class="person-sheet" id="person-{{ .id }}" aria-labelledby="person-{{ .id }}-name" tabindex="-1" autofocus>
+    <form method="dialog" class="person-sheet__close"><button class="icon-button" aria-label="Close">{{ partial "icon.html" "close" }}</button></form>
+    <div class="person-sheet__photo">
+      {{ if .img }}<span class="portrait-frame" data-morph>{{ partial "picture.html" (merge .img (dict "alt" (printf "Portrait of %s" .name) "sizes" "(max-width: 767px) 100vw, 560px")) }}</span>
       {{ else }}{{ $initials := "" }}{{ range first 2 (split .name " ") }}{{ $initials = print $initials (substr . 0 1) }}{{ end }}<span class="portrait-frame portrait-frame--initials" aria-hidden="true">{{ $initials }}</span>{{ end }}
-      {{ with .credit }}<p class="person-dialog__credit">{{ . | safeHTML }}</p>{{ end }}
     </div>
-    <div class="person-dialog__text prose">
+    <div class="person-sheet__body">
       <h2 id="person-{{ .id }}-name">{{ .name }}</h2>
-      {{ partial "render.html" .text }}
+      {{ with $actions }}<div class="person-sheet__actions">{{ partial "render.html" (delimit . "") }}</div>{{ end }}
+      <div class="person-sheet__text prose">{{ partial "render.html" $body }}</div>
+      {{ with $links }}
+      <ul class="person-sheet__links" aria-label="Profiles">
+        {{ range . }}{{ $href := index (findRESubmatch `href="([^"]+)"` . 1) 0 1 }}{{ $label := index (findRESubmatch `aria-label="([^"]+)"` . 1) 0 1 }}
+        <li><a href="{{ $href }}" rel="noopener" target="_blank"><span>{{ $label }}</span><span aria-hidden="true">↗</span></a></li>
+        {{ end }}
+      </ul>
+      {{ end }}
+      {{ with .credit }}<p class="person-sheet__credit">Photo {{ . | safeHTML }}</p>{{ end }}
     </div>
   </dialog>
   {{ end }}

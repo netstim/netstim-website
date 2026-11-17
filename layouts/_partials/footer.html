@@ -4,9 +4,9 @@
       <a class="footer-logo" href="{{ "" | relURL }}" aria-label="{{ hugo.Data.nav.logo_alt }}, home">
         {{ with resources.Get hugo.Data.nav.logo }}{{ $logo := .Resize "320x webp q90" }}<img src="{{ $logo.RelPermalink }}" alt="" width="{{ $logo.Width }}" height="{{ $logo.Height }}" loading="lazy">{{ end }}
       </a>
-      <nav aria-label="Footer">
+      <nav aria-label="For lab members">
         <ul class="footer-links">
-          <li><a href="{{ "blog/" | relURL }}">Updates</a></li>
+          {{ range hugo.Data.nav.members }}<li><a href="{{ partial "url.html" .url }}">{{ .title }}</a></li>{{ end }}
           <li><a href="https://bsky.app/profile/netstim.org" rel="noopener">Bluesky <span aria-hidden="true">↗</span></a></li>
           <li><a href="{{ "index.xml" | relURL }}">RSS</a></li>
         </ul>

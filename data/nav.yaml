@@ -1,41 +1,44 @@
 main:
-- title: Home
-  url: '@root@'
-- title: About Us
-  url: '@root@about-us/'
-  children:
-  - title: People
-    url: '@root@about-us/about-us/'
-  - title: Jobs
-    url: '@root@about-us/jobs/'
-- title: Science
+- title: Research
   url: '@root@research-interests/'
   children:
-  - title: Connectomic DBS Book
+  - title: Overview
+    url: '@root@research-interests/'
+  - title: Deep Brain Stimulation
+    url: '@root@research-interests/deep-brain-stimulation/'
+  - title: Normative Connectomes
+    url: '@root@research-interests/normative-connectomes/'
+  - title: Connectomic DBS book
     url: '@root@research-interests/the-book/'
+- title: Publications
+  url: '@root@research-interests/publications/'
+  children:
   - title: Publications
     url: '@root@research-interests/publications/'
   - title: Posters
     url: '@root@research-interests/posters/'
   - title: Videos & Talks
     url: '@root@research-interests/videos-talks/'
-  - title: Deep Brain Stimulation
-    url: '@root@research-interests/deep-brain-stimulation/'
-  - title: Normative Connectomes
-    url: '@root@research-interests/normative-connectomes/'
-  - title: STIMU-LATTE
-    url: '@root@research-interests/stimu-latte/'
-- title: Updates
-  url: '@root@blog/'
-- title: Internal
-  url: '@root@internal/'
+- title: People
+  url: '@root@about-us/about-us/'
   children:
-  - title: Lab Manual
-    url: '@root@internal/onboarding/'
-  - title: Links
-    url: '@root@internal/links/'
-  - title: Events
-    url: '@root@internal/events/'
+  - title: About the lab
+    url: '@root@about-us/'
+  - title: Team
+    url: '@root@about-us/about-us/'
+  - title: Jobs
+    url: '@root@about-us/jobs/'
+- title: Community
+  url: '@root@research-interests/stimu-latte/'
+  children:
+  - title: Stimu-Latte journal club
+    url: '@root@research-interests/stimu-latte/'
+  - title: Stimulating Brains podcast
+    url: http://www.stimulatingbrains.org
+  - title: Imaging meeting
+    url: '@root@internal/events/categories/imaging-meeting/'
+- title: News
+  url: '@root@blog/'
 logo: media/0a5bca3040a8-netstim_institute_logo_en-1.png
 logo_alt: Network Stimulation Laboratory
 footer:
@@ -43,3 +46,10 @@ footer:
   url: '@root@impressum-datenschutzerklarung/'
 - title: Privacy Policy
   url: '@root@privacy-policy/'
+members:
+- title: Lab manual
+  url: '@root@internal/onboarding/'
+- title: Links
+  url: '@root@internal/links/'
+- title: Events
+  url: '@root@internal/events/'

@@ -15,9 +15,9 @@
       {{- end -}}
       {{- $sizes = $sizes | append (printf "%s %dw" $build.RelPermalink $max) -}}
       {{- $display := $width | default $max -}}
-      <img{{ with $.class }} class="{{ . }}"{{ end }} src="{{ $build.RelPermalink }}" srcset="{{ delimit $sizes ", " }}" sizes="{{ if $.sizes }}{{ $.sizes }}{{ else if le $display 190 }}{{ $display }}px{{ else }}(max-width: 767px) calc(100vw - 48px), {{ math.Min $display 840 | int }}px{{ end }}" alt="{{ $alt }}" width="{{ $display }}" height="{{ math.Round (div (mul (float $display) (float .Height)) (float .Width)) | int }}" loading="lazy" decoding="async" data-original="{{ $source }}">
+      <img{{ with $.class }} class="{{ . }}"{{ end }} src="{{ $build.RelPermalink }}" srcset="{{ delimit $sizes ", " }}" sizes="{{ if $.sizes }}{{ $.sizes }}{{ else if le $display 190 }}{{ $display }}px{{ else }}(max-width: 767px) calc(100vw - 48px), {{ math.Min $display 840 | int }}px{{ end }}" alt="{{ $alt }}" width="{{ $display }}" height="{{ math.Round (div (mul (float $display) (float .Height)) (float .Width)) | int }}" {{ if $.eager }}loading="eager" fetchpriority="high"{{ else }}loading="lazy"{{ end }} decoding="async" data-original="{{ $source }}">
     {{- else -}}
-      <img{{ with $.class }} class="{{ . }}"{{ end }} src="{{ .RelPermalink }}" alt="{{ $alt }}"{{ if $width }} width="{{ $width }}"{{ end }} loading="lazy" decoding="async" data-original="{{ $source }}">
+      <img{{ with $.class }} class="{{ . }}"{{ end }} src="{{ .RelPermalink }}" alt="{{ $alt }}"{{ if $width }} width="{{ $width }}"{{ end }} {{ if $.eager }}loading="eager" fetchpriority="high"{{ else }}loading="lazy"{{ end }} decoding="async" data-original="{{ $source }}">
     {{- end -}}
   {{- else -}}
     {{- errorf "Missing image resource %s" . -}}

@@ -2,10 +2,12 @@
   {{ range $i, $item := .items }}
     {{ $href := partial "url.html" $item.url }}
     {{ $active := eq $.page.RelPermalink $href }}
+    {{ $inside := $active }}{{ range $item.children }}{{ if eq $.page.RelPermalink (partial "url.html" .url) }}{{ $inside = true }}{{ end }}{{ end }}
+    {{ $external := hasPrefix $href "http" }}
     {{ $id := printf "%s-%d" $.id $i }}
-    <li class="nav-item">
+    <li class="nav-item{{ if $inside }} is-current{{ end }}">
       <div class="nav-row">
-        <a href="{{ $href }}"{{ if $active }} aria-current="page"{{ end }}>{{ $item.title }}</a>
+        <a href="{{ $href }}"{{ if $active }} aria-current="page"{{ end }}{{ if $external }} rel="noopener"{{ end }}>{{ $item.title }}{{ if $external }}<span class="ext" aria-hidden="true"> ↗</span>{{ end }}</a>
         {{ with $item.children }}<button class="icon-button disclosure" type="button" data-disclosure aria-label="{{ $item.title }} pages" aria-controls="{{ $id }}" aria-expanded="false">{{ partial "icon.html" "chevron" }}</button>{{ end }}
       </div>
       {{ with $item.children }}
