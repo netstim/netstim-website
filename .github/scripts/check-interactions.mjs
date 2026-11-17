@@ -23,8 +23,8 @@ try {
       await page.keyboard.press('Shift+Tab');
       assert(await menu.evaluate(el => el.contains(document.activeElement)));
       assert.equal(await menu.evaluate(() => getComputedStyle(document.documentElement).overflow), 'hidden');
-      await menu.getByRole('button', {name:'Science pages'}).click();
-      assert(await menu.getByRole('link', {name:'Publications', exact:true}).isVisible());
+      await menu.getByRole('button', {name:'Publications pages'}).click();
+      assert(await menu.getByRole('link', {name:'Posters', exact:true}).isVisible());
       await page.keyboard.press('Escape');
       assert.equal(await menu.isVisible(), false);
       assert(await menuButton.evaluate(el => el === document.activeElement));

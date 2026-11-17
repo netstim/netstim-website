@@ -1,5 +1,9 @@
 <header class="site-header">
-  {{ if site.Params.preview }}<p class="preview-banner">Website preview</p>{{ end }}
+  {{ if site.Params.preview }}
+  <div class="preview-banner" role="note">
+    <span><strong>Under construction:</strong> a preview of the new netstim website. The official site is <a href="{{ site.Params.liveSite }}">www.netstim.org</a>.</span>
+  </div>
+  {{ end }}
   <div class="wrap header-inner">
     <a class="site-logo" href="{{ "" | relURL }}" aria-label="{{ hugo.Data.nav.logo_alt }}">
       {{ with resources.Get hugo.Data.nav.logo }}
