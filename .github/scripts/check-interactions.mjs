@@ -26,7 +26,7 @@ try {
       await menu.getByRole('button', {name:'Publications pages'}).click();
       assert(await menu.getByRole('link', {name:'Posters', exact:true}).isVisible());
       await page.keyboard.press('Escape');
-      assert.equal(await menu.isVisible(), false);
+      await menu.waitFor({state:'hidden', timeout:5000});
       assert(await menuButton.evaluate(el => el === document.activeElement));
 
       await page.getByRole('button', {name:'Switch to dark mode'}).click();
