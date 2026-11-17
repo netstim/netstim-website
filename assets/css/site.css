@@ -1,16 +1,26 @@
-.wrap { width: min(calc(100% - 2 * var(--gutter)), var(--container)); margin-inline: auto; }
+.wrap { width: min(100% - 2 * var(--gut), var(--container)); margin-inline: auto; }
 .preview-banner { text-align: center; padding: 4px 12px; color: var(--muted); background: var(--surface); border-bottom: 1px solid var(--line); font-size: 13px; }
 .icon-button {
   display: grid; place-items: center; flex: 0 0 auto; width: 44px; height: 44px;
-  appearance: none; border: 0; border-radius: 6px; padding: 0; background: transparent;
+  appearance: none; border: 0; border-radius: var(--r-sm); padding: 0; background: transparent; color: var(--ink);
 }
 @media (hover: hover) {
-  .icon-button:hover { background: var(--surface); color: var(--action); }
+  .icon-button:hover { background: var(--surface); }
 }
 dialog {
-  color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 12px;
+  color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: var(--r-md);
   padding: 0; max-height: min(740px, calc(100dvh - 32px)); overscroll-behavior: contain;
 }
-dialog::backdrop { background: rgb(12 18 23 / .48); }
+dialog::backdrop { background: rgb(12 16 19 / .32); }
+[data-theme="dark"] dialog::backdrop { background: rgb(0 0 0 / .54); }
 .dialog-top { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
 .dialog-top h2 { font-size: 22px; }
+/* plain text action (an underlined link with an arrow) */
+.text-action {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 44px; color: var(--ink); font-size: 15px; font-weight: 500;
+  text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 5px;
+}
+.text-action svg { width: 16px; height: 16px; }
+@media (hover: hover) {
+  .text-action:hover { text-decoration-color: currentColor; text-decoration-thickness: 1px; }
+}

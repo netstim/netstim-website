@@ -1,0 +1,24 @@
+{{- /* An inner page's head, on the page's own ground (the old grey title band is gone): the breadcrumb,
+       the title, a post's date, and the sibling pages the old sidebar listed, as one row of links. */ -}}
+<header class="page-head">
+  <div class="wrap">
+    {{ with .Params.crumbs }}{{ if gt (len .) 1 }}
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          {{ range . }}<li>{{ if .url }}<a href="{{ partial "url.html" .url }}">{{ .title }}</a>{{ else }}<span aria-current="page">{{ .title }}</span>{{ end }}</li>{{ end }}
+        </ol>
+      </nav>
+    {{ end }}{{ end }}
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.lead }}<p class="page-lead">{{ . }}</p>{{ end }}
+    {{ if eq .Params.family "post" }}<p class="page-head__meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time></p>{{ end }}
+    {{ with .Params.related }}
+      <nav class="section-nav" aria-label="In this section">
+        <ul>{{ range . }}
+          {{ $href := partial "url.html" .url }}
+          <li><a href="{{ $href }}"{{ if eq $href $.RelPermalink }} aria-current="page"{{ end }}>{{ .title }}</a></li>
+        {{ end }}</ul>
+      </nav>
+    {{ end }}
+  </div>
+</header>

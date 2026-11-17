@@ -1,3 +1,22 @@
-.site-footer { border-top: 1px solid var(--line); background: var(--surface); padding-block: 22px; }
-.site-footer nav { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 13px; color: var(--muted); }
-.site-footer a { display: inline-flex; align-items: center; min-height: 44px; color: var(--ink); }
+/* The short footer (layouts/_partials/footer.html): one hairline, the logo and three links on one row,
+   the legal line under a second hairline. Never a copy of the menu. */
+.site-footer { margin-top: 0; border-top: 1px solid var(--line); padding: 48px 0 32px; font-size: 14px; }
+.footer-main { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 48px; }
+.footer-logo { display: inline-flex; min-height: 44px; align-items: center; }
+.footer-logo img { height: 32px; width: auto; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 0 32px; list-style: none; margin: 0; padding: 0; }
+.site-footer a:not(.footer-logo) { display: inline-flex; align-items: center; min-height: 32px; color: var(--muted); text-decoration: none; }
+.footer-legal { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0 24px; margin-top: 24px; padding-top: 12px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); }
+.footer-legal .footer-links { gap: 0 24px; }
+@media (hover: hover) {
+  .site-footer a:not(.footer-logo):hover { color: var(--ink); }
+}
+@media (max-width: 1023px) {
+  .site-footer a:not(.footer-logo) { min-height: 44px; }
+}
+@media (max-width: 639px) {
+  .site-footer { padding: 32px 0 calc(16px + env(safe-area-inset-bottom)); }
+  .footer-main { display: grid; gap: 8px; }
+  .footer-main .footer-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 24px; }
+  .footer-legal { display: grid; padding-top: 16px; }
+}

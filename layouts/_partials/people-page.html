@@ -1,0 +1,46 @@
+{{- /* The People page (data/people.yaml): one grid of portrait cards, the current members in the source's
+       order. A card opens its profile in a dialog, the photo zooming from the card to the left of the panel
+       and the text on the right (assets/js/main/people.js). Then the alumni, as the source has them. */ -}}
+{{ $sections := hugo.Data.people }}
+{{ $people := slice }}
+{{ range $sections }}{{ if and (eq .mode "wide") (not (in .body "column-1-5")) }}
+  {{ $body := .body }}
+  {{ with findRESubmatch `<h2>(.*?)</h2>` $body 1 }}
+    {{ $heading := index (index . 0) 0 }}
+    {{ $name := plainify (index (index . 0) 1) }}
+    {{ $img := "" }}{{ $credit := "" }}
+    {{ with findRESubmatch `<netstim-image data='([^']*)'` $body 1 }}{{ $img = transform.Unmarshal (htmlUnescape (index (index . 0) 1)) }}{{ end }}
+    {{ with findRESubmatch `(?s)<small class="attribution">(.*?)</small>` $body 1 }}{{ $credit = index (index . 0) 1 }}{{ end }}
+    {{ $text := replace $body $heading "" 1 }}
+    {{ $text = replaceRE `(?s)<div class="image-block"><netstim-image[^>]*/>(?:<small[^>]*>.*?</small>)?</div>` "" $text }}
+    {{ $people = $people | append (dict "name" $name "id" (anchorize $name) "img" $img "credit" $credit "text" $text) }}
+  {{ end }}
+{{ end }}{{ end }}
+<div class="wrap page-body">
+  <ul class="people-grid" aria-label="Current members">
+  {{ range $people }}
+    <li><button type="button" class="person-card" data-person="person-{{ .id }}" aria-haspopup="dialog">
+      {{ if .img }}<span class="portrait-frame">{{ partial "picture.html" (merge .img (dict "alt" "" "sizes" "(max-width: 639px) 45vw, 220px")) }}</span>
+      {{ else }}{{ $initials := "" }}{{ range first 2 (split .name " ") }}{{ $initials = print $initials (substr . 0 1) }}{{ end }}<span class="portrait-frame portrait-frame--initials" aria-hidden="true">{{ $initials }}</span>{{ end }}
+      <span class="person-card__name">{{ .name }}</span>
+    </button></li>
+  {{ end }}
+  </ul>
+  {{ range $people }}
+  <dialog class="person-dialog" id="person-{{ .id }}" aria-labelledby="person-{{ .id }}-name" tabindex="-1" autofocus>
+    <form method="dialog" class="person-dialog__close"><button class="icon-button" aria-label="Close">{{ partial "icon.html" "close" }}</button></form>
+    <div class="person-dialog__photo">
+      {{ if .img }}<span class="portrait-frame">{{ partial "picture.html" (merge .img (dict "alt" (printf "Portrait of %s" .name) "sizes" "(max-width: 767px) 60vw, 380px")) }}</span>
+      {{ else }}{{ $initials := "" }}{{ range first 2 (split .name " ") }}{{ $initials = print $initials (substr . 0 1) }}{{ end }}<span class="portrait-frame portrait-frame--initials" aria-hidden="true">{{ $initials }}</span>{{ end }}
+      {{ with .credit }}<p class="person-dialog__credit">{{ . | safeHTML }}</p>{{ end }}
+    </div>
+    <div class="person-dialog__text prose">
+      <h2 id="person-{{ .id }}-name">{{ .name }}</h2>
+      {{ partial "render.html" .text }}
+    </div>
+  </dialog>
+  {{ end }}
+</div>
+{{ range $sections }}{{ if or (eq .mode "main") (in .body "column-1-5") }}
+  <div class="wrap page-body prose{{ if in .body "column-1-5" }} people-alumni{{ end }}">{{ partial "render.html" ($.RenderString (dict "display" "block") .body) }}</div>
+{{ end }}{{ end }}

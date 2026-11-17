@@ -2,6 +2,7 @@
 title: People
 url: /about-us/about-us/
 family: people
+lead: We are a scientific group with interest in neuroimaging, methods development, movement disorders and invasive brain stimulation.
 crumbs:
 - title: Home
   url: '@root@'

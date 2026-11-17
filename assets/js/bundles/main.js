@@ -4,3 +4,4 @@ import '../main/search.js';
 import '../main/videos.js';
 import '../main/gallery.js';
 import '../main/publications.js';
+import '../main/people.js';

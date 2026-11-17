@@ -20,6 +20,38 @@ modified: '2019-07-10T17:55:52+00:00'
 canonical: /about-us/jobs/
 ---
 
+<div class="columns"><div class="column column-1-1">
+<p>Thank you very much for your interest in our group.</p>
+<p>Our research focusses on the following central questions:</p>
+<ul>
+<li>How does the human brain respond to focal stimuli applied by invasive and noninvasive neuromodulation methods
+<ul>
+<li>Specifically, we study the effects of deep brain stimulation on small brain nuclei</li>
+</ul>
+</li>
+<li>How do distributed brain networks respond to such stimuli
+<ul>
+<li>We use noninvasive techniques like resting-state fMRI and diffusion-weighted MRI to address this question</li>
+</ul>
+</li>
+<li>How does DBS electrode placement affect
+<ul>
+<li>Clinical</li>
+<li>Neural</li>
+<li>or behavioral response</li>
+</ul>
+</li>
+</ul>
+<p>In second line, we’re highly interested in structural and functional connectomics as well as detailed anatomical definitions of the human brain.</p>
+
+
+<div class="image-block"><netstim-image data='{"src":"media/12be6d1b284a-group_cut-1536x604.png","original":"https://www.netstim.org/wp-content/uploads/2025/12/group_cut-705x277.png","alt":"","width":705}'/><small class="attribution">©Michael Wodak/MedizinFotoKöln</small></div>
+<p>Some of our lab members take part in developing the open-source toolbox Lead-DBS – which has <a href="http://www.lead-dbs.org/about">become a multi-institutional endeavor</a>.</p>
+
+<div class="action-row centered-action"><a aria-label="Find out more about Lead-DBS" class="action external" href="http://www.lead-dbs.org" rel="noopener noreferrer" target="_blank">Find out more about Lead-DBS</a></div></div></div>
+
+---
+
 <div class="columns"><div class="column column-1-1"><h2>Currently no open posts</h2>
 </div></div>
 

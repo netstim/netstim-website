@@ -1,30 +1,47 @@
-.page-content :where(p, ul, ol, dl, blockquote, figure, pre, .image-block, .video-embed, .columns, .gallery, .slideshow, .icon-box) + :where(p, ul, ol, dl, blockquote, figure, pre, .image-block, .video-embed, .columns, .gallery, .slideshow, .icon-box) { margin-top: 14px; }
-.page-content :where(h2,h3,h4,h5,h6) + :where(p,ul,ol,dl,div,blockquote,pre) { margin-top: 14px; }
-.page-content :where(p,ul,ol,dl,div,blockquote,pre) + :where(h2,h3,h4,h5,h6) { margin-top: 27px; }
-.page-content :where(p + p) { margin-top: 10px; }
-.page-content :where(ul, ol):not([class]) { padding-left: 1.4em; }
-.page-content :where(ul, ol):not([class]) li + li { margin-top: 3px; }
-.page-content hr { display: block; border: 0; border-top: 1px solid var(--line); margin: 34px 0; }
-.page-content blockquote { border-left: 2px solid var(--line); padding-left: 18px; }
-.page-content pre { max-width: 100%; overflow: auto; background: var(--surface); padding: 12px; white-space: pre-wrap; }
-.page-content table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; }
-.page-content :where(th,td) { border: 1px solid var(--line); padding: 8px 12px; }
-.columns { --gap: 6%; display: flex; align-items: start; gap: var(--gap); flex-wrap: wrap; }
-.column { flex-shrink: 0; min-width: 0; max-width: 100%; width: var(--fraction, 100%); }
-.column-1-2 { --fraction: 47%; }
-.column-1-3 { --fraction: 29.3333%; }
-.column-2-3 { --fraction: 64.6667%; }
-.column-1-4 { --fraction: 20.5%; }
-.column-3-4 { --fraction: 73.5%; }
-.column-1-5 { --fraction: 15.2%; }
-.column-2-5 { --fraction: 36.4%; }
-.column-3-5 { --fraction: 57.6%; }
-.icon-box { border-bottom: 1px solid var(--line); padding-block: 12px; }
-.icon-heading { margin-bottom: 10px; }
-.icon-box a { overflow-wrap: anywhere; }
-@media (max-width: 767px) {
-  .columns { display: grid; grid-template-columns: minmax(0,1fr); gap: 20px; }
-  .column { width: auto; }
-  .page-content hr { margin-block: 26px; }
+/* Imported page content (.prose): reading type, the source's column rows, images, lists and tables.
+   Text that stands alone reads at a 672px measure; the source's column rows span the canvas with the
+   shared split gap and stack on a phone in source order. */
+.prose { font-size: var(--t-read); line-height: 1.65; overflow-wrap: break-word; }
+.page-body > :is(p, ul, ol, dl, blockquote, h2, h3, h4, h5, h6, pre, table, .action-row, .post-item, .author-box, .comments, .share, .pagination, .archive-subtitle) { max-width: var(--measure); }
+.prose :where(p, ul, ol, dl, blockquote, figure, pre, table, .image-block, .video-embed, .gallery, .slideshow, .icon-box) + :where(p, ul, ol, dl, blockquote, figure, pre, table, .image-block, .video-embed, .columns, .gallery, .slideshow, .icon-box) { margin-top: 20px; }
+.prose :where(p + p) { margin-top: 16px; }
+.prose :where(h2, h3, h4, h5, h6) + * { margin-top: 20px; }
+.prose :where(h3, h4, h5, h6) + * { margin-top: 12px; }
+.prose * + h2 { margin-top: 64px; }
+.prose * + :where(h3, h4, h5, h6) { margin-top: 40px; }
+.prose > .columns + .columns { margin-top: 48px; }
+.prose :where(ul, ol):not([class]) { padding-left: 1.3em; }
+.prose :where(ul, ol):not([class]) li + li { margin-top: 6px; }
+.prose li::marker { color: var(--muted); }
+.prose hr { display: block; border: 0; border-top: 1px solid var(--line); margin: var(--section) 0; }
+.prose blockquote { border-left: 2px solid var(--line-strong); padding-left: 20px; color: var(--muted); }
+.prose pre { max-width: 100%; overflow: auto; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-sm); padding: 16px; font-size: 14px; white-space: pre-wrap; }
+.prose table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; font-size: 15px; }
+.prose :where(th, td) { border-bottom: 1px solid var(--line); padding: 10px 12px; text-align: left; vertical-align: top; }
+.prose th { font-weight: 600; }
+.prose h2 strong, .prose h3 strong { font-weight: inherit; }
+.columns { --gap: var(--split-gap); display: flex; flex-wrap: wrap; align-items: start; gap: 40px var(--gap); }
+.column { flex: none; min-width: 0; width: calc(var(--f, 1) * (100% + var(--gap)) - var(--gap)); }
+.column-1-2 { --f: .5; }
+.column-1-3 { --f: .33333; }
+.column-2-3 { --f: .66667; }
+.column-1-4 { --f: .25; }
+.column-3-4 { --f: .75; }
+.column-1-5 { --f: .2; }
+.column-2-5 { --f: .4; }
+.column-3-5 { --f: .6; }
+.column > :first-child { margin-top: 0; }
+@media (min-width: 768px) {
+  .columns:has(> .column > .image-block:only-child) { align-items: center; }
 }
+.icon-box { border-top: 1px solid var(--line); padding-block: 20px; }
+.icon-heading { margin-bottom: 8px; }
+.icon-box a { overflow-wrap: anywhere; }
 .text-centered { text-align: center; }
+@media (max-width: 767px) {
+  .columns { flex-direction: column; flex-wrap: nowrap; align-items: stretch; gap: 28px; }
+  .column { width: auto; }
+}
+.title-links { display: flex; gap: 8px; }
+.title-links a { display: inline-grid; place-items: center; min-width: 44px; min-height: 44px; }
+.title-links img { width: 16px; height: 16px; }

@@ -1,1 +1,31 @@
-{{ define "main" }}{{ partial "content-page.html" . }}{{ end }}
+{{ define "main" }}
+{{- /* The home page: the source's sections in their order, each on the page's rhythm. The first is the
+       greeting beside the illustration; the old sidebar's Latest Updates follow it as a section of rows. */ -}}
+{{ $parts := split (partial "render.html" .Content) "<hr>" }}
+<main id="main" tabindex="-1" class="home">
+  {{ range $i, $part := $parts }}
+    <section class="home-section{{ if eq $i 0 }} home-opening{{ end }}">
+      {{ if eq $i 0 }}{{ $part = replaceRE `(?s)<h2>(.*?)</h2>` `<h1 class="home-display">$1</h1>` $part 1 }}{{ end }}
+      <div class="wrap prose">{{ $part | safeHTML }}</div>
+    </section>
+    {{ if eq $i 0 }}
+      <section class="home-section home-updates" aria-labelledby="updates-h">
+        <div class="wrap">
+          <div class="section-head">
+            <h2 id="updates-h">Latest Updates</h2>
+            <a class="text-action" href="{{ "blog/" | relURL }}">All updates {{ partial "icon.html" "arrow" }}</a>
+          </div>
+          <ul class="update-grid">
+          {{ range hugo.Data.updates }}
+            <li><a class="update-card" href="{{ partial "url.html" .url }}">
+              <span class="update-card__media">{{ partial "picture.html" (merge .image (dict "sizes" "(max-width: 639px) 72px, 120px")) }}</span>
+              <span class="update-card__text"><span class="update-card__title">{{ .title }}</span><span class="update-card__date">{{ index (split .time " - ") 0 }}</span></span>
+            </a></li>
+          {{ end }}
+          </ul>
+        </div>
+      </section>
+    {{ end }}
+  {{ end }}
+</main>
+{{ end }}

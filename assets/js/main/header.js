@@ -6,7 +6,7 @@ const desktop = document.querySelector('.desktop-nav');
 const pointer = matchMedia('(hover: hover) and (pointer: fine)');
 
 wireDialog(phone, [menu]);
-matchMedia('(min-width: 800px)').addEventListener('change', event => {
+matchMedia('(min-width: 900px)').addEventListener('change', event => {
   if (event.matches && phone.open) phone.close();
 });
 

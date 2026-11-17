@@ -1,25 +1,25 @@
-<main id="main" tabindex="-1">
-  {{ partial "title-band.html" . }}
+<main id="main" tabindex="-1" class="page">
+  {{ partial "page-head.html" . }}
+  {{ if eq .Params.family "people" }}{{ partial "people-page.html" . }}{{ else }}
   {{ $sections := .Params.sections }}
   {{ $family := .Params.family }}
-  {{ if in (slice "people" "posters" "videos") $family }}{{ $sections = index hugo.Data $family }}{{ end }}
+  {{ if in (slice "posters" "videos") $family }}{{ $sections = index hugo.Data $family }}{{ end }}
   {{ if eq $family "events" }}{{ $sections = index hugo.Data.events .Params.url }}{{ end }}
-  {{ if not $sections }}
-    {{ $mode := cond (.Params.sidebar | default false) "sidebar" "wide" }}
-    {{ $sections = slice (dict "mode" $mode "rendered" .Content) }}
-  {{ end }}
-  {{ range $sections }}
-    <div class="wrap page-grid page-grid--{{ .mode }}">
-      <div class="page-content">
-        {{ if $.Params.include_new_posts }}{{ partial "new-posts.html" $ }}{{ end }}
-        {{ if isset . "rendered" }}
-          {{ partial "render.html" .rendered }}
-        {{ else }}
-          {{ partial "render.html" ($.RenderString (dict "display" "block") .body) }}
-        {{ end }}
-      </div>
-      {{ if eq .mode "sidebar" }}{{ partial "sidebar.html" $ }}{{ end }}
+  {{ if not $sections }}{{ $sections = slice (dict "rendered" .Content) }}{{ end }}
+  {{ range $i, $s := $sections }}
+    {{ with $s }}
+    <div class="wrap page-body prose">
+      {{ if $.Params.include_new_posts }}{{ partial "new-posts.html" $ }}{{ end }}
+      {{ if isset . "rendered" }}
+        {{ $html := .rendered }}{{ if eq $i 0 }}{{ $html = partial "strip-title.html" (dict "html" (string $html) "title" $.Title) }}{{ end }}
+        {{ partial "render.html" $html }}
+      {{ else }}
+        {{ $html := $.RenderString (dict "display" "block") .body }}{{ if eq $i 0 }}{{ $html = partial "strip-title.html" (dict "html" (string $html) "title" $.Title) }}{{ end }}
+        {{ partial "render.html" $html }}
+      {{ end }}
     </div>
+    {{ end }}
+  {{ end }}
   {{ end }}
   {{ if .Params.comment_anchor }}<span id="respond"></span>{{ end }}
 </main>

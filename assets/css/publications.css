@@ -12,5 +12,5 @@
 }
 .bibliography-controls button:disabled { color: var(--muted); text-decoration: none; }
 .family-publications .gallery a { align-content: start; }
-.family-publications .page-content > h2 { text-transform: lowercase; }
-.family-publications .page-content > h2::first-letter { text-transform: uppercase; }
+.family-publications .page-body > h2 { text-transform: lowercase; }
+.family-publications .page-body > h2::first-letter { text-transform: uppercase; }

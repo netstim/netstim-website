@@ -21,7 +21,9 @@ OLD_CHROME = (
     ".avia-slideshow-controls,.avia-content-slider-navigation,.post_author_timeline,"
     ".previous_page,.next_page,.big-prev-fake,.comment-respond,.hr-invisible,svg,script,style,input"
 )
-NEW_CHROME = ".citation-list,.bibliography-controls,.video-embed,.page-step,script,style"
+# The redesign's own additions: the People portrait index (a second view of the profiles), a post's date in
+# its head and the home updates' "All updates" link.
+NEW_CHROME = ".citation-list,.bibliography-controls,.video-embed,.page-step,.people-index,.page-head__meta,.section-head .text-action,script,style"
 TOKEN = re.compile(r"\w+|[^\w\s]")
 MARKUP_NOISE = re.compile(r"</?(?:li|i)>")
 
@@ -75,9 +77,18 @@ def strip_old(root):
 def record(file, route, prefix, original):
     page = soup(file)
     container = page.select_one("#main")
-    blocks = container.select(".container_wrap .content" if original else ".page-content")
-    sidebar = container.select_one(".inner_sidebar" if original else ".sidebar")
-    blocks += [sidebar] if sidebar else []
+    if original:
+        blocks = container.select(".container_wrap .content")
+        sidebar = container.select_one(".inner_sidebar")
+        if sidebar and route != "/":
+            # The redesign keeps Latest Updates on the home page only (and on Updates itself).
+            for widget in sidebar.select(".newsbox"):
+                widget.decompose()
+        blocks += [sidebar] if sidebar else []
+    else:
+        # Body first, then what stood in the old sidebar: the home updates, the section's sibling pages.
+        blocks = container.select(".page-body, .home-section:not(.home-updates)")
+        blocks += container.select(".home-updates, .page-head .section-nav")
     text = []
     links = Counter()
     images = Counter()
@@ -113,8 +124,8 @@ def record(file, route, prefix, original):
             value = image.get("src" if original else "data-original")
             if value and not value.startswith("data:"):
                 images[url_of(route, value, prefix)] += 1
-    band = page.select_one(".title_container .main-title" if original else ".title-band h1")
-    return {"text": text_of(band) + text, "links": dict(links), "images": dict(images), "embeds": dict(embeds)}
+    band = page.select_one(".title_container .main-title" if original else ".page-head h1")
+    return {"text": (text_of(band) if band else []) + text, "links": dict(links), "images": dict(images), "embeds": dict(embeds)}
 
 
 def diff(a, b):
