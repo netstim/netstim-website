@@ -24,12 +24,12 @@ canonical: /
 
 ---
 
-<div class="image-block"><a aria-label="ws_header" class="icon-link" href="@root@research-interests/the-book/"><netstim-image data='{"src":"media/89ab40a1f1ab-ws_header.png","original":"https://www.netstim.org/wp-content/uploads/2021/11/ws_header.png","alt":"","width":1500}'/></a></div>
+<div class="image-block"><a aria-label="ws_header" href="@root@research-interests/the-book/"><netstim-image data='{"src":"media/89ab40a1f1ab-ws_header.png","original":"https://www.netstim.org/wp-content/uploads/2021/11/ws_header.png","alt":"","width":1500}'/></a></div>
 
 ---
 
 <div class="columns"><div class="column column-1-1">
-<div class="image-block"><a aria-label="IMG_2207" class="icon-link" href="@root@about-us/"><netstim-image data='{"src":"media/c56653209355-IMG_2207-1-1536x977.png","original":"https://www.netstim.org/wp-content/uploads/2025/05/IMG_2207-1-1030x655.png","alt":"","width":1030}'/></a></div>
+<div class="image-block"><a aria-label="IMG_2207" href="@root@about-us/"><netstim-image data='{"src":"media/c56653209355-IMG_2207-1-1536x977.png","original":"https://www.netstim.org/wp-content/uploads/2025/05/IMG_2207-1-1030x655.png","alt":"","width":1030}'/></a></div>
 
 <div class="action-row centered-action"><a aria-label="About Us" class="action" href="@root@about-us/" rel="noopener noreferrer" target="_blank">About Us</a></div></div></div>
 
@@ -68,7 +68,7 @@ Lead-DBS is a toolbox facilitating Deep Brain Stimulation electrode reconstruct
 In it, we interview stimulating researchers about the past, present and future of Neuromodulation, as well as feature talks by senior colleagues and rising stars in the field.</p>
 
 
-<div class="image-block"><a aria-label="StimBrains_Logo_Vertical_Portfolio_transparentBG" class="icon-link" href="http://www.stimulatingbrains.org" rel="noopener noreferrer" target="_blank"><netstim-image data='{"src":"media/a473d51a1584-StimBrains_Logo_Vertical_Portfolio_transparentBG-1536x676.png","original":"https://www.netstim.org/wp-content/uploads/2025/05/StimBrains_Logo_Vertical_Portfolio_transparentBG-1030x453.png","alt":"","width":1030}'/></a></div>
+<div class="image-block"><a aria-label="StimBrains_Logo_Vertical_Portfolio_transparentBG" href="http://www.stimulatingbrains.org" rel="noopener noreferrer" target="_blank"><netstim-image data='{"src":"media/a473d51a1584-StimBrains_Logo_Vertical_Portfolio_transparentBG-1536x676.png","original":"https://www.netstim.org/wp-content/uploads/2025/05/StimBrains_Logo_Vertical_Portfolio_transparentBG-1030x453.png","alt":"","width":1030}'/></a></div>
 
 <div class="action-row centered-action"><a aria-label="Stimulating Brains: Tune in" class="action external" href="http://www.stimulatingbrains.org" rel="noopener noreferrer" target="_blank">Stimulating Brains: Tune in</a></div>
 </div></div>
@@ -78,7 +78,7 @@ In it, we interview stimulating researchers about the past, present and future o
 <div class="columns"><div class="column column-1-1"><h2>STIMU-LATTE: THE JOURNAL CLUB</h2>
 
 
-<div class="image-block"><a aria-label="Stimulate_logo" class="icon-link" href="@root@research-interests/stimu-latte/" rel="noopener noreferrer" target="_blank"><netstim-image data='{"src":"media/5d84ece1bc6e-Stimulate_logo-2-1500x430.png","original":"https://www.netstim.org/wp-content/uploads/2025/10/Stimulate_logo-2-1500x430.png","alt":"","width":1500}'/></a></div>
+<div class="image-block"><a aria-label="Stimulate_logo" href="@root@research-interests/stimu-latte/" rel="noopener noreferrer" target="_blank"><netstim-image data='{"src":"media/5d84ece1bc6e-Stimulate_logo-2-1500x430.png","original":"https://www.netstim.org/wp-content/uploads/2025/10/Stimulate_logo-2-1500x430.png","alt":"","width":1500}'/></a></div>
 
 <p>Additionally, we run <strong>Stimu-Latte</strong>, a monthly in-person journal club in Cologne, organised as part of the <strong>Forschungsschwerpunkt Neuromodulation</strong>, which provides a local space for discussion and collaboration, all fueled by coffee!</p>
 </div></div>

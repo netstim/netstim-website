@@ -1,0 +1,9 @@
+{
+  "name": "netstim-website-tools",
+  "private": true,
+  "description": "Browser checks. The Hugo site itself has no npm build dependencies.",
+  "devDependencies": {
+    "axe-core": "4.10.3",
+    "playwright": "1.48.2"
+  }
+}

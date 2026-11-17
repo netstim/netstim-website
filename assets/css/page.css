@@ -30,3 +30,11 @@
   .page-grid--main .page-content, .page-grid--sidebar .page-content { padding-right: 0; }
   .sidebar { display: none; }
 }
+.breadcrumbs { display: block; }
+.breadcrumbs ol, .breadcrumbs li { display: inline; }
+.breadcrumbs li > span[aria-hidden] { margin-inline: 4px; }
+@media (min-width: 768px) {
+  .page-grid--sidebar::before { content: ""; grid-area: 1 / 1; border-right: 1px solid var(--line); pointer-events: none; }
+  .page-grid--sidebar .page-content { grid-area: 1 / 1; align-self: start; }
+  .page-grid--sidebar .sidebar { grid-area: 1 / 2; align-self: start; border-left: 0; }
+}

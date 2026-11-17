@@ -55,3 +55,9 @@ figure img { border-radius: var(--radius); }
 .image-dialog figure { margin-top: 10px; }
 .image-dialog figure img { width: auto; max-height: 62dvh; object-fit: contain; margin-inline: auto; }
 .image-dialog figcaption { margin-top: 10px; text-align: center; color: var(--muted); font-size: 13px; }
+.columns > .column:not(:first-child) > .action-row:only-child .action {
+  color: var(--action); background: transparent; text-decoration: underline;
+}
+[data-theme="dark"] img[data-original*="/ws_header-2-"] {
+  background: #f5f6f7; padding: 8px;
+}

@@ -316,7 +316,12 @@ class Migration:
                 width = tag.get("width")
                 if not width or not str(width).isdigit():
                     width = 0
-                marker(tag, "netstim-image", {"src": storage, "original": original, "alt": alt, "width": int(width), **({"class": "avatar"} if "avatar" in classes else {})})
+                picture = {"src": storage, "original": original, "alt": alt, "width": int(width)}
+                if "avatar" in classes:
+                    picture["class"] = "avatar"
+                if tag.find_parent(class_="gallery"):
+                    picture["sizes"] = "(max-width: 767px) 17vw, 164px"
+                marker(tag, "netstim-image", picture)
                 continue
             if tag.name.startswith("netstim-"):
                 continue
@@ -363,6 +368,8 @@ class Migration:
                 new.append("comment-body")
             if tag.has_attr("_fraction"):
                 new.extend(("column", "column-" + tag["_fraction"]))
+            if re.search(r"\btext-align:\s*center", tag.get("style", "")) and tag.name in {"p", "h2", "h3", "h4", "div"}:
+                new.append("text-centered")
             if any(c.startswith("av-special-heading") for c in classes):
                 new.append("heading-group")
             if classes & {"hr", "hr-invisible"}:
@@ -383,7 +390,8 @@ class Migration:
                 tag.name = "div"
             if tag.name in {"h4","h5","h6"} and "icon-heading" in new:
                 tag.name = "h3"
-            if tag.name == "a" and not tag.get_text(strip=True) and (tag.has_attr("data-av_icon") or attrs.get("aria-label")):
+            if (tag.name == "a" and not tag.get_text(strip=True) and not tag.find(["img", "netstim-image"])
+                    and (tag.has_attr("data-av_icon") or attrs.get("aria-label"))):
                 if tag.get("data-av_icon"):
                     attrs["data-icon"] = tag["data-av_icon"]
                 attrs["aria-label"] = attrs.get("aria-label") or attrs.get("title") or tag.get("desc") or "External link"

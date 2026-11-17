@@ -21,7 +21,7 @@ canonical: /andreas-horn-to-receive-heinz-maier-leibnitz-prize/
 
 <div class="columns"><div class="column column-2-5">
 <div class="image-block"><netstim-image data='{"src":"media/6d63c04697cd-26a52847b2945e1c4747f7bd051ad0b3d1b9af540ba09f5df73c2a84f5ce319b.jpg","original":"https://www.netstim.org/wp-content/uploads/2022/03/26a52847b2945e1c4747f7bd051ad0b3d1b9af540ba09f5df73c2a84f5ce319b-184x300.jpg","alt":"","width":184}'/></div>
-<p><em>Andreas Horn at Harvard Medical School,<br/>
+<p class="text-centered"><em>Andreas Horn at Harvard Medical School,<br/>
 </em><em>March 2022</em></p>
 </div><div class="column column-3-5"><p>We are excited to announce that Andreas Horn will receive one of this years’ Maier-Leibnitz Prizes for his work on connectomic deep brain stimulation.</p>
 

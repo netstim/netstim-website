@@ -1,0 +1,64 @@
+name: Site checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    env:
+      HUGO_VERSION: 0.169.0
+      PREVIEW_URL: https://netstim.github.io/netstim-website/
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+      - name: Install verified Hugo extended
+        run: |
+          cd "$RUNNER_TEMP"
+          base="https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}"
+          deb="hugo_extended_${HUGO_VERSION}_linux-amd64.deb"
+          curl -fsSL -O "$base/$deb" -O "$base/hugo_${HUGO_VERSION}_checksums.txt"
+          grep " $deb\$" "hugo_${HUGO_VERSION}_checksums.txt" | sha256sum -c -
+          sudo dpkg -i "$deb"
+      - name: Build and check production and the Pages subpath
+        run: |
+          hugo --gc --minify
+          HUGO_PARAMS_PREVIEW=true hugo --gc --minify --baseURL "$PREVIEW_URL" --destination "$RUNNER_TEMP/netstim-preview"
+          python3 .github/scripts/check-design.py
+          python3 .github/scripts/check-site.py public
+          python3 .github/scripts/check-site.py "$RUNNER_TEMP/netstim-preview" "$PREVIEW_URL"
+          python3 .github/scripts/check-css-used.py public "$RUNNER_TEMP/netstim-preview"
+          python3 -m venv "$RUNNER_TEMP/netstim-python"
+          "$RUNNER_TEMP/netstim-python/bin/pip" install beautifulsoup4==4.13.5
+          "$RUNNER_TEMP/netstim-python/bin/python" .github/scripts/check-copy.py public
+          "$RUNNER_TEMP/netstim-python/bin/python" .github/scripts/check-copy.py "$RUNNER_TEMP/netstim-preview" --prefix /netstim-website/
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 22
+      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+      - name: Install the locked browser tools
+        run: npm ci && npx playwright install --with-deps chromium webkit
+      - name: Browser and accessibility
+        run: node .github/scripts/check-browser.mjs public https://www.netstim.org/ "$RUNNER_TEMP/netstim-evidence"
+      - name: Browser interactions, including project-subpath search
+        run: |
+          node .github/scripts/check-interactions.mjs public
+          node .github/scripts/check-interactions.mjs "$RUNNER_TEMP/netstim-preview" "$PREVIEW_URL"
+      - name: Enforce the production Content Security Policy
+        run: node tests/test_csp_browser.mjs public
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with:
+          name: browser-evidence
+          path: ${{ runner.temp }}/netstim-evidence
+          if-no-files-found: ignore
