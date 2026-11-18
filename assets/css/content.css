@@ -100,3 +100,22 @@
 @media (max-width: 767px) {
   .prose .jobs-photo img { aspect-ratio: 4 / 3; object-fit: cover; }
 }
+/* datasets (Normative Connectomes): one row each, the cohort as its title, method and citations under it,
+   the downloads at the right; long notes in a disclosure */
+.prose ul.datasets { max-width: var(--figure); margin: 16px 0 0; padding: 0; list-style: none; border-bottom: 1px solid var(--line); }
+.dataset { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 32px; align-items: start; padding: 20px 0; border-top: 1px solid var(--line); }
+.prose .dataset p { margin: 0; }
+.dataset__title { font-size: 18px; font-weight: 500; letter-spacing: -.015em; }
+.dataset__meta { margin-top: 4px !important; color: var(--muted); font-size: 14px; line-height: 1.5; }
+.dataset__meta a { color: inherit; }
+.dataset__links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px 16px; max-width: 280px; font-size: 14px; font-weight: 500; }
+.dataset__links a { display: inline-flex; align-items: center; min-height: 32px; color: var(--ink); text-decoration-color: var(--line-strong); }
+.dataset__links a::after { content: "↗" / ""; margin-left: 4px; color: var(--muted); }
+.dataset__details { margin-top: 8px; font-size: 14px; color: var(--muted); }
+.dataset__details summary { display: inline-flex; align-items: center; min-height: 32px; color: var(--ink); font-weight: 500; cursor: pointer; }
+.dataset__details[open] summary { margin-bottom: 4px; }
+@media (max-width: 767px) {
+  .dataset { grid-template-columns: minmax(0, 1fr); }
+  .dataset__links { justify-content: flex-start; max-width: none; }
+  .dataset__links a { min-height: 44px; }
+}

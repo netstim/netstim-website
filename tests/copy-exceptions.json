@@ -2814,6 +2814,261 @@
         "context": "normative connectomes normative connectomes since 2014"
       },
       {
+        "before": "list of currently",
+        "after": "",
+        "context": "leadsuite . io ) list of currently available connectomes structural normative"
+      },
+      {
+        "before": "normative connectomes",
+        "after": "19 subjects",
+        "context": "currently available connectomes structural normative connectomes structural group connectome of"
+      },
+      {
+        "before": "of 19 subjects [",
+        "after": "·",
+        "context": "connectomes structural group connectome of 19 subjects [ gibbs - tracker ]"
+      },
+      {
+        "before": "] (",
+        "after": "·",
+        "context": "[ gibbs - tracker ] ( horn 2013 ) ["
+      },
+      {
+        "before": ") [ direct",
+        "after": "",
+        "context": "] ( horn 2013 ) [ direct download current version v1"
+      },
+      {
+        "before": "current version",
+        "after": "",
+        "context": ") [ direct download current version v1 . 0 ]"
+      },
+      {
+        "before": "] structural group connectome of",
+        "after": "",
+        "context": "version v1 . 0 ] structural group connectome of 169 nki - rs"
+      },
+      {
+        "before": "[",
+        "after": "structural group connectome ·",
+        "context": "nki - rs subjects [ gibbs - tracker ]"
+      },
+      {
+        "before": "] (",
+        "after": "·",
+        "context": "[ gibbs - tracker ] ( horn 2016 ) ["
+      },
+      {
+        "before": ") [ direct",
+        "after": "",
+        "context": "] ( horn 2016 ) [ direct download current version v1"
+      },
+      {
+        "before": "current version",
+        "after": "",
+        "context": ") [ direct download current version v1 . 0 ;"
+      },
+      {
+        "before": "; download via",
+        "after": "",
+        "context": "version v1 . 0 ; download via nitrc ] structural group"
+      },
+      {
+        "before": "] structural group connectome of",
+        "after": "",
+        "context": "; download via nitrc ] structural group connectome of 32 adult diffusion mgh"
+      },
+      {
+        "before": "[",
+        "after": "structural group connectome ·",
+        "context": "- usc hcp subjects [ gqi fiber tracking ]"
+      },
+      {
+        "before": "] (",
+        "after": "·",
+        "context": "[ gqi fiber tracking ] ( dataset : setsompop 2013"
+      },
+      {
+        "before": ":",
+        "after": "",
+        "context": "tracking ] ( dataset : setsompop 2013 ; processing"
+      },
+      {
+        "before": ";",
+        "after": ",",
+        "context": "dataset : setsompop 2013 ; processing : horn 2017"
+      },
+      {
+        "before": ":",
+        "after": "",
+        "context": "setsompop 2013 ; processing : horn 2017 ) ["
+      },
+      {
+        "before": ") [ direct",
+        "after": "",
+        "context": "processing : horn 2017 ) [ direct download current version v1"
+      },
+      {
+        "before": "current version",
+        "after": "",
+        "context": ") [ direct download current version v1 . 2 ;"
+      },
+      {
+        "before": "; older versions :",
+        "after": "",
+        "context": "version v1 . 2 ; older versions : v1 . 1 ,"
+      },
+      {
+        "before": ",",
+        "after": "",
+        "context": ": v1 . 1 , v1 . 0 ]"
+      },
+      {
+        "before": "] structural group connectome of",
+        "after": "",
+        "context": ", v1 . 0 ] structural group connectome of 85 ppmi pd -"
+      },
+      {
+        "before": "[",
+        "after": "structural group connectome ·",
+        "context": "ppmi pd - patients [ gqi fiber tracking ]"
+      },
+      {
+        "before": "] (",
+        "after": "·",
+        "context": "[ gqi fiber tracking ] ( dataset : marek 2011"
+      },
+      {
+        "before": ":",
+        "after": "",
+        "context": "tracking ] ( dataset : marek 2011 ; processing"
+      },
+      {
+        "before": ";",
+        "after": ",",
+        "context": "dataset : marek 2011 ; processing : ewert 2017"
+      },
+      {
+        "before": ":",
+        "after": "",
+        "context": "marek 2011 ; processing : ewert 2017 ) ["
+      },
+      {
+        "before": ") [ direct",
+        "after": "",
+        "context": "processing : ewert 2017 ) [ direct download current version v1"
+      },
+      {
+        "before": "current version",
+        "after": "",
+        "context": ") [ direct download current version v1 . 1 ;"
+      },
+      {
+        "before": "; older versions :",
+        "after": "",
+        "context": "version v1 . 1 ; older versions : v1 . 0 ]"
+      },
+      {
+        "before": "] structural group connectome of",
+        "after": "",
+        "context": ": v1 . 0 ] structural group connectome of 985 hcp subjects ["
+      },
+      {
+        "before": "[ gqi fiber tracking ]",
+        "after": "",
+        "context": "of 985 hcp subjects [ gqi fiber tracking ] : dtor - 985"
+      },
+      {
+        "before": "(",
+        "after": "structural group connectome · gqi fiber tracking ·",
+        "context": ": dtor - 985 ( elias 2024 ) ["
+      },
+      {
+        "before": ") [",
+        "after": "quarter half full",
+        "context": "985 ( elias 2024 ) [ scripts and datasets on"
+      },
+      {
+        "before": "; quarter version ; half version ; full version ]",
+        "after": "",
+        "context": "and datasets on figshare ; quarter version ; half version ; full version ] functional normative connectomes resting"
+      },
+      {
+        "before": "normative connectomes",
+        "after": "1000 gsp healthy subjects",
+        "context": "full version ] functional normative connectomes resting - state functional"
+      },
+      {
+        "before": "of 1000 gsp healthy subjects",
+        "after": "",
+        "context": "state functional group connectome of 1000 gsp healthy subjects , can be directly"
+      },
+      {
+        "before": "",
+        "after": "preprocessed by bassam al - fatly · cohen 2023 ·",
+        "context": "gsp healthy subjects , can be directly used"
+      },
+      {
+        "before": ", preprocessed by bassam al - fatly ( cohen 2023 ) .",
+        "after": "details",
+        "context": "and networkmapping explorer ) , preprocessed by bassam al - fatly ( cohen 2023 ) . install : download and"
+      },
+      {
+        "before": "resting - state functional group connectome of",
+        "after": "harvard dataverse",
+        "context": "renamed connectome folder . resting - state functional group connectome of 74 ppmi pd -"
+      },
+      {
+        "before": "( dataset : marek 2011 ; processing : horn 2017 ) [ direct download current version v1 . 0 ]",
+        "after": "",
+        "context": "patients , 15 controls ( dataset : marek 2011 ; processing : horn 2017 ) [ direct download current version v1 . 0 ] resting - state functional"
+      },
+      {
+        "before": "of",
+        "after": "· dataset marek 2011 , processing horn 2017 download v1 . 0",
+        "context": "state functional group connectome of 75 toronto pd -"
+      },
+      {
+        "before": "( detailed description : zenodo ; processing : horn 2017 ) [ direct download current version v1 . 0 ]",
+        "after": "",
+        "context": "toronto pd - patients ( detailed description : zenodo ; processing : horn 2017 ) [ direct download current version v1 . 0 ] resting - state functional"
+      },
+      {
+        "before": "of",
+        "after": "· detailed description on zenodo , processing horn 2017 download v1 . 0",
+        "context": "state functional group connectome of 100 typically developing children"
+      },
+      {
+        "before": "-",
+        "after": "–",
+        "context": "developing children ( 6 - 18 yrs ) assembled"
+      },
+      {
+        "before": "",
+        "after": "resting - state functional group connectome · al - fatly 2023 details",
+        "context": "- 18 yrs ) assembled from nyu 2"
+      },
+      {
+        "before": "",
+        "after": "the",
+        "context": "yrs ) assembled from nyu 2 sub -"
+      },
+      {
+        "before": "for further details , please refer to al - fatly 2023 . [ direct",
+        "after": "",
+        "context": "aforementioned pediatric space . for further details , please refer to al - fatly 2023 . [ direct download ] download normative"
+      },
+      {
+        "before": "]",
+        "after": "",
+        "context": ". [ direct download ] download normative connectomes ("
+      },
+      {
+        "before": "examples /",
+        "after": "",
+        "context": "horn 2017a ) . examples / figures connectomic dbs book"
+      },
+      {
         "before": "connectomic dbs book publications posters videos & talks deep brain stimulation normative connectomes stimu - latte",
         "after": "",
         "context": ". examples / figures connectomic dbs book publications posters videos & talks deep brain stimulation normative connectomes stimu - latte"
