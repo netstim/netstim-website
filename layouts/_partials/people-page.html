@@ -59,23 +59,24 @@
   </ul>
   {{ range $people }}{{ $person := . }}
   <dialog class="person-sheet" id="person-{{ .id }}" aria-labelledby="person-{{ .id }}-name" tabindex="-1">
-    <div class="person-sheet__bar">
-      <span class="person-sheet__bar-name" aria-hidden="true">{{ .name }}</span>
-      <form method="dialog" class="person-sheet__close"><button class="icon-button" aria-label="Close">{{ partial "icon.html" "close" }}</button></form>
-    </div>
+    <form method="dialog" class="person-sheet__close"><button class="icon-button" aria-label="Close">{{ partial "icon.html" "close" }}</button></form>
     <div class="person-sheet__layout{{ if not .img }} person-sheet__layout--text{{ end }}">
-      {{ with .img }}<span class="portrait-frame" data-morph>{{ partial "picture.html" (merge . (dict "alt" (printf "Portrait of %s" $person.name) "sizes" "(max-width: 767px) 26vw, 240px")) }}</span>{{ end }}
-      <div class="person-sheet__intro">
-        <h2 id="person-{{ .id }}-name">{{ .name }}</h2>
-        {{ with .links }}
-        <ul class="person-sheet__links" aria-label="Profiles">
-          {{ range . }}<li>{{ partial "profile-link.html" . }}</li>{{ end }}
-        </ul>
-        {{ end }}
-        {{ with .actions }}<div class="person-sheet__actions">{{ partial "render.html" (delimit . "") }}</div>{{ end }}
+      {{ with .img }}
+      <div class="person-sheet__portrait"><span class="portrait-frame">{{ partial "picture.html" (merge . (dict "alt" (printf "Portrait of %s" $person.name) "sizes" "(max-width: 700px) 96px, 250px")) }}</span></div>
+      {{ end }}
+      <div class="person-sheet__reading" role="region" aria-labelledby="person-{{ .id }}-name" tabindex="0">
+        <div class="person-sheet__intro">
+          <h2 id="person-{{ .id }}-name">{{ .name }}</h2>
+          {{ with .links }}
+          <ul class="person-sheet__links" aria-label="Profiles">
+            {{ range . }}<li>{{ partial "profile-link.html" . }}</li>{{ end }}
+          </ul>
+          {{ end }}
+          {{ with .actions }}<div class="person-sheet__actions">{{ partial "render.html" (delimit . "") }}</div>{{ end }}
+        </div>
+        <div class="person-sheet__text prose">{{ partial "render.html" .text }}</div>
+        {{ with .credit }}<p class="person-sheet__credit">Photo: {{ . | safeHTML }}</p>{{ end }}
       </div>
-      <div class="person-sheet__text prose">{{ partial "render.html" .text }}</div>
-      {{ with .credit }}<p class="person-sheet__credit">Photo: {{ . | safeHTML }}</p>{{ end }}
     </div>
   </dialog>
   {{ end }}

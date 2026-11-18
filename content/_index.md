@@ -49,12 +49,14 @@ team:
     url: '@root@about-us/jobs/'
 community:
 - title: Stimulating Brains
+  overviewText: Interviews and talks with researchers working on brain stimulation.
   text: 'Our lab hosts a podcast and talk series about brain stimulation: interviews about the past, present and future of neuromodulation, and talks by senior colleagues and rising stars in the field.'
   image: media/a473d51a1584-StimBrains_Logo_Vertical_Portfolio_transparentBG-1536x676.png
   ground: plate
   url: http://www.stimulatingbrains.org
   label: Tune in
 - title: Stimu-Latte
+  overviewText: A monthly, in-person journal club on neuromodulation in Cologne.
   text: 'A monthly in-person journal club in Cologne, organised as part of the Forschungsschwerpunkt Neuromodulation: a local space for discussion and collaboration, all fueled by coffee.'
   image: media/5d84ece1bc6e-Stimulate_logo-2-1500x430.png
   ground: latte

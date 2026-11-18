@@ -36,6 +36,8 @@ for (const card of document.querySelectorAll('[data-person]')) {
       dialog.showModal();
       dialog.focus({ preventScroll: true });
       dialog.scrollTop = 0;
+      const biography = dialog.querySelector('.person-sheet__reading');
+      if (biography) biography.scrollTop = 0;
     });
     const done = () => { name(photo, ''); dialog.style.viewTransitionName = ''; };
     t ? t.finished.finally(done) : done();
@@ -89,7 +91,3 @@ window.addEventListener('popstate', () => {
 });
 // opened at an address (a shared link, or an old poster anchor)
 entries.find(entry => entry.slug && entry.slug === fromHash())?.open({ push: false });
-// the sheet's bar shows the name once the head has scrolled away
-for (const sheet of document.querySelectorAll('.person-sheet')) {
-  sheet.addEventListener('scroll', () => sheet.classList.toggle('is-scrolled', sheet.scrollTop > 120), { passive: true });
-}
