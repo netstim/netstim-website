@@ -26,12 +26,6 @@ cards:
   ground: dark
   url: '@root@research-interests/normative-connectomes/'
   fit: contain
-- title: Connectomic Deep Brain Stimulation
-  text: 'The book: chapters by internationally renowned experts on electrode localization, DBS modeling and connectomics.'
-  image: media/4cb5be70722a-Connectomic-Deep-Brain-Stimulation-1249x1536.png
-  ground: light
-  fit: contain
-  url: '@root@research-interests/the-book/'
 outputs:
 - title: Publications
   text: Peer-reviewed articles and the journal covers our work appeared on
@@ -42,4 +36,7 @@ outputs:
 - title: Videos & Talks
   text: Recorded talks by lab members
   url: '@root@research-interests/videos-talks/'
+- title: Connectomic Deep Brain Stimulation
+  text: Book edited by Andreas Horn
+  url: '@root@research-interests/the-book/'
 ---

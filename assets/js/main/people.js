@@ -8,7 +8,7 @@
 import { wireDialog } from './dialog.js';
 
 const still = matchMedia('(prefers-reduced-motion: reduce)');
-const morph = update => (document.startViewTransition && !still.matches)
+const morph = (dialog, update) => (!dialog.classList.contains('person-sheet') && document.startViewTransition && !still.matches)
   ? document.startViewTransition(update)
   : (update(), null);
 const entries = [];
@@ -29,7 +29,7 @@ for (const card of document.querySelectorAll('[data-person]')) {
   const open = ({ push = true } = {}) => {
     if (dialog.open) return;
     name(thumb, 'person-photo');
-    const t = morph(() => {
+    const t = morph(dialog, () => {
       name(thumb, '');
       name(photo, 'person-photo');
       dialog.style.viewTransitionName = 'person-panel';
@@ -46,7 +46,7 @@ for (const card of document.querySelectorAll('[data-person]')) {
     closing = true;
     name(photo, 'person-photo');
     dialog.style.viewTransitionName = 'person-panel';
-    const t = morph(() => {
+    const t = morph(dialog, () => {
       name(photo, '');
       name(thumb, 'person-photo');
       dialog.style.viewTransitionName = '';
@@ -71,7 +71,15 @@ for (const card of document.querySelectorAll('[data-person]')) {
   entries.push({ slug, open, close, dialog });
 }
 
-const fromHash = () => decodeURIComponent(location.hash.slice(1));
+function fromHash() {
+  const hash = location.hash.slice(1);
+  try {
+    return decodeURIComponent(hash);
+  } catch (error) {
+    if (!(error instanceof URIError)) throw error;
+    return hash;
+  }
+}
 window.addEventListener('popstate', () => {
   const wanted = fromHash();
   for (const entry of entries) {

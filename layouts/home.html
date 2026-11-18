@@ -1,7 +1,7 @@
 {{ define "main" }}
 {{- /* The home page: a summary of the site, in the Lead-DBS grammar. All words and pictures: the front matter
        of content/_index.md (each sentence is the site's own; see docs/information-architecture.md).
-       1 statement on a black render panel, 2 research, 3 journals, 4 the book, 5 news, 6 team, 7 community,
+       1 statement on a black render panel, 2 research, 5 news, 6 team, 7 community,
        8 funders. */ -}}
 {{ $p := .Params }}
 {{ $arrow := partial "icon.html" "arrow" }}
@@ -41,25 +41,10 @@
         </a></li>
         {{ end }}
       </ul>
+      <a class="text-action" href="{{ "research-interests/publications/" | relURL }}">All publications {{ $arrow }}</a>
     </div>
   </section>
   {{ end }}
-
-  {{ with $p.journals }}
-  <section class="home-section home-journals" aria-labelledby="journals-h">
-    <div class="wrap">
-      <h2 id="journals-h" class="home-journals__label">{{ .title }}</h2>
-      <ul class="journal-wall">
-        {{ range .items }}<li><a href="{{ .url }}" rel="noopener">{{ .title }}<span class="journal-wall__ext" aria-hidden="true">{{ partial "icon.html" "external" }}</span></a></li>{{ end }}
-      </ul>
-      <a class="text-action" href="{{ partial "url.html" .link.url }}">{{ .link.label }} {{ $arrow }}</a>
-    </div>
-  </section>
-  {{ end }}
-
-  <section class="home-section home-book" aria-label="The book">
-    <div class="wrap">{{ partial "book-section.html" . }}</div>
-  </section>
 
   {{ $posts := first 4 (where site.RegularPages "Section" "posts").ByDate.Reverse }}
   <section class="home-section" aria-labelledby="news-h">
@@ -113,7 +98,7 @@
   {{ with $p.community }}
   <section class="home-section" aria-labelledby="community-h">
     <div class="wrap">
-      <div class="section-head"><h2 id="community-h">Community</h2></div>
+      <div class="section-head"><h2 id="community-h">Community</h2><a class="text-action" href="{{ "community/" | relURL }}">Community overview {{ $arrow }}</a></div>
       <ul class="card-grid card-grid--2">
         {{ range . }}{{ $href := partial "url.html" .url }}{{ $ext := hasPrefix $href "http" }}
         <li><a class="community-card" href="{{ $href }}"{{ if $ext }} rel="noopener"{{ end }}>
@@ -134,7 +119,7 @@
       <h2 id="funding-h" class="sr-only">Funding</h2>
       <p class="home-funding__text">{{ .text }} <a href="{{ partial "url.html" .link.url }}">{{ .link.label }}</a></p>
       <ul class="logo-band">
-        {{ range .logos }}<li>{{ partial "picture.html" (dict "src" .src "alt" (.alt | default "") "width" .width "sizes" "200px" "original" .original) }}</li>{{ end }}
+        {{ partial "funder-logos.html" .logos }}
       </ul>
     </div>
   </section>

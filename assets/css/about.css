@@ -1,18 +1,14 @@
-/* About the lab (content/about-us.md): the letter beside the group photo; funding beside the photo of the
-   brain model; then the funders' band (the same band as the home page). */
 .about-letter { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); gap: 40px var(--split-gap); align-items: start; }
 .about-letter__text h2 { font-size: var(--t-h2); margin-bottom: 28px; }
 .about-letter__text p:first-of-type { font-size: var(--t-lead); line-height: 1.45; letter-spacing: -.01em; }
 .about-letter__text strong, .about-funding strong { font-weight: inherit; }
-.about-letter__image { position: sticky; top: calc(var(--nav) + 32px); overflow: hidden; border-radius: var(--r-lg); aspect-ratio: 3 / 2; }
+.about-letter__image { overflow: hidden; border-radius: var(--r-lg); aspect-ratio: 3 / 2; }
 .about-letter__image img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; border-radius: 0; }
-.prose .about-funding { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); gap: 40px var(--split-gap); align-items: center; margin-top: var(--section); padding-top: var(--section); border-top: 1px solid var(--line); }
+.prose .about-funding { max-width: var(--measure); margin-top: var(--section); padding-top: var(--section); border-top: 1px solid var(--line); }
 .about-funding__text h2 { font-size: var(--t-h2); margin-bottom: 24px; }
-.about-funding__image { overflow: hidden; border-radius: var(--r-lg); aspect-ratio: 4 / 3; }
-.about-funding__image img { width: 100%; height: 100%; max-height: none; object-fit: cover; object-position: 55% 50%; border-radius: 0; }
 .about-logos { padding-bottom: var(--section); }
 .about-logos .logo-band { margin-top: 0; }
 @media (max-width: 767px) {
-  .about-letter, .prose .about-funding { grid-template-columns: minmax(0, 1fr); }
-  .about-letter__image { position: static; order: -1; }
+  .about-letter { grid-template-columns: minmax(0, 1fr); }
+  .about-letter__image { order: -1; }
 }

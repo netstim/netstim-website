@@ -1,0 +1,3 @@
+{{ $academic := dict "ResearchGate" "" "Scholar" "" "ORCID" "" "Publons" "" "ResearcherID" "" }}
+{{ $social := dict "LinkedIn" "" "Twitter" "" "GitHub" "" }}
+<a class="icon-link" href="{{ .href }}" aria-label="{{ .label }}" title="{{ .label }}" rel="noopener" target="_blank"{{ with index $academic .label }} data-academic="{{ . }}"{{ else }}{{ with index $social .label }} data-social="{{ . }}"{{ end }}{{ end }}></a>

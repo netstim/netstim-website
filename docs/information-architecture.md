@@ -11,11 +11,12 @@ several places. Every URL stays; what changes is which page carries what, and th
 | People | About the lab `/about-us/` | the "Dear reader" letter (moved from home), the group photo, funding (moved from home) |
 | | Team `/about-us/about-us/` | portrait cards; a card opens the profile |
 | | Jobs `/about-us/jobs/` | applicant text (moved from People), open posts |
-| Community | Stimu-Latte `/research-interests/stimu-latte/` | the journal club |
+| Community | Overview `/community/` | the journal club, podcast and imaging meetings |
+| | Stimu-Latte `/research-interests/stimu-latte/` | the journal club |
 | | Stimulating Brains (external) | the podcast |
 | | Imaging meeting `/internal/events/categories/imaging-meeting/` | the weekly meeting |
 | News | `/blog/` | the timeline |
 | Footer | Lab manual, Links, Events, Imprint, Privacy | pages for lab members and legal |
 
 Moves: Andreas Horn's identifiers (ResearchGate, Scholar, ORCiD…) from Research to his own page.
-The home page is a summary of the site: statement, research, book, news, team, community, funders.
+The home page is a summary of the site: institute, research, news, team, community, funders.

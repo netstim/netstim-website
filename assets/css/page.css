@@ -33,11 +33,14 @@
   .page-head h1 { hyphens: auto; overflow-wrap: break-word; }
   .page-body { padding-top: 32px; }
 }
-/* the book's page: the 3D book beside the title (layouts/_partials/book3d.html) */
-.page-head--book .wrap { display: grid; grid-template-columns: minmax(0, var(--measure)) minmax(0, 1fr); grid-template-rows: auto auto 1fr; column-gap: var(--split-gap); align-items: center; }
-.page-head--book .wrap > :not(.book3d) { grid-column: 1; }
-.page-head--book .book3d { grid-column: 2; grid-row: 1 / span 3; --w: 240px; height: calc(var(--h) + 60px); }
-@media (max-width: 1023px) {
-  .page-head--book .wrap { grid-template-columns: minmax(0, 1fr); }
-  .page-head--book .book3d { grid-column: 1; grid-row: auto; --w: 200px; --d: 26px; }
+/* Keep the cover and bibliographic details together. */
+.page-head--book .wrap { display: grid; grid-template-columns: minmax(0, 32rem) minmax(0, 12rem); gap: 12px 40px; align-content: start; }
+.page-head--book .breadcrumb { grid-column: 1 / -1; }
+.page-head--book h1 { align-self: end; }
+.page-head--book .page-lead { grid-column: 1; margin: 0; }
+.page-head--book .book-cover { grid-column: 2; grid-row: 2 / span 2; }
+.book-cover img { display: block; width: 100%; height: auto; }
+@media (max-width: 639px) {
+  .page-head--book .wrap { grid-template-columns: minmax(0, 1fr) 24%; gap: 12px 16px; }
+  .page-head--book h1 { font-size: var(--t-h2); }
 }

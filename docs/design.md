@@ -8,7 +8,7 @@ Netstim uses the Lead-DBS Blend palette and typography within the WordPress site
 - Primary actions are ink pills. Consecutive secondary actions are plain links. External action links use a single diagonal arrow. Metadata, updates, and archive entries use thin rules and open white space.
 - Lab photos, illustrations, and gallery items retain their order and aspect ratios. The cover-art gallery keeps five columns. The three slideshows offer manual controls. Linked gallery images open in a native dialog with the original image URL as the link fallback.
 - The mobile menu, search and image viewer use native dialogs, visible focus, scroll locking and keyboard focus wrapping. Nav and action controls have a 44-pixel minimum. In-flow links retain normal text behavior. Hover has a pointer-capability guard. Reduced motion has an explicit CSS branch.
-- The legal footer follows the original sparse arrangement. The mirror contains no separate socket element on its 86 routes.
+- The footer groups site navigation, lab resources, follow links, and legal links.
 
 `assets/css/` has six shell files plus content, search, and page-family files. `layouts/_partials/page-family.html` chooses the family. Hugo concatenates, minifies and fingerprints the styles, and builds ES modules from `assets/js/bundles/`. All page-load scripts and styles use SRI. The two icon fonts carry glyphs used by the source site. Inter is the text face.
 

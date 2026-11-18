@@ -10,13 +10,6 @@ crumbs:
 - title: Team
   url: '@root@about-us/about-us/'
 - title: Andreas Horn
-related:
-- title: About the lab
-  url: '@root@about-us/'
-- title: Team
-  url: '@root@about-us/about-us/'
-- title: Jobs
-  url: '@root@about-us/jobs/'
 sidebar: true
 wordpress_id: 294
 date: '2018-12-01T16:18:13+00:00'

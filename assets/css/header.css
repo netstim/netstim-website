@@ -7,11 +7,11 @@
 .site-logo img { width: auto; height: 34px; }
 [data-theme="dark"] :is(.site-logo, .footer-logo) img { filter: brightness(1.7) saturate(.85); }
 .header-actions { display: flex; align-items: center; margin-left: auto; gap: 4px; }
-.desktop-nav { margin-left: 28px; height: 100%; }
-.desktop-nav + .header-actions { margin-left: auto; }
+.desktop-nav { margin-left: auto; height: 100%; }
+@media (min-width: 900px) { .desktop-nav + .header-actions { margin-left: 12px; } }
 .nav-list { list-style: none; margin: 0; padding: 0; }
 .desktop-nav > .nav-list { display: flex; align-items: center; height: 100%; gap: 2px; }
-.desktop-nav > .nav-list > .nav-item { display: flex; align-items: center; height: 100%; }
+.desktop-nav > .nav-list > .nav-item { position: relative; display: flex; align-items: center; height: 100%; }
 .nav-row { display: flex; align-items: center; }
 .desktop-nav > .nav-list > .nav-item > .nav-row > a {
   position: relative; display: inline-flex; align-items: center; height: 36px; padding: 0 12px; border-radius: var(--r-sm);
@@ -25,14 +25,9 @@
 .desktop-nav .disclosure { position: relative; }
 .disclosure svg { width: 14px; height: 14px; opacity: .6; }
 .disclosure[aria-expanded="true"] svg { transform: rotate(180deg); opacity: 1; }
-/* the band: full width under the header, the links of the open menu in three columns */
 .desktop-nav .nav-panel {
-  position: absolute; top: 100%; left: 0; right: 0; padding: 16px 0 32px;
-  background: var(--bg); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); box-shadow: var(--shadow-3);
-}
-.desktop-nav .nav-panel > .nav-list {
-  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 32px;
-  width: min(100% - 2 * var(--gut), var(--container)); margin-inline: auto;
+  position: absolute; top: 100%; left: 0; width: max-content; max-width: 18rem; padding: 6px 16px;
+  background: var(--bg); border: 1px solid var(--line); border-radius: var(--r-sm);
 }
 .desktop-nav .nav-panel .nav-row > a {
   display: flex; align-items: center; gap: 6px; width: 100%; min-height: 52px;

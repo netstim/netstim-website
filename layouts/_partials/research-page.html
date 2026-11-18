@@ -1,19 +1,19 @@
 {{- /* Research overview (content/research-interests.md front matter): the framework in one paragraph, the
-       three subjects as media cards (the home page's), then the lab's outputs as rows. */ -}}
+       two research areas as media cards, then the lab's outputs as rows. */ -}}
 {{ $arrow := partial "icon.html" "arrow" }}
 <div class="wrap page-body">
   <p class="research-intro">{{ .Params.intro }}</p>
-  <ul class="card-grid card-grid--3">
+  <ul class="card-grid card-grid--2">
     {{ range .Params.cards }}
     <li><a class="media-card" href="{{ partial "url.html" .url }}">
-      <span class="media-card__frame media-card__frame--{{ .ground }}{{ if eq .fit "contain" }} media-card__frame--contain media-card__frame--cover{{ end }}">{{ partial "picture.html" (dict "src" .image "alt" "" "width" 1200 "sizes" "(max-width: 767px) 100vw, 400px") }}</span>
+      <span class="media-card__frame media-card__frame--{{ .ground }}{{ if eq .fit "contain" }} media-card__frame--contain{{ end }}">{{ partial "picture.html" (dict "src" .image "alt" "" "width" 1200 "sizes" "(max-width: 767px) 100vw, 600px") }}</span>
       <span class="media-card__title">{{ .title }}</span>
       <span class="media-card__text">{{ .text }}</span>
     </a></li>
     {{ end }}
   </ul>
   <section class="outputs" aria-labelledby="outputs-h">
-    <h2 id="outputs-h">Publications, posters and talks</h2>
+    <h2 id="outputs-h">Research outputs</h2>
     <ul class="link-rows">
       {{ range .Params.outputs }}
       <li><a href="{{ partial "url.html" .url }}"><span class="link-rows__title">{{ .title }}</span><span class="link-rows__text">{{ .text }}</span>{{ $arrow }}</a></li>

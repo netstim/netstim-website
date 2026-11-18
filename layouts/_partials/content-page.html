@@ -36,7 +36,7 @@
   {{ end }}
   {{ if eq .Params.family "about" }}{{ with site.Home.Params.funding }}
     <div class="wrap about-logos"><ul class="logo-band" aria-label="Funders">
-      {{ range .logos }}<li>{{ partial "picture.html" (dict "src" .src "alt" (.alt | default "") "width" .width "sizes" "200px" "original" .original) }}</li>{{ end }}
+      {{ partial "funder-logos.html" .logos }}
     </ul></div>
   {{ end }}{{ end }}
   {{ if .Params.comment_anchor }}<span id="respond"></span>{{ end }}

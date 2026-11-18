@@ -29,8 +29,10 @@ main:
   - title: Jobs
     url: '@root@about-us/jobs/'
 - title: Community
-  url: '@root@research-interests/stimu-latte/'
+  url: '@root@community/'
   children:
+  - title: Community overview
+    url: '@root@community/'
   - title: Stimu-Latte journal club
     url: '@root@research-interests/stimu-latte/'
   - title: Stimulating Brains podcast

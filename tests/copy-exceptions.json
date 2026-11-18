@@ -17,23 +17,18 @@
         "context": ", welcome to the website of the institute for"
       },
       {
-        "before": "institute for network",
-        "after": "human brain . lead - dbs ↗ as a methodological backbone of our work , together with others , we develop the open - source toolbox lead - dbs . members of our lab published in peer - reviewed international journals such as nature neuroscience nature communications annals of neurology brain pnas biological psychiatry neuroimage human brain mapping all publications connectomic deep brain",
-        "context": "the website of the institute for network stimulation – which is"
-      },
-      {
-        "before": "– which is based",
-        "after": "out now",
-        "context": "institute for network stimulation – which is based at the university hospital"
+        "before": "institute for network stimulation – which is based",
+        "after": "human brain . lead - dbs ↗ as a methodological backbone of our work , together with others , we develop the open - source toolbox lead - dbs . all publications news september 4 , 2025 new perspective in nature reviews neurology may 29 , 2025 patricia zvarova named forbes 30 under 30 in slovakia ! may 28 , 2025 lauren hart receives multiple phd scholarships november 6 , 2024 barbara hollunder receives thiemann fellowship",
+        "context": "the website of the institute for network stimulation – which is based at the university hospital"
       },
       {
         "before": "",
-        "after": "academic press / elsevier about",
+        "after": "dgn",
         "context": "which is based at the university hospital cologne"
       },
       {
         "before": "university hospital cologne .",
-        "after": "book news september 4 , 2025 new perspective in nature reviews neurology may 29 , 2025 patricia zvarova named forbes 30 under 30 in slovakia ! may 28 , 2025 lauren hart receives multiple phd scholarships november 6 , 2024 barbara hollunder receives thiemann fellowship at dgn the team",
+        "after": "team",
         "context": "is based at the university hospital cologne . we are a scientific"
       },
       {
@@ -95,26 +90,36 @@
     "links": {
       "missing": {
         "https://bsky.app/profile/netstim.org": 1,
+        "/research-interests/the-book/": 1,
         "/about-us/": 2,
         "http://www.lead-dbs.org": 2,
         "/research-interests/normative-connectomes/": 1,
         "http://andreas-horn.de/?page_id=30": 1,
+        "https://www.nature.com/articles/s41593-024-01570-1": 1,
+        "https://www.nature.com/articles/s41467-020-16734-3": 1,
         "http://onlinelibrary.wiley.com/doi/10.1002/ana.24974/abstract": 1,
+        "https://academic.oup.com/brain/article/142/10/3129/5549975?login=true": 1,
         "http://www.pnas.org/content/early/2017/12/12/1706587115.full": 1,
+        "https://www.biologicalpsychiatryjournal.com/article/S0006-3223(21)01223-3/abstract": 1,
+        "https://www.ncbi.nlm.nih.gov/pubmed/24099851": 1,
         "http://onlinelibrary.wiley.com/doi/10.1002/hbm.23594/abstract": 1,
         "http://www.stimulatingbrains.org": 1,
         "/andreas-horn-receives-international-brain-stimulation-early-career-award/": 1,
         "/netstim-paper-featured-in-neurology-podcast/": 1
       },
       "added": {
-        "https://www.lead-dbs.org": 1,
-        "https://onlinelibrary.wiley.com/doi/10.1002/ana.24974/abstract": 1,
-        "https://www.pnas.org/content/early/2017/12/12/1706587115.full": 1,
-        "https://onlinelibrary.wiley.com/doi/10.1002/hbm.23594/abstract": 1,
-        "/research-interests/the-book/": 1,
+        "https://netstim.github.io/lead-dbs-website/": 1,
         "/about-us/about-us/": 1,
         "/about-us/jobs/": 1,
-        "/about-us/#funding": 1
+        "/about-us/#funding": 1,
+        "https://www.ffor.org/": 1,
+        "https://www.dfg.de/en": 1,
+        "https://www.nih.gov/": 1,
+        "https://www.stiftung-charite.de/": 1,
+        "https://neurodegenerationresearch.eu/": 1,
+        "https://www.bihealth.org/en/": 1,
+        "https://thiemannstiftung.de/": 1,
+        "https://dystonia-foundation.org/": 1
       }
     },
     "images": {
@@ -138,7 +143,6 @@
         "/media/full-abb_1.jpg": 1,
         "/media/full-fMRI.png": 1,
         "/media/595e8a2d1bb1-logo-1-1500x1083.png": 1,
-        "/wp-content/uploads/2021/03/Connectomic-Deep-Brain-Stimulation-1249x1536.png": 1,
         "/wp-content/uploads/2025/09/figure_act_dbs-1030x989.png": 1,
         "/wp-content/uploads/2025/05/d98e74f6-2fe3-43a3-a898-f549b42b7a65-1-268x300.jpg": 1,
         "/wp-content/uploads/2025/05/IMG_2528-1030x773.jpg": 1,
@@ -187,13 +191,13 @@
     "text": [
       {
         "before": "us about us",
-        "after": "the lab dear reader , welcome to the website of",
+        "after": "the lab",
         "context": "about us about us the institute for network"
       },
       {
-        "before": "",
-        "after": "– which",
-        "context": "institute for network stimulation is based at the"
+        "before": "the",
+        "after": "",
+        "context": "stimulation is based at the university of cologne ."
       },
       {
         "before": "of",
@@ -201,27 +205,51 @@
         "context": "based at the university of cologne . we are"
       },
       {
-        "before": "people",
-        "after": "the goal of our research is to analyse and modulate brain networks to improve clinical treatment in neurological and psychiatric brain disorders . the primary tools we use to pursue these goals are structural imaging and noninvasive connectivity measures derived from functional and diffusion weighted mri . get in touch on bluesky funding the netstim institute is currently funded by the schilling foundation and the national institute of mental health ( nimh ) . past funding includes grants from the german research council , the dystonia research foundation , the berlin institute of health , stiftung charite , the thiemann foundation for parkinson ’ s disease research , the foundation for ocd research ( ffor ) and the eu joint programme – neurodegenerative disease research ( jpnd ) . about the lab team",
-        "context": "invasive brain stimulation . people jobs research interests publications"
+        "before": "are a scientific group with interest in neuroimaging",
+        "after": "use structural",
+        "context": "of cologne . we are a scientific group with interest in neuroimaging , methods development ,"
       },
       {
-        "before": "research interests publications jobs people",
-        "after": "",
-        "context": "stimulation . people jobs research interests publications jobs people"
+        "before": "methods development , movement disorders",
+        "after": "functional",
+        "context": "interest in neuroimaging , methods development , movement disorders and invasive brain stimulation"
+      },
+      {
+        "before": "invasive",
+        "after": "diffusion mri to study",
+        "context": ", movement disorders and invasive brain stimulation . people"
+      },
+      {
+        "before": "",
+        "after": "networks and how they respond to",
+        "context": "disorders and invasive brain stimulation . people jobs"
+      },
+      {
+        "before": "people jobs",
+        "after": "we also develop tools for analyzing imaging and stimulation data in neurological and psychiatric",
+        "context": "invasive brain stimulation . people jobs research interests publications jobs"
+      },
+      {
+        "before": "interests publications jobs people",
+        "after": ". explore our research or meet the team . get in touch on bluesky funding the netstim institute is currently funded by the schilling foundation and the national institute of mental health ( nimh ) . past funding includes grants from the german research council , the dystonia research foundation , the berlin institute of health , stiftung charite , the thiemann foundation for parkinson ’ s disease research , the foundation for ocd research ( ffor ) and the eu joint programme – neurodegenerative disease research ( jpnd ) .",
+        "context": ". people jobs research interests publications jobs people"
       }
     ],
     "links": {
       "missing": {
         "/about-us/about-us/": 2,
-        "/about-us/jobs/": 1,
-        "/research-interests/": 1,
+        "/about-us/jobs/": 2,
         "/research-interests/publications/": 1
       },
       "added": {
-        "https://bsky.app/profile/netstim.org": 1,
-        "/about-us/": 1
+        "https://bsky.app/profile/netstim.org": 1
       }
+    },
+    "images": {
+      "missing": {
+        "/wp-content/uploads/2020/02/IMG_5446-2-1-1500x630.jpeg": 1
+      },
+      "added": {}
     }
   },
   "/about-us/about-us/": {
@@ -253,7 +281,7 @@
       },
       {
         "before": "more about andreas cv",
-        "after": "researchgate scholar twitter publons orcid researcherid photo :",
+        "after": "photo :",
         "context": "it so far . more about andreas cv © michael wodak /"
       },
       {
@@ -263,7 +291,7 @@
       },
       {
         "before": "",
-        "after": "researchgate linkedin orcid photo :",
+        "after": "photo :",
         "context": "how to draw . © michael wodak /"
       },
       {
@@ -273,7 +301,7 @@
       },
       {
         "before": "",
-        "after": "researchgate github orcid linkedin scholar photo :",
+        "after": "photo :",
         "context": "she loves dogs . © michael wodak /"
       },
       {
@@ -282,13 +310,13 @@
         "context": "michael wodak / medizinfotoköln research gate github orcid linkedin google scholar pepsi the dog pepsi"
       },
       {
-        "before": "",
-        "after": "mustin maike",
-        "context": "linkedin maike mustin maike joined the netstim lab"
+        "before": "linkedin",
+        "after": "maike mustin",
+        "context": "and vocal expression . linkedin maike mustin maike joined"
       },
       {
         "before": "",
-        "after": "linkedin github photo :",
+        "after": "photo :",
         "context": "at uniklinik köln . © michael wodak /"
       },
       {
@@ -298,7 +326,7 @@
       },
       {
         "before": "",
-        "after": "linkedin researchgate photo :",
+        "after": "photo :",
         "context": "forms of therapy . © michael wodak /"
       },
       {
@@ -308,7 +336,7 @@
       },
       {
         "before": "",
-        "after": "linkedin photo :",
+        "after": "photo :",
         "context": "dates with friends . © michael wodak /"
       },
       {
@@ -318,7 +346,7 @@
       },
       {
         "before": "",
-        "after": "researchgate photo :",
+        "after": "photo :",
         "context": "surroundings in germany . © michael wodak /"
       },
       {
@@ -327,14 +355,14 @@
         "context": "michael wodak / medizinfotoköln research gate jan philipp payonk jan"
       },
       {
-        "before": "",
+        "before": "linkedin",
         "after": "frauke raaff",
-        "context": "either one . linkedin frauke raaff frauke joined"
+        "context": "about either one . linkedin frauke raaff frauke joined"
       },
       {
-        "before": "",
-        "after": "krüger lara",
-        "context": "linkedin lara krüger lara joined the netstim lab"
+        "before": "linkedin",
+        "after": "lara krüger",
+        "context": "her comfort show . linkedin lara krüger lara joined"
       },
       {
         "before": "",
@@ -342,14 +370,14 @@
         "context": ". richard demann richard joined the netstim lab"
       },
       {
-        "before": "",
+        "before": "linkedin",
         "after": "benjamin selaskowski",
-        "context": "anki reviews . linkedin benjamin selaskowski benjamin joined"
+        "context": "of anki reviews . linkedin benjamin selaskowski benjamin joined"
       },
       {
-        "before": "",
-        "after": "ferres michael",
-        "context": "linkedin michael ferres michael joined the netstim lab"
+        "before": "linkedin",
+        "after": "michael ferres",
+        "context": "up in frustration . linkedin michael ferres michael joined"
       },
       {
         "before": "",
@@ -363,63 +391,13 @@
       },
       {
         "before": "research gate lab",
-        "after": "researchgate",
+        "after": "",
         "context": "hiking or skiing . research gate lab alumni ningfei li zhongke"
       },
       {
-        "before": "",
-        "after": "researchgate · scholar · orcid · github",
-        "context": "lab alumni ningfei li zhongke mei nanditha rajamani"
-      },
-      {
-        "before": "",
-        "after": "researchgate",
-        "context": "nanditha rajamani garance meyer lukas goede barbara hollunder"
-      },
-      {
-        "before": "",
-        "after": "researchgate",
-        "context": "garance meyer lukas goede barbara hollunder jordy tasserie"
-      },
-      {
-        "before": "",
-        "after": "orcid · researchgate · scholar",
-        "context": "lukas goede barbara hollunder jordy tasserie clemens neudorfer"
-      },
-      {
-        "before": "",
-        "after": "researchgate · orcid · linkedin",
-        "context": "barbara hollunder jordy tasserie clemens neudorfer konstantin butenko"
-      },
-      {
-        "before": "",
-        "after": "researchgate",
-        "context": "bassam al - fatly simón oxenford till dembek"
-      },
-      {
-        "before": "",
-        "after": "github",
-        "context": "- fatly simón oxenford till dembek luise poser"
-      },
-      {
-        "before": "",
-        "after": "researchgate",
-        "context": "leon sobesky jan roediger meera chikermane ana sofía"
-      },
-      {
-        "before": "",
-        "after": "researchgate · scholar",
-        "context": "wang min jae kim savir madan jobs people"
-      },
-      {
-        "before": "",
-        "after": "about the lab team",
-        "context": "jae kim savir madan jobs people"
-      },
-      {
-        "before": "people",
+        "before": "jobs people",
         "after": "",
-        "context": "kim savir madan jobs people"
+        "context": "jae kim savir madan jobs people"
       }
     ],
     "links": {
@@ -451,11 +429,11 @@
         "https://de.linkedin.com/in/frauke-raaff-8882a6226": 1,
         "https://de.linkedin.com/in/richard-demann-40791b213": 1,
         "https://de.linkedin.com/in/benjamin-selaskowski": 1,
-        "https://www.researchgate.net/profile/Helen-Friedrich": 1
+        "https://www.researchgate.net/profile/Helen-Friedrich": 1,
+        "/about-us/jobs/": 1,
+        "/about-us/about-us/": 1
       },
-      "added": {
-        "/about-us/": 1
-      }
+      "added": {}
     },
     "images": {
       "missing": {
@@ -506,14 +484,9 @@
         "context": "google scholar twitter publons orcid researcher id jobs"
       },
       {
-        "before": "researcher id",
-        "after": "↗ researcherid ↗ about the lab team",
+        "before": "researcher id jobs people",
+        "after": "↗ researcherid ↗",
         "context": "scholar twitter publons orcid researcher id jobs people"
-      },
-      {
-        "before": "people",
-        "after": "",
-        "context": "orcid researcher id jobs people"
       }
     ],
     "links": {
@@ -523,11 +496,11 @@
         "http://publons.com/a/1317885/": 1,
         "https://www.researchgate.net/profile/Andreas_Horn": 1,
         "https://scholar.google.de/citations?user=1jF_5-0AAAAJ&hl=en": 1,
-        "http://researcherid.com/rid/B-8988-2017": 1
+        "http://researcherid.com/rid/B-8988-2017": 1,
+        "/about-us/jobs/": 1,
+        "/about-us/about-us/": 1
       },
-      "added": {
-        "/about-us/": 1
-      }
+      "added": {}
     },
     "images": {
       "missing": {
@@ -539,77 +512,90 @@
   "/about-us/jobs/": {
     "text": [
       {
-        "before": "currently no open posts",
-        "after": "© michael wodak / medizinfotoköln",
-        "context": "jobs currently no open posts unsolicited applications we are"
+        "before": "currently no open posts unsolicited applications we are always open for unsolicited applications",
+        "after": "prospective applicants",
+        "context": "jobs currently no open posts unsolicited applications we are always open for unsolicited applications if you ’ d"
       },
       {
-        "before": "",
-        "after": "contact us what we work on our research focusses on the following central questions :",
-        "context": "a good way . how we do things"
+        "before": "’ d like to join our team e . g . with",
+        "after": "have",
+        "context": "unsolicited applications if you ’ d like to join our team e . g . with a personal grant or"
       },
       {
-        "before": "",
-        "after": "does the human brain respond to focal stimuli applied by invasive and noninvasive neuromodulation methods specifically ,",
-        "context": "good way . how we do things we"
+        "before": "personal grant",
+        "after": "fellowship",
+        "context": "g . with a personal grant or other types of"
       },
       {
-        "before": "",
-        "after": "study the effects of deep brain stimulation on small brain nuclei how",
-        "context": "way . how we do things we aim"
-      },
-      {
-        "before": "things",
-        "after": "distributed brain networks respond to such stimuli",
-        "context": ". how we do things we aim at building"
-      },
-      {
-        "before": "aim at building a modern",
-        "after": "use noninvasive techniques like resting - state fmri and diffusion - weighted mri to address this question how does dbs electrode placement affect clinical",
-        "context": "we do things we aim at building a modern , flexible and friendly"
-      },
-      {
-        "before": "flexible",
-        "after": "neural or behavioral response in second line , we ’ re highly interested in structural",
-        "context": "building a modern , flexible and friendly laboratory environment"
-      },
-      {
-        "before": "friendly laboratory environment and our lab has",
-        "after": "functional connectomics as well as detailed anatomical definitions of",
-        "context": "modern , flexible and friendly laboratory environment and our lab has the goal of becoming"
-      },
-      {
-        "before": "goal of becoming a scientific “ teal organization ” . feel free to explore our internal pages a litte , e . g . the lab manual",
-        "after": "human brain",
-        "context": "our lab has the goal of becoming a scientific “ teal organization ” . feel free to explore our internal pages a litte , e . g . the lab manual . what you can"
-      },
-      {
-        "before": "at the netstim",
-        "after": "here",
-        "context": "what you can learn at the netstim nearly all of our"
-      },
-      {
-        "before": "",
-        "after": "some of our lab members take part in developing the open - source toolbox lead - dbs – which has become a multi - institutional endeavor . how we do things we aim at building a modern , flexible and friendly laboratory environment and our lab has the goal of becoming a scientific “ teal organization ” . feel free to explore our internal pages a little , e . g . the lab manual . about the lab team",
-        "context": "a better picture ? jobs people"
-      },
-      {
-        "before": "people",
+        "before": "types of",
         "after": "",
-        "context": "better picture ? jobs people"
+        "context": "personal grant or other types of funding . for instance"
+      },
+      {
+        "before": ". for instance , andreas horn is pi at the einstein center for neurosciences",
+        "after": "",
+        "context": "other types of funding . for instance , andreas horn is pi at the einstein center for neurosciences and the medical neurosciences"
+      },
+      {
+        "before": "the medical neurosciences phd programs",
+        "after": "are interested",
+        "context": "center for neurosciences and the medical neurosciences phd programs in berlin that offer"
+      },
+      {
+        "before": "berlin that offer the possibility to apply for funding . just contact us and we may find a good way . how we do things we aim at building a modern , flexible and friendly laboratory environment and our lab has the goal of becoming a scientific “ teal organization ” . feel free to explore our internal pages a litte , e . g .",
+        "after": "joining",
+        "context": "neurosciences phd programs in berlin that offer the possibility to apply for funding . just contact us and we may find a good way . how we do things we aim at building a modern , flexible and friendly laboratory environment and our lab has the goal of becoming a scientific “ teal organization ” . feel free to explore our internal pages a litte , e . g . the lab manual ."
+      },
+      {
+        "before": "manual",
+        "after": ", get in touch about your research interests",
+        "context": "g . the lab manual . what you can"
+      },
+      {
+        "before": "what you can",
+        "after": "contact the lab",
+        "context": "the lab manual . what you can learn at the netstim"
+      },
+      {
+        "before": "at the netstim nearly all of",
+        "after": "more about",
+        "context": "what you can learn at the netstim nearly all of our research projects are"
+      },
+      {
+        "before": "projects are tightly intertwined with building",
+        "after": "",
+        "context": "all of our research projects are tightly intertwined with building and maintaining the scientific"
+      },
+      {
+        "before": "maintaining the scientific open - source toolbox “ lead - dbs ” ( www",
+        "after": "publications",
+        "context": "intertwined with building and maintaining the scientific open - source toolbox “ lead - dbs ” ( www . lead - dbs"
+      },
+      {
+        "before": "lead - dbs . org ) . thus , we expect that each member of our lab contributes to lead - dbs in some way . contributions could be in form of code and code - development but also documentation , testing and teaching ( e . g . in one of our lead - dbs workshops ) . thus , besides scientific work , the participation in an open - source software project is something you can experience here . scientifically , projects focus on how focal stimulation of the brain result in distributed network changes throughout the brain and how such changes relate to behavioral , clinical and electrophysiological responses . to investigate these relationships , we often apply mri based neuroimaging techniques ( such as diffusion - weighted mri based tractography , resting - state functional mri , structural mri and simulations ) . why not browse to our research interests or previous publications to get a better picture ? jobs people",
+        "after": "© michael wodak / medizinfotoköln",
+        "context": "” ( www . lead - dbs . org ) . thus , we expect that each member of our lab contributes to lead - dbs in some way . contributions could be in form of code and code - development but also documentation , testing and teaching ( e . g . in one of our lead - dbs workshops ) . thus , besides scientific work , the participation in an open - source software project is something you can experience here . scientifically , projects focus on how focal stimulation of the brain result in distributed network changes throughout the brain and how such changes relate to behavioral , clinical and electrophysiological responses . to investigate these relationships , we often apply mri based neuroimaging techniques ( such as diffusion - weighted mri based tractography , resting - state functional mri , structural mri and simulations ) . why not browse to our research interests or previous publications to get a better picture ? jobs people"
       }
     ],
     "links": {
       "missing": {
+        "https://www.ecn-berlin.de/home.html": 1,
+        "https://medical-neurosciences.charite.de/en/": 1,
+        "https://www.ecn-berlin.de/education/phd-fellowships.html": 1,
+        "https://en.wikipedia.org/wiki/Teal_organisation": 1,
+        "/internal/": 1,
+        "/internal/onboarding/": 1,
+        "http://www.lead-dbs.org": 1,
+        "http://www.lead-dbs.org/workshops/": 1,
         "/about-us-2/research-interests/": 1,
-        "/about-us-2/publications/": 1
+        "/about-us-2/publications/": 1,
+        "/about-us/jobs/": 1,
+        "/about-us/about-us/": 1
       },
       "added": {
         "mailto:mail@andreas-horn.de": 1,
         "/research-interests/": 1,
-        "/research-interests/publications/": 1,
-        "http://www.lead-dbs.org/about": 1,
-        "/about-us/": 1
+        "/research-interests/publications/": 1
       }
     },
     "images": {
@@ -2728,34 +2714,34 @@
         "context": "about deep brain stimulation learn more about normative connectomes identifiers research"
       },
       {
-        "before": "identifiers research gate google scholar twitter publons orcid researcher id",
+        "before": "identifiers",
         "after": "“ average wiring diagrams ” of the human brain , estimated since 2014 and freely available to the scientific community .",
-        "context": "more about normative connectomes identifiers research gate google scholar twitter publons orcid researcher id connectomic dbs book publications"
+        "context": "more about normative connectomes identifiers research gate google scholar"
+      },
+      {
+        "before": "gate google scholar twitter publons orcid researcher id connectomic dbs book",
+        "after": "outputs",
+        "context": "normative connectomes identifiers research gate google scholar twitter publons orcid researcher id connectomic dbs book publications posters videos &"
       },
       {
         "before": "",
-        "after": "deep brain stimulation the book : chapters by internationally renowned experts on electrode localization ,",
-        "context": "orcid researcher id connectomic dbs book publications posters"
-      },
-      {
-        "before": "book",
-        "after": "modeling and connectomics .",
-        "context": "researcher id connectomic dbs book publications posters videos &"
-      },
-      {
-        "before": "",
-        "after": ",",
+        "after": "peer - reviewed articles and the journal covers our work appeared on",
         "context": "connectomic dbs book publications posters videos & talks"
       },
       {
         "before": "",
-        "after": "and talks publications peer - reviewed articles and the journal covers our work appeared on posters conference posters from the lab",
+        "after": "conference posters from the lab",
         "context": "dbs book publications posters videos & talks deep"
       },
       {
-        "before": "deep brain stimulation normative connectomes stimu - latte",
-        "after": "recorded talks by lab members",
-        "context": "posters videos & talks deep brain stimulation normative connectomes stimu - latte"
+        "before": "",
+        "after": "recorded talks by lab members connectomic",
+        "context": "posters videos & talks deep brain stimulation normative"
+      },
+      {
+        "before": "normative connectomes stimu - latte",
+        "after": "book edited by andreas horn",
+        "context": "talks deep brain stimulation normative connectomes stimu - latte"
       }
     ],
     "links": {
@@ -2780,26 +2766,164 @@
       },
       "added": {
         "/research-interests/media/full-abb_1.jpg": 1,
-        "/research-interests/media/full-fMRI.png": 1,
-        "/research-interests/media/4cb5be70722a-Connectomic-Deep-Brain-Stimulation-1249x1536.png": 1
+        "/research-interests/media/full-fMRI.png": 1
       }
     }
   },
   "/research-interests/deep-brain-stimulation/": {
     "text": [
       {
-        "before": "deep brain stimulation",
+        "before": "the main focus of our work is deep brain stimulation",
         "after": "",
-        "context": "deep brain stimulation deep brain stimulation the"
+        "context": "stimulation deep brain stimulation the main focus of our work is deep brain stimulation ( dbs ) –"
       },
       {
-        "before": "connectomic dbs book publications posters videos & talks deep brain stimulation normative connectomes stimu - latte",
+        "before": "– predominantly",
+        "after": "uses implanted electrodes to deliver electrical pulses to specific brain regions . our lab studies how electrode placement and brain connectivity relate to changes",
+        "context": "stimulation ( dbs ) – predominantly in movement disorders such"
+      },
+      {
+        "before": "movement disorders such as",
+        "after": "symptoms , especially in",
+        "context": ") – predominantly in movement disorders such as parkinson ’ s disease"
+      },
+      {
+        "before": "or",
+        "after": "and",
+        "context": "disease , essential tremor or dystonia – more rarely"
+      },
+      {
+        "before": "– more rarely in cognitive disorders such as depression or alzheimer ’ s disease",
         "after": "",
-        "context": "about connectivity benefit mapping connectomic dbs book publications posters videos & talks deep brain stimulation normative connectomes stimu - latte"
+        "context": "essential tremor or dystonia – more rarely in cognitive disorders such as depression or alzheimer ’ s disease . in dbs ,"
+      },
+      {
+        "before": "in",
+        "after": "lead - dbs we develop lead -",
+        "context": "’ s disease . in dbs , electrodes are"
+      },
+      {
+        "before": "",
+        "after": "an open - source toolbox for locating implanted",
+        "context": ". in dbs , electrodes are surgically implanted"
+      },
+      {
+        "before": "are surgically implanted into deep ( subcortical ) areas",
+        "after": "on postoperative scans and studying how stimulation sites connect to the rest",
+        "context": "in dbs , electrodes are surgically implanted into deep ( subcortical ) areas of the brain and"
+      },
+      {
+        "before": "",
+        "after": ". download lead - dbs brain atlases use subcortical atlases to identify structures near an electrode , or cortical",
+        "context": "areas of the brain and – using an"
+      },
+      {
+        "before": "– using an implanted impulse generator – these structures are stimulated chronically",
+        "after": "whole - brain parcellations to study connections across brain regions",
+        "context": "of the brain and – using an implanted impulse generator – these structures are stimulated chronically . the figure below"
+      },
+      {
+        "before": "",
+        "after": "lead - dbs methods subcortical electrophysiology mapping places recordings from different patients in a common anatomical space . horn et al . described",
+        "context": "are stimulated chronically . the figure below shows"
+      },
+      {
+        "before": "figure below shows",
+        "after": "method . neumann et al . applied it to dystonia . ac / pc to mni conversion translates surgical coordinates into",
+        "context": "stimulated chronically . the figure below shows a reconstruction of two"
+      },
+      {
+        "before": "reconstruction of two",
+        "after": "common reference space . horn et al .",
+        "context": "figure below shows a reconstruction of two dbs leads implanted with"
+      },
+      {
+        "before": "leads implanted with target subthalamic nucleus ( orange )",
+        "after": "network mapping relates a stimulation site ’ s connections",
+        "context": "reconstruction of two dbs leads implanted with target subthalamic nucleus ( orange ) to treat parkinson ’"
+      },
+      {
+        "before": "treat",
+        "after": "symptom change . horn et al . used this approach to predict outcomes in",
+        "context": "( orange ) to treat parkinson ’ s disease"
+      },
+      {
+        "before": "building tools to reconstruct electrode placement since 2012 , we develop an open - source toolbox to facilitate reconstruction of dbs electrode placement based on postoperative imaging . lead - dbs has since become a leading platform for dbs imaging research with specific focus on brain connectivity between dbs stimulation sites",
+        "after": "project history awards",
+        "context": "’ s disease . building tools to reconstruct electrode placement since 2012 , we develop an open - source toolbox to facilitate reconstruction of dbs electrode placement based on postoperative imaging . lead - dbs has since become a leading platform for dbs imaging research with specific focus on brain connectivity between dbs stimulation sites and other areas in"
+      },
+      {
+        "before": "other areas in the brain . visit lead - dbs . org impact of lead - dbs",
+        "after": "earlier releases early recognition",
+        "context": "dbs stimulation sites and other areas in the brain . visit lead - dbs . org impact of lead - dbs in 2015 , lead"
+      },
+      {
+        "before": "at the time of writing",
+        "after": "by 2023",
+        "context": "charité , berlin . at the time of writing , lead - dbs"
+      },
+      {
+        "before": "",
+        "after": "researchers had downloaded",
+        "context": "time of writing , lead - dbs was"
+      },
+      {
+        "before": "was downloaded",
+        "after": "",
+        "context": ", lead - dbs was downloaded over 65 , 000"
+      },
+      {
+        "before": "by researchers world - wide",
+        "after": ",",
+        "context": "65 , 000 times by researchers world - wide and currently , groups"
+      },
+      {
+        "before": "currently ,",
+        "after": "",
+        "context": "world - wide and currently , groups from over 20"
+      },
+      {
+        "before": "",
+        "after": "had",
+        "context": "from over 20 institutions contributed to lead -"
+      },
+      {
+        "before": "to lead - dbs",
+        "after": "",
+        "context": "over 20 institutions contributed to lead - dbs code & content ."
+      },
+      {
+        "before": "&",
+        "after": "and",
+        "context": "lead - dbs code & content . download lead"
+      },
+      {
+        "before": "download lead - dbs",
+        "after": "",
+        "context": "code & content . download lead - dbs lead - dbs 3"
+      },
+      {
+        "before": "resources and atlases lead - dbs features a high number of subcortical atlases and whole - brain parcellations from various authors . browse subcortical atlases browse whole - brain parcellations lead - dbs methods since 2012 , we introduced a number of novel methods to analyze dbs recording sites and brain connectivity . as such , the subcortical electrophysiology mapping ( sem ) approach was introduced in horn et al . 2017a and applied in neumann et al . 2017 . a summary of the approach can be found here . a novel method to convert ac / pc coordinates into mni standard space was introduced in horn et al . 2017b and is described here . finally , a method to predict clinical outcome of dbs patients based on brain connectivity – termed connectivity benefit mapping – was introduced in horn et al . 2017c . learn more about subcortical electrophysiology mapping learn more about ac / pc to mni conversion learn more about connectivity benefit mapping connectomic dbs book publications posters videos & talks deep brain stimulation normative connectomes stimu - latte",
+        "after": "",
+        "context": "dbs 3 . 0 resources and atlases lead - dbs features a high number of subcortical atlases and whole - brain parcellations from various authors . browse subcortical atlases browse whole - brain parcellations lead - dbs methods since 2012 , we introduced a number of novel methods to analyze dbs recording sites and brain connectivity . as such , the subcortical electrophysiology mapping ( sem ) approach was introduced in horn et al . 2017a and applied in neumann et al . 2017 . a summary of the approach can be found here . a novel method to convert ac / pc coordinates into mni standard space was introduced in horn et al . 2017b and is described here . finally , a method to predict clinical outcome of dbs patients based on brain connectivity – termed connectivity benefit mapping – was introduced in horn et al . 2017c . learn more about subcortical electrophysiology mapping learn more about ac / pc to mni conversion learn more about connectivity benefit mapping connectomic dbs book publications posters videos & talks deep brain stimulation normative connectomes stimu - latte"
       }
     ],
     "links": {
       "missing": {
+        "http://www.lead-dbs.org": 1,
+        "http://lead-dbs.org/": 3,
+        "http://www.lead-dbs.org/?page_id=23": 2,
+        "http://www.lead-dbs.org/?page_id=21": 1,
+        "https://www.sciencedirect.com/science/article/pii/S1053811918307663": 1,
+        "https://www.lead-dbs.org/lead-dbs-3-0-out-now/": 1,
+        "http://www.lead-dbs.org/?page_id=45": 2,
+        "http://www.lead-dbs.org/?page_id=1004": 2,
+        "http://www.lead-dbs.org/?page_id=2403": 3,
+        "http://onlinelibrary.wiley.com/doi/10.1002/hbm.23594/abstract": 1,
+        "http://onlinelibrary.wiley.com/doi/10.1002/ana.25095/abstract": 1,
+        "https://www.ncbi.nlm.nih.gov/pubmed/28163141": 1,
+        "http://www.lead-dbs.org/?page_id=2500": 2,
+        "http://onlinelibrary.wiley.com/doi/10.1002/ana.24974/abstract": 2,
         "/research-interests/the-book/": 1,
         "/research-interests/publications/": 1,
         "/research-interests/posters/": 1,
@@ -2808,270 +2932,99 @@
         "/research-interests/normative-connectomes/": 1,
         "/research-interests/stimu-latte/": 1
       },
+      "added": {
+        "https://netstim.github.io/lead-dbs-website/": 1,
+        "https://netstim.github.io/lead-dbs-website/download/": 1,
+        "https://netstim.github.io/lead-dbs-website/helpsupport/knowledge-base/atlasesresources/atlases-2/": 1,
+        "https://netstim.github.io/lead-dbs-website/helpsupport/knowledge-base/atlasesresources/cortical-atlas-parcellations-mni-space/": 1,
+        "https://netstim.github.io/lead-dbs-website/helpsupport/knowledge-base/lead-dbs-methods/subcortical-electrophysiology-mapping-sem/": 1,
+        "https://doi.org/10.1002/hbm.23594": 1,
+        "https://doi.org/10.1002/ana.25095": 1,
+        "https://netstim.github.io/lead-dbs-website/helpsupport/knowledge-base/lead-dbs-methods/acpc-to-mni-conversion-2/": 1,
+        "https://pubmed.ncbi.nlm.nih.gov/28163141/": 1,
+        "https://netstim.github.io/lead-dbs-website/helpsupport/knowledge-base/lead-dbs-methods/connectivity-benefit-mapping/": 1,
+        "https://doi.org/10.1002/ana.24974": 1,
+        "https://netstim.github.io/lead-dbs-website/lead-dbs-3-0-out-now/": 1
+      }
+    },
+    "images": {
+      "missing": {
+        "/wp-content/uploads/2017/12/logo-1-300x217.png": 1
+      },
       "added": {}
     }
   },
   "/research-interests/normative-connectomes/": {
     "text": [
       {
-        "before": "normative connectomes",
-        "after": "",
+        "before": "",
+        "after": "a",
         "context": "normative connectomes normative connectomes since 2014"
       },
       {
-        "before": "list of currently",
-        "after": "",
-        "context": "leadsuite . io ) list of currently available connectomes structural normative"
+        "before": "",
+        "after": "connectome maps average brain connectivity across a group . we use diffusion mri to map structural connections and resting - state fmri to measure functional connectivity . individual maps are aligned to a common space before averaging . browse available datasets or see how we use them . available",
+        "context": "normative connectomes normative connectomes since 2014 ,"
       },
       {
-        "before": "normative connectomes",
-        "after": "19 subjects",
-        "context": "currently available connectomes structural normative connectomes structural group connectome of"
+        "before": "since 2014",
+        "after": "structural 19 subjects structural group connectome · gibbs - tracker · horn 2013 download v1 . 0 169 nki - rs subjects structural group connectome · gibbs - tracker · horn 2016 download v1 . 0 nitrc 32 adult diffusion mgh - usc hcp subjects structural group connectome · gqi fiber tracking · dataset setsompop 2013",
+        "context": "normative connectomes normative connectomes since 2014 , we worked on"
       },
       {
-        "before": "of 19 subjects [",
-        "after": "·",
-        "context": "connectomes structural group connectome of 19 subjects [ gibbs - tracker ]"
+        "before": "we worked",
+        "after": "processing horn 2017 download v1 . 2 v1 . 1 v1 . 0 85 ppmi pd - patients structural group connectome · gqi fiber tracking · dataset marek 2011 , processing ewert 2017 download v1 . 1 v1 . 0 985 hcp subjects : dtor - 985 structural group connectome · gqi fiber tracking · elias 2024 quarter half full scripts and datasets",
+        "context": "connectomes since 2014 , we worked on estimating “ average"
       },
       {
-        "before": "] (",
-        "after": "·",
-        "context": "[ gibbs - tracker ] ( horn 2013 ) ["
-      },
-      {
-        "before": ") [ direct",
-        "after": "",
-        "context": "] ( horn 2013 ) [ direct download current version v1"
-      },
-      {
-        "before": "current version",
-        "after": "",
-        "context": ") [ direct download current version v1 . 0 ]"
-      },
-      {
-        "before": "] structural group connectome of",
-        "after": "",
-        "context": "version v1 . 0 ] structural group connectome of 169 nki - rs"
-      },
-      {
-        "before": "[",
-        "after": "structural group connectome ·",
-        "context": "nki - rs subjects [ gibbs - tracker ]"
-      },
-      {
-        "before": "] (",
-        "after": "·",
-        "context": "[ gibbs - tracker ] ( horn 2016 ) ["
-      },
-      {
-        "before": ") [ direct",
-        "after": "",
-        "context": "] ( horn 2016 ) [ direct download current version v1"
-      },
-      {
-        "before": "current version",
-        "after": "",
-        "context": ") [ direct download current version v1 . 0 ;"
-      },
-      {
-        "before": "; download via",
-        "after": "",
-        "context": "version v1 . 0 ; download via nitrc ] structural group"
-      },
-      {
-        "before": "] structural group connectome of",
-        "after": "",
-        "context": "; download via nitrc ] structural group connectome of 32 adult diffusion mgh"
-      },
-      {
-        "before": "[",
-        "after": "structural group connectome ·",
-        "context": "- usc hcp subjects [ gqi fiber tracking ]"
-      },
-      {
-        "before": "] (",
-        "after": "·",
-        "context": "[ gqi fiber tracking ] ( dataset : setsompop 2013"
-      },
-      {
-        "before": ":",
-        "after": "",
-        "context": "tracking ] ( dataset : setsompop 2013 ; processing"
-      },
-      {
-        "before": ";",
-        "after": ",",
-        "context": "dataset : setsompop 2013 ; processing : horn 2017"
-      },
-      {
-        "before": ":",
-        "after": "",
-        "context": "setsompop 2013 ; processing : horn 2017 ) ["
-      },
-      {
-        "before": ") [ direct",
-        "after": "",
-        "context": "processing : horn 2017 ) [ direct download current version v1"
-      },
-      {
-        "before": "current version",
-        "after": "",
-        "context": ") [ direct download current version v1 . 2 ;"
-      },
-      {
-        "before": "; older versions :",
-        "after": "",
-        "context": "version v1 . 2 ; older versions : v1 . 1 ,"
-      },
-      {
-        "before": ",",
-        "after": "",
-        "context": ": v1 . 1 , v1 . 0 ]"
-      },
-      {
-        "before": "] structural group connectome of",
-        "after": "",
-        "context": ", v1 . 0 ] structural group connectome of 85 ppmi pd -"
-      },
-      {
-        "before": "[",
-        "after": "structural group connectome ·",
-        "context": "ppmi pd - patients [ gqi fiber tracking ]"
-      },
-      {
-        "before": "] (",
-        "after": "·",
-        "context": "[ gqi fiber tracking ] ( dataset : marek 2011"
-      },
-      {
-        "before": ":",
-        "after": "",
-        "context": "tracking ] ( dataset : marek 2011 ; processing"
-      },
-      {
-        "before": ";",
-        "after": ",",
-        "context": "dataset : marek 2011 ; processing : ewert 2017"
-      },
-      {
-        "before": ":",
-        "after": "",
-        "context": "marek 2011 ; processing : ewert 2017 ) ["
-      },
-      {
-        "before": ") [ direct",
-        "after": "",
-        "context": "processing : ewert 2017 ) [ direct download current version v1"
-      },
-      {
-        "before": "current version",
-        "after": "",
-        "context": ") [ direct download current version v1 . 1 ;"
-      },
-      {
-        "before": "; older versions :",
-        "after": "",
-        "context": "version v1 . 1 ; older versions : v1 . 0 ]"
-      },
-      {
-        "before": "] structural group connectome of",
-        "after": "",
-        "context": ": v1 . 0 ] structural group connectome of 985 hcp subjects ["
-      },
-      {
-        "before": "[ gqi fiber tracking ]",
-        "after": "",
-        "context": "of 985 hcp subjects [ gqi fiber tracking ] : dtor - 985"
-      },
-      {
-        "before": "(",
-        "after": "structural group connectome · gqi fiber tracking ·",
-        "context": ": dtor - 985 ( elias 2024 ) ["
-      },
-      {
-        "before": ") [",
-        "after": "quarter half full",
-        "context": "985 ( elias 2024 ) [ scripts and datasets on"
-      },
-      {
-        "before": "; quarter version ; half version ; full version ]",
-        "after": "",
-        "context": "and datasets on figshare ; quarter version ; half version ; full version ] functional normative connectomes resting"
-      },
-      {
-        "before": "normative connectomes",
-        "after": "1000 gsp healthy subjects",
-        "context": "full version ] functional normative connectomes resting - state functional"
-      },
-      {
-        "before": "of 1000 gsp healthy subjects",
-        "after": "",
-        "context": "state functional group connectome of 1000 gsp healthy subjects , can be directly"
+        "before": "estimating “ average wiring diagrams ” of the human brain . based on diffusion - weighted or",
+        "after": "figshare functional 1000 gsp healthy subjects",
+        "context": ", we worked on estimating “ average wiring diagrams ” of the human brain . based on diffusion - weighted or resting - state functional"
       },
       {
         "before": "",
-        "after": "preprocessed by bassam al - fatly · cohen 2023 ·",
-        "context": "gsp healthy subjects , can be directly used"
-      },
-      {
-        "before": ", preprocessed by bassam al - fatly ( cohen 2023 ) .",
-        "after": "details",
-        "context": "and networkmapping explorer ) , preprocessed by bassam al - fatly ( cohen 2023 ) . install : download and"
-      },
-      {
-        "before": "resting - state functional group connectome of",
-        "after": "harvard dataverse",
-        "context": "renamed connectome folder . resting - state functional group connectome of 74 ppmi pd -"
-      },
-      {
-        "before": "( dataset : marek 2011 ; processing : horn 2017 ) [ direct download current version v1 . 0 ]",
-        "after": "",
-        "context": "patients , 15 controls ( dataset : marek 2011 ; processing : horn 2017 ) [ direct download current version v1 . 0 ] resting - state functional"
-      },
-      {
-        "before": "of",
-        "after": "· dataset marek 2011 , processing horn 2017 download v1 . 0",
-        "context": "state functional group connectome of 75 toronto pd -"
-      },
-      {
-        "before": "( detailed description : zenodo ; processing : horn 2017 ) [ direct download current version v1 . 0 ]",
-        "after": "",
-        "context": "toronto pd - patients ( detailed description : zenodo ; processing : horn 2017 ) [ direct download current version v1 . 0 ] resting - state functional"
-      },
-      {
-        "before": "of",
-        "after": "· detailed description on zenodo , processing horn 2017 download v1 . 0",
-        "context": "state functional group connectome of 100 typically developing children"
-      },
-      {
-        "before": "-",
-        "after": "–",
-        "context": "developing children ( 6 - 18 yrs ) assembled"
+        "after": "group connectome , preprocessed by bassam al - fatly · cohen 2023 · can be directly used for network mapping within lead - dbs ( lead mapper and networkmapping explorer ) details install : download and extract all * . tar files from the harvard dataverse repository , rename the extracted connectome folder to gsp 1000 v2 ( cohen 2023 ) , then download dataset_info . json , dataset_info . mat and dataset_volsurf . mat from the same repository and place them into the renamed connectome folder . harvard dataverse 74 ppmi pd - patients , 15 controls resting - state functional group connectome · dataset marek 2011 , processing horn 2017 download v1 . 0 75 toronto pd - patients resting - state functional group connectome · detailed description on zenodo , processing horn 2017 download v1 . 0 100 typically developing children ( 6 – 18 yrs ) resting - state functional group connectome · al - fatly 2023 details assembled from the nyu 2 sub - cohort of the consortium for reliability and reproducibility . the raw data was preprocessed using a set of multiple neuroimaging pipelines ( spm , fsl and lead - dbs ) . the timeseries were normalized to the pediatric mni space and integrated in lead - dbs as a ready - to - read timeseries matrices using lead - connectome mapper . the connectome is suitable to use with data normalized to the aforementioned pediatric space . download download normative connectomes ( via lead neuroimaging suite ) applications normative connectomes cannot replace patient / subject - specific connectivity information but are useful in scenarios where subject - specific data is not available and cannot be acquired . this often includes clinical applications such as : deep brain stimulation : after surgery , patients cannot be scanned in the",
+        "context": "resting - state functional mri data of large"
       },
       {
         "before": "",
-        "after": "resting - state functional group connectome · al - fatly 2023 details",
-        "context": "- 18 yrs ) assembled from nyu 2"
+        "after": "without restrictions , acquiring high quality",
+        "context": "- state functional mri data of large cohorts"
       },
       {
         "before": "",
-        "after": "the",
-        "context": "yrs ) assembled from nyu 2 sub -"
+        "after": "is difficult if not impossible ( e . g . horn 2017a , b , c ) . other forms",
+        "context": "state functional mri data of large cohorts of"
       },
       {
-        "before": "for further details , please refer to al - fatly 2023 . [ direct",
-        "after": "",
-        "context": "aforementioned pediatric space . for further details , please refer to al - fatly 2023 . [ direct download ] download normative"
+        "before": "",
+        "after": "brain stimulation : similar concepts may apply to noninvasive brain stimulation such as tms ( e . g . weigand 2017 ) stroke : after stroke , patients can undergo mri scans , but their brain structure is modified by the stroke event . if researchers are interested in how connectivity was before the stroke event , normative connectomes may at least give a useful hint ( e . g . boes 2015 , laganiere 2016 , fischer 2016 , darby 2016 & 2017 , fasano 2017 ) analysing large databases : it is often difficult if not impossible to acquire connectivity data from",
+        "context": "functional mri data of large cohorts of subjects"
       },
       {
-        "before": "]",
-        "after": "",
-        "context": ". [ direct download ] download normative connectomes ("
+        "before": "",
+        "after": "patients /",
+        "context": "of large cohorts of subjects / patients ,"
       },
       {
-        "before": "examples /",
+        "before": "/ patients",
+        "after": "that are analysed retrospectively . still",
+        "context": "large cohorts of subjects / patients , this line of"
+      },
+      {
+        "before": "this line of",
+        "after": "such databases can sometimes yield highly valuable information and the combination with normative connectomes can yield further information ( e . g . horn 2017a ) . early studies published",
+        "context": "subjects / patients , this line of work focused on running"
+      },
+      {
+        "before": "focused on running whole - brain tractography or functional connectivity analyses , warping individual connectomes into standard space and then averaging the results across the group of subjects .",
+        "after": "from 2014 to 2017",
+        "context": "this line of work focused on running whole - brain tractography or functional connectivity analyses , warping individual connectomes into standard space and then averaging the results across the group of subjects . in 2014 , we"
+      },
+      {
+        "before": "most normative connectomes are available for direct download within the lead neuroimaging suite ( leadsuite . io ) list of currently available connectomes structural normative connectomes structural group connectome of 19 subjects [ gibbs - tracker ] ( horn 2013 ) [ direct download current version v1 . 0 ] structural group connectome of 169 nki - rs subjects [ gibbs - tracker ] ( horn 2016 ) [ direct download current version v1 . 0 ; download via nitrc ] structural group connectome of 32 adult diffusion mgh - usc hcp subjects [ gqi fiber tracking ] ( dataset : setsompop 2013 ; processing : horn 2017 ) [ direct download current version v1 . 2 ; older versions : v1 . 1 , v1 . 0 ] structural group connectome of 85 ppmi pd - patients [ gqi fiber tracking ] ( dataset : marek 2011 ; processing : ewert 2017 ) [ direct download current version v1 . 1 ; older versions : v1 . 0 ] structural group connectome of 985 hcp subjects [ gqi fiber tracking ] : dtor - 985 ( elias 2024 ) [ scripts and datasets on figshare ; quarter version ; half version ; full version ] functional normative connectomes resting - state functional group connectome of 1000 gsp healthy subjects , can be directly used for network mapping within lead - dbs ( lead mapper and networkmapping explorer ) , preprocessed by bassam al - fatly ( cohen 2023 ) . install : download and extract all * . tar files from the harvard dataverse repository , rename the extracted connectome folder to gsp 1000 v2 ( cohen 2023 ) , then download dataset_info . json , dataset_info . mat and dataset_volsurf . mat from the same repository and place them into the renamed connectome folder . resting - state functional group connectome of 74 ppmi pd - patients , 15 controls ( dataset : marek 2011 ; processing : horn 2017 ) [ direct download current version v1 . 0 ] resting - state functional group connectome of 75 toronto pd - patients ( detailed description : zenodo ; processing : horn 2017 ) [ direct download current version v1 . 0 ] resting - state functional group connectome of 100 typically developing children ( 6 - 18 yrs ) assembled from nyu 2 sub - cohort of the consortium for reliability and reproducibility . the raw data was preprocessed using a set of multiple neuroimaging pipelines ( spm , fsl and lead - dbs ) . the timeseries were normalized to the pediatric mni space and integrated in lead - dbs as a ready - to - read timeseries matrices using lead - connectome mapper . the connectome is suitable to use with data normalized to the aforementioned pediatric space . for further details , please refer to al - fatly 2023 . [ direct download ] download normative connectomes ( via lead neuroimaging suite ) applications normative connectomes cannot replace patient / subject - specific connectivity information but are useful in scenarios where subject - specific data is not available and cannot be acquired . this often includes clinical applications such as : deep brain stimulation : after surgery , patients cannot be scanned in the mri without restrictions , acquiring high quality data is difficult if not impossible ( e . g . horn 2017a , b , c ) . other forms of brain stimulation : similar concepts may apply to noninvasive brain stimulation such as tms ( e . g . weigand 2017 ) stroke : after stroke , patients can undergo mri scans , but their brain structure is modified by the stroke event . if researchers are interested in how connectivity was before the stroke event , normative connectomes may at least give a useful hint ( e . g . boes 2015 , laganiere 2016 , fischer 2016 , darby 2016 & 2017 , fasano 2017 ) analysing large databases : it is often difficult if not impossible to acquire connectivity data from large cohorts of patients / subjects that are analysed retrospectively . still , such databases can sometimes yield highly valuable information and the combination with normative connectomes can yield further information ( e . g . horn 2017a ) . examples /",
         "after": "",
-        "context": "horn 2017a ) . examples / figures connectomic dbs book"
+        "context": ". org ) . most normative connectomes are available for direct download within the lead neuroimaging suite ( leadsuite . io ) list of currently available connectomes structural normative connectomes structural group connectome of 19 subjects [ gibbs - tracker ] ( horn 2013 ) [ direct download current version v1 . 0 ] structural group connectome of 169 nki - rs subjects [ gibbs - tracker ] ( horn 2016 ) [ direct download current version v1 . 0 ; download via nitrc ] structural group connectome of 32 adult diffusion mgh - usc hcp subjects [ gqi fiber tracking ] ( dataset : setsompop 2013 ; processing : horn 2017 ) [ direct download current version v1 . 2 ; older versions : v1 . 1 , v1 . 0 ] structural group connectome of 85 ppmi pd - patients [ gqi fiber tracking ] ( dataset : marek 2011 ; processing : ewert 2017 ) [ direct download current version v1 . 1 ; older versions : v1 . 0 ] structural group connectome of 985 hcp subjects [ gqi fiber tracking ] : dtor - 985 ( elias 2024 ) [ scripts and datasets on figshare ; quarter version ; half version ; full version ] functional normative connectomes resting - state functional group connectome of 1000 gsp healthy subjects , can be directly used for network mapping within lead - dbs ( lead mapper and networkmapping explorer ) , preprocessed by bassam al - fatly ( cohen 2023 ) . install : download and extract all * . tar files from the harvard dataverse repository , rename the extracted connectome folder to gsp 1000 v2 ( cohen 2023 ) , then download dataset_info . json , dataset_info . mat and dataset_volsurf . mat from the same repository and place them into the renamed connectome folder . resting - state functional group connectome of 74 ppmi pd - patients , 15 controls ( dataset : marek 2011 ; processing : horn 2017 ) [ direct download current version v1 . 0 ] resting - state functional group connectome of 75 toronto pd - patients ( detailed description : zenodo ; processing : horn 2017 ) [ direct download current version v1 . 0 ] resting - state functional group connectome of 100 typically developing children ( 6 - 18 yrs ) assembled from nyu 2 sub - cohort of the consortium for reliability and reproducibility . the raw data was preprocessed using a set of multiple neuroimaging pipelines ( spm , fsl and lead - dbs ) . the timeseries were normalized to the pediatric mni space and integrated in lead - dbs as a ready - to - read timeseries matrices using lead - connectome mapper . the connectome is suitable to use with data normalized to the aforementioned pediatric space . for further details , please refer to al - fatly 2023 . [ direct download ] download normative connectomes ( via lead neuroimaging suite ) applications normative connectomes cannot replace patient / subject - specific connectivity information but are useful in scenarios where subject - specific data is not available and cannot be acquired . this often includes clinical applications such as : deep brain stimulation : after surgery , patients cannot be scanned in the mri without restrictions , acquiring high quality data is difficult if not impossible ( e . g . horn 2017a , b , c ) . other forms of brain stimulation : similar concepts may apply to noninvasive brain stimulation such as tms ( e . g . weigand 2017 ) stroke : after stroke , patients can undergo mri scans , but their brain structure is modified by the stroke event . if researchers are interested in how connectivity was before the stroke event , normative connectomes may at least give a useful hint ( e . g . boes 2015 , laganiere 2016 , fischer 2016 , darby 2016 & 2017 , fasano 2017 ) analysing large databases : it is often difficult if not impossible to acquire connectivity data from large cohorts of patients / subjects that are analysed retrospectively . still , such databases can sometimes yield highly valuable information and the combination with normative connectomes can yield further information ( e . g . horn 2017a ) . examples / figures connectomic dbs book"
       },
       {
         "before": "connectomic dbs book publications posters videos & talks deep brain stimulation normative connectomes stimu - latte",
@@ -3081,6 +3034,7 @@
     ],
     "links": {
       "missing": {
+        "http://leadsuite.io/": 1,
         "/research-interests/the-book/": 1,
         "/research-interests/publications/": 1,
         "/research-interests/posters/": 1,
@@ -3089,7 +3043,10 @@
         "/research-interests/normative-connectomes/": 1,
         "/research-interests/stimu-latte/": 1
       },
-      "added": {}
+      "added": {
+        "/research-interests/normative-connectomes/#available-connectomes": 1,
+        "/research-interests/normative-connectomes/#applications": 1
+      }
     }
   },
   "/research-interests/posters/": {
@@ -3668,19 +3625,49 @@
         "context": "stimu - latte stimu - latte : the journal club please ,"
       },
       {
-        "before": "please , note the time change to 4 pm and the location change to library neurology !",
-        "after": "",
-        "context": ": the journal club please , note the time change to 4 pm and the location change to library neurology ! we are proud to"
+        "before": "please , note the time change to 4 pm and the location change to library neurology ! we are proud to present our new in - person",
+        "after": "a monthly",
+        "context": ": the journal club please , note the time change to 4 pm and the location change to library neurology ! we are proud to present our new in - person journal club series :"
       },
       {
-        "before": "list of",
-        "after": "",
-        "context": "- up now ! list of previous talks october 21"
+        "before": "series : stimu - latte ! this post - doc -",
+        "after": "on neuromodulation ,",
+        "context": "- person journal club series : stimu - latte ! this post - doc - run journal club takes"
       },
       {
-        "before": "october 21 , 2025 – ricardo loucao , phd presenting clinical deep brain stimulation strategies for orientation - selective pathway activation , slopsema et al . , j neural eng , 2019 november 25 , 2025 – patricia zvarova presenting long - term personalized adaptive deep brain stimulation in parkinson disease , bronte - stewart et al . , jama neurology , 2025 january 28 , 2026 – ilkem aysu sahin , md presenting effective deep brain stimulation for obsessive - compulsive disorder and tourette syndrome increases network - wide neural variability , merk et al . , preprint . march 25 , 2026 – rene marquez - franco , md presenting harmonization of multi - site diffusion tensor imaging data , fortin et al . , neuroimage , 2017 april 29 , 2026 – moritz thiel , md presenting deep brain stimulation for gnao1 - associated dystonia : a systematic review and meta - analysis , decraene et al . , neuromodulation , 2024 may 20 , 2026 – konstantin butenko , phd presenting engaging dystonia networks with subthalamic stimulation , butenko et al . , pnas 2025 june 24 , 2026 – till dembek , md presenting exploring the statistical validity & robustness of voxel - wise dbs mapping .",
+        "before": "journal club takes place once",
+        "after": "by postdocs at university hospital cologne . all career stages are welcome . when and where one wednesday",
+        "context": "- doc - run journal club takes place once a month on wednesdays"
+      },
+      {
+        "before": "on wednesdays at 4 : 00 pm . we will gather in a friendly environment and discuss the latest developments on neuromodulation over a cup of coffee . neuromodulation enthusiasts from all career levels are welcome ! on this page , you can find upcoming and previous sessions . looking forward to stimulating discussions ! where : library neurology . when : wednesdays",
         "after": "",
-        "context": "list of previous talks october 21 , 2025 – ricardo loucao , phd presenting clinical deep brain stimulation strategies for orientation - selective pathway activation , slopsema et al . , j neural eng , 2019 november 25 , 2025 – patricia zvarova presenting long - term personalized adaptive deep brain stimulation in parkinson disease , bronte - stewart et al . , jama neurology , 2025 january 28 , 2026 – ilkem aysu sahin , md presenting effective deep brain stimulation for obsessive - compulsive disorder and tourette syndrome increases network - wide neural variability , merk et al . , preprint . march 25 , 2026 – rene marquez - franco , md presenting harmonization of multi - site diffusion tensor imaging data , fortin et al . , neuroimage , 2017 april 29 , 2026 – moritz thiel , md presenting deep brain stimulation for gnao1 - associated dystonia : a systematic review and meta - analysis , decraene et al . , neuromodulation , 2024 may 20 , 2026 – konstantin butenko , phd presenting engaging dystonia networks with subthalamic stimulation , butenko et al . , pnas 2025 june 24 , 2026 – till dembek , md presenting exploring the statistical validity & robustness of voxel - wise dbs mapping . july 29 , 2026"
+        "context": "place once a month on wednesdays at 4 : 00 pm . we will gather in a friendly environment and discuss the latest developments on neuromodulation over a cup of coffee . neuromodulation enthusiasts from all career levels are welcome ! on this page , you can find upcoming and previous sessions . looking forward to stimulating discussions ! where : library neurology . when : wednesdays , 4 pm ."
+      },
+      {
+        "before": "",
+        "after": ", in the neurology library",
+        "context": "wednesdays , 4 pm . sign up below"
+      },
+      {
+        "before": "sign up below to",
+        "after": "",
+        "context": ", 4 pm . sign up below to join the mailing list"
+      },
+      {
+        "before": ". sign - up now ! list of",
+        "after": "for session dates",
+        "context": "join the mailing list . sign - up now ! list of previous talks october 21"
+      },
+      {
+        "before": "talks october 21 , 2025 – ricardo loucao , phd presenting clinical deep brain stimulation strategies for orientation - selective pathway activation , slopsema et al . , j neural eng , 2019 november 25 , 2025 – patricia zvarova presenting long - term personalized adaptive deep brain stimulation in parkinson disease , bronte - stewart et al . , jama neurology , 2025 january 28 ,",
+        "after": "sessions",
+        "context": "! list of previous talks october 21 , 2025 – ricardo loucao , phd presenting clinical deep brain stimulation strategies for orientation - selective pathway activation , slopsema et al . , j neural eng , 2019 november 25 , 2025 – patricia zvarova presenting long - term personalized adaptive deep brain stimulation in parkinson disease , bronte - stewart et al . , jama neurology , 2025 january 28 , 2026 – ilkem aysu"
+      },
+      {
+        "before": "– ilkem aysu sahin , md presenting effective deep brain stimulation for obsessive - compulsive disorder and tourette syndrome increases network - wide neural variability , merk et al . , preprint . march 25 , 2026 – rene marquez - franco , md presenting harmonization of multi - site diffusion tensor imaging data , fortin et al . , neuroimage , 2017 april 29 , 2026 – moritz thiel , md presenting deep brain stimulation for gnao1 - associated dystonia : a systematic review and meta - analysis , decraene et al . , neuromodulation , 2024 may 20 , 2026 – konstantin butenko , phd presenting engaging dystonia networks with subthalamic stimulation , butenko et al . , pnas 2025 june 24 , 2026 – till dembek , md presenting exploring the statistical validity & robustness of voxel - wise dbs mapping .",
+        "after": "sessions",
+        "context": "january 28 , 2026 – ilkem aysu sahin , md presenting effective deep brain stimulation for obsessive - compulsive disorder and tourette syndrome increases network - wide neural variability , merk et al . , preprint . march 25 , 2026 – rene marquez - franco , md presenting harmonization of multi - site diffusion tensor imaging data , fortin et al . , neuroimage , 2017 april 29 , 2026 – moritz thiel , md presenting deep brain stimulation for gnao1 - associated dystonia : a systematic review and meta - analysis , decraene et al . , neuromodulation , 2024 may 20 , 2026 – konstantin butenko , phd presenting engaging dystonia networks with subthalamic stimulation , butenko et al . , pnas 2025 june 24 , 2026 – till dembek , md presenting exploring the statistical validity & robustness of voxel - wise dbs mapping . july 29 , 2026"
       },
       {
         "before": "connectomic",
@@ -3699,7 +3686,7 @@
       },
       {
         "before": "latte",
-        "after": "associated dystonia : a systematic review and meta - analysis , decraene et al . , neuromodulation , 2024 march 25 , 2026 – rene marquez - franco , md presenting harmonization of multi - site diffusion tensor imaging data , fortin et al . , neuroimage , 2017 january 28 , 2026 – ilkem aysu sahin , md presenting effective deep brain stimulation for obsessive - compulsive disorder and tourette syndrome increases network - wide neural variability , merk et al . , preprint . november 25 , 2025 – patricia zvarova presenting long - term personalized adaptive deep brain stimulation in parkinson disease , bronte - stewart et al . , jama neurology , 2025 october 21 , 2025 – ricardo loucao , phd presenting clinical deep brain stimulation strategies for orientation - selective pathway activation , slopsema et al . , j neural eng , 2019",
+        "after": "associated dystonia : a systematic review and meta - analysis , decraene et al . , neuromodulation , 2024 march 25 , 2026 – rene marquez - franco , md presenting harmonization of multi - site diffusion tensor imaging data , fortin et al . , neuroimage , 2017 january 28 , 2026 – ilkem aysu sahin , md presenting effective deep brain stimulation for obsessive - compulsive disorder and tourette syndrome increases network - wide neural variability , merk et al . , preprint . 2025 sessions november 25 , 2025 – patricia zvarova presenting long - term personalized adaptive deep brain stimulation in parkinson disease , bronte - stewart et al . , jama neurology , 2025 october 21 , 2025 – ricardo loucao , phd presenting clinical deep brain stimulation strategies for orientation - selective pathway activation , slopsema et al . , j neural eng , 2019",
         "context": "normative connectomes stimu - latte"
       }
     ],
@@ -3719,19 +3706,304 @@
   "/research-interests/the-book/": {
     "text": [
       {
-        "before": "dbs book",
-        "after": "deep brain stimulation",
-        "context": "connectomic dbs book we are excited that"
+        "before": "connectomic dbs book we are excited that our book on",
+        "after": "",
+        "context": "connectomic dbs book we are excited that our book on connectomic deep brain stimulation"
       },
       {
-        "before": "connectomic dbs book publications posters videos & talks deep brain stimulation normative connectomes stimu - latte",
+        "before": "can now be ordered",
+        "after": "the book covers how brain connectivity informs deep brain stimulation ,",
+        "context": "connectomic deep brain stimulation can now be ordered from the publisher ("
+      },
+      {
+        "before": "the publisher ( academic press )",
+        "after": "electrode localization",
+        "context": "now be ordered from the publisher ( academic press ) and / or amazon"
+      },
+      {
+        "before": "/ or amazon etc",
+        "after": "modeling to clinical applications",
+        "context": "academic press ) and / or amazon etc . after a foreword"
+      },
+      {
+        "before": "after a",
         "after": "",
-        "context": "& morten kringelbach ) connectomic dbs book publications posters videos & talks deep brain stimulation normative connectomes stimu - latte"
+        "context": "or amazon etc . after a foreword by andrea kühn"
+      },
+      {
+        "before": "&",
+        "after": "and",
+        "context": "foreword by andrea kühn & michael fox , chapters"
+      },
+      {
+        "before": ",",
+        "after": ". view at academic press view on amazon figures from the book",
+        "context": "kühn & michael fox , chapters were written by"
+      },
+      {
+        "before": "were written by internationally renowned experts for specific topics covering broad content from electrode localization methods , dbs",
+        "after": "and contributors imaging and",
+        "context": "michael fox , chapters were written by internationally renowned experts for specific topics covering broad content from electrode localization methods , dbs modeling and connectomics ."
+      },
+      {
+        "before": "",
+        "after": "functional mri",
+        "context": "methods , dbs modeling and connectomics . for"
+      },
+      {
+        "before": ". for instance , we were excited to have pioneers from the connectomics field (",
+        "after": "—",
+        "context": "dbs modeling and connectomics . for instance , we were excited to have pioneers from the connectomics field ( james m shine &"
+      },
+      {
+        "before": "&",
+        "after": "and",
+        "context": "( james m shine & rick betzel ) write"
+      },
+      {
+        "before": ") write chapters about functional",
+        "after": "diffusion",
+        "context": "shine & rick betzel ) write chapters about functional mri and the connectomic"
+      },
+      {
+        "before": "the connectomic revolution and diffusion mri /",
+        "after": "",
+        "context": "about functional mri and the connectomic revolution and diffusion mri / tractography experts ( thijs"
+      },
+      {
+        "before": "experts (",
+        "after": "—",
+        "context": "diffusion mri / tractography experts ( thijs dhollander & marco"
+      },
+      {
+        "before": "&",
+        "after": "and",
+        "context": "experts ( thijs dhollander & marco reisert ) contribute"
+      },
+      {
+        "before": ") contribute to the book , as well . the team around",
+        "after": "electrode localization —",
+        "context": "dhollander & marco reisert ) contribute to the book , as well . the team around andreas husch & frank"
+      },
+      {
+        "before": "&",
+        "after": "and",
+        "context": "team around andreas husch & frank hertel are likely"
+      },
+      {
+        "before": "are likely the world experts on electrode localizations and covered this topic , while few people in the world may have thought as much about sweetspot",
+        "after": "sweet spot",
+        "context": "husch & frank hertel are likely the world experts on electrode localizations and covered this topic , while few people in the world may have thought as much about sweetspot mapping as till dembek"
+      },
+      {
+        "before": "as",
+        "after": "—",
+        "context": "much about sweetspot mapping as till dembek – who"
+      },
+      {
+        "before": "– who wrote the chapter on this topic . an integrative review about the mechanism of action",
+        "after": "mechanisms",
+        "context": "mapping as till dembek – who wrote the chapter on this topic . an integrative review about the mechanism of action of dbs was written"
+      },
+      {
+        "before": "was written by",
+        "after": "—",
+        "context": "of action of dbs was written by wolf - julian neumann"
+      },
+      {
+        "before": "developing exciting concepts that bridge micro - to macroscales",
+        "after": "electrophysiology",
+        "context": "wolf - julian neumann developing exciting concepts that bridge micro - to macroscales and static models with"
+      },
+      {
+        "before": "static models with dynamical ones . order the book here while most of the book focuses on neuroimaging methods , we are thrilled that",
+        "after": "neuromodulation —",
+        "context": "- to macroscales and static models with dynamical ones . order the book here while most of the book focuses on neuroimaging methods , we are thrilled that roxanne lofredi & andrea"
+      },
+      {
+        "before": "&",
+        "after": "and",
+        "context": "thrilled that roxanne lofredi & andrea kühn contributed a"
+      },
+      {
+        "before": "contributed a chapter on how to use electrophysiological methods to enhance our understanding about connectomic neuromodulation .",
+        "after": "histology and postmortem data",
+        "context": "lofredi & andrea kühn contributed a chapter on how to use electrophysiological methods to enhance our understanding about connectomic neuromodulation . in a similar fashion"
+      },
+      {
+        "before": "a similar fashion ,",
+        "after": "network models —",
+        "context": "connectomic neuromodulation . in a similar fashion , eduardo alho , erich"
+      },
+      {
+        "before": "&",
+        "after": "and",
+        "context": "alho , erich fonoff & helmut heinsen contributed a"
+      },
+      {
+        "before": "contributed a chapter on how to enhance network models using different sources of information , such as histological and postmortem datasets . thushara perrera , jonathan lau & svenja treu wrote chapters about",
+        "after": "",
+        "context": "fonoff & helmut heinsen contributed a chapter on how to enhance network models using different sources of information , such as histological and postmortem datasets . thushara perrera , jonathan lau & svenja treu wrote chapters about image preprocessing , stereotactic"
+      },
+      {
+        "before": "",
+        "after": "group analyses — thushara perrera , jonathan lau and svenja treu volume of tissue activated and pathway modeling with oss -",
+        "context": ", stereotactic spaces and dbs group level analyses"
+      },
+      {
+        "before": "group level analyses .",
+        "after": "—",
+        "context": "stereotactic spaces and dbs group level analyses . konstantin butenko & ursula"
+      },
+      {
+        "before": "&",
+        "after": "and",
+        "context": "analyses . konstantin butenko & ursula van rienen wrote"
+      },
+      {
+        "before": "wrote a comprehensive chapter that systematically analyzes effects of assumptions made in vta and pathway activation modeling based on their recent open source contribution to the field , oss - dbs . the book is 600 pages strong with a multitude of color figures covering all connectomic dbs moving to the",
+        "after": "",
+        "context": "& ursula van rienen wrote a comprehensive chapter that systematically analyzes effects of assumptions made in vta and pathway activation modeling based on their recent open source contribution to the field , oss - dbs . the book is 600 pages strong with a multitude of color figures covering all connectomic dbs moving to the clinical side of connectomic"
+      },
+      {
+        "before": "side of connectomic dbs , the toronto team (",
+        "after": "applications normative connectomes —",
+        "context": "moving to the clinical side of connectomic dbs , the toronto team ( gavin elias , jurgen"
+      },
+      {
+        "before": "&",
+        "after": "and",
+        "context": "wong , roohie parmar & andres m lozano )"
+      },
+      {
+        "before": ") wrote a chapter about normative connectomes ,",
+        "after": "functional mri during dbs —",
+        "context": "& andres m lozano ) wrote a chapter about normative connectomes , karsten mueller & robert"
+      },
+      {
+        "before": "&",
+        "after": "and",
+        "context": "connectomes , karsten mueller & robert jech on their"
+      },
+      {
+        "before": "on their pioneering efforts to use fmri under active dbs . world experts",
+        "after": "movement disorders —",
+        "context": "mueller & robert jech on their pioneering efforts to use fmri under active dbs . world experts francisca ferreira & harith"
+      },
+      {
+        "before": "&",
+        "after": "and",
+        "context": "world experts francisca ferreira & harith akram ( movement"
+      },
+      {
+        "before": "( movement disorders ) ;",
+        "after": "depression —",
+        "context": "ferreira & harith akram ( movement disorders ) ; ki sueng choi &"
+      },
+      {
+        "before": "&",
+        "after": "and",
+        "context": "; ki sueng choi & helen mayberg ( depression"
+      },
+      {
+        "before": "( depression ) and",
+        "after": "obsessive - compulsive disorder —",
+        "context": "choi & helen mayberg ( depression ) and juan carlos baldermann ("
+      },
+      {
+        "before": "( ocd ) contributed chapters about how connectomic dbs has informed studies in these clinical fields .",
+        "after": "surgical planning —",
+        "context": "and juan carlos baldermann ( ocd ) contributed chapters about how connectomic dbs has informed studies in these clinical fields . volker a coenen &"
+      },
+      {
+        "before": "&",
+        "after": "and",
+        "context": ". volker a coenen & marco reisert wrote a"
+      },
+      {
+        "before": "wrote a chapter on how connectomics may inform surgical planning and",
+        "after": "cognitive neuroscience —",
+        "context": "coenen & marco reisert wrote a chapter on how connectomics may inform surgical planning and friederike irmen , paul"
+      },
+      {
+        "before": "&",
+        "after": "and",
+        "context": "irmen , paul krack & andrea kühn on how"
+      },
+      {
+        "before": "on how connectomic dbs concepts may inform cognitive neuroscience . we conclude the book with a chapter on how brain",
+        "after": "research directions",
+        "context": "krack & andrea kühn on how connectomic dbs concepts may inform cognitive neuroscience . we conclude the book with a chapter on how brain lesion network mapping may"
+      },
+      {
+        "before": "may inform",
+        "after": "for",
+        "context": "brain lesion network mapping may inform neuromodulation targets ( juho"
+      },
+      {
+        "before": "(",
+        "after": "—",
+        "context": "may inform neuromodulation targets ( juho joutsa & michael"
+      },
+      {
+        "before": "&",
+        "after": "and",
+        "context": "targets ( juho joutsa & michael fox ) and"
+      },
+      {
+        "before": ") and how inversely connectomic dbs studies could inform",
+        "after": "targets for",
+        "context": "joutsa & michael fox ) and how inversely connectomic dbs studies could inform noninvasive neuromodulation targets ("
+      },
+      {
+        "before": "targets (",
+        "after": "—",
+        "context": "could inform noninvasive neuromodulation targets ( shan siddiqi & michael"
+      },
+      {
+        "before": "&",
+        "after": "and",
+        "context": "targets ( shan siddiqi & michael fox ) ."
+      },
+      {
+        "before": ") . two outlook chapters develop concepts toward",
+        "after": "",
+        "context": "siddiqi & michael fox ) . two outlook chapters develop concepts toward personalizing connectomic dbs studies"
+      },
+      {
+        "before": "studies (",
+        "after": "—",
+        "context": "toward personalizing connectomic dbs studies ( nanditha rajamani , andreas"
+      },
+      {
+        "before": "&",
+        "after": "and",
+        "context": "rajamani , andreas horn & barbara hollunder ) and"
+      },
+      {
+        "before": ") and how to integrate",
+        "after": "",
+        "context": "horn & barbara hollunder ) and how to integrate dynamical models into the"
+      },
+      {
+        "before": "into the framework (",
+        "after": "—",
+        "context": "to integrate dynamical models into the framework ( henrique fernandes , gustavo"
+      },
+      {
+        "before": "&",
+        "after": "and",
+        "context": "fernandes , gustavo deco & morten kringelbach ) connectomic"
+      },
+      {
+        "before": ") connectomic dbs book publications posters videos & talks deep brain stimulation normative connectomes stimu - latte",
+        "after": "",
+        "context": "deco & morten kringelbach ) connectomic dbs book publications posters videos & talks deep brain stimulation normative connectomes stimu - latte"
       }
     ],
     "links": {
       "missing": {
-        "https://www.elsevier.com/books/connectomic-deep-brain-stimulation/horn/978-0-12-821861-7": 1,
+        "https://www.elsevier.com/books/connectomic-deep-brain-stimulation/horn/978-0-12-821861-7": 3,
         "/research-interests/the-book/": 1,
         "/research-interests/publications/": 1,
         "/research-interests/posters/": 1,
@@ -3745,7 +4017,8 @@
     "images": {
       "missing": {
         "/wp-content/uploads/2021/11/ws_header-2-1030x225.png": 1,
-        "/wp-content/uploads/2021/03/Connectomic-Deep-Brain-Stimulation-837x1030.png": 1
+        "/wp-content/uploads/2021/03/Connectomic-Deep-Brain-Stimulation-837x1030.png": 1,
+        "/wp-content/uploads/2021/03/Connectomic_Deep_Brain_Stimulation.png": 1
       },
       "added": {}
     }

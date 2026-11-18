@@ -73,6 +73,9 @@ def main():
         if "ZgotmplZ" in link or "@root@" in link:
             errors.append(f"{route}: unresolved template link {link}")
             return
+        # Lead-DBS has its own Pages project on the same host.
+        if tag == "a" and link.startswith("https://netstim.github.io/lead-dbs-website/"):
+            return
         parts = urlsplit(urljoin(args.base.rstrip("/") + route, link))
         if parts.hostname not in {base.hostname, "www.netstim.org", "netstim.org"}:
             if tag in ("img", "script", "link"):
