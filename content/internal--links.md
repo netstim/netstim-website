@@ -15,8 +15,7 @@ modified: '2019-02-18T13:35:47+00:00'
 canonical: /internal/links/
 ---
 
-<div class="columns"><div class="column column-1-1"><h2>Helpful Links</h2>
-
+<div class="columns"><div class="column column-1-1">
 <ul>
 <li><a href="https://neurologie.charite.de/en/forschung/working_groups/movement_disorders/">Movement Disorders &amp; Neuromodulation Section Berlin</a> (the Netstim is part of the section led by Andrea Kühn at Charité).</li>
 <li><a href="http://www.brainnetworkstim.com/">Laboratory for Brain Network Imaging and Modulation</a> – the lab of Michael Fox in Boston with similar interest to ours.</li>

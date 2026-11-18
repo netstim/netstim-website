@@ -28,6 +28,9 @@
   .breadcrumb ol { flex-wrap: nowrap; overflow: hidden; }
   .breadcrumb li { white-space: nowrap; }
   .section-nav { margin-top: 20px; }
+  .section-nav ul { gap: 0 18px; }
+  .section-nav a { font-size: 14px; }
+  .page-head h1 { hyphens: auto; overflow-wrap: break-word; }
   .page-body { padding-top: 32px; }
 }
 /* the book's page: the 3D book beside the title (layouts/_partials/book3d.html) */

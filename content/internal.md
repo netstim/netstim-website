@@ -5,7 +5,7 @@ family: page
 crumbs:
 - title: Home
   url: '@root@'
-- title: Internal
+- title: For lab members
 sidebar: true
 wordpress_id: 450
 date: '2019-02-18T10:05:04+00:00'

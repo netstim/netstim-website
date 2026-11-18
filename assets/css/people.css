@@ -6,7 +6,7 @@
    credit. The alumni: the same portraits, smaller and denser, with their profile links in words. */
 .portrait-frame { display: block; aspect-ratio: 4 / 5; overflow: hidden; border-radius: var(--r-md); background: var(--surface); }
 .portrait-frame img { width: 100%; height: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 22%; filter: grayscale(1) contrast(1.04); }
-.portrait-frame--initials { display: grid; place-items: center; background: var(--line); }
+.portrait-frame.portrait-frame--initials { display: flex; align-items: center; justify-content: center; background: var(--line); }
 .portrait-frame--initials span { color: var(--muted); font-size: clamp(22px, 2.4vw, 32px); font-weight: 400; letter-spacing: -.03em; }
 .people-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 48px 24px; }
 .people-grid > li { min-width: 0; }
@@ -31,8 +31,7 @@
 .person-sheet::backdrop { background: rgb(12 16 19 / .32); }
 [data-theme="dark"] .person-sheet::backdrop { background: rgb(0 0 0 / .56); }
 .person-sheet:focus-visible { outline: none; }
-.person-sheet__bar { position: sticky; top: 0; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 60px; padding: 0 12px 0 32px;
-  background: color-mix(in srgb, var(--bg) 92%, transparent); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+.person-sheet__bar { position: sticky; top: 0; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 60px; padding: 0 12px 0 32px; background: var(--bg); }
 .person-sheet__bar-name { font-size: 15px; font-weight: 500; opacity: 0; transition: opacity 150ms cubic-bezier(.2, .65, .3, 1); }
 .person-sheet.is-scrolled .person-sheet__bar { box-shadow: 0 1px 0 var(--line); }
 .person-sheet.is-scrolled .person-sheet__bar-name { opacity: 1; }
@@ -84,7 +83,7 @@
 }
 @media (max-width: 767px) {
   .people-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 16px; }
-  .alumni-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 12px; }
+  .alumni-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 16px; }
   .person-sheet { inset: 0; width: 100%; border: 0; border-radius: 0; }
   .person-sheet__bar { padding-left: 20px; }
   .person-sheet__head { grid-template-columns: 136px minmax(0, 1fr); gap: 18px; padding: 4px 20px 0; }

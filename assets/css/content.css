@@ -71,7 +71,7 @@
   text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 5px; font-size: 16px; }
 .page-body--article .action.external::after { text-decoration: none; margin-left: 2px; }
 .page-body--article .action-row { margin-top: 12px; }
-.prose .action-row + :not(.action-row) { margin-top: 28px; }
+.prose .action-row + :not(.action-row, h2, h3, h4) { margin-top: 28px; }
 @media (hover: hover) {
   .page-body--article .action:hover { background: none; text-decoration-color: currentColor; }
 }

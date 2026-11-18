@@ -35,7 +35,7 @@
         {{ $journal := "" }}{{ with findRESubmatch `<i>(.*?)</i>` .citation 1 }}{{ $journal = index (index . 0) 1 | plainify | htmlUnescape }}{{ end }}
         {{- /* an author's initials caught in italics ("B. Al") are no journal */}}
         {{ if findRE `^[A-Z]\. ` $journal }}{{ $journal = "" }}{{ end }}
-        {{ $title := .title | replaceRE "ﬁ" "fi" | replaceRE "ﬂ" "fl" }}
+        {{ $title := .title | plainify | htmlUnescape | replaceRE "ﬁ" "fi" | replaceRE "ﬂ" "fl" }}
         <li class="pub-row" id="zp-ID-5249585-{{ .key }}" data-year="{{ $y }}">
           <h4>{{ if $doi }}<a href="{{ $doi }}" rel="noopener">{{ $title }}<span class="pub-row__ext" aria-hidden="true">{{ partial "icon.html" "external" }}</span></a>{{ else }}{{ $title }}{{ end }}</h4>
           <p>{{ $authors }}{{ with $journal }}<span class="pub-row__journal">&nbsp;· {{ . }}</span>{{ end }}</p>
