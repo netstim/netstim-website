@@ -18,7 +18,7 @@
 }
 /* the sheet */
 .person-sheet {
-  position: fixed; inset: 0; width: min(640px, calc(100% - 24px)); height: fit-content; max-width: none; max-height: min(84dvh, 760px);
+  position: fixed; inset: 0; width: min(920px, calc(100% - 24px)); height: fit-content; max-width: none; max-height: min(84dvh, 760px);
   margin: auto; padding: 0 0 32px; overflow-y: auto; overscroll-behavior: contain; border: 1px solid var(--line); border-radius: var(--r-lg);
   background: var(--bg); box-shadow: var(--shadow-3);
 }
@@ -29,19 +29,21 @@
 .person-sheet__bar-name { font-size: 15px; font-weight: 500; opacity: 0; transition: opacity 150ms cubic-bezier(.2, .65, .3, 1); }
 .person-sheet.is-scrolled .person-sheet__bar { box-shadow: 0 1px 0 var(--line); }
 .person-sheet.is-scrolled .person-sheet__bar-name { opacity: 1; }
-.person-sheet__head { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 24px; align-items: center; padding: 4px 40px 0; }
-.person-sheet__head--text { grid-template-columns: minmax(0, 1fr); }
-.person-sheet__head h2 { font-size: 36px; font-weight: 450; line-height: 1.05; letter-spacing: -.04em; }
+.person-sheet__layout { display: grid; grid-template-columns: minmax(160px, 28%) minmax(0, 1fr); gap: 20px 36px; align-items: start; padding: 4px 40px 0; }
+.person-sheet__layout > .portrait-frame { grid-column: 1; grid-row: 1 / 3; }
+.person-sheet__intro, .person-sheet__text, .person-sheet__credit { grid-column: -2 / -1; }
+.person-sheet__layout--text { grid-template-columns: minmax(0, 1fr); max-width: 700px; margin-inline: auto; }
+.person-sheet__layout h2 { font-size: 36px; font-weight: 450; line-height: 1.05; letter-spacing: -.04em; }
 .person-sheet__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 20px; margin-top: 16px; }
 .person-sheet__actions .action-row { margin: 0; }
 .person-sheet__actions .action-row:first-child .action { min-height: 44px; padding: 10px 18px; font-size: 14px; }
 .person-sheet__actions .action-row + .action-row .action { min-height: 44px; padding: 0; background: none; color: var(--ink); font-size: 14px; text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 5px; }
-.person-sheet__text { margin-top: 32px; padding: 0 40px; font-size: 17px; line-height: 1.65; }
+.person-sheet__text { font-size: 17px; line-height: 1.65; }
 .person-sheet__text :is(.columns, .column) { display: contents; }
 .person-sheet__text p + p { margin-top: 18px; }
 .person-sheet__text p:empty { display: none; }
 .person-sheet__links { display: flex; flex-wrap: wrap; list-style: none; margin: 8px 0 0; padding: 0; }
-.person-sheet__credit { margin: 24px 40px 0; color: var(--muted); font-size: 13px; }
+.person-sheet__credit { margin: 0; color: var(--muted); font-size: 13px; }
 /* motion: the photo grows from the card, the panel slides in; nothing else on the page moves */
 ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
 ::view-transition-group(person-photo) { z-index: 3; animation-duration: 380ms; animation-timing-function: cubic-bezier(.2, .8, .2, 1); }
@@ -67,8 +69,11 @@
   .alumni-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 16px; }
   .person-sheet { max-height: calc(100dvh - 32px); }
   .person-sheet__bar { padding-left: 20px; }
-  .person-sheet__head { grid-template-columns: minmax(72px, 28%) minmax(0, 1fr); gap: 18px; padding: 4px 20px 0; }
-  .person-sheet__head h2 { font-size: 28px; }
-  .person-sheet__text { padding: 0 20px; font-size: 16px; }
-  .person-sheet__credit { margin-inline: 20px; }
+  .person-sheet__layout { padding: 4px 20px 0; }
+  .person-sheet__layout:not(.person-sheet__layout--text) { grid-template-columns: minmax(72px, 26%) minmax(0, 1fr); gap: 20px 16px; }
+  .person-sheet__layout > .portrait-frame { grid-row: 1; }
+  .person-sheet__intro { align-self: center; }
+  .person-sheet__text, .person-sheet__credit { grid-column: 1 / -1; }
+  .person-sheet__layout h2 { font-size: 28px; }
+  .person-sheet__text { font-size: 16px; }
 }
