@@ -19,6 +19,8 @@ function closeDesktop(except) {
     if (button !== except && desktop.contains(button)) expanded(button, false);
   }
 }
+let hoverTimer;
+const finePointer = matchMedia('(hover: hover) and (pointer: fine)');
 const isOpen = button => button.getAttribute('aria-expanded') === 'true';
 for (const button of toggles) {
   const item = button.closest('.nav-item');
@@ -26,15 +28,36 @@ for (const button of toggles) {
     button.addEventListener('click', () => expanded(button, !isOpen(button)));
     continue;
   }
+  item.addEventListener('pointerenter', event => {
+    if (event.pointerType === 'touch' || !finePointer.matches) return;
+    clearTimeout(hoverTimer);
+    hoverTimer = setTimeout(() => {
+      closeDesktop(button);
+      expanded(button, true);
+    }, 180);
+  });
+  item.addEventListener('pointerleave', event => {
+    if (event.pointerType === 'touch' || !finePointer.matches) return;
+    clearTimeout(hoverTimer);
+    hoverTimer = setTimeout(() => {
+      if (!item.contains(document.activeElement)) expanded(button, false);
+    }, 180);
+  });
   button.addEventListener('click', () => {
+    clearTimeout(hoverTimer);
     closeDesktop(button);
     expanded(button, !isOpen(button));
   });
   item.addEventListener('focusout', event => {
-    if (!item.contains(event.relatedTarget)) expanded(button, false);
+    if (!item.contains(event.relatedTarget)) {
+      clearTimeout(hoverTimer);
+      expanded(button, false);
+    }
   });
   item.addEventListener('keydown', event => {
-    if (event.key !== 'Escape' || !isOpen(button)) return;
+    if (event.key !== 'Escape') return;
+    clearTimeout(hoverTimer);
+    if (!isOpen(button)) return;
     event.preventDefault();
     expanded(button, false);
     button.focus();
@@ -42,4 +65,11 @@ for (const button of toggles) {
 }
 document.addEventListener('click', event => {
   if (!desktop.contains(event.target)) closeDesktop();
+});
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') {
+    clearTimeout(hoverTimer);
+    closeDesktop();
+  }
 });

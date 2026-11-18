@@ -6,7 +6,7 @@ crumbs:
 - title: Home
   url: '@root@'
 - title: People
-  url: '@root@about-us/about-us/'
+  url: '@root@people/'
 - title: Team
   url: '@root@about-us/about-us/'
 - title: Andreas Horn

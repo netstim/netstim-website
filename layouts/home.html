@@ -8,7 +8,7 @@
 <main id="main" tabindex="-1" class="home">
 
   {{ with $p.hero }}
-  <section class="home-hero" aria-labelledby="hero-h">
+  <section id="about-the-lab" class="home-hero" aria-labelledby="hero-h">
     <div class="wrap">
       <div class="home-hero__panel">
         <div class="home-hero__media">{{ partial "picture.html" (dict "src" .image "alt" "" "width" 1612 "sizes" "(max-width: 767px) 100vw, 720px" "eager" true) }}</div>
@@ -17,7 +17,6 @@
           <p class="home-hero__lead">{{ .lead }}</p>
           <div class="btn-row">
             <a class="btn btn--light" href="{{ partial "url.html" .primary.url }}">{{ .primary.label }}</a>
-            <a class="text-action text-action--light" href="{{ partial "url.html" .secondary.url }}">{{ .secondary.label }} {{ $arrow }}</a>
           </div>
         </div>
       </div>
@@ -29,7 +28,7 @@
   <section class="home-section" aria-labelledby="research-h">
     <div class="wrap">
       <div class="section-head">
-        <div><h2 id="research-h">{{ .title }}</h2><p class="section-head__text">{{ .text }}</p></div>
+        <h2 id="research-h">{{ .title }}</h2>
         <a class="text-action" href="{{ "research-interests/" | relURL }}">Research overview {{ $arrow }}</a>
       </div>
       <ul class="card-grid card-grid--3">
@@ -41,7 +40,15 @@
         </a></li>
         {{ end }}
       </ul>
-      <a class="text-action" href="{{ "research-interests/publications/" | relURL }}">All publications {{ $arrow }}</a>
+      <div class="home-reading" id="book">
+        {{ with site.GetPage "/research-interests--the-book" }}
+        <a class="home-book" href="{{ .RelPermalink }}">
+          {{ partial "picture.html" (dict "src" .Params.bookCover "alt" "" "width" 240 "sizes" "(max-width: 640px) 72px, 96px") }}
+          <span><span class="home-book__title">{{ .Title }}</span><span class="media-card__text">{{ .Params.lead }}</span></span>
+        </a>
+        {{ end }}
+        <a class="text-action" href="{{ "research-interests/publications/" | relURL }}">All publications {{ $arrow }}</a>
+      </div>
     </div>
   </section>
   {{ end }}
@@ -84,7 +91,6 @@
         <div class="home-team__photo">{{ partial "picture.html" (dict "src" .image "alt" "The Netstim team on the steps in front of a university building" "width" 1536 "sizes" "(max-width: 767px) 100vw, 1280px") }}</div>
         <div class="home-team__text">
           <h2 id="team-h">{{ .title }}</h2>
-          <p>{{ .text }}</p>
           <div class="btn-row">
             <a class="btn" href="{{ partial "url.html" .primary.url }}">{{ .primary.label }}</a>
             <a class="text-action" href="{{ partial "url.html" .secondary.url }}">{{ .secondary.label }} {{ $arrow }}</a>
@@ -105,11 +111,12 @@
   {{ end }}
 
   {{ with $p.funding }}
-  <section class="home-section home-funding" aria-labelledby="funding-h">
+  <section id="funding" class="home-section home-funding" aria-labelledby="funding-h">
     <div class="wrap">
-      <h2 id="funding-h" class="sr-only">Funding</h2>
-      <p class="home-funding__text">{{ .text }} <a href="{{ partial "url.html" .link.url }}">{{ .link.label }}</a></p>
-      <ul class="logo-band">
+      <h2 id="funding-h">Funding</h2>
+      <p class="home-funding__text">{{ .text }}</p>
+      <h3 class="home-funding__past">Past funders</h3>
+      <ul class="logo-band" aria-label="Past funders">
         {{ partial "funder-logos.html" .logos }}
       </ul>
     </div>

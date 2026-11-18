@@ -6,6 +6,8 @@ crumbs:
 - title: Home
   url: '@root@'
 - title: Publications
+  url: '@root@publications/'
+- title: All publications
 related:
 - title: Publications
   url: '@root@research-interests/publications/'

@@ -125,3 +125,12 @@
 .prose .article-disclosure summary { padding: 12px 0; font-weight: 550; cursor: pointer; }
 .prose .article-disclosure ul { padding-bottom: 16px; }
 .prose .article-disclosure li + li { margin-top: 8px; }
+
+.section-overview { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .85fr); align-items: start; gap: var(--split-gap); }
+.overview-art { display: flex; align-items: center; justify-content: center; overflow: hidden; border-radius: var(--r-md); }
+.overview-art img { display: block; width: 100%; height: auto; }
+.overview-art--covers { gap: 5%; padding: 6%; background: var(--surface); }
+.overview-art--covers img { width: 44%; }
+@media (max-width: 700px) {
+  .section-overview { grid-template-columns: 1fr; gap: 24px; }
+}

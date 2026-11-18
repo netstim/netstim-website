@@ -2,44 +2,74 @@
   "/": {
     "text": [
       {
-        "before": "home dear reader",
-        "after": "two lines of research our two main lines of research are deep brain stimulation and connectomics",
-        "context": "home dear reader , welcome to the"
-      },
-      {
-        "before": "welcome to",
-        "after": "combined in a “ connectomic deep brain stimulation ” framework . deep brain stimulation",
-        "context": "home dear reader , welcome to the website of the"
-      },
-      {
-        "before": "website",
-        "after": "main focus of our work : deep brain stimulation , predominantly in movement disorders such as parkinson ’ s disease , essential tremor and dystonia . normative connectomes since 2014 , we have worked on estimating “ average wiring diagrams ”",
-        "context": ", welcome to the website of the institute for"
-      },
-      {
-        "before": "institute for network stimulation – which is based",
-        "after": "human brain . lead - dbs ↗ as a methodological backbone of our work , together with others , we develop the open - source toolbox lead - dbs . all publications news september 4 , 2025 new perspective in nature reviews neurology may 29 , 2025 patricia zvarova named forbes 30 under 30 in slovakia ! may 28 , 2025 lauren hart receives multiple phd scholarships november 6 , 2024 barbara hollunder receives thiemann fellowship",
-        "context": "the website of the institute for network stimulation – which is based at the university hospital"
+        "before": "home dear reader , welcome to the website of the institute for network stimulation – which is based at the university hospital cologne . we are a scientific group with interest in neuroimaging , methods development , movement disorders and invasive",
+        "after": "research deep",
+        "context": "home dear reader , welcome to the website of the institute for network stimulation – which is based at the university hospital cologne . we are a scientific group with interest in neuroimaging , methods development , movement disorders and invasive brain stimulation . the"
       },
       {
         "before": "",
-        "after": "dgn",
-        "context": "which is based at the university hospital cologne"
+        "after": "how electrode placement relates to symptom relief in parkinson ’ s disease , essential tremor and dystonia",
+        "context": "and invasive brain stimulation . the goal of"
       },
       {
-        "before": "university hospital cologne .",
-        "after": "team",
-        "context": "is based at the university hospital cologne . we are a scientific"
+        "before": "the goal",
+        "after": "normative connectomes reference maps",
+        "context": "invasive brain stimulation . the goal of our research is"
+      },
+      {
+        "before": "our research is to analyse and modulate",
+        "after": "",
+        "context": ". the goal of our research is to analyse and modulate brain networks to improve"
+      },
+      {
+        "before": "networks to improve clinical treatment in neurological and psychiatric brain disorders . the primary tools we use to pursue these goals are structural imaging and noninvasive connectivity measures",
+        "after": "connections",
+        "context": "analyse and modulate brain networks to improve clinical treatment in neurological and psychiatric brain disorders . the primary tools we use to pursue these goals are structural imaging and noninvasive connectivity measures derived from functional and"
       },
       {
         "before": "",
-        "after": "meet",
-        "context": "invasive brain stimulation . the goal of our"
+        "after": "structural and",
+        "context": "connectivity measures derived from functional and diffusion weighted"
       },
       {
-        "before": "goal of our research is to analyse and modulate brain networks to improve clinical treatment in neurological and psychiatric brain disorders . the primary tools we use to pursue these goals are structural imaging and noninvasive connectivity measures derived from functional and diffusion weighted mri . get in touch on bluesky about us scientific focus as a methodological “ backbone ” of our work , together with others , we develop an open - source software called lead - dbs . lead - dbs is a toolbox facilitating deep brain stimulation electrode reconstructions and computer simulations based on postoperative mri & ct imaging . visit lead - dbs . org learn more about our work on deep brain stimulation further scientific contributions include estimating and validating normative brain connectomes – i . e . “ average wiring diagrams ” of the human brain . these atlases describe which area is how strongly connected to which other areas of the brain . over the years , we have created several – they are all freely available to the scientific",
+        "before": "and diffusion weighted",
+        "after": "",
+        "context": "measures derived from functional and diffusion weighted mri . get in"
+      },
+      {
+        "before": "get in touch on bluesky about us scientific focus as a methodological “ backbone ” of",
+        "after": "lead - dbs ↗",
+        "context": "diffusion weighted mri . get in touch on bluesky about us scientific focus as a methodological “ backbone ” of our work , together"
+      },
+      {
+        "before": "work , together with others , we develop an",
+        "after": "",
+        "context": "backbone ” of our work , together with others , we develop an open - source software"
+      },
+      {
+        "before": "called lead - dbs",
+        "after": "for locating electrodes and mapping the brain networks they stimulate",
+        "context": "open - source software called lead - dbs . lead - dbs"
+      },
+      {
+        "before": "lead - dbs is a toolbox facilitating",
+        "after": "connectomic",
+        "context": "lead - dbs . lead - dbs is a toolbox facilitating deep brain stimulation electrode"
+      },
+      {
+        "before": "electrode reconstructions and computer simulations based on postoperative mri & ct imaging . visit lead - dbs . org learn more about",
+        "after": "edited by andreas horn · academic press all publications news september 4 , 2025 new perspective in nature reviews neurology may 29 , 2025 patricia zvarova named forbes 30 under 30 in slovakia ! may 28 , 2025 lauren hart receives multiple phd scholarships november 6 , 2024 barbara hollunder receives thiemann fellowship at dgn",
+        "context": "facilitating deep brain stimulation electrode reconstructions and computer simulations based on postoperative mri & ct imaging . visit lead - dbs . org learn more about our work on deep"
+      },
+      {
+        "before": "work on deep brain stimulation further scientific contributions include estimating and validating normative brain connectomes – i . e . “ average wiring diagrams ” of",
+        "after": "team meet",
+        "context": "learn more about our work on deep brain stimulation further scientific contributions include estimating and validating normative brain connectomes – i . e . “ average wiring diagrams ” of the human brain ."
+      },
+      {
+        "before": "human brain . these atlases describe which area is how strongly connected to which other areas of the brain . over the years , we have created several – they are all freely available to the scientific",
         "after": "team jobs",
-        "context": "brain stimulation . the goal of our research is to analyse and modulate brain networks to improve clinical treatment in neurological and psychiatric brain disorders . the primary tools we use to pursue these goals are structural imaging and noninvasive connectivity measures derived from functional and diffusion weighted mri . get in touch on bluesky about us scientific focus as a methodological “ backbone ” of our work , together with others , we develop an open - source software called lead - dbs . lead - dbs is a toolbox facilitating deep brain stimulation electrode reconstructions and computer simulations based on postoperative mri & ct imaging . visit lead - dbs . org learn more about our work on deep brain stimulation further scientific contributions include estimating and validating normative brain connectomes – i . e . “ average wiring diagrams ” of the human brain . these atlases describe which area is how strongly connected to which other areas of the brain . over the years , we have created several – they are all freely available to the scientific community and were applied"
+        "context": "diagrams ” of the human brain . these atlases describe which area is how strongly connected to which other areas of the brain . over the years , we have created several – they are all freely available to the scientific community and were applied"
       },
       {
         "before": "and were applied in a context where subject - or patient - specific connectograms are not available . browse connectomes publications members of our lab published in peer - reviewed international journals such as nature neuroscience , nature communications , annals of neurology , brain , pnas , biological psychiatry , neuroimage and human brain mapping . browse publications",
@@ -82,15 +112,14 @@
         "context": "all fueled by coffee ! funding the netstim institute"
       },
       {
-        "before": "includes grants from the german research council , the dystonia research foundation , the berlin institute of health , stiftung charite , the thiemann foundation for parkinson ’ s disease research , the foundation for ocd research ( ffor ) , the german research council and the eu joint programme – neurodegenerative disease research ( jpnd ) . latest updates new perspective in nature reviews neurology september 4 , 2025 - 8 : 45 am patricia zvarova named forbes 30 under 30 in slovakia ! may 29 , 2025 - 2 : 54 pm lauren hart receives multiple phd scholarships may 28 , 2025 - 7 : 24 pm barbara hollunder receives thiemann fellowship at dgn november 6 , 2024 - 2 : 37 pm andreas horn receives international brain stimulation early career award october 20 , 2024 - 5 : 08 pm netstim paper featured in neurology podcast september 30 , 2024 - 10 : 05 pm",
-        "after": "",
-        "context": ") . past funding includes grants from the german research council , the dystonia research foundation , the berlin institute of health , stiftung charite , the thiemann foundation for parkinson ’ s disease research , the foundation for ocd research ( ffor ) , the german research council and the eu joint programme – neurodegenerative disease research ( jpnd ) . latest updates new perspective in nature reviews neurology september 4 , 2025 - 8 : 45 am patricia zvarova named forbes 30 under 30 in slovakia ! may 29 , 2025 - 2 : 54 pm lauren hart receives multiple phd scholarships may 28 , 2025 - 7 : 24 pm barbara hollunder receives thiemann fellowship at dgn november 6 , 2024 - 2 : 37 pm andreas horn receives international brain stimulation early career award october 20 , 2024 - 5 : 08 pm netstim paper featured in neurology podcast september 30 , 2024 - 10 : 05 pm"
+        "before": "funding includes grants from the german research council , the dystonia research foundation , the berlin institute of health , stiftung charite , the thiemann foundation for parkinson ’ s disease research , the foundation for ocd research ( ffor ) , the german research council and the eu joint programme – neurodegenerative disease research ( jpnd ) . latest updates new perspective in nature reviews neurology september 4 , 2025 - 8 : 45 am patricia zvarova named forbes 30 under 30 in slovakia ! may 29 , 2025 - 2 : 54 pm lauren hart receives multiple phd scholarships may 28 , 2025 - 7 : 24 pm barbara hollunder receives thiemann fellowship at dgn november 6 , 2024 - 2 : 37 pm andreas horn receives international brain stimulation early career award october 20 , 2024 - 5 : 08 pm netstim paper featured in neurology podcast september 30 , 2024 - 10 : 05 pm",
+        "after": "funders",
+        "context": "nimh ) . past funding includes grants from the german research council , the dystonia research foundation , the berlin institute of health , stiftung charite , the thiemann foundation for parkinson ’ s disease research , the foundation for ocd research ( ffor ) , the german research council and the eu joint programme – neurodegenerative disease research ( jpnd ) . latest updates new perspective in nature reviews neurology september 4 , 2025 - 8 : 45 am patricia zvarova named forbes 30 under 30 in slovakia ! may 29 , 2025 - 2 : 54 pm lauren hart receives multiple phd scholarships may 28 , 2025 - 7 : 24 pm barbara hollunder receives thiemann fellowship at dgn november 6 , 2024 - 2 : 37 pm andreas horn receives international brain stimulation early career award october 20 , 2024 - 5 : 08 pm netstim paper featured in neurology podcast september 30 , 2024 - 10 : 05 pm"
       }
     ],
     "links": {
       "missing": {
         "https://bsky.app/profile/netstim.org": 1,
-        "/research-interests/the-book/": 1,
         "/about-us/": 2,
         "http://www.lead-dbs.org": 2,
         "/research-interests/normative-connectomes/": 1,
@@ -111,7 +140,6 @@
         "https://netstim.github.io/lead-dbs-website/": 1,
         "/about-us/about-us/": 1,
         "/about-us/jobs/": 1,
-        "/about-us/#funding": 1,
         "https://www.ffor.org/": 1,
         "https://www.dfg.de/en": 1,
         "https://www.nih.gov/": 1,
@@ -143,11 +171,12 @@
         "/media/full-abb_1.jpg": 1,
         "/media/full-fMRI.png": 1,
         "/media/595e8a2d1bb1-logo-1-1500x1083.png": 1,
+        "/media/4cb5be70722a-Connectomic-Deep-Brain-Stimulation-1249x1536.png": 1,
         "/wp-content/uploads/2025/09/figure_act_dbs-1030x989.png": 1,
         "/wp-content/uploads/2025/05/d98e74f6-2fe3-43a3-a898-f549b42b7a65-1-268x300.jpg": 1,
         "/wp-content/uploads/2025/05/IMG_2528-1030x773.jpg": 1,
         "/wp-content/uploads/2024/11/image.png": 1,
-        "/media/c56653209355-IMG_2207-1-1536x977.png": 1,
+        "/media/7051e60f3332-IMG_2212-1536x1029.png": 1,
         "/media/a473d51a1584-StimBrains_Logo_Vertical_Portfolio_transparentBG-1536x676.png": 1,
         "/media/5d84ece1bc6e-Stimulate_logo-2-1500x430.png": 1
       }
@@ -190,64 +219,26 @@
   "/about-us/": {
     "text": [
       {
-        "before": "us about us",
-        "after": "the lab",
-        "context": "about us about us the institute for network"
-      },
-      {
-        "before": "the",
-        "after": "",
-        "context": "stimulation is based at the university of cologne ."
-      },
-      {
-        "before": "of",
-        "after": "hospital",
-        "context": "based at the university of cologne . we are"
-      },
-      {
-        "before": "are a scientific group with interest in neuroimaging",
-        "after": "use structural",
-        "context": "of cologne . we are a scientific group with interest in neuroimaging , methods development ,"
-      },
-      {
-        "before": "methods development , movement disorders",
-        "after": "functional",
-        "context": "interest in neuroimaging , methods development , movement disorders and invasive brain stimulation"
-      },
-      {
-        "before": "invasive",
-        "after": "diffusion mri to study",
-        "context": ", movement disorders and invasive brain stimulation . people"
-      },
-      {
-        "before": "",
-        "after": "networks and how they respond to",
-        "context": "disorders and invasive brain stimulation . people jobs"
-      },
-      {
-        "before": "people jobs",
-        "after": "we also develop tools for analyzing imaging and stimulation data in neurological and psychiatric",
-        "context": "invasive brain stimulation . people jobs research interests publications jobs"
-      },
-      {
-        "before": "interests publications jobs people",
-        "after": ". explore our research or meet the team . get in touch on bluesky funding the netstim institute is currently funded by the schilling foundation and the national institute of mental health ( nimh ) . past funding includes grants from the german research council , the dystonia research foundation , the berlin institute of health , stiftung charite , the thiemann foundation for parkinson ’ s disease research , the foundation for ocd research ( ffor ) and the eu joint programme – neurodegenerative disease research ( jpnd ) .",
-        "context": ". people jobs research interests publications jobs people"
+        "before": "about us about us the institute for network stimulation is based at the university of cologne . we are a scientific group with interest in neuroimaging , methods development , movement disorders and invasive brain stimulation . people jobs research interests publications jobs people",
+        "after": "moved to /#about-the-lab",
+        "context": "about us about us the institute for network stimulation is based at the university of cologne . we are a scientific group with interest in neuroimaging , methods development , movement disorders and invasive brain stimulation . people jobs research interests publications jobs people"
       }
     ],
     "links": {
       "missing": {
-        "/about-us/about-us/": 2,
+        "/about-us/about-us/": 3,
         "/about-us/jobs/": 2,
+        "/research-interests/": 1,
         "/research-interests/publications/": 1
       },
       "added": {
-        "https://bsky.app/profile/netstim.org": 1
+        "/#about-the-lab": 1
       }
     },
     "images": {
       "missing": {
-        "/wp-content/uploads/2020/02/IMG_5446-2-1-1500x630.jpeg": 1
+        "/wp-content/uploads/2020/02/IMG_5446-2-1-1500x630.jpeg": 1,
+        "/wp-content/uploads/2025/05/IMG_2212-1030x690.png": 1
       },
       "added": {}
     }

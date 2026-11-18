@@ -5,7 +5,6 @@
 .home-section + .home-section { border-top: 1px solid var(--line); }
 .section-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 16px 32px; margin-bottom: 40px; }
 .section-head h2 { max-width: 18ch; }
-.section-head__text { max-width: 40rem; margin-top: 16px; color: var(--muted); font-size: var(--t-lead); line-height: 1.45; letter-spacing: -.01em; }
 .btn-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; margin-top: 32px; }
 
 /* 1 the statement */
@@ -18,7 +17,6 @@
 .home-hero__media { grid-row: 1; grid-column: 2; align-self: stretch; display: grid; place-items: center; padding: 24px; }
 .home-hero__media img { width: 100%; max-height: 600px; object-fit: contain; }
 .btn--light { background: #f7f9fa; color: #111; }
-.text-action--light { color: #f7f9fa; text-decoration-color: rgb(255 255 255 / .35); }
 @media (hover: hover) {
   .btn--light:hover { background: #d9dee1; }
 }
@@ -45,6 +43,16 @@
   .media-card:hover .media-card__title, .community-card:hover .media-card__title { color: var(--action); }
 }
 
+.home-reading { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--line); scroll-margin-top: 100px; }
+.home-book { display: grid; grid-template-columns: 96px minmax(0, 1fr); align-items: center; gap: 24px; color: var(--ink); text-decoration: none; }
+.home-book img { display: block; width: 100%; height: auto; }
+.home-book__title { display: block; margin-bottom: 5px; font-size: clamp(20px, 2vw, 26px); font-weight: 500; line-height: 1.2; letter-spacing: -.025em; }
+.home-book:is(:hover, :focus-visible) .home-book__title { color: var(--action); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+@media (max-width: 640px) {
+  .home-reading { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .home-book { grid-template-columns: 72px minmax(0, 1fr); gap: 16px; }
+}
+
 /* 5 news: the newest large with its picture, three rows beside it */
 .home-news { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 32px var(--split-gap); align-items: start; }
 .home-news time { display: block; color: var(--muted); font-size: 14px; }
@@ -69,13 +77,13 @@
 .home-team { display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: 32px var(--split-gap); align-items: end; }
 .home-team__photo { overflow: hidden; border-radius: var(--r-lg); aspect-ratio: 16 / 10; }
 .home-team__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 60%; }
-.home-team__text p { margin-top: 16px; color: var(--muted); font-size: var(--t-lead); line-height: 1.45; }
 .home-team__text .btn-row { margin-top: 28px; }
 
 /* 8 funders */
 .home-funding { padding-block: 64px; }
-.home-funding__text { max-width: 44rem; color: var(--muted); font-size: 15px; }
-.home-funding__text a { color: var(--ink); }
+.home-funding__text { margin-top: 12px; max-width: 44rem; color: var(--muted); font-size: 15px; }
+.home-funding__past { margin-top: 32px; font-size: 16px; font-weight: 500; }
+#about-the-lab, #funding { scroll-margin-top: 90px; }
 .logo-band { list-style: none; margin: 32px 0 0; padding: 0; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 24px 40px; align-items: center; }
 .logo-band a { display: grid; place-items: center; height: 56px; }
 /* every logo in the same box (width and height), so wide marks and tall marks read at one optical size */

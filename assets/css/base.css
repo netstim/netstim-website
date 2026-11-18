@@ -86,11 +86,12 @@ strong, b { font-weight: 600; }
 img { display: block; max-width: 100%; height: auto; }
 svg, iframe, video { max-width: 100%; }
 a { color: var(--action); text-underline-offset: .19em; text-decoration-thickness: 1px; }
-html { scrollbar-gutter: stable; scroll-padding-top: calc(var(--nav) + 24px); }
+html { scrollbar-gutter: stable; scroll-padding-top: calc(var(--nav) + var(--notice-height, 0px) + 24px); }
+html:has(.preview-banner) { --notice-height: 32px; }
 /* touch: no grey tap flash; every control answers a press at once (transform or opacity only) */
 a, button, summary, label { -webkit-tap-highlight-color: transparent; }
 :is(.btn, .action, .icon-button):active { transform: scale(.97); }
-:is(.media-card, .community-card, .news-card, .news-row, .home-news__row, .update-card, .person-card, .poster-card, .link-rows a, .phone-menu .nav-row > a, .phone-menu .nav-toggle):active { opacity: .7; }
+:is(.media-card, .community-card, .news-card, .news-row, .home-news__row, .update-card, .person-card, .poster-card, .link-rows a, .phone-menu .nav-row > a, .phone-menu .disclosure):active { opacity: .7; }
 :focus-visible { outline: 2px solid var(--action); outline-offset: 3px; border-radius: 3px; }
 .sr-only, .skip-link:not(:focus) {
   position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap;

@@ -7,7 +7,7 @@ crumbs:
 - title: Home
   url: '@root@'
 - title: People
-  url: '@root@about-us/about-us/'
+  url: '@root@people/'
 - title: Team
 sidebar: true
 wordpress_id: 296

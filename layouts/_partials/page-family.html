@@ -7,8 +7,6 @@
   {{- return (slice "content" $family) -}}
 {{- else if eq $family "research" -}}
   {{- return (slice "content" "home" "research") -}}
-{{- else if eq $family "about" -}}
-  {{- return (slice "content" "home" "about") -}}
 {{- else if in (slice "home" "community") $family -}}
   {{- return (slice "content" "home") -}}
 {{- end -}}

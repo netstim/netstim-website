@@ -5,10 +5,11 @@ several places. Every URL stays; what changes is which page carries what, and th
 
 | Menu | Page (URL kept) | Carries |
 |---|---|---|
-| Research | Overview `/research-interests/` | the two lines of research, cards to DBS, Normative Connectomes and the book, then the outputs (publications, posters, talks) |
+| Research | Overview `/research-interests/` | the two lines of research, cards to DBS and Normative Connectomes, then publications, posters, talks and the book |
 | | Deep Brain Stimulation, Normative Connectomes, Connectomic DBS book | unchanged text, set as articles |
-| Publications | Publications, Posters, Videos & Talks | unchanged |
-| People | About the lab `/about-us/` | the "Dear reader" letter (moved from home), the group photo, funding (moved from home) |
+| Publications | Overview `/publications/` | Links to the paper archive, conference posters and recorded talks |
+| Home | About the lab `/#about-the-lab` | institute introduction in the hero. The former `/about-us/` address redirects here. The group photo accompanies Team and Jobs, and funding is at `/#funding`. |
+| People | Overview `/people/` | Team and Jobs |
 | | Team `/about-us/about-us/` | portrait cards; a card opens the profile |
 | | Jobs `/about-us/jobs/` | applicant text (moved from People), open posts |
 | Community | Overview `/community/` | the journal club, podcast and imaging meetings |

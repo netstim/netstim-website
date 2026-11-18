@@ -2,6 +2,7 @@
   {{ partial "page-head.html" . }}
   {{ if eq .Params.family "people" }}{{ partial "people-page.html" . }}
   {{ else if eq .Params.family "posters" }}{{ partial "posters-page.html" . }}
+  {{ else if eq .Params.family "overview" }}{{ partial "overview.html" . }}
   {{ else if eq .Params.family "community" }}
     <div class="wrap page-body">{{ partial "community-cards.html" (dict "items" site.Home.Params.community "overview" true) }}</div>
     <div class="wrap page-body prose">{{ partial "render.html" .Content }}</div>
@@ -37,10 +38,5 @@
     {{ end }}
   {{ end }}
   {{ end }}
-  {{ if eq .Params.family "about" }}{{ with site.Home.Params.funding }}
-    <div class="wrap about-logos"><ul class="logo-band" aria-label="Funders">
-      {{ partial "funder-logos.html" .logos }}
-    </ul></div>
-  {{ end }}{{ end }}
   {{ if .Params.comment_anchor }}<span id="respond"></span>{{ end }}
 </main>

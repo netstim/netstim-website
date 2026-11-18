@@ -1,11 +1,10 @@
-{{- /* The preview banner scrolls away with the page (only the header below it is sticky). */ -}}
+<header class="site-header">
 {{ if site.Params.preview }}
 <div class="preview-banner" role="region" aria-label="Preview notice">
-  <span><strong>Under construction.</strong> The official Netstim website is <a href="{{ site.Params.liveSite }}">www.netstim.org</a>.</span>
+  <span><strong>Under construction.</strong> <span class="preview-detail">A preview of the new Netstim website.</span> The official site is <a href="{{ site.Params.liveSite }}">www.netstim.org</a>.</span>
 </div>
 {{ end }}
 {{ $logo := "" }}{{ with resources.Get hugo.Data.nav.logo }}{{ $logo = .Resize "480x webp q90" }}{{ end }}
-<header class="site-header">
   <div class="wrap header-inner">
     <a class="site-logo" href="{{ "" | relURL }}" aria-label="{{ hugo.Data.nav.logo_alt }}, home">
       {{ with $logo }}<img src="{{ .RelPermalink }}" alt="" width="{{ .Width }}" height="{{ .Height }}">{{ end }}
