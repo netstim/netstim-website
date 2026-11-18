@@ -9,7 +9,7 @@
   {{- $two := lower (replaceRE `[^\pL\pN]+` "" (plainify (index $m 4))) -}}
   {{- /* links inside the dropped heading (an ORCID mark) stay, in a line of their own */ -}}
   {{- if eq $one $norm -}}
-    {{- $keep := delimit (findRE `(?s)<a\b.*?</a>` (index $m 1)) " " -}}
+    {{- $keep := "" -}}{{- range findRE `(?s)<a\b.*?</a>` (index $m 1) }}{{ if not (in . "<netstim-image") }}{{ $keep = print $keep " " . }}{{ end }}{{ end -}}
     {{- $html = replace $html (index $m 1) (cond (ne $keep "") (print `<p class="title-links">` $keep `</p>`) "") 1 -}}
   {{- else if and $two (eq (print $one $two) $norm) -}}
     {{- $html = replace $html (print (index $m 1) (index $m 3)) "" 1 -}}

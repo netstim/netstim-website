@@ -10,6 +10,7 @@ crumbs:
 - title: andreashorn
 sidebar: true
 comment_anchor: true
+redirect: '@root@blog/'
 ---
 
 <section class="author-box"><span class="archive-media"><span class="author-avatar"><netstim-image data='{"src":"media/c007f32c9df0-b340e8ce774c1e51608bbde7f860932aadc5ef5ac5d83562e6d849eec2736ad5.png","original":"https://secure.gravatar.com/avatar/b340e8ce774c1e51608bbde7f860932aadc5ef5ac5d83562e6d849eec2736ad5?s=81&amp;d=mm&amp;r=g","alt":"andreashorn","width":81,"class":"avatar"}'/></span></span><h2>About andreashorn</h2><p>This author has not written his bio yet.<br/>But we are proud to say that andreashorn contributed 44 entries already.</p>

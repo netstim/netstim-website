@@ -50,7 +50,7 @@
     <div class="wrap">
       <h2 id="journals-h" class="home-journals__label">{{ .title }}</h2>
       <ul class="journal-wall">
-        {{ range .items }}<li><a href="{{ .url }}" rel="noopener">{{ .title }}</a></li>{{ end }}
+        {{ range .items }}<li><a href="{{ .url }}" rel="noopener">{{ .title }}<span class="journal-wall__ext" aria-hidden="true">{{ partial "icon.html" "external" }}</span></a></li>{{ end }}
       </ul>
       <a class="text-action" href="{{ partial "url.html" .link.url }}">{{ .link.label }} {{ $arrow }}</a>
     </div>
@@ -117,10 +117,10 @@
       <ul class="card-grid card-grid--2">
         {{ range . }}{{ $href := partial "url.html" .url }}{{ $ext := hasPrefix $href "http" }}
         <li><a class="community-card" href="{{ $href }}"{{ if $ext }} rel="noopener"{{ end }}>
-          <span class="community-card__art" style="--ground: {{ .ground | safeCSS }}">{{ partial "picture.html" (dict "src" .image "alt" "" "width" 1200 "sizes" "(max-width: 767px) 100vw, 600px") }}</span>
+          <span class="community-card__art community-card__art--{{ .ground }}">{{ partial "picture.html" (dict "src" .image "alt" "" "width" 1200 "sizes" "(max-width: 767px) 100vw, 600px") }}</span>
           <span class="media-card__title">{{ .title }}</span>
           <span class="media-card__text">{{ .text }}</span>
-          <span class="community-card__go">{{ .label }}{{ if $ext }} ↗{{ else }} {{ $arrow }}{{ end }}</span>
+          <span class="community-card__go">{{ .label }}{{ if $ext }}{{ partial "icon.html" "external" }}{{ else }}{{ $arrow }}{{ end }}</span>
         </a></li>
         {{ end }}
       </ul>

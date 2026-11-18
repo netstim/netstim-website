@@ -1,0 +1,2 @@
+{{- /* "Frauke Raaff" -> "FR" */ -}}
+{{- $i := "" }}{{ range first 2 (split . " ") }}{{ $i = print $i (substr . 0 1) }}{{ end }}{{ return $i -}}

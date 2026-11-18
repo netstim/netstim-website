@@ -1,5 +1,4 @@
-.event-location { margin-top: 20px; }
-.map-status { float: right; margin: 0 0 10px 16px; color: var(--muted); }
-.event-list { padding-block: 9px; }
-.attribution { font-size: 13px; color: var(--muted); }
-.family-events .post-meta { display: block; color: var(--muted); font-size: 12px; }
+/* Lab events (data/events.yaml): a meeting's or a location's facts as terms beside values, then what is on. */
+.event-facts { max-width: var(--measure); }
+.event-empty { color: var(--muted); }
+.family-events .page-body > .link-rows { margin-top: 24px; }

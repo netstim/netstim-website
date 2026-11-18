@@ -23,7 +23,7 @@ canonical: /lead-dbs-v2-5-out-now/
 
 
 
-<div class="action-row centered-action"><a aria-label="Read the releaser notes in our newsletter" class="action external" href="https://www.lead-dbs.org/?na=v&amp;nk=2213-2c76d5a4d0&amp;id=24">Read the releaser notes in our newsletter</a></div></div><div class="column column-1-3"><div class="image-block"><a aria-label="t-1-1030x782" href="https://www.nature.com/articles/s41582-020-00426-z"><netstim-image data='{"src":"media/125ff9dbcea1-t-1-1030x782-1.png","original":"https://www.netstim.org/wp-content/uploads/2021/03/t-1-1030x782-1.png","alt":"","width":1030}'/></a></div>
+<div class="action-row centered-action"><a aria-label="Read the release notes in our newsletter" class="action external" href="https://www.lead-dbs.org/?na=v&amp;nk=2213-2c76d5a4d0&amp;id=24">Read the release notes in our newsletter</a></div></div><div class="column column-1-3"><div class="image-block"><a aria-label="t-1-1030x782" href="https://www.nature.com/articles/s41582-020-00426-z"><netstim-image data='{"src":"media/125ff9dbcea1-t-1-1030x782-1.png","original":"https://www.netstim.org/wp-content/uploads/2021/03/t-1-1030x782-1.png","alt":"","width":1030}'/></a></div>
 <p><em>Three new GUIs to analyze relationships between stimulation site and clinical or behavioral changes following DBS on a group level.</em></p>
 </div></div>
 

@@ -25,5 +25,5 @@ canonical: /neuroimage-2018-best-paper-w/
 </div></div>
 
 <div class="columns"><div class="column column-2-3"><p>The histology dataset used to create the atlas was graciously supplied by Mallar M. Chakravarty and D. Louis Collins from the MNI, which are both co-authors on the paper, as well.</p>
-<p><a href="https://linkinghub.elsevier.com/retrieve/pii/S1053811918318664">The paper</a> was selected from over 3000 manuscripts submitted to NeuroImage within the course of 2018. It was cited cited &gt;60 times within 18 months and has thoroughly empowered the <a href="http://www.lead-dbs.org">Lead-DBS software package</a>.</p>
+<p><a href="https://linkinghub.elsevier.com/retrieve/pii/S1053811918318664">The paper</a> was selected from over 3000 manuscripts submitted to NeuroImage within the course of 2018. It was cited &gt;60 times within 18 months and has thoroughly empowered the <a href="http://www.lead-dbs.org">Lead-DBS software package</a>.</p>
 </div><div class="column column-1-3"><div class="image-block"><netstim-image data='{"src":"media/9587fdf65355-OHBM.png","original":"https://www.netstim.org/wp-content/uploads/2019/06/OHBM-1030x795.png","alt":"","width":1030}'/></div></div></div>

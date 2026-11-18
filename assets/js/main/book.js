@@ -13,8 +13,8 @@ if (book) {
       const r = book.getBoundingClientRect();
       const x = Math.max(-1, Math.min(1, (event.clientX - (r.left + r.width / 2)) / (r.width * 1.5)));
       const y = Math.max(-1, Math.min(1, (event.clientY - (r.top + r.height / 2)) / (r.height)));
-      book.style.setProperty('--ry', `${-34 + x * 22}deg`);
-      book.style.setProperty('--rx', `${8 - y * 10}deg`);
+      book.style.setProperty('--ry', `${28 + x * 22}deg`);
+      book.style.setProperty('--rx', `${6 - y * 10}deg`);
     });
   });
   area.addEventListener('pointerleave', () => {

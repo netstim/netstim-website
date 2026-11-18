@@ -22,7 +22,16 @@
     <div class="poster-dialog__text prose">
       <p class="poster-dialog__who">{{ .who }}</p>
       <h2 id="poster-{{ .id }}-title">{{ .title }}</h2>
-      <div class="poster-dialog__details">{{ partial "render.html" ($.RenderString (dict "display" "block") .details) }}</div>
+      {{- /* the details without the title said again (the source repeats it in bold at the top) */}}
+      {{ $details := .details }}
+      {{ $norm := lower (replaceRE `[^\pL\pN]+` "" .title) }}
+      {{ with findRESubmatch `^\s*(<(?:p|h[2-4])[^>]*>(?:\s*<(?:strong|b)>)?(.*?)(?:</(?:strong|b)>\s*)?</(?:p|h[2-4])>)` $details 1 }}
+        {{ if eq (lower (replaceRE `[^\pL\pN]+` "" (plainify (index (index . 0) 2)))) $norm }}{{ $details = replace $details (index (index . 0) 1) "" 1 }}{{ end }}
+      {{ end }}
+      <details class="poster-dialog__details">
+        <summary>Affiliations and references</summary>
+        {{ partial "render.html" ($.RenderString (dict "display" "block") $details) }}
+      </details>
     </div>
   </dialog>
   {{ end }}

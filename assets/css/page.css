@@ -5,11 +5,12 @@
 .page-lead { max-width: 40rem; margin-top: 20px; color: var(--muted); font-size: var(--t-lead); line-height: 1.45; letter-spacing: -.015em; }
 .breadcrumb ol { list-style: none; margin: 0 0 16px; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 0 8px; font-size: 14px; color: var(--muted); }
 .breadcrumb li + li::before { content: "/"; margin-right: 8px; opacity: .6; }
-.breadcrumb a { display: inline-flex; align-items: center; min-height: 32px; color: var(--muted); text-decoration: none; }
+.breadcrumb a { display: inline-flex; align-items: center; justify-content: center; min-height: 32px; min-width: 44px; color: var(--muted); text-decoration: none; }
+.breadcrumb li:first-child a { justify-content: flex-start; }
 .breadcrumb [aria-current] { color: var(--ink); }
 .section-nav { margin-top: 32px; border-bottom: 1px solid var(--line); }
 .section-nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0 24px; }
-.section-nav a { position: relative; display: flex; align-items: center; min-height: 48px; color: var(--muted); font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap; }
+.section-nav a { position: relative; display: flex; align-items: center; justify-content: center; min-height: 48px; min-width: 44px; color: var(--muted); font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap; }
 .section-nav a[aria-current="page"] { color: var(--ink); }
 .section-nav a[aria-current="page"]::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: currentColor; }
 .page-body { padding-block: 48px var(--section); }
@@ -22,14 +23,18 @@
   .page-head { padding-top: 28px; }
   .breadcrumb ol { margin-bottom: 8px; font-size: 13px; }
   .breadcrumb a { min-height: 44px; }
+  /* a phone: the trail without the current page (the title right under it says where you are) */
+  .breadcrumb li:last-child { display: none; }
+  .breadcrumb ol { flex-wrap: nowrap; overflow: hidden; }
+  .breadcrumb li { white-space: nowrap; }
   .section-nav { margin-top: 20px; }
   .page-body { padding-top: 32px; }
 }
 /* the book's page: the 3D book beside the title (layouts/_partials/book3d.html) */
-.page-head--book .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 420px); grid-template-rows: auto auto 1fr; column-gap: var(--split-gap); align-items: start; }
+.page-head--book .wrap { display: grid; grid-template-columns: minmax(0, var(--measure)) minmax(0, 1fr); grid-template-rows: auto auto 1fr; column-gap: var(--split-gap); align-items: center; }
 .page-head--book .wrap > :not(.book3d) { grid-column: 1; }
-.page-head--book .book3d { grid-column: 2; grid-row: 1 / span 3; --w: 260px; }
-@media (max-width: 767px) {
+.page-head--book .book3d { grid-column: 2; grid-row: 1 / span 3; --w: 240px; height: calc(var(--h) + 60px); }
+@media (max-width: 1023px) {
   .page-head--book .wrap { grid-template-columns: minmax(0, 1fr); }
-  .page-head--book .book3d { grid-column: 1; grid-row: auto; --w: 190px; --d: 26px; }
+  .page-head--book .book3d { grid-column: 1; grid-row: auto; --w: 200px; --d: 26px; }
 }

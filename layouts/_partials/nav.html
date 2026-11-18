@@ -1,3 +1,6 @@
+{{- /* The menu. Desktop: each item a link, its children in a band opened by the chevron or by hovering.
+       Phone (dict "phone" true): an item with children is one full-width toggle row (every parent's own page
+       is among its children), the open group of the current page expanded. */ -}}
 <ul class="nav-list">
   {{ range $i, $item := .items }}
     {{ $href := partial "url.html" $item.url }}
@@ -7,11 +10,15 @@
     {{ $id := printf "%s-%d" $.id $i }}
     <li class="nav-item{{ if $inside }} is-current{{ end }}">
       <div class="nav-row">
-        <a href="{{ $href }}"{{ if $active }} aria-current="page"{{ end }}{{ if $external }} rel="noopener"{{ end }}>{{ $item.title }}{{ if $external }}<span class="ext" aria-hidden="true"> ↗</span>{{ end }}</a>
-        {{ with $item.children }}<button class="icon-button disclosure" type="button" data-disclosure aria-label="{{ $item.title }} pages" aria-controls="{{ $id }}" aria-expanded="false">{{ partial "icon.html" "chevron" }}</button>{{ end }}
+        {{ if and $.phone $item.children }}
+          <button class="nav-toggle" type="button" data-disclosure aria-controls="{{ $id }}" aria-expanded="{{ if $inside }}true{{ else }}false{{ end }}">{{ $item.title }}{{ partial "icon.html" "chevron" }}</button>
+        {{ else }}
+          <a href="{{ $href }}"{{ if $active }} aria-current="page"{{ end }}{{ if $external }} rel="noopener"{{ end }}>{{ $item.title }}{{ if $external }}<span class="ext" aria-hidden="true">↗</span>{{ end }}</a>
+          {{ with $item.children }}<button class="icon-button disclosure" type="button" data-disclosure aria-label="{{ $item.title }} pages" aria-controls="{{ $id }}" aria-expanded="false">{{ partial "icon.html" "chevron" }}</button>{{ end }}
+        {{ end }}
       </div>
       {{ with $item.children }}
-        <div class="nav-panel" id="{{ $id }}" hidden>{{ partial "nav.html" (dict "page" $.page "items" . "id" $id) }}</div>
+        <div class="nav-panel" id="{{ $id }}"{{ if not (and $.phone $inside) }} hidden{{ end }}>{{ partial "nav.html" (dict "page" $.page "items" . "id" $id "phone" $.phone) }}</div>
       {{ end }}
     </li>
   {{ end }}

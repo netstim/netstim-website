@@ -1,6 +1,14 @@
 {{ define "main" }}
-<main id="main" tabindex="-1">
-  <header class="page-head"><div class="wrap"><h1>Page not found</h1></div></header>
-  <div class="wrap page-body prose"><p><a href="{{ "" | relURL }}">Home</a></p></div>
+<main id="main" tabindex="-1" class="page">
+  <header class="page-head"><div class="wrap">
+    <h1>Page not found</h1>
+    <p class="page-lead">This page doesn’t exist, or it has moved with the new website.</p>
+  </div></header>
+  <div class="wrap page-body">
+    <div class="btn-row">
+      <a class="btn" href="{{ "" | relURL }}">Go to the home page</a>
+      <button type="button" class="text-action text-action--button" data-search-open aria-haspopup="dialog">Search the site</button>
+    </div>
+  </div>
 </main>
 {{ end }}

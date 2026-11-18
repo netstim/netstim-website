@@ -8,6 +8,7 @@ crumbs:
 - title: News
 sidebar: true
 comment_anchor: true
+redirect: '@root@blog/'
 ---
 
 <article aria-label="Welcome Matteo Vissani" class="post-item"><div class="archive-media"><a aria-label="Welcome Matteo Vissani" class="archive-image" href="@root@welcome-matteo-vissani/" title="IMG_9352"><netstim-image data='{"src":"media/71775c95a0c1-IMG_9352-450x450.jpg","original":"https://www.netstim.org/wp-content/uploads/2020/10/IMG_9352-180x180.jpg","alt":"","width":180}'/></a></div><div class="standard-content"><header aria-label="Post: Welcome Matteo Vissani"><h2><a href="@root@welcome-matteo-vissani/" title="Permanent Link: Welcome Matteo Vissani">Welcome Matteo Vissani</a></h2><span class="post-meta"><time datetime="2020-10-20T19:20:25+00:00">October 20, 2020</time>/<a href="@root@welcome-matteo-vissani/#respond">0 Comments</a>/in <a href="@root@category/uncategorized/">Uncategorized</a>/by <a href="@root@author/andreashorn/">andreashorn</a></span></header><div class="read-more"><a class="read-link" href="@root@welcome-matteo-vissani/">Read more</a></div>

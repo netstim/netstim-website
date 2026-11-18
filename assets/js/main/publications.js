@@ -6,10 +6,11 @@ if (bibliography) {
   const count = bibliography.querySelector('[data-bib-count]');
   const empty = bibliography.querySelector('[data-bib-empty]');
   const years = [...bibliography.querySelectorAll('[data-bib-year]')];
-  const rows = [...bibliography.querySelectorAll('.pub-row')].map(row => ({ row, text: row.textContent.toLowerCase() }));
+  const fold = text => text.normalize('NFKD').replace(/\p{Diacritic}/gu, '').toLowerCase();
+  const rows = [...bibliography.querySelectorAll('.pub-row')].map(row => ({ row, text: fold(`${row.textContent} ${row.dataset.year}`) }));
   const total = rows.length;
   input.addEventListener('input', () => {
-    const words = input.value.toLowerCase().split(/\s+/).filter(Boolean);
+    const words = fold(input.value).split(/\s+/).filter(Boolean);
     let shown = 0;
     for (const { row, text } of rows) {
       const match = words.every(word => text.includes(word));
@@ -19,5 +20,8 @@ if (bibliography) {
     for (const year of years) year.hidden = !year.querySelector('.pub-row:not([hidden])');
     count.textContent = words.length ? `${shown} of ${total} publications` : `${total} publications`;
     empty.hidden = shown > 0;
+  });
+  input.addEventListener('focus', () => {
+    if (matchMedia('(max-width: 767px)').matches) bibliography.scrollIntoView({ block: 'start' });
   });
 }

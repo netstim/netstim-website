@@ -16,6 +16,6 @@ canonical: /impressum-datenschutzerklarung/
 <article class="post-item">
 
 <dl><dt>Name</dt><dd>Andreas Horn</dd><dt>Address</dt><dd>71 Boylston St<br/>
-02445 Brookline, MA</dd><dt>Email Address</dt><dd><a href="mailto:mail@andreas-horn.de">mail@andreas-horn.de</a></dd><dt>Phone</dt><dd>+1 (857) 381-6717</dd></dl>
+02445 Brookline, MA</dd><dt>Email</dt><dd><a href="mailto:mail@andreas-horn.de">mail@andreas-horn.de</a></dd><dt>Phone</dt><dd><a href="tel:+18573816717">+1 (857) 381-6717</a></dd></dl>
  
 </article>

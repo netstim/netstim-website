@@ -1,5 +1,19 @@
 import { wireDialog } from './dialog.js';
 
+// a horizontal swipe on an element calls step(-1) or step(1); vertical scrolling stays native
+function swipe(element, step) {
+  let x = 0, y = 0, id = null;
+  element.style.touchAction = 'pan-y';
+  element.addEventListener('pointerdown', event => { if (event.pointerType !== 'mouse') { id = event.pointerId; x = event.clientX; y = event.clientY; } });
+  element.addEventListener('pointerup', event => {
+    if (event.pointerId !== id) return;
+    id = null;
+    const dx = event.clientX - x, dy = event.clientY - y;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.4) step(dx < 0 ? 1 : -1);
+  });
+}
+const chevron = direction => `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${direction < 0 ? 'm14 6-6 6 6 6' : 'm10 6 6 6-6 6'}"/></svg>`;
+
 for (const slideshow of document.querySelectorAll('.slideshow')) {
   const slides = [...slideshow.querySelectorAll('.slides > .slide')];
   if (slides.length < 2) continue;
@@ -8,12 +22,12 @@ for (const slideshow of document.querySelectorAll('.slideshow')) {
   const previous = document.createElement('button');
   previous.type = 'button';
   previous.className = 'icon-button';
-  previous.textContent = '‹';
+  previous.innerHTML = chevron(-1);
   previous.setAttribute('aria-label', 'Previous image');
   const next = document.createElement('button');
   next.type = 'button';
   next.className = 'icon-button';
-  next.textContent = '›';
+  next.innerHTML = chevron(1);
   next.setAttribute('aria-label', 'Next image');
   const status = document.createElement('span');
   status.setAttribute('role', 'status');
@@ -27,6 +41,7 @@ for (const slideshow of document.querySelectorAll('.slideshow')) {
   }
   previous.addEventListener('click', () => show(-1));
   next.addEventListener('click', () => show(1));
+  swipe(slideshow.querySelector('.slides'), show);
   show(0);
 }
 
@@ -61,6 +76,9 @@ document.addEventListener('click', event => {
 });
 viewer.querySelector('[data-image-previous]').addEventListener('click', () => showImage(-1));
 viewer.querySelector('[data-image-next]').addEventListener('click', () => showImage(1));
+viewer.querySelector('[data-image-previous]').innerHTML = chevron(-1);
+viewer.querySelector('[data-image-next]').innerHTML = chevron(1);
+swipe(viewer.querySelector('figure'), step => { if (links.length > 1) showImage(step); });
 viewer.addEventListener('keydown', event => {
   if (links.length < 2) return;
   if (event.key === 'ArrowLeft') showImage(-1);

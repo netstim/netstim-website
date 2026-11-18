@@ -14,8 +14,8 @@ hero:
     label: Our research
     url: '@root@research-interests/'
   secondary:
-    label: Meet the team
-    url: '@root@about-us/about-us/'
+    label: About the lab
+    url: '@root@about-us/'
 research:
   title: Two lines of research
   text: Our two main lines of research are deep brain stimulation and connectomics, combined in a “Connectomic Deep Brain Stimulation” framework.
@@ -27,9 +27,10 @@ research:
     ground: light
   - title: Normative Connectomes
     text: Since 2014, we have worked on estimating “average wiring diagrams” of the human brain.
-    image: media/full-The_Human_Connectome.png
+    image: media/full-fMRI.png
     url: '@root@research-interests/normative-connectomes/'
-    ground: light
+    ground: dark
+    fit: contain
   - title: Lead-DBS
     text: As a methodological backbone of our work, together with others, we develop the open-source toolbox Lead-DBS.
     image: media/595e8a2d1bb1-logo-1-1500x1083.png
@@ -44,17 +45,17 @@ journals:
   - title: Nature Communications
     url: https://www.nature.com/articles/s41467-020-16734-3
   - title: Annals of Neurology
-    url: http://onlinelibrary.wiley.com/doi/10.1002/ana.24974/abstract
+    url: https://onlinelibrary.wiley.com/doi/10.1002/ana.24974/abstract
   - title: Brain
     url: https://academic.oup.com/brain/article/142/10/3129/5549975?login=true
   - title: PNAS
-    url: http://www.pnas.org/content/early/2017/12/12/1706587115.full
+    url: https://www.pnas.org/content/early/2017/12/12/1706587115.full
   - title: Biological Psychiatry
     url: https://www.biologicalpsychiatryjournal.com/article/S0006-3223(21)01223-3/abstract
   - title: NeuroImage
     url: https://www.ncbi.nlm.nih.gov/pubmed/24099851
   - title: Human Brain Mapping
-    url: http://onlinelibrary.wiley.com/doi/10.1002/hbm.23594/abstract
+    url: https://onlinelibrary.wiley.com/doi/10.1002/hbm.23594/abstract
   link:
     label: All publications
     url: '@root@research-interests/publications/'
@@ -72,13 +73,13 @@ community:
 - title: Stimulating Brains
   text: 'Our lab hosts a podcast and talk series about brain stimulation: interviews about the past, present and future of neuromodulation, and talks by senior colleagues and rising stars in the field.'
   image: media/a473d51a1584-StimBrains_Logo_Vertical_Portfolio_transparentBG-1536x676.png
-  ground: '#f6f6f4'
+  ground: plate
   url: http://www.stimulatingbrains.org
   label: Tune in
 - title: Stimu-Latte
   text: 'A monthly in-person journal club in Cologne, organised as part of the Forschungsschwerpunkt Neuromodulation: a local space for discussion and collaboration, all fueled by coffee.'
   image: media/5d84ece1bc6e-Stimulate_logo-2-1500x430.png
-  ground: '#c59c6b'
+  ground: latte
   url: '@root@research-interests/stimu-latte/'
   label: Upcoming sessions
 funding:

@@ -10,6 +10,7 @@ crumbs:
 - title: Uncategorized
 sidebar: true
 comment_anchor: true
+redirect: '@root@blog/'
 ---
 
 <article aria-label="Welcome Svenja Treu to the Netstim" class="post-item"><div class="archive-media"><a aria-label="Welcome Svenja Treu to the Netstim" class="archive-image" href="@root@welcome-svenja-treu-to-the-netstim/" title="DSC06599"><netstim-image data='{"src":"media/09cd69b0cda3-DSC06599.jpg","original":"https://www.netstim.org/wp-content/uploads/2019/04/DSC06599-180x180.jpg","alt":"","width":180}'/></a></div><div class="standard-content"><header aria-label="Post: Welcome Svenja Treu to the Netstim"><h2><a href="@root@welcome-svenja-treu-to-the-netstim/" title="Permanent Link: Welcome Svenja Treu to the Netstim">Welcome Svenja Treu to the Netstim</a></h2><span class="post-meta"><time datetime="2019-04-06T08:10:09+00:00">April 6, 2019</time>/<a href="@root@welcome-svenja-treu-to-the-netstim/#respond">0 Comments</a>/in <a href="@root@category/uncategorized/">Uncategorized</a>/by <a href="@root@author/andreashorn/">andreashorn</a></span></header><div class="read-more"><a class="read-link" href="@root@welcome-svenja-treu-to-the-netstim/">Read more</a></div>

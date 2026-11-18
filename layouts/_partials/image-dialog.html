@@ -1,7 +1,7 @@
-<dialog class="image-dialog" id="image-viewer" aria-labelledby="image-title">
+<dialog class="image-dialog" id="image-viewer" aria-labelledby="image-title" tabindex="-1">
   <div class="dialog-top">
-    <h2 id="image-title">Image viewer</h2>
-    <form method="dialog"><button class="icon-button" aria-label="Close image" autofocus>{{ partial "icon.html" "close" }}</button></form>
+    <h2 id="image-title" class="sr-only">Image viewer</h2>
+    <form method="dialog"><button class="icon-button" aria-label="Close image">{{ partial "icon.html" "close" }}</button></form>
   </div>
   <figure>
     <img alt="">

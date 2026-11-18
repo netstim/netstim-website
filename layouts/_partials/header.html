@@ -1,30 +1,29 @@
+{{- /* The preview banner scrolls away with the page (only the header below it is sticky). */ -}}
+{{ if site.Params.preview }}
+<div class="preview-banner" role="note">
+  <span><strong>Under construction:</strong> a preview of the new netstim website. The official site is <a href="{{ site.Params.liveSite }}">www.netstim.org</a>.</span>
+</div>
+{{ end }}
+{{ $logo := "" }}{{ with resources.Get hugo.Data.nav.logo }}{{ $logo = .Resize "480x webp q90" }}{{ end }}
 <header class="site-header">
-  {{ if site.Params.preview }}
-  <div class="preview-banner" role="note">
-    <span><strong>Under construction:</strong> a preview of the new netstim website. The official site is <a href="{{ site.Params.liveSite }}">www.netstim.org</a>.</span>
-  </div>
-  {{ end }}
   <div class="wrap header-inner">
-    <a class="site-logo" href="{{ "" | relURL }}" aria-label="{{ hugo.Data.nav.logo_alt }}">
-      {{ with resources.Get hugo.Data.nav.logo }}
-        {{ $logo := .Resize "480x webp q90" }}
-        <img src="{{ $logo.RelPermalink }}" alt="{{ hugo.Data.nav.logo_alt }}" width="{{ $logo.Width }}" height="{{ $logo.Height }}">
-      {{ end }}
+    <a class="site-logo" href="{{ "" | relURL }}" aria-label="{{ hugo.Data.nav.logo_alt }}, home">
+      {{ with $logo }}<img src="{{ .RelPermalink }}" alt="" width="{{ .Width }}" height="{{ .Height }}">{{ end }}
     </a>
     <nav class="desktop-nav" aria-label="Main navigation">
       {{ partial "nav.html" (dict "page" . "items" hugo.Data.nav.main "id" "desktop") }}
     </nav>
     <div class="header-actions">
       <button type="button" class="icon-button" data-search-open aria-label="Search" aria-haspopup="dialog">{{ partial "icon.html" "search" }}</button>
-      <button type="button" class="icon-button" data-theme-toggle aria-label="Switch color theme">{{ partial "icon.html" "theme" }}</button>
+      <button type="button" class="icon-button theme-toggle" data-theme-toggle aria-label="Switch color theme">{{ partial "icon.html" "sun" }}{{ partial "icon.html" "moon" }}</button>
       <button type="button" class="icon-button mobile-toggle" data-menu-open aria-label="Open menu" aria-haspopup="dialog" aria-controls="phone-menu">{{ partial "icon.html" "menu" }}</button>
     </div>
   </div>
 </header>
-<dialog id="phone-menu" class="phone-menu" aria-labelledby="menu-label">
+<dialog id="phone-menu" class="phone-menu" aria-label="Menu" tabindex="-1">
   <div class="dialog-top">
-    <h2 id="menu-label">Menu</h2>
-    <form method="dialog"><button class="icon-button" aria-label="Close menu" autofocus>{{ partial "icon.html" "close" }}</button></form>
+    <a class="site-logo" href="{{ "" | relURL }}" aria-label="{{ hugo.Data.nav.logo_alt }}, home">{{ with $logo }}<img src="{{ .RelPermalink }}" alt="" width="{{ .Width }}" height="{{ .Height }}">{{ end }}</a>
+    <form method="dialog"><button class="icon-button" aria-label="Close menu">{{ partial "icon.html" "close" }}</button></form>
   </div>
-  <nav aria-label="Main navigation">{{ partial "nav.html" (dict "page" . "items" hugo.Data.nav.main "id" "phone") }}</nav>
+  <nav aria-label="Main navigation">{{ partial "nav.html" (dict "page" . "items" hugo.Data.nav.main "id" "phone" "phone" true) }}</nav>
 </dialog>

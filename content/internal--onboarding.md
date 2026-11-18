@@ -7,7 +7,7 @@ crumbs:
   url: '@root@'
 - title: For lab members
   url: '@root@internal/'
-- title: Lab Manual
+- title: Lab manual
 sidebar: true
 wordpress_id: 357
 date: '2019-01-12T08:44:11+00:00'

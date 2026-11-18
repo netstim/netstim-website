@@ -1,4 +1,4 @@
-import {chromium, localOnly, routes} from '../.github/scripts/browser-lib.mjs';
+import {chromium, localOnly, pageRoutes} from '../.github/scripts/browser-lib.mjs';
 import {serve} from '../.github/scripts/serve.mjs';
 
 const [dir = 'public'] = process.argv.slice(2);
@@ -7,6 +7,7 @@ const browser = await chromium.launch();
 const context = await browser.newContext();
 const errors = [];
 let videos = 0;
+let pages = [];
 try {
   await localOnly(context, origin, true);
   await context.addInitScript(() => {
@@ -15,7 +16,8 @@ try {
       window.violations.push(`${event.effectiveDirective} blocked ${event.blockedURI}`);
     });
   });
-  const jobs = [...routes, '/404.html'];
+  pages = [...(await pageRoutes(dir)), '/404.html'];
+  const jobs = [...pages];
   await Promise.all(Array.from({length:4}, async () => {
     const page = await context.newPage();
     while (jobs.length) {
@@ -33,4 +35,4 @@ try {
 if (errors.length) {
   console.error(errors.join('\n'));
   process.exitCode = 1;
-} else console.log(`CSP enforced on ${routes.length + 1} pages with ${videos} activated videos. Zero violations.`);
+} else console.log(`CSP enforced on ${pages.length} pages with ${videos} activated videos. Zero violations.`);

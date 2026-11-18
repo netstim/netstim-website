@@ -10,6 +10,7 @@ crumbs:
 - title: Uncategorized
 sidebar: true
 comment_anchor: true
+redirect: '@root@blog/'
 ---
 
 <article aria-label="Coverarts for NeuroImage" class="post-item"><div class="archive-media"><a aria-label="Coverarts for NeuroImage" class="archive-image" href="@root@coverarts-for-neuroimage/" title="2coverarts"><netstim-image data='{"src":"media/e5256d5e5044-2coverarts.png","original":"https://www.netstim.org/wp-content/uploads/2021/03/2coverarts.png","alt":"","width":180}'/></a></div><div class="standard-content"><header aria-label="Post: Coverarts for NeuroImage"><h2><a href="@root@coverarts-for-neuroimage/" title="Permanent Link: Coverarts for NeuroImage">Coverarts for NeuroImage</a></h2><span class="post-meta"><time datetime="2021-03-04T07:58:18+00:00">March 4, 2021</time>/<a href="@root@coverarts-for-neuroimage/#respond">0 Comments</a>/in <a href="@root@category/uncategorized/">Uncategorized</a>/by <a href="@root@author/andreashorn/">andreashorn</a></span></header><div class="read-more"><a class="read-link" href="@root@coverarts-for-neuroimage/">Read more</a></div>

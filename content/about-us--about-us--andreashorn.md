@@ -5,16 +5,18 @@ family: page
 crumbs:
 - title: Home
   url: '@root@'
-- title: About Us
-  url: '@root@about-us/'
 - title: People
+  url: '@root@about-us/about-us/'
+- title: Team
   url: '@root@about-us/about-us/'
 - title: Andreas Horn
 related:
+- title: About the lab
+  url: '@root@about-us/'
+- title: Team
+  url: '@root@about-us/about-us/'
 - title: Jobs
   url: '@root@about-us/jobs/'
-- title: People
-  url: '@root@about-us/about-us/'
 sidebar: true
 wordpress_id: 294
 date: '2018-12-01T16:18:13+00:00'
@@ -23,7 +25,7 @@ canonical: /about-us/about-us/andreashorn/
 article: true
 ---
 
-<h2>Andreas Horn <a href="https://orcid.org/0000-0002-0695-6025"><netstim-image data='{"src":"media/c6f428700b3d-7784c247e0cd-orcid_16x16.png","original":"https://orcid.org/sites/default/files/images/orcid_16x16.png","alt":"ORCID iD icon","width":0}'/></a></h2>
+<h2>Andreas Horn</h2>
 
 <div class="columns"><div class="column column-2-5"><div class="image-block"><netstim-image data='{"src":"media/df99dd6f657e-Horn_3_full-1536x1025.png","original":"https://www.netstim.org/wp-content/uploads/2021/03/Horn_3_full-1030x687.png","alt":"","width":1030}'/></div></div><div class="column column-3-5"><p>Andreas is a clinician scientist with interest in <strong>neuroimaging</strong>, <strong>methods development</strong>, <strong>movement disorders</strong> and <strong>invasive brain stimulation</strong>. </p>
 <p>The goal of his research is to <strong>analyse and modulate brain networks</strong> to <strong>improve clinical treatment</strong> – predominantly in the movement disorders spectrum. </p>
@@ -62,10 +64,12 @@ article: true
 
 ---
 
-<div class="columns"><div class="column column-1-1"><h2><strong>IDENTIFIERS</strong></h2>
-</div></div>
-
-<div class="columns"><div class="column column-1-3"><article class="icon-box"><header aria-label="Icon: Research Gate"><a aria-label="Research Gate" class="icon-link icon-academic" data-icon="" href="https://www.researchgate.net/profile/Andreas_Horn" rel="noopener noreferrer" target="_blank" title="Research Gate"></a><h3 class="icon-heading"><a href="https://www.researchgate.net/profile/Andreas_Horn" rel="noopener noreferrer" target="_blank" title="Research Gate">Research Gate</a></h3></header></article>
-<article class="icon-box"><header aria-label="Icon: Google Scholar"><a aria-label="Google Scholar" class="icon-link icon-academic" data-icon="" href="https://scholar.google.de/citations?user=1jF_5-0AAAAJ&amp;hl=en" rel="noopener noreferrer" target="_blank" title="Google Scholar"></a><h3 class="icon-heading"><a href="https://scholar.google.de/citations?user=1jF_5-0AAAAJ&amp;hl=en" rel="noopener noreferrer" target="_blank" title="Google Scholar">Google Scholar</a></h3></header></article></div><div class="column column-1-3"><article class="icon-box"><header aria-label="Icon: Twitter"><a aria-label="Twitter" class="icon-link" data-icon="" href="http://www.twitter.com/andreashorn_" rel="noopener noreferrer" target="_blank" title="Twitter"></a><h3 class="icon-heading"><a href="http://www.twitter.com/andreashorn_" rel="noopener noreferrer" target="_blank" title="Twitter">Twitter</a></h3></header></article>
-<article class="icon-box"><header aria-label="Icon: Publons"><a aria-label="Publons" class="icon-link icon-academic" data-icon="" href="http://publons.com/a/1317885/" rel="noopener noreferrer" target="_blank" title="Publons"></a><h3 class="icon-heading"><a href="http://publons.com/a/1317885/" rel="noopener noreferrer" target="_blank" title="Publons">Publons</a></h3></header></article></div><div class="column column-1-3"><article class="icon-box"><header aria-label="Icon: ORCiD"><a aria-label="ORCiD" class="icon-link icon-academic" data-icon="" href="https://orcid.org/0000-0002-0695-6025" rel="noopener noreferrer" target="_blank" title="ORCiD"></a><h3 class="icon-heading"><a href="https://orcid.org/0000-0002-0695-6025" rel="noopener noreferrer" target="_blank" title="ORCiD">ORCiD</a></h3></header></article>
-<article class="icon-box"><header aria-label="Icon: Researcher ID"><a aria-label="Researcher ID" class="icon-link icon-academic" data-icon="" href="http://researcherid.com/rid/B-8988-2017" rel="noopener noreferrer" target="_blank" title="Researcher ID"></a><h3 class="icon-heading"><a href="http://researcherid.com/rid/B-8988-2017" rel="noopener noreferrer" target="_blank" title="Researcher ID">Researcher ID</a></h3></header></article></div></div>
+<h2>Profiles</h2>
+<ul class="link-rows link-rows--compact">
+<li><a href="https://www.researchgate.net/profile/Andreas_Horn" rel="noopener"><span class="link-rows__title">ResearchGate</span><span aria-hidden="true">↗</span></a></li>
+<li><a href="https://scholar.google.de/citations?user=1jF_5-0AAAAJ&amp;hl=en" rel="noopener"><span class="link-rows__title">Google Scholar</span><span aria-hidden="true">↗</span></a></li>
+<li><a href="http://www.twitter.com/andreashorn_" rel="noopener"><span class="link-rows__title">Twitter</span><span aria-hidden="true">↗</span></a></li>
+<li><a href="http://publons.com/a/1317885/" rel="noopener"><span class="link-rows__title">Publons</span><span aria-hidden="true">↗</span></a></li>
+<li><a href="https://orcid.org/0000-0002-0695-6025" rel="noopener"><span class="link-rows__title">ORCID</span><span aria-hidden="true">↗</span></a></li>
+<li><a href="http://researcherid.com/rid/B-8988-2017" rel="noopener"><span class="link-rows__title">ResearcherID</span><span aria-hidden="true">↗</span></a></li>
+</ul>

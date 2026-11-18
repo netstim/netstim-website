@@ -1,0 +1,8 @@
+{{- /* A profile link's name from its address (the source's own labels are often "External link"). */ -}}
+{{- $u := lower . -}}
+{{- $label := "" -}}
+{{- range slice (slice "researchgate" "ResearchGate") (slice "scholar.google" "Scholar") (slice "orcid" "ORCID") (slice "github" "GitHub") (slice "linkedin" "LinkedIn") (slice "twitter" "Twitter") (slice "x.com" "X") (slice "publons" "Publons") (slice "researcherid" "ResearcherID") (slice "bsky" "Bluesky") -}}
+  {{- if and (not $label) (in $u (index . 0)) }}{{ $label = index . 1 }}{{ end -}}
+{{- end -}}
+{{- if not $label }}{{ $label = replaceRE `^https?://(www\.)?([^/]+).*$` "$2" . }}{{ end -}}
+{{- return $label -}}

@@ -1,5 +1,5 @@
 /* Research overview (layouts/_partials/research-page.html) */
-.research-intro { max-width: 46rem; margin-bottom: 48px; font-size: var(--t-lead); line-height: 1.5; letter-spacing: -.01em; }
+.research-intro { max-width: var(--measure); margin-bottom: 48px; color: var(--muted); font-size: 16px; line-height: 1.6; }
 .media-card__frame--cover img { padding: 8% 0; filter: drop-shadow(0 12px 20px rgb(0 0 0 / .18)); }
 .outputs { margin-top: var(--section); }
 .outputs h2 { margin-bottom: 24px; font-size: var(--t-h3); }

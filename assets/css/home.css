@@ -3,7 +3,7 @@
    the news (one lead story and rows), the team photo, community as two cards, the funders as one quiet band. */
 .home-section { padding-block: var(--section); }
 .home-section + .home-section { border-top: 1px solid var(--line); }
-.section-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 16px 32px; margin-bottom: 40px; }
+.section-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 16px 32px; margin-bottom: 40px; }
 .section-head h2 { max-width: 18ch; }
 .section-head__text { max-width: 40rem; margin-top: 16px; color: var(--muted); font-size: var(--t-lead); line-height: 1.45; letter-spacing: -.01em; }
 .btn-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; margin-top: 32px; }
@@ -35,9 +35,11 @@
 .media-card__frame--contain img { object-fit: contain; padding: 18%; }
 .media-card__title { font-size: 20px; font-weight: 500; line-height: 1.3; letter-spacing: -.015em; }
 .media-card__text { color: var(--muted); font-size: 15px; line-height: 1.55; }
-.community-card__art { display: grid; place-items: center; aspect-ratio: 16 / 9; background: var(--ground); }
+.community-card__art { display: grid; place-items: center; aspect-ratio: 16 / 9; }
+.community-card__art--plate { background: #f6f6f4; }
+.community-card__art--latte { background: #c59c6b; }
 .community-card__art img { width: 78%; height: auto; max-height: 80%; object-fit: contain; }
-.community-card__go { margin-top: 8px; font-size: 15px; font-weight: 500; text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 5px; }
+.community-card__go { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; font-size: 15px; font-weight: 500; text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 5px; }
 @media (hover: hover) {
   .media-card:hover .media-card__frame img, .community-card:hover .community-card__art img { transform: scale(1.035); }
   .media-card:hover .media-card__title, .community-card:hover .media-card__title { color: var(--action); }
@@ -45,15 +47,16 @@
 
 /* 3 the journals: their names, large, as one wall of links */
 .home-journals__label { max-width: 36rem; color: var(--muted); font-size: var(--t-lead); font-weight: 400; line-height: 1.45; letter-spacing: -.01em; }
-.journal-wall { list-style: none; margin: 28px 0 32px; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 0; }
-.journal-wall li:not(:last-child)::after { content: "·"; margin: 0 .35em; color: var(--line-strong); font-size: var(--t-h2); }
-.journal-wall a { color: var(--ink); font-size: var(--t-h2); font-weight: 400; line-height: 1.2; letter-spacing: -.04em; text-decoration: none; }
+.journal-wall { list-style: none; margin: 28px 0 32px; padding: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 28px; }
+.journal-wall li { line-height: 1.2; }
+.journal-wall a { display: inline-flex; align-items: baseline; gap: 4px; min-height: 44px; color: var(--ink); font-size: var(--t-h2); font-weight: 400; line-height: 1.2; letter-spacing: -.04em; text-decoration: none; }
+.journal-wall__ext svg { width: .5em; height: .5em; color: var(--muted); }
 @media (hover: hover) {
   .journal-wall a:hover { color: var(--action); }
 }
 
 /* 4 the book: on the quiet plate */
-.home-book { background: var(--surface); }
+.home-book { background: var(--surface); padding-block: 72px; }
 .home-book + .home-section, .home-section + .home-book { border-top: 0; }
 
 /* 5 news: the newest large with its picture, three rows beside it */
@@ -62,10 +65,10 @@
 .home-news h3 a { color: var(--ink); text-decoration: none; }
 .home-news__lead { position: relative; display: grid; gap: 10px; }
 .home-news__lead h3 { font-size: 28px; font-weight: 450; line-height: 1.2; letter-spacing: -.03em; max-width: 24ch; }
-.home-news__image { overflow: hidden; margin-bottom: 10px; border-radius: var(--r-md); aspect-ratio: 16 / 10; background: #f6f6f4; }
+.home-news__image { overflow: hidden; margin-bottom: 10px; padding: 5%; border-radius: var(--r-md); aspect-ratio: 16 / 10; background: var(--surface); }
 .home-news__image img { width: 100%; height: 100%; object-fit: contain; }
 .home-news__rows { list-style: none; margin: 0; padding: 0; }
-.home-news__row { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 96px; gap: 6px 20px; padding: 20px 0; border-top: 1px solid var(--line); }
+.home-news__row { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 96px; align-content: start; gap: 6px 20px; padding: 20px 0; border-top: 1px solid var(--line); }
 .home-news__row:first-child { border-top: 0; padding-top: 0; }
 .home-news__row time, .home-news__row h3 { grid-column: 1; }
 .home-news__row h3 { font-size: 18px; font-weight: 500; line-height: 1.35; letter-spacing: -.015em; }
@@ -89,8 +92,9 @@
 .home-funding__text a { color: var(--ink); }
 .logo-band { list-style: none; margin: 32px 0 0; padding: 0; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 24px 40px; align-items: center; }
 .logo-band li { display: grid; place-items: center; height: 56px; }
-.logo-band img { max-width: 100%; max-height: 40px; width: auto; height: auto; filter: grayscale(1); opacity: .7; }
-[data-theme="dark"] .logo-band img { filter: grayscale(1) invert(1) brightness(1.4); }
+/* every logo in the same box (width and height), so wide marks and tall marks read at one optical size */
+.logo-band img { width: 100%; max-width: 132px; height: 40px; object-fit: contain; filter: grayscale(1); opacity: .72; }
+[data-theme="dark"] .logo-band img { filter: grayscale(1) invert(1) brightness(1.4); mix-blend-mode: screen; opacity: .8; }
 
 @media (max-width: 1023px) {
   .card-grid--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -101,10 +105,14 @@
   .home-hero { padding-top: 12px; }
   .home-hero__panel { grid-template-columns: minmax(0, 1fr); min-height: 0; }
   .home-hero__media { grid-row: 1; grid-column: 1; padding: 24px 24px 0; }
-  .home-hero__media img { max-height: 260px; }
+  .home-hero__media img { max-height: 200px; }
   .home-hero__text { grid-row: 2; padding: 8px 24px 32px; }
+  .home-hero h1 { font-size: clamp(32px, 9.4vw, 42px); line-height: 1.04; }
+  .home-hero__lead { margin-top: 16px; font-size: 16px; }
   .card-grid--3, .card-grid--2 { grid-template-columns: minmax(0, 1fr); gap: 40px; }
-  .journal-wall a, .journal-wall li:not(:last-child)::after { font-size: 24px; }
+  .journal-wall { display: grid; gap: 0; }
+  .journal-wall li + li { border-top: 1px solid var(--line); }
+  .journal-wall a { font-size: 22px; min-height: 52px; align-items: center; }
   .logo-band { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 32px; }
   .home-news__row { grid-template-columns: minmax(0, 1fr) 72px; }
 }
@@ -113,23 +121,25 @@
 .book-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: var(--split-gap); }
 .book-split h2 { font-size: var(--t-h2); max-width: 14ch; }
 .book-split__lead { margin-top: 20px; color: var(--muted); font-size: var(--t-lead); line-height: 1.45; }
-.book3d { --w: 320px; --h: calc(var(--w) * 1.2298); --d: 40px; --rx: 8deg; --ry: -34deg; --lift: 0px;
-  position: relative; display: grid; place-items: center; height: calc(var(--h) + 120px); perspective: 1400px; color: inherit; }
+.book3d { --w: 320px; --h: calc(var(--w) * 1.2298); --d: 40px; --rx: 6deg; --ry: 28deg; --lift: 0px;
+  position: relative; display: block; height: calc(var(--h) + 120px); color: inherit; }
+.book3d__stage { position: absolute; inset: 0; z-index: 1; display: flex; align-items: center; justify-content: center; perspective: 1400px; transform-style: preserve-3d; }
 .book3d:focus-visible { outline-offset: 8px; border-radius: var(--r-lg); }
 .book3d__obj { position: relative; width: var(--w); height: var(--h); transform-style: preserve-3d;
   transform: translateY(calc(-1 * var(--lift))) rotateX(var(--rx)) rotateY(var(--ry));
   transition: transform 700ms cubic-bezier(.2, .8, .2, 1); }
-.book3d__face { position: absolute; display: block; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+.book3d__face { position: absolute; display: block; }
+.book3d__front, .book3d__back { -webkit-backface-visibility: hidden; backface-visibility: hidden; }
 .book3d__front, .book3d__back { inset: 0; }
 .book3d__front { transform: translateZ(calc(var(--d) / 2)); border-radius: 2px 6px 6px 2px; overflow: hidden; box-shadow: inset 3px 0 0 rgb(0 0 0 / .08); }
 .book3d__front img { width: 100%; height: 100%; object-fit: cover; }
 .book3d__back { transform: rotateY(180deg) translateZ(calc(var(--d) / 2)); background: #e8eef4; border-radius: 6px 2px 2px 6px; }
-.book3d__spine { top: 0; left: calc(50% - var(--d) / 2); width: var(--d); height: 100%; background: #a8afb5; transform: rotateY(-90deg) translateZ(calc(var(--w) / 2)); }
+.book3d__spine { top: 0; left: calc(50% - var(--d) / 2); width: var(--d); height: 100%; background: #485a7d; transform: rotateY(-90deg) translateZ(calc(var(--w) / 2)); }
 .book3d__pages { top: 3px; bottom: 3px; left: calc(50% - var(--d) / 2); width: var(--d); background: #f3f1ec; box-shadow: inset 0 0 0 1px rgb(0 0 0 / .06); transform: rotateY(90deg) translateZ(calc(var(--w) / 2 - 3px)); }
 .book3d__top, .book3d__bottom { left: 0; right: 3px; top: calc(50% - var(--d) / 2); height: var(--d); background: #f3f1ec; }
 .book3d__top { transform: rotateX(90deg) translateZ(calc(var(--h) / 2 - 1px)); }
 .book3d__bottom { transform: rotateX(-90deg) translateZ(calc(var(--h) / 2 - 1px)); }
-.book3d__shadow { position: absolute; left: 50%; bottom: 36px; width: calc(var(--w) * 1.05); height: 28px; margin-left: calc(var(--w) * -.525);
+.book3d__shadow { position: absolute; z-index: 0; left: 50%; bottom: 36px; width: calc(var(--w) * 1.05); height: 28px; margin-left: calc(var(--w) * -.525);
   border-radius: 50%; background: rgb(0 0 0 / .1); box-shadow: 0 0 28px 14px rgb(0 0 0 / .12); opacity: .9; transform: scaleX(.9);
   transition: transform 700ms cubic-bezier(.2, .8, .2, 1), opacity 700ms cubic-bezier(.2, .8, .2, 1); pointer-events: none; }
 @media (hover: hover) and (pointer: fine) {
@@ -142,5 +152,6 @@
 }
 @media (max-width: 767px) {
   .book-split { grid-template-columns: minmax(0, 1fr); }
-  .book3d { --w: 210px; --d: 28px; height: calc(var(--h) + 80px); }
+  .book-split .book3d { order: -1; }
+  .book3d { --w: 230px; --d: 30px; height: calc(var(--h) + 80px); }
 }

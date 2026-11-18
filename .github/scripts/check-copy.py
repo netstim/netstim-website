@@ -77,6 +77,11 @@ def strip_old(root):
 def record(file, route, prefix, original):
     page = soup(file)
     container = page.select_one("#main")
+    if container is None and not original:
+        # a page that moved is a redirect stub: record where it goes
+        refresh = page.select_one('meta[http-equiv="refresh"]')
+        target = url_of(route, refresh["content"].split("url=", 1)[-1], prefix) if refresh else ""
+        return {"text": ["moved", "to", target], "links": {target: 1}, "images": {}, "embeds": {}}
     if original:
         blocks = container.select(".container_wrap .content")
         sidebar = container.select_one(".inner_sidebar")

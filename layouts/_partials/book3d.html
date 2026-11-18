@@ -7,13 +7,13 @@
 {{ $order := "https://www.elsevier.com/books/connectomic-deep-brain-stimulation/horn/978-0-12-821861-7" }}
 {{ $here := eq .RelPermalink $book }}
   <a class="book3d" href="{{ if $here }}{{ $order }}{{ else }}{{ $book }}{{ end }}"{{ if $here }} rel="noopener"{{ end }} aria-label="{{ if $here }}Order Connectomic Deep Brain Stimulation from the publisher{{ else }}Connectomic Deep Brain Stimulation, the book{{ end }}" data-book>
-    <span class="book3d__obj" aria-hidden="true">
+    <span class="book3d__shadow" aria-hidden="true"></span>
+    <span class="book3d__stage" aria-hidden="true"><span class="book3d__obj">
       <span class="book3d__face book3d__back"></span>
       <span class="book3d__face book3d__spine"></span>
       <span class="book3d__face book3d__pages"></span>
       <span class="book3d__face book3d__top"></span>
       <span class="book3d__face book3d__bottom"></span>
       <span class="book3d__face book3d__front"><img src="{{ $s.RelPermalink }}" srcset="{{ $s.RelPermalink }} 420w, {{ $l.RelPermalink }} 840w" sizes="(max-width: 767px) 210px, 320px" width="{{ $s.Width }}" height="{{ $s.Height }}" alt="" loading="lazy" decoding="async" draggable="false" data-original="https://www.netstim.org/wp-content/uploads/2021/03/Connectomic-Deep-Brain-Stimulation-1249x1536.png"></span>
-    </span>
-    <span class="book3d__shadow" aria-hidden="true"></span>
+    </span></span>
   </a>

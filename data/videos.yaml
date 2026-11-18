@@ -10,7 +10,7 @@
 
     <div class="columns"><div class="column column-1-1"><h2>Connectomic Deep Brain Stimulation</h2>
     <div id="info-text-2">
-    <div id="date-2">02.03.2021 – Andreas Horn @ <a href="https://piloubazin.github.io/terra-incognita-2021/">Terra Inkognita workshop, Amsterdam</a></div>
+    <div id="date-2">02.03.2021 – Andreas Horn @ <a href="https://piloubazin.github.io/terra-incognita-2021/">Terra Incognita workshop, Amsterdam</a></div>
     </div>
 
     <netstim-video data='{"src":"https://www.youtube-nocookie.com/embed/qSYS9gHbTbI?feature=oembed&amp;autoplay=0&amp;loop=0&amp;controls=1&amp;mute=0","href":"https://www.youtube.com/watch?v=qSYS9gHbTbI","title":"Terra Incognita Andreas Horn"}'></netstim-video>

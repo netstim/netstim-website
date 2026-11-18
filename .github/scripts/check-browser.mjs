@@ -1,11 +1,12 @@
 import {mkdir, writeFile} from 'node:fs/promises';
 import {join} from 'node:path';
-import {axePath, chromium, devices, localOnly, routes, webkit} from './browser-lib.mjs';
+import {axePath, chromium, devices, localOnly, pageRoutes, webkit} from './browser-lib.mjs';
 import {serve} from './serve.mjs';
 
 const [dir = 'public', base = 'https://www.netstim.org/', output] = process.argv.slice(2);
 if (!axePath) throw new Error('Install the test dependencies or set AXE_SCRIPT to axe-core 4.10.3');
 const prefix = new URL(base).pathname;
+const pages = await pageRoutes(dir);
 const {origin, close} = await serve(dir, {prefix});
 const viewport = width => ({width, height: width === 1440 ? 900 : 844});
 const tests = ['light', 'dark'].flatMap(colorScheme => [1440, 820, 390, 320].map(width => ({width, colorScheme})));
@@ -27,7 +28,7 @@ async function check(engine, profile, widths, runAxe) {
         await localOnly(context, origin);
         if (runAxe && (width === 1440 || width === 390)) await context.addInitScript({path:axePath});
         const page = await context.newPage();
-        for (const route of [...routes, '/404.html']) {
+        for (const route of [...pages, '/404.html']) {
           const item = {profile, width, colorScheme, route, errors:[]};
           const external = request => {
             if (!request.url().startsWith(origin + '/')) item.errors.push('External request ' + request.url());

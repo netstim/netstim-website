@@ -8,7 +8,7 @@
 {{ range .posts }}
   {{ $html := partial "strip-title.html" (dict "html" (string .Content) "title" .Title) }}
   {{ $paras := delimit (findRE `(?s)<p\b[^>]*>.*?</p>` $html 3) " " }}
-  {{ $text := $paras | replaceRE `(?s)<netstim-[^>]*>` "" | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace }}
+  {{ $text := $paras | replaceRE `(?s)<netstim-[^>]*>` "" | plainify | htmlUnescape | replaceRE `\[[^\]]*\]` "" | replaceRE `#\w+` "" | replaceRE `\s+` " " | strings.TrimSpace }}
   {{ $img := "" }}
   {{ with findRESubmatch `<netstim-image data='([^']*)'` (string .RawContent) 1 }}{{ $img = transform.Unmarshal (htmlUnescape (index (index . 0) 1)) }}{{ end }}
   {{ $items = $items | append (dict "page" . "text" $text "img" $img) }}
@@ -19,7 +19,7 @@
   <div class="news-featured">
     {{ range $i, $it := first 3 $items }}{{ with $it.page }}
     <article class="news-card{{ if eq $i 0 }} news-card--lead{{ end }}">
-      <div class="news-card__image{{ with $it.img }}{{ if hasSuffix (lower .src) ".png" }} news-card__image--figure{{ end }}{{ end }}">{{ with $it.img }}{{ partial "picture.html" (merge . (dict "alt" "" "sizes" (cond (eq $i 0) "(max-width: 767px) 100vw, 800px" "(max-width: 767px) 100vw, 420px") "eager" (eq $i 0))) }}{{ end }}</div>
+      <div class="news-card__image news-card__image--figure">{{ with $it.img }}{{ partial "picture.html" (merge . (dict "alt" "" "sizes" (cond (eq $i 0) "(max-width: 767px) 100vw, 800px" "(max-width: 767px) 100vw, 420px") "eager" (eq $i 0))) }}{{ end }}</div>
       <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
       <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
       {{ if eq $i 0 }}<p>{{ $it.text | truncate 200 }}</p>{{ end }}
@@ -38,7 +38,7 @@
         <ol class="news-rows">
     {{ end }}
     <li class="news-row"{{ with $it.img }}{{ with resources.Get .src }}{{ $t := .Resize "480x webp q80" }} data-preview="{{ $t.RelPermalink }}"{{ end }}{{ end }}>
-      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2" }}</time>
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2" }}<span class="news-row__year">, {{ .Date.Year }}</span></time>
       <div class="news-row__body">
         <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
         <p>{{ $it.text | truncate 140 }}</p>

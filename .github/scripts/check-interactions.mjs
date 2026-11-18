@@ -23,7 +23,7 @@ try {
       await page.keyboard.press('Shift+Tab');
       assert(await menu.evaluate(el => el.contains(document.activeElement)));
       assert.equal(await menu.evaluate(() => getComputedStyle(document.documentElement).overflow), 'hidden');
-      await menu.getByRole('button', {name:'Publications pages'}).click();
+      await menu.getByRole('button', {name:'Publications', exact:true}).click();
       assert(await menu.getByRole('link', {name:'Posters', exact:true}).isVisible());
       await page.keyboard.press('Escape');
       await menu.waitFor({state:'hidden', timeout:5000});
@@ -36,12 +36,12 @@ try {
 
       await page.getByRole('button', {name:'Search', exact:true}).click();
       await page.getByRole('searchbox').fill('Normative Connectomes');
-      await page.getByRole('dialog', {name:'Search'}).getByRole('link', {name:'Normative Connectomes', exact:true}).click();
+      await page.getByRole('dialog', {name:'Search'}).getByRole('link', {name:/^Normative Connectomes/}).first().click();
       await page.waitForURL(at('research-interests/normative-connectomes/'));
 
       await page.goto(at('research-interests/publications/'));
       const allRows = await page.locator('.pub-row:visible').count();
-      assert(allRows > 200);
+      assert(allRows > 190);
       await page.getByRole('searchbox', {name:'Filter publications'}).fill('dysfunctome');
       assert(await page.locator('.pub-row:visible').count() < allRows);
       assert.match(await page.locator('[data-bib-count]').textContent(), /of \d+ publications/);

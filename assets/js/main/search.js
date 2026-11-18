@@ -34,7 +34,13 @@ async function search() {
       const li = document.createElement('li');
       const a = document.createElement('a');
       a.href = page.url;
-      a.textContent = page.title;
+      const title = document.createElement('span');
+      title.className = 'search-result__title';
+      title.textContent = page.title;
+      const where = document.createElement('span');
+      where.className = 'search-result__where';
+      where.textContent = page.section || '';
+      a.append(title, where);
       li.append(a);
       list.append(li);
     }

@@ -2,7 +2,7 @@ main:
 - title: Research
   url: '@root@research-interests/'
   children:
-  - title: Overview
+  - title: Research overview
     url: '@root@research-interests/'
   - title: Deep Brain Stimulation
     url: '@root@research-interests/deep-brain-stimulation/'
@@ -13,7 +13,7 @@ main:
 - title: Publications
   url: '@root@research-interests/publications/'
   children:
-  - title: Publications
+  - title: All publications
     url: '@root@research-interests/publications/'
   - title: Posters
     url: '@root@research-interests/posters/'
@@ -44,7 +44,7 @@ logo_alt: Network Stimulation Laboratory
 footer:
 - title: Imprint
   url: '@root@impressum-datenschutzerklarung/'
-- title: Privacy Policy
+- title: Privacy policy
   url: '@root@privacy-policy/'
 members:
 - title: Lab manual

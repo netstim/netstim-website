@@ -15,6 +15,7 @@ outputs:
 - rss
 comment_anchor: true
 include_new_posts: true
+redirect: '@root@blog/'
 ---
 
 <article aria-label="New Perspective in Nature Reviews Neurology" class="post-item"><div class="archive-media"><a aria-label="New Perspective in Nature Reviews Neurology" class="archive-image" href="@root@new-perspective-in-nature-reviews-neurology/" title="figure_act_dbs"><netstim-image data='{"src":"media/a645a6d10289-figure_act_dbs-card.webp","original":"https://www.netstim.org/wp-content/uploads/2025/09/figure_act_dbs-180x180.png","alt":"","width":180}'/></a></div><div class="standard-content"><header aria-label="Post: New Perspective in Nature Reviews Neurology"><h2><a href="@root@new-perspective-in-nature-reviews-neurology/" title="Permanent Link: New Perspective in Nature Reviews Neurology">New Perspective in Nature Reviews Neurology</a></h2><span class="post-meta"><time datetime="2025-09-04T08:45:27+00:00">September 4, 2025</time>/in <a href="@root@category/uncategorized/">Uncategorized</a>/by <a href="@root@author/andreashorn/">andreashorn</a></span></header><div class="read-more"><a class="read-link" href="@root@new-perspective-in-nature-reviews-neurology/">Read more</a></div>

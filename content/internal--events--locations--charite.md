@@ -5,11 +5,9 @@ family: events
 crumbs:
 - title: Home
   url: '@root@'
-- title: Internal
+- title: For lab members
   url: '@root@internal/'
-- title: Events
-  url: '@root@internal/events/'
-- title: Locations
+- title: Event locations
   url: '@root@internal/events/locations/'
 - title: Charité
 sidebar: true

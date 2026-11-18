@@ -1,11 +1,11 @@
 ---
-title: Privacy Policy
+title: Privacy policy
 url: /privacy-policy/
 family: page
 crumbs:
 - title: Home
   url: '@root@'
-- title: Privacy Policy
+- title: Privacy policy
 sidebar: true
 wordpress_id: 1900
 date: '2022-04-18T13:31:06+00:00'
@@ -17,7 +17,7 @@ canonical: /privacy-policy/
 
 
 <h2>Who we are</h2>
-<p>Our website address is: ../. Contact mail [at] andreas-horn.de for more information.</p>
+<p>Our website address is: https://www.netstim.org. Contact mail [at] andreas-horn.de for more information.</p>
 <h2>Comments</h2>
 <p>When visitors leave comments on the site we collect the data shown in the comments form, and also the visitor’s IP address and browser user agent string to help spam detection.</p>
 <p>An anonymized string created from your email address (also called a hash) may be provided to the Gravatar service to see if you are using it. The Gravatar service privacy policy is available here: https://automattic.com/privacy/. After approval of your comment, your profile picture is visible to the public in the context of your comment.</p>

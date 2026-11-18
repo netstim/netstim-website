@@ -18,12 +18,14 @@
 }
 .image-block img { border-radius: var(--r-md); }
 .image-block > a { display: block; border-radius: var(--r-md); }
-figure img, .post-image img { border-radius: var(--r-md); }
 .unavailable-image { display: block; min-height: 44px; color: var(--muted); }
 .slideshow { position: relative; }
 .slides { list-style: none; margin: 0; padding: 0; }
 .slide > a { display: block; }
-.slide img { max-height: 520px; width: auto; margin-inline: auto; object-fit: contain; border-radius: var(--r-md); }
+.slides { aspect-ratio: 1500 / 700; background: var(--surface); border-radius: var(--r-md); overflow: hidden; }
+.slide { height: 100%; }
+.slide > a { height: 100%; }
+.slide img { width: 100%; height: 100%; max-height: none; object-fit: contain; border-radius: 0; }
 .slide-controls { display: flex; justify-content: center; align-items: center; gap: 12px; margin-top: 12px; }
 .slide-controls span { font-size: 13px; color: var(--muted); }
 .video-embed { position: relative; aspect-ratio: 16 / 9; background: var(--render); border-radius: var(--r-md); overflow: hidden; }
@@ -44,10 +46,6 @@ figure img, .post-image img { border-radius: var(--r-md); }
 }
 .icon-link::before { content: "↗" / ""; font-size: 17px; }
 .icon-link[data-icon]::before { content: attr(data-icon) / ""; font: 18px SiteIcons; }
-.icon-link.icon-academic::before { font-family: AcademicIcons; }
-.share { margin-block: 32px 0; padding-top: 20px; border-top: 1px solid var(--line); }
-.share-links { display: flex; flex-wrap: wrap; gap: 4px; list-style: none; padding: 0; }
-.share-title { font-size: 15px; font-weight: 500; letter-spacing: 0; }
 .video-embed--audio { aspect-ratio: auto; min-height: 128px; }
 .video-embed--audio .video-start { flex-direction: row; }
 @media (hover: hover) {
@@ -56,10 +54,18 @@ figure img, .post-image img { border-radius: var(--r-md); }
 .gallery { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
 .gallery a { display: grid; min-height: 44px; min-width: 0; overflow: hidden; border-radius: var(--r-sm); }
 .gallery img { width: 100%; height: auto; border-radius: var(--r-sm); }
-.image-dialog { width: min(900px, calc(100% - 24px)); padding: 14px 20px 20px; }
-.image-dialog figure { margin-top: 10px; }
-.image-dialog figure img { width: auto; max-height: 62dvh; object-fit: contain; margin-inline: auto; }
-.image-dialog figcaption { margin-top: 10px; text-align: center; color: var(--muted); font-size: 13px; }
+/* the image viewer: a dark stage over the whole window; the image at a fixed height so the controls never move */
+.image-dialog { width: 100%; max-width: none; height: 100dvh; max-height: none; margin: 0; padding: 12px 16px 16px; border: 0; border-radius: 0;
+  display: none; grid-template-rows: auto minmax(0, 1fr) auto; background: rgb(10 12 14 / .96); color: #f3f4f5; }
+.image-dialog[open] { display: grid; }
+.image-dialog::backdrop { background: transparent; }
+.image-dialog:focus-visible { outline: none; }
+.image-dialog .dialog-top { justify-content: flex-end; }
+.image-dialog .icon-button { color: #f3f4f5; }
+.image-dialog figure { display: grid; grid-template-rows: minmax(0, 1fr) auto; place-items: center; min-height: 0; margin: 0; }
+.image-dialog figure img { width: auto; max-width: 100%; height: 100%; max-height: 100%; object-fit: contain; border-radius: 4px; }
+.image-dialog figcaption { margin-top: 12px; text-align: center; color: #b9c0c4; font-size: 14px; }
+.image-dialog .slide-controls span { color: #b9c0c4; }
 [data-theme="dark"] img[data-original*="/ws_header-2-"] { background: #f5f6f7; padding: 8px; }
 .video-still { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .video-embed--still .play-icon { position: relative; box-shadow: 0 8px 24px rgb(0 0 0 / .35); }
@@ -76,7 +82,7 @@ figure img, .post-image img { border-radius: var(--r-md); }
 @media (max-width: 767px) {
   .link-rows a { grid-template-columns: minmax(0, 1fr) 20px; }
   .link-rows__text { grid-column: 1; }
-  .link-rows a > :last-child { grid-column: 2; grid-row: 1 / span 2; }
+  .link-rows a > :last-child { grid-column: 2; grid-row: 1; align-self: center; }
 }
 .page-body > .link-rows { max-width: none; }
 /* a definition list (the imprint): terms in a column, values beside them */

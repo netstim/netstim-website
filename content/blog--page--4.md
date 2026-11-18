@@ -8,6 +8,7 @@ crumbs:
 - title: News
 sidebar: true
 comment_anchor: true
+redirect: '@root@blog/'
 ---
 
 <article aria-label="Defining a tract-based target for Obsessive Compulsive Disorder" class="post-item"><div class="archive-media"><a aria-label="Defining a tract-based target for Obsessive Compulsive Disorder" class="archive-image" href="@root@defining-a-tract-based-target-for-obsessive-compulsive-disorder/" title="ocd"><netstim-image data='{"src":"media/e700b3c4bac6-ocd-450x450.png","original":"https://www.netstim.org/wp-content/uploads/2019/01/ocd-180x180.png","alt":"","width":180}'/></a></div><div class="standard-content"><header aria-label="Post: Defining a tract-based target for Obsessive Compulsive Disorder"><h2><a href="@root@defining-a-tract-based-target-for-obsessive-compulsive-disorder/" title="Permanent Link: Defining a tract-based target for Obsessive Compulsive Disorder">Defining a tract-based target for Obsessive Compulsive Disorder</a></h2><span class="post-meta"><time datetime="2019-01-12T09:32:42+00:00">January 12, 2019</time>/<a href="@root@defining-a-tract-based-target-for-obsessive-compulsive-disorder/#respond">0 Comments</a>/in <a href="@root@category/uncategorized/">Uncategorized</a>/by <a href="@root@author/andreashorn/">andreashorn</a></span></header><div class="read-more"><a class="read-link" href="@root@defining-a-tract-based-target-for-obsessive-compulsive-disorder/">Read more</a></div>

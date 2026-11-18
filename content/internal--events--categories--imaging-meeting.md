@@ -5,20 +5,11 @@ family: events
 crumbs:
 - title: Home
   url: '@root@'
-- title: Internal
+- title: For lab members
   url: '@root@internal/'
 - title: Events
   url: '@root@internal/events/'
-- title: Categories
-  url: '@root@internal/events/categories/'
 - title: Imaging meeting
-related:
-- title: Events
-  url: '@root@internal/events/'
-- title: Lab Manual
-  url: '@root@internal/onboarding/'
-- title: Links
-  url: '@root@internal/links/'
 sidebar: true
 canonical: /internal/events/categories/
 ---

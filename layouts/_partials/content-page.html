@@ -16,10 +16,15 @@
   {{ if not $sections }}{{ $sections = slice (dict "rendered" .Content) }}{{ end }}
   {{ range $i, $s := $sections }}
     {{ with $s }}
-    <div class="wrap page-body prose{{ if $.Params.article }} page-body--article{{ end }}">
+    <div class="wrap page-body prose{{ if or $.Params.article (eq $family "post") }} page-body--article{{ end }}{{ if eq $family "post" }} page-body--post{{ end }}">
       {{ if $.Params.include_new_posts }}{{ partial "new-posts.html" $ }}{{ end }}
       {{ if isset . "rendered" }}
         {{ $html := .rendered }}{{ if eq $i 0 }}{{ $html = partial "strip-title.html" (dict "html" (string $html) "title" $.Title) }}{{ end }}
+        {{- /* a post that opens with a heading (after its title): that heading is the post's lead */}}
+        {{ if eq $family "post" }}{{ $html = replaceRE `^(\s*(?:<div[^>]*>\s*)*)<h[23]>(.*?)</h[23]>` `$1<p class="post-lead">$2</p>` (string $html) 1 }}
+          {{- /* the post's own headings then start at h2 */}}
+          {{ if and (not (findRE `<h2[ >]` $html)) (findRE `<h3[ >]` $html) }}{{ $html = $html | replaceRE `<h3([ >])` "<h2$1" | replaceRE `</h3>` "</h2>" | replaceRE `<h4([ >])` "<h3$1" | replaceRE `</h4>` "</h3>" }}{{ end }}
+        {{ end }}
         {{ partial "render.html" $html }}
       {{ else }}
         {{ $html := $.RenderString (dict "display" "block") .body }}{{ if eq $i 0 }}{{ $html = partial "strip-title.html" (dict "html" (string $html) "title" $.Title) }}{{ end }}

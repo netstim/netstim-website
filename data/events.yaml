@@ -1,107 +1,55 @@
 /internal/events/:
-- mode: sidebar
-  body: "<article class=\"post-item\">\n\n<div id=\"em-wrapper\"><p><div id=\"em-view-1\">\n<div class=\"event-list\"\
-    \ id=\"em-events-list-grouped-1\">\n\tNo Events\t</div>\n</div></p></div> \n</article>"
+- mode: wide
+  body: '<p class="event-empty">There are no upcoming events.</p>
+
+    <ul class="link-rows link-rows--compact">
+
+    <li><a href="@root@internal/events/categories/imaging-meeting/"><span class="link-rows__title">Imaging meeting</span><span aria-hidden="true">→</span></a></li>
+
+    <li><a href="@root@internal/events/locations/"><span class="link-rows__title">Event locations</span><span aria-hidden="true">→</span></a></li>
+
+    </ul>'
 /internal/events/categories/:
 - mode: sidebar
-  body: "<article class=\"post-item\">\n\n<div id=\"em-wrapper\"><p><div id=\"em-view-4\">\n<div class=\"event-list\"\
-    \ id=\"em-categories-list-4\">\n<ul><li><a href=\"@root@internal/events/categories/imaging-meeting/\">Imaging\
-    \ Meeting</a></li><li><a href=\"@root@internal/events/categories/workshops/\">Workshops</a></li></ul> </div>\n\
-    </div></p></div> \n</article>"
+  body: "<article class=\"post-item\">\n\n<div id=\"em-wrapper\"><p><div id=\"em-view-4\">\n<div class=\"event-list\" id=\"em-categories-list-4\">\n<ul><li><a href=\"@root@internal/events/categories/imaging-meeting/\"\
+    >Imaging Meeting</a></li><li><a href=\"@root@internal/events/categories/workshops/\">Workshops</a></li></ul> </div>\n</div></p></div> \n</article>"
 /internal/events/categories/imaging-meeting/:
-- mode: sidebar
-  body: "<article class=\"post-item\">\n\n<div id=\"em-view-8\">\n<div id=\"em-category-8\">\n<p>These are our weekly\
-    \ imaging meeting, where we catch up and discuss ideas, papers or methodological topics.<br/>\nYou are welcome\
-    \ to join us!</p>\n<h2>Upcoming Events</h2>No events in this category\t</div>\n</div> \n</article>"
+- mode: wide
+  body: '<p>These are our weekly imaging meetings, where we catch up and discuss ideas, papers or methodological topics. You are welcome to join us!</p>
+
+    <p class="event-empty">No upcoming meetings are listed.</p>'
 /internal/events/categories/workshops/:
 - mode: sidebar
-  body: "<article class=\"post-item\">\n\n<div id=\"em-view-8\">\n<div id=\"em-category-8\">\n<h2>Upcoming Events</h2>No\
-    \ events in this category\t</div>\n</div> \n</article>"
+  body: "<article class=\"post-item\">\n\n<div id=\"em-view-8\">\n<div id=\"em-category-8\">\n<h2>Upcoming Events</h2>No events in this category\t</div>\n</div> \n</article>"
 /internal/events/locations/:
-- mode: sidebar
-  body: "<article class=\"post-item\">\n\n<div id=\"em-wrapper\"><p><div id=\"em-view-3\">\n<div class=\"event-list\"\
-    \ id=\"em-locations-list-3\">\n<ul><li><a href=\"@root@internal/events/locations/bonhoefferraum/\">Bonhoefferraum</a><ul><li>Bonhoefferweg\
-    \ 3, Berlin</li></ul></li><li><a href=\"@root@internal/events/locations/charite/\">Charité</a><ul><li>Luisenstraße\
-    \ 58-60, Berlin</li></ul></li><li><a href=\"@root@internal/events/locations/multifunktionsraum/\">Multifunktionsraum</a><ul><li>Luisenstraße\
-    \ 58-60, Berlin</li></ul></li></ul> </div>\n</div></p></div> \n</article>\n\n<div class=\"comments\"\
-    >\n<div class=\"comment-summary\" id=\"respond\">\n\n\n0\nreplies\n\n\n\n\n</div>\n<h2>Leave a Reply</h2>Want\
-    \ to join the discussion?<br/>Feel free to contribute! \n\n</div>"
+- mode: wide
+  body: '<ul class="link-rows">
+
+    <li><a href="@root@internal/events/locations/bonhoefferraum/"><span class="link-rows__title">Bonhoefferraum</span><span class="link-rows__text">Bonhoefferweg 3, Berlin</span><span aria-hidden="true">→</span></a></li>
+
+    <li><a href="@root@internal/events/locations/charite/"><span class="link-rows__title">Charité</span><span class="link-rows__text">Luisenstraße 58–60, Berlin</span><span aria-hidden="true">→</span></a></li>
+
+    <li><a href="@root@internal/events/locations/multifunktionsraum/"><span class="link-rows__title">Multifunktionsraum</span><span class="link-rows__text">Luisenstraße 58–60, Berlin</span><span aria-hidden="true">→</span></a></li>
+
+    </ul>'
 /internal/events/locations/bonhoefferraum/:
-- mode: sidebar
-  body: "<article class=\"post-item\"><div class=\"standard-content\"><header aria-label=\"Post: Bonhoefferraum\"\
-    ><h2>Bonhoefferraum</h2><span class=\"post-meta\"><time datetime=\"2019-02-21T12:45:37+00:00\">February 21,\
-    \ 2019</time>/<a href=\"@root@internal/events/locations/bonhoefferraum/#respond\">0 Comments</a>/by <a href=\"\
-    @root@author/janroediger/\">janroediger</a></span></header><div id=\"em-view-515578924\">\n<div class=\"event-location\"\
-    >\n<div class=\"map-status\"><i>Map Unavailable</i></div>\n<p>\n<strong>Address</strong><br/>\n\tBonhoefferweg\
-    \ 3<br/>\n\tBerlin<br/>\n<br/>\n<br/>\n<br/>\n\tGermany\n</p>\n\n<h3>Upcoming Events</h3>\n<p>No events in this\
-    \ location</p> </div>\n</div><div class=\"share\"><h4 class=\"share-title\">Share this entry</h4><ul class=\"\
-    share-links\"><li><a aria-label=\"Share on Facebook\" class=\"icon-link\" data-icon=\"\" href=\"https://www.facebook.com/sharer.php?u=https://www.netstim.org/internal/events/locations/bonhoefferraum/&amp;t=Bonhoefferraum\"\
-    \ rel=\"noopener noreferrer\" target=\"_blank\" title=\"\"></a></li><li><a aria-label=\"Share on X\" class=\"\
-    icon-link\" data-icon=\"\" href=\"https://twitter.com/share?text=Bonhoefferraum&amp;url=https://www.netstim.org/?p=633\"\
-    \ rel=\"noopener noreferrer\" target=\"_blank\" title=\"\"></a></li><li><a aria-label=\"Share on Pinterest\"\
-    \ class=\"icon-link\" data-icon=\"\" href=\"https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fwww.netstim.org%2Finternal%2Fevents%2Flocations%2Fbonhoefferraum%2F&amp;description=Bonhoefferraum&amp;media=\"\
-    \ rel=\"noopener noreferrer\" target=\"_blank\" title=\"\"></a></li><li><a aria-label=\"Share on LinkedIn\"\
-    \ class=\"icon-link\" data-icon=\"\" href=\"https://linkedin.com/shareArticle?mini=true&amp;title=Bonhoefferraum&amp;url=./\"\
-    \ rel=\"noopener noreferrer\" target=\"_blank\" title=\"\"></a></li><li><a aria-label=\"Share on Tumblr\" class=\"\
-    icon-link\" data-icon=\"\" href=\"https://www.tumblr.com/share/link?url=https%3A%2F%2Fwww.netstim.org%2Finternal%2Fevents%2Flocations%2Fbonhoefferraum%2F&amp;name=Bonhoefferraum&amp;description=\"\
-    \ rel=\"noopener noreferrer\" target=\"_blank\" title=\"\"></a></li><li><a aria-label=\"Share on Vk\" class=\"\
-    icon-link\" data-icon=\"\" href=\"https://vk.com/share.php?url=./\" rel=\"noopener noreferrer\" target=\"_blank\"\
-    \ title=\"\"></a></li><li><a aria-label=\"Share on Reddit\" class=\"icon-link\" data-icon=\"\" href=\"https://reddit.com/submit?url=https://www.netstim.org/internal/events/locations/bonhoefferraum/&amp;title=Bonhoefferraum\"\
-    \ rel=\"noopener noreferrer\" target=\"_blank\" title=\"\"></a></li><li><a aria-label=\"Share by Mail\" class=\"\
-    icon-link\" data-icon=\"\" href=\"mailto:?subject=Bonhoefferraum&amp;body=./\" title=\"\"></a></li></ul></div></div></article>\n\
-    \n<div class=\"comments\">\n<div class=\"comment-summary\" id=\"respond\">\n\n\n0\nreplies\n\n\n\n\n</div>\n\
-    <h3>Leave a Reply</h3>Want to join the discussion?<br/>Feel free to contribute! \n\n</div>"
+- mode: wide
+  body: '<dl class="event-facts"><dt>Address</dt><dd>Bonhoefferweg 3, Berlin, Germany</dd></dl>
+
+    <div class="action-row"><a class="action external" href="https://www.openstreetmap.org/search?query=Bonhoefferweg%203%2C%20Berlin%2C%20Germany" rel="noopener">Open in a map</a></div>
+
+    <p class="event-empty">No upcoming events at this location.</p>'
 /internal/events/locations/charite/:
-- mode: sidebar
-  body: "<article class=\"post-item\"><div class=\"post-image\"><a aria-label=\"charite\" href=\"@root@wp-content/uploads/2019/02/charite-1030x426.png\"\
-    \ title=\"charite\"><netstim-image data='{\"src\":\"media/1a19a406cb31-charite-845x321.png\",\"original\":\"\
-    https://www.netstim.org/wp-content/uploads/2019/02/charite-845x321.png\",\"alt\":\"\",\"width\":845}'/></a></div><div\
-    \ class=\"standard-content\"><header aria-label=\"Post: Charité\"><h2>Charité</h2><span class=\"post-meta\"\
-    ><time datetime=\"2019-02-20T21:49:29+00:00\">February 20, 2019</time>/<a href=\"@root@internal/events/locations/charite/#respond\"\
-    >0 Comments</a>/by <a href=\"@root@author/janroediger/\">janroediger</a></span></header><div id=\"em-view-1346546875\"\
-    >\n<div class=\"event-location\">\n<div class=\"map-status\"><i>Map Unavailable</i></div>\n<p>\n<strong>Address</strong><br/>\n\
-    \tLuisenstraße 58-60<br/>\n\tBerlin<br/>\n<br/>\n<br/>\n<br/>\n\tGermany\n</p>\n\n<h3>Upcoming Events</h3>\n\
-    <p>No events in this location</p> </div>\n</div><div class=\"share\"><h4 class=\"share-title\">Share this entry</h4><ul\
-    \ class=\"share-links\"><li><a aria-label=\"Share on Facebook\" class=\"icon-link\" data-icon=\"\" href=\"\
-    https://www.facebook.com/sharer.php?u=https://www.netstim.org/internal/events/locations/charite/&amp;t=Charit%C3%A9\"\
-    \ rel=\"noopener noreferrer\" target=\"_blank\" title=\"\"></a></li><li><a aria-label=\"Share on X\" class=\"\
-    icon-link\" data-icon=\"\" href=\"https://twitter.com/share?text=Charit%C3%A9&amp;url=https://www.netstim.org/?p=582\"\
-    \ rel=\"noopener noreferrer\" target=\"_blank\" title=\"\"></a></li><li><a aria-label=\"Share on Pinterest\"\
-    \ class=\"icon-link\" data-icon=\"\" href=\"https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fwww.netstim.org%2Finternal%2Fevents%2Flocations%2Fcharite%2F&amp;description=Charit%C3%A9&amp;media=https%3A%2F%2Fwww.netstim.org%2Fwp-content%2Fuploads%2F2019%2F02%2Fcharite-705x291.png\"\
-    \ rel=\"noopener noreferrer\" target=\"_blank\" title=\"\"></a></li><li><a aria-label=\"Share on LinkedIn\"\
-    \ class=\"icon-link\" data-icon=\"\" href=\"https://linkedin.com/shareArticle?mini=true&amp;title=Charit%C3%A9&amp;url=./\"\
-    \ rel=\"noopener noreferrer\" target=\"_blank\" title=\"\"></a></li><li><a aria-label=\"Share on Tumblr\" class=\"\
-    icon-link\" data-icon=\"\" href=\"https://www.tumblr.com/share/link?url=https%3A%2F%2Fwww.netstim.org%2Finternal%2Fevents%2Flocations%2Fcharite%2F&amp;name=Charit%C3%A9&amp;description=\"\
-    \ rel=\"noopener noreferrer\" target=\"_blank\" title=\"\"></a></li><li><a aria-label=\"Share on Vk\" class=\"\
-    icon-link\" data-icon=\"\" href=\"https://vk.com/share.php?url=./\" rel=\"noopener noreferrer\" target=\"_blank\"\
-    \ title=\"\"></a></li><li><a aria-label=\"Share on Reddit\" class=\"icon-link\" data-icon=\"\" href=\"https://reddit.com/submit?url=https://www.netstim.org/internal/events/locations/charite/&amp;title=Charit%C3%A9\"\
-    \ rel=\"noopener noreferrer\" target=\"_blank\" title=\"\"></a></li><li><a aria-label=\"Share by Mail\" class=\"\
-    icon-link\" data-icon=\"\" href=\"mailto:?subject=Charit%C3%A9&amp;body=./\" title=\"\"></a></li></ul></div></div></article>\n\
-    \n<div class=\"comments\">\n<div class=\"comment-summary\" id=\"respond\">\n\n\n0\nreplies\n\n\n\n\n</div>\n\
-    <h3>Leave a Reply</h3>Want to join the discussion?<br/>Feel free to contribute! \n\n</div>"
+- mode: wide
+  body: '<dl class="event-facts"><dt>Address</dt><dd>Luisenstraße 58–60, 10117 Berlin, Germany</dd></dl>
+
+    <div class="action-row"><a class="action external" href="https://www.openstreetmap.org/search?query=Luisenstra%C3%9Fe%2058%E2%80%9360%2C%2010117%20Berlin%2C%20Germany" rel="noopener">Open in a map</a></div>
+
+    <p class="event-empty">No upcoming events at this location.</p>'
 /internal/events/locations/multifunktionsraum/:
-- mode: sidebar
-  body: "<article class=\"post-item\"><div class=\"standard-content\"><header aria-label=\"Post: Multifunktionsraum\"\
-    ><h2>Multifunktionsraum</h2><span class=\"post-meta\"><time datetime=\"2019-02-20T18:59:54+00:00\">February\
-    \ 20, 2019</time>/<a href=\"@root@internal/events/locations/multifunktionsraum/#respond\">0 Comments</a>/by\
-    \ <a href=\"@root@author/janroediger/\">janroediger</a></span></header><div id=\"em-view-135152213\">\n<div\
-    \ class=\"event-location\">\n<div class=\"map-status\"><i>Map Unavailable</i></div>\n<p>\n<strong>Address</strong><br/>\n\
-    \tLuisenstraße 58-60<br/>\n\tBerlin<br/>\n<br/>\n<br/>\n<br/>\n\tGermany\n</p>\n\n<h3>Upcoming Events</h3>\n\
-    <p>No events in this location</p> </div>\n</div><div class=\"share\"><h4 class=\"share-title\">Share this entry</h4><ul\
-    \ class=\"share-links\"><li><a aria-label=\"Share on Facebook\" class=\"icon-link\" data-icon=\"\" href=\"\
-    https://www.facebook.com/sharer.php?u=https://www.netstim.org/internal/events/locations/multifunktionsraum/&amp;t=Multifunktionsraum\"\
-    \ rel=\"noopener noreferrer\" target=\"_blank\" title=\"\"></a></li><li><a aria-label=\"Share on X\" class=\"\
-    icon-link\" data-icon=\"\" href=\"https://twitter.com/share?text=Multifunktionsraum&amp;url=https://www.netstim.org/?p=516\"\
-    \ rel=\"noopener noreferrer\" target=\"_blank\" title=\"\"></a></li><li><a aria-label=\"Share on Pinterest\"\
-    \ class=\"icon-link\" data-icon=\"\" href=\"https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fwww.netstim.org%2Finternal%2Fevents%2Flocations%2Fmultifunktionsraum%2F&amp;description=Multifunktionsraum&amp;media=\"\
-    \ rel=\"noopener noreferrer\" target=\"_blank\" title=\"\"></a></li><li><a aria-label=\"Share on LinkedIn\"\
-    \ class=\"icon-link\" data-icon=\"\" href=\"https://linkedin.com/shareArticle?mini=true&amp;title=Multifunktionsraum&amp;url=./\"\
-    \ rel=\"noopener noreferrer\" target=\"_blank\" title=\"\"></a></li><li><a aria-label=\"Share on Tumblr\" class=\"\
-    icon-link\" data-icon=\"\" href=\"https://www.tumblr.com/share/link?url=https%3A%2F%2Fwww.netstim.org%2Finternal%2Fevents%2Flocations%2Fmultifunktionsraum%2F&amp;name=Multifunktionsraum&amp;description=\"\
-    \ rel=\"noopener noreferrer\" target=\"_blank\" title=\"\"></a></li><li><a aria-label=\"Share on Vk\" class=\"\
-    icon-link\" data-icon=\"\" href=\"https://vk.com/share.php?url=./\" rel=\"noopener noreferrer\" target=\"_blank\"\
-    \ title=\"\"></a></li><li><a aria-label=\"Share on Reddit\" class=\"icon-link\" data-icon=\"\" href=\"https://reddit.com/submit?url=https://www.netstim.org/internal/events/locations/multifunktionsraum/&amp;title=Multifunktionsraum\"\
-    \ rel=\"noopener noreferrer\" target=\"_blank\" title=\"\"></a></li><li><a aria-label=\"Share by Mail\" class=\"\
-    icon-link\" data-icon=\"\" href=\"mailto:?subject=Multifunktionsraum&amp;body=./\" title=\"\"></a></li></ul></div></div></article>\n\
-    \n<div class=\"comments\">\n<div class=\"comment-summary\" id=\"respond\">\n\n\n0\nreplies\n\n\n\n\n</div>\n\
-    <h3>Leave a Reply</h3>Want to join the discussion?<br/>Feel free to contribute! \n\n</div>"
+- mode: wide
+  body: '<dl class="event-facts"><dt>Address</dt><dd>Luisenstraße 58–60, 10117 Berlin, Germany</dd></dl>
+
+    <div class="action-row"><a class="action external" href="https://www.openstreetmap.org/search?query=Luisenstra%C3%9Fe%2058%E2%80%9360%2C%2010117%20Berlin%2C%20Germany" rel="noopener">Open in a map</a></div>
+
+    <p class="event-empty">No upcoming events at this location.</p>'

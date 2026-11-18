@@ -10,6 +10,7 @@ crumbs:
 - title: Uncategorized
 sidebar: true
 comment_anchor: true
+redirect: '@root@blog/'
 ---
 
 <article aria-label="Radio interview about Alzheimer DBS study" class="post-item"><div class="archive-media"><a aria-label="Radio interview about Alzheimer DBS study" class="archive-image" href="@root@radio-interview-about-alzheimer-dbs-study/" title="Option1"><netstim-image data='{"src":"media/e87727de6614-Option1-450x450.png","original":"https://www.netstim.org/wp-content/uploads/2022/12/Option1-180x180.png","alt":"","width":180}'/></a></div><div class="standard-content"><header aria-label="Post: Radio interview about Alzheimer DBS study"><h2><a href="@root@radio-interview-about-alzheimer-dbs-study/" title="Permanent Link: Radio interview about Alzheimer DBS study">Radio interview about Alzheimer DBS study</a></h2><span class="post-meta"><time datetime="2022-12-17T03:38:09+00:00">December 17, 2022</time>/<a href="@root@radio-interview-about-alzheimer-dbs-study/#respond">0 Comments</a>/in <a href="@root@category/uncategorized/">Uncategorized</a>/by <a href="@root@author/andreashorn/">andreashorn</a></span></header><div class="read-more"><a class="read-link" href="@root@radio-interview-about-alzheimer-dbs-study/">Read more</a></div>

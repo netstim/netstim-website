@@ -2,22 +2,29 @@
        under a large year numeral as on News. A row: the title (a link to the DOI where there is one), then
        authors and journal. A filter box narrows the list as you type (assets/js/main/publications.js).
        The old Zotpress anchors (#zp-ID-…) stay on the rows. */ -}}
+{{- /* the library holds some papers twice (a preprint and the article, or two imports): keep one per title,
+       preferring the one with a date and a DOI */ -}}
+{{ $seen := dict }}{{ $pubs := slice }}
+{{ range sort hugo.Data.publications "date" "desc" }}
+  {{ $k := lower (replaceRE `[^\pL\pN]+` "" (.title | replaceRE "ﬁ" "fi" | replaceRE "ﬂ" "fl")) }}
+  {{ if not (index $seen $k) }}{{ $seen = merge $seen (dict $k true) }}{{ $pubs = $pubs | append . }}{{ end }}
+{{ end }}
 {{ $years := slice }}{{ $by := dict }}
-{{ range hugo.Data.publications }}
+{{ range $pubs }}
   {{ $y := substr (string .date) 0 4 | default "Without a date" }}
   {{ if not (in $years $y) }}{{ $years = $years | append $y }}{{ end }}
   {{ $by = merge $by (dict $y ((index $by $y | default slice) | append .)) }}
 {{ end }}
 {{ $dated := slice }}{{ range $years }}{{ if ne . "Without a date" }}{{ $dated = $dated | append . }}{{ end }}{{ end }}
 {{ $order := sort $dated "value" "desc" }}{{ if in $years "Without a date" }}{{ $order = $order | append "Without a date" }}{{ end }}
-<section class="bibliography" aria-labelledby="publications-h" data-bibliography>
+<section class="bibliography" id="zotpress-lib-79dba5b0098bd35c40ebe35903c37972" aria-labelledby="publications-h" data-bibliography>
   <div class="bibliography__head">
-    <h2 id="publications-h">Publications</h2>
+    <h2 id="publications-h">All papers</h2>
     <label class="bib-filter"><span class="sr-only">Filter publications</span>
-      {{ partial "icon.html" "search" }}<input type="search" placeholder="Filter by title, author or journal" data-bib-filter>
+      {{ partial "icon.html" "search" }}<input type="search" placeholder="Filter papers" data-bib-filter>
     </label>
   </div>
-  <p class="bib-count" role="status" data-bib-count>{{ len hugo.Data.publications }} publications</p>
+  <p class="bib-count" role="status" data-bib-count>{{ len $pubs }} publications</p>
   {{ range $order }}{{ $y := . }}
   <section class="pub-year" data-bib-year>
     <h3 class="pub-year__label">{{ $y }}</h3>
@@ -26,9 +33,12 @@
         {{ $doi := "" }}{{ with findRESubmatch `href="([^"]+)"` .citation 1 }}{{ $doi = index (index . 0) 1 }}{{ end }}
         {{ $authors := replaceRE `^(.*?)\s\((?:\d{4}|n\.d\.)[^)]*\)\..*$` "$1" (.citation | plainify | htmlUnescape) }}
         {{ $journal := "" }}{{ with findRESubmatch `<i>(.*?)</i>` .citation 1 }}{{ $journal = index (index . 0) 1 | plainify | htmlUnescape }}{{ end }}
-        <li class="pub-row" id="zp-ID-5249585-{{ .key }}">
-          <h4>{{ if $doi }}<a href="{{ $doi }}" rel="noopener">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}</h4>
-          <p>{{ $authors }}{{ with $journal }}<span class="pub-row__journal"> · {{ . }}</span>{{ end }}</p>
+        {{- /* an author's initials caught in italics ("B. Al") are no journal */}}
+        {{ if findRE `^[A-Z]\. ` $journal }}{{ $journal = "" }}{{ end }}
+        {{ $title := .title | replaceRE "ﬁ" "fi" | replaceRE "ﬂ" "fl" }}
+        <li class="pub-row" id="zp-ID-5249585-{{ .key }}" data-year="{{ $y }}">
+          <h4>{{ if $doi }}<a href="{{ $doi }}" rel="noopener">{{ $title }}<span class="pub-row__ext" aria-hidden="true">{{ partial "icon.html" "external" }}</span></a>{{ else }}{{ $title }}{{ end }}</h4>
+          <p>{{ $authors }}{{ with $journal }}<span class="pub-row__journal">&nbsp;· {{ . }}</span>{{ end }}</p>
         </li>
       {{ end }}
     </ol>

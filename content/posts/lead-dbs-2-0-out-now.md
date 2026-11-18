@@ -1,5 +1,5 @@
 ---
-title: Updates
+title: Lead-DBS 2.0 out now
 url: /lead-dbs-2-0-out-now/
 family: post
 crumbs:
@@ -13,11 +13,10 @@ wordpress_id: 189
 date: '2017-09-10T14:17:25+00:00'
 modified: '2017-12-29T17:06:21+00:00'
 author: andreashorn
-comment_anchor: false
 canonical: /lead-dbs-2-0-out-now/
 ---
 
-<article class="post-item"><div class="post-image"><a aria-label="two_oh_in_a_nutshell" href="@root@wp-content/uploads/2017/12/two_oh_in_a_nutshell-1030x624.png" title="two_oh_in_a_nutshell"><netstim-image data='{"src":"media/cf6a8180be3e-two_oh_in_a_nutshell-845x321.png","original":"https://www.netstim.org/wp-content/uploads/2017/12/two_oh_in_a_nutshell-845x321.png","alt":"","width":845}'/></a></div><div class="standard-content"><header aria-label="Post: Lead-DBS 2.0 out now"><h2>Lead-DBS 2.0 out now</h2><span class="post-meta"><time datetime="2017-09-10T14:17:25+00:00">September 10, 2017</time>/<a href="@root@lead-dbs-2-0-out-now/#respond">0 Comments</a>/in <a href="@root@category/uncategorized/">Uncategorized</a>/by <a href="@root@author/andreashorn/">andreashorn</a></span></header><p>We are proud to release Lead-DBS 2.0 to the community – an open source tool to localize Deep Brain Stimulation (DBS) electrodes in the human brain.</p>
+<div class="image-block post-lead-image"><a aria-label="two_oh_in_a_nutshell" href="@root@wp-content/uploads/2017/12/two_oh_in_a_nutshell-1030x624.png" title="two_oh_in_a_nutshell"><netstim-image data='{"src":"media/cf6a8180be3e-two_oh_in_a_nutshell-845x321.png","original":"https://www.netstim.org/wp-content/uploads/2017/12/two_oh_in_a_nutshell-845x321.png","alt":"","width":845}'/></a></div><p>We are proud to release Lead-DBS 2.0 to the community – an open source tool to localize Deep Brain Stimulation (DBS) electrodes in the human brain.</p>
 
 <p>A detailed description of all major new features is available here [<a href="https://www.researchgate.net/deref/http%3A%2F%2Fwww.lead-dbs.org%2F%3Fp%3D3174" rel="noopener noreferrer" target="_blank">http://www.lead-dbs.org/?p=3174</a>], but in a nutshell they are:</p>
 
@@ -36,19 +35,5 @@ canonical: /lead-dbs-2-0-out-now/
 <p>We hope you like our new release – and please don’t hesitate to spread the word to colleagues in the DBS field. To download Lead-DBS now, see [<a href="https://www.researchgate.net/deref/http%3A%2F%2Fwww.lead-dbs.org" rel="noopener noreferrer" target="_blank">http://www.lead-dbs.org</a>].</p>
 
 <netstim-image data='{"src":"media/74e945972f19-two_oh_in_a_nutshell-1500x909.png","original":"http://andreas-horn.de/wp-content/uploads/2017/12/two_oh_in_a_nutshell-300x182.png","alt":"","width":300}'/>
-<div class="share"><h3 class="share-title">Share this entry</h3><ul class="share-links"><li><a aria-label="Share on Facebook" class="icon-link" data-icon="" href="https://www.facebook.com/sharer.php?u=https://www.netstim.org/lead-dbs-2-0-out-now/&amp;t=Lead-DBS%202.0%20out%20now" rel="noopener noreferrer" target="_blank" title=""></a></li><li><a aria-label="Share on X" class="icon-link" data-icon="" href="https://twitter.com/share?text=Lead-DBS%202.0%20out%20now&amp;url=https://www.netstim.org/?p=189" rel="noopener noreferrer" target="_blank" title=""></a></li><li><a aria-label="Share on Pinterest" class="icon-link" data-icon="" href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fwww.netstim.org%2Flead-dbs-2-0-out-now%2F&amp;description=Lead-DBS%202.0%20out%20now&amp;media=https%3A%2F%2Fwww.netstim.org%2Fwp-content%2Fuploads%2F2017%2F12%2Ftwo_oh_in_a_nutshell-705x427.png" rel="noopener noreferrer" target="_blank" title=""></a></li><li><a aria-label="Share on LinkedIn" class="icon-link" data-icon="" href="https://linkedin.com/shareArticle?mini=true&amp;title=Lead-DBS%202.0%20out%20now&amp;url=./" rel="noopener noreferrer" target="_blank" title=""></a></li><li><a aria-label="Share on Tumblr" class="icon-link" data-icon="" href="https://www.tumblr.com/share/link?url=https%3A%2F%2Fwww.netstim.org%2Flead-dbs-2-0-out-now%2F&amp;name=Lead-DBS%202.0%20out%20now&amp;description=We%20are%20proud%20to%20release%C2%A0Lead-DBS%202.0%C2%A0to%20the%20community%20%E2%80%93%20an%20open%20source%20tool%20to%20localize%20Deep%20Brain%20Stimulation%20%28DBS%29%20electrodes%20in%20the%20human%20brain.%20A%20detailed%20description%20of%20all%20major%20new%20features%20is%20available%20here%20%5Bhttp%3A%2F%2Fwww.lead-dbs.org%2F%3Fp%3D3174%5D%2C%20but%20in%20a%20nutshell%20they%20are%3A%20DISTAL%20atlas%3A%20A%20detailed%20brain%20atlas%20of%20the%20human%20subcortex%20based%20on%20histology%20%5B%E2%80%A6%5D" rel="noopener noreferrer" target="_blank" title=""></a></li><li><a aria-label="Share on Vk" class="icon-link" data-icon="" href="https://vk.com/share.php?url=./" rel="noopener noreferrer" target="_blank" title=""></a></li><li><a aria-label="Share on Reddit" class="icon-link" data-icon="" href="https://reddit.com/submit?url=https://www.netstim.org/lead-dbs-2-0-out-now/&amp;title=Lead-DBS%202.0%20out%20now" rel="noopener noreferrer" target="_blank" title=""></a></li><li><a aria-label="Share by Mail" class="icon-link" data-icon="" href="mailto:?subject=Lead-DBS%202.0%20out%20now&amp;body=./" title=""></a></li></ul></div></div></article>
-
-<div class="comments">
-<div class="comment-summary" id="respond">
 
 
-0
-replies
-
-
-
-
-</div>
-<h3>Leave a Reply</h3>Want to join the discussion?<br/>Feel free to contribute! 
-
-</div>

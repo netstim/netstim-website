@@ -22,9 +22,10 @@ cards:
   url: '@root@research-interests/deep-brain-stimulation/'
 - title: Normative Connectomes
   text: “Average wiring diagrams” of the human brain, estimated since 2014 and freely available to the scientific community.
-  image: media/full-The_Human_Connectome.png
-  ground: light
+  image: media/full-fMRI.png
+  ground: dark
   url: '@root@research-interests/normative-connectomes/'
+  fit: contain
 - title: Connectomic Deep Brain Stimulation
   text: 'The book: chapters by internationally renowned experts on electrode localization, DBS modeling and connectomics.'
   image: media/4cb5be70722a-Connectomic-Deep-Brain-Stimulation-1249x1536.png

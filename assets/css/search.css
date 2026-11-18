@@ -1,9 +1,26 @@
-.search-dialog { width: min(560px, calc(100% - 24px)); padding: 16px 22px 24px; }
+/* Search (layouts/_partials/search-dialog.html): a panel near the top of the window (a sheet from the top on
+   a phone, so the keyboard never covers it); the field stays put while only the results scroll; each result
+   one row: its title, and the section it belongs to under it. */
+.search-dialog[open] { display: flex; flex-direction: column; }
+.search-dialog { width: min(640px, calc(100% - 24px)); max-height: min(640px, 76dvh); margin-top: 12vh; padding: 16px 24px 12px; overflow: hidden; }
+.search-dialog:focus-visible { outline: none; }
+.search-dialog search { display: flex; flex-direction: column; min-height: 0; }
 .search-dialog input {
-  width: 100%; min-height: 46px; margin-top: 12px; padding: 8px 12px;
-  background: var(--surface); border: 1px solid var(--line); border-radius: 6px;
+  width: 100%; min-height: 48px; margin-top: 8px; padding: 0 16px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 999px; font-size: 16px;
 }
-.search-dialog [data-search-status] { margin-top: 10px; color: var(--muted); font-size: 13px; }
-.search-dialog ol { list-style: none; padding: 0; }
+.search-dialog input:focus { outline: none; border-color: var(--line-strong); background: var(--bg); }
+.search-dialog input::-webkit-search-cancel-button { filter: grayscale(1); opacity: .5; }
+.search-dialog [data-search-status] { margin-top: 12px; color: var(--muted); font-size: 13px; }
+.search-dialog [data-search-status]:empty { display: none; }
+.search-dialog ol { list-style: none; margin: 8px -8px 0; padding: 0 8px 8px; overflow-y: auto; overscroll-behavior: contain; }
 .search-dialog li + li { border-top: 1px solid var(--line); }
-.search-dialog li a { display: flex; align-items: center; min-height: 44px; padding-block: 6px; }
+.search-dialog li a { display: grid; gap: 2px; min-height: 56px; padding: 10px 0; color: var(--ink); text-decoration: none; }
+.search-result__title { font-size: 16px; font-weight: 500; letter-spacing: -.01em; }
+.search-result__where { color: var(--muted); font-size: 13px; }
+@media (hover: hover) {
+  .search-dialog li a:hover .search-result__title { color: var(--action); }
+}
+@media (max-width: 639px) {
+  .search-dialog { width: 100%; max-width: none; height: 100dvh; max-height: none; margin: 0; border: 0; border-radius: 0; padding: 12px var(--gut) 0; }
+}

@@ -17,6 +17,7 @@
 @media (max-width: 639px) {
   .site-footer { padding: 32px 0 calc(16px + env(safe-area-inset-bottom)); }
   .footer-main { display: grid; gap: 8px; }
-  .footer-main .footer-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 24px; }
+  .footer-main .footer-links { display: flex; flex-wrap: wrap; gap: 0 24px; }
   .footer-legal { display: grid; padding-top: 16px; }
 }
+.footer-links [aria-hidden="true"] { margin-left: 4px; }
