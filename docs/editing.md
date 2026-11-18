@@ -14,7 +14,7 @@ The wide person blocks precede the alumni and sidebar.
 
 ## Publications
 
-Add or edit rows in `data/publications.yaml`. Keep newest-first order using the source date, retain the citation text and DOI URL, and give the row a stable key. Existing rows use Zotero keys. The page renders the data and shows 20 entries at a time.
+Add or edit rows in `data/publications.yaml`. Keep newest-first order using the source date, retain the citation text and DOI URL, and give the row a stable key. Existing rows use Zotero keys. The bibliography groups papers by year, newest first, and shows one entry per normalized title. Readers can filter by title, author, journal or year.
 
 ```yaml
 - key: STABLE-ITEM-KEY

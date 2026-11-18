@@ -17,7 +17,7 @@
 .bib-filter input:focus { outline: none; border-color: var(--ink); }
 .bib-count { margin: 16px 0 32px; color: var(--muted); font-size: 14px; }
 .pub-year { display: grid; grid-template-columns: 240px minmax(0, 1fr); border-top: 1px solid var(--line-strong); }
-.pub-year__label { position: sticky; top: calc(var(--nav) + 20px); align-self: start; padding: 20px 0 24px; font-size: 56px; font-weight: 400; line-height: 1; letter-spacing: -.05em; font-variant-numeric: tabular-nums; }
+.pub-year__label { position: sticky; top: calc(var(--nav) + var(--notice-height, 0px) + 20px); align-self: start; padding: 20px 0 24px; font-size: 56px; font-weight: 400; line-height: 1; letter-spacing: -.05em; font-variant-numeric: tabular-nums; }
 .pub-year:last-of-type .pub-year__label { font-size: 28px; letter-spacing: -.03em; }
 .pub-rows { list-style: none; margin: 0; padding: 0 0 32px; }
 .pub-row { padding: 20px 0; scroll-margin-top: calc(var(--nav) + 24px); }

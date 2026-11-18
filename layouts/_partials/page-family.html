@@ -1,5 +1,4 @@
 {{- $family := .Params.family | default "page" -}}
-{{- if .Params.book3d }}{{ return (slice "content" "home") }}{{ end -}}
 {{- if in (slice "post" "archive") $family -}}
   {{- return (slice "content" "updates") -}}
 {{- else if eq $family "posters" -}}
@@ -8,9 +7,7 @@
   {{- return (slice "content" $family) -}}
 {{- else if eq $family "research" -}}
   {{- return (slice "content" "home" "research") -}}
-{{- else if eq $family "about" -}}
-  {{- return (slice "content" "home" "about") -}}
-{{- else if eq $family "home" -}}
+{{- else if in (slice "home" "community") $family -}}
   {{- return (slice "content" "home") -}}
 {{- end -}}
 {{- return (slice "content") -}}

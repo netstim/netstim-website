@@ -14,6 +14,10 @@ try {
       await localOnly(ctx, origin, true);
       const page = await ctx.newPage();
       await page.goto(at(''));
+      if (prefix !== '/') {
+        const notice = page.getByRole('region', {name:'Preview notice'});
+        assert(await notice.getByRole('link', {name:'www.netstim.org'}).isVisible());
+      }
       const menuButton = page.getByRole('button', {name:'Open menu'});
       await menuButton.click();
       const menu = page.getByRole('dialog', {name:'Menu'});
@@ -23,7 +27,7 @@ try {
       await page.keyboard.press('Shift+Tab');
       assert(await menu.evaluate(el => el.contains(document.activeElement)));
       assert.equal(await menu.evaluate(() => getComputedStyle(document.documentElement).overflow), 'hidden');
-      await menu.getByRole('button', {name:'Publications', exact:true}).click();
+      await menu.getByRole('button', {name:'Publications pages', exact:true}).click();
       assert(await menu.getByRole('link', {name:'Posters', exact:true}).isVisible());
       await page.keyboard.press('Escape');
       await menu.waitFor({state:'hidden', timeout:5000});
@@ -38,6 +42,13 @@ try {
       await page.getByRole('searchbox').fill('Normative Connectomes');
       await page.getByRole('dialog', {name:'Search'}).getByRole('link', {name:/^Normative Connectomes/}).first().click();
       await page.waitForURL(at('research-interests/normative-connectomes/'));
+
+      for (const [section, path] of [['People', 'people/'], ['Publications', 'publications/']]) {
+        await menuButton.click();
+        await menu.getByRole('link', {name:section, exact:true}).click();
+        await page.waitForURL(at(path));
+        assert(await page.getByRole('heading', {name:section, level:1}).isVisible());
+      }
 
       await page.goto(at('research-interests/publications/'));
       const allRows = await page.locator('.pub-row:visible').count();
@@ -55,6 +66,15 @@ try {
       await page.keyboard.press('Escape');
       assert.equal(await viewer.isVisible(), false);
       assert(await cover.evaluate(el => el === document.activeElement));
+
+      await page.goto(at('about-us/about-us/#%'));
+      const member = page.getByRole('button', {name:'Ilkem Aysu Sahin'});
+      await member.click();
+      const profile = page.getByRole('dialog', {name:'Ilkem Aysu Sahin'});
+      assert(await profile.isVisible());
+      assert(await profile.getByRole('link', {name:'LinkedIn'}).isVisible());
+      await page.keyboard.press('Escape');
+      assert.equal(await profile.isVisible(), false);
 
       await page.goto(at('research-interests/the-book/'));
       await page.getByRole('button', {name:'Next image'}).first().click();

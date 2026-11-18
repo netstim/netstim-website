@@ -45,6 +45,8 @@
   vertical-align: middle; color: var(--ink); text-decoration: none;
 }
 .icon-link::before { content: "↗" / ""; font-size: 17px; }
+.icon-link[data-social]::before { content: attr(data-social) / ""; font: 18px SiteIcons; }
+.icon-link[data-academic]::before { content: attr(data-academic) / ""; font: 21px AcademicIcons; }
 .icon-link[data-icon]::before { content: attr(data-icon) / ""; font: 18px SiteIcons; }
 .video-embed--audio { aspect-ratio: auto; min-height: 128px; }
 .video-embed--audio .video-start { flex-direction: row; }

@@ -1,9 +1,3 @@
-/* People (layouts/_partials/people-page.html, assets/js/main/people.js). One portrait treatment: a 4:5 frame,
-   the face in the upper third, black and white, so photos from different shoots read as one set.
-   The team: four across (the sixteen members fill four full rows), name only. A card opens the person's
-   sheet from the right: a bar that stays on top as the sheet scrolls (the name appears in it), the photo
-   beside the name and actions, the text in one reading column, the profile links as rows, the photo
-   credit. The alumni: the same portraits, smaller and denser, with their profile links in words. */
 .portrait-frame { display: block; aspect-ratio: 4 / 5; overflow: hidden; border-radius: var(--r-md); background: var(--surface); }
 .portrait-frame img { width: 100%; height: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 22%; filter: grayscale(1) contrast(1.04); }
 .portrait-frame.portrait-frame--initials { display: flex; align-items: center; justify-content: center; background: var(--line); }
@@ -24,36 +18,32 @@
 }
 /* the sheet */
 .person-sheet {
-  position: fixed; inset: 12px 12px 12px auto; width: min(640px, calc(100% - 24px)); height: auto; max-width: none; max-height: none;
-  margin: 0; padding: 0 0 40px; overflow-y: auto; overscroll-behavior: contain; border: 1px solid var(--line); border-radius: var(--r-lg);
+  position: fixed; inset: 0; width: min(920px, calc(100% - 24px)); height: fit-content; max-width: none; max-height: min(84dvh, 760px);
+  margin: auto; padding: 0; overflow-y: auto; overscroll-behavior: contain; border: 1px solid var(--line); border-radius: var(--r-lg);
   background: var(--bg); box-shadow: var(--shadow-3);
 }
 .person-sheet::backdrop { background: rgb(12 16 19 / .32); }
 [data-theme="dark"] .person-sheet::backdrop { background: rgb(0 0 0 / .56); }
 .person-sheet:focus-visible { outline: none; }
-.person-sheet__bar { position: sticky; top: 0; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 60px; padding: 0 12px 0 32px; background: var(--bg); }
-.person-sheet__bar-name { font-size: 15px; font-weight: 500; opacity: 0; transition: opacity 150ms cubic-bezier(.2, .65, .3, 1); }
-.person-sheet.is-scrolled .person-sheet__bar { box-shadow: 0 1px 0 var(--line); }
-.person-sheet.is-scrolled .person-sheet__bar-name { opacity: 1; }
-.person-sheet__head { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 28px; align-items: end; padding: 4px 40px 0; }
-.person-sheet__head--text { grid-template-columns: minmax(0, 1fr); }
-.person-sheet__head h2 { font-size: 36px; font-weight: 450; line-height: 1.05; letter-spacing: -.04em; }
+.person-sheet__close { position: sticky; top: 12px; z-index: 2; height: 0; margin: 0 12px 0 auto; width: 44px; }
+.person-sheet__close button { border-radius: 50%; border: 1px solid var(--line); background: var(--bg); }
+.person-sheet__layout { display: grid; grid-template-columns: minmax(220px, 31%) minmax(0, 1fr); }
+.person-sheet__layout--text { grid-template-columns: minmax(0, 1fr); max-width: 700px; margin-inline: auto; }
+.person-sheet__portrait { display: grid; place-items: center; padding: 20px; background: var(--surface); }
+.person-sheet__portrait .portrait-frame { width: min(100%, 42dvh); }
+.person-sheet__intro { margin-bottom: 24px; }
+.person-sheet__intro h2 { font-size: clamp(28px, 3vw, 40px); line-height: 1.08; padding-right: 24px; font-weight: 450; letter-spacing: -.045em; text-wrap: balance; }
+.person-sheet__reading { min-width: 0; max-height: min(calc(84dvh - 2px), 758px); overflow-y: auto; overscroll-behavior: contain; padding: 40px clamp(28px, 3.4vw, 48px); }
 .person-sheet__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 20px; margin-top: 16px; }
 .person-sheet__actions .action-row { margin: 0; }
 .person-sheet__actions .action-row:first-child .action { min-height: 44px; padding: 10px 18px; font-size: 14px; }
 .person-sheet__actions .action-row + .action-row .action { min-height: 44px; padding: 0; background: none; color: var(--ink); font-size: 14px; text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 5px; }
-.person-sheet__text { margin-top: 32px; padding: 0 40px; font-size: 17px; line-height: 1.65; }
+.person-sheet__text { font-size: 16px; line-height: 1.65; }
 .person-sheet__text :is(.columns, .column) { display: contents; }
 .person-sheet__text p + p { margin-top: 18px; }
 .person-sheet__text p:empty { display: none; }
-.person-sheet__links { list-style: none; margin: 36px 40px 0; padding: 0; border-bottom: 1px solid var(--line); }
-.person-sheet__links a { display: flex; align-items: center; justify-content: space-between; min-height: 52px; border-top: 1px solid var(--line); color: var(--ink); font-size: 15px; font-weight: 500; text-decoration: none; }
-.person-sheet__links svg { width: 18px; height: 18px; color: var(--muted); }
-.person-sheet__credit { margin: 24px 40px 0; color: var(--muted); font-size: 13px; }
-@media (hover: hover) {
-  .person-sheet__links a:hover, .person-sheet__links a:hover svg { color: var(--action); }
-}
-.person-sheet__links a:active { background: var(--surface); }
+.person-sheet__links { display: flex; flex-wrap: wrap; list-style: none; margin: 14px 0 0 -8px; padding: 0; }
+.person-sheet__credit { margin: 24px 0 0; color: var(--muted); font-size: 13px; }
 /* motion: the photo grows from the card, the panel slides in; nothing else on the page moves */
 ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
 ::view-transition-group(person-photo) { z-index: 3; animation-duration: 380ms; animation-timing-function: cubic-bezier(.2, .8, .2, 1); }
@@ -63,8 +53,6 @@
 ::view-transition-old(person-panel) { animation: sheet-out 260ms cubic-bezier(.4, 0, 1, 1) both; }
 @keyframes sheet-in { from { transform: translateX(56px); opacity: 0; } }
 @keyframes sheet-out { to { transform: translateX(56px); opacity: 0; } }
-.person-sheet[open] { transition: transform 380ms cubic-bezier(.2, .8, .2, 1), opacity 380ms cubic-bezier(.2, .8, .2, 1); }
-@starting-style { .person-sheet[open] { opacity: 0; transform: translateX(56px); } }
 /* the alumni */
 .people-alumni { padding-top: 0; }
 .people-alumni > h2 { max-width: none; margin-bottom: 32px; padding-top: 48px; border-top: 1px solid var(--line); font-size: var(--t-h2); }
@@ -72,26 +60,23 @@
 .alumnus { min-width: 0; }
 .alumnus .portrait-frame { border-radius: var(--r-sm); }
 .alumnus h3 { margin-top: 10px; font-size: 15px; font-weight: 500; line-height: 1.3; letter-spacing: -.005em; }
-.alumnus__links { display: flex; flex-wrap: wrap; gap: 0 10px; margin-top: 2px; color: var(--muted); font-size: 13px; line-height: 1.4; }
-.alumnus__links > span { display: none; }
-.alumnus__links a { display: inline-block; padding-block: 4px; color: var(--muted); text-decoration: none; }
-@media (hover: hover) {
-  .alumnus__links a:hover { color: var(--action); text-decoration: underline; }
-}
+.alumnus__links { display: flex; flex-wrap: wrap; margin-top: 2px; }
 @media (max-width: 1023px) {
   .alumni-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
 @media (max-width: 767px) {
   .people-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 16px; }
   .alumni-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 16px; }
-  .person-sheet { inset: 0; width: 100%; border: 0; border-radius: 0; }
-  .person-sheet__bar { padding-left: 20px; }
-  .person-sheet__head { grid-template-columns: 136px minmax(0, 1fr); gap: 18px; padding: 4px 20px 0; }
-  .person-sheet__head h2 { font-size: 28px; }
-  .person-sheet__text { padding: 0 20px; font-size: 16px; }
-  .person-sheet__links { margin-inline: 20px; }
-  .person-sheet__credit { margin-inline: 20px; }
 }
-@media (prefers-reduced-motion: reduce) {
-  .person-sheet[open] { transition-duration: 0s; }
+@media (max-width: 700px) {
+  .person-sheet { max-height: calc(100dvh - 32px); }
+  .person-sheet__layout { grid-template-columns: minmax(76px, 24%) minmax(0, 1fr); gap: 20px 16px; align-items: center; padding: 36px 20px 24px; }
+  .person-sheet__layout--text { display: block; }
+  .person-sheet__portrait { background: none; padding: 0; }
+  .person-sheet__reading { display: contents; }
+  .person-sheet__intro { min-width: 0; margin: 0; }
+  .person-sheet__intro h2 { padding-right: 28px; font-size: 26px; overflow-wrap: anywhere; }
+  .person-sheet__links { margin-top: 6px; }
+  .person-sheet__text, .person-sheet__credit { grid-column: 1 / -1; }
+  .person-sheet__layout--text .person-sheet__intro { margin-bottom: 20px; }
 }

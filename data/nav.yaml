@@ -3,39 +3,52 @@ main:
   url: '@root@research-interests/'
   children:
   - title: Research overview
+    description: Research areas and publications.
     url: '@root@research-interests/'
   - title: Deep Brain Stimulation
+    description: Electrode placement and stimulation outcomes.
     url: '@root@research-interests/deep-brain-stimulation/'
   - title: Normative Connectomes
+    description: Reference datasets for brain connectivity.
     url: '@root@research-interests/normative-connectomes/'
   - title: Connectomic DBS book
+    description: Chapters, contributors and figures.
     url: '@root@research-interests/the-book/'
 - title: Publications
-  url: '@root@research-interests/publications/'
+  url: '@root@publications/'
   children:
   - title: All publications
+    description: Browse papers by year or search by author.
     url: '@root@research-interests/publications/'
   - title: Posters
+    description: Conference posters from the lab.
     url: '@root@research-interests/posters/'
   - title: Videos & Talks
+    description: Recorded lectures and presentations.
     url: '@root@research-interests/videos-talks/'
 - title: People
-  url: '@root@about-us/about-us/'
+  url: '@root@people/'
   children:
-  - title: About the lab
-    url: '@root@about-us/'
   - title: Team
+    description: Lab members and alumni.
     url: '@root@about-us/about-us/'
   - title: Jobs
+    description: Opportunities and how to apply.
     url: '@root@about-us/jobs/'
 - title: Community
-  url: '@root@research-interests/stimu-latte/'
+  url: '@root@community/'
   children:
+  - title: Community overview
+    description: The lab’s clubs, talks and meetings.
+    url: '@root@community/'
   - title: Stimu-Latte journal club
+    description: A monthly journal club in Cologne.
     url: '@root@research-interests/stimu-latte/'
   - title: Stimulating Brains podcast
+    description: Interviews with brain stimulation researchers.
     url: http://www.stimulatingbrains.org
   - title: Imaging meeting
+    description: Meeting details for lab members.
     url: '@root@internal/events/categories/imaging-meeting/'
 - title: News
   url: '@root@blog/'

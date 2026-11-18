@@ -47,7 +47,7 @@
 /* figures in running text: never taller than a screen's worth, never wider than their own pixels */
 .page-body .image-block img { max-height: 600px; width: auto; }
 .page-body .column-1-1 > .image-block img, .page-body > .image-block img { max-width: min(100%, 960px); }
-.prose .jobs-photo { max-width: none; margin-bottom: 48px; }
+.prose .jobs-photo { max-width: var(--measure); margin-top: 32px; }
 .prose .jobs-photo img { width: 100%; max-width: none; max-height: none; border-radius: var(--r-lg); }
 .attribution { display: block; margin-top: 8px; color: var(--muted); font-size: 13px; }
 /* an article (front matter article: true; the research pages, the book, Stimu-Latte, a profile page): one
@@ -59,8 +59,8 @@
 .page-body--article :is(p, ul, ol, h2, h3, h4, blockquote, .action-row, .notice) { max-width: var(--measure); }
 .page-body--article .column > * + * { margin-top: 20px; }
 .page-body--article .columns + .columns { margin-top: 32px; }
-.page-body--article .image-block { max-width: var(--figure); margin-block: 32px; }
-.page-body--article .image-block img { display: block; width: auto; max-width: 100%; max-height: 560px; margin: 0; border-radius: var(--r-md); }
+.page-body--article .image-block { max-width: var(--measure); margin-block: 32px; }
+.page-body--article .image-block img { display: block; width: auto; max-width: 100%; max-height: 560px; margin-inline: auto; border-radius: var(--r-md); }
 .page-body--article * + h2 { margin-top: 80px; }
 .page-body--article hr { margin: 80px 0 0; }
 .page-body--article hr + * h2:first-child, .page-body--article hr + h2 { margin-top: 48px; }
@@ -97,9 +97,6 @@
 }
 .page-body--article hr { display: none; }
 .page-body--article img[data-original*="/logo-1-"] { max-width: 180px; }
-@media (max-width: 767px) {
-  .prose .jobs-photo img { aspect-ratio: 4 / 3; object-fit: cover; }
-}
 /* datasets (Normative Connectomes): one row each, the cohort as its title, method and citations under it,
    the downloads at the right; long notes in a disclosure */
 .prose ul.datasets { max-width: var(--figure); margin: 16px 0 0; padding: 0; list-style: none; border-bottom: 1px solid var(--line); }
@@ -118,4 +115,22 @@
   .dataset { grid-template-columns: minmax(0, 1fr); }
   .dataset__links { justify-content: flex-start; max-width: none; }
   .dataset__links a { min-height: 44px; }
+}
+
+.prose .article-disclosure {
+  max-width: var(--measure);
+  border-bottom: 1px solid var(--line);
+}
+.prose h2 + .article-disclosure { border-top: 1px solid var(--line); margin-top: 16px; }
+.prose .article-disclosure summary { padding: 12px 0; font-weight: 550; cursor: pointer; }
+.prose .article-disclosure ul { padding-bottom: 16px; }
+.prose .article-disclosure li + li { margin-top: 8px; }
+
+.section-overview { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .85fr); align-items: start; gap: var(--split-gap); }
+.overview-art { display: flex; align-items: center; justify-content: center; overflow: hidden; border-radius: var(--r-md); }
+.overview-art img { display: block; width: 100%; height: auto; }
+.overview-art--covers { gap: 5%; padding: 6%; background: var(--surface); }
+.overview-art--covers img { width: 44%; }
+@media (max-width: 700px) {
+  .section-overview { grid-template-columns: 1fr; gap: 24px; }
 }

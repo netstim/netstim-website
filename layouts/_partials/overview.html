@@ -1,0 +1,12 @@
+<div class="wrap page-body section-overview">
+  {{ with index (where hugo.Data.nav.main "title" .Title) 0 }}
+    <ul class="link-rows">
+      {{ range .children }}
+        <li><a href="{{ partial "url.html" .url }}"><span class="link-rows__title">{{ .title }}</span><span class="link-rows__text">{{ .description }}</span>{{ partial "icon.html" "arrow" }}</a></li>
+      {{ end }}
+    </ul>
+  {{ end }}
+  <div class="overview-art{{ if gt (len .Params.images) 1 }} overview-art--covers{{ end }}">
+    {{ range .Params.images }}{{ partial "picture.html" (dict "src" . "alt" "" "width" 800 "sizes" "(max-width: 700px) 90vw, 480px") }}{{ end }}
+  </div>
+</div>

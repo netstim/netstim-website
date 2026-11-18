@@ -8,6 +8,7 @@ ErrorDocument 404 /404.html
 </IfModule>
 <IfModule mod_rewrite.c>
   RewriteEngine On
+  RewriteRule ^about-us/?$ /#about-the-lab [R=301,NE,END]
   # Pre-permalink WordPress links in posts, shares and citations.
   RewriteCond %{QUERY_STRING} ^(?:p|page_id)=2461$
   RewriteRule ^(?:index\.php)?$ /new-perspective-in-nature-reviews-neurology/ [R=301,END,QSD]

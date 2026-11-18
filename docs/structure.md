@@ -11,7 +11,7 @@ The captured header order is Home, About Us, Science, Updates, Internal. Submenu
 | / | / | home |
 | /928-2-2/ | /928-2-2/ | post |
 | /928-2/ | /928-2/ | post |
-| /about-us/ | /about-us/ | page |
+| /about-us/ | /#about-the-lab | redirect to homepage |
 | /about-us/about-us/ | /about-us/about-us/ | people |
 | /about-us/about-us/andreashorn/ | /about-us/about-us/andreashorn/ | page |
 | /about-us/jobs/ | /about-us/jobs/ | page |

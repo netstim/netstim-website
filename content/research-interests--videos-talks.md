@@ -6,7 +6,7 @@ crumbs:
 - title: Home
   url: '@root@'
 - title: Publications
-  url: '@root@research-interests/publications/'
+  url: '@root@publications/'
 - title: Videos & Talks
 related:
 - title: Publications

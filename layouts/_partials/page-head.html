@@ -1,6 +1,6 @@
 {{- /* An inner page's head, on the page's own ground (the old grey title band is gone): the breadcrumb,
        the title, a post's date, and the sibling pages the old sidebar listed, as one row of links. */ -}}
-<header class="page-head{{ if .Params.book3d }} page-head--book{{ end }}">
+<header class="page-head{{ if .Params.bookCover }} page-head--book{{ end }}">
   <div class="wrap">
     {{ with .Params.crumbs }}{{ if gt (len .) 1 }}
       <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -12,7 +12,9 @@
     <h1>{{ .Title }}</h1>
     {{ with .Params.lead }}<p class="page-lead">{{ . }}</p>{{ end }}
     {{ if eq .Params.family "post" }}<p class="page-head__meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time></p>{{ end }}
-    {{ if .Params.book3d }}{{ partial "book3d.html" . }}{{ end }}
+    {{ with .Params.bookCover }}
+      <a class="book-cover" href="{{ $.Params.publisherUrl }}" aria-label="View Connectomic Deep Brain Stimulation at Academic Press">{{ partial "picture.html" (dict "src" . "alt" "" "width" 200 "sizes" "200px" "eager" true) }}</a>
+    {{ end }}
     {{ with .Params.related }}
       <nav class="section-nav" aria-label="In this section">
         <ul>{{ range . }}

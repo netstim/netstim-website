@@ -1,0 +1,3 @@
+{{ range . }}
+<li><a href="{{ .url }}">{{ partial "picture.html" (dict "src" .src "alt" .alt "width" .width "sizes" "200px" "original" .original) }}</a></li>
+{{ end }}

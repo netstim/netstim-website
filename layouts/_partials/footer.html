@@ -1,19 +1,33 @@
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-main">
-      <a class="footer-logo" href="{{ "" | relURL }}" aria-label="{{ hugo.Data.nav.logo_alt }}, home">
-        {{ with resources.Get hugo.Data.nav.logo }}{{ $logo := .Resize "320x webp q90" }}<img src="{{ $logo.RelPermalink }}" alt="" width="{{ $logo.Width }}" height="{{ $logo.Height }}" loading="lazy">{{ end }}
-      </a>
-      <nav aria-label="For lab members">
+      <div class="footer-brand">
+        <a class="footer-logo" href="{{ "" | relURL }}" aria-label="{{ hugo.Data.nav.logo_alt }}, home">
+          {{ with resources.Get hugo.Data.nav.logo }}{{ $logo := .Resize "320x webp q90" }}<img src="{{ $logo.RelPermalink }}" alt="" width="{{ $logo.Width }}" height="{{ $logo.Height }}" loading="lazy">{{ end }}
+        </a>
+        <p>University Hospital Cologne</p>
+      </div>
+      <nav aria-labelledby="footer-explore">
+        <h2 id="footer-explore">Explore</h2>
+        <ul class="footer-links">
+          {{ range hugo.Data.nav.main }}<li><a href="{{ partial "url.html" .url }}">{{ .title }}</a></li>{{ end }}
+        </ul>
+      </nav>
+      <nav aria-labelledby="footer-members">
+        <h2 id="footer-members">For lab members</h2>
         <ul class="footer-links">
           {{ range hugo.Data.nav.members }}<li><a href="{{ partial "url.html" .url }}">{{ .title }}</a></li>{{ end }}
+        </ul>
+      </nav>
+      <nav aria-labelledby="footer-follow">
+        <h2 id="footer-follow">Follow Netstim</h2>
+        <ul class="footer-links">
           <li><a href="https://bsky.app/profile/netstim.org" rel="noopener">Bluesky <span aria-hidden="true">↗</span></a></li>
           <li><a href="{{ "index.xml" | relURL }}">RSS</a></li>
         </ul>
       </nav>
     </div>
     <div class="footer-legal">
-      <p>{{ hugo.Data.nav.logo_alt }}</p>
       <nav aria-label="Legal"><ul class="footer-links">
         {{ range hugo.Data.nav.footer }}<li><a href="{{ partial "url.html" .url }}">{{ .title }}</a></li>{{ end }}
       </ul></nav>

@@ -2,6 +2,10 @@
   {{ partial "page-head.html" . }}
   {{ if eq .Params.family "people" }}{{ partial "people-page.html" . }}
   {{ else if eq .Params.family "posters" }}{{ partial "posters-page.html" . }}
+  {{ else if eq .Params.family "overview" }}{{ partial "overview.html" . }}
+  {{ else if eq .Params.family "community" }}
+    <div class="wrap page-body">{{ partial "community-cards.html" (dict "items" site.Home.Params.community "overview" true) }}</div>
+    <div class="wrap page-body prose">{{ partial "render.html" .Content }}</div>
   {{ else if eq .Params.family "research" }}{{ partial "research-page.html" . }}
   {{ else if hasPrefix .RelPermalink ("blog/" | relURL) }}
     {{ $all := (where site.RegularPages "Section" "posts").ByDate.Reverse }}
@@ -34,10 +38,5 @@
     {{ end }}
   {{ end }}
   {{ end }}
-  {{ if eq .Params.family "about" }}{{ with site.Home.Params.funding }}
-    <div class="wrap about-logos"><ul class="logo-band" aria-label="Funders">
-      {{ range .logos }}<li>{{ partial "picture.html" (dict "src" .src "alt" (.alt | default "") "width" .width "sizes" "200px" "original" .original) }}</li>{{ end }}
-    </ul></div>
-  {{ end }}{{ end }}
   {{ if .Params.comment_anchor }}<span id="respond"></span>{{ end }}
 </main>
