@@ -1,6 +1,11 @@
 # Network Stimulation Laboratory
 
-Static Hugo source for Netstim. The repository and its preview configuration are local. The live WordPress site is independent of this checkout.
+> [!WARNING]
+> **Under construction.** This repository contains the upcoming Netstim website.
+> Visit **[www.netstim.org](https://www.netstim.org/)** for the official Network Stimulation Laboratory website.
+> The [GitHub Pages preview](https://netstim.github.io/netstim-website/) is a work in progress and may contain incomplete or outdated information.
+
+The site is built with Hugo. GitHub Actions builds the preview from `main`.
 
 ## Build and preview
 
