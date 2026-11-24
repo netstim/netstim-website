@@ -1,23 +1,27 @@
-/* The short footer (layouts/_partials/footer.html): one hairline, the logo and three links on one row,
-   the legal line under a second hairline. Never a copy of the menu. */
-.site-footer { margin-top: 0; border-top: 1px solid var(--line); padding: 48px 0 32px; font-size: 14px; }
-.footer-main { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 48px; }
-.footer-logo { display: inline-flex; min-height: 44px; align-items: center; }
-.footer-logo img { height: 32px; width: auto; }
-.footer-links { display: flex; flex-wrap: wrap; gap: 0 32px; list-style: none; margin: 0; padding: 0; }
-.site-footer a:not(.footer-logo) { display: inline-flex; align-items: center; min-height: 32px; color: var(--muted); text-decoration: none; }
-.footer-legal { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0 24px; margin-top: 24px; padding-top: 12px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); }
-.footer-legal .footer-links { gap: 0 24px; }
-@media (hover: hover) {
-  .site-footer a:not(.footer-logo):hover { color: var(--ink); }
+/* The footer (layouts/_partials/footer.html), on the dark ground in both themes: the institute and its
+   postal address at the left, three profile icons at the right, one line of links under a hairline. */
+.site-footer {
+  --ink: #e6e8e9; --muted: #9aa2a7; --line: rgb(247 249 250 / .14);
+  padding: 56px 0 20px; background: #121416; color: var(--ink); font-size: 14px; line-height: 1.6;
 }
-@media (max-width: 1023px) {
-  .site-footer a:not(.footer-logo) { min-height: 44px; }
+.footer-main { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 24px 48px; }
+.footer-contact { display: grid; justify-items: start; font-style: normal; color: var(--muted); }
+.footer-contact strong { margin-bottom: 4px; color: var(--ink); font-size: 15px; font-weight: 500; }
+.site-footer a { color: var(--muted); text-decoration: none; }
+.footer-contact a { display: inline-flex; align-items: center; min-height: 44px; }
+.footer-social, .footer-legal ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; }
+.footer-social { gap: 4px; margin: -10px -12px 0 0; }
+.footer-social a { display: grid; place-items: center; width: 44px; height: 44px; border-radius: var(--r-sm); }
+.footer-legal { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0 24px;
+  margin-top: 32px; padding-top: 8px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+.footer-legal ul { gap: 0 24px; }
+.footer-legal a { display: inline-flex; align-items: center; min-height: 44px; }
+@media (hover: hover) {
+  .site-footer a:hover { color: #fff; }
+  .footer-contact a:hover, .footer-legal a:hover { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
 }
 @media (max-width: 639px) {
-  .site-footer { padding: 32px 0 calc(16px + env(safe-area-inset-bottom)); }
-  .footer-main { display: grid; gap: 8px; }
-  .footer-main .footer-links { display: flex; flex-wrap: wrap; gap: 0 24px; }
-  .footer-legal { display: grid; padding-top: 16px; }
+  .site-footer { padding: 40px 0 calc(12px + env(safe-area-inset-bottom)); }
+  .footer-social { margin: -8px 0 0 -12px; }
+  .footer-legal { margin-top: 20px; }
 }
-.footer-links [aria-hidden="true"] { margin-left: 4px; }

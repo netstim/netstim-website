@@ -1,0 +1,13 @@
+{{- /* A person's profile links (`links:` in data/people.yaml): always in the same order, each with its name.
+       Returns a list of {label, href, external}. */ -}}
+{{- $links := . | default dict -}}
+{{- $names := dict "website" "Website" "email" "Email" "scholar" "Google Scholar" "orcid" "ORCID" "researchgate" "ResearchGate" "github" "GitHub" "linkedin" "LinkedIn" "bluesky" "Bluesky" "x" "X" "publons" "Publons" "researcherid" "ResearcherID" "cv" "CV" -}}
+{{- $out := slice -}}
+{{- range $key := slice "website" "email" "scholar" "orcid" "researchgate" "github" "linkedin" "bluesky" "x" "publons" "researcherid" "cv" -}}
+  {{- with index $links $key -}}
+    {{- $href := partial "url.html" . -}}
+    {{- if and (eq $key "email") (not (hasPrefix $href "mailto:")) }}{{ $href = printf "mailto:%s" $href }}{{ end -}}
+    {{- $out = $out | append (dict "label" (index $names $key) "href" $href "external" (hasPrefix $href "http")) -}}
+  {{- end -}}
+{{- end -}}
+{{- return $out -}}

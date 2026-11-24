@@ -6,7 +6,7 @@ crumbs:
 - title: Home
   url: '@root@'
 - title: News
-  url: '@root@blog/'
+  url: '@root@news/'
 - title: Welcome Lukas Goede and Clemens Neudorfer to the Netstim
 sidebar: true
 wordpress_id: 1237
@@ -14,7 +14,6 @@ date: '2020-10-08T19:19:59+00:00'
 modified: '2020-10-08T19:27:50+00:00'
 author: andreashorn
 comment_anchor: true
-canonical: /welcome-lukas-goede-and-clemens-neudorfer-to-the-netstim/
 ---
 
 <div class="columns"><div class="column column-1-1"><h2>We are pleased to welcome Lukas Goede and Clemens Neudorfer to the lab as postdoctoral researchers</h2>

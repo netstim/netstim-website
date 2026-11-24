@@ -6,7 +6,7 @@ crumbs:
 - title: Home
   url: '@root@'
 - title: News
-  url: '@root@blog/'
+  url: '@root@news/'
 - title: Welcome Lauren Hart
 sidebar: true
 wordpress_id: 1822
@@ -14,7 +14,6 @@ date: '2022-03-09T00:29:06+00:00'
 modified: '2022-03-09T00:29:06+00:00'
 author: andreashorn
 comment_anchor: true
-canonical: /welcome-lauren-hart/
 ---
 
 <div class="columns"><div class="column column-2-3"><h2>We are pleased to welcome Lauren Hart to the lab</h2>

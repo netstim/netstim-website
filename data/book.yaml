@@ -1,0 +1,72 @@
+# The book page (/book/, layouts/_partials/book-page.html). The text and the links to buy or read the book are
+# in content/book.md.
+#
+# Sources: chapter titles, authors, first pages and DOIs as published (ScienceDirect / Crossref, ISBN
+# 9780128218617); dates, ISBNs, the page count and the names of the five parts from the publisher's page.
+# TODO(netstim): the part names come from the publisher's online contents list; check them against the printed book.
+# The year: the book came out in September 2021 and carries the copyright year 2022 (the year in citations).
+title: Connectomic Deep Brain Stimulation
+editor: Andreas Horn
+cover: media/4cb5be70722a-Connectomic-Deep-Brain-Stimulation-1249x1536.png
+
+# three facts (Home shows Published and Length beside the cover; /book/ says them in its text)
+# TODO(netstim): Crossref lists the foreword (10.1016/B978-0-12-821861-7.10000-4) as Michael D. Fox, Andrea A. Kühn;
+# check the order of the two names against the printed book.
+facts:
+- {label: Published, value: "Academic Press (Elsevier), September 2021"}
+- {label: Foreword, value: Andrea Kühn and Michael Fox}
+- {label: Length, value: "26 chapters, 600 pages"}
+
+# one small line under the text: `label` names the number; a row with `url` is a link
+identifiers:
+  rows:
+  - {label: Paperback ISBN, value: "978-0-12-821861-7"}
+  - {label: eBook ISBN, value: "978-0-12-821862-4"}
+  - {label: DOI, value: "10.1016/C2019-0-03792-2", url: "https://doi.org/10.1016/C2019-0-03792-2"}
+
+# the contents, one group per part: n = chapter number, doi = the chapter's DOI (the title links to it),
+# page = first page (kept for reference, not shown on the page)
+parts:
+- part: I
+  title: "Deep Brain Stimulation and Connectomics – A Fruitful Marriage?"
+  chapters:
+  - {n: 1, title: "Connectomic DBS: An introduction", authors: "Andreas Horn, Bassam Al-Fatly, Wolf-Julian Neumann, Clemens Neudorfer", page: 3, doi: "10.1016/B978-0-12-821861-7.00020-8"}
+  - {n: 2, title: "Network neuroscience and the connectomics revolution", authors: "Richard F. Betzel", page: 25, doi: "10.1016/B978-0-12-821861-7.00002-6"}
+  - {n: 3, title: "Neurophysiological mechanisms of DBS from a connectomic perspective", authors: "Wolf-Julian Neumann", page: 59, doi: "10.1016/B978-0-12-821861-7.00027-0"}
+- part: II
+  title: DBS Imaging Methods
+  chapters:
+  - {n: 4, title: "DBS imaging: An overview", authors: "Andreas Horn, Simon Oxenford, Ningfei Li", page: 91, doi: "10.1016/B978-0-12-821861-7.00016-6"}
+  - {n: 5, title: "DBS imaging methods I: Preprocessing", authors: "Thushara Perera", page: 111, doi: "10.1016/B978-0-12-821861-7.00006-3"}
+  - {n: 6, title: "DBS imaging methods II: Electrode localization", authors: "Andreas Husch, Frank Hertel", page: 127, doi: "10.1016/B978-0-12-821861-7.00004-X"}
+  - {n: 7, title: "DBS imaging methods III: Estimating the electric field and volume of tissue activated", authors: "Konstantin Butenko, Ursula van Rienen", page: 147, doi: "10.1016/B978-0-12-821861-7.00021-X"}
+  # chapter 8: Crossref lists Jonathan C. Lau as the only author
+  - {n: 8, title: "Stereotactic spaces", authors: "Jonathan C. Lau", page: 169, doi: "10.1016/B978-0-12-821861-7.00023-3"}
+  - {n: 9, title: "DBS imaging methods IV: Group analyses", authors: "Svenja Treu, Andreas Horn", page: 185, doi: "10.1016/B978-0-12-821861-7.00003-8"}
+- part: III
+  title: Connectomics in DBS
+  chapters:
+  - {n: 10, title: "Resting-state functional MRI-based connectivity", authors: "James M. Shine", page: 207, doi: "10.1016/B978-0-12-821861-7.00017-8"}
+  - {n: 11, title: "Diffusion MRI-based connectivity", authors: "Thijs Dhollander, Joseph Yuan-Mou Yang", page: 223, doi: "10.1016/B978-0-12-821861-7.00018-X"}
+  - {n: 12, title: "Normative connectomes and their use in DBS", authors: "Gavin J. B. Elias, Jürgen Germann, Aaron Loh, Alexandre Boutet, Alaa Taha, Emily H. Y. Wong, Roohie Parmar, Andres M. Lozano", page: 245, doi: "10.1016/B978-0-12-821861-7.00014-2"}
+  # chapter 13: author order as in Crossref
+  - {n: 13, title: "Investigating network effects of DBS with fMRI", authors: "Robert Jech, Karsten Mueller", page: 275, doi: "10.1016/B978-0-12-821861-7.00026-9"}
+  - {n: 14, title: "High-resolution resources and histological mesh tractography", authors: "Eduardo Alho, Erich Fonoff, Helmut Heinsen", page: 303, doi: "10.1016/B978-0-12-821861-7.00019-1"}
+  - {n: 15, title: "Using brain lesions to inform connectomic DBS", authors: "Juho Joutsa, Michael Fox", page: 325, doi: "10.1016/B978-0-12-821861-7.00010-5"}
+  - {n: 16, title: "Electrophysiological connectivity measures from DBS targets in Parkinson’s disease and dystonia", authors: "Roxanne Lofredi, Andrea Kühn", page: 339, doi: "10.1016/B978-0-12-821861-7.00007-5"}
+- part: IV
+  title: Applications of Connectomic DBS
+  chapters:
+  - {n: 17, title: "Mapping and predicting treatment response on a local level", authors: "Till A. Dembek", page: 359, doi: "10.1016/B978-0-12-821861-7.00008-7"}
+  - {n: 18, title: "Predicting treatment response based on DBS connectivity", authors: "Andreas Horn", page: 375, doi: "10.1016/B978-0-12-821861-7.00015-4"}
+  - {n: 19, title: "Connectomic DBS in Parkinson’s disease, essential tremor and dystonia", authors: "Francisca Ferreira, Harith Akram", page: 405, doi: "10.1016/B978-0-12-821861-7.00005-1"}
+  - {n: 20, title: "Connectomic DBS in major depression", authors: "Ki Sueng Choi, Helen Mayberg", page: 433, doi: "10.1016/B978-0-12-821861-7.00022-1"}
+  - {n: 21, title: "Connectomic deep brain stimulation in obsessive compulsive disorder", authors: "Juan Carlos Baldermann", page: 449, doi: "10.1016/B978-0-12-821861-7.00025-7"}
+  - {n: 22, title: "Fiber tractography-assisted deep brain stimulation surgery: Connectomics in the operating room", authors: "Volker A. Coenen, Marco Reisert", page: 465, doi: "10.1016/B978-0-12-821861-7.00001-4"}
+  - {n: 23, title: "Investigating cognitive neuroscience concepts using connectomic DBS", authors: "Friederike Irmen, Paul Krack, Andrea Kühn", page: 483, doi: "10.1016/B978-0-12-821861-7.00013-0"}
+  - {n: 24, title: "Combining invasive and noninvasive brain stimulation", authors: "Shan Siddiqi, Michael Fox", page: 505, doi: "10.1016/B978-0-12-821861-7.00024-5"}
+- part: V
+  title: Outlook
+  chapters:
+  - {n: 25, title: "Outlook: Towards personalized connectomic deep brain stimulation", authors: "Nanditha Rajamani, Andreas Horn, Barbara Hollunder", page: 527, doi: "10.1016/B978-0-12-821861-7.00009-9"}
+  - {n: 26, title: "Whole-brain modeling to predict optimal deep brain stimulation targeting", authors: "Henrique Fernandes, Gustavo Deco, Morten Kringelbach", page: 543, doi: "10.1016/B978-0-12-821861-7.00011-7"}

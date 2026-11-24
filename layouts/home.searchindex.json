@@ -4,20 +4,20 @@
 {{- range site.RegularPages | append site.Home -}}
   {{- $text := .Plain -}}
   {{- $family := .Params.family -}}
-  {{- if in (slice "people" "videos") $family -}}
-    {{- $text = delimit (apply (index hugo.Data $family) "index" "." "body") " " | plainify | htmlUnescape -}}
+  {{- if eq $family "people" -}}
+    {{- $parts := slice -}}{{- range hugo.Data.people -}}{{- $parts = $parts | append .name (.role | default "") (.bio | default "" | markdownify) -}}{{- end -}}
+    {{- $text = delimit $parts " " | plainify | htmlUnescape -}}
+  {{- else if eq $family "videos" -}}
+    {{- $text = delimit (apply hugo.Data.videos "index" "." "body") " " | plainify | htmlUnescape -}}
   {{- end -}}
   {{- if eq $family "posters" -}}
     {{- $text = printf "%s %s" (delimit (apply hugo.Data.poster_list "index" "." "title") " ") (delimit (apply hugo.Data.poster_list "index" "." "who") " ") -}}
-  {{- end -}}
-  {{- if eq $family "events" -}}
-    {{- $text = delimit (apply (index hugo.Data.events .Params.url) "index" "." "body") " " | plainify | htmlUnescape -}}
   {{- end -}}
   {{- if eq $family "publications" -}}
     {{- $text = printf "%s %s" $text (delimit (apply hugo.Data.publications "index" "." "title") " ") -}}
   {{- end -}}
   {{- $section := "Home" -}}
-  {{- with .Params.crumbs }}{{ if gt (len .) 2 }}{{ $section = (index . 1).title }}{{ end }}{{ end -}}
+  {{- with .Params.crumbs }}{{ if ge (len .) 2 }}{{ $section = (index . 1).title }}{{ end }}{{ end -}}
   {{- if eq $family "post" }}{{ $section = printf "News · %s" (.Date.Format "January 2006") }}{{ end -}}
   {{- if ne $family "archive" -}}
     {{- $pages = $pages | append (dict "title" .Title "url" .RelPermalink "section" $section "text" (replaceRE "\\s+" " " $text)) -}}

@@ -1,4 +1,0 @@
-/* Lab events (data/events.yaml): a meeting's or a location's facts as terms beside values, then what is on. */
-.event-facts { max-width: var(--measure); }
-.event-empty { color: var(--muted); }
-.family-events .page-body > .link-rows { margin-top: 24px; }

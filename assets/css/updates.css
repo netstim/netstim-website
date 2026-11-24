@@ -1,5 +1,4 @@
 /* News and posts. A post opens with its date under the title. */
-.page-head__meta { margin-top: 16px; color: var(--muted); font-size: 15px; }
 /* News (layouts/_partials/timeline.html): three featured cards, then the archive as rows by year */
 .news-featured { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); grid-template-rows: auto auto; gap: 40px var(--split-gap); padding-bottom: var(--section); }
 .news-card { position: relative; display: grid; align-content: start; gap: 10px; }
@@ -12,12 +11,12 @@
 .news-card__image img { width: 100%; height: 100%; object-fit: cover; transition: transform 500ms cubic-bezier(.2, .65, .3, 1); }
 .news-card time, .news-row time { color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }
 .news-card h2 { font-size: 20px; font-weight: 500; line-height: 1.3; letter-spacing: -.015em; }
-.news-card--lead h2 { max-width: 22ch; font-size: var(--t-h2); font-weight: 450; line-height: 1.12; letter-spacing: -.04em; }
+.news-card--lead h2 { max-width: 22ch; font-size: var(--t-h2); font-weight: 450; line-height: 1.12; letter-spacing: -.025em; }
 .news-card p { max-width: 52ch; color: var(--muted); font-size: var(--t-lead); line-height: 1.5; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
 .news-card h2 a, .news-row h3 a { color: var(--ink); text-decoration: none; }
 .news-card h2 a::after, .news-row h3 a::after { content: ""; position: absolute; inset: 0; }
 .news-year { display: grid; grid-template-columns: 240px minmax(0, 1fr); border-top: 1px solid var(--line-strong); }
-.news-year__label { position: sticky; top: calc(var(--nav) + 20px); align-self: start; padding: 20px 0 32px; font-size: 64px; font-weight: 400; line-height: 1; letter-spacing: -.055em; font-variant-numeric: tabular-nums; }
+.news-year__label { position: sticky; top: calc(var(--nav) + 20px); align-self: start; padding: 20px 0 32px; font-size: 56px; font-weight: 400; line-height: 1; letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
 .news-rows { list-style: none; margin: 0; padding: 0 0 48px; }
 .news-row { position: relative; display: grid; grid-template-columns: 88px minmax(0, 1fr) 20px; gap: 24px; align-items: baseline; padding: 24px 0; }
 .news-row + .news-row { border-top: 1px solid var(--line); }
@@ -34,13 +33,13 @@
 }
 @media (max-width: 1023px) {
   .news-year { grid-template-columns: 140px minmax(0, 1fr); }
-  .news-year__label { font-size: 48px; }
+  .news-year__label { font-size: 44px; }
 }
 @media (max-width: 767px) {
   .news-featured { grid-template-columns: minmax(0, 1fr); gap: 40px; }
   .news-card--lead { grid-row: auto; }
   .news-year { grid-template-columns: minmax(0, 1fr); }
-  .news-year__label { position: static; padding: 24px 0 8px; font-size: 44px; }
+  .news-year__label { position: static; padding: 24px 0 8px; font-size: 40px; }
   .news-row { grid-template-columns: minmax(0, 1fr) 18px; gap: 4px 16px; padding: 18px 0; }
   .news-row time { grid-column: 1; }
   .news-row__body { grid-column: 1; }

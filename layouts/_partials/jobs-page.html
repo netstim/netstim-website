@@ -1,0 +1,47 @@
+{{- /* Jobs (/jobs/; everything from the front matter of content/jobs.md, which explains the fields).
+       1. Under the title: the `opening` sentence (only while `positions` is empty) and the wide group photo.
+       2. The sections. From 1024px a section's heading stands in the left third under a hairline that
+          crosses the page, its content in the right two thirds; narrower, one column.
+          - `positions`, when there are any, come first as "Open positions": ruled rows (title, an optional
+            gray line, and the whole row a link when it has a `url`).
+          - a section's `list` is a short bulleted list under its text (what to send).
+          - a section with `email: true` ends with the address to write to (`email` here, or else the one
+            in data/contact.yaml). */ -}}
+{{ $p := .Params }}
+{{ $email := $p.email | default hugo.Data.contact.email }}
+<div class="wrap jobs-top">
+  {{ if not $p.positions }}{{ with $p.opening }}<p class="jobs-opening">{{ partial "url.html" (string ($.RenderString .)) | safeHTML }}</p>{{ end }}{{ end }}
+  {{ with $p.photo }}
+  <figure class="jobs-photo">
+    {{ partial "picture.html" (dict "src" .src "alt" .alt "sizes" "(max-width: 1360px) calc(100vw - 40px), 1280px" "eager" true) }}
+    {{ with .credit }}<figcaption>Photo: {{ . }}</figcaption>{{ end }}
+  </figure>
+  {{ end }}
+</div>
+<div class="wrap page-body jobs">
+  {{ with $p.positions }}
+  <section class="jobs-section" aria-labelledby="jobs-open">
+    <h2 id="jobs-open">Open positions</h2>
+    <div class="jobs-section__body">
+      <ul class="jobs-rows">
+        {{ range . }}{{ $href := "" }}{{ with .url }}{{ $href = partial "url.html" . }}{{ end }}{{ $ext := hasPrefix $href "http" }}
+        <li>{{ if $href }}<a class="jobs-row" href="{{ $href }}"{{ if $ext }} rel="noopener"{{ end }}>{{ else }}<div class="jobs-row">{{ end }}
+          <span class="jobs-row__text"><span class="jobs-row__title jobs-row__title--position">{{ .title }}</span>{{ with .text }}<span class="jobs-row__note">{{ . }}</span>{{ end }}</span>
+          {{ if $ext }}<span class="sr-only"> (another site)</span>{{ partial "icon.html" "external" }}{{ else if $href }}{{ partial "icon.html" "arrow" }}{{ end }}
+        {{ if $href }}</a>{{ else }}</div>{{ end }}</li>
+        {{ end }}
+      </ul>
+    </div>
+  </section>
+  {{ end }}
+  {{ range $i, $s := $p.sections }}
+  <section class="jobs-section" aria-labelledby="jobs-s{{ $i }}">
+    <h2 id="jobs-s{{ $i }}">{{ .title }}</h2>
+    <div class="jobs-section__body">
+      {{ with .text }}<p>{{ partial "url.html" (string ($.RenderString .)) | safeHTML }}</p>{{ end }}
+      {{ with .list }}<ul class="jobs-list">{{ range . }}<li>{{ partial "url.html" (string ($.RenderString .)) | safeHTML }}</li>{{ end }}</ul>{{ end }}
+      {{ if and .email $email }}<p class="jobs-mail"><a href="mailto:{{ $email }}">{{ partial "icon.html" "mail" }}<span>{{ $email }}</span></a></p>{{ end }}
+    </div>
+  </section>
+  {{ end }}
+</div>

@@ -1,43 +1,31 @@
-/* An inner page: its head on the page's own ground (breadcrumb, title, the section's sibling pages) and
+/* An inner page: its head on the page's own ground (breadcrumb, title, lead) and
    its body on the 1280px canvas. Text-only pages read at a 672px measure; column layouts use the canvas. */
 .page-head { padding: 56px 0 0; }
 .page-head h1 { max-width: 22ch; }
 .page-lead { max-width: 40rem; margin-top: 20px; color: var(--muted); font-size: var(--t-lead); line-height: 1.45; letter-spacing: -.015em; }
+.page-also { max-width: 40rem; margin-top: 16px; color: var(--muted); font-size: var(--t-read); line-height: 1.5; }
+.page-also a { color: var(--ink); text-decoration-color: var(--line-strong); }
 .breadcrumb ol { list-style: none; margin: 0 0 16px; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 0 8px; font-size: 14px; color: var(--muted); }
 .breadcrumb li + li::before { content: "/"; margin-right: 8px; opacity: .6; }
 .breadcrumb a { display: inline-flex; align-items: center; justify-content: center; min-height: 32px; min-width: 44px; color: var(--muted); text-decoration: none; }
 .breadcrumb li:first-child a { justify-content: flex-start; }
-.breadcrumb [aria-current] { color: var(--ink); }
-.section-nav { margin-top: 32px; border-bottom: 1px solid var(--line); }
-.section-nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0 24px; }
-.section-nav a { position: relative; display: flex; align-items: center; justify-content: center; min-height: 48px; min-width: 44px; color: var(--muted); font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap; }
-.section-nav a[aria-current="page"] { color: var(--ink); }
-.section-nav a[aria-current="page"]::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: currentColor; }
+/* the trail names the parents only: the title right under it is the current page */
+.breadcrumb li:last-child { display: none; }
 .page-body { padding-block: 48px var(--section); }
 .page-body + .page-body { padding-top: 0; }
-.page-head + .page-body:has(> .columns:first-child, > .section-split:first-child) { padding-top: 48px; }
 @media (hover: hover) {
-  .breadcrumb a:hover, .section-nav a:hover { color: var(--ink); }
+  .breadcrumb a:hover { color: var(--ink); }
 }
 @media (max-width: 639px) {
   .page-head { padding-top: 28px; }
   .breadcrumb ol { margin-bottom: 8px; font-size: 13px; }
   .breadcrumb a { min-height: 44px; }
-  /* a phone: the trail without the current page (the title right under it says where you are) */
-  .breadcrumb li:last-child { display: none; }
   .breadcrumb ol { flex-wrap: nowrap; overflow: hidden; }
   .breadcrumb li { white-space: nowrap; }
-  .section-nav { margin-top: 20px; }
-  .section-nav ul { gap: 0 18px; }
-  .section-nav a { font-size: 14px; }
   .page-head h1 { hyphens: auto; overflow-wrap: break-word; }
   .page-body { padding-top: 32px; }
 }
-/* the book's page: the 3D book beside the title (layouts/_partials/book3d.html) */
-.page-head--book .wrap { display: grid; grid-template-columns: minmax(0, var(--measure)) minmax(0, 1fr); grid-template-rows: auto auto 1fr; column-gap: var(--split-gap); align-items: center; }
-.page-head--book .wrap > :not(.book3d) { grid-column: 1; }
-.page-head--book .book3d { grid-column: 2; grid-row: 1 / span 3; --w: 240px; height: calc(var(--h) + 60px); }
-@media (max-width: 1023px) {
-  .page-head--book .wrap { grid-template-columns: minmax(0, 1fr); }
-  .page-head--book .book3d { grid-column: 1; grid-row: auto; --w: 200px; --d: 26px; }
-}
+/* a reading page (front matter article: true, and every post): the head over the centred reading column */
+.page-head--reading .wrap { width: min(100% - 2 * var(--gut), var(--measure)); }
+.page-head--reading h1 { max-width: none; font-size: clamp(32px, 2.2vw + 14px, 44px); line-height: 1.1; letter-spacing: -.03em; }
+.page-head__meta { margin: 0 0 12px; color: var(--muted); font-size: 15px; }

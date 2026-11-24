@@ -6,7 +6,7 @@ crumbs:
 - title: Home
   url: '@root@'
 - title: News
-  url: '@root@blog/'
+  url: '@root@news/'
 - title: Christos Ganos interviewed in the Neurology podcast
 sidebar: true
 wordpress_id: 1807
@@ -14,7 +14,6 @@ date: '2022-03-08T23:02:26+00:00'
 modified: '2022-03-12T00:02:38+00:00'
 author: andreashorn
 comment_anchor: true
-canonical: /christos-ganos-interviewed-in-the-neurology-podcast/
 ---
 
 <div class="columns"><div class="column column-1-1"><p>We’re excited that our recent article on DBS and lesion network mapping in tics has received some attention in the field – culminating recently in an interview about the study with Christos Ganos:</p>

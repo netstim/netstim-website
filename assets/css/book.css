@@ -1,0 +1,64 @@
+/* The book page (layouts/_partials/book-page.html). The page head (title, editor) and the partial share one
+   two-column grid on <main>: the cover on the left, staying in view; beside it one column with the title,
+   a few sentences (with the links to order or read the book), the ISBN line and the contents.
+   On a phone everything is one column, the cover first, standing on a quiet plate. */
+.family-book main {
+  display: grid; grid-template-columns: minmax(0, 1fr); align-content: start; align-items: start;
+  width: min(100% - 2 * var(--gut), var(--container)); margin-inline: auto; padding-block: 20px var(--section);
+}
+/* <main tabindex="-1"> is focused by the skip link; the shared ::focus-visible ring (base.css) would draw
+   a blue line down both sides of the page */
+.family-book .page-head { padding: 0; }
+.family-book .page-head .wrap { width: auto; }
+.family-book .page-lead { margin-top: 10px; }
+.book { display: contents; }
+.book__cover { order: -1; display: grid; place-items: center; margin-bottom: 28px; padding: 32px 24px; border-radius: var(--r-md); background: var(--surface); }
+/* the cover as a standing book: the front, the page edges and the back cover, turned a little
+   (the same object as on Home, home.css) */
+.book3d { --bw: 184px; --bd: calc(var(--bw) * .115); display: block; perspective: calc(var(--bw) * 6); }
+.book3d__body { position: relative; display: block; width: var(--bw); aspect-ratio: 1249 / 1536; transform-style: preserve-3d; transform: rotateY(-24deg); }
+.book3d__body img { position: relative; display: block; width: 100%; height: 100%; border-radius: 1px 3px 3px 1px; transform: translateZ(calc(var(--bd) / 2)); }
+.book3d__body::before { content: ""; position: absolute; inset: 1% 0 1% auto; width: var(--bd); background: var(--book-paper, #f3f1ec); box-shadow: inset 0 0 0 1px rgb(0 0 0 / .05), inset 4px 0 5px -3px rgb(0 0 0 / .22), inset -4px 0 5px -3px rgb(0 0 0 / .22); transform: translateX(calc(50% - 2px)) rotateY(90deg); }
+.book3d__body::after { content: ""; position: absolute; inset: 0; border-radius: 1px 3px 3px 1px; background: var(--book-back, #d5dde7); box-shadow: -10px 12px 26px -4px rgb(0 0 0 / .3), -2px 3px 6px rgb(0 0 0 / .12); transform: translateZ(calc(var(--bd) / -2)); }
+[data-theme="dark"] .book3d { --book-paper: #b9b6af; --book-back: #8f98a3; }
+[data-theme="dark"] .book3d img { filter: brightness(.9); }
+.book__about { margin-top: 20px; }
+.book__text { font-size: var(--t-read); line-height: 1.6; }
+.book__text p + p { margin-top: .9em; }
+.book__text a { color: var(--ink); text-decoration-color: var(--line-strong); text-underline-offset: 4px; }
+/* the ISBNs and the DOI: one small muted line */
+.book__ids { list-style: none; display: flex; flex-wrap: wrap; gap: 0 20px; margin: 20px 0 0; padding: 0; color: var(--muted); font-size: 14px; line-height: 1.7; font-variant-numeric: tabular-nums; }
+.book__ids a { display: inline-block; margin-block: -10px; padding-block: 10px; color: inherit; text-decoration-color: var(--line-strong); text-underline-offset: 3px; }
+
+/* the contents, set like a printed contents page: each part a heading on a rule, the chapters under it
+   as rows of number, title (authors below) and first page, all on one baseline */
+.toc { margin-top: 56px; }
+.toc h2 { font-size: 22px; font-weight: 500; letter-spacing: -.02em; line-height: 1.2; }
+.toc__part { margin-top: 36px; }
+.toc__head { display: grid; grid-template-columns: 2.25rem minmax(0, 1fr); column-gap: 16px; font-size: 15px; font-weight: 600; letter-spacing: -.005em; line-height: 1.45; text-wrap: balance; }
+.toc__label { color: var(--muted); font-weight: 400; }
+.toc__list { list-style: none; margin: 6px 0 0; padding: 0; }
+.toc__list li { position: relative; display: grid; grid-template-columns: 2.25rem minmax(0, 1fr) auto; column-gap: 16px; align-items: baseline; padding: 7px 0; }
+.toc__n, .toc__page { color: var(--muted); font-size: 15px; line-height: 1.45; font-variant-numeric: tabular-nums; }
+.toc__page { text-align: right; }
+.toc__text { display: grid; gap: 1px; }
+.toc__title { color: var(--ink); font-size: 15px; font-weight: 400; line-height: 1.45; text-decoration: none; text-wrap: pretty; }
+/* the whole row opens the chapter */
+a.toc__title::after { content: ""; position: absolute; inset: 0; }
+.toc__authors { color: var(--muted); font-size: 14px; line-height: 1.45; text-wrap: pretty; }
+.toc__list li:active { opacity: .7; }
+@media (hover: hover) {
+  :is(.book__text, .book__ids) a:hover { text-decoration-color: currentColor; }
+  .toc__list li:hover .toc__title { color: var(--action); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+}
+@media (min-width: 768px) {
+  .family-book main { grid-template-columns: clamp(232px, 31vw, 440px) minmax(0, 720px); column-gap: clamp(40px, 6vw, 96px); padding-top: 56px; }
+  .family-book .page-head, .book__about, .toc { grid-column: 2; }
+  .book__cover { order: 0; grid-column: 1; grid-row: 1 / span 3; display: block; margin: 0; padding: 0; border-radius: 0; background: none; }
+  .book3d { --bw: calc(clamp(232px, 31vw, 440px) * .9); }
+  .book3d__body { margin-inline: auto; }
+}
+/* the cover stays in view while the contents scroll, where the window is tall enough for it */
+@media (min-width: 768px) and (min-height: 700px) {
+  .book__cover { position: sticky; top: calc(var(--nav) + 32px); }
+}

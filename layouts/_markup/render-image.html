@@ -1,5 +1,23 @@
-{{- if resources.Get .Destination -}}
-  {{- partial "picture.html" (dict "src" .Destination "alt" .PlainText) -}}
+{{- /* A Markdown image: ![What it shows](media/file.jpg "Caption").
+       On a reading page it is a figure (assets/css/content.css): up to 840px wide, and an upright picture
+       narrower, so that none is taller than 680px. The title is the caption. With
+       markup.goldmark.parser.wrapStandAloneImageWithinParagraph = false in hugo.toml an image alone in its
+       paragraph comes as a <figure>; without it the image and its caption stay in the paragraph. */ -}}
+{{- $picture := "" -}}
+{{- with resources.Get .Destination -}}
+  {{- $width := 0 -}}
+  {{- if in (slice "jpeg" "png" "webp") .MediaType.SubType -}}
+    {{- $width = math.Min 1600 .Width -}}
+    {{- if gt (div (mul (math.Min 840 $width) .Height) .Width) 680.0 -}}
+      {{- $width = math.Floor (div (mul 680.0 .Width) .Height) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $picture = partial "picture.html" (dict "src" $.Destination "alt" $.PlainText "width" (int $width)) -}}
 {{- else -}}
-  <img src="{{ partial "url.html" .Destination }}" alt="{{ .PlainText }}"{{ with .Title }} title="{{ . }}"{{ end }} loading="lazy">
+  {{- $picture = printf `<img src="%s" alt="%s" loading="lazy">` (partial "url.html" .Destination) (.PlainText | htmlEscape) | safeHTML -}}
+{{- end -}}
+{{- if .IsBlock -}}
+  <figure class="image-block">{{ $picture }}{{ with .Title }}<figcaption class="attribution">{{ . }}</figcaption>{{ end }}</figure>
+{{- else -}}
+  {{ $picture }}{{ with .Title }}<span class="attribution">{{ . }}</span>{{ end }}
 {{- end -}}

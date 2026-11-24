@@ -1,0 +1,23 @@
+# Old addresses that have no page of their own on this site. (A page that moved lists its old addresses
+# as `aliases` in its front matter instead.) layouts/home.htaccess turns both into Apache 301s;
+# content/_content.gotmpl writes a forwarding page for each, for hosts without .htaccess.
+
+# the old WordPress feeds
+- {from: /feed/, to: /index.xml}
+- {from: /feed/atom/, to: /index.xml}
+- {from: /feed/rdf/, to: /index.xml}
+- {from: /feed/rss/, to: /index.xml}
+- {from: /feed/rss2/, to: /index.xml}
+- {from: /blog/feed/, to: /index.xml}
+- {from: /index.php, to: /}
+
+# Lead-DBS release notes, now on lead-dbs.org (the netstim/lead-dbs-website repo). Two of them are
+# summarized on lead-dbs.org's Publications page rather than kept as posts.
+- {from: /lead-dbs-2-0-out-now/, to: "https://www.lead-dbs.org/lead-dbs-v2-0-is-out-now/"}
+- {from: /lead-dbs-updates-in-2018/, to: "https://www.lead-dbs.org/about/publications/#applications"}
+- {from: /crucial-methodological-updates-for-lead-dbs/, to: "https://www.lead-dbs.org/about/publications/#methodological-publications"}
+- {from: /lead-dbs-v2-5-out-now/, to: "https://www.lead-dbs.org/lead-dbs-v2-5-out-now/"}
+- {from: /major-update-of-lead-dbs-out-v-1-6-5/, to: "https://www.lead-dbs.org/major-update-of-lead-dbs-out-v-1-6-5/"}
+- {from: /distal-atlas-methods-summary-data-out-soon/, to: "https://www.lead-dbs.org/distal-atlas-methods-summary-data-out-soon/"}
+- {from: /vta-model-support-for-segmented-leads/, to: "https://www.lead-dbs.org/vta-model-support-for-segmented-leads/"}
+- {from: /electrophysiological-atlas-of-gpi-activity-neumann-2017-included-in-lead-dbs-v2-0-0-6/, to: "https://www.lead-dbs.org/electrophysiological-atlas-of-gpi-activity-neumann-2017-included-in-lead-dbs-v2-0-0-6/"}

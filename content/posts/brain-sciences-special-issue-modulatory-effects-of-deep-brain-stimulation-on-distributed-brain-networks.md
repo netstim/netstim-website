@@ -6,14 +6,13 @@ crumbs:
 - title: Home
   url: '@root@'
 - title: News
-  url: '@root@blog/'
+  url: '@root@news/'
 - title: Brain Sciences Special Issue “Modulatory Effects of Deep Brain Stimulation on Distributed Brain Networks”
 sidebar: true
 wordpress_id: 253
 date: '2018-07-20T12:15:37+00:00'
 modified: '2018-07-27T07:34:27+00:00'
 author: andreashorn
-canonical: /brain-sciences-special-issue-modulatory-effects-of-deep-brain-stimulation-on-distributed-brain-networks/
 ---
 
 <div class="image-block post-lead-image"><a aria-label="banner-DBS" href="@root@wp-content/uploads/2018/07/banner-DBS.png" title="banner-DBS"><netstim-image data='{"src":"media/3e3a47b6b9bf-banner-DBS-800x321.png","original":"https://www.netstim.org/wp-content/uploads/2018/07/banner-DBS-800x321.png","alt":"","width":800}'/></a></div><p>I am editing a special issue in the #<b>openaccess</b> journal Brain Sciences about</p>

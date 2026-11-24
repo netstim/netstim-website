@@ -1,8 +1,8 @@
-# Network Stimulation Laboratory
+# Institute for Network Stimulation (Netstim)
 
 > [!WARNING]
 > **Under construction.** This repository contains the upcoming Netstim website.
-> Visit **[www.netstim.org](https://www.netstim.org/)** for the official Network Stimulation Laboratory website.
+> Visit **[www.netstim.org](https://www.netstim.org/)** for the official website of the Institute for Network Stimulation.
 > The [GitHub Pages preview](https://netstim.github.io/netstim-website/) is a work in progress and may contain incomplete or outdated information.
 
 The site is built with Hugo. GitHub Actions builds the preview from `main`.
@@ -33,10 +33,10 @@ python3 .github/scripts/check-site.py public
 python3 .github/scripts/check-site.py /tmp/netstim-preview https://netstim.github.io/netstim-website/
 python3 .github/scripts/check-design.py
 python3 .github/scripts/check-css-used.py public /tmp/netstim-preview
-python3 .github/scripts/check-copy.py public
 ```
 
-The copy check requires Beautiful Soup 4. Browser tests use Node 22, Playwright 1.48.2, and axe-core 4.10.3. Install the locked dependencies with `npm ci` and `npx playwright install --with-deps chromium webkit` on CI. With the existing audit tools installed locally, set `NODE_PATH=/tmp/ldbs-audit/scripts/node_modules` and point `AXE_SCRIPT` at the local axe bundle.
+`check-site.py` also confirms that every address of the old WordPress site (`tests/old-routes.json`) still
+answers. The checks use only the Python standard library. Browser tests use Node 22, Playwright 1.48.2, and axe-core 4.10.3. Install the locked dependencies with `npm ci` and `npx playwright install --with-deps chromium webkit` on CI. With the existing audit tools installed locally, set `NODE_PATH=/tmp/ldbs-audit/scripts/node_modules` and point `AXE_SCRIPT` at the local axe bundle.
 
 ```sh
 node .github/scripts/check-browser.mjs public https://www.netstim.org/ /tmp/netstim-browser
@@ -47,6 +47,11 @@ node tests/test_csp_browser.mjs public
 
 ## Deployment package
 
-Build with the production defaults and package every file in `public/` including `.htaccess`. Production Apache 2.4 uses `mod_rewrite`, `mod_headers`, and directory indexes. The build keeps manuscript URLs absolute, so their separately hosted files need to stay reachable. The GitHub Pages workflow builds under the project subpath and supplies HTML fallbacks for old paths.
+Build with the production defaults and package every file in `public/` including `.htaccess`, which Hugo
+generates (`layouts/home.htaccess`): security headers and a 301 for every old address. Production Apache 2.4
+uses `mod_rewrite`, `mod_headers`, and directory indexes. The build keeps manuscript URLs absolute, so their
+separately hosted files need to stay reachable. On the GitHub Pages preview, forwarding pages stand in for
+the 301s.
 
-See [design](docs/design.md), [structure and URL map](docs/structure.md), and [editing](docs/editing.md).
+See [editing](docs/editing.md) (start here if you want to change something), [structure, addresses and
+redirects](docs/structure.md) and [design](docs/design.md).

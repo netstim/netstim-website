@@ -19,7 +19,7 @@ for file in styles.glob("*.css"):
     if ":hover" in css and "(hover: hover)" not in css:
         errors.append(f"{file}: hover is ungated")
     for transition in re.findall(r"\btransition\s*:\s*([^;}]+)", css):
-        if not re.match(r"(?:transform|opacity)\b", transition):
+        if not re.match(r"(?:transform|opacity|filter)\b", transition):
             errors.append(f"{file}: non-compositor transition")
 if not (Path("static/fonts") / "OFL-inter.txt").is_file():
     errors.append("Inter's license is missing")

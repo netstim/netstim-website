@@ -1,0 +1,13 @@
+{{- /* A forwarding page for each old post that now lives on another site (data/redirects.yaml), for hosts
+       without the .htaccess. Never listed, searched or put in the sitemap. (The old feed addresses are
+       answered by the .htaccess alone.) */ -}}
+{{- range hugo.Data.redirects -}}
+  {{- if hasPrefix .to "http" -}}
+    {{- $.AddPage (dict
+      "path" (strings.Trim .from "/")
+      "title" "Page moved"
+      "params" (dict "redirect" .to "family" "redirect")
+      "build" (dict "list" "never" "render" "always")
+      "sitemap" (dict "disable" true)) -}}
+  {{- end -}}
+{{- end -}}

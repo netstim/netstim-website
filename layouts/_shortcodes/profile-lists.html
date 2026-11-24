@@ -1,0 +1,42 @@
+{{- /* A person's own page, the sections under the biography (front matter `profile.sections`): the heading
+       in the left column under a hairline that crosses the page, the rows in the right column.
+       {{< profile-lists >}}
+       A section has a `title`, `items` (rows of `years`, `title`, `place`, optional `url`, optional `lang`
+       for a `place` in another language) and an optional `look`:
+       - none: ruled rows. The year, the title and under it the `place` in gray. A row with a `url` is a
+         link as a whole and ends in an arrow (↗ for another site).
+       - `honors`: the same rows with a larger title (awards).
+       - `timeline`: compact rows along a rail, a filled dot for a position that is still held (`years`
+         ending in "–", shown as "Since 2025"). A `url` links the title. */ -}}
+{{- range .Page.Params.profile.sections -}}
+{{- $id := printf "profile-%s" (anchorize .title) }}
+<section class="profile-section" aria-labelledby="{{ $id }}">
+  <h2 id="{{ $id }}">{{ .title }}</h2>
+  {{ if eq .look "timeline" }}
+  <ul class="profile-timeline">
+    {{ range .items }}{{ $years := string .years }}{{ $current := strings.HasSuffix $years "–" }}
+    <li{{ if $current }} class="is-current"{{ end }}>
+      <span class="profile-timeline__years">{{ if $current }}Since {{ strings.TrimSuffix "–" $years }}{{ else }}{{ $years }}{{ end }}</span>
+      <span class="profile-timeline__what">
+        <span class="profile-timeline__title">{{ if .url }}{{ $href := partial "url.html" .url }}<a href="{{ $href }}"{{ if hasPrefix $href "http" }} rel="noopener"{{ end }}>{{ .title }}{{ partial "icon.html" (cond (hasPrefix $href "http") "external" "arrow") }}</a>{{ else }}{{ .title }}{{ end }}</span>
+        {{ with .place }}<span class="profile-timeline__place">{{ . }}</span>{{ end }}
+      </span>
+    </li>
+    {{ end }}
+  </ul>
+  {{ else }}
+  <ul class="profile-rows{{ if eq .look "honors" }} profile-rows--honors{{ end }}{{ if not (index .items 0).years }} profile-rows--plain{{ end }}">
+    {{ range .items }}{{ $href := "" }}{{ with .url }}{{ $href = partial "url.html" . }}{{ end }}{{ $external := hasPrefix $href "http" }}{{ $lang := .lang }}
+    <li>{{ if $href }}<a class="profile-rows__row" href="{{ $href }}"{{ if $external }} rel="noopener"{{ end }}>{{ else }}<div class="profile-rows__row">{{ end }}
+      {{ with .years }}<span class="profile-rows__year">{{ . }}</span>{{ end }}
+      <span class="profile-rows__what">
+        <span class="profile-rows__title">{{ .title }}</span>
+        {{ with .place }}<span class="profile-rows__place"{{ with $lang }} lang="{{ . }}"{{ end }}>{{ . }}</span>{{ end }}
+      </span>
+      {{ if $href }}{{ partial "icon.html" (cond $external "external" "arrow") }}</a>{{ else }}</div>{{ end }}
+    </li>
+    {{ end }}
+  </ul>
+  {{ end }}
+</section>
+{{- end -}}

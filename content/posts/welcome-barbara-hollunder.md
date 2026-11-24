@@ -6,7 +6,7 @@ crumbs:
 - title: Home
   url: '@root@'
 - title: News
-  url: '@root@blog/'
+  url: '@root@news/'
 - title: Welcome Barbara Hollunder to the Netstim
 sidebar: true
 wordpress_id: 1041
@@ -14,7 +14,6 @@ date: '2020-01-21T21:17:11+00:00'
 modified: '2020-01-21T21:17:57+00:00'
 author: andreashorn
 comment_anchor: true
-canonical: /welcome-barbara-hollunder/
 ---
 
 <div class="columns"><div class="column column-2-3"><h2>We are pleased to welcome Barbara Hollunder to the lab as a lab rotation research student</h2>

@@ -1,13 +1,20 @@
-{{- /* Home: the Connectomic DBS book, in place of the old banner image (its words, "Connectomic Deep Brain
-       Stimulation" and "Out now at Academic Press / Elsevier", are now text). The book is drawn in CSS 3D
-       from the real cover (assets/css/home.css, "the book"); assets/js/main/book.js turns it toward the
-       pointer. Without script, or under reduced motion, it rests at its angle. */ -}}
-{{ $book := "research-interests/the-book/" | relURL }}
-<div class="book-split">
-  <div class="book-split__text">
-    <h2>Connectomic Deep Brain Stimulation</h2>
-    <p class="book-split__lead">Out now at Academic Press / Elsevier</p>
-    <div class="action-row"><a class="action" href="{{ $book }}">About the book</a></div>
+{{- /* Home: the Connectomic DBS book (content/_index.md `book`), beside the news: the title and its one-line lede, the cover as a standing
+       book (.book3d, home.css) on a quiet plate, then the title, its facts as rows (an icon, then the value;
+       the editor and the Published and Length facts of data/book.yaml) and one link to its page. The whole
+       card follows that link. */ -}}
+{{- $b := hugo.Data.book -}}
+<div class="home-book">
+  <div class="section-head"><div class="section-head__title"><h2 id="book-h">{{ .label }}</h2>{{ with .lede }}<p class="section-head__lede">{{ . }}</p>{{ end }}</div></div>
+  <div class="book-card">
+    <span class="book-card__plate"><span class="book3d"><span class="book3d__body">{{ partial "picture.html" (dict "src" .image "alt" "" "width" 360 "sizes" "(max-width: 767px) 164px, 196px") }}</span></span></span>
+    <div class="book-card__text">
+      <h3>{{ .title }}</h3>
+      <dl class="book-facts">
+        {{ with $b.editor }}<div><dt>{{ partial "icon.html" "user" }}<span class="sr-only">Editor</span></dt><dd>{{ . }} (editor)</dd></div>{{ end }}
+        {{ range where $b.facts "label" "Published" }}<div><dt>{{ partial "icon.html" "building" }}<span class="sr-only">{{ .label }}</span></dt><dd>{{ .value }}</dd></div>{{ end }}
+        {{ range where $b.facts "label" "Length" }}<div><dt>{{ partial "icon.html" "file" }}<span class="sr-only">{{ .label }}</span></dt><dd>{{ .value }}</dd></div>{{ end }}
+      </dl>
+      <a class="text-action" href="{{ partial "url.html" .url }}">{{ .link }} {{ partial "icon.html" "arrow" }}</a>
+    </div>
   </div>
-  {{ partial "book3d.html" . }}
 </div>

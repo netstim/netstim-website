@@ -1,79 +1,106 @@
 /* People (layouts/_partials/people-page.html, assets/js/main/people.js). One portrait treatment: a 4:5 frame,
    the face in the upper third, black and white, so photos from different shoots read as one set.
-   The team: four across (the sixteen members fill four full rows), name only. A card opens the person's
-   sheet from the right: a bar that stays on top as the sheet scrolls (the name appears in it), the photo
-   beside the name and actions, the text in one reading column, the profile links as rows, the photo
-   credit. The alumni: the same portraits, smaller and denser, with their profile links in words. */
+   The team: four across, the name and the role under it. A card opens the person in a centred dialog:
+   the photo on the left (it stays put), the name, role, biography and profile links on the right (they
+   scroll); on a phone the photo sits on top. The alumni: the same portraits, smaller and denser. */
 .portrait-frame { display: block; aspect-ratio: 4 / 5; overflow: hidden; border-radius: var(--r-md); background: var(--surface); }
 .portrait-frame img { width: 100%; height: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 22%; filter: grayscale(1) contrast(1.04); }
-.portrait-frame.portrait-frame--initials { display: flex; align-items: center; justify-content: center; background: var(--line); }
-.portrait-frame--initials span { color: var(--muted); font-size: clamp(22px, 2.4vw, 32px); font-weight: 400; letter-spacing: -.03em; }
+/* no photo yet: the same frame, the person's initials in it */
+.portrait-frame--empty { display: grid; place-items: center; background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); color: var(--muted); font-size: clamp(28px, 3.4vw, 44px); font-weight: 400; line-height: 1; letter-spacing: .02em; }
+/* the head of the lab: the portrait in the grid's first column, the text across the other three */
+.person-feature { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 24px 48px; align-items: start; margin-bottom: 56px; padding-bottom: 56px; border-bottom: 1px solid var(--line); }
+.person-feature__photo .portrait-frame { margin-bottom: 0; }
+.person-feature__text { grid-column: 2; max-width: 40rem; }
+.person-feature h2 { font-size: var(--t-h2); }
+.person-feature__role { margin-top: 8px; color: var(--muted); font-size: 16px; line-height: 1.4; }
+.person-feature__bio { margin-top: 18px; font-size: var(--t-lead); line-height: 1.55; }
+.person-feature .person-links { margin-top: 12px; padding-top: 0; border-top: 0; }
+/* "Interested in joining?" under the team: the group photo and the way to Jobs on one soft-gray panel */
+.people-join { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); overflow: hidden; margin-top: 72px; border-radius: var(--r-lg); background: var(--surface); }
+.people-join__photo img { display: block; width: 100%; height: 100%; min-height: 300px; object-fit: cover; object-position: 50% 40%; }
+.people-join__text { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 14px; padding: 40px 44px; }
+.people-join h2 { font-size: var(--t-h2); }
+.people-join__text > p:not(.people-join__credit) { max-width: 34ch; color: var(--muted); font-size: var(--t-lead); line-height: 1.5; }
+.people-join .text-action { margin-top: 6px; font-size: 17px; }
+.people-join__credit { margin-top: 10px; color: var(--muted); font-size: 12px; line-height: 1.4; }
 .people-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 48px 24px; }
 .people-grid > li { min-width: 0; }
 .person-card {
-  display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; width: 100%; padding: 0; border: 0; background: none;
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; width: 100%; padding: 0; border: 0; background: none;
   color: var(--ink); text-align: left; font: inherit; cursor: pointer;
 }
 .person-card .portrait-frame img { transition: transform 400ms cubic-bezier(.2, .65, .3, 1); }
+.person-card .portrait-frame { margin-bottom: 14px; }
+.person-card__role { margin-top: 2px; color: var(--muted); font-size: 14px; line-height: 1.4; }
 .person-card__name { font-size: 17px; font-weight: 500; line-height: 1.3; letter-spacing: -.01em; text-wrap: balance; }
 .person-card:focus-visible { outline-offset: 6px; border-radius: var(--r-md); }
-.person-card.no-ring:focus-visible { outline: none; }
+.no-ring:focus-visible { outline: none; }
 @media (hover: hover) {
   .person-card:hover .portrait-frame img { transform: scale(1.03); }
   .person-card:hover .person-card__name { color: var(--action); }
 }
-/* the sheet */
-.person-sheet {
-  position: fixed; inset: 12px 12px 12px auto; width: min(640px, calc(100% - 24px)); height: auto; max-width: none; max-height: none;
-  margin: 0; padding: 0 0 40px; overflow-y: auto; overscroll-behavior: contain; border: 1px solid var(--line); border-radius: var(--r-lg);
-  background: var(--bg); box-shadow: var(--shadow-3);
+/* the person dialog */
+.person-modal {
+  width: min(880px, calc(100% - 48px)); max-width: none; height: fit-content; max-height: calc(100dvh - 48px); padding: 0;
+  overflow-y: auto; overscroll-behavior: contain; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--bg); box-shadow: var(--shadow-3);
 }
-.person-sheet::backdrop { background: rgb(12 16 19 / .32); }
-[data-theme="dark"] .person-sheet::backdrop { background: rgb(0 0 0 / .56); }
-.person-sheet:focus-visible { outline: none; }
-.person-sheet__bar { position: sticky; top: 0; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 60px; padding: 0 12px 0 32px; background: var(--bg); }
-.person-sheet__bar-name { font-size: 15px; font-weight: 500; opacity: 0; transition: opacity 150ms cubic-bezier(.2, .65, .3, 1); }
-.person-sheet.is-scrolled .person-sheet__bar { box-shadow: 0 1px 0 var(--line); }
-.person-sheet.is-scrolled .person-sheet__bar-name { opacity: 1; }
-.person-sheet__head { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 28px; align-items: end; padding: 4px 40px 0; }
-.person-sheet__head--text { grid-template-columns: minmax(0, 1fr); }
-.person-sheet__head h2 { font-size: 36px; font-weight: 450; line-height: 1.05; letter-spacing: -.04em; }
-.person-sheet__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 20px; margin-top: 16px; }
-.person-sheet__actions .action-row { margin: 0; }
-.person-sheet__actions .action-row:first-child .action { min-height: 44px; padding: 10px 18px; font-size: 14px; }
-.person-sheet__actions .action-row + .action-row .action { min-height: 44px; padding: 0; background: none; color: var(--ink); font-size: 14px; text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 5px; }
-.person-sheet__text { margin-top: 32px; padding: 0 40px; font-size: 17px; line-height: 1.65; }
-.person-sheet__text :is(.columns, .column) { display: contents; }
-.person-sheet__text p + p { margin-top: 18px; }
-.person-sheet__text p:empty { display: none; }
-.person-sheet__links { list-style: none; margin: 36px 40px 0; padding: 0; border-bottom: 1px solid var(--line); }
-.person-sheet__links a { display: flex; align-items: center; justify-content: space-between; min-height: 52px; border-top: 1px solid var(--line); color: var(--ink); font-size: 15px; font-weight: 500; text-decoration: none; }
-.person-sheet__links svg { width: 18px; height: 18px; color: var(--muted); }
-.person-sheet__credit { margin: 24px 40px 0; color: var(--muted); font-size: 13px; }
+.person-modal:focus-visible { outline: none; }
+.person-modal[open] { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 0 44px; align-items: start; padding: 0 44px 44px; }
+.person-modal--text { width: min(600px, calc(100% - 48px)); }
+.person-modal--text[open] { grid-template-columns: minmax(0, 1fr); }
+/* the close button stays in the corner while the text scrolls under it */
+.person-modal__close { grid-column: 1 / -1; position: sticky; top: 0; z-index: 2; display: flex; justify-content: flex-end; height: 44px; margin-right: -36px; padding-top: 8px; pointer-events: none; }
+.person-modal__close .icon-button { pointer-events: auto; border-radius: 999px; background: var(--bg); }
+.person-modal__photo { position: sticky; top: 44px; }
+.person-modal__credit { margin-top: 16px; color: var(--muted); font-size: 12px; line-height: 1.4; }
+/* with a photo: the portrait fills the left of the panel from edge to edge, the text sits beside it */
+@media (min-width: 768px) {
+  .person-modal:not(.person-modal--text) { width: min(1000px, calc(100% - 48px)); }
+  .person-modal:not(.person-modal--text)[open] { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); grid-template-rows: 56px auto; gap: 0; align-items: stretch; padding: 0; }
+  .person-modal:not(.person-modal--text) .person-modal__close { grid-column: 2; grid-row: 1; margin-right: 0; padding: 12px 12px 0 0; }
+  .person-modal:not(.person-modal--text) .person-modal__photo { grid-column: 1; grid-row: 1 / span 2; position: relative; top: auto; min-height: min(600px, calc(100dvh - 48px)); }
+  .person-modal__photo .portrait-frame { position: absolute; inset: 0; aspect-ratio: auto; border-radius: 0; }
+  .person-modal__photo .portrait-frame img { aspect-ratio: auto; object-position: 50% 25%; }
+  .person-modal:not(.person-modal--text) .person-modal__text { grid-column: 2; grid-row: 2; align-self: center; padding: 8px 56px 52px 52px; }
+  .person-modal:not(.person-modal--text) .person-modal__text h2 { font-size: 34px; }
+}
+.person-modal__text h2 { padding-right: 16px; font-size: 30px; font-weight: 450; line-height: 1.1; letter-spacing: -.035em; }
+.person-modal__role { margin-top: 8px; color: var(--muted); font-size: 16px; line-height: 1.4; }
+.person-modal__bio { margin-top: 20px; font-size: 16px; line-height: 1.62; overflow-wrap: break-word; }
+.person-modal__bio p + p { margin-top: 14px; }
+.person-modal__more { margin-top: 12px; }
+.person-links { list-style: none; display: flex; flex-wrap: wrap; gap: 0 22px; margin: 20px 0 0; padding: 10px 0 0; border-top: 1px solid var(--line); }
+.person-links a { display: inline-flex; align-items: center; gap: 2px; min-height: 44px; color: var(--ink); font-size: 15px; font-weight: 500; text-decoration: none; }
+.person-links svg { width: 16px; height: 16px; color: var(--muted); }
 @media (hover: hover) {
-  .person-sheet__links a:hover, .person-sheet__links a:hover svg { color: var(--action); }
+  .person-modal__close .icon-button:hover { background: var(--surface); }
+  .person-links a:hover, .person-links a:hover svg { color: var(--action); }
+  .person-links a:hover { text-decoration: underline; }
 }
-.person-sheet__links a:active { background: var(--surface); }
-/* motion: the photo grows from the card, the panel slides in; nothing else on the page moves */
+/* motion (also the poster dialog's): the photo grows from the card, the panel rises into place; nothing else
+   on the page moves. Without view transitions the panel alone fades in. */
 ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
-::view-transition-group(person-photo) { z-index: 3; animation-duration: 380ms; animation-timing-function: cubic-bezier(.2, .8, .2, 1); }
+::view-transition-group(person-photo) { z-index: 3; animation-duration: 340ms; animation-timing-function: cubic-bezier(.2, .8, .2, 1); }
 ::view-transition-old(person-photo), ::view-transition-new(person-photo) { animation: none; height: 100%; width: 100%; object-fit: cover; }
 ::view-transition-old(person-photo) { display: none; }
-::view-transition-new(person-panel) { animation: sheet-in 380ms cubic-bezier(.2, .8, .2, 1) both; }
-::view-transition-old(person-panel) { animation: sheet-out 260ms cubic-bezier(.4, 0, 1, 1) both; }
-@keyframes sheet-in { from { transform: translateX(56px); opacity: 0; } }
-@keyframes sheet-out { to { transform: translateX(56px); opacity: 0; } }
-.person-sheet[open] { transition: transform 380ms cubic-bezier(.2, .8, .2, 1), opacity 380ms cubic-bezier(.2, .8, .2, 1); }
-@starting-style { .person-sheet[open] { opacity: 0; transform: translateX(56px); } }
+::view-transition-new(person-panel) { animation: modal-in 340ms cubic-bezier(.2, .8, .2, 1) both; }
+::view-transition-old(person-panel) { animation: modal-out 200ms cubic-bezier(.4, 0, 1, 1) both; }
+@keyframes modal-in { from { transform: translateY(16px) scale(.98); opacity: 0; } }
+@keyframes modal-out { to { transform: translateY(8px) scale(.98); opacity: 0; } }
+@supports not (view-transition-name: none) {
+  .person-modal[open] { transition: transform 300ms cubic-bezier(.2, .8, .2, 1), opacity 300ms cubic-bezier(.2, .8, .2, 1); }
+  @starting-style { .person-modal[open] { opacity: 0; transform: translateY(16px); } }
+}
 /* the alumni */
 .people-alumni { padding-top: 0; }
 .people-alumni > h2 { max-width: none; margin-bottom: 32px; padding-top: 48px; border-top: 1px solid var(--line); font-size: var(--t-h2); }
 .alumni-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 36px 20px; }
 .alumnus { min-width: 0; }
 .alumnus .portrait-frame { border-radius: var(--r-sm); }
+.alumnus .portrait-frame--empty { font-size: 22px; }
 .alumnus h3 { margin-top: 10px; font-size: 15px; font-weight: 500; line-height: 1.3; letter-spacing: -.005em; }
-.alumnus__links { display: flex; flex-wrap: wrap; gap: 0 10px; margin-top: 2px; color: var(--muted); font-size: 13px; line-height: 1.4; }
-.alumnus__links > span { display: none; }
+.alumnus__now { margin-top: 2px; color: var(--muted); font-size: 13px; line-height: 1.4; }
+.alumnus__links { display: flex; flex-wrap: wrap; gap: 0 10px; margin-top: 2px; font-size: 13px; line-height: 1.4; }
 .alumnus__links a { display: inline-block; padding-block: 4px; color: var(--muted); text-decoration: none; }
 @media (hover: hover) {
   .alumnus__links a:hover { color: var(--action); text-decoration: underline; }
@@ -83,15 +110,122 @@
 }
 @media (max-width: 767px) {
   .people-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 16px; }
+  .person-feature { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 16px; margin-bottom: 40px; padding-bottom: 40px; }
+  .person-feature__text { grid-column: 1 / -1; padding-left: 0; }
+  .people-join { grid-template-columns: minmax(0, 1fr); margin-top: 48px; }
+  .people-join__photo img { min-height: 0; aspect-ratio: 2 / 1; }
+  .people-join__text { padding: 24px 20px 28px; }
   .alumni-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 16px; }
-  .person-sheet { inset: 0; width: 100%; border: 0; border-radius: 0; }
-  .person-sheet__bar { padding-left: 20px; }
-  .person-sheet__head { grid-template-columns: 136px minmax(0, 1fr); gap: 18px; padding: 4px 20px 0; }
-  .person-sheet__head h2 { font-size: 28px; }
-  .person-sheet__text { padding: 0 20px; font-size: 16px; }
-  .person-sheet__links { margin-inline: 20px; }
-  .person-sheet__credit { margin-inline: 20px; }
+  .alumnus__links a { padding-block: 13px; }
+  .person-modal, .person-modal--text { width: calc(100% - 24px); max-height: calc(100dvh - 24px); }
+  .person-modal[open] { display: block; padding: 0 20px 24px; }
+  .person-modal__close { margin-right: -12px; }
+  .person-modal__photo { position: static; }
+  .person-modal__photo .portrait-frame { width: min(56%, 220px); }
+  .person-modal__text { margin-top: 20px; }
+  .person-modal__text h2 { font-size: 26px; }
 }
-@media (prefers-reduced-motion: reduce) {
-  .person-sheet[open] { transition-duration: 0s; }
+/* A person's own page (content/people--andreas-horn.md; layouts/_shortcodes/profile-aside.html,
+   profile-lists.html). The head is the name and one quiet role line. Then the portrait at the left and,
+   beside it, the biography at reading size and the contact facts as property rows (icon, muted label,
+   value). Below, each section's heading stands in the portrait's column under a hairline that crosses the
+   page, and its rows in the text's column: awards as large ruled rows, positions and education along a
+   rail, links as plain ruled rows. Every list keeps its years in the same narrow column. Under 900px the
+   headings stand above their rows; on a phone the portrait stands above the text. */
+.page-head:has(+ .page-body > .profile-aside) .page-lead { max-width: none; margin-top: 14px; font-size: 18px; line-height: 1.5; letter-spacing: -.005em; }
+.page-body:has(> .profile-aside) { --p-col: 300px; --p-gap: 72px; --p-years: 92px; display: flow-root; padding-top: 44px; }
+.page-body > .profile-aside { float: left; width: var(--p-col); margin: 0 var(--p-gap) 72px 0; }
+.profile-aside__photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 20%; border-radius: var(--r-md); background: var(--surface); }
+.profile-aside__photo figcaption { margin-top: 10px; color: var(--muted); font-size: 12px; line-height: 1.4; }
+.page-body:has(> .profile-aside) > p { max-width: 41rem; margin-left: calc(var(--p-col) + var(--p-gap)); }
+.page-body:has(> .profile-aside) > p { font-size: 19px; line-height: 1.6; letter-spacing: -.008em; }
+/* the first line's capitals level with the top of the photo */
+.page-body > .profile-aside + p { margin-top: -7px; }
+/* the contact facts */
+.prose .profile-facts { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2px; margin-top: 22px; }
+.profile-facts > div { display: grid; grid-template-columns: 17px minmax(0, 1fr); gap: 0 11px; align-items: start; padding-block: 6px; }
+.profile-facts dt { color: var(--muted); }
+.profile-facts dt svg { display: block; width: 17px; height: 17px; margin-top: 4px; }
+.profile-facts dd { font-size: 15px; line-height: 24px; }
+.profile-facts__links { list-style: none; display: grid; grid-template-columns: repeat(2, max-content); gap: 4px 28px; margin: 0; padding: 0; }
+.prose .profile-facts li + li { margin-top: 0; }
+/* a 44px target that does not make the row taller */
+.profile-facts a { display: inline-flex; align-items: center; min-height: 44px; margin-block: -10px; color: var(--ink); text-decoration: none; }
+.profile-facts__mail { font-weight: 500; }
+/* the sections */
+.profile-section { clear: both; display: grid; grid-template-columns: var(--p-col) minmax(0, 1fr); gap: 0 var(--p-gap); align-items: start; margin-top: 72px; padding-top: 28px; border-top: 1px solid var(--line); }
+.profile-section + .profile-section { margin-top: 56px; }
+.prose .profile-section h2 { font-size: 22px; font-weight: 450; line-height: 28px; letter-spacing: -.02em; }
+.prose .profile-section h2 + * { margin-top: 0; }
+.profile-rows, .profile-timeline { list-style: none; margin: 0; padding: 0; }
+/* the first title levels with the heading; every row keeps its full height as a target */
+.prose .profile-section .profile-rows { --p-pad: 15px; margin-block: calc(0px - var(--p-pad)); }
+.profile-timeline__what { max-width: 38rem; }
+.prose :is(.profile-rows, .profile-timeline) li + li { margin-top: 0; }
+/* ruled rows: the year, the title and a gray second line; a row that is a link ends in an arrow */
+.profile-rows li + li { border-top: 1px solid var(--line); }
+.profile-rows__row { display: grid; grid-template-columns: var(--p-years) minmax(0, 1fr) 18px; gap: 0 16px; align-items: baseline; padding: var(--p-pad) 0; color: var(--ink); text-decoration: none; }
+.profile-rows--plain .profile-rows__row { grid-template-columns: minmax(0, 1fr) 18px; }
+.profile-rows__year { color: var(--muted); font-size: 15px; line-height: 28px; font-variant-numeric: tabular-nums; }
+.profile-rows__title { display: block; font-size: 17px; font-weight: 500; line-height: 28px; letter-spacing: -.01em; }
+.profile-rows__place { display: block; color: var(--muted); font-size: 15px; line-height: 1.45; }
+.profile-rows__row svg { align-self: center; width: 18px; height: 18px; color: var(--muted); transition: transform 150ms cubic-bezier(.2, .65, .3, 1); }
+.prose .profile-section .profile-rows--honors { --p-pad: 17px; }
+.profile-rows--honors .profile-rows__title { font-size: 21px; font-weight: 450; letter-spacing: -.02em; text-wrap: balance; }
+.profile-rows--honors .profile-rows__place { margin-top: 2px; }
+/* a rail: a dot per row, filled for a position that is still held */
+.profile-timeline li { position: relative; display: grid; grid-template-columns: var(--p-years) minmax(0, 1fr); gap: 0 44px; padding-bottom: 22px; }
+.profile-timeline li:last-child { padding-bottom: 0; }
+.profile-timeline li::before { content: ""; position: absolute; left: calc(var(--p-years) + 16px); top: 8px; width: 9px; height: 9px; border-radius: 50%; background: var(--bg); box-shadow: inset 0 0 0 1.5px var(--line-strong); }
+.profile-timeline li.is-current::before { background: var(--brand); box-shadow: none; }
+.profile-timeline li:not(:last-child)::after { content: ""; position: absolute; left: calc(var(--p-years) + 20px); top: 23px; bottom: -2px; width: 1px; background: var(--line); }
+.profile-timeline__years { color: var(--muted); font-size: 15px; line-height: 24px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.profile-timeline__title { display: block; font-size: 17px; font-weight: 500; line-height: 24px; letter-spacing: -.01em; text-wrap: pretty; }
+/* the padding widens the target, not the line */
+.profile-timeline__title a { padding-block: 12px; color: var(--ink); text-decoration: none; }
+.profile-timeline__title svg { display: inline-block; width: 16px; height: 16px; margin-left: 3px; vertical-align: -2px; color: var(--muted); }
+.profile-timeline__place { display: block; margin-top: 3px; color: var(--muted); font-size: 15px; line-height: 1.45; text-wrap: pretty; }
+@media (hover: hover) {
+  .profile-facts a:hover, .profile-timeline__title a:hover, .profile-timeline__title a:hover svg { color: var(--action); }
+  .profile-facts a:hover { text-decoration: underline; text-decoration-thickness: 1px; }
+  a.profile-rows__row:hover .profile-rows__title, a.profile-rows__row:hover svg { color: var(--action); }
+  a.profile-rows__row:hover .i-arrow { transform: translateX(3px); }
+  a.profile-rows__row:hover .i-external { transform: translate(2px, -2px); }
+}
+@media (pointer: coarse) {
+  .profile-facts__links { row-gap: 20px; }
+  .profile-facts > div + div { margin-top: 8px; }
+}
+@media (max-width: 1199px) {
+  .page-body:has(> .profile-aside) { --p-col: 264px; --p-gap: 56px; }
+}
+@media (max-width: 899px) {
+  .page-body:has(> .profile-aside) { --p-col: 208px; --p-gap: 40px; }
+  .page-body > .profile-aside { margin-bottom: 56px; }
+  .profile-facts__links { display: flex; flex-wrap: wrap; gap: 4px 16px; }
+  .page-body:has(> .profile-aside) > p { font-size: 18px; }
+  .profile-section { grid-template-columns: minmax(0, 1fr); gap: 20px; margin-top: 56px; padding-top: 24px; }
+  .profile-section + .profile-section { margin-top: 48px; }
+}
+@media (max-width: 639px) {
+  .page-head:has(+ .page-body > .profile-aside) .page-lead { margin-top: 12px; font-size: 16px; }
+  .page-body:has(> .profile-aside) { padding-top: 28px; }
+  .page-body > .profile-aside { float: none; width: auto; margin: 0 0 28px; }
+  .profile-aside__photo { max-width: 420px; }
+  .profile-aside__photo img { aspect-ratio: 1; object-position: 50% 12%; }
+  .page-body:has(> .profile-aside) > p { margin-left: 0; }
+  .page-body:has(> .profile-aside) > p { font-size: 17px; }
+  .page-body > .profile-aside + p { margin-top: 0; }
+  .profile-facts dd { font-size: 16px; }
+  .profile-facts__links { gap: 20px; }
+  .profile-facts > div + div { margin-top: 8px; }
+  .profile-rows--honors .profile-rows__title { font-size: 19px; line-height: 26px; }
+}
+@media (max-width: 479px) {
+  .page-body:has(> .profile-aside) { --p-years: 44px; }
+  .profile-rows__row { gap: 0 12px; }
+  .profile-timeline li { display: block; padding-left: 26px; }
+  .profile-timeline li::before { left: 0; top: 7px; }
+  .profile-timeline li:not(:last-child)::after { left: 4px; top: 22px; }
+  .profile-timeline__years { display: block; font-size: 14px; line-height: 24px; }
 }

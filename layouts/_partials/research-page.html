@@ -1,23 +1,33 @@
-{{- /* Research overview (content/research-interests.md front matter): the framework in one paragraph, the
-       three subjects as media cards (the home page's), then the lab's outputs as rows. */ -}}
+{{- /* The Research family (front matter `family: research`), three kinds of page:
+       - the overview (content/research.md, front matter `groups:`): research-overview.html
+       - a subject page (content/research--*.md, front matter `topic: true`): research-topic.html
+       - Resources (content/resources.md): a few lines (`intro`), the main link (`action`), picture cards
+         (`cards`), a ruled list of further places (`links`) and the papers to cite (`cite`, Zotero keys). */ -}}
+{{ if .Params.groups }}{{ partial "research-overview.html" . }}
+{{ else if .Params.topic }}{{ partial "research-topic.html" . }}
+{{ else }}
 {{ $arrow := partial "icon.html" "arrow" }}
+{{ $external := partial "icon.html" "external" }}
 <div class="wrap page-body">
-  <p class="research-intro">{{ .Params.intro }}</p>
-  <ul class="card-grid card-grid--3">
-    {{ range .Params.cards }}
-    <li><a class="media-card" href="{{ partial "url.html" .url }}">
-      <span class="media-card__frame media-card__frame--{{ .ground }}{{ if eq .fit "contain" }} media-card__frame--contain media-card__frame--cover{{ end }}">{{ partial "picture.html" (dict "src" .image "alt" "" "width" 1200 "sizes" "(max-width: 767px) 100vw, 400px") }}</span>
-      <span class="media-card__title">{{ .title }}</span>
-      <span class="media-card__text">{{ .text }}</span>
+  {{ with .Params.intro }}<p class="research-intro">{{ . }}</p>{{ end }}
+  {{ with .Params.action }}<p class="research-action"><a class="text-action" href="{{ partial "url.html" .url }}" rel="noopener">{{ .label }}<span class="sr-only"> (another site)</span>{{ $external }}</a></p>{{ end }}
+  {{ with .Params.cards }}
+  <ul class="research-cards">
+    {{ range . }}{{ $href := partial "url.html" .url }}{{ $ext := hasPrefix $href "http" }}
+    <li><a class="research-card" href="{{ $href }}"{{ if $ext }} rel="noopener"{{ end }}>
+      <span class="research-card__frame">{{ partial "picture.html" (dict "src" .image "alt" (.alt | default "") "width" 1200 "sizes" "(max-width: 767px) 100vw, 600px") }}</span>
+      <span class="research-card__title">{{ .title }}{{ if $ext }}<span class="sr-only"> (another site)</span>{{ $external }}{{ else }}{{ $arrow }}{{ end }}</span>
+      <span class="research-card__text">{{ .text }}</span>
     </a></li>
     {{ end }}
   </ul>
-  <section class="outputs" aria-labelledby="outputs-h">
-    <h2 id="outputs-h">Publications, posters and talks</h2>
-    <ul class="link-rows">
-      {{ range .Params.outputs }}
-      <li><a href="{{ partial "url.html" .url }}"><span class="link-rows__title">{{ .title }}</span><span class="link-rows__text">{{ .text }}</span>{{ $arrow }}</a></li>
-      {{ end }}
-    </ul>
-  </section>
+  {{ end }}
+  {{ with .Params.links }}{{ partial "research-links.html" . }}{{ end }}
+  {{ with .Params.cite }}
+  <div class="resource-cite">
+    <h2>To cite Lead-DBS</h2>
+    {{ range . }}{{ $key := . }}{{ range where hugo.Data.publications "key" $key }}<p>{{ .citation | safeHTML }}</p>{{ end }}{{ end }}
+  </div>
+  {{ end }}
 </div>
+{{ end }}

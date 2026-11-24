@@ -1,0 +1,11 @@
+{{- /* The people on a subject: takes a list of names as written in data/people.yaml and shows them as a
+       plain list of names. A name leads to that person's entry on the People page (the id of their dialog
+       there, person-<name>). A name that is not in the data stops the build. */ -}}
+<ul class="people-list">
+  {{- range . }}{{ $name := . }}{{ $found := where hugo.Data.people "name" $name }}
+  {{- if not $found }}{{ errorf "research: no person named %q in data/people.yaml" $name }}{{ else }}
+  {{- with index $found 0 }}
+  <li><a href="{{ "people/" | relURL }}#person-{{ anchorize .name }}">{{ .name }}</a></li>
+  {{- end }}{{ end }}
+  {{- end }}
+</ul>

@@ -1,7 +1,25 @@
-{{- /* The publications (data/publications.yaml, the lab's Zotero library): every one, newest year first,
-       under a large year numeral as on News. A row: the title (a link to the DOI where there is one), then
-       authors and journal. A filter box narrows the list as you type (assets/js/main/publications.js).
-       The old Zotpress anchors (#zp-ID-…) stay on the rows. */ -}}
+{{- /* The publications (data/publications.yaml, the lab's Zotero library). One list in two parts, on one
+       grid: a narrow column at the left (the picture, the year, the journal) and the paper at the right,
+       so every title starts on the same line down the page.
+       Selected papers (data/selected_papers.yaml): a row each, the paper's own picture at the left, then
+       the title (the link to the DOI), the authors, and the journal and year. A phone shows the first
+       five and a "Show 4 more" button for the rest (publications.css; every row without scripts).
+       All papers: one row per year, newest first, that opens and closes (a native <details>; the newest
+       years are open until ten papers show). A paper is the journal at the left, the title and the
+       authors as "Surname AB" (as many as Zotero's citation gives). Authors who are or were in the lab
+       (data/people.yaml, matched by surname and first initial) stand in ink among the gray names, at the
+       same weight.
+       Above the years: a filter box and the topics as a native <select> (data/publication_topics.yaml,
+       by Zotero key; the choice is kept in the address as ?topic=…). Both search every year, open or
+       not; that and the "Open all years" button are the work of assets/js/main/publications.js.
+       Without scripts the box, the select and the button are not shown (publications.css) and the years
+       still open one by one. The old Zotpress anchors (#zp-ID-…) stay on the rows. */ -}}
+{{ $members := slice }}
+{{ range hugo.Data.people }}{{ with .name }}
+  {{ $parts := split . " " }}{{ $last := index $parts (sub (len $parts) 1) }}
+  {{ if and (gt (len $parts) 1) (not (in (lower .) " the ")) }}{{ $members = $members | append (printf "%s, %s" ($last | htmlEscape | replaceRE `([.+*?()\[\]{}|^$\\])` `\$1`) (substr . 0 1)) }}{{ end }}
+{{ end }}{{ end }}
+{{ $memberRE := "" }}{{ if $members }}{{ $memberRE = printf `(^|, |&amp; |… )((?:%s)\.(?:[ -]?\pL\.)*)` (delimit $members "|") }}{{ end }}
 {{- /* the library holds some papers twice (a preprint and the article, or two imports): keep one per title,
        preferring the one with a date and a DOI */ -}}
 {{ $seen := dict }}{{ $pubs := slice }}
@@ -9,6 +27,20 @@
   {{ $k := lower (replaceRE `[^\pL\pN]+` "" (.title | replaceRE "ﬁ" "fi" | replaceRE "ﬂ" "fl")) }}
   {{ if not (index $seen $k) }}{{ $seen = merge $seen (dict $k true) }}{{ $pubs = $pubs | append . }}{{ end }}
 {{ end }}
+{{- /* the topics, in the order of the select; a topic in the data file that is not listed here is a typo */ -}}
+{{ $topics := slice
+  (dict "id" "dbs" "label" "DBS")
+  (dict "id" "connectomes" "label" "Connectomes")
+  (dict "id" "lead-dbs" "label" "Lead-DBS")
+  (dict "id" "tms" "label" "TMS")
+  (dict "id" "lesion-mapping" "label" "Lesion mapping") }}
+{{ $topicIDs := slice }}{{ range $topics }}{{ $topicIDs = $topicIDs | append .id }}{{ end }}
+{{ $tagged := hugo.Data.publication_topics | default dict }}
+{{ range $key, $list := $tagged }}{{ range $list }}
+  {{ if not (in $topicIDs .) }}{{ errorf "data/publication_topics.yaml: %s has the unknown topic %q (known: %s)" $key . (delimit $topicIDs ", ") }}{{ end }}
+{{ end }}{{ end }}
+{{ $topicCount := dict }}
+{{ range $pubs }}{{ range index $tagged .key }}{{ $topicCount = merge $topicCount (dict . (add 1 (index $topicCount . | default 0))) }}{{ end }}{{ end }}
 {{ $years := slice }}{{ $by := dict }}
 {{ range $pubs }}
   {{ $y := substr (string .date) 0 4 | default "Without a date" }}
@@ -17,32 +49,100 @@
 {{ end }}
 {{ $dated := slice }}{{ range $years }}{{ if ne . "Without a date" }}{{ $dated = $dated | append . }}{{ end }}{{ end }}
 {{ $order := sort $dated "value" "desc" }}{{ if in $years "Without a date" }}{{ $order = $order | append "Without a date" }}{{ end }}
-<section class="bibliography" id="zotpress-lib-79dba5b0098bd35c40ebe35903c37972" aria-labelledby="publications-h" data-bibliography>
-  <div class="bibliography__head">
-    <h2 id="publications-h">All papers</h2>
-    <label class="bib-filter"><span class="sr-only">Filter publications</span>
-      {{ partial "icon.html" "search" }}<input type="search" placeholder="Filter papers" data-bib-filter>
-    </label>
+{{- /* Selected papers (data/selected_papers.yaml, Zotero keys in order). The title is the link to the DOI
+       and the whole row opens it. A paper without a picture is left out. */ -}}
+{{ with hugo.Data.selected_papers }}
+{{ $nsel := 0 }}{{ range . }}{{ if reflect.IsMap . }}{{ if .image }}{{ $nsel = add $nsel 1 }}{{ end }}{{ end }}{{ end }}
+<section class="bib-selected" aria-labelledby="selected-h">
+  <div class="bib-head">
+    <h2 id="selected-h">Selected papers</h2>
+    <p class="bib-jump"><a href="#publications-h">All {{ len $pubs }} papers <span aria-hidden="true">↓</span></a></p>
   </div>
-  <p class="bib-count" role="status" data-bib-count>{{ len $pubs }} publications</p>
-  {{ range $order }}{{ $y := . }}
-  <section class="pub-year" data-bib-year>
-    <h3 class="pub-year__label">{{ $y }}</h3>
+  <ol class="sel-list">
+    {{ range . }}{{ $key := . }}{{ $title := "" }}{{ $image := "" }}{{ $whole := false }}{{ $drawing := false }}{{ if reflect.IsMap . }}{{ $key = .key }}{{ $title = .title }}{{ $image = .image }}{{ $whole = .whole }}{{ $drawing = .drawing }}{{ end }}{{ $hit := where hugo.Data.publications "key" $key }}
+    {{ if not $hit }}{{ errorf "data/selected_papers.yaml: no paper with the key %s in data/publications.yaml" $key }}{{ end }}
+    {{ if $image }}{{ with index $hit 0 }}
+    {{ $p := partial "inline/bib-paper.html" (dict "paper" . "memberRE" $memberRE) }}
+    <li class="sel-paper">
+      <span class="sel-paper__figure{{ if $drawing }} sel-paper__figure--drawing{{ end }}{{ if $whole }} sel-paper__figure--whole{{ end }}" aria-hidden="true">{{ partial "picture.html" (dict "src" $image "alt" "" "width" 240 "sizes" "(max-width: 767px) 104px, (max-width: 1023px) 200px, 240px") }}</span>
+      <div class="sel-paper__text">
+        <h3>{{ if $p.doi }}<a href="{{ $p.doi }}" rel="noopener">{{ $title | default $p.title }}</a>{{ else }}{{ $title | default $p.title }}{{ end }}</h3>
+        <p class="sel-paper__by">{{ $p.names | safeHTML }}</p>
+        <p class="sel-paper__venue">{{ with $p.journal }}<span class="pub-journal">{{ . }}</span> · {{ end }}{{ $p.year }}</p>
+      </div>
+    </li>
+    {{ end }}{{ end }}{{ end }}
+  </ol>
+  {{ if gt $nsel 5 }}<p class="sel-more" data-sel-more><button type="button" class="bib-more__button">Show {{ sub $nsel 5 }} more</button></p>{{ end }}
+</section>
+{{ end }}
+<section class="bibliography" id="zotpress-lib-79dba5b0098bd35c40ebe35903c37972" aria-labelledby="publications-h" data-bibliography>
+  <div class="bib-head">
+    <h2 id="publications-h">All papers</h2>
+    <div class="bib-tools">
+      <label class="bib-filter"><span class="sr-only">Filter publications</span>
+        {{ partial "icon.html" "search" }}<input type="search" placeholder="Title, author or journal" data-bib-filter>
+      </label>
+      <label class="bib-topic"><span class="sr-only">Topic</span>
+        <select data-bib-topic>
+          <option value="">All topics</option>
+          {{ range $topics }}{{ $topic := . }}{{ with index $topicCount .id }}
+          <option value="{{ $topic.id }}">{{ $topic.label }} ({{ . }})</option>
+          {{ end }}{{ end }}
+        </select>{{ partial "icon.html" "chevron" }}
+      </label>
+      <p class="bib-count" role="status" data-bib-count>{{ len $pubs }} papers</p>
+    </div>
+  </div>
+  {{- /* the newest years are open until ten papers show; every other year waits closed */ -}}
+  {{ $n := 0 }}
+  <div class="pub-years">
+  {{ range $order }}{{ $y := . }}{{ $list := index $by $y }}
+  <details class="pub-year" data-bib-year{{ if lt $n 10 }} open{{ end }}>
+    <summary>
+      <h3 class="pub-year__label">{{ $y }}</h3>
+      <span class="pub-year__n" data-bib-year-n data-total="{{ len $list }}">{{ len $list }} {{ if eq (len $list) 1 }}paper{{ else }}papers{{ end }}</span>
+      <span class="pub-year__sign" aria-hidden="true"></span>
+    </summary>
     <ol class="pub-rows">
-      {{ range index $by $y }}
-        {{ $doi := "" }}{{ with findRESubmatch `href="([^"]+)"` .citation 1 }}{{ $doi = index (index . 0) 1 }}{{ end }}
-        {{ $authors := replaceRE `^(.*?)\s\((?:\d{4}|n\.d\.)[^)]*\)\..*$` "$1" (.citation | plainify | htmlUnescape) }}
-        {{ $journal := "" }}{{ with findRESubmatch `<i>(.*?)</i>` .citation 1 }}{{ $journal = index (index . 0) 1 | plainify | htmlUnescape }}{{ end }}
-        {{- /* an author's initials caught in italics ("B. Al") are no journal */}}
-        {{ if findRE `^[A-Z]\. ` $journal }}{{ $journal = "" }}{{ end }}
-        {{ $title := .title | plainify | htmlUnescape | replaceRE "ﬁ" "fi" | replaceRE "ﬂ" "fl" }}
-        <li class="pub-row" id="zp-ID-5249585-{{ .key }}" data-year="{{ $y }}">
-          <h4>{{ if $doi }}<a href="{{ $doi }}" rel="noopener">{{ $title }}<span class="pub-row__ext" aria-hidden="true">{{ partial "icon.html" "external" }}</span></a>{{ else }}{{ $title }}{{ end }}</h4>
-          <p>{{ $authors }}{{ with $journal }}<span class="pub-row__journal">&nbsp;· {{ . }}</span>{{ end }}</p>
+      {{ range $list }}
+        {{ $p := partial "inline/bib-paper.html" (dict "paper" . "memberRE" $memberRE) }}
+        <li class="pub-row" id="zp-ID-5249585-{{ .key }}" data-year="{{ $y }}"{{ with index $tagged .key }} data-topics="{{ delimit . " " }}"{{ end }}>
+          <h4>{{ if $p.doi }}<a href="{{ $p.doi }}" rel="noopener">{{ $p.title }}</a>{{ else }}{{ $p.title }}{{ end }}</h4>
+          <p class="pub-row__by">{{ $p.names | safeHTML }}</p>
+          {{ with $p.journal }}<p class="pub-row__journal pub-journal">{{ . }}</p>{{ end }}
         </li>
       {{ end }}
     </ol>
-  </section>
+  </details>
+  {{ $n = add $n (len $list) }}
   {{ end }}
-  <p class="bib-empty" hidden data-bib-empty>No publication matches.</p>
+  </div>
+  <p class="bib-empty" hidden data-bib-empty>No paper matches.</p>
+  <p class="bib-more" data-bib-more><button type="button" class="bib-more__button">Open all years</button></p>
 </section>
+{{- /* What a row shows of one paper: the DOI link, the title, the journal, the year and the authors.
+       The lab's own people are marked in the citation's form ("Horn, A."); then every name is shortened
+       to "Horn A": the initials are joined (three passes reach eight of them), the comma and the full
+       stop go (a no-break space keeps the initials on the line of the surname), and so does the "&"
+       before the last name. */ -}}
+{{ define "_partials/inline/bib-paper.html" }}
+  {{ $doi := "" }}{{ $journal := "" }}
+  {{ with .paper }}
+    {{ with findRESubmatch `href="([^"]+)"` .citation 1 }}{{ $doi = index (index . 0) 1 }}{{ end }}
+    {{ with findRESubmatch `<i>(.*?)</i>` .citation 1 }}{{ $journal = index (index . 0) 1 | plainify | htmlUnescape }}{{ end }}
+  {{ end }}
+  {{- /* an author's initials caught in italics ("B. Al") are no journal */}}
+  {{ if findRE `^[A-Z]\. ` $journal }}{{ $journal = "" }}{{ end }}
+  {{ $authors := replaceRE `^(.*?)\s\((?:\d{4}|n\.d\.)[^)]*\)\..*$` "$1" (.paper.citation | plainify | htmlUnescape) }}
+  {{ $names := htmlEscape $authors }}
+  {{ with .memberRE }}{{ $names = replaceRE . `$1<span class="pub-member">$2</span>` $names }}{{ end }}
+  {{ range seq 3 }}{{ $names = replaceRE `(\p{Lu})\.[ -]?(\p{Lu})` "$1$2" $names }}{{ end }}
+  {{ $names = replaceRE `, (\p{Lu}+)\.` " $1" $names | replaceRE `, &amp; ` ", " | replaceRE `(\pL)\.(,|</span>|$)` "$1$2" }}
+  {{ return (dict
+    "doi" $doi
+    "journal" $journal
+    "names" $names
+    "title" (.paper.title | plainify | htmlUnescape | replaceRE "ﬁ" "fi" | replaceRE "ﬂ" "fl")
+    "year" (substr (string .paper.date) 0 4)) }}
+{{ end }}

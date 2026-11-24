@@ -6,7 +6,7 @@ crumbs:
 - title: Home
   url: '@root@'
 - title: News
-  url: '@root@blog/'
+  url: '@root@news/'
 - title: Netstim paper featured in Neurology Podcast
 sidebar: true
 wordpress_id: 2355
@@ -14,7 +14,6 @@ date: '2024-09-30T22:05:35+00:00'
 modified: '2024-09-30T22:06:10+00:00'
 author: andreashorn
 comment_anchor: true
-canonical: /netstim-paper-featured-in-neurology-podcast/
 ---
 
 <div class="columns"><div class="column column-1-1"><h2>Neurology Podcast Episode</h2>

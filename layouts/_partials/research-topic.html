@@ -1,0 +1,30 @@
+{{- /* A subject page under Research (content/research--*.md, front matter `topic: true`).
+       1. Under the title and `lead`: one wide picture (`figure`: image, alt, caption; `drawing: true`
+          for a flat drawing on white: shown whole, blended into the gray frame, and turned around by the
+          dark theme). With `video` (an MP4 in assets/media/) the opening is a silent loop instead, and
+          `image` is its still: research-loop.html.
+       2. The text (the Markdown body). From 1024px each `## heading` stands in the left third under a
+          hairline, its text and pictures in the right two thirds; narrower, one column.
+       3. The same way: the key papers (`papers`: Zotero keys from data/publications.yaml) and the people
+          (`people`: names from data/people.yaml).
+       4. The other subject pages (the Research children in data/nav.yaml, without the overview) as ruled
+          links. */ -}}
+{{ with .Params.figure }}
+<div class="wrap">
+  <figure class="topic-hero">
+    {{ if .video }}{{ partial "research-loop.html" . }}
+    {{ else }}<div class="topic-hero__frame{{ if .drawing }} topic-hero__frame--drawing{{ end }}">{{ partial "picture.html" (dict "src" .image "alt" (.alt | default "") "sizes" "(max-width: 1360px) calc(100vw - 40px), 1280px" "eager" true) }}</div>{{ end }}
+    {{ with .caption }}<figcaption>{{ partial "url.html" (. | markdownify) | safeHTML }}</figcaption>{{ end }}
+  </figure>
+</div>
+{{ end }}
+<div class="wrap page-body topic-body">
+  {{ partial "render.html" .Content }}
+  {{ with .Params.papers }}<h2 id="key-papers">Key papers</h2>{{ partial "research-papers.html" . }}{{ end }}
+  {{ with .Params.people }}<h2 id="people">People</h2>{{ partial "research-people.html" . }}{{ end }}
+</div>
+{{ $here := .RelPermalink }}{{ $more := slice }}
+{{ range hugo.Data.nav.main }}{{ if eq .title "Research" }}{{ $top := .url }}{{ range .children }}{{ if and (ne .url $top) (ne (partial "url.html" .url) $here) }}{{ $more = $more | append . }}{{ end }}{{ end }}{{ end }}{{ end }}
+{{ with $more }}
+<nav class="wrap topic-more" aria-label="More in Research">{{ partial "research-links.html" . }}</nav>
+{{ end }}

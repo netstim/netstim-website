@@ -6,7 +6,7 @@ crumbs:
 - title: Home
   url: '@root@'
 - title: News
-  url: '@root@blog/'
+  url: '@root@news/'
 - title: Defining a tract-based target for Obsessive Compulsive Disorder
 sidebar: true
 wordpress_id: 362
@@ -14,7 +14,6 @@ date: '2019-01-12T09:32:42+00:00'
 modified: '2019-01-12T09:43:57+00:00'
 author: andreashorn
 comment_anchor: true
-canonical: /defining-a-tract-based-target-for-obsessive-compulsive-disorder/
 ---
 
 <p>In one of the <a href="https://www.biologicalpsychiatryjournal.com/article/S0006-3223(19)30003-4/pdf">potentially most impactful studies</a> we’ve been involved, Carlos Baldermann (University Cologne) delineated a tract that – if stimulated with DBS – improves symptoms of obsessive compulsive disorder.</p>
@@ -23,7 +22,7 @@ canonical: /defining-a-tract-based-target-for-obsessive-compulsive-disorder/
 
 This specific connectivity profile was predictive of symptom improvement in a split-half design and leave-one-out cross-validation.
 
-<div class="image-block"><netstim-image data='{"src":"media/0d6a45de3a73-Bildschirmfoto-2019-01-11-um-23.15.06-1500x1465.png","original":"https://www.netstim.org/wp-content/uploads/2019/01/Bildschirmfoto-2019-01-11-um-23.15.06-1030x1006.png","alt":"","width":1030}'/></div>
+<div class="image-block"><netstim-image data='{"src":"media/0d6a45de3a73-Bildschirmfoto-2019-01-11-um-23.15.06-1500x1465.png","original":"https://www.netstim.org/wp-content/uploads/2019/01/Bildschirmfoto-2019-01-11-um-23.15.06-1030x1006.png","alt":"","width":640}'/></div>
 
 About half patients had patient-specific tractography, for the other half we used a normative connectome. Still, it was possible to cross-predict outcome based on optimal connectivity profiles learned from the other half.
 

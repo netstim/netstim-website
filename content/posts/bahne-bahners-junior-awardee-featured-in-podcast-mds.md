@@ -6,7 +6,7 @@ crumbs:
 - title: Home
   url: '@root@'
 - title: News
-  url: '@root@blog/'
+  url: '@root@news/'
 - title: Bahne Bahners ‘Junior Awardee’ & Featured in Podcast @...
 sidebar: true
 wordpress_id: 2338
@@ -14,7 +14,6 @@ date: '2024-09-25T01:45:19+00:00'
 modified: '2024-10-16T17:11:08+00:00'
 author: andreashorn
 comment_anchor: true
-canonical: /bahne-bahners-junior-awardee-featured-in-podcast-mds/
 ---
 
 <div class="columns"><div class="column column-1-1"><h2>Bahne Bahners ‘Junior Awardee’, Plenary Lecture &amp; Featured in Podcast @ MDS</h2>
@@ -29,4 +28,4 @@ canonical: /bahne-bahners-junior-awardee-featured-in-podcast-mds/
 </div></div>
 
 <div class="columns"><div class="column column-1-1">
-<div class="image-block"><netstim-image data='{"src":"media/94b82740501d-Screenshot-2024-09-24-at-9.44.23-PM.png","original":"https://www.netstim.org/wp-content/uploads/2024/09/Screenshot-2024-09-24-at-9.44.23%E2%80%AFPM.png","alt":"","width":1920}'/></div></div></div>
+<div class="image-block"><netstim-image data='{"src":"media/94b82740501d-Screenshot-2024-09-24-at-9.44.23-PM.png","original":"https://www.netstim.org/wp-content/uploads/2024/09/Screenshot-2024-09-24-at-9.44.23%E2%80%AFPM.png","alt":"","width":600}'/></div></div></div>

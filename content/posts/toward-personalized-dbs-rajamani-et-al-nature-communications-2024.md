@@ -6,7 +6,7 @@ crumbs:
 - title: Home
   url: '@root@'
 - title: News
-  url: '@root@blog/'
+  url: '@root@news/'
 - title: Toward Personalized DBS (Rajamani et al., Nature Communications 2024)
 sidebar: true
 wordpress_id: 2306
@@ -14,7 +14,6 @@ date: '2024-06-21T12:54:02+00:00'
 modified: '2024-09-25T01:33:38+00:00'
 author: andreashorn
 comment_anchor: true
-canonical: /toward-personalized-dbs-rajamani-et-al-nature-communications-2024/
 ---
 
 <div class="columns"><div class="column column-1-1"><h2>Toward Personalized DBS</h2>

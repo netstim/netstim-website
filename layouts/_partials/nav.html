@@ -1,24 +1,46 @@
-{{- /* The menu. Desktop: each item a link, its children in a band opened by the chevron or by hovering.
-       Phone (dict "phone" true): an item with children is one full-width toggle row (every parent's own page
-       is among its children), the open group of the current page expanded. */ -}}
+{{- /* The menu (data/nav.yaml), drawn twice: in the header bar ("id" "desktop") and in the phone sheet
+       ("phone" true). An item is current on its own page, below its address, on a child's address, on the
+       addresses in its `also`, and (with `posts`) on every news post.
+       An item with `children`:
+       - header bar: the title stays a link to the item's page; the arrow button after it opens the sheet
+         of child links. The arrow shows on touch screens; with a mouse the sheet opens on hover and the
+         arrow appears only when the keyboard reaches it (header.css). header.js adds hover, Escape and
+         the arrow keys; without scripts the sheet opens on hover and on keyboard focus.
+       - phone sheet: the whole row is a button that unfolds the child links; the current group starts open. */ -}}
+{{- $here := .page.RelPermalink -}}
+{{- $phone := .phone -}}
+{{- $id := .id -}}
 <ul class="nav-list">
   {{ range $i, $item := .items }}
-    {{ $href := partial "url.html" $item.url }}
-    {{ $active := eq $.page.RelPermalink $href }}
-    {{ $inside := $active }}{{ range $item.children }}{{ if eq $.page.RelPermalink (partial "url.html" .url) }}{{ $inside = true }}{{ end }}{{ end }}
+    {{ $href := partial "url.html" .url }}
+    {{ $current := or (eq $here $href) (hasPrefix $here $href) }}
+    {{ range .also }}{{ if hasPrefix $here (partial "url.html" .) }}{{ $current = true }}{{ end }}{{ end }}
+    {{ range .children }}{{ if hasPrefix $here (partial "url.html" .url) }}{{ $current = true }}{{ end }}{{ end }}
+    {{ if and .posts (eq $.page.Section "posts") }}{{ $current = true }}{{ end }}
     {{ $external := hasPrefix $href "http" }}
-    {{ $id := printf "%s-%d" $.id $i }}
-    <li class="nav-item{{ if $inside }} is-current{{ end }}">
+    {{ $sub := printf "nav-%s-%d" $id $i }}
+    <li class="nav-item{{ if .children }} has-sub{{ end }}{{ if $current }} is-current{{ end }}">
       <div class="nav-row">
-        {{ if and $.phone $item.children }}
-          <button class="nav-toggle" type="button" data-disclosure aria-controls="{{ $id }}" aria-expanded="{{ if $inside }}true{{ else }}false{{ end }}">{{ $item.title }}{{ partial "icon.html" "chevron" }}</button>
+        {{ if and $phone .children }}
+          <button type="button" class="nav-group" aria-expanded="{{ if $current }}true{{ else }}false{{ end }}" aria-controls="{{ $sub }}"><span>{{ .title }}</span>{{ partial "icon.html" "chevron" }}</button>
         {{ else }}
-          <a href="{{ $href }}"{{ if $active }} aria-current="page"{{ end }}{{ if $external }} rel="noopener"{{ end }}>{{ $item.title }}{{ if $external }}<span class="ext" aria-hidden="true">↗</span>{{ end }}</a>
-          {{ with $item.children }}<button class="icon-button disclosure" type="button" data-disclosure aria-label="{{ $item.title }} pages" aria-controls="{{ $id }}" aria-expanded="false">{{ partial "icon.html" "chevron" }}</button>{{ end }}
+          <a class="nav-link" href="{{ $href }}"{{ if eq $here $href }} aria-current="page"{{ end }}{{ if $external }} rel="noopener"{{ end }}>{{ .title }}{{ if $external }}{{ partial "icon.html" "external" }}{{ end }}</a>
+          {{ if .children }}<button type="button" class="nav-toggle" aria-expanded="false" aria-controls="{{ $sub }}" aria-label="{{ .title }} pages">{{ partial "icon.html" "chevron" }}</button>{{ end }}
         {{ end }}
       </div>
-      {{ with $item.children }}
-        <div class="nav-panel" id="{{ $id }}"{{ if not (and $.phone $inside) }} hidden{{ end }}>{{ partial "nav.html" (dict "page" $.page "items" . "id" $id "phone" $.phone) }}</div>
+      {{ with .children }}
+        <div class="nav-panel" id="{{ $sub }}"{{ if and $phone (not $current) }} hidden{{ end }}>
+          <ul class="nav-sub">
+            {{ range . }}
+              {{ $to := partial "url.html" .url }}
+              {{ $out := hasPrefix $to "http" }}
+              <li><a class="nav-sub__link" href="{{ $to }}"{{ if eq $here $to }} aria-current="page"{{ end }}{{ if $out }} rel="noopener"{{ end }}>
+                <span class="nav-sub__title">{{ .title }}{{ if $out }}{{ partial "icon.html" "external" }}{{ end }}</span>
+                {{ with .text }}<span class="nav-sub__text">{{ . }}</span>{{ end }}
+              </a></li>
+            {{ end }}
+          </ul>
+        </div>
       {{ end }}
     </li>
   {{ end }}

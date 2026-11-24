@@ -6,7 +6,7 @@ crumbs:
 - title: Home
   url: '@root@'
 - title: News
-  url: '@root@blog/'
+  url: '@root@news/'
 - title: Welcome Svenja Treu to the Netstim
 sidebar: true
 wordpress_id: 874
@@ -14,7 +14,6 @@ date: '2019-04-06T08:10:09+00:00'
 modified: '2019-04-07T19:56:44+00:00'
 author: andreashorn
 comment_anchor: true
-canonical: /welcome-svenja-treu-to-the-netstim/
 ---
 
 <div class="columns"><div class="column column-1-3"><div class="image-block"><netstim-image data='{"src":"media/09cd69b0cda3-DSC06599.jpg","original":"https://www.netstim.org/wp-content/uploads/2019/04/DSC06599-300x300.jpg","alt":"","width":300}'/></div></div><div class="column column-2-3"><h2>We are pleased to welcome Svenja Treu to the lab as a visiting research student</h2>

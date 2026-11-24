@@ -1,0 +1,21 @@
+{{- /* A person's own page, the side column: the portrait, its credit and the contact facts (the email
+       address and the profile links, each row led by an icon). All of it comes from the entry in
+       data/people.yaml whose `name` is the page's title. The column stands at the left of the biography
+       that follows it in the page text (on a phone above it). {{< profile-aside >}} */ -}}
+{{- range first 1 (where hugo.Data.people "name" .Page.Title) -}}
+{{- $person := . -}}
+<aside class="profile-aside" aria-label="Portrait and contact">
+  {{ with .photo }}<figure class="profile-aside__photo">
+    {{ partial "picture.html" (dict "src" (printf "media/%s" .) "alt" (printf "Portrait of %s" $person.name) "width" 360 "sizes" "(max-width: 639px) calc(100vw - 40px), 300px" "eager" true) }}
+    {{ with $person.photo_credit }}<figcaption>Photo: {{ replace . "/" "/​" }}</figcaption>{{ end }}
+  </figure>{{ end }}
+  {{ with partial "people-links.html" .links }}
+  <dl class="profile-facts">
+    {{ range where . "label" "Email" }}<div><dt>{{ partial "icon.html" "mail" }}<span class="sr-only">Email</span></dt><dd><a class="profile-facts__mail" href="{{ .href }}">{{ strings.TrimPrefix "mailto:" .href }}</a></dd></div>{{ end }}
+    {{ with where . "label" "ne" "Email" }}<div><dt>{{ partial "icon.html" "link" }}<span class="sr-only">Profiles</span></dt><dd><ul class="profile-facts__links">
+      {{ range . }}<li><a href="{{ .href }}"{{ if .external }} rel="noopener"{{ end }}>{{ .label }}</a></li>{{ end }}
+    </ul></dd></div>{{ end }}
+  </dl>
+  {{ end }}
+</aside>
+{{- end -}}

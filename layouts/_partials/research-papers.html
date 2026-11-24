@@ -1,0 +1,26 @@
+{{- /* Key papers: takes a list of Zotero keys (the `key` of a row in data/publications.yaml) and shows each
+       as one row: the paper's exact title, then "First author et al. · Journal · Year" read from the row's
+       citation. The row links to the paper (its DOI). A key that is not in the data stops the build. */ -}}
+<ul class="paper-list">
+  {{- range . }}{{ $key := . }}{{ $found := where hugo.Data.publications "key" $key }}
+  {{- if not $found }}{{ errorf "research: no publication with key %q in data/publications.yaml" $key }}{{ else }}
+  {{- with index $found 0 }}
+  {{- $href := "" }}{{ with findRESubmatch `href="(https?://[^"]+)"` .citation 1 }}{{ $href = index (index . 0) 1 }}{{ end }}
+  {{- $authors := index (split .citation " (") 0 | htmlUnescape }}
+  {{- $first := index (split $authors ",") 0 }}
+  {{- $who := printf "%s et al." $first }}
+  {{- if not (in $authors "…") }}
+    {{- $parts := split $authors "& " }}
+    {{- if eq (len $parts) 1 }}{{ $who = $first }}
+    {{- else if le (len (findRE `\.,` (index $parts 0))) 1 }}{{ $who = printf "%s & %s" $first (index (split (index $parts 1) ",") 0) }}
+    {{- end }}
+  {{- end }}
+  {{- $journal := "" }}{{ with findRESubmatch `<i>([^<]+)</i>` .citation 1 }}{{ $journal = index (index . 0) 1 | htmlUnescape }}{{ end }}
+  {{- $year := substr (.date | default "") 0 4 }}{{ if not $year }}{{ with findRESubmatch `\((\d{4})` .citation 1 }}{{ $year = index (index . 0) 1 }}{{ end }}{{ end }}
+  <li>{{ if $href }}<a href="{{ $href }}" rel="noopener">{{ else }}<span class="paper-list__row">{{ end }}
+    <span class="paper-list__title">{{ .title }}{{ if $href }}<span class="sr-only"> (another site)</span>{{ end }}</span>
+    <span class="paper-list__meta">{{ $who }}{{ with $journal }} · <i>{{ . }}</i>{{ end }}{{ with $year }} · {{ . }}{{ end }}</span>
+  {{ if $href }}</a>{{ else }}</span>{{ end }}</li>
+  {{- end }}{{ end }}
+  {{- end }}
+</ul>

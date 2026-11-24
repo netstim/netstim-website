@@ -1,0 +1,17 @@
+{{- /* A silent looping video as a subject page's opening picture (front matter `figure.video`, an MP4 in
+       assets/media/: H.264, no sound track, at most 1600px wide and about 4 MB; `figure.image` is its still,
+       `figure.alt` says what it shows). The file is served from this site (the CSP allows media from 'self'
+       only). It is muted and plays inline. Without JavaScript it is a still with the browser's own controls.
+       With it (assets/js/research-loop.js) the video plays while it is on screen and a round button pauses
+       and resumes it; a visitor who asks for reduced motion gets the still and the button to start it. */ -}}
+{{- $video := resources.Get .video -}}
+{{- if not $video }}{{ errorf "research: no video %q in assets/" .video }}{{ end -}}
+{{- $still := resources.Get .image -}}
+{{- if not $still }}{{ errorf "research: the video %q needs a still (figure.image)" .video }}{{ end -}}
+{{- $poster := $still.Resize (printf "%dx webp q84" (math.Min 1600 $still.Width | int)) -}}
+<div class="topic-hero__frame topic-loop" data-loop>
+  <video src="{{ $video.RelPermalink }}" poster="{{ $poster.RelPermalink }}" width="{{ $poster.Width }}" height="{{ $poster.Height }}" muted loop playsinline controls preload="none" aria-label="{{ .alt }}"></video>
+  <button class="topic-loop__toggle" type="button" data-loop-toggle aria-label="Play the animation" hidden></button>
+</div>
+{{- $js := resources.Get "js/research-loop.js" | js.Build (dict "targetPath" "js/research-loop.js" "minify" true) | fingerprint }}
+<script type="module" src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>

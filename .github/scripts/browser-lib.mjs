@@ -1,19 +1,19 @@
 import {createRequire} from 'node:module';
-import {readFile} from 'node:fs/promises';
-import {resolve} from 'node:path';
+import {readFile, readdir} from 'node:fs/promises';
+import {join, relative, sep} from 'node:path';
 
 const require = createRequire(import.meta.url);
 export const {chromium, webkit, devices} = require('playwright');
-const manifest = JSON.parse(await readFile(new URL('../../tests/migration.json', import.meta.url)));
-export const routes = manifest.crawl;
-// the crawled routes that are pages (a moved page is a redirect stub; its destination is checked itself)
+// every page of the build (a forwarding page for an old address is skipped: its destination is a page)
 export async function pageRoutes(dir) {
   const pages = [];
-  for (const route of routes) {
-    const html = await readFile(resolve(dir, `.${route}`, 'index.html'), 'utf8').catch(() => '');
-    if (!/http-equiv="?refresh/i.test(html)) pages.push(route);
+  for (const entry of await readdir(dir, {recursive: true})) {
+    if (!entry.endsWith('index.html') || entry.startsWith('media' + sep) || entry.startsWith('wp-content' + sep)) continue;
+    const html = await readFile(join(dir, entry), 'utf8');
+    if (/http-equiv="?refresh/i.test(html)) continue;
+    pages.push('/' + relative('.', entry).split(sep).join('/').replace(/index\.html$/, ''));
   }
-  return pages;
+  return pages.sort();
 }
 export const axePath = process.env.AXE_SCRIPT || (() => {
   try { return require.resolve('axe-core/axe.min.js'); } catch { return null; }

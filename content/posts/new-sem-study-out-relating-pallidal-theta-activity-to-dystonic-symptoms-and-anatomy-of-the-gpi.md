@@ -6,14 +6,13 @@ crumbs:
 - title: Home
   url: '@root@'
 - title: News
-  url: '@root@blog/'
+  url: '@root@news/'
 - title: 'New SEM study out: “Relating pallidal theta activity to dystonic symptoms and anatomy of the GPi”'
 sidebar: true
 wordpress_id: 182
 date: '2017-11-13T14:13:00+00:00'
 modified: '2017-12-29T17:05:52+00:00'
 author: andreashorn
-canonical: /new-sem-study-out-relating-pallidal-theta-activity-to-dystonic-symptoms-and-anatomy-of-the-gpi/
 ---
 
 <div class="image-block post-lead-image"><a aria-label="neumann_horn" href="@root@wp-content/uploads/2017/12/neumann_horn-622x1030.png" title="neumann_horn"><netstim-image data='{"src":"media/2b1dd34caa94-neumann_horn-845x321.png","original":"https://www.netstim.org/wp-content/uploads/2017/12/neumann_horn-845x321.png","alt":"","width":845}'/></a></div><p>In a new study (<a href="https://www.researchgate.net/publication/321013451_A_localized_pallidal_physiomarker_in_cervical_dystonia">A localized pallidal physiomarker in cervical dystonia</a>) led by <a href="https://www.researchgate.net/profile/Wolf_Julian_Neumann">Wolf-Julian Neumann</a> with <a href="https://www.researchgate.net/profile/Siobhan_Ewert">Siobhan Ewert</a>, <a href="https://www.researchgate.net/profile/Julius_Huebl">Julius Huebl</a>, <a href="https://www.researchgate.net/profile/Christof_Bruecke">Christof Brücke</a>, <a href="https://www.researchgate.net/profile/Gerd_Helge_Schneider">Gerd-Helge Schneider</a> and <a href="https://www.researchgate.net/profile/Andrea_Kuehn2">Andrea A Kühn</a>, we were able to relate pallidal theta power to dystonic symptom severity for the first time.</p>

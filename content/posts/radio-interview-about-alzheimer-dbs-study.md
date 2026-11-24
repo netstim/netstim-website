@@ -6,7 +6,7 @@ crumbs:
 - title: Home
   url: '@root@'
 - title: News
-  url: '@root@blog/'
+  url: '@root@news/'
 - title: Radio interview about Alzheimer DBS study
 sidebar: true
 wordpress_id: 2022
@@ -14,7 +14,6 @@ date: '2022-12-17T03:38:09+00:00'
 modified: '2024-09-25T01:56:42+00:00'
 author: andreashorn
 comment_anchor: true
-canonical: /radio-interview-about-alzheimer-dbs-study/
 ---
 
 <div class="columns"><div class="column column-2-3"><p>Tune in below for a brief radio interview (German) with SWR2 Wissen with lab PI Andreas Horn about the Ríos et al. 2022 <a href="https://www.nature.com/articles/s41467-022-34510-3">Nature Communications publication on connectomic analysis of DBS for Alzheimer’s Disease</a></p>

@@ -1,0 +1,27 @@
+---
+title: Coverart for Biological Psychiatry
+url: /coverart-for-biological-psychiatry/
+aliases:
+- /928-2/
+family: post
+crumbs:
+- title: Home
+  url: '@root@'
+- title: News
+  url: '@root@news/'
+- title: Coverart for Biological Psychiatry
+sidebar: true
+wordpress_id: 928
+date: '2019-06-13T05:28:29+00:00'
+modified: '2019-06-27T18:45:08+00:00'
+author: andreashorn
+comment_anchor: true
+---
+
+<div class="columns"><div class="column column-1-1"><h2>Coverart for Biological Psychiatry</h2>
+</div></div>
+
+<div class="columns"><div class="column column-1-3"><div class="image-block"><netstim-image data='{"src":"media/f767bfdbfa72-S0006322318X00092.png","original":"https://www.netstim.org/wp-content/uploads/2019/04/S0006322318X00092-219x300.png","alt":"","width":219}'/></div></div><div class="column column-2-3"><p>We’re excited that results from <a href="https://www.biologicalpsychiatryjournal.com/article/S0006-3223(19)30003-4/abstract">the connectomic DBS study spearheaded by Carlos Baldermann in Biological Psychiatry</a> was featured on the coverart of the journal.</p>
+<p>Carlos used tractography in Lead-DBS to estimate and validate fibertracts that are associated with beneficial treatment effects of deep brain stimulation to the anterior limb of the internal capsule for treatment of Obsessive Compulsive Disorder.</p>
+<p>The <a href="https://www.biologicalpsychiatryjournal.com/article/S0006-3223(19)30003-4/abstract">full study can be found here</a> or on our <a href="@root@publications/">publications page</a>.</p>
+</div></div>

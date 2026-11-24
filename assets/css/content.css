@@ -2,7 +2,7 @@
    Text that stands alone reads at a 672px measure; the source's column rows span the canvas with the
    shared split gap and stack on a phone in source order. */
 .prose { font-size: var(--t-read); line-height: 1.65; overflow-wrap: break-word; }
-.page-body > :where(p, ul:not([class]), ol:not([class]), dl, blockquote, h2, h3, h4, h5, h6, pre, table, .action-row, .post-item, .author-box, .comments, .share, .pagination, .archive-subtitle) { max-width: var(--measure); }
+.page-body > :where(p, ul:not([class]), ol:not([class]), dl, blockquote, h2, h3, h4, h5, h6, pre, table, .action-row, .post-item) { max-width: var(--measure); }
 .prose :where(p, ul, ol, dl, blockquote, figure, pre, table, .image-block, .video-embed, .gallery, .slideshow, .icon-box) + :where(p, ul, ol, dl, blockquote, figure, pre, table, .image-block, .video-embed, .columns, .gallery, .slideshow, .icon-box) { margin-top: 20px; }
 .prose :where(p + p) { margin-top: 16px; }
 .prose :where(h2, h3, h4, h5, h6) + * { margin-top: 20px; }
@@ -25,9 +25,6 @@
 .column-1-2 { --f: .5; }
 .column-1-3 { --f: .33333; }
 .column-2-3 { --f: .66667; }
-.column-1-4 { --f: .25; }
-.column-3-4 { --f: .75; }
-.column-1-5 { --f: .2; }
 .column-2-5 { --f: .4; }
 .column-3-5 { --f: .6; }
 .column > :first-child { margin-top: 0; }
@@ -41,81 +38,104 @@
   .columns { flex-direction: column; flex-wrap: nowrap; align-items: stretch; gap: 28px; }
   .column { width: auto; }
 }
-.title-links { display: flex; gap: 8px; }
-.title-links a { display: inline-grid; place-items: center; min-width: 44px; min-height: 44px; }
-.title-links img { width: 16px; height: 16px; }
-/* figures in running text: never taller than a screen's worth, never wider than their own pixels */
-.page-body .image-block img { max-height: 600px; width: auto; }
-.page-body .column-1-1 > .image-block img, .page-body > .image-block img { max-width: min(100%, 960px); }
-.prose .jobs-photo { max-width: none; margin-bottom: 48px; }
-.prose .jobs-photo img { width: 100%; max-width: none; max-height: none; border-radius: var(--r-lg); }
-.attribution { display: block; margin-top: 8px; color: var(--muted); font-size: 13px; }
-/* an article (front matter article: true; the research pages, the book, Stimu-Latte, a profile page): one
-   reading column of 672px; the source's column splits stack in source order; figures run wider than the
-   text (up to 960px), never taller than 560px, on a quiet plate when they have no ground of their own */
-.page-body--article { --figure: 960px; }
+/* figures in running text (pages that are not reading pages): never taller than a screen's worth, never
+   wider than their own pixels */
+.page-body:not(.page-body--article) .image-block img { max-height: 600px; width: auto; }
+.attribution { display: block; margin-top: 10px; color: var(--muted); font-size: 13px; line-height: 1.5; }
+
+/* A reading page (front matter article: true, and every post): one reading column of 672px, centered.
+   A figure (a picture, a slideshow, a video) stands out of that column by 84px on each side, 840px in all,
+   centered on the text. With less room it takes what the page has; on a phone it is the column. A picture
+   is shown at its `width` attribute and never larger, so nothing is scaled up and a small or upright one
+   stays small, centered. The size is known before the file loads, so the text below does not jump.
+   A picture keeps its own ground: no plate, frame or white backing is added. Corners are rounded, and in
+   the dark theme pictures are dimmed, so a figure drawn on white reads as a quiet light plate.
+   The caption is centered under the picture, no wider than the text.
+   A picture the source set beside the text (a portrait, a journal cover, a logo) stays small: up to 1199px
+   it is part of the column, from 1200px it stands in the right margin, and the figures beside it keep to
+   the column.
+   Pictures open in the image viewer on a click (assets/js/main/gallery.js). */
+.page-body--article {
+  --out: 0px; --rail: 264px; --rail-gap: 40px; --fig: 36px;
+  display: grid; align-items: start;
+  grid-template-columns: [full-start text-start] minmax(0, 1fr) [text-end full-end];
+}
+@media (min-width: 768px) {
+  .page-body--article { --out: clamp(0px, (100vw - 2 * var(--gut) - var(--measure)) / 2, 84px); --fig: 44px;
+    grid-template-columns: [full-start] minmax(0, 1fr) [text-start] min(100%, var(--measure)) [text-end] minmax(0, 1fr) [full-end]; }
+}
+.page-body--article > * { grid-column: text; min-width: 0; }
+.page-body--article :is(p, ul, ol, h2, h3, h4, blockquote, .action-row, .link-rows) { max-width: var(--measure); }
 .page-body--article .columns { display: block; }
 .page-body--article .column { width: auto; }
-.page-body--article :is(p, ul, ol, h2, h3, h4, blockquote, .action-row, .notice) { max-width: var(--measure); }
 .page-body--article .column > * + * { margin-top: 20px; }
-.page-body--article .columns + .columns { margin-top: 32px; }
-.page-body--article .image-block { max-width: var(--figure); margin-block: 32px; }
-.page-body--article .image-block img { display: block; width: auto; max-width: 100%; max-height: 560px; margin: 0; border-radius: var(--r-md); }
-.page-body--article * + h2 { margin-top: 80px; }
-.page-body--article hr { margin: 80px 0 0; }
-.page-body--article hr + * h2:first-child, .page-body--article hr + h2 { margin-top: 48px; }
-.page-body--article .action-row { margin-top: 24px; }
-.page-body--article .slideshow { max-width: var(--figure); margin-block: 32px; }
+.page-body--article .columns + .columns { margin-top: 24px; }
+.page-body--article .column:empty, .page-body--article .columns:not(:has(> .column > *)) { display: none; }
+.page-body--article hr { display: none; }
+/* headings: a short section does not get a poster-sized title */
+.page-body--article h2 { font-size: clamp(22px, 1vw + 15px, 26px); font-weight: 550; letter-spacing: -.02em; line-height: 1.25; }
+.page-body--article h3 { font-size: 19px; font-weight: 600; letter-spacing: -.01em; }
+.page-body--article * + h2 { margin-top: 56px; }
+.page-body--article * + h3 { margin-top: 32px; }
+/* figures: the block stands out of the column, the picture inside is centered at its own width */
+.page-body--article :is(.image-block, .slideshow, .video-embed), .page-body--article > :is(img, a:has(> img)) { margin: var(--fig) calc(-1 * var(--out)); }
+.page-body--article :is(.image-block, .slideshow, .video-embed):first-child { margin-top: 0; }
+.page-body--article :is(.image-block, .slideshow, .video-embed):last-child { margin-bottom: 0; }
+.page-body--article .image-block + .image-block { margin-top: 24px; }
+.page-body--article .slides { max-width: none; }
+.page-body--article .video-embed--audio { margin-inline: 0; }
+.page-body--article .image-block img, .page-body--article p img, .page-body--article > img, .page-body--article > a > img {
+  max-height: 680px; margin-inline: auto; object-fit: contain; border-radius: var(--r-md);
+}
+.page-body--article .image-block > a, .page-body--article > a:has(> img) { display: block; width: fit-content; max-width: 100%; margin-inline: auto; border-radius: var(--r-md); }
+.page-body--article > :is(img, a:has(> img)) { justify-self: center; max-width: calc(100% + 2 * var(--out)); }
+/* a picture in a paragraph (a Markdown image) is a figure too: the paragraph keeps the measure, the picture is
+   centered on it and may stand out by the same amount */
+.page-body--article p:has(> img, > a > img) { margin-block: var(--fig); }
+.page-body--article p > :is(img, a:has(> img)) { position: relative; left: 50%; transform: translateX(-50%); max-width: calc(100% + 2 * var(--out)); margin-inline: 0; }
+.page-body--article p > a:has(> img) { display: block; width: max-content; border-radius: var(--r-md); }
+.page-body--article p > a > img { max-width: 100%; }
+.page-body--article :is(.image-block figcaption, p > .attribution) { max-width: var(--measure); margin: 14px auto 0; font-size: 14px; line-height: 1.5; text-align: center; text-wrap: balance; }
+.page-body--article a[data-lightbox] { cursor: zoom-in; }
+.page-body--post .slides { aspect-ratio: 3 / 2; }
+[data-theme="dark"] .page-body--article :is(.image-block, .slide, p) img, [data-theme="dark"] .page-body--article > :is(img, a) > img { filter: brightness(.88); }
+/* a picture the source set beside the text: a side column. Up to 1199px it is part of the column, at a
+   modest size; from 1200px it stands in the right margin, beside the text it belongs to */
+.page-body--article .column:has(> .image-block:first-child):not(:only-child) { --out: 0px; max-width: 300px; font-size: 14px; line-height: 1.5; color: var(--muted); }
+.page-body--article .column:has(> .image-block:first-child):not(:only-child) img { width: 100%; max-height: none; border-radius: var(--r-sm); }
+.page-body--article .column:has(> .image-block:first-child):not(:only-child) .image-block > a { width: auto; border-radius: var(--r-sm); }
+.page-body--article .column:has(> .image-block:first-child):not(:only-child) > * + * { margin-top: 12px; }
+.page-body--article .column:has(> .image-block:first-child):not(:only-child) .image-block { margin-block: 0; }
+.page-body--article .column:has(> .image-block:first-child):not(:only-child) .image-block + * { margin-top: 12px; }
+.page-body--article .column:has(> .image-block:first-child):not(:only-child) .icon-box { padding: 0; border: 0; }
+.page-body--article .column:has(> .image-block:first-child):not(:only-child) .icon-box + .icon-box { margin-top: 8px; }
+.page-body--article .column:has(> .image-block:first-child):not(:only-child) .icon-heading { margin: 0; font-size: 14px; font-weight: 500; letter-spacing: 0; line-height: 1.5; }
+.page-body--article .column:has(> .image-block:first-child):not(:only-child) .icon-box p { margin: 0; font-size: 13px; }
+.page-body--article .column + .column { margin-top: 28px; }
+.page-body--article .text-centered { text-align: left; }
+@media (max-width: 479px) {
+  .page-body--article .column:has(> .image-block:first-child):not(:only-child) { max-width: none; }
+}
+@media (min-width: 1200px) {
+  .page-body--article > .columns:has(> .column > .image-block:first-child):has(> .column > :not(.image-block):first-child) { --out: 0px; }
+  .page-body--article > .columns:has(> .column > .image-block:first-child):has(> .column > :not(.image-block):first-child) {
+    grid-column: text-start / full-end; display: grid; grid-template-columns: subgrid; align-items: start; gap: 0; }
+  .page-body--article > .columns:has(> .column > .image-block:first-child):has(> .column > :not(.image-block):first-child) > .column { grid-column: 1; grid-row: 1 / span 4; margin-top: 0; }
+  .page-body--article > .columns:has(> .column > .image-block:first-child):has(> .column > :not(.image-block):first-child) > .column:has(> .image-block:first-child) { grid-column: 2 / -1; grid-row: auto; width: min(100% - var(--rail-gap), var(--rail)); max-width: none; margin-left: var(--rail-gap); }
+  .page-body--article > .columns:has(> .column > .image-block:first-child):has(> .column > :not(.image-block):first-child) > .column:has(> .image-block:first-child) ~ .column:has(> .image-block:first-child) { margin-top: 28px; }
+}
 /* in an article every action reads as a text link with its arrow (a page of pills is a WordPress habit) */
+.page-body--article .action-row { margin-top: 12px; }
 .page-body--article .action { min-height: 44px; padding: 0; background: none; color: var(--ink); text-align: left; justify-content: flex-start;
   text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 5px; font-size: 16px; }
 .page-body--article .action.external::after { text-decoration: none; margin-left: 2px; }
-.page-body--article .action-row { margin-top: 12px; }
 .prose .action-row + :not(.action-row, h2, h3, h4) { margin-top: 28px; }
 @media (hover: hover) {
   .page-body--article .action:hover { background: none; text-decoration-color: currentColor; }
 }
-/* figures without a ground of their own sit on a quiet plate, so a white figure is never a slab in dark mode */
-.page-body--article .image-block img, .gallery img, .slide img { background: #fff; }
-[data-theme="dark"] .page-body--article .image-block img, [data-theme="dark"] .gallery img, [data-theme="dark"] .slide img { filter: brightness(.88); }
-.page-body--article .image-block img { max-height: min(560px, 70vh); }
-.page-body--article hr { max-width: var(--figure); }
-/* a compact list of links (a profile's identifiers) */
-.link-rows--compact a { grid-template-columns: minmax(0, 1fr) 20px; min-height: 52px; padding: 12px 0; }
-.link-rows--compact .link-rows__title { font-size: 16px; }
-.page-body--article .link-rows { max-width: var(--measure); }
 @media (max-width: 639px) {
+  .page-body--article { --fig: 28px; }
   .prose dl { grid-template-columns: minmax(0, 1fr); gap: 2px; }
   .prose dd + dt { margin-top: 14px; }
 }
-/* galleries inside an article: three across (two on a phone), every figure contained on the same plate */
-.page-body--article .gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; max-width: var(--figure); }
-.page-body--article .gallery a { aspect-ratio: 4 / 3; background: var(--surface); border-radius: var(--r-sm); }
-.page-body--article .gallery img { width: 100%; height: 100%; object-fit: contain; background: transparent; }
-@media (max-width: 767px) {
-  .page-body--article .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-.page-body--article hr { display: none; }
 .page-body--article img[data-original*="/logo-1-"] { max-width: 180px; }
-@media (max-width: 767px) {
-  .prose .jobs-photo img { aspect-ratio: 4 / 3; object-fit: cover; }
-}
-/* datasets (Normative Connectomes): one row each, the cohort as its title, method and citations under it,
-   the downloads at the right; long notes in a disclosure */
-.prose ul.datasets { max-width: var(--figure); margin: 16px 0 0; padding: 0; list-style: none; border-bottom: 1px solid var(--line); }
-.dataset { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 32px; align-items: start; padding: 20px 0; border-top: 1px solid var(--line); }
-.prose .dataset p { margin: 0; }
-.dataset__title { font-size: 18px; font-weight: 500; letter-spacing: -.015em; }
-.dataset__meta { margin-top: 4px !important; color: var(--muted); font-size: 14px; line-height: 1.5; }
-.dataset__meta a { color: inherit; }
-.dataset__links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px 16px; max-width: 280px; font-size: 14px; font-weight: 500; }
-.dataset__links a { display: inline-flex; align-items: center; min-height: 32px; color: var(--ink); text-decoration-color: var(--line-strong); }
-.dataset__links a::after { content: "↗" / ""; margin-left: 4px; color: var(--muted); }
-.dataset__details { margin-top: 8px; font-size: 14px; color: var(--muted); }
-.dataset__details summary { display: inline-flex; align-items: center; min-height: 32px; color: var(--ink); font-weight: 500; cursor: pointer; }
-.dataset__details[open] summary { margin-bottom: 4px; }
-@media (max-width: 767px) {
-  .dataset { grid-template-columns: minmax(0, 1fr); }
-  .dataset__links { justify-content: flex-start; max-width: none; }
-  .dataset__links a { min-height: 44px; }
-}

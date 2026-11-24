@@ -1,123 +1,165 @@
 ---
 title: Home
 url: /
+aliases:
+- /about/
+- /about-us/
 family: home
 wordpress_id: 11
 date: '2017-12-27T10:18:06+00:00'
 modified: '2025-10-14T21:15:43+00:00'
-canonical: /
+# The home page (layouts/home.html), top to bottom: the opening (who we are, with photos that change), research,
+# the publications as journal covers (data/covers.yaml), news (the newest posts, automatic) beside the book, community,
+# and the funders. Keep every text to one line or two; `lede` is the short line under a section heading.
+# The opening (`hero`): `title` and `place` are the page's heading, set as one small line (the name, then
+# the place in gray); `tagline` names the field in a few words and is the large line (sentence case);
+# `text` is one or two sentences, 30 to 40 words; `links` are two at most. `photos` are the pictures of the
+# one frame, shown in turn in the order written here and changing every few seconds: write them as team,
+# render, team, render, so the people and the work alternate. Without scripts the first one is shown.
+# Use real, sharp photos and the lab's own renders (2000px wide or more; no slides, posters or logos; nobody
+# who is a patient); every one needs an `alt`. The frame shows the middle of a photo; `focus: upper` keeps
+# the upper part in view instead, `focus: right` the part right of the middle (another position needs its
+# `.home-frame__slide--…` rule in assets/css/home.css).
 hero:
-  title: We analyse and modulate brain networks to improve clinical treatment.
-  lead: The Institute for Network Stimulation at the University Hospital Cologne works on neuroimaging, methods development, movement disorders and invasive brain stimulation.
-  image: media/full-connectome_black.png
-  primary:
-    label: Our research
-    url: '@root@research-interests/'
-  secondary:
-    label: About the lab
-    url: '@root@about-us/'
+  # TEMPORARY, until one is chosen. statement: the words first, then every photo in turn in a 3:2 frame.
+  # picture: the picture first, in a tall frame (about square); a photo marked `tall: false` is left out of
+  # it, because that frame would cut people off. duet: only the photos marked `people: true`, in a 3:2
+  # frame, with the silent video `loop` as a smaller frame over its lower right corner.
+  layout: picture
+  title: Institute for Network Stimulation
+  place: University Hospital Cologne
+  tagline: Connectomic brain stimulation
+  text: We map the circuits that deep brain stimulation acts on to relieve neurological and psychiatric symptoms, and build the open-source Lead-DBS toolbox so other labs can do the same.
+  links:
+  - {label: Meet the team, url: '@root@people/'}
+  - {label: Join the lab, url: '@root@jobs/'}
+  photos:
+  # TODO(netstim): photographer and date for the 2026 team photos
+  - image: media/team-2026-arch.jpg
+    alt: The Netstim team outdoors under a mirrored arch sculpture on the hospital campus
+    people: true
+    tall: false
+  # TODO(netstim): which study these two Lead-DBS scenes come from (LEAD_Scene3 and LEAD_Scene6c in the
+  # lab's render folder), so the alt texts can name the structures and a credit can be given.
+  - image: media/opening-leaddbs-tracts.jpg
+    alt: Lead-DBS render of two electrodes among colored fiber tracts and deep brain nuclei, over a section of the brain
+    focus: right
+  - image: media/team-2026-stack.jpg
+    alt: The Netstim team in three stacked rows outdoors, each with their hands on the head of the person below
+    focus: upper
+    people: true
+  - image: media/opening-leaddbs-coronal.jpg
+    alt: Lead-DBS render of two electrodes among fiber tracts and deep brain nuclei, over a section of the brain
+    tall: false
+  # duet only: a silent MP4 in assets/media/ (H.264, no sound track, about 4 MB at most), its still, and
+  # `start`, the second of the video that the still shows (playing begins there, so nothing jumps).
+  loop:
+    video: media/research-leaddbs-electrode.mp4
+    image: media/research-leaddbs-electrode-poster.jpg
+    start: 12
+    alt: Animation of a DBS electrode sliding into an orange nucleus beside a red one, where one of its contacts lights up
 research:
-  title: Two lines of research
-  text: Our two main lines of research are deep brain stimulation and connectomics, combined in a “Connectomic Deep Brain Stimulation” framework.
+  title: Research
+  lede: The questions we work on and the software we build.
+  link: {label: Research overview, url: '@root@research/'}
   cards:
   - title: Deep Brain Stimulation
-    text: 'The main focus of our work: deep brain stimulation, predominantly in movement disorders such as Parkinson’s disease, essential tremor and dystonia.'
-    image: media/full-abb_1.jpg
-    url: '@root@research-interests/deep-brain-stimulation/'
-    ground: light
+    text: Mapping which brain circuits DBS electrodes reach and how they relieve symptoms.
+    image: media/home-card-dbs.jpg
+    url: '@root@research/deep-brain-stimulation/'
   - title: Normative Connectomes
-    text: Since 2014, we have worked on estimating “average wiring diagrams” of the human brain.
-    image: media/full-fMRI.png
-    url: '@root@research-interests/normative-connectomes/'
-    ground: dark
-    fit: contain
+    text: Average human brain wiring diagrams built from large MRI cohorts.
+    image: media/home-card-connectome.jpg
+    url: '@root@research/normative-connectomes/'
   - title: Lead-DBS
-    text: As a methodological backbone of our work, together with others, we develop the open-source toolbox Lead-DBS.
-    image: media/595e8a2d1bb1-logo-1-1500x1083.png
-    url: https://www.lead-dbs.org
-    ground: dark
-    fit: contain
-journals:
-  title: Members of our lab published in peer-reviewed international journals such as
-  items:
-  - title: Nature Neuroscience
-    url: https://www.nature.com/articles/s41593-024-01570-1
-  - title: Nature Communications
-    url: https://www.nature.com/articles/s41467-020-16734-3
-  - title: Annals of Neurology
-    url: https://onlinelibrary.wiley.com/doi/10.1002/ana.24974/abstract
-  - title: Brain
-    url: https://academic.oup.com/brain/article/142/10/3129/5549975?login=true
-  - title: PNAS
-    url: https://www.pnas.org/content/early/2017/12/12/1706587115.full
-  - title: Biological Psychiatry
-    url: https://www.biologicalpsychiatryjournal.com/article/S0006-3223(21)01223-3/abstract
-  - title: NeuroImage
-    url: https://www.ncbi.nlm.nih.gov/pubmed/24099851
-  - title: Human Brain Mapping
-    url: https://onlinelibrary.wiley.com/doi/10.1002/hbm.23594/abstract
-  link:
-    label: All publications
-    url: '@root@research-interests/publications/'
-team:
-  title: The team
-  text: We are a scientific group with interest in neuroimaging, methods development, movement disorders and invasive brain stimulation.
-  image: media/c56653209355-IMG_2207-1-1536x977.png
-  primary:
-    label: Meet the team
-    url: '@root@about-us/about-us/'
-  secondary:
-    label: Jobs
-    url: '@root@about-us/jobs/'
+    text: Open-source toolbox developed since 2012 for electrode reconstruction and network modeling.
+    image: media/home-card-leaddbs.jpg
+    url: '@root@research/lead-dbs/'
+# the journal covers themselves are the rows of data/covers.yaml
+covers:
+  title: Publications
+  lede: Some things we've figured out along the way.
+  link: {label: All publications, url: '@root@publications/'}
+news:
+  title: News
+  lede: What the group has been up to lately.
+  count: 4
+  link: {label: All news, url: '@root@news/'}
+book:
+  label: The book
+  title: Connectomic Deep Brain Stimulation
+  lede: Andy wrote a book!
+  image: media/4cb5be70722a-Connectomic-Deep-Brain-Stimulation-1249x1536.png
+  url: '@root@book/'
+  link: About the book
 community:
-- title: Stimulating Brains
-  text: 'Our lab hosts a podcast and talk series about brain stimulation: interviews about the past, present and future of neuromodulation, and talks by senior colleagues and rising stars in the field.'
-  image: media/a473d51a1584-StimBrains_Logo_Vertical_Portfolio_transparentBG-1536x676.png
-  ground: plate
-  url: http://www.stimulatingbrains.org
-  label: Tune in
-- title: Stimu-Latte
-  text: 'A monthly in-person journal club in Cologne, organised as part of the Forschungsschwerpunkt Neuromodulation: a local space for discussion and collaboration, all fueled by coffee.'
-  image: media/5d84ece1bc6e-Stimulate_logo-2-1500x430.png
-  ground: latte
-  url: '@root@research-interests/stimu-latte/'
-  label: Upcoming sessions
+  title: Community
+  lede: Where we talk brain stimulation out loud.
+  link: {label: Community overview, url: '@root@community/'}
+  # the cards themselves are in content/community.md
+# Funders. `src` is the funder's own logo file in assets/media/ (never a drawn one). `width` is the logo's
+# width on the page in px: raise it for a thin logo, lower it for a heavy one, until the row looks even.
+# `name` is set beside a current funder's logo; leave it out where the logo spells the name out. `alt` is
+# read aloud where no name is shown. Logos are drawn in one tone, so the file needs a clear background;
+# `shaded: true` is for a filled seal, which keeps its own shades of gray. An entry without `src` shows
+# `name` as text.
 funding:
-  text: The Netstim Institute is currently funded by the Schilling Foundation and the National Institute of Mental Health (NIMH).
-  logos:
-  - src: media/a112e46a179b-Unknown.png
-    original: https://www.netstim.org/wp-content/uploads/2021/11/Unknown-300x54.png
-    alt: Foundation for OCD Research
-    width: 300
+  title: Funded by
+  past_title: Previously
+  current:
+  # The foundation's logo as it stands in its 2026 call for applications (the image in that PDF, which has a
+  # clear background). The same logo as a JPEG on white:
+  # https://www.deutsches-stiftungszentrum.de/sites/dsz/files/2025-09/schilling-stiftung_logo.jpg
+  - src: media/schilling-stiftung-logo.png
+    original: https://www.deutsches-stiftungszentrum.de/sites/dsz/files/2025-11/schilling-stiftung_ausschreibung_2026.pdf
+    name: Hermann and Lilly Schilling Foundation
+    alt: Hermann and Lilly Schilling Foundation for Medical Research
+    url: https://www.deutsches-stiftungszentrum.de/stiftungen/schilling-stiftung
+    width: 56
+    shaded: true
+  # The institute's own logo, the file in the header of nimh.nih.gov, unchanged.
+  - src: media/nimh-logo.svg
+    original: https://www.nimh.nih.gov/themes/nimhtheme/nimh-logo.svg
+    alt: National Institute of Mental Health (NIMH), National Institutes of Health
+    url: https://www.nimh.nih.gov/
+    width: 176
+  past:
   - src: media/57c49ab4b6d9-DFG_Logo.png
     original: https://www.netstim.org/wp-content/uploads/2019/04/DFG_Logo-300x107.png
-    alt: Deutsche Forschungsgemeinschaft
-    width: 300
-  - src: media/8460b6139d61-nih-logo-color.png
-    original: https://www.netstim.org/wp-content/uploads/2021/12/nih-logo-color-300x46.png
-    alt: National Institutes of Health
-    width: 300
-  - src: media/35c4f19ac7b0-stiftungcharite-1500x275.png
-    original: https://www.netstim.org/wp-content/uploads/2019/04/stiftungcharite-300x55.png
-    alt: Stiftung Charité
-    width: 300
-  - src: media/c0713910e266-logo.png
-    original: https://www.netstim.org/wp-content/uploads/2021/11/logo.png
-    alt: EU Joint Programme – Neurodegenerative Disease Research
-    width: 248
-  - src: media/95e381583581-logo_bihealth_en.png
-    original: https://www.netstim.org/wp-content/uploads/2019/04/logo_bihealth_en-300x146.png
-    alt: Berlin Institute of Health
-    width: 300
-  - src: media/c069f491051a-Logo-Thiemann-Stiftung-web.png
-    original: https://www.netstim.org/wp-content/uploads/2019/04/Logo-Thiemann-Stiftung-web-300x161.png
-    alt: Thiemann Stiftung
-    width: 300
+    alt: German Research Foundation (DFG)
+    url: https://www.dfg.de/
+    width: 62
   - src: media/faa4a95d93b4-Dystonia-Medical-Research-Foundation.png
     original: https://www.netstim.org/wp-content/uploads/2019/04/Dystonia-Medical-Research-Foundation-300x98.png
     alt: Dystonia Medical Research Foundation
-    width: 300
-  link:
-    label: Past funding
-    url: '@root@about-us/#funding'
+    url: https://dystonia-foundation.org/
+    width: 118
+  - src: media/95e381583581-logo_bihealth_en.png
+    original: https://www.netstim.org/wp-content/uploads/2019/04/logo_bihealth_en-300x146.png
+    alt: Berlin Institute of Health
+    url: https://www.bihealth.org/
+    width: 82
+  - src: media/35c4f19ac7b0-stiftungcharite-1500x275.png
+    original: https://www.netstim.org/wp-content/uploads/2019/04/stiftungcharite-300x55.png
+    alt: Stiftung Charité
+    url: https://www.stiftung-charite.de/
+    width: 148
+  - src: media/c069f491051a-Logo-Thiemann-Stiftung-web.png
+    original: https://www.netstim.org/wp-content/uploads/2019/04/Logo-Thiemann-Stiftung-web-300x161.png
+    alt: Thiemann Foundation for Parkinson’s Disease Research
+    url: https://thiemannstiftung.de/
+    width: 78
+  # The logo file from ffor.org with its white background made clear; nothing else changed.
+  - src: media/ffor-logo.png
+    original: https://images.squarespace-cdn.com/content/v1/5f17cc921d92df1a46dad36c/1600811005112-S3K5WLVVN3D65BR17X95/FFOR_Logo_Website.jpg
+    alt: Foundation for OCD Research (FFOR)
+    url: https://www.ffor.org/
+    width: 122
+  # The logo file from the header of neurodegenerationresearch.eu, cropped to the mark: its empty margin and
+  # the small line of white text under it are cut off.
+  - src: media/jpnd-logo.png
+    original: https://neurodegenerationresearch.eu/wp-content/uploads/2025/11/JPND-Logo-Colour2.png
+    alt: EU Joint Programme – Neurodegenerative Disease Research (JPND)
+    url: https://neurodegenerationresearch.eu/
+    width: 86
 ---

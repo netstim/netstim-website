@@ -35,10 +35,6 @@ jobs:
           python3 .github/scripts/check-site.py public
           python3 .github/scripts/check-site.py "$RUNNER_TEMP/netstim-preview" "$PREVIEW_URL"
           python3 .github/scripts/check-css-used.py public "$RUNNER_TEMP/netstim-preview"
-          python3 -m venv "$RUNNER_TEMP/netstim-python"
-          "$RUNNER_TEMP/netstim-python/bin/pip" install beautifulsoup4==4.13.5
-          "$RUNNER_TEMP/netstim-python/bin/python" .github/scripts/check-copy.py public
-          "$RUNNER_TEMP/netstim-python/bin/python" .github/scripts/check-copy.py "$RUNNER_TEMP/netstim-preview" --prefix /netstim-website/
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 22

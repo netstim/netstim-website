@@ -6,7 +6,7 @@ crumbs:
 - title: Home
   url: '@root@'
 - title: News
-  url: '@root@blog/'
+  url: '@root@news/'
 - title: Barbara Hollunder receives Thiemann Fellowship at DGN
 sidebar: true
 wordpress_id: 2372
@@ -14,7 +14,6 @@ date: '2024-11-06T14:37:48+00:00'
 modified: '2024-11-06T14:38:29+00:00'
 author: andreashorn
 comment_anchor: true
-canonical: /barbara-hollunder-receives-thiemann-fellowship-at-dgn/
 ---
 
 <div class="columns"><div class="column column-2-3"><h2>Barbara Hollunder receives Thiemann Fellowship at the German Neurology Society (DGN) meeting</h2>

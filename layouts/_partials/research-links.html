@@ -1,0 +1,10 @@
+{{- /* A ruled list of places to go, two in a row: each a title with an arrow and one muted line. Takes a
+       list of {title, text, url}; an address on another site gets the outside-link arrow. */ -}}
+<ul class="resource-links">
+  {{ range . }}{{ $href := partial "url.html" .url }}{{ $ext := hasPrefix $href "http" }}
+  <li><a href="{{ $href }}"{{ if $ext }} rel="noopener"{{ end }}>
+    <span class="resource-links__title">{{ .title }}{{ if $ext }}<span class="sr-only"> (another site)</span>{{ partial "icon.html" "external" }}{{ else }}{{ partial "icon.html" "arrow" }}{{ end }}</span>
+    {{ with .text }}<span class="resource-links__text">{{ . }}</span>{{ end }}
+  </a></li>
+  {{ end }}
+</ul>

@@ -6,7 +6,7 @@ crumbs:
 - title: Home
   url: '@root@'
 - title: News
-  url: '@root@blog/'
+  url: '@root@news/'
 - title: Two international DBS review papers out
 sidebar: true
 wordpress_id: 1276
@@ -14,7 +14,6 @@ date: '2021-03-04T08:07:02+00:00'
 modified: '2021-03-04T08:07:02+00:00'
 author: andreashorn
 comment_anchor: true
-canonical: /two-international-dbs-review-papers-out/
 ---
 
 <div class="columns"><div class="column column-2-3"><p>We’re happy that our laboratory could play a small role in two larger international review papers about DBS technology.</p>

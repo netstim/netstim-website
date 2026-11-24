@@ -6,7 +6,7 @@ crumbs:
 - title: Home
   url: '@root@'
 - title: News
-  url: '@root@blog/'
+  url: '@root@news/'
 - title: Andreas Horn to receive Heinz Maier Leibnitz Prize
 sidebar: true
 wordpress_id: 1818
@@ -14,7 +14,6 @@ date: '2022-03-08T23:11:07+00:00'
 modified: '2022-03-11T17:21:11+00:00'
 author: andreashorn
 comment_anchor: true
-canonical: /andreas-horn-to-receive-heinz-maier-leibnitz-prize/
 ---
 
 <div class="columns"><div class="column column-2-5">

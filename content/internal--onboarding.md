@@ -9,13 +9,13 @@ crumbs:
   url: '@root@internal/'
 - title: Lab manual
 sidebar: true
+article: true
 wordpress_id: 357
 date: '2019-01-12T08:44:11+00:00'
 modified: '2026-08-04T10:43:21+00:00'
-canonical: /internal/onboarding/
 ---
 
-<div class="columns"><div class="column column-1-1"><p class="post-lead">Welcome to the network stimulation lab in Cologne!</p>
+<div class="columns"><div class="column column-1-1"><p class="post-lead">Welcome to Netstim in Cologne!</p>
 
 <p>As is currently “on vogue”, we have created a lab-manual with helpful tips regarding onboarding, code of conduct and everything else.</p>
 <p>As a member of our lab, you’ll be able to edit and shape this content, as well – yay!</p>

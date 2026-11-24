@@ -6,7 +6,7 @@ crumbs:
 - title: Home
   url: '@root@'
 - title: News
-  url: '@root@blog/'
+  url: '@root@news/'
 - title: New Perspective in Nature Reviews Neurology
 sidebar: true
 wordpress_id: 2461
@@ -14,7 +14,6 @@ date: '2025-09-04T08:45:27+00:00'
 modified: '2025-09-04T08:47:04+00:00'
 author: andreashorn
 comment_anchor: true
-canonical: /new-perspective-in-nature-reviews-neurology/
 ---
 
 <div class="columns"><div class="column column-2-3"><h2><b>New Perspective in </b></h2>

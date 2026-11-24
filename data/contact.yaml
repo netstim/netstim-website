@@ -1,0 +1,9 @@
+# How to reach the institute: shown in the footer of every page and on the Jobs page.
+# The address is the one in the University Hospital press releases about the institute (2025).
+# TODO(netstim): replace Andreas's own address with a lab address once there is one.
+name: Institute for Network Stimulation
+org: University Hospital Cologne
+address:
+- Kerpener Straße 62
+- 50937 Köln, Germany
+email: mail@andreas-horn.de

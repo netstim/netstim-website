@@ -4,11 +4,10 @@
   <span><strong>Under construction:</strong> a preview of the new netstim website. The official site is <a href="{{ site.Params.liveSite }}">www.netstim.org</a>.</span>
 </div>
 {{ end }}
-{{ $logo := "" }}{{ with resources.Get hugo.Data.nav.logo }}{{ $logo = .Resize "480x webp q90" }}{{ end }}
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="site-logo" href="{{ "" | relURL }}" aria-label="{{ hugo.Data.nav.logo_alt }}, home">
-      {{ with $logo }}<img src="{{ .RelPermalink }}" alt="" width="{{ .Width }}" height="{{ .Height }}">{{ end }}
+      {{ partial "logo.html" (dict) }}
     </a>
     <nav class="desktop-nav" aria-label="Main navigation">
       {{ partial "nav.html" (dict "page" . "items" hugo.Data.nav.main "id" "desktop") }}
@@ -22,7 +21,7 @@
 </header>
 <dialog id="phone-menu" class="phone-menu" aria-label="Menu" tabindex="-1">
   <div class="dialog-top">
-    <a class="site-logo" href="{{ "" | relURL }}" aria-label="{{ hugo.Data.nav.logo_alt }}, home">{{ with $logo }}<img src="{{ .RelPermalink }}" alt="" width="{{ .Width }}" height="{{ .Height }}">{{ end }}</a>
+    <a class="site-logo" href="{{ "" | relURL }}" aria-label="{{ hugo.Data.nav.logo_alt }}, home">{{ partial "logo.html" (dict) }}</a>
     <form method="dialog"><button class="icon-button" aria-label="Close menu">{{ partial "icon.html" "close" }}</button></form>
   </div>
   <nav aria-label="Main navigation">{{ partial "nav.html" (dict "page" . "items" hugo.Data.nav.main "id" "phone" "phone" true) }}</nav>

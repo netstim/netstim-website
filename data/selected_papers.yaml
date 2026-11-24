@@ -1,0 +1,68 @@
+# Selected papers: the short list at the top of the Publications page, in this order (newest first, as the
+# full list below it). Each entry is the Zotero `key` of a paper in data/publications.yaml (journal and year
+# come from there), and:
+#   title    the published title, where the Zotero one differs
+#   image    a picture from that very paper (its key figure, or the journal cover it got), in assets/media/.
+#            Shown 3:2 and cropped to fill, at the left of the paper's row (240px wide; 104px on a phone);
+#            never a picture that only looks similar. A paper without one is not shown.
+#   whole    true shows the picture uncropped on the soft-gray frame (a journal cover, which is upright)
+#   drawing  true for a figure drawn on white: it is blended into its frame, and the dark theme turns its
+#            lightness around (the colors keep their hue), as on the Research pages.
+# Each downloaded figure has a `# source:` line with the figure's address and its license.
+# Every paper is a row of its own, so any number works; six to nine read well. The lab's own work, across
+# its topics.
+
+# Horn et al. 2025, Nature Reviews Neurology: from adaptive DBS to adaptive circuit targeting
+# a part of the figure in the lab's news post on this paper (media/60b970b6e4b1-figure_act_dbs-1536x1475.png, content/posts/new-perspective-in-nature-reviews-neurology.md)
+- key: 3YCUAHU5
+  image: media/selected-horn2025-act.png
+  drawing: true
+
+# Goede et al. 2025, Nature Communications: convergent mapping of a tremor treatment network
+# source: Fig. 5 (the map of panel A, cropped, on a white sheet), https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41467-025-60089-6/MediaObjects/41467_2025_60089_Fig5_HTML.png, CC BY 4.0
+- key: W9V9KWFB
+  image: media/selected-goede2025-fig5.png
+  drawing: true
+
+# Chua et al. 2025, Science Advances: optimal focused ultrasound lesion location in essential tremor
+# source: Fig. 1 (the axial sweet spot panel, cropped), https://www.science.org/cms/10.1126/sciadv.adp0532/asset/3b874297-75fb-412d-8e76-7c83982a483b/assets/images/large/sciadv.adp0532-f1.jpg, CC BY-NC 4.0
+- key: 98DGHSLF
+  image: media/selected-chua2025-fig1.jpg
+
+# Rajamani et al. 2024, Nature Communications: DBS of symptom-specific networks in Parkinson's disease
+# the picture of the lab's news post on this paper (content/posts/toward-personalized-dbs-rajamani-et-al-nature-communications-2024.md)
+- key: IWKLRKGE
+  image: media/4ec5d0bbe2c1-featuredImage2-1536x1256.png
+
+# Hollunder et al. 2024, Nature Neuroscience: mapping dysfunctional circuits in the frontal cortex
+# the journal cover of the issue, from the lab's news post on this paper (content/posts/mapping-the-dysfunctome-hollunder-et-al-nature-neuroscience-2024.md)
+- key: B6AUQJ5A
+  image: media/1f54996ed175-twitter_GIFXpcJWUAAe5LD.jpg
+  whole: true
+
+# Neudorfer et al. 2023, NeuroImage: Lead-DBS v3.0
+# source: Fig. 1 (center, cropped), https://ars.els-cdn.com/content/image/1-s2.0-S1053811923000113-gr1_lrg.jpg, CC BY-NC-ND 4.0 (copyright the authors)
+- key: HEXUJ43G
+  image: media/selected-neudorfer2023-fig1.jpg
+  drawing: true
+
+# Ríos et al. 2022, Nature Communications: fornix DBS sites and networks in Alzheimer's disease
+# the picture of the lab's news post on this paper (content/posts/radio-interview-about-alzheimer-dbs-study.md)
+- key: 86K98E2Y
+  image: media/0ead69b44a83-Option1-1536x1024.png
+
+# Horn et al. 2022, PNAS: optimal DBS sites and networks for cervical vs. generalized dystonia
+# source: Fig. 3 (top panel, cropped), https://www.pnas.org/cms/10.1073/pnas.2114985119/asset/3a206ec0-b712-4879-b0ef-1977da39986d/assets/images/large/pnas.2114985119fig03.jpg, CC BY-NC-ND 4.0 (copyright the authors)
+- key: U9KAW7GH
+  image: media/selected-horn2022-fig3.jpg
+
+# Li et al. 2020, Nature Communications: a unified connectomic target for DBS in OCD
+# source: Fig. 4 (top panel, cropped), https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41467-020-16734-3/MediaObjects/41467_2020_16734_Fig4_HTML.png, CC BY 4.0
+- key: SYFUNAC6
+  image: media/selected-li2020-fig4.png
+
+# Not shown until it has a picture (a row without one looks unfinished):
+# Horn et al. 2017, Annals of Neurology: connectivity predicts DBS outcome in Parkinson disease
+# TODO(netstim): a picture for this paper (a figure of the paper that the lab may show; the journal is not open access, and the repo holds none).
+# - key: HQ2AQ43J
+#   title: Connectivity predicts deep brain stimulation outcome in Parkinson disease

@@ -1,0 +1,9 @@
+{{- /* The logo lockup: the colour version, and the light version for dark grounds (CSS shows one).
+       (dict "width" 480 "lazy" false) */ -}}
+{{- $w := .width | default 480 -}}
+{{- range slice (dict "src" hugo.Data.nav.logo "class" "logo-on-light") (dict "src" hugo.Data.nav.logo_light "class" "logo-on-dark") -}}
+  {{- $class := .class -}}
+  {{- with resources.Get .src -}}{{- $img := .Resize (printf "%dx webp q90" $w) -}}
+  <img class="{{ $class }}" src="{{ $img.RelPermalink }}" alt="" width="{{ $img.Width }}" height="{{ $img.Height }}"{{ if $.lazy }} loading="lazy"{{ end }}>
+  {{- end -}}
+{{- end -}}

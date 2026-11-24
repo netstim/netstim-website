@@ -1,5 +1,5 @@
 baseURL = "https://www.netstim.org/"
-title = "Network Stimulation Laboratory"
+title = "Institute for Network Stimulation"
 locale = "en"
 uglyURLs = false
 enableGitInfo = true
@@ -23,8 +23,18 @@ disableKinds = ["taxonomy", "term"]
   notAlternative = true
   permalinkable = false
 
+# The production .htaccess (layouts/home.htaccess): headers, and a 301 for every old address.
+[mediaTypes."text/x-htaccess"]
+  suffixes = ["htaccess"]
+[outputFormats.htaccess]
+  mediaType = "text/x-htaccess"
+  baseName = ""
+  isPlainText = true
+  notAlternative = true
+  permalinkable = false
+
 [outputs]
-  home = ["html", "rss", "searchindex"]
+  home = ["html", "rss", "searchindex", "htaccess"]
   section = ["html"]
   page = ["html"]
 

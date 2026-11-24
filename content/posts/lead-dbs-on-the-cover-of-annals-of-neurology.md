@@ -6,14 +6,13 @@ crumbs:
 - title: Home
   url: '@root@'
 - title: News
-  url: '@root@blog/'
+  url: '@root@news/'
 - title: Lead-DBS on the cover of Annals of Neurology
 sidebar: true
 wordpress_id: 279
 date: '2018-11-04T18:08:51+00:00'
 modified: '2018-11-04T18:08:51+00:00'
 author: andreashorn
-canonical: /lead-dbs-on-the-cover-of-annals-of-neurology/
 ---
 
 <div class="image-block post-lead-image"><a aria-label="2018-Annals_of_Neurology-1" href="@root@wp-content/uploads/2018/11/2018-Annals_of_Neurology-1-1-783x1030.png" title="2018-Annals_of_Neurology-1"><netstim-image data='{"src":"media/a8e9659bf64e-2018-Annals_of_Neurology-1-1-845x321.png","original":"https://www.netstim.org/wp-content/uploads/2018/11/2018-Annals_of_Neurology-1-1-845x321.png","alt":"","width":845}'/></a></div><p>We’re really excited that the current cover of AoN was made with Lead-DBS. It shows pallidal and thalamic electrodes simultaneously implanted in a patient suffering from Tourette’s Syndrome and the picture is part of an electrophysiological Berlin-Hannover study spearheaded by Wolf-Julian Neumann and led by Andrea Kühn. It is the sixth coverart made with Lead-DBS that we know of – <a href="http://www.lead-dbs.org/about/publications" rel="noopener noreferrer" target="_blank">a gallery can be found here</a>.</p>

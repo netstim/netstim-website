@@ -6,7 +6,7 @@ crumbs:
 - title: Home
   url: '@root@'
 - title: News
-  url: '@root@blog/'
+  url: '@root@news/'
 - title: Lauren Hart receives multiple PhD scholarships
 sidebar: true
 wordpress_id: 2426
@@ -14,7 +14,6 @@ date: '2025-05-28T19:24:01+00:00'
 modified: '2025-05-28T19:24:56+00:00'
 author: andreashorn
 comment_anchor: true
-canonical: /lauren-hart-scholarships/
 ---
 
 <div class="columns"><div class="column column-2-3"><h2>Lauren Hart receives multiple PhD scholarships</h2>

@@ -1,0 +1,119 @@
+{{- /* The Community page (content/community.md `cards`): one row per series under a hairline. On the left
+       the picture: the flyer (`poster`; a click opens it large), or else the logo as it is. On the right a
+       small kicker, the title (the link), one line, the facts as property rows (an icon, a muted label,
+       the value) and, for Stimu-Latte (`from: stimu-latte`), the next session and the newest past ones
+       from data/stimu_latte.yaml. On a phone the picture stands over the text. A row past its `until`
+       day is left out. */ -}}
+{{ $arrow := partial "icon.html" "arrow" }}
+{{ $external := partial "icon.html" "external" }}
+{{- /* to preview another day: HUGO_PARAMS_TODAY=2026-10-01 hugo … */ -}}
+{{ $today := site.Params.today | default (now.Format "2006-01-02") }}
+<div class="wrap page-body">
+  {{ range $i, $card := .Params.cards }}
+  {{ if or (not .until) (ge .until $today) }}
+  {{ $href := partial "url.html" .url }}{{ $ext := hasPrefix $href "http" }}
+  {{ $poster := .poster }}{{ $alt := .alt | default "" }}{{ $caption := .alt | default .title }}
+  {{ $d := false }}{{ $next := false }}{{ $past := slice }}
+  {{ if eq .from "stimu-latte" }}
+    {{ $d = hugo.Data.stimu_latte }}
+    {{ $upcoming := slice }}
+    {{ range $d.sessions }}{{ if ge ((time.AsTime .date).Format "2006-01-02") $today }}{{ $upcoming = $upcoming | append . }}{{ else }}{{ $past = $past | append . }}{{ end }}{{ end }}
+    {{ with $upcoming }}{{ $next = index (sort . "date") 0 }}{{ end }}
+    {{ $past = sort $past "date" "desc" }}
+    {{- /* the flyer: the next session's, or else the newest one there is */ -}}
+    {{ $flyer := false }}
+    {{ if and $next $next.poster }}{{ $flyer = $next }}{{ else }}{{ range $past }}{{ if and (not $flyer) .poster }}{{ $flyer = . }}{{ end }}{{ end }}{{ end }}
+    {{ with $flyer }}{{ $t := time.AsTime .date }}
+      {{ $poster = .poster }}
+      {{ $alt = printf "Flyer: Stimu-Latte, the monthly postdoc journal club. %s Presented by %s on %s." .paper .presenter ($t.Format "January 2, 2006") }}
+      {{ $caption = printf "Flyer for the session of %s" ($t.Format "January 2, 2006") }}
+    {{ end }}
+    {{ $past = first (cond (not $next) 3 2) $past }}
+  {{ end }}
+  <section class="series" aria-labelledby="series-{{ $i }}">
+    <div class="series__media">
+      {{ if $poster }}{{ with resources.Get $poster }}{{ $full := .Resize (printf "%dx webp q88" (math.Min 1200 .Width | int)) }}
+      <a class="series__flyer" href="{{ $full.RelPermalink }}" data-lightbox title="{{ $caption }}">
+        {{ partial "picture.html" (dict "src" $poster "alt" $alt "width" 420 "sizes" "(max-width: 767px) 280px, (max-width: 1279px) 32vw, 420px" "eager" (eq $i 0)) }}
+      </a>
+      {{ end }}{{ else if .image }}
+      <a class="series__logo" href="{{ $href }}"{{ if $ext }} rel="noopener"{{ end }} tabindex="-1" aria-hidden="true">
+        {{ partial "picture.html" (dict "src" .image "alt" "" "width" 420 "sizes" "(max-width: 767px) 280px, (max-width: 1279px) 32vw, 420px") }}
+      </a>
+      {{ end }}
+    </div>
+    <div class="series__body">
+      {{ with .kicker }}<p class="series__kicker">{{ . }}</p>{{ end }}
+      {{- /* the last word of the title and its arrow stay on one line */ -}}
+      {{ $words := split .title " " }}{{ $n := sub (len $words) 1 }}
+      <h2 id="series-{{ $i }}" class="series__title"><a href="{{ $href }}"{{ if $ext }} rel="noopener"{{ end }}>{{ with first $n $words }}{{ delimit . " " }} {{ end }}<span>{{ index $words $n }}{{ if $ext }}<span class="sr-only"> (another site)</span>{{ $external }}{{ else }}{{ $arrow }}{{ end }}</span></a></h2>
+      {{ if and .text (not .brief) }}<p class="series__text">{{ .text }}</p>{{ end }}
+
+      {{ if or $d .facts }}
+      <dl class="series__facts">
+        {{ with $d }}
+        <div><dt>{{ partial "icon.html" "calendar" }}When</dt><dd>{{ .day }}<span class="series__chip">{{ partial "icon.html" "clock" }}{{ .time }}</span></dd></div>
+        <div><dt>{{ partial "icon.html" "pin" }}Where</dt><dd>{{ .room }}{{ with .building }}{{ if $d.map }}<a class="series__sub series__map" href="{{ $d.map }}" rel="noopener">{{ . }}<span class="sr-only"> (map, another site)</span>{{ $external }}</a>{{ else }}<span class="series__sub">{{ . }}</span>{{ end }}{{ end }}</dd></div>
+        {{ end }}
+        {{ range .facts }}
+        <div><dt>{{ partial "icon.html" .icon }}{{ .label }}</dt>
+          <dd>
+            {{- if .person }}{{ $name := .person }}{{ $p := index (where hugo.Data.people "name" $name) 0 }}
+              {{- if and $p $p.page }}<a class="series__person" href="{{ partial "url.html" $p.page }}">{{ with $p.photo }}<span class="series__portrait">{{ partial "picture.html" (dict "src" (printf "media/%s" .) "alt" "" "width" 80 "sizes" "32px") }}</span>{{ end }}{{ $name }}</a>
+              {{- else }}{{ $name }}{{ end }}
+            {{- else if .url }}{{ $u := partial "url.html" .url }}<a class="series__link" href="{{ $u }}"{{ if hasPrefix $u "http" }} rel="noopener"{{ end }}>{{ .text }}{{ if hasPrefix $u "http" }}<span class="sr-only"> (another site)</span>{{ $external }}{{ end }}</a>
+            {{- else }}{{ .text }}{{ end -}}
+          </dd>
+        </div>
+        {{ end }}
+      </dl>
+      {{ end }}
+
+      {{ if or $next $past }}
+      <div class="series__sessions">
+        {{ with $next }}
+        <h3>Next session</h3>
+        <ol>{{ template "community-session" . }}</ol>
+        {{ end }}
+        {{ with $past }}
+        <h3>Recent sessions</h3>
+        <ol>{{ range . }}{{ template "community-session" . }}{{ end }}</ol>
+        {{ end }}
+        <p class="series__links">
+          <a class="series__more" href="{{ $href }}">All sessions {{ $arrow }}</a>
+          {{ with $d.signup }}<a class="series__more" href="{{ . }}" rel="noopener">Join the mailing list<span class="sr-only"> (another site)</span> {{ $external }}</a>{{ end }}
+        </p>
+      </div>
+      {{ end }}
+
+      {{- /* a dated entry (`start`, `end`): its days as a calendar file, built here */ -}}
+      {{ if .start }}
+        {{ $from := time.AsTime .start }}{{ $to := (time.AsTime (.end | default .start)).AddDate 0 0 1 }}
+        {{ $lines := slice "BEGIN:VCALENDAR" "VERSION:2.0" "PRODID:-//Netstim//Community//EN" "BEGIN:VEVENT"
+          (printf "UID:%s@%s" (urlize .title) ((urls.Parse site.BaseURL).Hostname | default "netstim.org"))
+          (printf "DTSTAMP:%s" ($.Date.UTC.Format "20060102T150405Z"))
+          (printf "DTSTART;VALUE=DATE:%s" ($from.Format "20060102"))
+          (printf "DTEND;VALUE=DATE:%s" ($to.Format "20060102"))
+          (printf "SUMMARY:%s" .title) }}
+        {{ with .place }}{{ $lines = $lines | append (printf "LOCATION:%s" .) }}{{ end }}
+        {{ if $ext }}{{ $lines = $lines | append (printf "URL:%s" $href) }}{{ end }}
+        {{ $lines = $lines | append "END:VEVENT" "END:VCALENDAR" "" }}
+        {{ $ics := resources.FromString (printf "calendar/%s.ics" (urlize .title)) (delimit $lines "\r\n") }}
+        <p class="series__links"><a class="series__more" href="{{ $ics.RelPermalink }}" download>{{ partial "icon.html" "download" }} Add to calendar</a></p>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+  {{ end }}
+</div>
+
+{{ define "community-session" }}{{ $t := time.AsTime .date }}
+{{ $poster := false }}{{ with .poster }}{{ with resources.Get . }}{{ $poster = .Resize "1200x webp q88" }}{{ end }}{{ end }}
+<li{{ if $poster }} class="series__session--flyer"{{ end }}>
+  <time datetime="{{ $t.Format "2006-01-02" }}">{{ $t.Format "Jan 2" }}</time>
+  <div>
+    <p class="series__paper">{{ with $poster }}<a href="{{ .RelPermalink }}" data-lightbox title="Flyer for the session of {{ $t.Format "January 2, 2006" }}">{{ end }}{{ .paper }}{{ with $poster }}<span class="sr-only"> (flyer)</span></a>{{ end }}</p>
+    <p class="series__meta">{{ .presenter }}{{ with .source }}<span>{{ . }}</span>{{ end }}</p>
+  </div>
+</li>
+{{ end }}

@@ -1,25 +1,51 @@
 {{ define "main" }}
-{{- /* The home page: a summary of the site, in the Lead-DBS grammar. All words and pictures: the front matter
-       of content/_index.md (each sentence is the site's own; see docs/information-architecture.md).
-       1 statement on a black render panel, 2 research, 3 journals, 4 the book, 5 news, 6 team, 7 community,
-       8 funders. */ -}}
+{{- /* The home page. Words and pictures come from the front matter of content/_index.md; the journal covers
+       from data/covers.yaml; the news are the newest posts. Top to bottom: 1 the opening (who we are,
+       with photos that change), 2 research, 3 the journal covers as a strip that scrolls sideways, 4 news beside the
+       book, 5 community, 6 funders. The covers and community sit on the soft gray band, so white and gray
+       alternate down the page. */ -}}
 {{ $p := .Params }}
 {{ $arrow := partial "icon.html" "arrow" }}
 <main id="main" tabindex="-1" class="home">
 
   {{ with $p.hero }}
-  <section class="home-hero" aria-labelledby="hero-h">
-    <div class="wrap">
-      <div class="home-hero__panel">
-        <div class="home-hero__media">{{ partial "picture.html" (dict "src" .image "alt" "" "width" 1612 "sizes" "(max-width: 767px) 100vw, 720px" "eager" true) }}</div>
-        <div class="home-hero__text">
-          <h1 id="hero-h">{{ .title }}</h1>
-          <p class="home-hero__lead">{{ .lead }}</p>
-          <div class="btn-row">
-            <a class="btn btn--light" href="{{ partial "url.html" .primary.url }}">{{ .primary.label }}</a>
-            <a class="text-action text-action--light" href="{{ partial "url.html" .secondary.url }}">{{ .secondary.label }} {{ $arrow }}</a>
-          </div>
-        </div>
+  {{- /* The opening. The words: the name and the place as one small line (the page's heading), the field as
+         the large line (`tagline`), one or two sentences and two links. The pictures: real photos and the
+         lab's own renders in one frame, where the people and the work take turns. `layout` picks one of
+         three compositions (TEMPORARY: two go once the owner has chosen):
+           statement  the words first, the field line large; then one 3:2 frame with every photo in turn. On a
+                      phone the frame runs from edge to edge and the sentences follow it; from 1024px the
+                      frame is at the left and the sentences and links at its right;
+           picture    the picture first: a tall frame (square on a phone, edge to edge, right under the
+                      header; from 768px the right half of the window) with the photos not marked
+                      `tall: false`, and the words after it (beside it from 768px);
+           duet       the team photos (`people: true`) in turn in a 3:2 frame, and the silent Lead-DBS loop
+                      (`loop`) as a smaller frame that overlaps its lower right corner.
+         The first photo of a frame is shown and loaded with the page; the others wait unloaded (`hidden`)
+         until assets/js/main/banner.js fades them in. The round button in the corner stops and starts the
+         changing photos and the loop. Without scripts and under reduced motion nothing moves, and the
+         button is never shown. */ -}}
+  {{- /* for a preview build of another layout without editing the file: HUGO_PARAMS_HEROLAYOUT=picture hugo … */ -}}
+  {{ $layout := site.Params.herolayout | default .layout | default "statement" }}
+  {{ if not (in (slice "statement" "picture" "duet") $layout) }}{{ errorf "home: hero.layout is %q; use statement, picture or duet" $layout }}{{ end }}
+  {{ $photos := .photos | default slice }}
+  {{ $sizes := "(max-width: 639px) 100vw, (max-width: 1023px) calc(100vw - 96px), min(56vw, 760px)" }}
+  {{ if eq $layout "picture" }}
+    {{ $photos = where $photos "tall" "ne" false }}
+    {{ $sizes = "(max-width: 767px) 100vw, 50vw" }}
+  {{ else if eq $layout "duet" }}
+    {{ $photos = where $photos "people" true }}
+  {{ end }}
+  {{ $banner := dict "slides" $photos "sizes" $sizes "loop" (cond (eq $layout "duet") .loop false) }}
+  <section class="home-intro home-intro--{{ $layout }}" aria-labelledby="hero-h">
+    <div class="wrap home-intro__grid">
+      {{ if eq $layout "picture" }}{{ partial "inline/home-banner.html" $banner }}{{ end }}
+      <h1 id="hero-h"><span class="home-intro__name">{{ .title }}</span>{{ with .place }}<span class="sr-only">, </span><span class="home-intro__place">{{ . }}</span>{{ end }}</h1>
+      {{ with .tagline }}<p class="home-intro__statement">{{ . }}</p>{{ end }}
+      {{ if ne $layout "picture" }}{{ partial "inline/home-banner.html" $banner }}{{ end }}
+      <div class="home-intro__words">
+        {{ with .text }}<p class="home-intro__text">{{ . }}</p>{{ end }}
+        {{ with .links }}<ul class="home-links btn-row">{{ range . }}<li><a class="text-action" href="{{ partial "url.html" .url }}">{{ .label }} {{ $arrow }}</a></li>{{ end }}</ul>{{ end }}
       </div>
     </div>
   </section>
@@ -29,15 +55,15 @@
   <section class="home-section" aria-labelledby="research-h">
     <div class="wrap">
       <div class="section-head">
-        <div><h2 id="research-h">{{ .title }}</h2><p class="section-head__text">{{ .text }}</p></div>
-        <a class="text-action" href="{{ "research-interests/" | relURL }}">Research overview {{ $arrow }}</a>
+        <div class="section-head__title"><h2 id="research-h">{{ .title }}</h2>{{ with .lede }}<p class="section-head__lede">{{ . }}</p>{{ end }}</div>
+        {{ with .link }}<a class="text-action" href="{{ partial "url.html" .url }}">{{ .label }} {{ $arrow }}</a>{{ end }}
       </div>
       <ul class="card-grid card-grid--3">
-        {{ range .cards }}{{ $href := partial "url.html" .url }}{{ $ext := hasPrefix $href "http" }}
-        <li><a class="media-card" href="{{ $href }}"{{ if $ext }} rel="noopener"{{ end }}>
-          <span class="media-card__frame media-card__frame--{{ .ground }}{{ if eq .fit "contain" }} media-card__frame--contain{{ end }}">{{ partial "picture.html" (dict "src" .image "alt" "" "width" 1200 "sizes" "(max-width: 767px) 100vw, 400px") }}</span>
-          <span class="media-card__title">{{ .title }}{{ if $ext }}<span aria-hidden="true"> ↗</span>{{ end }}</span>
-          <span class="media-card__text">{{ .text }}</span>
+        {{ range .cards }}
+        <li><a class="media-card" href="{{ partial "url.html" .url }}">
+          <span class="media-card__frame home-research__frame">{{ partial "picture.html" (dict "src" .image "alt" "" "width" 1200 "sizes" "(max-width: 767px) 148px, (max-width: 1023px) 33vw, 400px") }}</span>
+          <span class="media-card__title">{{ .title }}</span>
+          {{ with .text }}<span class="media-card__text">{{ . }}</span>{{ end }}
         </a></li>
         {{ end }}
       </ul>
@@ -45,82 +71,74 @@
   </section>
   {{ end }}
 
-  {{ with $p.journals }}
-  <section class="home-section home-journals" aria-labelledby="journals-h">
-    <div class="wrap">
-      <h2 id="journals-h" class="home-journals__label">{{ .title }}</h2>
-      <ul class="journal-wall">
-        {{ range .items }}<li><a href="{{ .url }}" rel="noopener">{{ .title }}<span class="journal-wall__ext" aria-hidden="true">{{ partial "icon.html" "external" }}</span></a></li>{{ end }}
-      </ul>
-      <a class="text-action" href="{{ partial "url.html" .link.url }}">{{ .link.label }} {{ $arrow }}</a>
-    </div>
-  </section>
-  {{ end }}
-
-  <section class="home-section home-book" aria-label="The book">
-    <div class="wrap">{{ partial "book-section.html" . }}</div>
-  </section>
-
-  {{ $posts := first 4 (where site.RegularPages "Section" "posts").ByDate.Reverse }}
-  <section class="home-section" aria-labelledby="news-h">
+  {{ with $p.covers }}
+  {{- /* The covers scroll sideways by touch, trackpad and keyboard (every cover is a link, so the strip can be
+         tabbed through); the two buttons are shown by assets/js/home-covers.js. A click opens the cover in
+         the image viewer (assets/js/main/gallery.js: `data-lightbox` links inside a `.gallery`). */ -}}
+  <section class="home-covers" aria-labelledby="covers-h" data-covers>
     <div class="wrap">
       <div class="section-head">
-        <h2 id="news-h">News</h2>
-        <a class="text-action" href="{{ "blog/" | relURL }}">All news {{ $arrow }}</a>
-      </div>
-      <div class="home-news">
-        {{ range $i, $post := $posts }}
-          {{ $img := "" }}
-          {{ with findRESubmatch `<netstim-image data='([^']*)'` (string .RawContent) 1 }}{{ $img = transform.Unmarshal (htmlUnescape (index (index . 0) 1)) }}{{ end }}
-          {{ if eq $i 0 }}
-          <article class="home-news__lead">
-            {{ with $img }}<div class="home-news__image">{{ partial "picture.html" (merge . (dict "alt" "" "sizes" "(max-width: 767px) 100vw, 640px")) }}</div>{{ end }}
-            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
-            <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-          </article>
-          <ol class="home-news__rows">
-          {{ else }}
-            <li class="home-news__row">
-              <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
-              <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-              {{ with $img }}<div class="home-news__thumb">{{ partial "picture.html" (merge . (dict "alt" "" "sizes" "120px")) }}</div>{{ end }}
-            </li>
-          {{ end }}
-        {{ end }}
-          </ol>
-      </div>
-    </div>
-  </section>
-
-  {{ with $p.team }}
-  <section class="home-section" aria-labelledby="team-h">
-    <div class="wrap">
-      <div class="home-team">
-        <div class="home-team__photo">{{ partial "picture.html" (dict "src" .image "alt" "The Netstim team on the steps in front of a university building" "width" 1536 "sizes" "(max-width: 767px) 100vw, 1280px") }}</div>
-        <div class="home-team__text">
-          <h2 id="team-h">{{ .title }}</h2>
-          <p>{{ .text }}</p>
-          <div class="btn-row">
-            <a class="btn" href="{{ partial "url.html" .primary.url }}">{{ .primary.label }}</a>
-            <a class="text-action" href="{{ partial "url.html" .secondary.url }}">{{ .secondary.label }} {{ $arrow }}</a>
+        <div class="section-head__title"><h2 id="covers-h">{{ .title }}</h2>{{ with .lede }}<p class="section-head__lede">{{ . }}</p>{{ end }}</div>
+        <div class="home-covers__actions">
+          {{ with .link }}<a class="text-action" href="{{ partial "url.html" .url }}">{{ .label }} {{ $arrow }}</a>{{ end }}
+          <div class="home-covers__nav" data-covers-nav hidden>
+            <button class="icon-button" type="button" data-covers-step="-1" aria-label="Earlier covers">{{ $arrow }}</button>
+            <button class="icon-button" type="button" data-covers-step="1" aria-label="More covers">{{ $arrow }}</button>
           </div>
         </div>
       </div>
     </div>
+    <div class="home-covers__scroller" data-covers-scroller>
+      <ul class="home-covers__track gallery" aria-label="Journal covers">
+        {{ range $i, $c := hugo.Data.covers }}
+        <li><a href="{{ $c.full | relURL }}" data-lightbox aria-label="{{ $c.title }}">{{ partial "picture.html" (dict "src" $c.image "alt" "" "width" 360 "sizes" "(max-width: 767px) 160px, 230px" "original" $c.full) }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
   </section>
   {{ end }}
 
+  {{- /* News beside the book. Each headline shows its post's own picture (the first one in the post), small,
+         at the right end; a post without a picture is the date and the headline alone. */ -}}
+  <section class="home-section" aria-label="News and the book">
+    <div class="wrap home-split">
+      {{ with $p.news }}
+      <div class="home-news">
+        <div class="section-head">
+          <div class="section-head__title"><h2 id="news-h">{{ .title }}</h2>{{ with .lede }}<p class="section-head__lede">{{ . }}</p>{{ end }}</div>
+          {{ with .link }}<a class="text-action" href="{{ partial "url.html" .url }}">{{ .label }} {{ $arrow }}</a>{{ end }}
+        </div>
+        <ol class="news-list" aria-labelledby="news-h">
+          {{ range first (.count | default 4) (where site.RegularPages "Section" "posts").ByDate.Reverse }}
+          {{ $img := "" }}
+          {{ with findRESubmatch `<netstim-image data='([^']*)'` (string .RawContent) 1 }}{{ $img = transform.Unmarshal (htmlUnescape (index (index . 0) 1)) }}{{ end }}
+          <li>
+            <div class="news-list__text">
+              <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+              <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            </div>
+            {{ with $img }}<span class="news-list__picture">{{ partial "picture.html" (dict "src" .src "alt" "" "width" 360 "sizes" "(max-width: 767px) 88px, 112px" "original" .original) }}</span>{{ end }}
+          </li>
+          {{ end }}
+        </ol>
+      </div>
+      {{ end }}
+      {{ with $p.book }}{{ partial "book-section.html" . }}{{ end }}
+    </div>
+  </section>
+
   {{ with $p.community }}
-  <section class="home-section" aria-labelledby="community-h">
+  <section class="home-section home-section--tinted" aria-labelledby="community-h">
     <div class="wrap">
-      <div class="section-head"><h2 id="community-h">Community</h2></div>
-      <ul class="card-grid card-grid--2">
-        {{ range . }}{{ $href := partial "url.html" .url }}{{ $ext := hasPrefix $href "http" }}
-        <li><a class="community-card" href="{{ $href }}"{{ if $ext }} rel="noopener"{{ end }}>
-          <span class="community-card__art community-card__art--{{ .ground }}">{{ partial "picture.html" (dict "src" .image "alt" "" "width" 1200 "sizes" "(max-width: 767px) 100vw, 600px") }}</span>
-          <span class="media-card__title">{{ .title }}</span>
-          <span class="media-card__text">{{ .text }}</span>
-          <span class="community-card__go">{{ .label }}{{ if $ext }}{{ partial "icon.html" "external" }}{{ else }}{{ $arrow }}{{ end }}</span>
+      <div class="section-head"><div class="section-head__title"><h2 id="community-h">{{ .title }}</h2>{{ with .lede }}<p class="section-head__lede">{{ . }}</p>{{ end }}</div>
+        {{ with .link }}<a class="text-action" href="{{ partial "url.html" .url }}">{{ .label }} {{ $arrow }}</a>{{ end }}
+      </div>
+      <ul class="community-list">
+        {{ range where (site.GetPage "/community").Params.cards "home" "!=" false }}{{ $href := partial "url.html" .url }}{{ $ext := hasPrefix $href "http" }}
+        <li><a class="community-item" href="{{ $href }}"{{ if $ext }} rel="noopener"{{ end }}>
+          {{ if .image }}<span class="community-item__art community-item__art--{{ .ground | default "plate" }}">{{ partial "picture.html" (dict "src" .image "alt" "" "width" 1200 "sizes" "(max-width: 767px) 100vw, 600px") }}</span>{{ end }}
+          <span class="community-item__title">{{ .title }}{{ if $ext }}<span class="sr-only"> (another site)</span>{{ partial "icon.html" "external" }}{{ else }}{{ $arrow }}{{ end }}</span>
+          <span class="community-item__text">{{ .text }}</span>
         </a></li>
         {{ end }}
       </ul>
@@ -129,15 +147,68 @@
   {{ end }}
 
   {{ with $p.funding }}
+  {{- /* Funders, centered and quiet: a small line, the current funders' logos, a second small line and the
+         past funders' logos smaller and lighter. No boxes. Every logo is drawn in one tone (gray; white in
+         the dark theme) and takes its own colors under the pointer or keyboard focus. `width` in the front
+         matter is a logo's width on screen in px, set per logo so that heavy and light marks carry the same
+         optical weight; `shaded: true` keeps a filled seal in its own shades of gray; `name` is set beside
+         a logo that does not spell the name out. Use the funder's own file; never draw a logo. */ -}}
   <section class="home-section home-funding" aria-labelledby="funding-h">
     <div class="wrap">
-      <h2 id="funding-h" class="sr-only">Funding</h2>
-      <p class="home-funding__text">{{ .text }} <a href="{{ partial "url.html" .link.url }}">{{ .link.label }}</a></p>
-      <ul class="logo-band">
-        {{ range .logos }}<li>{{ partial "picture.html" (dict "src" .src "alt" (.alt | default "") "width" .width "sizes" "200px" "original" .original) }}</li>{{ end }}
+      <h2 class="funders__label" id="funding-h">{{ .title }}</h2>
+      <ul class="funders">
+        {{ range .current }}
+        <li><a class="funder{{ if .shaded }} funder--shaded{{ end }}" href="{{ .url }}" rel="noopener"{{ if and .src (not .name) }} title="{{ .alt }}"{{ end }}>
+          {{- if .src }}<span class="funder__logo">{{ partial "picture.html" (dict "src" .src "alt" (cond (not .name) .alt "") "width" .width "sizes" (printf "%dpx" (int .width)) "original" .original) }}</span>{{ end -}}
+          {{- with .name }}<span class="funder__name">{{ . }}</span>{{ end -}}
+        </a></li>
+        {{ end }}
       </ul>
+      {{ with .past }}
+      <h3 class="funders__label" id="funding-past-h">{{ $p.funding.past_title }}</h3>
+      <ul class="funders funders--past" aria-labelledby="funding-past-h">
+        {{ range . }}
+        <li><a class="funder{{ if .shaded }} funder--shaded{{ end }}" href="{{ .url }}" rel="noopener"{{ if .src }} title="{{ .alt }}"{{ end }}>
+          {{- if .src }}<span class="funder__logo">{{ partial "picture.html" (dict "src" .src "alt" .alt "width" .width "sizes" (printf "%dpx" (int .width)) "original" .original) }}</span>{{ else }}<span class="funder__name">{{ .name }}</span>{{ end -}}
+        </a></li>
+        {{ end }}
+      </ul>
+      {{ end }}
     </div>
   </section>
   {{ end }}
 </main>
+{{ if $p.covers }}
+  {{ $covers := resources.Get "js/home-covers.js" | js.Build (dict "targetPath" "js/home-covers.js" "minify" true) | fingerprint }}
+  <script type="module" src="{{ $covers.RelPermalink }}" integrity="{{ $covers.Data.Integrity }}"></script>
+{{ end }}
+{{ end }}
+
+{{- /* The pictures of the opening: one frame whose photos lie on top of one another, the first one shown;
+       in the duet layout also the silent loop (muted, inline, no sound track; its still is the poster, and
+       `start` is the second of the video that the still shows, so playing begins where the still stands),
+       which assets/js/main/banner.js starts; and the button that stops and starts both. */ -}}
+{{ define "_partials/inline/home-banner.html" }}
+{{- $many := gt (len .slides) 1 -}}
+<div class="home-banner" data-banner>
+  <div class="home-frame"{{ if $many }} data-banner-tile{{ end }}>
+    {{- range $i, $ph := .slides -}}
+    <div class="home-frame__slide{{ range split ($ph.focus | default "") " " }}{{ with . }} home-frame__slide--{{ . }}{{ end }}{{ end }}{{ if not $i }} is-on{{ end }}"{{ if $many }} data-banner-slide{{ end }}{{ if $i }} hidden{{ end }}>{{ partial "picture.html" (dict "src" $ph.image "alt" $ph.alt "width" 1200 "sizes" $.sizes "eager" (not $i)) }}</div>
+    {{- end -}}
+  </div>
+  {{ with .loop }}
+  {{- $video := resources.Get .video -}}
+  {{- if not $video }}{{ errorf "home: no video %q in assets/" .video }}{{ end -}}
+  {{- $still := resources.Get .image -}}
+  {{- if not $still }}{{ errorf "home: the loop %q needs a still (hero.loop.image)" .video }}{{ end -}}
+  {{- $poster := $still.Resize "900x webp q84" -}}
+  <div class="home-loop"><video src="{{ $video.RelPermalink }}{{ with .start }}#t={{ . }}{{ end }}" poster="{{ $poster.RelPermalink }}" width="{{ $poster.Width }}" height="{{ $poster.Height }}" muted loop playsinline preload="none" aria-label="{{ .alt }}" data-banner-video></video></div>
+  {{ end }}
+  {{ if or $many .loop }}
+  <button class="home-banner__toggle" type="button" data-banner-toggle data-pause="Pause the changing pictures" data-play="Play the changing pictures" aria-label="Pause the changing pictures" hidden>
+    <svg class="i-pause" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M7 5h3.5v14H7zm6.5 0H17v14h-3.5z"/></svg>
+    <svg class="i-play" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8.5 5v14l11-7z"/></svg>
+  </button>
+  {{ end }}
+</div>
 {{ end }}

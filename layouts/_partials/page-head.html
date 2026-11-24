@@ -1,25 +1,20 @@
-{{- /* An inner page's head, on the page's own ground (the old grey title band is gone): the breadcrumb,
-       the title, a post's date, and the sibling pages the old sidebar listed, as one row of links. */ -}}
-<header class="page-head{{ if .Params.book3d }} page-head--book{{ end }}">
+{{- /* An inner page's head: the title, its lead, a post's date and, on a page deeper down, the
+       breadcrumb of its parents (front matter `crumbs:`). `also:` is one quiet sentence of links to
+       neighbouring pages (Markdown; Publications names Posters and Talks there). On a reading page
+       (front matter `article: true`, and every post) the head sits over the centered reading column. */ -}}
+{{ $reading := or .Params.article (eq .Params.family "post") }}
+<header class="page-head{{ if $reading }} page-head--reading{{ end }}">
   <div class="wrap">
-    {{ with .Params.crumbs }}{{ if gt (len .) 1 }}
+    {{ with .Params.crumbs }}{{ if gt (len .) 2 }}
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <ol>
-          {{ range . }}<li>{{ if .url }}<a href="{{ partial "url.html" .url }}">{{ .title }}</a>{{ else }}<span aria-current="page">{{ .title }}</span>{{ end }}</li>{{ end }}
+          {{ $last := sub (len .) 1 }}{{ range $i, $c := . }}<li>{{ if $c.url }}<a href="{{ partial "url.html" $c.url }}">{{ $c.title }}</a>{{ else }}<span{{ if eq $i $last }} aria-current="page"{{ end }}>{{ $c.title }}</span>{{ end }}</li>{{ end }}
         </ol>
       </nav>
     {{ end }}{{ end }}
+    {{ if eq .Params.family "post" }}<p class="page-head__meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time></p>{{ end }}
     <h1>{{ .Title }}</h1>
     {{ with .Params.lead }}<p class="page-lead">{{ . }}</p>{{ end }}
-    {{ if eq .Params.family "post" }}<p class="page-head__meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time></p>{{ end }}
-    {{ if .Params.book3d }}{{ partial "book3d.html" . }}{{ end }}
-    {{ with .Params.related }}
-      <nav class="section-nav" aria-label="In this section">
-        <ul>{{ range . }}
-          {{ $href := partial "url.html" .url }}
-          <li><a href="{{ $href }}"{{ if eq $href $.RelPermalink }} aria-current="page"{{ end }}>{{ .title }}</a></li>
-        {{ end }}</ul>
-      </nav>
-    {{ end }}
+    {{ with .Params.also }}<p class="page-also">{{ partial "url.html" (string ($.RenderString .)) | safeHTML }}</p>{{ end }}
   </div>
 </header>

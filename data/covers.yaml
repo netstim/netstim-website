@@ -1,0 +1,61 @@
+# Journal covers made by the lab, newest first: the strip on Home (layouts/home.html). `title` is the journal
+# and issue (it names the cover for screen readers and is the caption in the image viewer), `image` is in
+# assets/media/, `full` is the large original under static/ that opens on click. Add a new cover at the top.
+
+- title: "Annals of Neurology, November 2026"
+  image: media/cdc557cd7d63-AoN_Luo.png
+  full: wp-content/uploads/2026/10/AoN_Luo-783x1030.png
+- title: "Biological Psychiatry, 2026"
+  image: media/80f168c6667e-BPS_small.png
+  full: wp-content/uploads/2026/01/BPS_small.png
+- title: "Nature Neuroscience, Volume 27, Issue 3, March 2024"
+  image: media/1f54996ed175-twitter_GIFXpcJWUAAe5LD.jpg
+  full: wp-content/uploads/2024/02/twitter_GIFXpcJWUAAe5LD.jpg
+- title: "Australian & New Zealand Journal of Psychiatry, Volume 56, Number 5, May 2022"
+  image: media/abc096aed12d-Screen-Shot-2022-05-20-at-8.24.35-AM.png
+  full: wp-content/uploads/2022/05/Screen-Shot-2022-05-20-at-8.24.35-AM-777x1030.png
+- title: "Annals of Neurology, Volume 91, Number 5, May 2022"
+  image: media/58b1fb73b1db-Screen-Shot-2022-04-17-at-2.27.26-PM.png
+  full: wp-content/uploads/2022/04/Screen-Shot-2022-04-17-at-2.27.26-PM-801x1030.png
+- title: "NeuroImage, Volume 221"
+  image: media/fffb634541d4-NI_2020b.png
+  full: wp-content/uploads/2020/12/NI_2020b-792x1030.png
+- title: "NeuroImage, Volume 224"
+  image: media/3e3bebe7fbb4-NI_2020c.png
+  full: wp-content/uploads/2020/12/NI_2020c-772x1030.png
+- title: "NeuroImage, Volume 219"
+  image: media/6d27467a0117-Coverart_NI_2020_Treu_et_al.png
+  full: wp-content/uploads/2020/09/Coverart_NI_2020_Treu_et_al-769x1030.png
+- title: "Annals of Neurology, Volume 87, Issue 6"
+  image: media/1389619eca96-Bildschirmfoto-2020-05-21-um-18.18.28.png
+  full: wp-content/uploads/2020/05/Bildschirmfoto-2020-05-21-um-18.18.28-790x1030.png
+- title: "Brain, Volume 142, Issue 10"
+  image: media/1248dda95d07-IMG_5825.png
+  full: wp-content/uploads/2019/09/IMG_5825.png
+- title: "Neurology, Volume 92, Number 14"
+  image: media/c00d4b62961b-92.14-Apr-2.png
+  full: wp-content/uploads/2019/04/92.14-Apr-2-781x1030.png
+- title: "Biological Psychiatry, Volume 85, Issue 9"
+  image: media/f767bfdbfa72-S0006322318X00092.png
+  full: wp-content/uploads/2019/04/S0006322318X00092-753x1030.png
+- title: "Annals of Neurology, Volume 84, Number 4"
+  image: media/3943237f1e12-2018-Annals_of_Neurology-1.png
+  full: wp-content/uploads/2018/11/2018-Annals_of_Neurology-1-783x1030.png
+- title: "Biological Psychiatry, Volume 84, Issue 1"
+  image: media/225d0cc8e013-Weigand_et_al_BPS_cover.jpg
+  full: wp-content/uploads/2018/06/Weigand_et_al_BPS_cover.jpg
+- title: "Clinical Neurophysiology, Volume 129"
+  image: media/48ec5654e20e-A0EB8F00-EE7D-4E84-AF37-EDABCA068828-10244-000007D3ADD69C7A_tmp.png
+  full: wp-content/uploads/2018/03/A0EB8F00-EE7D-4E84-AF37-EDABCA068828-10244-000007D3ADD69C7A_tmp.png
+- title: "NeuroImage, Volume 150"
+  image: media/a25efc7b35a1-ni_cover.png
+  full: wp-content/uploads/2018/01/ni_cover.png
+- title: "NeuroImage, Volume 107"
+  image: media/8f770ed4a151-neuroimage_coverart_horn_lead_dbs_2015-1.png
+  full: wp-content/uploads/2017/12/neuroimage_coverart_horn_lead_dbs_2015-1-766x1030.png
+- title: "Neurology, Volume 87, Number 17"
+  image: media/3242f73c7371-neurology_10_16_lead_dbs-1.png
+  full: wp-content/uploads/2017/12/neurology_10_16_lead_dbs-1-811x1030.png
+- title: "Perspektiven Neurologie"
+  image: media/3756cb2ab55b-perspektiven_neurologie_cover-1.jpg
+  full: wp-content/uploads/2017/12/perspektiven_neurologie_cover-1-749x1030.jpg

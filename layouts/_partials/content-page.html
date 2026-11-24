@@ -3,7 +3,9 @@
   {{ if eq .Params.family "people" }}{{ partial "people-page.html" . }}
   {{ else if eq .Params.family "posters" }}{{ partial "posters-page.html" . }}
   {{ else if eq .Params.family "research" }}{{ partial "research-page.html" . }}
-  {{ else if hasPrefix .RelPermalink ("blog/" | relURL) }}
+  {{ else if eq .Params.family "community" }}{{ partial "community-page.html" . }}
+  {{ else if in (slice "book" "stimu-latte" "jobs") .Params.family }}{{ partial (printf "%s-page.html" .Params.family) . }}
+  {{ else if eq .RelPermalink ("news/" | relURL) }}
     {{ $all := (where site.RegularPages "Section" "posts").ByDate.Reverse }}
     {{ $n := 1 }}{{ with findRESubmatch `/page/(\d+)/` .RelPermalink 1 }}{{ $n = int (index (index . 0) 1) }}{{ end }}
     {{ $posts := cond (eq $n 1) $all (first 10 (after (mul (sub $n 1) 10) $all)) }}
@@ -12,7 +14,6 @@
   {{ $sections := .Params.sections }}
   {{ $family := .Params.family }}
   {{ if in (slice "videos") $family }}{{ $sections = index hugo.Data $family }}{{ end }}
-  {{ if eq $family "events" }}{{ $sections = index hugo.Data.events .Params.url }}{{ end }}
   {{ if not $sections }}{{ $sections = slice (dict "rendered" .Content) }}{{ end }}
   {{ range $i, $s := $sections }}
     {{ with $s }}
@@ -34,10 +35,5 @@
     {{ end }}
   {{ end }}
   {{ end }}
-  {{ if eq .Params.family "about" }}{{ with site.Home.Params.funding }}
-    <div class="wrap about-logos"><ul class="logo-band" aria-label="Funders">
-      {{ range .logos }}<li>{{ partial "picture.html" (dict "src" .src "alt" (.alt | default "") "width" .width "sizes" "200px" "original" .original) }}</li>{{ end }}
-    </ul></div>
-  {{ end }}{{ end }}
   {{ if .Params.comment_anchor }}<span id="respond"></span>{{ end }}
 </main>

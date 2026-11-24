@@ -1,0 +1,12 @@
+{{- /* {{< research-steps >}} in a subject page's text: the page's `steps:` (front matter) as a row of
+       pictures, each with a title and one or two sentences (title, text, image, alt). Three in a row from
+       768px, stacked on a phone. */ -}}
+<ol class="topic-steps">
+  {{ range .Page.Params.steps }}
+  <li>
+    <div class="topic-steps__frame">{{ partial "picture.html" (dict "src" .image "alt" (.alt | default "") "width" 800 "sizes" "(max-width: 767px) calc(100vw - 40px), 410px") }}</div>
+    <h2>{{ .title }}</h2>
+    <p>{{ .text | markdownify }}</p>
+  </li>
+  {{ end }}
+</ol>

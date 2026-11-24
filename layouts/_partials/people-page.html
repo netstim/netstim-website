@@ -1,83 +1,74 @@
-{{- /* The Team page (data/people.yaml).
-       1. The current members: one grid of portrait cards (4:5, black and white, name only), in the source's
-          order. A card opens the person's sheet (assets/js/main/people.js): the photo grows from the card into
-          the sheet's head, beside the name and actions; then the text in one reading column; then the
-          profile links as rows. Each sheet has its own address (#andreas-horn): Back closes it, a shared link
-          opens it.
-       2. The alumni, from the same data: a denser grid of the same portraits, each name with its profile
-          links in words. */ -}}
-{{ $sections := hugo.Data.people }}
-{{ $people := slice }}{{ $alumni := slice }}
-{{ range $sections }}
-  {{ $body := .body }}
-  {{ if in $body "column-1-5" }}
-    {{- /* the alumni: one column per person: name, photo, profile icons */}}
-    {{ range after 1 (split $body `<div class="column column-1-5">`) }}
-      {{ $col := . }}
-      {{ with findRESubmatch `<h2>(.*?)</h2>` $col 1 }}
-        {{ $name := plainify (index (index . 0) 1) }}
-        {{ $img := "" }}{{ with findRESubmatch `<netstim-image data='([^']*)'` $col 1 }}{{ $img = transform.Unmarshal (htmlUnescape (index (index . 0) 1)) }}{{ end }}
-        {{ $links := slice }}
-        {{ range findRESubmatch `<a aria-label="([^"]+)" class="icon-link[^"]*"[^>]*href="([^"]+)"` $col -1 }}
-          {{ $href := htmlUnescape (index . 2) }}
-          {{ $links = $links | append (dict "label" (partial "link-label.html" $href) "href" $href) }}
-        {{ end }}
-        {{ $alumni = $alumni | append (dict "name" $name "img" $img "links" $links) }}
-      {{ end }}
-    {{ end }}
-  {{ else if eq .mode "wide" }}
-  {{ with findRESubmatch `<h2>(.*?)</h2>` $body 1 }}
-    {{ $heading := index (index . 0) 0 }}
-    {{ $name := plainify (index (index . 0) 1) }}
-    {{ $img := "" }}{{ $credit := "" }}
-    {{ with findRESubmatch `<netstim-image data='([^']*)'` $body 1 }}{{ $img = transform.Unmarshal (htmlUnescape (index (index . 0) 1)) }}{{ end }}
-    {{ with findRESubmatch `(?s)<small class="attribution">(.*?)</small>` $body 1 }}{{ $credit = index (index . 0) 1 }}{{ end }}
-    {{ $text := replace $body $heading "" 1 }}
-    {{ $text = replaceRE `(?s)<div class="image-block"><netstim-image[^>]*/>(?:<small[^>]*>.*?</small>)?</div>` "" $text }}
-    {{- /* a line break used as a paragraph break becomes a paragraph */}}
-    {{ $text = replaceRE `<br\s*/?>\s*` "</p><p>" $text }}
-    {{ $links := slice }}
-    {{ range findRESubmatch `<a aria-label="([^"]+)" class="icon-link[^"]*"[^>]*href="([^"]+)"` $text -1 }}
-      {{ $href := htmlUnescape (index . 2) }}
-      {{ $links = $links | append (dict "label" (partial "link-label.html" $href) "href" $href) }}
-    {{ end }}
-    {{ $text = replaceRE `(?s)<article class="icon-box">.*?</article>` "" $text }}
-    {{ $actions := findRE `(?s)<div class="action-row[^"]*">.*?</div>` $text }}
-    {{ range $actions }}{{ $text = replace $text . "" }}{{ end }}
-    {{ $people = $people | append (dict "name" $name "id" (anchorize $name) "img" $img "credit" (replace $credit "©" "© ") "text" $text "links" $links "actions" $actions) }}
-  {{ end }}
-  {{ end }}
-{{ end }}
+{{- /* The People page (data/people.yaml, one entry per person).
+       1. The head of the lab (the first current member) as a wider row: the portrait in the first column of
+          the grid, beside it the name, the role, the first paragraph of the biography and the main links.
+       2. The other current members: a grid of portrait cards (4:5, black and white), the name and the role
+          under each, in the data's order. A card (and the head's portrait) opens that person in a centred
+          dialog (assets/js/main/people.js): the photo on the left, the name, role, biography and profile
+          links beside it; on a phone they stack. Each dialog has its own address (#andreas-horn): Back
+          closes it, a shared link opens it.
+       3. "Interested in joining?": a soft-gray panel with the group photo (front matter `group_photo`), one
+          line and the link to Jobs.
+       4. The alumni: the same portraits, smaller, each name with "now at" and its profile links.
+       A person without a photo gets the same frame with their initials. */ -}}
+{{ $team := where hugo.Data.people "status" "current" }}
+{{ $alumni := where hugo.Data.people "status" "alumni" }}
+{{ $lead := index $team 0 }}
 <div class="wrap page-body">
+  {{ with $lead }}{{ $id := anchorize .name }}
+  <section class="person-feature" aria-labelledby="lead-name">
+    <button type="button" class="person-card person-feature__photo" data-person="person-{{ $id }}" data-slug="{{ $id }}" aria-haspopup="dialog" aria-label="More about {{ .name }}">
+      <span class="portrait-frame" data-morph>{{ partial "picture.html" (dict "src" (printf "media/%s" .photo) "alt" "" "sizes" "(max-width: 767px) 45vw, 300px") }}</span>
+    </button>
+    <div class="person-feature__text">
+      <h2 id="lead-name">{{ .name }}</h2>
+      {{ with .role }}<p class="person-feature__role">{{ . }}</p>{{ end }}
+      {{ with .bio }}<div class="person-feature__bio">{{ $.RenderString (dict "display" "block") (index (split . "\n\n") 0) }}</div>{{ end }}
+      <ul class="person-links">
+        {{ with .page }}<li><a href="{{ partial "url.html" . }}">Full profile</a></li>{{ end }}
+        {{ range first 3 (partial "people-links.html" .links) }}<li><a href="{{ .href }}"{{ if .external }} rel="noopener" target="_blank"{{ end }}>{{ .label }}{{ if .external }}{{ partial "icon.html" "external" }}{{ end }}</a></li>{{ end }}
+      </ul>
+    </div>
+  </section>
+  {{ end }}
   <ul class="people-grid" aria-label="Current members">
-  {{ range $people }}
-    <li><button type="button" class="person-card" data-person="person-{{ .id }}" data-slug="{{ .id }}" aria-haspopup="dialog">
-      {{ if .img }}<span class="portrait-frame" data-morph>{{ partial "picture.html" (merge .img (dict "alt" "" "sizes" "(max-width: 639px) 45vw, 300px")) }}</span>
-      {{ else }}<span class="portrait-frame portrait-frame--initials" aria-hidden="true"><span>{{ partial "initials.html" .name }}</span></span>{{ end }}
+  {{ range after 1 $team }}{{ $id := anchorize .name }}
+    <li><button type="button" class="person-card" data-person="person-{{ $id }}" data-slug="{{ $id }}" aria-haspopup="dialog">
+      {{ if .photo }}<span class="portrait-frame" data-morph>{{ partial "picture.html" (dict "src" (printf "media/%s" .photo) "alt" "" "sizes" "(max-width: 767px) 45vw, 300px") }}</span>
+      {{ else }}<span class="portrait-frame portrait-frame--empty" aria-hidden="true">{{ $w := split .name " " }}{{ upper (printf "%s%s" (substr (index $w 0) 0 1) (substr (index $w (sub (len $w) 1)) 0 1)) }}</span>{{ end }}
       <span class="person-card__name">{{ .name }}</span>
+      {{ with .role }}<span class="person-card__role">{{ . }}</span>{{ end }}
     </button></li>
   {{ end }}
   </ul>
-  {{ range $people }}{{ $person := . }}
-  <dialog class="person-sheet" id="person-{{ .id }}" aria-labelledby="person-{{ .id }}-name" tabindex="-1">
-    <div class="person-sheet__bar">
-      <span class="person-sheet__bar-name" aria-hidden="true">{{ .name }}</span>
-      <form method="dialog" class="person-sheet__close"><button class="icon-button" aria-label="Close">{{ partial "icon.html" "close" }}</button></form>
+  <section class="people-join" aria-labelledby="join-h">
+    {{ with $.Params.group_photo }}<div class="people-join__photo">{{ partial "picture.html" (dict "src" .src "alt" .alt "width" 1536 "sizes" "(max-width: 767px) 100vw, 760px") }}</div>{{ end }}
+    <div class="people-join__text">
+      <h2 id="join-h">Interested in joining?</h2>
+      <p>We are always open to applications, also from people who bring their own grant or fellowship.</p>
+      <a class="text-action" href="{{ "jobs/" | relURL }}">Open positions {{ partial "icon.html" "arrow" }}</a>
+      {{ with $.Params.group_photo.credit }}<p class="people-join__credit">Photo: {{ . }}</p>{{ end }}
     </div>
-    <div class="person-sheet__head{{ if not .img }} person-sheet__head--text{{ end }}">
-      {{ with .img }}<span class="portrait-frame" data-morph>{{ partial "picture.html" (merge . (dict "alt" (printf "Portrait of %s" $person.name) "sizes" "(max-width: 767px) 50vw, 240px")) }}</span>{{ end }}
-      <div class="person-sheet__intro">
-        <h2 id="person-{{ .id }}-name">{{ .name }}</h2>
-        {{ with .actions }}<div class="person-sheet__actions">{{ partial "render.html" (delimit . "") }}</div>{{ end }}
-      </div>
+  </section>
+  {{ range $team }}{{ $person := . }}{{ $id := anchorize .name }}
+  <dialog class="person-modal{{ if not .photo }} person-modal--text{{ end }}" id="person-{{ $id }}" aria-labelledby="person-{{ $id }}-name" tabindex="-1">
+    <form method="dialog" class="person-modal__close"><button class="icon-button" aria-label="Close">{{ partial "icon.html" "close" }}</button></form>
+    {{ with .photo }}
+    <div class="person-modal__photo">
+      <span class="portrait-frame" data-morph>{{ partial "picture.html" (dict "src" (printf "media/%s" .) "alt" (printf "Portrait of %s" $person.name) "sizes" "(max-width: 767px) 90vw, 420px") }}</span>
     </div>
-    <div class="person-sheet__text prose">{{ partial "render.html" .text }}</div>
-    {{ with .links }}
-    <ul class="person-sheet__links" aria-label="Profiles">
-      {{ range . }}<li><a href="{{ .href }}" rel="noopener" target="_blank"><span>{{ .label }}</span>{{ partial "icon.html" "external" }}</a></li>{{ end }}
-    </ul>
     {{ end }}
-    {{ with .credit }}<p class="person-sheet__credit">Photo: {{ . | safeHTML }}</p>{{ end }}
+    <div class="person-modal__text">
+      <h2 id="person-{{ $id }}-name">{{ .name }}</h2>
+      {{ with .role }}<p class="person-modal__role">{{ . }}</p>{{ end }}
+      {{ with .bio }}<div class="person-modal__bio">{{ $.RenderString (dict "display" "block") . }}</div>{{ end }}
+      {{ with .page }}<p class="person-modal__more"><a class="text-action" href="{{ partial "url.html" . }}">Full profile {{ partial "icon.html" "arrow" }}</a></p>{{ end }}
+      {{ with partial "people-links.html" .links }}
+      <ul class="person-links" aria-label="Profiles">
+        {{ range . }}<li><a href="{{ .href }}"{{ if .external }} rel="noopener" target="_blank"{{ end }}>{{ .label }}{{ if .external }}{{ partial "icon.html" "external" }}{{ end }}</a></li>{{ end }}
+      </ul>
+      {{ end }}
+      {{ if .photo }}{{ with .photo_credit }}<p class="person-modal__credit">Photo: {{ . }}</p>{{ end }}{{ end }}
+    </div>
   </dialog>
   {{ end }}
 </div>
@@ -87,10 +78,11 @@
   <ul class="alumni-grid">
     {{ range . }}
     <li class="alumnus">
-      {{ if .img }}<span class="portrait-frame">{{ partial "picture.html" (merge .img (dict "alt" "" "sizes" "(max-width: 639px) 30vw, 180px")) }}</span>
-      {{ else }}<span class="portrait-frame portrait-frame--initials" aria-hidden="true"><span>{{ partial "initials.html" .name }}</span></span>{{ end }}
+      {{ if .photo }}<span class="portrait-frame">{{ partial "picture.html" (dict "src" (printf "media/%s" .photo) "alt" "" "sizes" "(max-width: 639px) 30vw, 180px") }}</span>
+      {{ else }}<span class="portrait-frame portrait-frame--empty" aria-hidden="true">{{ $w := split .name " " }}{{ upper (printf "%s%s" (substr (index $w 0) 0 1) (substr (index $w (sub (len $w) 1)) 0 1)) }}</span>{{ end }}
       <h3>{{ .name }}</h3>
-      {{ with .links }}<p class="alumnus__links">{{ range $i, $l := . }}{{ if $i }}<span aria-hidden="true"> · </span>{{ end }}<a href="{{ $l.href }}" rel="noopener" target="_blank">{{ $l.label }}</a>{{ end }}</p>{{ end }}
+      {{ with .now_at }}<p class="alumnus__now">Now at {{ . }}</p>{{ end }}
+      {{ with partial "people-links.html" .links }}<p class="alumnus__links">{{ range . }}<a href="{{ .href }}"{{ if .external }} rel="noopener" target="_blank"{{ end }}>{{ .label }}</a>{{ end }}</p>{{ end }}
     </li>
     {{ end }}
   </ul>

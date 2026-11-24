@@ -6,7 +6,7 @@ crumbs:
 - title: Home
   url: '@root@'
 - title: News
-  url: '@root@blog/'
+  url: '@root@news/'
 - title: Mapping the Dysfunctome (Hollunder et al., Nature Neuroscience 2024)
 sidebar: true
 wordpress_id: 2236
@@ -14,12 +14,11 @@ date: '2024-02-22T16:46:18+00:00'
 modified: '2024-06-11T16:09:49+00:00'
 author: andreashorn
 comment_anchor: true
-canonical: /mapping-the-dysfunctome-hollunder-et-al-nature-neuroscience-2024/
 ---
 
 <div class="columns"><div class="column column-1-1"><h2>Mapping the Dysfunctome</h2>
 <p>We are excited about a major new publication from the lab, that took us about four years to complete and involved a long list of dear co-authors and collaborators from centers, world-wide.</p>
-<p>See below for a list of resources around tis new paper:</p>
+<p>See below for a list of resources around this new paper:</p>
 
 <div class="action-row centered-action"><a aria-label="Read the paper at Nature Neuroscience" class="action external" href="https://www.nature.com/articles/s41593-024-01570-1#citeas" rel="noopener noreferrer" target="_blank">Read the paper at Nature Neuroscience</a></div></div></div>
 

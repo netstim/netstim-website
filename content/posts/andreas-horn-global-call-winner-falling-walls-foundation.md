@@ -6,7 +6,7 @@ crumbs:
 - title: Home
   url: '@root@'
 - title: News
-  url: '@root@blog/'
+  url: '@root@news/'
 - title: Andreas Horn ‘Global Call Winner’, Falling Walls Foundatio...
 sidebar: true
 wordpress_id: 2333
@@ -14,7 +14,6 @@ date: '2024-09-25T01:36:39+00:00'
 modified: '2024-09-25T01:46:25+00:00'
 author: andreashorn
 comment_anchor: true
-canonical: /andreas-horn-global-call-winner-falling-walls-foundation/
 ---
 
 <div class="columns"><div class="column column-1-1"><h2>Falling Walls Foundation</h2>

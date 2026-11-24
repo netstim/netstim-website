@@ -1,46 +1,134 @@
-/* Publications (content/research-interests--publications.md, layouts/_partials/bibliography.html).
-   The journal covers as a wall, six across, each cover with a little lift; then the list by year as on News:
-   a large year numeral beside its rows, title in ink, authors and journal under it, a filter on top. */
-.family-publications .covers-title { font-size: var(--t-h2); margin-bottom: 32px; }
-.family-publications .gallery { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 40px 32px; max-width: none; }
-.family-publications .gallery a { align-content: start; border-radius: 4px; overflow: visible; }
-.family-publications .gallery img { aspect-ratio: 3 / 4; object-fit: cover; border-radius: 4px; box-shadow: 0 1px 2px rgb(0 0 0 / .08), 0 14px 28px -14px rgb(0 0 0 / .4); transition: transform 400ms cubic-bezier(.2, .65, .3, 1); }
-@media (hover: hover) {
-  .family-publications .gallery a:hover img { transform: translateY(-6px); }
-}
-.bibliography { margin-top: var(--section); padding-top: 48px; border-top: 1px solid var(--line); max-width: none; }
-.bibliography__head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 16px 32px; }
-.bibliography__head h2 { font-size: var(--t-h2); }
-.bib-filter { position: relative; display: flex; align-items: center; width: min(100%, 420px); }
-.bib-filter svg { position: absolute; left: 14px; color: var(--muted); pointer-events: none; }
-.bib-filter input { width: 100%; min-height: 48px; padding: 0 16px 0 44px; border: 1px solid var(--line-strong); border-radius: 999px; background: var(--bg); color: var(--ink); font: inherit; font-size: 16px; }
-.bib-filter input:focus { outline: none; border-color: var(--ink); }
-.bib-count { margin: 16px 0 32px; color: var(--muted); font-size: 14px; }
-.pub-year { display: grid; grid-template-columns: 240px minmax(0, 1fr); border-top: 1px solid var(--line-strong); }
-.pub-year__label { position: sticky; top: calc(var(--nav) + 20px); align-self: start; padding: 20px 0 24px; font-size: 56px; font-weight: 400; line-height: 1; letter-spacing: -.05em; font-variant-numeric: tabular-nums; }
-.pub-year:last-of-type .pub-year__label { font-size: 28px; letter-spacing: -.03em; }
-.pub-rows { list-style: none; margin: 0; padding: 0 0 32px; }
-.pub-row { padding: 20px 0; scroll-margin-top: calc(var(--nav) + 24px); }
-.pub-row + .pub-row { border-top: 1px solid var(--line); }
-.pub-row h4 { font-size: 18px; font-weight: 500; line-height: 1.35; letter-spacing: -.015em; text-wrap: pretty; }
-.pub-row__ext svg { display: inline-block; width: 14px; height: 14px; margin-left: 4px; vertical-align: -1px; color: var(--muted); }
-.pub-row h4:not(:has(a)) { color: var(--muted); }
+/* Publications (content/publications.md, layouts/_partials/bibliography.html).
+   One list in two parts on one grid: a narrow column at the left (the picture, the year, the journal)
+   and the paper at the right, so every title on the page starts on the same line.
+   Selected papers: a row each, the picture at the left, the title large, its capitals on the top of the
+   picture (as the titles beside the plates on Research).
+   All papers: one row per year that opens and closes; a paper is the journal at the left, the title in
+   ink and the authors in gray. Above the years one row of two plain fields (a filter box, the topics as
+   a native select). On a phone everything is one column: the first five selected papers and a "Show 4
+   more" button, the topics beside the "All papers" heading and the filter box under them. */
+.bib-selected, .bibliography { --side: 240px; --gap: 48px; max-width: none; }
+.bib-head, .sel-paper, .pub-year > summary, .pub-row { display: grid; grid-template-columns: var(--side) minmax(0, 1fr); column-gap: var(--gap); }
+.bib-head { align-items: center; min-height: 44px; margin-bottom: 28px; }
+.bib-head h2 { margin: 0; font-size: clamp(22px, 1vw + 15px, 28px); font-weight: 450; line-height: 1.2; letter-spacing: -.022em; }
+.bib-head > * + * { margin-top: 0; }
+.pub-member { color: var(--ink); }
+.pub-journal { font-style: italic; }
+/* Selected papers (data/selected_papers.yaml): every picture in one 3:2 frame. The whole row opens the paper. */
+.bib-selected { margin-bottom: 104px; }
+.bib-jump { justify-self: end; font-size: 15px; line-height: 1.5; }
+.bib-jump a { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; color: var(--ink); text-decoration: none; }
+.sel-list { list-style: none; display: grid; row-gap: 32px; margin: 0; padding: 0; }
+.sel-paper { position: relative; align-items: start; }
+.sel-paper__figure { display: block; overflow: hidden; aspect-ratio: 3 / 2; border-radius: var(--r-md); background: var(--surface); }
+.sel-paper__figure img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
+/* a journal cover is shown whole, as the sheet it is */
+.sel-paper__figure--whole img { padding: 10px 0; object-fit: contain; }
+/* a drawing on white takes the frame's ground; the dark theme turns a flat one around */
+.sel-paper__figure--drawing img { mix-blend-mode: multiply; }
+[data-theme="dark"] .sel-paper__figure img { filter: brightness(.88); }
+[data-theme="dark"] .sel-paper__figure--drawing img { filter: invert(.915) hue-rotate(180deg); mix-blend-mode: lighten; }
+.sel-paper__text { max-width: 45rem; }
+.sel-paper h3 { margin: -.27em 0 0; font-size: clamp(20px, .7vw + 14px, 24px); font-weight: 500; line-height: 1.3; letter-spacing: -.018em; text-wrap: balance; }
+.sel-paper h3 a { color: var(--ink); text-decoration: none; }
+.sel-paper h3 a::after { content: ""; position: absolute; inset: 0; }
+.sel-paper__by, .sel-paper__venue { color: var(--muted); font-size: 15px; line-height: 1.5; }
+.sel-paper h3 + .sel-paper__by { margin-top: 10px; text-wrap: balance; }
+.sel-paper__by + .sel-paper__venue { margin-top: 2px; }
+.sel-paper:active { opacity: .7; }
+.sel-more { display: none; }
+/* All papers: the heading, and in the papers' column the filter box, the topics and the count */
+.bib-tools { display: flex; align-items: center; gap: 12px; }
+.bib-filter, .bib-topic { position: relative; display: flex; align-items: center; }
+.bib-filter { flex: 0 1 340px; }
+.bib-filter svg, .bib-topic svg { position: absolute; width: 18px; height: 18px; color: var(--muted); pointer-events: none; }
+.bib-filter svg { left: 12px; }
+.bib-topic svg { right: 12px; }
+.bib-filter input, .bib-topic select { width: 100%; min-height: 44px; border: 1px solid var(--line-strong); border-radius: var(--r-sm); background: var(--bg); color: var(--ink); font: inherit; font-size: 16px; }
+.bib-filter input { padding: 0 12px 0 38px; }
+.bib-filter input:placeholder-shown { text-overflow: ellipsis; }
+.bib-filter input::placeholder { color: var(--muted); opacity: 1; }
+.bib-topic select { appearance: none; padding: 0 40px 0 14px; cursor: pointer; }
+.bib-filter input:focus, .bib-topic select:focus { outline: none; border-color: var(--ink); }
+.bib-topic select:focus-visible { outline: 2px solid var(--action); outline-offset: 2px; }
+.bib-count { margin-left: auto; color: var(--muted); font-size: 15px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+/* the years: a row each (the year, how many papers, a plus that turns into a minus) */
+.pub-years { border-bottom: 1px solid var(--line-strong); }
+.pub-year { border-top: 1px solid var(--line-strong); }
+.pub-year > summary { grid-template-columns: var(--side) minmax(0, 1fr) 16px; align-items: baseline; padding: 20px 0; cursor: pointer; list-style: none; }
+.pub-year > summary::-webkit-details-marker { display: none; }
+.pub-year__label { margin: 0; font-size: 22px; font-weight: 450; line-height: 1.2; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.pub-year__n { color: var(--muted); font-size: 15px; font-variant-numeric: tabular-nums; }
+.pub-year__sign { position: relative; align-self: center; width: 16px; height: 16px; color: var(--muted); }
+.pub-year__sign::before, .pub-year__sign::after { content: ""; position: absolute; top: 7px; left: 0; width: 16px; height: 2px; border-radius: 1px; background: currentColor; }
+.pub-year__sign::after { transform: rotate(90deg); transition: transform 200ms cubic-bezier(.2, .65, .3, 1); }
+.pub-year[open] .pub-year__sign::after { transform: none; }
+.pub-rows { list-style: none; margin: 0; padding: 0 0 28px; }
+.pub-row { align-items: baseline; row-gap: 3px; padding: 14px 0; border-top: 1px solid var(--line); scroll-margin-top: calc(var(--nav) + 24px); }
+.pub-row > * { grid-column: 2; max-width: 47rem; margin: 0; }
+.pub-row h4 { font-size: 17px; font-weight: 500; line-height: 1.4; letter-spacing: -.011em; text-wrap: pretty; }
 .pub-row h4 a { color: var(--ink); text-decoration: none; }
-.pub-row p { margin-top: 6px; color: var(--muted); font-size: 14px; line-height: 1.5; }
-.pub-row__journal { color: var(--ink); font-style: italic; }
-.pub-row:target { background: color-mix(in oklab, var(--coral) 10%, transparent); }
+.pub-row p { color: var(--muted); font-size: 15px; line-height: 1.5; }
+.pub-row .pub-row__journal { grid-column: 1; grid-row: 1 / span 2; }
+.pub-row:target { margin: 0 -12px; padding: 14px 12px; border-top-color: transparent; border-radius: var(--r-md); background: color-mix(in oklab, var(--coral) 10%, transparent); }
 .bib-empty { padding: 24px 0; color: var(--muted); }
+.bib-more { padding-top: 10px; }
+.bib-more__button { min-height: 44px; padding: 0; border: 0; background: none; color: var(--ink); font: inherit; font-size: 15px; text-decoration: underline; text-decoration-color: var(--line-strong); text-decoration-thickness: 1px; text-underline-offset: .19em; cursor: pointer; }
+.bib-more__button:active { opacity: .7; }
+/* the box, the select and the button need the script; without it the years still open one by one */
+@media (scripting: none) {
+  .bib-tools, .bib-more { display: none; }
+}
 @media (hover: hover) {
+  .sel-paper:hover h3 a, .bib-jump a:hover, .pub-year > summary:hover .pub-year__label { color: var(--action); }
+  .pub-year > summary:hover .pub-year__sign { color: var(--ink); }
   .pub-row h4 a:hover { color: var(--action); text-decoration: underline; text-decoration-thickness: 1px; }
+  .bib-more__button:hover { text-decoration-color: currentColor; }
+  .bib-filter input:hover, .bib-topic select:hover { border-color: var(--ink); }
 }
 @media (max-width: 1023px) {
-  .family-publications .gallery { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  .pub-year { grid-template-columns: 140px minmax(0, 1fr); }
-  .pub-year__label { font-size: 44px; }
+  .bib-selected, .bibliography { --side: 200px; --gap: 28px; }
+  .bib-selected { margin-bottom: 80px; }
+  .sel-list { row-gap: 28px; }
+  .bib-count { display: none; }
 }
 @media (max-width: 767px) {
-  .family-publications .gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px 14px; }
-  .pub-year { grid-template-columns: minmax(0, 1fr); }
-  .pub-year__label { position: static; padding: 24px 0 4px; font-size: 28px; }
-  .pub-row h4 { font-size: 16px; }
+  .bib-selected { margin-bottom: 56px; }
+  .bib-head { grid-template-columns: minmax(0, 1fr) auto; column-gap: 16px; margin-bottom: 12px; }
+  /* a phone: the picture small at the left, the title and one gray line */
+  .sel-list { row-gap: 0; border-bottom: 1px solid var(--line); }
+  .sel-paper { grid-template-columns: 104px minmax(0, 1fr); column-gap: 16px; padding: 16px 0; border-top: 1px solid var(--line); }
+  .sel-paper__figure { border-radius: var(--r-sm); }
+  .sel-paper__figure--whole img { padding: 4px 0; }
+  .sel-paper h3 { margin-top: -.2em; font-size: 17px; line-height: 1.35; letter-spacing: -.011em; }
+  .sel-paper__by { display: none; }
+  .sel-paper h3 ~ .sel-paper__venue { margin-top: 4px; font-size: 14px; }
+  /* All papers: the topics beside the heading, the filter box across the column under them */
+  .bibliography .bib-head { grid-template-columns: max-content minmax(0, 1fr); row-gap: 12px; margin-bottom: 20px; }
+  .bib-tools { display: contents; }
+  .bib-topic { grid-column: 2; grid-row: 1; justify-self: end; max-width: 100%; }
+  .bib-topic select { field-sizing: content; padding: 0 38px 0 12px; }
+  .bib-filter { grid-column: 1 / -1; grid-row: 2; }
+  .pub-year > summary { grid-template-columns: auto minmax(0, 1fr) 16px; column-gap: 14px; padding: 16px 0; }
+  .pub-year__label { font-size: 20px; }
+  .pub-rows { padding-bottom: 16px; }
+  .pub-row { grid-template-columns: minmax(0, 1fr); row-gap: 0; padding: 16px 0 17px; }
+  .pub-row > *, .pub-row .pub-row__journal { grid-column: 1; grid-row: auto; }
+  .pub-row h4 { font-size: 16px; line-height: 1.38; }
+  .pub-row p { font-size: 14px; line-height: 1.5; }
+  .pub-row .pub-row__by { margin-top: 6px; }
+  .pub-row .pub-row__journal { margin-top: 2px; }
+}
+/* the narrowest phones: a smaller picture, and the topics under the filter box, across the column */
+@media (max-width: 359px) {
+  .bib-head h2 { font-size: 20px; }
+  .bib-jump { font-size: 14px; }
+  .sel-paper { grid-template-columns: 80px minmax(0, 1fr); column-gap: 14px; }
+  .bib-topic { grid-column: 1 / -1; grid-row: 3; justify-self: stretch; }
+  .bib-topic select { field-sizing: fixed; }
+}
+/* a phone with scripts: the first five selected papers, and a button for the rest */
+@media (max-width: 767px) and (scripting: enabled) {
+  .sel-list:not(.is-open) .sel-paper:nth-child(n + 6) { display: none; }
+  .sel-more { display: block; padding-top: 4px; }
 }

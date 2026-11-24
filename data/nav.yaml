@@ -1,55 +1,83 @@
+# The header menu (layouts/_partials/nav.html). Each item is a link: `title` and `url`.
+#   children:  the pages under the item. With children the item opens a sheet under the header that
+#              lists them in large type (on a phone: a group that unfolds). List the item's own page
+#              first if it should appear there too. Each child has `title`, `url` and an optional
+#              one-line `text` (a few plain words, shown under the title in the desktop sheet). An
+#              address that starts with http is marked as an outside link. Leave `children` out for a
+#              plain link.
+#   also:      other addresses that light up the item (its children's addresses already do).
+#   posts:     true lights the item on every news post.
 main:
 - title: Research
-  url: '@root@research-interests/'
+  url: '@root@research/'
   children:
-  - title: Research overview
-    url: '@root@research-interests/'
+  - title: Overview
+    url: '@root@research/'
+    text: Research areas and software
   - title: Deep Brain Stimulation
-    url: '@root@research-interests/deep-brain-stimulation/'
+    url: '@root@research/deep-brain-stimulation/'
+    text: Mapping stimulated brain circuits
   - title: Normative Connectomes
-    url: '@root@research-interests/normative-connectomes/'
-  - title: Connectomic DBS book
-    url: '@root@research-interests/the-book/'
+    url: '@root@research/normative-connectomes/'
+    text: Group-average connectomes from large MRI cohorts
+  - title: Lead-DBS
+    url: '@root@research/lead-dbs/'
+    text: Open-source toolbox for electrode reconstruction
 - title: Publications
-  url: '@root@research-interests/publications/'
+  url: '@root@publications/'
   children:
-  - title: All publications
-    url: '@root@research-interests/publications/'
+  - title: Papers
+    url: '@root@publications/'
+    text: Listed by year
   - title: Posters
-    url: '@root@research-interests/posters/'
-  - title: Videos & Talks
-    url: '@root@research-interests/videos-talks/'
+    url: '@root@publications/posters/'
+    text: Conference posters
+  - title: Talks
+    url: '@root@publications/talks/'
+    text: Recorded talks and lectures
+  - title: Book
+    url: '@root@book/'
+    text: Connectomic Deep Brain Stimulation
 - title: People
-  url: '@root@about-us/about-us/'
+  url: '@root@people/'
   children:
-  - title: About the lab
-    url: '@root@about-us/'
   - title: Team
-    url: '@root@about-us/about-us/'
+    url: '@root@people/'
+    text: Current members and alumni
   - title: Jobs
-    url: '@root@about-us/jobs/'
-- title: Community
-  url: '@root@research-interests/stimu-latte/'
-  children:
-  - title: Stimu-Latte journal club
-    url: '@root@research-interests/stimu-latte/'
-  - title: Stimulating Brains podcast
-    url: http://www.stimulatingbrains.org
-  - title: Imaging meeting
-    url: '@root@internal/events/categories/imaging-meeting/'
+    url: '@root@jobs/'
+    text: Open positions
 - title: News
-  url: '@root@blog/'
+  url: '@root@news/'
+  posts: true
+- title: Community
+  url: '@root@community/'
+  children:
+  - title: Overview
+    url: '@root@community/'
+    text: Journal club, podcast, and workshops
+  - title: Stimu-Latte
+    url: '@root@stimu-latte/'
+    text: Monthly journal club
+  - title: Stimulating Brains
+    url: 'https://www.stimulatingbrains.org'
+    text: Podcast and talk series
+
 logo: media/0a5bca3040a8-netstim_institute_logo_en-1.png
-logo_alt: Network Stimulation Laboratory
+logo_light: media/netstim-logo-light.png
+logo_alt: Institute for Network Stimulation
+
+# The footer (layouts/_partials/footer.html): the address comes from data/contact.yaml; here are the
+# three profiles shown as icons (`icon`: bluesky, linkedin or github) and the links of the last line.
+social:
+- {title: Bluesky, icon: bluesky, url: 'https://bsky.app/profile/netstim.org'}
+- {title: LinkedIn, icon: linkedin, url: 'https://www.linkedin.com/company/institute-for-network-stimulation/'}
+- {title: GitHub, icon: github, url: 'https://github.com/netstim'}
+
 footer:
+- title: For lab members
+  url: '@root@internal/'
 - title: Imprint
-  url: '@root@impressum-datenschutzerklarung/'
-- title: Privacy policy
-  url: '@root@privacy-policy/'
-members:
-- title: Lab manual
-  url: '@root@internal/onboarding/'
-- title: Links
-  url: '@root@internal/links/'
-- title: Events
-  url: '@root@internal/events/'
+  url: '@root@imprint/'
+- title: Privacy
+  url: '@root@privacy/'

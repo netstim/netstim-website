@@ -4,7 +4,7 @@
 <!doctype html>
 <html lang="en"><meta charset="utf-8">
 <title>Page moved</title><meta name="robots" content="noindex">
-<link rel="canonical" href="{{ site.Params.liveSite }}{{ strings.TrimPrefix ("" | relURL) $to | printf "/%s" }}">
+<link rel="canonical" href="{{ if hasPrefix $to "http" }}{{ $to }}{{ else }}{{ site.Params.liveSite }}{{ strings.TrimPrefix ("" | relURL) $to | printf "/%s" }}{{ end }}">
 <meta http-equiv="refresh" content="0; url={{ $to }}">
 <p><a href="{{ $to }}">Continue to the new address</a>.</p></html>
 {{- else -}}

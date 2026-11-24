@@ -1,5 +1,16 @@
 #!/usr/bin/env python3
-"""Check the static build, original URL coverage, redirects, internal assets and anchors."""
+"""Check the static build: every old address still answers, every forwarding page has its Apache 301,
+and every internal link, asset and anchor resolves.
+
+    python3 .github/scripts/check-site.py public [base URL]
+
+- Old addresses (tests/old-routes.json): each is a page or a forwarding page (front matter `aliases`,
+  data/redirects.yaml).
+- Forwarding pages: each has a 301 in the generated .htaccess (layouts/home.htaccess).
+- Pages: one h1, no duplicate ids, alt on every image, SRI on scripts and stylesheets, a canonical that
+  matches og:url, the preview's noindex, no external page-load assets, no unresolved @root@ links.
+- Links, srcsets, CSS url()s and search-index entries resolve to a file (and an id, for #fragments).
+"""
 import argparse
 from collections import Counter
 from html.parser import HTMLParser
@@ -60,7 +71,8 @@ def main():
     base = urlsplit(args.base)
     prefix = base.path.rstrip("/") + "/"
     root = args.directory
-    manifest = json.loads((PROJECT / "tests/migration.json").read_text())
+    production = args.base.rstrip("/") == LIVE
+    old_routes = json.loads((PROJECT / "tests/old-routes.json").read_text())["routes"]
     errors = []
 
     def path_for(path):
@@ -68,7 +80,7 @@ def main():
         return local / "index.html" if local.is_dir() or path.endswith("/") else local
 
     def check(route, tag, link):
-        if link.startswith("mailto:") or link.startswith("tel:"):
+        if link.startswith(("mailto:", "tel:")):
             return
         if "ZgotmplZ" in link or "@root@" in link:
             errors.append(f"{route}: unresolved template link {link}")
@@ -94,30 +106,24 @@ def main():
             if dest and unquote(parts.fragment) not in dest.ids:
                 errors.append(f"{route}: missing fragment {link}")
 
-    for route in set(manifest["crawl"]) | set(manifest["rest"]):
+    for route in old_routes:
         if not path_for(route).is_file():
-            errors.append(f"Missing original route {route}")
-    if manifest["missing_images"]:
-        errors.append(f"Unresolved original images: {manifest['missing_images']}")
-    htaccess = (root / ".htaccess").read_text()
-    for old, target in manifest["redirects"].items():
-        match = re.escape(old.strip("/")) + ("/?" if old.endswith("/") else "")
-        if f"RewriteRule ^{match}$ {target} [R=301,END]" not in htaccess:
-            errors.append(f"Missing Apache 301 {old} → {target}")
-        if not path_for(target).exists():
-            errors.append(f"Missing redirect destination {target}")
-        if old.endswith("/") and not path_for(old).is_file():
-            errors.append(f"Missing project-preview fallback {old}")
-    for ident, target in manifest["ids"].items():
-        if f"^(?:p|page_id)={ident}$\n  RewriteRule ^(?:index\\.php)?$ {target} [R=301,END,QSD]" not in htaccess:
-            errors.append(f"Missing WordPress numeric redirect {ident}")
+            errors.append(f"Old address {route} answers nothing (add it to a page's aliases or data/redirects.yaml)")
 
     documents = {file: Document(file) for file in root.rglob("*.html")}
+    htaccess = (root / ".htaccess").read_text() if (root / ".htaccess").is_file() else ""
+    if production and not htaccess:
+        errors.append("No .htaccess in the production build")
+    forwards = 0
     for file, doc in documents.items():
         route = "/" + file.relative_to(root).as_posix().removesuffix("index.html")
         for tag, link in doc.links:
             check(route, tag, link)
         if "refresh" in doc.metadata:
+            forwards += 1
+            pattern = "^" + re.escape(route.strip("/")).replace("\\-", "-").replace("\\/", "/") + "/?$ "
+            if production and pattern not in htaccess.replace("\\-", "-"):
+                errors.append(f"{route}: forwarding page without an Apache 301")
             continue
         errors.extend(f"{route}: {problem}" for problem in doc.broken)
         if doc.h1 != 1:
@@ -128,7 +134,7 @@ def main():
         canonical = doc.metadata.get("canonical", "")
         if not canonical.startswith(LIVE + "/") or doc.metadata.get("og:url") != canonical:
             errors.append(f"{route}: invalid canonical/og:url")
-        if ("noindex" in doc.metadata.get("robots", "")) != (args.base.rstrip("/") != LIVE):
+        if ("noindex" in doc.metadata.get("robots", "")) == production:
             errors.append(f"{route}: incorrect preview indexing policy")
     for file in (root / "css").glob("*.css"):
         for link in re.findall(r"url\(([^)]*)\)", file.read_text()):
@@ -138,12 +144,10 @@ def main():
             ET.parse(file)
         except ET.ParseError as error:
             errors.append(f"{file}: {error}")
-    search = json.loads((root / "search-index.json").read_text())
-    for row in search:
+    for row in json.loads((root / "search-index.json").read_text()):
         check("/", "search", row["url"])
-    print(f"{len(manifest['crawl'])} original pages, {len(manifest['rest'])} REST links, "
-          f"{len(manifest['redirects'])} path redirects, {len(manifest['ids'])} ID redirects, {len(documents)} HTML files.")
-    print("\n".join(errors) if errors else "All local URLs, assets, feeds, canonicals and anchors resolve.")
+    print(f"{len(old_routes)} old addresses, {forwards} forwarding pages, {len(documents)} HTML files.")
+    print("\n".join(errors) if errors else "Every old address answers; all links, assets, feeds, canonicals and anchors resolve.")
     return bool(errors)
 
 

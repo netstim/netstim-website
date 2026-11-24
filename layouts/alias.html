@@ -1,0 +1,8 @@
+{{- /* An old address of a page that moved (front matter `aliases`): a forwarding page. On the production
+       host the .htaccess answers these addresses with a 301 first. */ -}}
+<!doctype html>
+<html lang="en"><meta charset="utf-8">
+<title>Page moved</title><meta name="robots" content="noindex">
+<link rel="canonical" href="{{ site.Params.liveSite }}{{ strings.TrimPrefix ("" | relURL) .Page.RelPermalink | printf "/%s" }}">
+<meta http-equiv="refresh" content="0; url={{ .Page.RelPermalink }}">
+<p><a href="{{ .Page.RelPermalink }}">Continue to the new address</a>.</p></html>

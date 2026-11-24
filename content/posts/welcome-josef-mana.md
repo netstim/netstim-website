@@ -6,7 +6,7 @@ crumbs:
 - title: Home
   url: '@root@'
 - title: News
-  url: '@root@blog/'
+  url: '@root@news/'
 - title: Welcome Josef Mana
 sidebar: true
 wordpress_id: 1396
@@ -14,7 +14,6 @@ date: '2021-11-04T16:32:14+00:00'
 modified: '2021-11-04T16:33:29+00:00'
 author: andreashorn
 comment_anchor: true
-canonical: /welcome-josef-mana/
 ---
 
 <div class="columns"><div class="column column-2-3"><h2>We are pleased to welcome Josef Mana to the lab</h2>

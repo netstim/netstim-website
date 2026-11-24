@@ -1,52 +1,101 @@
-/* The header (layouts/_partials/header.html), the same shell as Lead-DBS: sticky, paper, one hairline,
-   the logo lockup at the left, the five menu items in 15/500 ink, search and theme at the end. A menu
-   with children opens one full-width band under the header (three columns on the 1280px canvas). */
-.site-header { position: sticky; top: 0; z-index: 20; background: var(--bg); border-bottom: 1px solid var(--line); }
+/* The header (layouts/_partials/header.html, nav.html): a sticky, solid bar with no line under it, also once the
+   page has scrolled. It lines up with the page: the logo over the left edge
+   of the content; the menu in 16/450 ink at the right, next to search and theme. Pointing at an item (or
+   opening it) dims the others; the current section is underlined in the Netstim teal.
+   An item with pages under it opens a sheet: the bar's own surface drawn down over the full width, with
+   the page dimmed below it and the pages listed in large type under the menu. */
+.site-header {
+  --scrim: rgb(22 24 25 / .3);
+  position: sticky; top: 0; z-index: 20; overflow-x: clip; background: var(--bg);
+}
+[data-theme="dark"] .site-header { --scrim: rgb(0 0 0 / .56); }
 .header-inner { display: flex; align-items: center; gap: 12px; height: var(--nav); }
 .site-logo { display: flex; align-items: center; flex: none; min-height: 44px; color: inherit; }
-.site-logo img { width: auto; height: 34px; }
-[data-theme="dark"] :is(.site-logo, .footer-logo) img { filter: brightness(1.7) saturate(.85); }
+.site-logo img { width: auto; height: 46px; }
+/* the logo: the colour lockup on paper, the light lockup in the dark theme */
+.site-logo .logo-on-dark, [data-theme="dark"] .site-logo .logo-on-light { display: none; }
+[data-theme="dark"] .site-logo .logo-on-dark { display: block; }
 .header-actions { display: flex; align-items: center; margin-left: auto; gap: 4px; }
-.desktop-nav { margin-left: 28px; height: 100%; }
-.desktop-nav + .header-actions { margin-left: auto; }
-.nav-list { list-style: none; margin: 0; padding: 0; }
-.desktop-nav > .nav-list { display: flex; align-items: center; height: 100%; gap: 2px; }
-.desktop-nav > .nav-list > .nav-item { display: flex; align-items: center; height: 100%; }
+.desktop-nav { position: relative; margin-left: auto; height: 100%; }
+.desktop-nav + .header-actions { margin-left: 4px; }
+.nav-list, .nav-sub { list-style: none; margin: 0; padding: 0; }
 .nav-row { display: flex; align-items: center; }
-.desktop-nav > .nav-list > .nav-item > .nav-row > a {
-  position: relative; display: inline-flex; align-items: center; height: 36px; padding: 0 12px; border-radius: var(--r-sm);
-  color: var(--ink); font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap;
+.nav-link .i-external, .nav-sub__title .i-external { flex: none; width: 14px; height: 14px; color: var(--muted); }
+
+/* the bar: plain words, 28px apart. The arrow button of an item with pages under it shows on touch
+   screens (where nothing hovers); with a mouse it stays out of sight until the keyboard reaches it. */
+.desktop-nav > .nav-list { display: flex; align-items: center; height: 100%; }
+.desktop-nav .nav-item { display: flex; align-items: center; height: 100%; }
+.desktop-nav .nav-row { position: relative; height: 44px; transition: opacity 160ms ease; }
+.desktop-nav .nav-link {
+  position: relative; display: inline-flex; align-items: center; gap: 5px; height: 100%; padding: 0 14px; border-radius: var(--r-sm);
+  color: var(--ink); font-size: 16px; font-weight: 450; letter-spacing: -.011em; text-decoration: none; white-space: nowrap;
 }
-.desktop-nav > .nav-list > .nav-item.is-current > .nav-row > a::after {
-  content: ""; position: absolute; left: 12px; right: 12px; bottom: -2px; height: 2px; border-radius: 2px; background: currentColor;
+.desktop-nav .has-sub .nav-link { padding-right: 0; }
+.desktop-nav .is-current > .nav-row > .nav-link::after { content: ""; position: absolute; inset: auto 14px 7px; height: 2px; border-radius: 1px; background: var(--brand); }
+.desktop-nav .has-sub.is-current > .nav-row > .nav-link::after { right: 0; }
+.nav-toggle {
+  display: grid; place-items: center; flex: none; width: 44px; height: 100%; margin: 0 -6px 0 -10px; padding: 0; appearance: none; border: 0;
+  border-radius: var(--r-sm); background: none; color: var(--muted);
 }
-.desktop-nav .disclosure { width: 24px; height: 36px; margin-left: -8px; border-radius: var(--r-sm); color: var(--ink); }
-.desktop-nav .disclosure::before { content: ""; position: absolute; inset: -4px -10px -4px -4px; }
-.desktop-nav .disclosure { position: relative; }
-.disclosure svg { width: 14px; height: 14px; opacity: .6; }
-.disclosure[aria-expanded="true"] svg { transform: rotate(180deg); opacity: 1; }
-/* the band: full width under the header, the links of the open menu in three columns */
-.desktop-nav .nav-panel {
-  position: absolute; top: 100%; left: 0; right: 0; padding: 16px 0 32px;
-  background: var(--bg); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); box-shadow: var(--shadow-3);
+.nav-toggle svg, .nav-group svg { flex: none; stroke-width: 2; transition: transform 200ms cubic-bezier(.2, .8, .2, 1); }
+.nav-toggle svg { width: 14px; height: 14px; }
+:is(.nav-toggle, .nav-group)[aria-expanded="true"] svg { transform: rotate(180deg); }
+.desktop-nav .nav-link:focus-visible { outline-offset: -2px; border-radius: var(--r-sm); }
+.nav-toggle:focus-visible { outline-offset: -2px; border-radius: 6px; }
+.desktop-nav.has-open .nav-item:not(.is-open) > .nav-row { opacity: .55; }
+@media (hover: hover) and (pointer: fine) {
+  .desktop-nav .has-sub .nav-link { padding-right: 14px; }
+  .desktop-nav .has-sub.is-current > .nav-row > .nav-link::after { right: 14px; }
+  .nav-toggle { position: absolute; top: 9px; right: -9px; width: 20px; height: 26px; margin: 0; border-radius: 6px; opacity: 0; }
+  .nav-toggle svg { width: 12px; height: 12px; }
+  .nav-toggle:focus-visible { opacity: 1; }
 }
-.desktop-nav .nav-panel > .nav-list {
-  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 32px;
-  width: min(100% - 2 * var(--gut), var(--container)); margin-inline: auto;
+
+/* the sheet: closed it is out of sight and out of the Tab order. The list hangs under the menu (its
+   words start where "Research" starts); the surface behind it is drawn across the whole window, and
+   its shadow is the dimmed page, cut off at the bar. Open, the surface fades in and the list settles
+   8px down; from one sheet to the next only the list fades; closing fades the whole sheet out. */
+.desktop-nav .nav-panel { position: absolute; top: 100%; left: 0; right: 0; z-index: 1; visibility: hidden; }
+.desktop-nav .nav-panel::before {
+  content: ""; position: absolute; inset: 0 -100vw; background: var(--bg); border-bottom: 1px solid var(--line);
+  box-shadow: 0 0 0 100vmax var(--scrim); clip-path: inset(0 -100vmax -100vmax);
 }
-.desktop-nav .nav-panel .nav-row > a {
-  display: flex; align-items: center; gap: 6px; width: 100%; min-height: 52px;
-  color: var(--ink); font-size: 16px; font-weight: 500; text-decoration: none;
+/* a browser that cannot clip the header sideways gets a card around the list instead of the full width */
+@supports not (overflow-x: clip) {
+  .desktop-nav .nav-panel::before { inset: 0 -10px; border: 1px solid var(--line); border-radius: var(--r-md); }
 }
-.desktop-nav .nav-panel .nav-row > a[aria-current="page"] { color: var(--action); }
+.desktop-nav .is-open > .nav-panel { visibility: visible; }
+.desktop-nav .is-open > .nav-panel::before { animation: nav-fade 200ms ease both; }
+.desktop-nav .is-open > .nav-panel > .nav-sub { animation: nav-panel-in 280ms cubic-bezier(.2, .8, .2, 1) both; }
+.desktop-nav .is-open.is-switch > .nav-panel::before { animation: none; }
+.desktop-nav .is-open.is-switch > .nav-panel > .nav-sub { animation: nav-fade 160ms ease both; }
+.desktop-nav .is-closing > .nav-panel { visibility: visible; pointer-events: none; animation: nav-out 140ms ease both; }
+/* without scripts the sheet opens on keyboard focus (and on hover, below) */
+.desktop-nav:not(.is-ready) .has-sub:focus-within > .nav-panel { visibility: visible; }
+@keyframes nav-panel-in { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
+@keyframes nav-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes nav-out { to { opacity: 0; } }
+.desktop-nav .nav-sub { position: relative; display: grid; padding: 12px 0 40px; }
+.nav-sub__link { display: grid; gap: 3px; color: var(--ink); text-decoration: none; }
+.desktop-nav .nav-sub__link { padding: 10px 14px; border-radius: var(--r-sm); transition: opacity 160ms ease; }
+.nav-sub__link:focus-visible { outline-offset: -2px; border-radius: var(--r-sm); }
+.nav-sub__title { display: flex; align-items: center; gap: 6px; }
+.desktop-nav .nav-sub__title { font-size: 24px; font-weight: 450; line-height: 1.25; letter-spacing: -.028em; }
+.desktop-nav .nav-sub__title .i-external { width: 16px; height: 16px; }
+.nav-sub__text { color: var(--muted); font-size: 14px; line-height: 1.4; }
+.desktop-nav .nav-sub__link[aria-current="page"] .nav-sub__title { color: var(--action); }
 .mobile-toggle { display: none; }
 @media (hover: hover) {
-  .desktop-nav > .nav-list > .nav-item > .nav-row > a:hover, .desktop-nav .disclosure:hover { background: var(--surface); }
-  .desktop-nav .nav-panel .nav-row > a:hover, .phone-menu a:hover { color: var(--action); }
+  .desktop-nav > .nav-list:hover > .nav-item:not(:hover) > .nav-row { opacity: .55; }
+  .desktop-nav:not(.is-ready) .has-sub:hover > .nav-panel { visibility: visible; }
+  .desktop-nav .nav-sub:has(.nav-sub__link:hover) .nav-sub__link:not(:hover) { opacity: .5; }
+  .phone-menu :is(.nav-link, .nav-group, .nav-sub__link):hover { color: var(--action); }
 }
+
 /* the phone menu: a full-screen sheet whose top bar is the header (logo left, close where the menu
-   button was); each group one full-width toggle row with a clear chevron, its pages inset under it; the
-   current page in the action colour, its group open */
+   button was). Full-width rows with hairlines between; a row with pages under it is a button that
+   unfolds them (the current section starts open); the current page is in the action color. */
 .phone-menu {
   width: 100%; max-width: none; height: 100dvh; max-height: none; margin: 0; padding: 0 var(--gut) 32px;
   border: 0; border-radius: 0; overflow-y: auto;
@@ -54,25 +103,27 @@
 .phone-menu:focus-visible { outline: none; }
 .phone-menu .dialog-top { position: sticky; top: 0; z-index: 1; height: var(--nav); background: var(--bg); border-bottom: 1px solid var(--line); margin-inline: calc(-1 * var(--gut)); padding-inline: var(--gut); }
 .phone-menu > nav { margin-top: 8px; }
-.phone-menu > nav > .nav-list > li { border-bottom: 1px solid var(--line); }
-.phone-menu .nav-row > a, .phone-menu .nav-toggle {
+.phone-menu .nav-item { border-bottom: 1px solid var(--line); }
+.phone-menu :is(.nav-link, .nav-group) {
   flex: 1; display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 60px; padding: 0;
-  border: 0; background: none; color: var(--ink); font: inherit; font-size: 24px; font-weight: 450; letter-spacing: -.025em; text-align: left; text-decoration: none; cursor: pointer;
+  appearance: none; border: 0; background: none; color: var(--ink); font: inherit; font-size: 22px; font-weight: 450; letter-spacing: -.02em; text-align: left; text-decoration: none;
 }
-.phone-menu .nav-toggle svg { width: 22px; height: 22px; color: var(--muted); }
-.phone-menu .nav-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
-.phone-menu .nav-item.is-current > .nav-row > :is(a, .nav-toggle) { color: var(--action); }
-.phone-menu .nav-panel { padding: 0 0 12px 16px; }
-.phone-menu .nav-panel .nav-row > a { min-height: 48px; font-size: 17px; font-weight: 400; letter-spacing: -.01em; color: var(--ink); justify-content: flex-start; gap: 6px; }
-.phone-menu .nav-panel .nav-row > a[aria-current="page"] { color: var(--action); font-weight: 500; }
-.nav-row .ext { margin-left: 4px; color: var(--muted); }
+.nav-group svg { width: 20px; height: 20px; color: var(--muted); }
+.nav-group:active { opacity: .7; }
+.phone-menu .nav-panel { padding: 0 0 14px; animation: nav-panel-in 200ms cubic-bezier(.2, .8, .2, 1); }
+.phone-menu .nav-sub__link { display: flex; align-items: center; min-height: 44px; padding: 0; border-radius: 0; color: var(--muted); }
+.phone-menu .nav-sub__link:active { opacity: .7; }
+.phone-menu .nav-sub__title { font-size: 17px; font-weight: 400; letter-spacing: -.01em; }
+.phone-menu .nav-sub__text { display: none; }
+.phone-menu :is(.nav-link, .nav-sub__link)[aria-current="page"] { color: var(--action); }
 /* the theme button shows what it switches to */
 .theme-toggle .i-sun, [data-theme="dark"] .theme-toggle .i-moon { display: none; }
 [data-theme="dark"] .theme-toggle .i-sun { display: block; }
 @media (max-width: 899px) {
   .desktop-nav { display: none; }
   .mobile-toggle { display: grid; }
-  .site-logo img { height: 30px; }
+  .desktop-nav + .header-actions { margin-left: auto; }
+  .site-logo img { height: 38px; }
 }
 @media (min-width: 900px) {
   .phone-menu { display: none; }

@@ -1,0 +1,66 @@
+# Stimu-Latte journal club (/stimu-latte/, layouts/_partials/stimu-latte-page.html). This file is the only
+# place to edit: the page is built from it.
+#
+# To add a session, add these lines at the top of `sessions`:
+#   - date: 2026-12-09            # YYYY-MM-DD
+#     presenter: Name, title      # e.g. "Zhanao Fu, PhD"
+#     paper: Title of the paper
+#     source: First author et al., Journal, Year   # optional
+#     poster: media/flyer.png     # optional: the flyer, a file in assets/media
+# Optional per session: time (if not the usual), room (if not the usual).
+#
+# A session dated today or later is shown as "Next session"; earlier ones are listed as past sessions.
+# The large flyer on the page is the next session's, or else the newest one there is. A session with a
+# `poster` opens its flyer in the image viewer when its row is clicked.
+# TODO(netstim): the flyers of the earlier sessions (only October 2026 is here); add them as `poster`.
+# (The page is built, not live: rebuild the site after the date of a session has passed.)
+
+# the facts beside the flyer
+day: One Wednesday a month
+time: "16:00–17:00"
+room: Library Neurology
+building: University Hospital Cologne
+# the "Where" line links here (a map search for the hospital's address)
+# TODO(netstim): the building or entrance of the neurology library, if a closer pin helps visitors.
+map: https://www.google.com/maps/search/?api=1&query=Kerpener+Stra%C3%9Fe+62%2C+50937+K%C3%B6ln
+format: One paper, then coffee and discussion.
+bring: Bring your own mug.
+signup: https://docs.google.com/forms/d/e/1FAIpQLSdvZIRLZQ3rFrtcohDOZMAgQoeoVzXpP_aQBmg_hWDc0huBlg/viewform
+
+sessions:
+- date: 2026-10-14
+  presenter: Zhanao Fu, PhD
+  paper: Speech biomarkers for quantifying effects of subthalamic deep brain stimulation in Parkinson’s disease
+  source: Krýže et al., Annals of Neurology, 2026
+  poster: media/b73226f6c24d-October_2026-2.png
+- date: 2026-07-29
+  presenter: Daniel Navin Olschewski, MD
+  paper: A human corticospinal organoid-slice connectoid model informs enhancer strategies for post-injury axon regrowth
+  source: Gibbons et al., Cell Reports, 2026
+- date: 2026-06-24
+  presenter: Till Dembek, MD
+  paper: Exploring the statistical validity and robustness of voxel-wise DBS mapping
+- date: 2026-05-20
+  presenter: Konstantin Butenko, PhD
+  paper: Engaging dystonia networks with subthalamic stimulation
+  source: Butenko et al., PNAS, 2025
+- date: 2026-04-29
+  presenter: Moritz Thiel, MD
+  paper: "Deep brain stimulation for GNAO1-associated dystonia: a systematic review and meta-analysis"
+  source: Decraene et al., Neuromodulation, 2024
+- date: 2026-03-25
+  presenter: Rene Marquez-Franco, MD
+  paper: Harmonization of multi-site diffusion tensor imaging data
+  source: Fortin et al., NeuroImage, 2017
+- date: 2026-01-28
+  presenter: Ilkem Aysu Sahin, MD
+  paper: Effective deep brain stimulation for obsessive-compulsive disorder and Tourette syndrome increases network-wide neural variability
+  source: Merk et al., preprint
+- date: 2025-11-25
+  presenter: Patricia Zvarova
+  paper: Long-term personalized adaptive deep brain stimulation in Parkinson disease
+  source: Bronte-Stewart et al., JAMA Neurology, 2025
+- date: 2025-10-21
+  presenter: Ricardo Loucao, PhD
+  paper: Clinical deep brain stimulation strategies for orientation-selective pathway activation
+  source: Slopsema et al., Journal of Neural Engineering, 2019

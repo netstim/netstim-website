@@ -1,157 +1,303 @@
-/* The home page (layouts/home.html). One rhythm of sections, each a composed scene: the statement on a black
-   render panel (as Lead-DBS), research as three media cards, the journals as a wall of names, the book,
-   the news (one lead story and rows), the team photo, community as two cards, the funders as one quiet band. */
-.home-section { padding-block: var(--section); }
-.home-section + .home-section { border-top: 1px solid var(--line); }
-.section-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 16px 32px; margin-bottom: 40px; }
-.section-head h2 { max-width: 18ch; }
-.section-head__text { max-width: 40rem; margin-top: 16px; color: var(--muted); font-size: var(--t-lead); line-height: 1.45; letter-spacing: -.01em; }
-.btn-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; margin-top: 32px; }
+/* The home page (layouts/home.html). Six parts, separated by space, not by lines: 1 the opening: the
+   institute's name, two sentences about it and photos that change; 2 research as three cards; 3 the
+   journal covers as a strip that scrolls sideways, on the quiet surface; 4 news with their pictures beside
+   the book; 5 community as two links; 6 the funders. The cards (.card-grid, .media-card) are also used by
+   the Research overview. */
+.home-section { padding-top: var(--section); }
+/* every other section on the soft gray band (the covers, the community): white and gray alternate */
+.home-section--tinted { margin-top: var(--section); padding-block: 64px; background: var(--surface); }
+.section-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 32px; min-height: 44px; margin-bottom: 24px; }
+.section-head:has(.section-head__lede) { align-items: end; }
+.section-head__lede { margin-top: 6px; color: var(--muted); font-size: var(--t-lead); line-height: 1.4; letter-spacing: -.01em; text-wrap: balance; }
+.home h2 { font-size: clamp(24px, 1vw + 18px, 30px); font-weight: 500; line-height: 1.2; letter-spacing: -.025em; }
 
-/* 1 the statement */
-.home-hero { padding-top: 24px; }
-.home-hero__panel { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; min-height: min(640px, calc(100svh - var(--nav) - 64px));
-  overflow: hidden; border-radius: var(--r-lg); background: var(--render); color: #f7f9fa; }
-.home-hero__text { position: relative; z-index: 1; grid-row: 1; grid-column: 1; padding: clamp(32px, 6vw, 80px); }
-.home-hero h1 { max-width: 15ch; font-size: var(--t-display); font-weight: 400; line-height: 1.02; letter-spacing: -.05em; }
-.home-hero__lead { max-width: 30rem; margin-top: 24px; color: #b9c0c4; font-size: var(--t-lead); line-height: 1.45; letter-spacing: -.01em; }
-.home-hero__media { grid-row: 1; grid-column: 2; align-self: stretch; display: grid; place-items: center; padding: 24px; }
-.home-hero__media img { width: 100%; max-height: 600px; object-fit: contain; }
-.btn--light { background: #f7f9fa; color: #111; }
-.text-action--light { color: #f7f9fa; text-decoration-color: rgb(255 255 255 / .35); }
+/* 1 the opening. The words: the name and the place as one small line (the page's heading), the field as the
+   large line, one or two sentences in ink and two links. The pictures lie on top of one another in one frame
+   (.home-frame); assets/js/main/banner.js fades the next one in over the last (opacity only), so the team
+   and the work take turns; the round button in the frame's corner stops and starts that. On a phone the
+   frame runs from edge to edge of the window; from 640px it has 12px corners. Three compositions
+   (`hero.layout` in content/_index.md; TEMPORARY, two go once one is chosen): statement, picture, duet. */
+.home-intro { padding-top: clamp(16px, 3.4vw, 48px); }
+.home-intro__grid { display: grid; grid-template-columns: minmax(0, 1fr); }
+.home-intro h1 { font-size: 15px; font-weight: 500; line-height: 1.4; letter-spacing: -.005em; }
+.home-intro__name, .home-intro__place { display: block; }
+.home-intro__place { color: var(--muted); font-weight: 400; }
+.home-intro__statement { margin-top: 14px; font-size: clamp(34px, 10.4vw, 44px); font-weight: 540; line-height: 1.04; letter-spacing: -.03em; text-wrap: balance; }
+.home-intro__words { display: grid; gap: 10px; margin-top: 22px; }
+.home-intro__text { max-width: 34em; font-size: var(--t-lead); line-height: 1.5; letter-spacing: -.01em; text-wrap: pretty; }
+.home-links { list-style: none; margin: 0; padding: 0; }
+.home-links .text-action { font-size: 16px; }
+.home-banner { position: relative; margin: 24px calc(var(--gut) * -1) 0; }
+.home-frame { position: relative; overflow: hidden; aspect-ratio: 3 / 2; background: var(--surface); }
+.home-frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: var(--fx, 50%) var(--fy, 50%); }
+.home-frame__slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1000ms ease-in-out; }
+.home-frame__slide.is-on { opacity: 1; }
+.home-frame__slide.is-in { z-index: 1; }
+.home-frame__slide--upper { --fy: 22%; }
+.home-frame__slide--right { --fx: 64%; }
+[data-theme="dark"] .home-frame img, [data-theme="dark"] .home-loop video { filter: brightness(.92); }
+/* stop and start: a 44px target around a small dark disc, so it reads on any photo */
+.home-banner__toggle { position: absolute; right: 6px; bottom: 6px; z-index: 2; display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%; background: none; color: #fff; opacity: .85; cursor: pointer; transition: opacity 150ms ease; }
+.home-banner__toggle::before { content: ""; position: absolute; inset: 6px; border-radius: 50%; background: rgb(0 0 0 / .5); }
+.home-banner__toggle svg { position: relative; }
+.home-banner__toggle .i-play, .home-banner__toggle.is-paused .i-pause { display: none; }
+.home-banner__toggle.is-paused .i-play { display: block; }
+.home-banner__toggle:focus-visible { outline: 2px solid #fff; outline-offset: -6px; opacity: 1; }
+.home-banner__toggle:focus-visible::before { background: rgb(0 0 0 / .8); }
+.home-banner__toggle:active { opacity: .6; }
 @media (hover: hover) {
-  .btn--light:hover { background: #d9dee1; }
+  .home-banner__toggle:hover { opacity: 1; }
+}
+@media (min-width: 640px) {
+  .home-intro h1 { font-size: 17px; }
+  .home-intro__name, .home-intro__place { display: inline-block; }
+  .home-intro__name { margin-right: .6em; }
+  .home-intro__statement { margin-top: 12px; font-size: 52px; }
+  .home-banner { margin-inline: 0; margin-top: 32px; }
+  .home-frame { border-radius: var(--r-lg); }
+  .home-banner__toggle { right: 10px; bottom: 10px; }
 }
 
-/* 2 research cards and 7 community cards: media on paper, the title and one sentence under it */
+/* statement: the field line across the page, then the frame (3:2, so a whole team photo) at the left; at
+   its right the sentences start on the frame's upper edge and the links stand on its lower edge (they are
+   44px tall around 16px text, hence the -9px). */
+@media (min-width: 1024px) {
+  .home-intro--statement .home-intro__grid { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); column-gap: clamp(32px, 4.4vw, 64px); }
+  .home-intro--statement h1, .home-intro--statement .home-intro__statement { grid-column: 1 / -1; }
+  .home-intro--statement .home-intro__statement { font-size: clamp(56px, 4.6vw + 6px, 72px); }
+  .home-intro--statement .home-banner { margin-top: 44px; }
+  .home-intro--statement .home-intro__words { align-content: space-between; margin: 39px 0 -9px; }
+  .home-intro--statement .home-intro__text { font-size: clamp(20px, 1.1vw + 7px, 23px); line-height: 1.42; letter-spacing: -.015em; }
+}
+
+/* picture: the frame first. On a phone it is a square right under the header, the words after it. From
+   768px it is the right half of the window, out to the window's edge, and the words stand beside it at
+   mid-height (the two empty 1fr rows hold them there). */
+.home-intro--picture { padding-top: 0; }
+.home-intro--picture .home-banner { margin-top: 0; }
+.home-intro--picture .home-frame { aspect-ratio: 1; }
+.home-intro--picture h1 { margin-top: 22px; }
+@media (min-width: 640px) and (max-width: 767px) {
+  .home-intro--picture .home-banner { margin-inline: calc(var(--gut) * -1); }
+  .home-intro--picture .home-frame { aspect-ratio: 3 / 2; border-radius: 0; }
+}
+@media (min-width: 768px) {
+  .home-intro--picture .home-intro__grid { width: auto; margin: 0; padding-left: max(var(--gut), (100% - var(--container)) / 2); grid-template-columns: minmax(0, 1fr) 50%; grid-template-rows: 1fr auto auto auto 1fr; column-gap: clamp(28px, 4vw, 56px); }
+  .home-intro--picture .home-banner { grid-column: 2; grid-row: 1 / -1; align-self: start; }
+  .home-intro--picture .home-frame { aspect-ratio: 10 / 9; max-height: min(700px, 100svh - var(--nav) - 40px); width: 100%; border-radius: var(--r-lg) 0 0 var(--r-lg); }
+  .home-intro--picture h1 { grid-row: 2; margin-top: 0; }
+  .home-intro--picture .home-intro__statement { grid-row: 3; font-size: clamp(40px, 4.3vw, 62px); }
+  .home-intro--picture .home-intro__words { grid-row: 4; gap: 14px; margin-top: 28px; }
+}
+
+/* duet: the people and the work at once. The team photos change in the 3:2 frame; the silent loop is a
+   smaller frame over its lower right corner, ringed in the page's color, and hangs below it. From 1200px the
+   frame is at the left, the loop at the right and the sentences in the corner above the loop. */
+.home-intro--duet .home-banner { padding-bottom: 18%; }
+.home-loop { position: absolute; right: var(--gut); bottom: 0; z-index: 1; overflow: hidden; width: 48%; aspect-ratio: 16 / 9; border-radius: var(--r-md); background: var(--render); box-shadow: 0 0 0 4px var(--bg); }
+.home-loop video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.home-intro--duet .home-banner__toggle { right: auto; left: 6px; bottom: calc(18% + 6px); }
+.home-intro--duet .home-intro__words { margin-top: 18px; }
+@media (min-width: 640px) {
+  .home-intro--duet .home-banner { padding-bottom: 9%; }
+  .home-loop { right: 0; width: 42%; border-radius: var(--r-lg); box-shadow: 0 0 0 6px var(--bg); }
+  .home-intro--duet .home-frame { width: 88%; }
+  .home-intro--duet .home-banner__toggle { left: 10px; bottom: calc(9% + 10px); }
+}
+@media (min-width: 1200px) {
+  .home-intro--duet .home-intro__grid { grid-template-columns: minmax(0, 60fr) minmax(0, 40fr); }
+  .home-intro--duet h1, .home-intro--duet .home-intro__statement, .home-intro--duet .home-banner { grid-column: 1 / -1; }
+  .home-intro--duet .home-intro__statement { font-size: clamp(56px, 4.6vw + 6px, 72px); }
+  .home-intro--duet .home-banner { grid-row: 3; margin-top: 44px; }
+  .home-intro--duet .home-banner { padding-bottom: 56px; }
+  .home-intro--duet .home-frame { width: 60%; }
+  .home-intro--duet .home-banner__toggle { bottom: 66px; }
+  .home-intro--duet .home-intro__words { grid-column: 2; grid-row: 3; align-self: start; z-index: 1; margin: 44px 0 0; padding-left: clamp(32px, 3.4vw, 48px); }
+}
+
+/* the opening arrives once: the words rise a little, the pictures fade in (opacity and transform only) */
+@media (prefers-reduced-motion: no-preference) {
+  .home-banner { animation: intro-fade 1000ms 120ms ease-out both; }
+  .home-intro h1, .home-intro__statement, .home-intro__words { animation: intro-rise 700ms cubic-bezier(.2, .65, .3, 1) both; }
+}
+@keyframes intro-rise { from { opacity: 0; transform: translateY(14px); } }
+@keyframes intro-fade { from { opacity: 0; } }
+
+/* 2 research: three cards, a real figure filling its frame with the title and one line under it. On a phone
+   they are three compact rows instead, the words at the left under the heading and the figure as a small square at the
+   right (the news rows further down have their pictures at the left): three renders one under the other at
+   full width were a long, even scroll. */
 .card-grid { list-style: none; margin: 0; padding: 0; display: grid; gap: 48px 24px; }
 .card-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.card-grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.media-card, .community-card { display: grid; align-content: start; gap: 8px; color: var(--ink); text-decoration: none; }
-.media-card__frame, .community-card__art { display: block; overflow: hidden; margin-bottom: 12px; border-radius: var(--r-md); aspect-ratio: 4 / 3; }
-.media-card__frame img, .community-card__art img { width: 100%; height: 100%; object-fit: cover; transition: transform 500ms cubic-bezier(.2, .65, .3, 1); }
-.media-card__frame--light { background: #f6f6f4; }
-.media-card__frame--dark { background: var(--render); }
-.media-card__frame--contain img { object-fit: contain; padding: 18%; }
+.media-card { display: grid; align-content: start; gap: 6px; color: var(--ink); text-decoration: none; }
+.media-card__frame { display: block; overflow: hidden; margin-bottom: 14px; border-radius: var(--r-md); aspect-ratio: 4 / 3; background: var(--surface); }
+.media-card__frame img { width: 100%; height: 100%; object-fit: cover; transition: transform 500ms cubic-bezier(.2, .65, .3, 1); }
 .media-card__title { font-size: 20px; font-weight: 500; line-height: 1.3; letter-spacing: -.015em; }
-.media-card__text { color: var(--muted); font-size: 15px; line-height: 1.55; }
-.community-card__art { display: grid; place-items: center; aspect-ratio: 16 / 9; }
-.community-card__art--plate { background: #f6f6f4; }
-.community-card__art--latte { background: #c59c6b; }
-.community-card__art img { width: 78%; height: auto; max-height: 80%; object-fit: contain; }
-.community-card__go { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; font-size: 15px; font-weight: 500; text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 5px; }
+.media-card__text { color: var(--muted); font-size: 15px; line-height: 1.5; }
+/* one of the figures is drawn on white: every frame gets the same hairline, so that one has an edge too */
+.home-research__frame { position: relative; }
+.home-research__frame::after { content: ""; position: absolute; inset: 0; border: 1px solid var(--line); border-radius: inherit; pointer-events: none; }
+[data-theme="dark"] .home-research__frame img { filter: brightness(.92); }
 @media (hover: hover) {
-  .media-card:hover .media-card__frame img, .community-card:hover .community-card__art img { transform: scale(1.035); }
-  .media-card:hover .media-card__title, .community-card:hover .media-card__title { color: var(--action); }
+  .media-card:hover .media-card__frame img { transform: scale(1.035); }
+  .media-card:hover .media-card__title { color: var(--action); }
 }
 
-/* 3 the journals: their names, large, as one wall of links */
-.home-journals__label { max-width: 36rem; color: var(--muted); font-size: var(--t-lead); font-weight: 400; line-height: 1.45; letter-spacing: -.01em; }
-.journal-wall { list-style: none; margin: 28px 0 32px; padding: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 28px; }
-.journal-wall li { line-height: 1.2; }
-.journal-wall a { display: inline-flex; align-items: baseline; gap: 4px; min-height: 44px; color: var(--ink); font-size: var(--t-h2); font-weight: 400; line-height: 1.2; letter-spacing: -.04em; text-decoration: none; }
-.journal-wall__ext svg { width: 16px; height: 16px; color: var(--muted); }
+/* 3 journal covers: one row that scrolls sideways and runs out to the window's edges; the first cover
+   starts on the page's left margin. --edge is that margin, as a share of the full-width strip. */
+.home-covers { --edge: calc((100% - min(100% - 2 * var(--gut), var(--container))) / 2); --cover: 300px; margin-top: var(--section); padding-block: 64px 44px; background: var(--surface); }
+.home-covers__actions { display: flex; align-items: center; gap: 8px 24px; }
+.home-covers__nav { display: flex; gap: 8px; }
+.home-covers__nav .icon-button { border: 1px solid var(--line-strong); border-radius: 50%; transition: opacity 150ms ease; }
+.home-covers__nav .icon-button:first-child svg { transform: scaleX(-1); }
+.home-covers__nav .icon-button:disabled { opacity: .35; }
+.home-covers__scroller { overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x proximity; scroll-padding-inline: var(--edge); }
+.home-covers.is-enhanced .home-covers__scroller { scrollbar-width: none; }
+.home-covers__track { display: flex; grid-template-columns: none; gap: 20px; width: max-content; list-style: none; margin: 0; padding: 4px var(--edge) 28px; }
+.home-covers__track li { flex: none; scroll-snap-align: start; }
+.home-covers__track a { display: block; height: var(--cover); min-height: 0; overflow: hidden; border-radius: 3px; background: var(--bg); box-shadow: 0 1px 2px rgb(0 0 0 / .1), 0 14px 24px -16px rgb(0 0 0 / .4); transition: transform 200ms cubic-bezier(.2, .65, .3, 1); }
+.home-covers__track a:active { opacity: .8; }
+.home-covers__track img { width: auto; max-width: none; height: 100%; border-radius: 0; }
 @media (hover: hover) {
-  .journal-wall a:hover { color: var(--action); }
+  .home-covers__nav .icon-button:not(:disabled):hover { background: var(--bg); }
+  .home-covers__track a:hover { transform: translateY(-4px); }
 }
 
-/* 4 the book: on the quiet plate */
-.home-book { background: var(--surface); padding-block: 72px; }
-.home-book + .home-section, .home-section + .home-book { border-top: 0; }
-
-/* 5 news: the newest large with its picture, three rows beside it */
-.home-news { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 32px var(--split-gap); align-items: start; }
-.home-news time { display: block; color: var(--muted); font-size: 14px; }
-.home-news h3 a { color: var(--ink); text-decoration: none; }
-.home-news__lead { position: relative; display: grid; gap: 10px; }
-.home-news__lead h3 { font-size: 28px; font-weight: 450; line-height: 1.2; letter-spacing: -.03em; max-width: 24ch; }
-.home-news__image { overflow: hidden; margin-bottom: 10px; padding: 5%; border-radius: var(--r-md); aspect-ratio: 16 / 10; background: var(--surface); }
-.home-news__image img { width: 100%; height: 100%; object-fit: contain; }
-.home-news__rows { list-style: none; margin: 0; padding: 0; }
-.home-news__row { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 96px; align-content: start; gap: 6px 20px; padding: 20px 0; border-top: 1px solid var(--line); }
-.home-news__row:first-child { border-top: 0; padding-top: 0; }
-.home-news__row time, .home-news__row h3 { grid-column: 1; }
-.home-news__row h3 { font-size: 18px; font-weight: 500; line-height: 1.35; letter-spacing: -.015em; }
-.home-news__thumb { grid-column: 2; grid-row: 1 / span 2; overflow: hidden; border-radius: var(--r-sm); aspect-ratio: 1; }
-.home-news__thumb img { width: 100%; height: 100%; object-fit: cover; }
-.home-news h3 a::after { content: ""; position: absolute; inset: 0; }
+/* 4 news beside the book, as one pair of equal height. News: each headline under its date, with the post's
+   own picture as a square before it (a post without one is its two lines alone, nothing drawn in its
+   place). The book: a card, the cover as a standing book (.book3d: the front, the page edges and the back
+   cover, turned a little; it turns to face the reader under the pointer) on a quiet plate, then the title,
+   its facts as rows (icon, value) and one link; the whole card follows the link. From 1024px the two headings share a grid row. */
+.home-split { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 56px calc(var(--split-gap) * 1.5); }
+.news-list { list-style: none; margin: 0; padding: 0; display: grid; align-content: space-between; gap: 24px; }
+.news-list li { position: relative; display: flex; align-items: center; gap: 24px; }
+.news-list__text { display: grid; gap: 6px; min-width: 0; }
+.news-list time { color: var(--muted); font-size: 14px; line-height: 1.4; font-variant-numeric: tabular-nums; }
+.news-list h3 { font-size: 20px; font-weight: 500; line-height: 1.3; letter-spacing: -.015em; text-wrap: pretty; }
+.news-list a { color: var(--ink); text-decoration: none; }
+.news-list a::after { content: ""; position: absolute; inset: 0; }
+.news-list__picture { position: relative; order: -1; flex: none; overflow: hidden; width: 112px; aspect-ratio: 1; border-radius: var(--r-md); background: var(--surface); }
+.news-list__picture::after { content: ""; position: absolute; inset: 0; border: 1px solid var(--line); border-radius: inherit; pointer-events: none; }
+.news-list__picture img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; transition: transform 500ms cubic-bezier(.2, .65, .3, 1); }
+[data-theme="dark"] .news-list__picture img { filter: brightness(.92); }
+.book-card { position: relative; display: flex; flex-direction: column; }
+.book-card__plate { flex: 1 0 auto; display: grid; place-items: center; padding: 36px 24px; border-radius: var(--r-md); background: var(--surface); }
+.book3d { --bw: 196px; --bd: calc(var(--bw) * .115); display: block; perspective: calc(var(--bw) * 6); }
+.book3d__body { position: relative; display: block; width: var(--bw); aspect-ratio: 1249 / 1536; transform-style: preserve-3d; transform: rotateY(-26deg); transition: transform 500ms cubic-bezier(.2, .65, .3, 1); }
+.book3d__body img { position: relative; display: block; width: 100%; height: 100%; border-radius: 1px 3px 3px 1px; transform: translateZ(calc(var(--bd) / 2)); }
+.book3d__body::before { content: ""; position: absolute; inset: 1% 0 1% auto; width: var(--bd); background: var(--book-paper, #f3f1ec); box-shadow: inset 0 0 0 1px rgb(0 0 0 / .05), inset 4px 0 5px -3px rgb(0 0 0 / .22), inset -4px 0 5px -3px rgb(0 0 0 / .22); transform: translateX(calc(50% - 2px)) rotateY(90deg); }
+.book3d__body::after { content: ""; position: absolute; inset: 0; border-radius: 1px 3px 3px 1px; background: var(--book-back, #d5dde7); box-shadow: -10px 12px 26px -4px rgb(0 0 0 / .3), -2px 3px 6px rgb(0 0 0 / .12); transform: translateZ(calc(var(--bd) / -2)); }
+[data-theme="dark"] .book3d { --book-paper: #b9b6af; --book-back: #8f98a3; }
+[data-theme="dark"] .book3d img { filter: brightness(.9); }
+.book-card__text { padding-top: 20px; }
+.book-card h3 { font-size: 20px; font-weight: 500; line-height: 1.3; letter-spacing: -.015em; }
+.book-facts { display: grid; gap: 6px; margin: 12px 0 0; font-size: 15px; line-height: 1.45; }
+.book-facts div { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 10px; align-items: start; }
+.book-facts dt { color: var(--muted); }
+.book-facts dt svg { display: block; width: 18px; height: 18px; margin-top: 2px; }
+.book-facts dd { margin: 0; color: var(--ink); text-wrap: pretty; }
+.book-card .text-action { margin-top: 8px; }
+.book-card .text-action::after { content: ""; position: absolute; inset: 0; }
+.news-list li:active, .book-card:active { opacity: .7; }
 @media (hover: hover) {
-  .home-news h3 a:hover { color: var(--action); }
+  .news-list li:hover a { color: var(--action); }
+  .news-list li:hover img { transform: scale(1.04); }
+  .book-card:hover .book3d__body { transform: rotateY(-8deg); }
+  .book-card:hover .text-action { text-decoration-color: currentColor; }
+}
+@media (min-width: 1024px) {
+  .home-split { grid-template-rows: auto 1fr; row-gap: 0; }
+  .home-news, .home-book { display: grid; grid-template-rows: subgrid; grid-row: span 2; }
+  .home-split:has(.home-news .section-head__lede) .home-book .section-head { align-items: start; }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .news-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 40px; }
+  .news-list li { align-items: start; gap: 20px; }
+  .news-list h3 { font-size: 18px; }
+  .book-card { flex-direction: row; align-items: center; gap: 40px; }
+  .book-card__plate { flex: 0 0 44%; }
+  .book-card__text { padding-top: 0; }
 }
 
-/* 6 the team: the photo wide, the words over its lower edge on a phone, beside it from 1024 */
-.home-team { display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: 32px var(--split-gap); align-items: end; }
-.home-team__photo { overflow: hidden; border-radius: var(--r-lg); aspect-ratio: 16 / 10; }
-.home-team__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 60%; }
-.home-team__text p { margin-top: 16px; color: var(--muted); font-size: var(--t-lead); line-height: 1.45; }
-.home-team__text .btn-row { margin-top: 28px; }
+/* 5 community: two cards, each its logo on a colored panel, then the title, one line and where it goes */
+.community-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.community-item { display: grid; align-content: start; gap: 6px; height: 100%; color: var(--ink); text-decoration: none; }
+.community-item__art { display: grid; place-items: center; overflow: hidden; margin-bottom: 14px; border-radius: var(--r-md); aspect-ratio: 16 / 7; }
+.community-item__art--plate { background: #fff; }
+.community-item__art--latte { background: #c59c6b; }
+.community-item__art img { width: 72%; height: auto; max-height: 70%; object-fit: contain; transition: transform 500ms cubic-bezier(.2, .65, .3, 1); }
+.community-item:active { opacity: .7; }
+.community-item__title { display: flex; align-items: center; gap: 8px; font-size: 20px; font-weight: 500; line-height: 1.3; letter-spacing: -.015em; }
+.community-item__text { color: var(--muted); font-size: 15px; line-height: 1.5; }
+.community-item__title svg { flex: none; width: 18px; height: 18px; color: var(--muted); transition: transform 150ms cubic-bezier(.2, .65, .3, 1); }
+@media (hover: hover) {
+  .community-item:hover .community-item__art img { transform: scale(1.035); }
+  .community-item:hover .community-item__title, .community-item:hover .community-item__title svg { color: var(--action); }
+  .community-item:hover .community-item__title svg { transform: translateX(3px); }
+}
 
-/* 8 funders */
-.home-funding { padding-block: 64px; }
-.home-funding__text { max-width: 44rem; color: var(--muted); font-size: 15px; }
-.home-funding__text a { color: var(--ink); }
-.logo-band { list-style: none; margin: 32px 0 0; padding: 0; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 24px 40px; align-items: center; }
-.logo-band li { display: grid; place-items: center; height: 56px; }
-/* every logo in the same box (width and height), so wide marks and tall marks read at one optical size */
-.logo-band img { width: 100%; max-width: 132px; height: 40px; object-fit: contain; filter: grayscale(1); opacity: .72; }
-[data-theme="dark"] .logo-band img { filter: grayscale(1) invert(1) brightness(1.4); mix-blend-mode: screen; opacity: .8; }
+/* 6 funders: centered, no boxes. A small line, the current funders' logos, a second small line and the past
+   funders' logos, smaller and lighter, in one row. Every logo is drawn in one tone (gray; white in the dark
+   theme) and takes its colors under the pointer or keyboard focus; a filled seal (.funder--shaded) keeps
+   its shades of gray. */
+.home-funding { padding-bottom: 48px; text-align: center; }
+.home-funding .funders__label { margin: 0; color: var(--muted); font-size: 14px; font-weight: 500; line-height: 1.4; letter-spacing: 0; }
+.funders { list-style: none; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 64px; margin: 16px 0 0; padding: 0; }
+.funders--past { gap: 4px 48px; margin-top: 10px; }
+.funders + .funders__label { margin-top: 44px; }
+.funder { display: flex; align-items: center; gap: 14px; min-height: 64px; text-align: left; text-decoration: none; }
+.funder__logo { display: block; flex: none; }
+.funder__logo img { display: block; max-width: 100%; height: auto; filter: brightness(0); opacity: .66; transition: filter 200ms ease, opacity 200ms ease; }
+.funder--shaded img { filter: grayscale(1) contrast(1.15); opacity: .85; }
+.funders--past .funder__logo img { opacity: .42; }
+.funder__name { max-width: 11em; color: var(--muted); font-size: 15px; font-weight: 500; line-height: 1.3; text-wrap: balance; }
+.funder:focus-visible { outline-offset: 6px; }
+.funder:focus-visible img { filter: none; opacity: 1; }
+.funder:focus-visible .funder__name { color: var(--ink); }
+@media (hover: hover) {
+  .funder:hover img { filter: none; opacity: 1; }
+  .funder:hover .funder__name { color: var(--ink); }
+}
+[data-theme="dark"] .funder__logo img { filter: brightness(0) invert(1); opacity: .78; }
+[data-theme="dark"] .funder--shaded img { filter: grayscale(1) invert(1) brightness(1.25); opacity: .78; }
+[data-theme="dark"] .funders--past .funder__logo img { opacity: .46; }
+[data-theme="dark"] .funder:focus-visible img { opacity: 1; }
+@media (hover: hover) {
+  [data-theme="dark"] .funder:hover img { opacity: 1; }
+}
 
 @media (max-width: 1023px) {
-  .card-grid--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .home-news, .home-team { grid-template-columns: minmax(0, 1fr); }
-  .logo-band { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .home-split { grid-template-columns: minmax(0, 1fr); }
+  .home-covers { --cover: 260px; }
 }
 @media (max-width: 767px) {
-  .home-hero { padding-top: 12px; }
-  .home-hero__panel { grid-template-columns: minmax(0, 1fr); min-height: 0; }
-  .home-hero__media { grid-row: 1; grid-column: 1; padding: 24px 24px 0; }
-  .home-hero__media img { max-height: 200px; }
-  .home-hero__text { grid-row: 2; padding: 8px 24px 32px; }
-  .home-hero h1 { font-size: clamp(32px, 9.4vw, 42px); line-height: 1.04; }
-  .home-hero__lead { margin-top: 16px; font-size: 16px; }
-  .card-grid--3, .card-grid--2 { grid-template-columns: minmax(0, 1fr); gap: 40px; }
-  .journal-wall { display: grid; gap: 0; }
-  .journal-wall li + li { border-top: 1px solid var(--line); }
-  .journal-wall a { font-size: 22px; min-height: 52px; align-items: center; }
-  .logo-band { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 32px; }
-  .home-news__row { grid-template-columns: minmax(0, 1fr) 72px; }
+  .home-section--tinted { padding-block: 44px; }
+  .section-head { margin-bottom: 20px; }
+  .community-list { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .home-covers { --cover: 210px; padding-block: 44px 28px; }
+  .home-covers__track { gap: 14px; padding-bottom: 24px; }
+  .home-covers__nav { display: none; }
+  .news-list { gap: 20px; }
+  .news-list li { gap: 16px; }
+  .news-list h3 { font-size: 18px; }
+  .news-list__picture { width: 88px; }
+  .book-card__plate { padding: 28px 20px; }
+  .book-card .book3d { --bw: 164px; }
 }
-/* the book: the real cover on a CSS 3D block (cover, spine, page edges), resting turned to show its spine,
-   turned toward the pointer by assets/js/main/book.js (--rx, --ry), lifted a little under the pointer */
-.book-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: var(--split-gap); }
-.book-split h2 { font-size: var(--t-h2); max-width: 14ch; }
-.book-split__lead { margin-top: 20px; color: var(--muted); font-size: var(--t-lead); line-height: 1.45; }
-.book3d { --w: 320px; --h: calc(var(--w) * 1.2298); --d: 40px; --rx: 6deg; --ry: 28deg; --lift: 0px;
-  position: relative; display: block; height: calc(var(--h) + 120px); color: inherit; }
-.book3d__stage { position: absolute; inset: 0; z-index: 1; display: flex; align-items: center; justify-content: center; perspective: 1400px; transform-style: preserve-3d; }
-.book3d:focus-visible { outline-offset: 8px; border-radius: var(--r-lg); }
-.book3d__obj { position: relative; width: var(--w); height: var(--h); transform-style: preserve-3d;
-  transform: translateY(calc(-1 * var(--lift))) rotateX(var(--rx)) rotateY(var(--ry));
-  transition: transform 700ms cubic-bezier(.2, .8, .2, 1); }
-.book3d__face { position: absolute; display: block; }
-.book3d__front, .book3d__back { -webkit-backface-visibility: hidden; backface-visibility: hidden; }
-.book3d__front, .book3d__back { inset: 0; }
-.book3d__front { transform: translateZ(calc(var(--d) / 2)); border-radius: 2px 6px 6px 2px; overflow: hidden; box-shadow: inset 3px 0 0 rgb(0 0 0 / .08); }
-.book3d__front img { width: 100%; height: 100%; object-fit: cover; }
-.book3d__back { transform: rotateY(180deg) translateZ(calc(var(--d) / 2)); background: #e8eef4; border-radius: 6px 2px 2px 6px; }
-.book3d__spine { top: 0; left: calc(50% - var(--d) / 2); width: var(--d); height: 100%; background: #485a7d; transform: rotateY(-90deg) translateZ(calc(var(--w) / 2)); }
-.book3d__pages { top: 3px; bottom: 3px; left: calc(50% - var(--d) / 2); width: var(--d); background: #f3f1ec; box-shadow: inset 0 0 0 1px rgb(0 0 0 / .06); transform: rotateY(90deg) translateZ(calc(var(--w) / 2 - 3px)); }
-.book3d__top, .book3d__bottom { left: 0; right: 3px; top: calc(50% - var(--d) / 2); height: var(--d); background: #f3f1ec; }
-.book3d__top { transform: rotateX(90deg) translateZ(calc(var(--h) / 2 - 1px)); }
-.book3d__bottom { transform: rotateX(-90deg) translateZ(calc(var(--h) / 2 - 1px)); }
-.book3d__shadow { position: absolute; z-index: 0; left: 50%; bottom: 36px; width: calc(var(--w) * 1.05); height: 28px; margin-left: calc(var(--w) * -.525);
-  border-radius: 50%; background: rgb(0 0 0 / .1); box-shadow: 0 0 28px 14px rgb(0 0 0 / .12); opacity: .9; transform: scaleX(.9);
-  transition: transform 700ms cubic-bezier(.2, .8, .2, 1), opacity 700ms cubic-bezier(.2, .8, .2, 1); pointer-events: none; }
-@media (hover: hover) and (pointer: fine) {
-  .book3d:hover { --lift: 14px; }
-  .book3d:hover .book3d__shadow { transform: scaleX(.78); opacity: .55; }
-}
-[data-theme="dark"] .book3d__shadow { background: rgb(0 0 0 / .5); box-shadow: 0 0 28px 14px rgb(0 0 0 / .5); }
-@media (prefers-reduced-motion: reduce) {
-  .book3d__obj, .book3d__shadow { transition-duration: 0s; }
-}
+
 @media (max-width: 767px) {
-  .book-split { grid-template-columns: minmax(0, 1fr); }
-  .book-split .book3d { order: -1; }
-  .book3d { --w: 230px; --d: 30px; height: calc(var(--h) + 80px); }
+  .card-grid--3 { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .media-card { grid-template-columns: minmax(0, 1fr) clamp(96px, 27vw, 148px); grid-template-rows: 1fr auto auto 1fr; gap: 4px 16px; }
+  .media-card__frame { grid-area: 1 / 2 / -1 / 3; margin: 0; aspect-ratio: 1; }
+  .media-card__title { grid-area: 2 / 1; font-size: 18px; }
+  .media-card__text { grid-area: 3 / 1; line-height: 1.45; }
+  .media-card:active { opacity: .7; }
+}
+
+/* funders on a phone: the current funders one under the other, the past logos wrapping in centered rows */
+@media (max-width: 767px) {
+  .funders { flex-direction: column; gap: 4px; }
+  .funders--past { flex-direction: row; gap: 0 28px; }
+  .home-funding { padding-bottom: 28px; }
+  .funders + .funders__label { margin-top: 32px; }
 }

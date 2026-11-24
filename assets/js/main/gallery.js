@@ -46,6 +46,20 @@ for (const slideshow of document.querySelectorAll('.slideshow')) {
 }
 
 
+// a picture in a reading page opens in the viewer when the viewer has more to show: its largest file is
+// wider than the picture stands on this screen (a picture that is already a link keeps its own target)
+for (const picture of document.querySelectorAll('.page-body--article :is(.image-block, p) img, .page-body--article > img')) {
+  const largest = Number(picture.srcset.match(/(\d+)w\s*$/)?.[1] || 0);
+  if (largest < 480 || largest < picture.clientWidth * 1.15 || picture.closest('a, .slideshow, .gallery')) continue;
+  const link = document.createElement('a');
+  link.href = picture.src;
+  link.dataset.lightbox = '';
+  link.dataset.caption = picture.closest('figure')?.querySelector('figcaption')?.textContent.trim() || '';
+  link.setAttribute('aria-label', picture.alt ? `Enlarge: ${picture.alt}` : 'Enlarge image');
+  picture.replaceWith(link);
+  link.append(picture);
+}
+
 const viewer = document.querySelector('#image-viewer');
 const openViewer = wireDialog(viewer, []);
 const image = viewer.querySelector('img');
@@ -57,7 +71,7 @@ let active = 0;
 function showImage(step) {
   active = (active + step + links.length) % links.length;
   const link = links[active];
-  const label = link.title || link.getAttribute('aria-label') || '';
+  const label = link.dataset.caption ?? (link.title || link.getAttribute('aria-label') || '');
   image.alt = link.querySelector('img')?.alt || label;
   image.src = link.href;
   caption.textContent = label;
@@ -67,7 +81,7 @@ function showImage(step) {
 document.addEventListener('click', event => {
   const link = event.target.closest('a[data-lightbox]');
   if (!link || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
-  const gallery = link.closest('.gallery, .slideshow');
+  const gallery = link.closest('.gallery, .slideshow, .page-body--article');
   links = gallery ? [...gallery.querySelectorAll('a[data-lightbox]')] : [link];
   active = links.indexOf(link);
   event.preventDefault();

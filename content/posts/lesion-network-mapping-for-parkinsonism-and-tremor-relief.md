@@ -6,7 +6,7 @@ crumbs:
 - title: Home
   url: '@root@'
 - title: News
-  url: '@root@blog/'
+  url: '@root@news/'
 - title: Lesion Network Mapping for Parkinsonism and Tremor relief
 sidebar: true
 wordpress_id: 250
@@ -14,7 +14,6 @@ date: '2018-07-20T12:14:16+00:00'
 modified: '2018-07-27T07:33:39+00:00'
 author: andreashorn
 comment_anchor: true
-canonical: /lesion-network-mapping-for-parkinsonism-and-tremor-relief/
 ---
 
 <p>In two articles published this month, <a href="https://www.researchgate.net/profile/Juho_Joutsa">Juho Joutsa</a> and <a href="https://www.researchgate.net/profile/Michael_Fox11">Michael D Fox</a> have applied their lesion network mapping approach to symptoms that are highly relevant to the field of DBS.</p>

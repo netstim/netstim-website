@@ -6,7 +6,7 @@ crumbs:
 - title: Home
   url: '@root@'
 - title: News
-  url: '@root@blog/'
+  url: '@root@news/'
 - title: New Transregional Collaborative Research Center for Neuromodulation
 sidebar: true
 wordpress_id: 1124
@@ -14,7 +14,6 @@ date: '2020-06-06T06:26:32+00:00'
 modified: '2020-06-06T06:28:51+00:00'
 author: andreashorn
 comment_anchor: true
-canonical: /new-transregional-collaborative-research-center-for-neuromodulation/
 ---
 
 <div class="columns"><div class="column column-1-1"><p>We are thrilled about having received a center grant by the German Research Foundation (DFG) to retune brain disorders using deep brain stimulation under the lead of Andrea Kühn and Jens Volkmann in Berlin &amp; Würzburg. This means, we will be hiring, as well – one postdoc &amp; one PhD position to be advertised soon.</p>

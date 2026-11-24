@@ -1,0 +1,40 @@
+{{- /* The book (/book/). The cover as a standing book beside the title (the page head), then the text of
+       content/book.md (a few plain sentences, with the links to order or read the book in them), one small
+       line with the ISBNs and the DOI, and the contents of data/book.yaml: every chapter, grouped by part,
+       the title linked to its DOI, the first page at the right. Nothing folds. book.css lays the page head and this partial out on one
+       two-column grid. */ -}}
+{{ $b := hugo.Data.book }}
+<div class="book">
+  <div class="book__cover">
+    <span class="book3d"><span class="book3d__body">{{ partial "picture.html" (dict "src" $b.cover "alt" (printf "Cover of %s" $b.title) "width" 440 "sizes" "(max-width: 767px) 184px, (max-width: 1439px) 28vw, 400px" "eager" true) }}</span></span>
+  </div>
+  <div class="book__about">
+    <div class="book__text">{{ partial "render.html" .Content }}</div>
+    {{ with $b.identifiers }}
+    <ul class="book__ids">
+      {{ range .rows }}<li>{{ .label }} {{ if .url }}<a href="{{ .url }}" rel="noopener">{{ .value }}</a>{{ else }}{{ .value }}{{ end }}</li>{{ end }}
+    </ul>
+    {{ end }}
+  </div>
+  <section class="toc" aria-labelledby="contents-h">
+    <h2 id="contents-h">Contents</h2>
+    {{ range $b.parts }}
+    <div class="toc__part">
+      <h3 class="toc__head"><span class="toc__label"><span class="sr-only">Part </span>{{ .part }}</span><span>{{ .title }}</span></h3>
+      <ol class="toc__list">
+        {{ range .chapters }}
+        <li value="{{ .n }}">
+          <span class="toc__n" aria-hidden="true">{{ .n }}</span>
+          <span class="toc__text">
+            {{ if .doi }}<a class="toc__title" href="https://doi.org/{{ .doi }}" rel="noopener"><span class="sr-only">Chapter {{ .n }}: </span>{{ .title }}</a>
+            {{ else }}<span class="toc__title"><span class="sr-only">Chapter {{ .n }}: </span>{{ .title }}</span>{{ end }}
+            <span class="toc__authors">{{ .authors }}</span>
+          </span>
+          {{ with .page }}<span class="toc__page"><span class="sr-only">page </span>{{ . }}</span>{{ end }}
+        </li>
+        {{ end }}
+      </ol>
+    </div>
+    {{ end }}
+  </section>
+</div>

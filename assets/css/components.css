@@ -1,4 +1,4 @@
-/* Imported components: actions, images, galleries, slideshows, video facades and icon links. */
+/* Imported components: actions, images, galleries, slideshows and video facades. */
 .action-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-top: 28px; }
 .prose .action-row + .action-row { margin-top: 4px; }
 .action {
@@ -38,19 +38,8 @@
   .video-start:hover .play-icon { transform: scale(1.06); }
 }
 .play-icon { transition: transform 150ms cubic-bezier(.2, .65, .3, 1); }
-@font-face { font-family: SiteIcons; src: url("../fonts/entypo-fontello.woff2") format("woff2"); font-display: block; }
-@font-face { font-family: AcademicIcons; src: url("../fonts/academicons.woff") format("woff"); font-display: block; }
-.icon-link {
-  display: inline-grid; width: 44px; height: 44px; place-items: center; border-radius: var(--r-sm);
-  vertical-align: middle; color: var(--ink); text-decoration: none;
-}
-.icon-link::before { content: "↗" / ""; font-size: 17px; }
-.icon-link[data-icon]::before { content: attr(data-icon) / ""; font: 18px SiteIcons; }
 .video-embed--audio { aspect-ratio: auto; min-height: 128px; }
 .video-embed--audio .video-start { flex-direction: row; }
-@media (hover: hover) {
-  .icon-link:hover { background: var(--surface); color: var(--action); }
-}
 .gallery { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
 .gallery a { display: grid; min-height: 44px; min-width: 0; overflow: hidden; border-radius: var(--r-sm); }
 .gallery img { width: 100%; height: auto; border-radius: var(--r-sm); }

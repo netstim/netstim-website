@@ -6,7 +6,7 @@ crumbs:
 - title: Home
   url: '@root@'
 - title: News
-  url: '@root@blog/'
+  url: '@root@news/'
 - title: Andreas Horn receives International Brain Stimulation Early Career Awa...
 sidebar: true
 wordpress_id: 2364
@@ -14,7 +14,6 @@ date: '2024-10-20T17:08:07+00:00'
 modified: '2025-03-03T15:07:48+00:00'
 author: andreashorn
 comment_anchor: true
-canonical: /andreas-horn-receives-international-brain-stimulation-early-career-award/
 ---
 
 <div class="columns"><div class="column column-1-1"><h2>Andreas Horn receives International Brain Stimulation Early Career Award</h2>

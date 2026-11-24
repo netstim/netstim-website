@@ -2,7 +2,8 @@
 // - Each dialog has an address (#andreas-horn, #GoedeSummit): opening pushes it, Back closes the dialog, and
 //   opening the page at it opens the dialog.
 // - Where the browser has view transitions, the photo grows from the card into the dialog and the panel
-//   slides in; only those two move (the page itself is not cross-faded). Reduced motion: at once.
+//   rises into place; only those two move (the page itself is not cross-faded). Reduced motion: at once.
+// - The dialogs are native modals: the page behind is inert and does not scroll, Tab stays inside.
 // - Closing by the button, Escape, a click outside or Back all run the same close.
 // - Focus returns to the card, with a ring only when the dialog was opened from the keyboard.
 import { wireDialog } from './dialog.js';
@@ -71,7 +72,7 @@ for (const card of document.querySelectorAll('[data-person]')) {
   entries.push({ slug, open, close, dialog });
 }
 
-const fromHash = () => decodeURIComponent(location.hash.slice(1));
+const fromHash = () => decodeURIComponent(location.hash.slice(1)).replace(/^person-/, '');
 window.addEventListener('popstate', () => {
   const wanted = fromHash();
   for (const entry of entries) {
@@ -81,7 +82,3 @@ window.addEventListener('popstate', () => {
 });
 // opened at an address (a shared link, or an old poster anchor)
 entries.find(entry => entry.slug && entry.slug === fromHash())?.open({ push: false });
-// the sheet's bar shows the name once the head has scrolled away
-for (const sheet of document.querySelectorAll('.person-sheet')) {
-  sheet.addEventListener('scroll', () => sheet.classList.toggle('is-scrolled', sheet.scrollTop > 120), { passive: true });
-}
