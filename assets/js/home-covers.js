@@ -1,6 +1,7 @@
-// Prev/next buttons for horizontal photo/cover strips (Home covers and People lab-life). Without this script
-// a strip still scrolls by touch, trackpad and keyboard; with it the buttons appear, scroll by most of the
-// strip's width, and switch off at either end.
+// Prev/next buttons and mouse click-and-drag scrolling for horizontal cover strips (layouts/home.html).
+// Without this script a strip still scrolls by touch, trackpad and keyboard; with it the buttons appear,
+// scroll by most of the strip's width, switch off at either end, and mouse users can grab and drag the strip
+// while plain clicks still open the image viewer.
 const still = matchMedia('(prefers-reduced-motion: reduce)');
 for (const strip of document.querySelectorAll('[data-covers]')) {
   const scroller = strip.querySelector('[data-covers-scroller]');
@@ -18,6 +19,50 @@ for (const strip of document.querySelectorAll('[data-covers]')) {
       scroller.scrollBy({ left: distance, behavior: still.matches ? 'auto' : 'smooth' });
     });
   }
+
+  let active = false;
+  let moved = false;
+  let suppressClick = false;
+  let startX = 0;
+  let startLeft = 0;
+  scroller.addEventListener('dragstart', event => event.preventDefault());
+  scroller.addEventListener('pointerdown', event => {
+    if (event.pointerType !== 'mouse' || event.button !== 0) return;
+    active = true;
+    moved = false;
+    startX = event.clientX;
+    startLeft = scroller.scrollLeft;
+  });
+  scroller.addEventListener('pointermove', event => {
+    if (!active) return;
+    const dx = event.clientX - startX;
+    if (!moved && Math.abs(dx) > 5) {
+      moved = true;
+      scroller.setPointerCapture(event.pointerId);
+      scroller.classList.add('is-dragging');
+    }
+    if (moved) scroller.scrollLeft = startLeft - dx;
+  });
+  const endDrag = event => {
+    if (!active) return;
+    active = false;
+    if (moved) {
+      if (scroller.hasPointerCapture(event.pointerId)) scroller.releasePointerCapture(event.pointerId);
+      scroller.classList.remove('is-dragging');
+      suppressClick = true;
+      setTimeout(() => { suppressClick = false; }, 0);
+    }
+    moved = false;
+  };
+  scroller.addEventListener('pointerup', endDrag);
+  scroller.addEventListener('pointercancel', endDrag);
+  scroller.addEventListener('click', event => {
+    if (!suppressClick) return;
+    suppressClick = false;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+  }, true);
+
   scroller.addEventListener('scroll', update, { passive: true });
   new ResizeObserver(update).observe(scroller);
   nav.hidden = false;

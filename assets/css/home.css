@@ -164,7 +164,9 @@
 .home-covers__nav .icon-button:first-child svg { transform: scaleX(-1); }
 .home-covers__nav .icon-button:disabled { opacity: .35; }
 .home-covers__scroller { overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x proximity; scroll-padding-inline: var(--edge); }
-.home-covers.is-enhanced .home-covers__scroller { scrollbar-width: none; }
+.home-covers.is-enhanced .home-covers__scroller { scrollbar-width: none; cursor: grab; }
+.home-covers__scroller.is-dragging { cursor: grabbing; scroll-snap-type: none; user-select: none; }
+.home-covers__scroller.is-dragging a { cursor: grabbing; }
 .home-covers__track { display: flex; grid-template-columns: none; gap: 20px; width: max-content; list-style: none; margin: 0; padding: 4px var(--edge) 28px; }
 .home-covers__track li { flex: none; scroll-snap-align: start; }
 .home-covers__track a { display: block; height: var(--cover); min-height: 0; overflow: hidden; border-radius: 3px; background: var(--bg); box-shadow: 0 1px 2px rgb(0 0 0 / .1), 0 14px 24px -16px rgb(0 0 0 / .4); transition: transform 200ms cubic-bezier(.2, .65, .3, 1); }
