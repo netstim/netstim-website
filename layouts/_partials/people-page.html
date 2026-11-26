@@ -66,32 +66,30 @@
   {{ end }}
 </div>
 {{ with hugo.Data.lab_life }}
-{{ $arrow := partial "icon.html" "arrow" }}
-<section id="lab-life" class="lab-life" aria-labelledby="lab-life-h" data-covers>
-  <div class="wrap lab-life__head">
-    <div class="lab-life__copy">
-      <h2 id="lab-life-h">{{ .title | default "Lab life" }}</h2>
-      {{ with .text }}<p>{{ . }}</p>{{ end }}
+<section id="lab-life" class="lab-life" aria-labelledby="lab-life-h">
+  <div class="wrap gallery">
+    <div class="lab-life__lead">
+      <div class="lab-life__copy">
+        <h2 id="lab-life-h">{{ .title | default "Lab life" }}</h2>
+        {{ with .text }}<p>{{ . }}</p>{{ end }}
+      </div>
+      {{ with .lead_photo }}{{ $full := "" }}{{ with resources.Get .image }}{{ $full = (.Resize "2000x webp q90").RelPermalink }}{{ end }}
+      <a class="lab-life__photo lab-life__photo--lead" href="{{ $full }}" data-lightbox data-caption="" aria-label="{{ .alt }}">
+        {{ partial "picture.html" (dict "src" .image "alt" .alt "width" 1400 "sizes" "(max-width: 859px) calc(100vw - 40px), 700px") }}
+      </a>
+      {{ end }}
     </div>
-    <div class="lab-life__nav" data-covers-nav hidden>
-      <button class="icon-button" type="button" data-covers-step="-1" aria-label="Earlier photos">{{ $arrow }}</button>
-      <button class="icon-button" type="button" data-covers-step="1" aria-label="More photos">{{ $arrow }}</button>
-    </div>
-  </div>
-  <div class="lab-life__scroller" data-covers-scroller>
-    <ul class="lab-life__track gallery" aria-label="Lab life photos">
-      {{ range .photos }}{{ $full := "" }}{{ with resources.Get .image }}{{ $full = (.Resize "1800x webp q90").RelPermalink }}{{ end }}
+    <ul class="lab-life__collage" aria-label="Lab life photos">
+      {{ range .photos }}{{ $full := "" }}{{ with resources.Get .image }}{{ $full = (.Resize "2000x webp q90").RelPermalink }}{{ end }}
       <li>
         <a class="lab-life__photo" href="{{ $full }}" data-lightbox data-caption="" aria-label="{{ .alt }}">
-          {{ partial "picture.html" (dict "src" .image "alt" .alt "width" 1200 "sizes" "(max-width: 767px) 82vw, 560px") }}
+          {{ partial "picture.html" (dict "src" .image "alt" .alt "width" 1200 "sizes" "(max-width: 767px) calc(100vw - 40px), 520px") }}
         </a>
       </li>
       {{ end }}
     </ul>
   </div>
 </section>
-{{ $strip := resources.Get "js/home-covers.js" | js.Build (dict "targetPath" "js/home-covers.js" "minify" true) | fingerprint }}
-<script type="module" src="{{ $strip.RelPermalink }}" integrity="{{ $strip.Data.Integrity }}"></script>
 {{ end }}
 <div class="wrap page-body people-after">
   <section class="people-join" aria-labelledby="join-h">

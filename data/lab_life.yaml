@@ -1,15 +1,16 @@
 # Lab life (/people/#lab-life, layouts/_partials/people-page.html).
-# Short text on the left, candid lab photos on the right (each opens full-size in the image viewer).
-# Add a photo to assets/media/ and list it under `photos` with a plain alt description (no captions needed).
+# Lead photo beside a short culture note, followed by a full-width asymmetric photo collage (all 6 photos
+# open full-size in the image viewer). Add new photos under `photos`.
 title: Lab life
-text: Outside of meetings and code, we spend a fair bit of time together — coffee after Stimu-Latte, Cologne’s Christmas markets and Karneval, summer afternoons outdoors with families and Pepsi, and catching up between talks at conferences.
+text: Good science takes serious focus, good coffee, and people you actually enjoy spending the day with. Between neuroimaging pipelines and paper drafts, we’re a mix of neuroscientists, clinicians, engineers, and one opinionated lab dog who rarely turn down cake, an afternoon outside, or an excuse to dress up in Cologne.
+lead_photo:
+  image: media/lab-life-summer.jpg
+  alt: The Netstim lab and families together outdoors under apple trees in summer with Pepsi the dog
 photos:
-- image: media/lab-life-karneval.jpg
-  alt: Netstim lab members in Karneval costumes in the Neurology corridor at University Hospital Cologne
 - image: media/team-2026-stack.jpg
   alt: Netstim team members stacked in three rows outdoors on the Cologne campus
-- image: media/lab-life-summer.jpg
-  alt: The Netstim lab and families together outdoors under apple trees in summer with Pepsi the dog
+- image: media/lab-life-karneval.jpg
+  alt: Netstim lab members in Karneval costumes in the Neurology corridor at University Hospital Cologne
 - image: media/lab-life-weihnachtsmarkt.jpg
   alt: Lab members with Pepsi the dog under ornaments and lights at a Cologne Christmas market
 - image: media/lab-life-office-party.jpg
