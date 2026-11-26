@@ -92,7 +92,7 @@ try {
       await page.keyboard.press('ArrowRight');
       assert.match(await viewer.locator('[role=status]').textContent(), /^2 \/ /);
       await page.keyboard.press('Escape');
-      assert.equal(await viewer.isVisible(), false);
+      await viewer.waitFor({state:'hidden', timeout:5000});
       assert(await cover.evaluate(el => el === document.activeElement));
       // the opening (and People section): the pictures change by themselves, and the round button stops and starts that
       for (const selector of ['.home-intro [data-banner-toggle]', '.home-people [data-banner-toggle]']) {
