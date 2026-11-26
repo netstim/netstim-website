@@ -77,34 +77,30 @@
 @keyframes modal-out { from { opacity: 1; transform: none; } to { opacity: 0; transform: translateY(6px) scale(.985); } }
 @keyframes backdrop-in { from { opacity: 0; } to { opacity: 1; } }
 @keyframes backdrop-out { from { opacity: 1; } to { opacity: 0; } }
-/* Lab life: relaxed text beside an asymmetric mosaic of candid color photos (data/lab_life.yaml) */
-.lab-life { padding-block: clamp(56px, 7vw, 88px); background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.lab-life__grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; align-items: start; }
-.lab-life__text h2 { font-size: var(--t-h2); }
-.lab-life__text p { max-width: 34ch; margin-top: 16px; color: var(--muted); font-size: 17px; line-height: 1.6; text-wrap: pretty; }
-.lab-life__mosaic.gallery { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 12px; }
-.lab-life__mosaic.gallery > li { min-width: 0; }
-.lab-life__mosaic.gallery > li:nth-child(6n+1) { grid-column: span 7; }
-.lab-life__mosaic.gallery > li:nth-child(6n+2) { grid-column: span 5; }
-.lab-life__mosaic.gallery > li:nth-child(6n+3) { grid-column: span 12; }
-.lab-life__mosaic.gallery > li:nth-child(6n+4),
-.lab-life__mosaic.gallery > li:nth-child(6n+5),
-.lab-life__mosaic.gallery > li:nth-child(6n+6) { grid-column: span 4; }
-.lab-life__mosaic.gallery .lab-life__photo { display: block; height: 100%; overflow: hidden; border-radius: var(--r-md); background: var(--bg); cursor: zoom-in; }
-.lab-life__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 25%; border-radius: 0; transition: transform 400ms cubic-bezier(.2, .65, .3, 1); }
-.lab-life__mosaic.gallery > li:nth-child(6n+1) img { aspect-ratio: 4 / 3; object-position: 50% 12%; }
-.lab-life__mosaic.gallery > li:nth-child(6n+2) img { aspect-ratio: 10 / 10.5; object-position: 50% 14%; }
-.lab-life__mosaic.gallery > li:nth-child(6n+3) img { aspect-ratio: 16 / 10; object-position: 50% 40%; }
-.lab-life__mosaic.gallery > li:nth-child(6n+4) img,
-.lab-life__mosaic.gallery > li:nth-child(6n+5) img,
-.lab-life__mosaic.gallery > li:nth-child(6n+6) img { aspect-ratio: 4 / 3; }
-[data-theme="dark"] .lab-life__photo img { filter: brightness(.92); }
-@media (hover: hover) {
-  .lab-life__photo:hover img { transform: scale(1.03); }
+/* Lab life: full-bleed horizontal editorial photo strip (data/lab_life.yaml) breaking up the vertical grids */
+.lab-life { --edge: calc((100% - min(100% - 2 * var(--gut), var(--container))) / 2); --photo-h: 400px; padding-block: clamp(52px, 6vw, 80px) clamp(40px, 5vw, 64px); background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.lab-life__head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 32px; margin-bottom: 32px; }
+.lab-life__copy { max-width: 58ch; }
+.lab-life__copy h2 { font-size: var(--t-h2); }
+.lab-life__copy p { margin-top: 10px; color: var(--muted); font-size: 17px; line-height: 1.55; text-wrap: pretty; }
+.lab-life__nav { display: flex; flex: none; gap: 8px; }
+.lab-life__nav .icon-button { border: 1px solid var(--line-strong); border-radius: 50%; transition: opacity 150ms ease; }
+.lab-life__nav .icon-button:first-child svg { transform: scaleX(-1); }
+.lab-life__nav .icon-button:disabled { opacity: .35; }
+.lab-life__scroller { overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x proximity; scroll-padding-inline: var(--edge); }
+.lab-life.is-enhanced .lab-life__scroller { scrollbar-width: none; }
+.lab-life__track.gallery { display: flex; grid-template-columns: none; gap: 20px; width: max-content; list-style: none; margin: 0; padding: 4px var(--edge) 16px; }
+.lab-life__track.gallery > li { flex: none; scroll-snap-align: start; }
+.lab-life__track.gallery .lab-life__photo {
+  display: block; height: var(--photo-h); overflow: hidden; border-radius: var(--r-md);
+  background: var(--bg); box-shadow: 0 1px 2px rgb(0 0 0 / .08), 0 12px 24px -14px rgb(0 0 0 / .28);
+  cursor: zoom-in;
 }
-@media (min-width: 1024px) {
-  .lab-life__grid { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 56px; }
-  .lab-life__text { position: sticky; top: calc(var(--nav) + 32px); }
+.lab-life__photo img { width: auto; max-width: none; height: 100%; border-radius: 0; transition: transform 420ms cubic-bezier(.2, .65, .3, 1); }
+[data-theme="dark"] .lab-life__photo img { filter: brightness(.93); }
+@media (hover: hover) {
+  .lab-life__nav .icon-button:not(:disabled):hover { background: var(--bg); }
+  .lab-life__photo:hover img { transform: scale(1.025); }
 }
 /* the alumni */
 .people-alumni { padding-top: 0; }
@@ -121,6 +117,7 @@
   .alumnus__links a:hover { color: var(--action); text-decoration: underline; }
 }
 @media (max-width: 1023px) {
+  .lab-life { --photo-h: 320px; }
   .alumni-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
 @media (max-width: 767px) {
@@ -130,11 +127,10 @@
   .person-feature h2 { margin-top: 0; }
   .person-feature__bio { padding-bottom: 0; }
   .person-feature .person-links { margin-top: 20px; margin-bottom: 0; }
-  .lab-life__mosaic.gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-  .lab-life__mosaic.gallery > li:nth-child(n) { grid-column: span 1; }
-  .lab-life__mosaic.gallery > li:nth-child(6n+3) { grid-column: span 2; }
-  .lab-life__mosaic.gallery > li:nth-child(n) img { aspect-ratio: 4 / 3; }
-  .lab-life__mosaic.gallery > li:nth-child(6n+3) img { aspect-ratio: 16 / 10; }
+  .lab-life { --photo-h: 260px; }
+  .lab-life__head { margin-bottom: 24px; }
+  .lab-life__nav { display: none; }
+  .lab-life__track.gallery { gap: 14px; }
   .people-after { padding-top: 40px; padding-bottom: 40px; }
   .people-join { grid-template-columns: minmax(0, 1fr); }
   .people-join__photo img { min-height: 0; aspect-ratio: 2 / 1; }
