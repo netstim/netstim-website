@@ -2,7 +2,7 @@
 # Centered culture text framed by a staggered 6-photo collage (every photo opens full-size in the image
 # viewer). Add new photos under `photos`.
 title: Lab life
-text: Good science takes serious focus, good coffee, and people you actually enjoy spending the day with. Between neuroimaging pipelines and paper drafts, we’re a mix of neuroscientists, clinicians, engineers, and one opinionated lab dog who rarely turn down cake, an afternoon outside, or an excuse to dress up in Cologne.
+text: Good science takes serious focus, good coffee, and people you actually enjoy spending the day with. Between neuroimaging pipelines and paper drafts, we’re a mix of neuroscientists, clinicians, engineers, and one opinionated lab dog who rarely turn down cake, an afternoon outside, or dressing up for Cologne Carnival.
 photos:
 - image: media/lab-life-karneval.jpg
   alt: Netstim lab members in Karneval costumes in the Neurology corridor at University Hospital Cologne

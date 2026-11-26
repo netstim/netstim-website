@@ -109,7 +109,7 @@
       {{ $poster := false }}{{ with $s.poster }}{{ with resources.Get . }}{{ $poster = .Resize "1600x webp q90" }}{{ end }}{{ end }}
       <li class="timeline__item{{ if eq (mod $i 2) 0 }} timeline__item--left{{ else }} timeline__item--right{{ end }}{{ if eq $i 0 }} timeline__item--latest{{ end }}{{ if $poster }} timeline__item--flyer{{ end }}">
         <div class="timeline__body">
-          <time class="timeline__date" datetime="{{ $t.Format "2006-01-02" }}">{{ $t.Format "Jan 2, 2006" }}</time>
+          <time class="timeline__date" datetime="{{ $t.Format "2006-01-02" }}">{{ $t.Format "Jan 2" }}</time>
           <p class="timeline__paper">{{ with $poster }}<a href="{{ .RelPermalink }}" data-lightbox title="Flyer for the session of {{ $t.Format "January 2, 2006" }}">{{ end }}{{ $s.paper }}{{ with $poster }}<span class="sr-only"> (flyer)</span></a>{{ end }}</p>
           <p class="timeline__meta">{{ $s.presenter }}{{ with $s.source }}<span class="timeline__source">{{ . }}</span>{{ end }}{{ if $poster }}<span class="timeline__flyer" aria-hidden="true">Flyer</span>{{ end }}</p>
         </div>
