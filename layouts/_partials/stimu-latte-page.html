@@ -1,6 +1,6 @@
 {{- /* Stimu-Latte (/stimu-latte/; data/stimu_latte.yaml): calm hero above the fold (flyer beside title,
        compact practical details with Add-to-calendar .ics and separate UKK Navi / Google Maps pills, and
-       mailing list button), followed below by collapsible Past sessions grouped by year. */ -}}
+       mailing list button), followed below by a vertical timeline of Past sessions. */ -}}
 {{ $d := hugo.Data.stimu_latte }}
 {{ $ext := partial "icon.html" "external" }}
 {{ $today := site.Params.today | default (now.Format "2006-01-02") }}
@@ -11,8 +11,8 @@
 {{ end }}
 {{ $next := index (sort $upcoming "date") 0 }}
 {{ $past = sort $past "date" "desc" }}
-{{ $flyer := false }}{{ $flyerNext := false }}
-{{ if and $next $next.poster }}{{ $flyer = $next }}{{ $flyerNext = true }}{{ else }}{{ range $past }}{{ if and (not $flyer) .poster }}{{ $flyer = . }}{{ end }}{{ end }}{{ end }}
+{{ $flyer := false }}
+{{ if and $next $next.poster }}{{ $flyer = $next }}{{ else }}{{ range $past }}{{ if and (not $flyer) .poster }}{{ $flyer = . }}{{ end }}{{ end }}{{ end }}
 {{- /* generate a real .ics calendar download */ -}}
 {{ $calDate := "" }}{{ $calSummary := "Stimu-Latte journal club" }}{{ $calDesc := "Monthly in-person journal club on brain stimulation in Cologne. Exact dates are announced via the mailing list." }}
 {{ with $next }}
@@ -45,7 +45,6 @@
           {{ partial "picture.html" (dict "src" $src "alt" (printf "Flyer: Stimu-Latte, the monthly postdoc journal club. %s Presented by %s on %s, %s, %s." $flyer.paper $flyer.presenter ($t.Format "January 2, 2006") ($flyer.time | default $d.time) ($flyer.room | default $d.room)) "width" 420 "sizes" "(max-width: 859px) calc(100vw - 80px), 340px" "eager" true) }}
         </a>
       </div>
-      <figcaption>{{ if $flyerNext }}Next session flyer{{ else }}Last session flyer ({{ $t.Format "Jan 2, 2006" }}){{ end }}</figcaption>
     </figure>
     {{ end }}{{ end }}
 
@@ -89,42 +88,34 @@
       </div>
       {{ end }}
 
+      {{ with $d.signup }}
       <div class="latte__cta">
-        {{ with $d.signup }}<a class="btn" href="{{ . }}" rel="noopener">Join the mailing list {{ $ext }}</a>{{ end }}
-        {{ if not $next }}<span class="latte__note">Next date announced via the mailing list.</span>{{ end }}
+        <a class="btn" href="{{ . }}" rel="noopener">Join the mailing list {{ $ext }}</a>
       </div>
+      {{ end }}
     </div>
   </div>
 
   {{ with $past }}
   <section class="past" aria-labelledby="past-h">
     <h2 id="past-h">Past sessions</h2>
-    <div class="past__years">
-      {{ $years := slice }}
-      {{ range . }}{{ $y := (time.AsTime .date).Format "2006" }}{{ if not (in $years $y) }}{{ $years = $years | append $y }}{{ end }}{{ end }}
-      {{ range $years }}{{ $yr := . }}
-        {{ $items := slice }}{{ range $past }}{{ if eq ((time.AsTime .date).Format "2006") $yr }}{{ $items = $items | append . }}{{ end }}{{ end }}
-        <details class="past-year">
-          <summary>
-            <span class="past-year__label">{{ $yr }}</span>
-            <span class="past-year__count">{{ len $items }} {{ if eq (len $items) 1 }}session{{ else }}sessions{{ end }}</span>
-          </summary>
-          <ol class="sessions">
-            {{ range $items }}{{ $t := time.AsTime .date }}
-            {{ $poster := false }}{{ with .poster }}{{ with resources.Get . }}{{ $poster = .Resize "1600x webp q90" }}{{ end }}{{ end }}
-            <li class="session{{ if $poster }} session--flyer{{ end }}">
-              <time class="session__date" datetime="{{ $t.Format "2006-01-02" }}">{{ $t.Format "Jan 2" }}</time>
-              <div class="session__text">
-                <p class="session__paper">{{ with $poster }}<a href="{{ .RelPermalink }}" data-lightbox title="Flyer for the session of {{ $t.Format "January 2, 2006" }}">{{ end }}{{ .paper }}{{ with $poster }}<span class="sr-only"> (flyer)</span></a>{{ end }}</p>
-                <p class="session__meta">{{ .presenter }}{{ with .source }}<span class="session__source">{{ . }}</span>{{ end }}</p>
-              </div>
-              {{ if $poster }}<span class="session__flyer" aria-hidden="true">{{ partial "icon.html" "file" }}Flyer</span>{{ end }}
-            </li>
-            {{ end }}
-          </ol>
-        </details>
+    <ol class="timeline">
+      {{ $prevYear := "" }}
+      {{ range $i, $s := . }}{{ $t := time.AsTime $s.date }}{{ $yr := $t.Format "2006" }}
+      {{ if ne $yr $prevYear }}
+      <li class="timeline__year" aria-hidden="true"><span>{{ $yr }}</span></li>
+      {{ $prevYear = $yr }}
       {{ end }}
-    </div>
+      {{ $poster := false }}{{ with $s.poster }}{{ with resources.Get . }}{{ $poster = .Resize "1600x webp q90" }}{{ end }}{{ end }}
+      <li class="timeline__item{{ if eq (mod $i 2) 0 }} timeline__item--left{{ else }} timeline__item--right{{ end }}{{ if eq $i 0 }} timeline__item--latest{{ end }}{{ if $poster }} timeline__item--flyer{{ end }}">
+        <div class="timeline__body">
+          <time class="timeline__date" datetime="{{ $t.Format "2006-01-02" }}">{{ $t.Format "Jan 2, 2006" }}</time>
+          <p class="timeline__paper">{{ with $poster }}<a href="{{ .RelPermalink }}" data-lightbox title="Flyer for the session of {{ $t.Format "January 2, 2006" }}">{{ end }}{{ $s.paper }}{{ with $poster }}<span class="sr-only"> (flyer)</span></a>{{ end }}</p>
+          <p class="timeline__meta">{{ $s.presenter }}{{ with $s.source }}<span class="timeline__source">{{ . }}</span>{{ end }}{{ if $poster }}<span class="timeline__flyer" aria-hidden="true">Flyer</span>{{ end }}</p>
+        </div>
+      </li>
+      {{ end }}
+    </ol>
   </section>
   {{ end }}
 </div>

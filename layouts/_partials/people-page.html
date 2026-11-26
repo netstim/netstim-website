@@ -33,7 +33,7 @@
   <ul class="people-grid" aria-label="Current members">
   {{ range after 1 $team }}{{ $id := anchorize .name }}
     <li><button type="button" class="person-card" data-person="person-{{ $id }}" data-slug="{{ $id }}" aria-haspopup="dialog">
-      {{ if .photo }}<span class="portrait-frame">{{ partial "picture.html" (dict "src" (printf "media/%s" .photo) "alt" "" "sizes" "(max-width: 767px) 45vw, 300px") }}</span>
+      {{ if .photo }}<span class="portrait-frame">{{ partial "picture.html" (dict "src" (printf "media/%s" .photo) "alt" "" "sizes" "(max-width: 767px) 45vw, (max-width: 1023px) 24vw, 240px") }}</span>
       {{ else }}<span class="portrait-frame portrait-frame--empty" aria-hidden="true">{{ $w := split .name " " }}{{ upper (printf "%s%s" (substr (index $w 0) 0 1) (substr (index $w (sub (len $w) 1)) 0 1)) }}</span>{{ end }}
       <span class="person-card__name">{{ .name }}</span>
       {{ with .role }}<span class="person-card__role">{{ . }}</span>{{ end }}
@@ -68,26 +68,17 @@
 {{ with hugo.Data.lab_life }}
 <section id="lab-life" class="lab-life" aria-labelledby="lab-life-h">
   <div class="wrap gallery">
-    <div class="lab-life__lead">
+    <div class="lab-life__mosaic">
       <div class="lab-life__copy">
         <h2 id="lab-life-h">{{ .title | default "Lab life" }}</h2>
         {{ with .text }}<p>{{ . }}</p>{{ end }}
       </div>
-      {{ with .lead_photo }}{{ $full := "" }}{{ with resources.Get .image }}{{ $full = (.Resize "2000x webp q90").RelPermalink }}{{ end }}
-      <a class="lab-life__photo lab-life__photo--lead" href="{{ $full }}" data-lightbox data-caption="" aria-label="{{ .alt }}">
-        {{ partial "picture.html" (dict "src" .image "alt" .alt "width" 1400 "sizes" "(max-width: 859px) calc(100vw - 40px), 700px") }}
+      {{ range $i, $p := .photos }}{{ $full := "" }}{{ with resources.Get $p.image }}{{ $full = (.Resize "2000x webp q90").RelPermalink }}{{ end }}
+      <a class="lab-life__photo lab-life__photo--{{ add $i 1 }}" href="{{ $full }}" data-lightbox data-caption="" aria-label="{{ $p.alt }}">
+        {{ partial "picture.html" (dict "src" $p.image "alt" $p.alt "width" 1200 "sizes" "(max-width: 859px) calc(50vw - 24px), 580px") }}
       </a>
       {{ end }}
     </div>
-    <ul class="lab-life__collage" aria-label="Lab life photos">
-      {{ range .photos }}{{ $full := "" }}{{ with resources.Get .image }}{{ $full = (.Resize "2000x webp q90").RelPermalink }}{{ end }}
-      <li>
-        <a class="lab-life__photo" href="{{ $full }}" data-lightbox data-caption="" aria-label="{{ .alt }}">
-          {{ partial "picture.html" (dict "src" .image "alt" .alt "width" 1200 "sizes" "(max-width: 767px) calc(100vw - 40px), 520px") }}
-        </a>
-      </li>
-      {{ end }}
-    </ul>
   </div>
 </section>
 {{ end }}
