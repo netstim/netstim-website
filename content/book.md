@@ -17,4 +17,4 @@ article: true
 lead: Edited by Andreas Horn
 ---
 
-*Connectomic Deep Brain Stimulation* brings together researchers across neuroimaging, neurophysiology, neurosurgery, and computational modeling to examine how human brain connectomics guides DBS — from electrode reconstruction and electric-field estimation to symptom-specific targeting in movement disorders, depression, and OCD.
+If 600 pages on connectomic deep brain stimulation sounds like your kind of bedtime reading, you’re in luck. *Connectomic Deep Brain Stimulation* brings together researchers across neuroimaging, neurophysiology, neurosurgery, and computational modeling to cover how human brain connectomics guides DBS — from electrode reconstruction and electric-field estimation to symptom-specific targeting in movement disorders, depression, and OCD.

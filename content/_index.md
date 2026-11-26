@@ -65,7 +65,7 @@ hero:
     alt: Animation of a directional DBS lead positioned in the subthalamic nucleus with one active stimulation contact
 research:
   title: Research
-  lede: The questions we work on and the software we build.
+  lede: Where to stimulate, and the code we built to figure it out.
   link: {label: Research overview, url: '@root@research/'}
   cards:
   - title: Deep Brain Stimulation
@@ -106,7 +106,7 @@ news:
 book:
   label: The book
   title: Connectomic Deep Brain Stimulation
-  lede: Edited by Andreas Horn.
+  lede: Andy edited a book!
   image: media/4cb5be70722a-Connectomic-Deep-Brain-Stimulation-1249x1536.png
   url: '@root@book/'
   link: About the book
