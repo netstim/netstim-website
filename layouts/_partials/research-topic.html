@@ -9,6 +9,36 @@
           (`people`: names from data/people.yaml).
        4. The other subject pages (the Research children in data/nav.yaml, without the overview) as ruled
           links. */ -}}
+{{ if .Params.compact }}
+{{ $ext := partial "icon.html" "external" }}
+<div class="wrap topic-compact">
+  <div class="topic-compact__hero">
+    <div class="topic-compact__text">
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.lead }}<p class="topic-compact__lead">{{ . }}</p>{{ end }}
+      <div class="topic-compact__body">{{ partial "render.html" .Content }}</div>
+      {{ with .Params.actions }}
+      <div class="topic-compact__actions">
+        {{ range where . "primary" true }}<a class="btn" href="{{ .url }}" rel="noopener">{{ .label }} {{ $ext }}</a>{{ end }}
+        {{ range where . "primary" "ne" true }}<a class="text-action" href="{{ .url }}" rel="noopener">{{ .label }} {{ $ext }}</a>{{ end }}
+      </div>
+      {{ end }}
+    </div>
+    {{ with .Params.figure }}
+    <div class="topic-compact__media">
+      {{ if .video }}{{ partial "research-loop.html" . }}
+      {{ else }}<div class="topic-hero__frame{{ if .drawing }} topic-hero__frame--drawing{{ end }}">{{ partial "picture.html" (dict "src" .image "alt" (.alt | default "") "sizes" "(max-width: 899px) calc(100vw - 40px), 640px" "eager" true) }}</div>{{ end }}
+    </div>
+    {{ end }}
+  </div>
+  {{ with .Params.papers }}
+  <section class="topic-compact__papers" aria-labelledby="key-papers">
+    <h2 id="key-papers">Key papers</h2>
+    {{ partial "research-papers.html" . }}
+  </section>
+  {{ end }}
+</div>
+{{ else }}
 {{ with .Params.figure }}
 <div class="wrap">
   <figure class="topic-hero">
@@ -27,4 +57,5 @@
 {{ range hugo.Data.nav.main }}{{ if eq .title "Research" }}{{ $top := .url }}{{ range .children }}{{ if and (ne .url $top) (ne (partial "url.html" .url) $here) }}{{ $more = $more | append . }}{{ end }}{{ end }}{{ end }}{{ end }}
 {{ with $more }}
 <nav class="wrap topic-more" aria-label="More in Research">{{ partial "research-links.html" . }}</nav>
+{{ end }}
 {{ end }}

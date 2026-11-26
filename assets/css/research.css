@@ -95,24 +95,33 @@
 .topic-body :is(th, td):last-child { padding-right: 0; color: var(--muted); }
 .topic-body > .paper-list { max-width: var(--measure); border-bottom: 0; }
 .topic-body > .paper-list li:first-child :is(a, .paper-list__row) { padding-top: 0; border-top: 0; }
-/* the steps of a method ({{< research-steps >}}): three pictures in a row, each with a title and a line */
-.topic-steps { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 24px; margin: 56px 0 0; padding: 0; counter-reset: step; }
-.topic-steps__frame { overflow: hidden; aspect-ratio: 4 / 3; margin-bottom: 18px; border-radius: var(--r-md); background: var(--render); }
-.topic-steps__frame img { width: 100%; height: 100%; object-fit: cover; }
-.topic-steps h2 { font-size: 19px; font-weight: 500; line-height: 1.3; letter-spacing: -.015em; }
-.topic-steps p { margin-top: 8px; max-width: 40ch; color: var(--muted); font-size: 15px; line-height: 1.55; }
+.topic-compact { padding-block: clamp(32px, 5vw, 64px) var(--section); }
+.topic-compact__hero { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; align-items: center; }
+.topic-compact__text { max-width: 34rem; }
+.topic-compact__lead { margin-top: 16px; color: var(--ink); font-size: var(--t-lead); line-height: 1.48; text-wrap: pretty; }
+.topic-compact__body { margin-top: 14px; color: var(--muted); font-size: var(--t-read); line-height: 1.6; }
+.topic-compact__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-top: 26px; }
+.topic-compact__actions .btn svg { width: 16px; height: 16px; }
+.topic-compact__media .topic-hero__frame { aspect-ratio: 4 / 3; }
+.topic-compact__papers { margin-top: clamp(48px, 6vw, 72px); padding-top: 28px; border-top: 1px solid var(--line); display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px 40px; }
+.topic-compact__papers h2 { font-size: clamp(21px, .6vw + 17px, 24px); font-weight: 500; line-height: 1.25; letter-spacing: -.018em; }
+.topic-compact__papers .paper-list { max-width: var(--measure); border-bottom: 0; }
+.topic-compact__papers .paper-list li:first-child :is(a, .paper-list__row) { padding-top: 0; border-top: 0; }
 .topic-more { padding-bottom: var(--section); }
 .topic-more .resource-links { margin-top: 0; }
 .topic-body.page-body { padding-bottom: 72px; }
+@media (min-width: 900px) {
+  .topic-compact__hero { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(40px, 5.5vw, 72px); }
+}
 @media (min-width: 1024px) {
   .topic-body { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); }
   .topic-body > * { grid-column: 2; }
   .topic-body > h2 { grid-column: 1; padding-right: 40px; }
   .topic-body > h2::before { width: 300%; }
   .topic-body > h2 + * { margin-top: 92px; }
-  .topic-body > .topic-steps { grid-column: 1 / -1; }
+  .topic-compact__papers { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); }
 }
-[data-theme="dark"] :is(.theme__frame, .topic-hero__frame, .topic-steps__frame) :is(img, video), [data-theme="dark"] .topic-body :is(p, .image-block) > img { filter: brightness(.88); }
+[data-theme="dark"] :is(.theme__frame, .topic-hero__frame) :is(img, video), [data-theme="dark"] .topic-body :is(p, .image-block) > img { filter: brightness(.88); }
 /* a white-ground picture that keeps its colors stays a light plate in the dark theme (white, dimmed like the picture) */
 [data-theme="dark"] .theme__frame--light { background: #e0e0e0; }
 [data-theme="dark"] .theme__frame--light img { mix-blend-mode: normal; }
@@ -213,12 +222,11 @@
   .theme__lede { font-size: 18px; }
 }
 @media (max-width: 767px) {
-  .research-cards, .resource-links, .topic-steps { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .research-cards, .resource-links { grid-template-columns: minmax(0, 1fr); gap: 32px; }
   .resource-links { gap: 0; margin-top: 48px; }
   .research-card__frame { aspect-ratio: 16 / 10; }
   .topic-hero { margin-top: 28px; }
   .topic-hero__frame { aspect-ratio: 3 / 2; border-radius: var(--r-md); }
   .topic-body > h2 { margin-top: 48px; padding-top: 22px; }
-  .topic-steps { margin-top: 40px; }
   .topic-body.page-body { padding-bottom: 56px; }
 }
