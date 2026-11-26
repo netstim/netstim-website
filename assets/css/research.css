@@ -118,32 +118,26 @@
 [data-theme="dark"] .theme__frame--light img { mix-blend-mode: normal; }
 [data-theme="dark"] :is(.topic-hero__frame--drawing, .theme__frame--drawing) img { filter: invert(.915) hue-rotate(180deg); mix-blend-mode: lighten; }
 
-/* 3. Resources: a paragraph, the main link, picture cards (a real figure on a white plate, its name with an
-      arrow and one line; the whole card is the link), further places as ruled rows, the papers to cite.
+/* 3. Resources: main link, picture cards (the whole card is the link), and further places as ruled rows.
       The ruled rows (research-links.html) also end a subject page. */
-.research-intro { max-width: var(--measure); margin-bottom: 48px; font-size: var(--t-read); line-height: 1.65; }
 .research-cards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 24px; }
 .research-card { display: grid; align-content: start; gap: 6px; color: var(--ink); text-decoration: none; }
-.research-card__frame { display: block; overflow: hidden; margin-bottom: 14px; aspect-ratio: 4 / 3; border: 1px solid var(--line); border-radius: var(--r-md); background: #fff; }
+.research-card__frame { display: block; overflow: hidden; margin-bottom: 14px; aspect-ratio: 4 / 3; border: 1px solid var(--line); border-radius: var(--r-md); background: var(--surface); }
 .research-card__frame img { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 500ms cubic-bezier(.2, .65, .3, 1); }
-.research-card__frame--contain img { padding: 12px; object-fit: contain; }
+.research-card__frame--contain img { padding: 12px; object-fit: contain; mix-blend-mode: multiply; }
 .research-card__title { display: flex; align-items: center; gap: 8px; font-size: 20px; font-weight: 500; line-height: 1.3; letter-spacing: -.015em; }
 .research-card__title svg { flex: none; width: 18px; height: 18px; color: var(--muted); transition: transform 150ms cubic-bezier(.2, .65, .3, 1); }
 .research-card__text { max-width: 36ch; color: var(--muted); font-size: 15px; line-height: 1.5; }
 .research-card:active { opacity: .7; }
 [data-theme="dark"] .research-card__frame img { filter: brightness(.9); }
-.research-intro:has(+ .research-action) { margin-bottom: 16px; }
-.research-action { margin: 0 0 48px; font-size: 17px; }
+[data-theme="dark"] .research-card__frame--contain img { filter: invert(.915) hue-rotate(180deg); mix-blend-mode: lighten; }
+.research-action { margin: 0 0 36px; font-size: var(--t-read); }
 .resource-links { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 24px; margin: 64px 0 0; padding: 0; }
 .resource-links a { display: grid; gap: 4px; height: 100%; padding: 18px 0 20px; border-top: 1px solid var(--line); color: var(--ink); text-decoration: none; }
 .resource-links__title { display: flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 500; line-height: 1.3; letter-spacing: -.01em; }
 .resource-links__title svg { flex: none; width: 16px; height: 16px; color: var(--muted); transition: transform 150ms cubic-bezier(.2, .65, .3, 1); }
 .resource-links__text { color: var(--muted); font-size: 15px; line-height: 1.5; }
 .resource-links a:active { opacity: .7; }
-.resource-cite { max-width: var(--measure); margin-top: 56px; color: var(--muted); font-size: 14px; line-height: 1.55; }
-.resource-cite h2 { margin-bottom: 10px; color: var(--ink); font-size: 16px; font-weight: 500; letter-spacing: 0; }
-.resource-cite p + p { margin-top: 8px; }
-.resource-cite a { color: inherit; overflow-wrap: anywhere; }
 @media (hover: hover) {
   .resource-links a:hover .resource-links__title, .resource-links a:hover svg { color: var(--action); }
   .resource-links a:hover svg { transform: translateX(2px); }

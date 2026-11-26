@@ -39,23 +39,6 @@ steps:
 papers: [HWZQXLLE, E237VG3K, HEXUJ43G]
 ---
 
-We have developed Lead-DBS since 2012, starting at Charité Berlin, and use it across most of our [deep brain stimulation](@root@research/deep-brain-stimulation/) studies. It is free software for research and is not intended for clinical use.
+We have built and maintained Lead-DBS since 2012 as free, open-source research software developed with contributors from over 20 institutions. Downloads, atlases, documentation, and the user Slack live on [lead-dbs.org](https://www.lead-dbs.org/), and the source code is on [GitHub](https://github.com/netstim).
 
 {{< research-steps >}}
-
-## Methods
-
-Lead-DBS integrates a modular pipeline for DBS imaging and group-level circuit mapping ([Neudorfer et al., 2023](https://doi.org/10.1016/j.neuroimage.2023.119862)):
-
-- **Electrode localization and normalization.** Nonlinear registration of pre- and postoperative MRI/CT into MNI space with subcortical refinement, brain-shift correction, and directional lead orientation detection.
-- **Electric-field and pathway-activation modeling.** Finite-element electric-field estimation and biophysical axonal modeling via [OSS-DBS](https://github.com/SFB-ELAINE/OSS-DBSv2).
-- **Sweetspot mapping and DBS fiber filtering.** Group-level statistical mapping linking local stimulation sites and passing white-matter tracts to clinical symptom improvement ([Horn et al., 2017](https://doi.org/10.1002/ana.24974)).
-- **Subcortical electrophysiology mapping.** Co-registering local field potential and microelectrode recordings to anatomical contact locations ([Horn et al., 2017](https://doi.org/10.1002/hbm.23594)).
-
-## Community and development
-
-Contributors from over 20 institutions maintain code and atlases for Lead-DBS, which has been downloaded more than 65,000 times. Version 3, released in 2023, was its largest update to date. Lead-DBS received the Max Rubner Prize for Innovation from Stiftung Charité in 2015, a [Harvard Radcliffe Exploratory Ventures Grant](https://www.radcliffe.harvard.edu/exploratory-seminars/toward-connectomic-deep-brain-stimulation) from the [Harvard Radcliffe Institute for Advanced Study](https://www.radcliffe.harvard.edu/) in 2016, and the Robert Koch Prize of Charité in 2017.
-
-## Downloads and documentation
-
-Software downloads, atlases, [normative connectomes](@root@research/normative-connectomes/), and documentation are available on the [Resources](@root@resources/) page.

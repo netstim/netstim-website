@@ -9,7 +9,6 @@
 {{ $arrow := partial "icon.html" "arrow" }}
 {{ $external := partial "icon.html" "external" }}
 <div class="wrap page-body">
-  {{ with .Params.intro }}<p class="research-intro">{{ . }}</p>{{ end }}
   {{ with .Params.action }}<p class="research-action"><a class="text-action" href="{{ partial "url.html" .url }}" rel="noopener">{{ .label }}<span class="sr-only"> (another site)</span>{{ $external }}</a></p>{{ end }}
   {{ with .Params.cards }}
   <ul class="research-cards">
@@ -23,11 +22,5 @@
   </ul>
   {{ end }}
   {{ with .Params.links }}{{ partial "research-links.html" . }}{{ end }}
-  {{ with .Params.cite }}
-  <div class="resource-cite">
-    <h2>To cite Lead-DBS</h2>
-    {{ range . }}{{ $key := . }}{{ range where hugo.Data.publications "key" $key }}<p>{{ .citation | safeHTML }}</p>{{ end }}{{ end }}
-  </div>
-  {{ end }}
 </div>
 {{ end }}

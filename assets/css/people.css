@@ -82,7 +82,7 @@
 .lab-life .gallery { display: block; }
 .lab-life__head { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px 48px; align-items: baseline; padding-bottom: 24px; margin-bottom: 28px; border-bottom: 1px solid var(--line); }
 .lab-life__head h2 { font-size: var(--t-h2); }
-.lab-life__head p { max-width: 44rem; color: var(--muted); font-size: 16.5px; line-height: 1.62; text-wrap: pretty; }
+.lab-life__head p { max-width: 44rem; color: var(--ink); font-size: var(--t-read); line-height: 1.65; text-wrap: pretty; }
 .lab-life__masonry { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
 .lab-life__tile { min-width: 0; }
 .lab-life .gallery .lab-life__photo { display: block; overflow: hidden; border-radius: var(--r-md); background: var(--bg); cursor: zoom-in; }
