@@ -90,7 +90,7 @@ html { scrollbar-gutter: stable; scroll-padding-top: calc(var(--nav) + 24px); }
 /* touch: no grey tap flash; every control answers a press at once (transform or opacity only) */
 a, button, summary, label { -webkit-tap-highlight-color: transparent; }
 :is(.btn, .action, .icon-button):active { transform: scale(.97); }
-:is(.media-card, .community-card, .news-card, .news-row, .home-news__row, .update-card, .person-card, .poster-card, .link-rows a, .phone-menu .nav-row > a):active { opacity: .7; }
+:is(.media-card, .community-card, .news-card, .news-row, .home-news__row, .update-card, .person-card, .poster-card, .phone-menu .nav-row > a):active { opacity: .7; }
 :focus-visible { outline: 2px solid var(--action); outline-offset: 3px; border-radius: 3px; }
 /* the main area takes focus from the skip link; it gets no ring */
 main:focus { outline: none; }

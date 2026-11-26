@@ -65,7 +65,7 @@
     grid-template-columns: [full-start] minmax(0, 1fr) [text-start] min(100%, var(--measure)) [text-end] minmax(0, 1fr) [full-end]; }
 }
 .page-body--article > * { grid-column: text; min-width: 0; }
-.page-body--article :is(p, ul, ol, h2, h3, h4, blockquote, .action-row, .link-rows) { max-width: var(--measure); }
+.page-body--article :is(p, ul, ol, h2, h3, h4, blockquote, .action-row) { max-width: var(--measure); }
 .page-body--article .columns { display: block; }
 .page-body--article .column { width: auto; }
 .page-body--article .column > * + * { margin-top: 20px; }

@@ -24,7 +24,6 @@ hosts without `.htaccess` (the GitHub Pages preview).
 | News | News | `/news/` | `content/news.md`; posts in `content/posts/` at `/<slug>/` |
 | Community | Stimu-Latte journal club | `/stimu-latte/` | `content/stimu-latte.md` |
 | | Stimulating Brains podcast | stimulatingbrains.org | |
-| (footer) | For lab members, Lab manual, Links | `/internal/`, `/internal/onboarding/`, `/internal/links/` | `content/internal*.md` |
 | (footer) | Imprint, Privacy | `/imprint/`, `/privacy/` | `content/imprint.md`, `content/privacy.md` |
 
 The header menu has five items (`data/nav.yaml`, drawn by `layouts/_partials/nav.html`). Each title
@@ -72,7 +71,7 @@ them answers nothing, or if a forwarding page has no 301 in the `.htaccess`.
 ## What was retired (Nov 2026)
 
 - Archive pages `/blog/page/2–5/`, `/category/uncategorized/…`, `/author/…` → `/news/`.
-- The empty Events Manager pages `/internal/events/…` and the imaging-meeting page → `/internal/`.
+- The retired "For lab members" pages (`/internal/`, `/internal/onboarding/`, `/internal/links/`), empty Events Manager pages `/internal/events/…` and the imaging-meeting page → `/`.
 - Eight Lead-DBS release notes → lead-dbs.org (see `docs/for-lead-dbs/`).
 - The two book news posts → `/book/`.
 - The "About the lab" page (`/about/`, `/about-us/`) → Home, which now says who we are and lists past

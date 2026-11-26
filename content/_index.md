@@ -4,6 +4,18 @@ url: /
 aliases:
 - /about/
 - /about-us/
+- /internal/
+- /internal/onboarding/
+- /internal/links/
+- /internal/events/
+- /internal/events/categories/
+- /internal/events/categories/imaging-meeting/
+- /internal/events/categories/workshops/
+- /internal/events/locations/
+- /internal/events/locations/bonhoefferraum/
+- /internal/events/locations/charite/
+- /internal/events/locations/multifunktionsraum/
+- /events/categories/imaging-meeting/
 family: home
 wordpress_id: 11
 date: '2017-12-27T10:18:06+00:00'
@@ -75,7 +87,6 @@ people:
   links:
   - {label: Meet the team, url: '@root@people/'}
   - {label: Join the lab, url: '@root@jobs/'}
-  - {label: Lab manual, url: '@root@internal/onboarding/'}
   photos:
   - image: media/team-2026-arch.jpg
     alt: The Netstim team outdoors under a mirrored arch sculpture on the hospital campus

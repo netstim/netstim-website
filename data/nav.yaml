@@ -78,8 +78,6 @@ social:
 - {title: GitHub, icon: github, url: 'https://github.com/netstim'}
 
 footer:
-- title: For lab members
-  url: '@root@internal/'
 - title: Imprint
   url: '@root@imprint/'
 - title: Privacy

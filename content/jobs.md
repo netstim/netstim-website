@@ -36,7 +36,7 @@ photo:
   credit: Michael Wodak / MedizinFotoKöln
 sections:
 - title: The lab
-  text: We study how the brain’s networks respond to invasive and noninvasive stimulation (see [Research](@root@research/)). Projects use structural MRI, resting-state fMRI, diffusion MRI tractography and simulations of stimulation. Nearly all of them involve [Lead-DBS](@root@research/lead-dbs/), our open-source toolbox, and every lab member contributes to it through code, documentation, testing or teaching at [workshops](@root@community/). Our [lab manual](@root@internal/onboarding/) is public if you want to see how we work.
+  text: We study how the brain’s networks respond to invasive and noninvasive stimulation (see [Research](@root@research/)). Projects use structural MRI, resting-state fMRI, diffusion MRI tractography and simulations of stimulation. Nearly all of them involve [Lead-DBS](@root@research/lead-dbs/), our open-source toolbox, and every lab member contributes to it through code, documentation, testing or teaching at [workshops](@root@community/).
 - title: How to apply
   # TODO(netstim): confirm what applicants should send. Proposed, not yet confirmed: a subject line such as
   # "POSTDOC - LEAD-DBS - Jane Smith", a statement of one or two paragraphs, two or three references,
