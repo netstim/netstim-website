@@ -1,6 +1,6 @@
 {{- /* Jobs (/jobs/; everything from the front matter of content/jobs.md).
-       1. Calm two-column hero: title, warm intro with inline links, distinct status note, and direct contact
-          CTA on the left beside the single crisp 3:2 team photo on the right — no detached bottom line.
+       1. Two-column editorial split aligned top-to-bottom with the team photo: heading, short human intro
+          with inline links, clean unboxed property rows (Openings / To apply), and email CTA.
        2. Open positions (only shown when `positions` has entries). */ -}}
 {{ $p := .Params }}
 {{ $email := $p.email | default hugo.Data.contact.email }}
@@ -10,27 +10,32 @@
     <div class="jobs-hero__text">
       <h1>{{ .Title }}</h1>
       {{ with $p.intro }}<p class="jobs-intro">{{ partial "url.html" (string ($.RenderString .)) | safeHTML }}</p>{{ end }}
-      {{ if not $p.positions }}{{ with $p.opening }}
-      <div class="jobs-status" role="note">
-        <span class="jobs-status__label">Current openings</span>
-        <p>{{ partial "url.html" (string ($.RenderString .)) | safeHTML }}</p>
-      </div>
-      {{ end }}{{ end }}
-      {{ with $p.apply }}
-      <div class="jobs-apply">
-        <p class="jobs-apply__text">{{ partial "url.html" (string ($.RenderString .text)) | safeHTML }}</p>
-        {{ with $email }}
-        <div class="jobs-mail">
-          <a class="btn" href="mailto:{{ . }}">{{ partial "icon.html" "mail" }}<span>Email us</span></a>
-          <a class="jobs-mail__addr" href="mailto:{{ . }}">{{ . }}</a>
+      {{ if or (and (not $p.positions) $p.opening) $p.apply }}
+      <dl class="jobs-facts">
+        {{ if not $p.positions }}{{ with $p.opening }}
+        <div>
+          <dt>Openings</dt>
+          <dd>{{ partial "url.html" (string ($.RenderString .)) | safeHTML }}</dd>
+        </div>
+        {{ end }}{{ end }}
+        {{ with $p.apply }}
+        <div>
+          <dt>To apply</dt>
+          <dd>{{ partial "url.html" (string ($.RenderString .text)) | safeHTML }}</dd>
         </div>
         {{ end }}
+      </dl>
+      {{ end }}
+      {{ with $email }}
+      <div class="jobs-mail">
+        <a class="btn" href="mailto:{{ . }}">{{ partial "icon.html" "mail" }}<span>Email us</span></a>
+        <a class="jobs-mail__addr" href="mailto:{{ . }}">{{ . }}</a>
       </div>
       {{ end }}
     </div>
     {{ with $p.photo }}
     <figure class="jobs-photo">
-      {{ partial "picture.html" (dict "src" .src "alt" .alt "width" 1400 "sizes" "(max-width: 899px) calc(100vw - 40px), 620px" "eager" true) }}
+      {{ partial "picture.html" (dict "src" .src "alt" .alt "width" 1400 "sizes" "(max-width: 899px) calc(100vw - 40px), 640px" "eager" true) }}
       {{ with .credit }}<figcaption>Photo: {{ . }}</figcaption>{{ end }}
     </figure>
     {{ end }}
