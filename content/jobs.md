@@ -25,7 +25,7 @@ modified: '2026-11-26T19:40:00+00:00'
 # opening     Short status note while there are no open positions.
 # photo       Crisp team photo beside the intro (`src` in assets/media/, `alt`, optional `credit`).
 # apply       Unboxed "How to apply" block below (`text`, optional `list`, email from data/contact.yaml).
-intro: We’re always glad to hear from researchers, clinicians, and engineers interested in brain networks, stimulation, and open-source tools. Projects span structural and functional MRI, tractography, biophysical modeling, [Lead-DBS](@root@research/lead-dbs/), and teaching at [workshops](@root@community/#workshops).
+intro: We’re a mix of researchers, clinicians, and engineers studying brain networks, stimulation, and open-source tools like [Lead-DBS](@root@research/lead-dbs/). Take a look at [our research](@root@research/), get to know [the team](@root@people/), or see what [lab life](@root@people/#lab-life) looks like in Cologne — and feel free to reach out to any of us if you’re curious about the group.
 positions: []
 opening: No funded openings are posted right now, though unsolicited applications — especially if you bring your own grant or fellowship — are always welcome.
 photo:
@@ -34,5 +34,5 @@ photo:
 apply:
   # TODO(netstim): confirm what applicants should send (e.g., subject line, references, earliest start date)
   # and whether to list Cologne PhD programs or fellowships.
-  text: Send us a short email with your CV, a brief note on your research interests, and whether you have your own funding (a grant or fellowship).
+  text: Send a short email with your CV, a brief note on your research interests, and whether you have your own funding.
 ---

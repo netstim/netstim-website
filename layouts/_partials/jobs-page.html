@@ -1,8 +1,7 @@
 {{- /* Jobs (/jobs/; everything from the front matter of content/jobs.md).
-       1. Calm two-column hero: title, one concise welcoming paragraph, status note, and quick links on the
-          left beside the single crisp 3:2 team photo on the right.
-       2. Open positions (only shown when `positions` has entries).
-       3. One clean, unboxed apply row below a hairline — no extra cards or redundant section clutter. */ -}}
+       1. Calm two-column hero: title, warm intro with inline links, distinct status note, and direct contact
+          CTA on the left beside the single crisp 3:2 team photo on the right — no detached bottom line.
+       2. Open positions (only shown when `positions` has entries). */ -}}
 {{ $p := .Params }}
 {{ $email := $p.email | default hugo.Data.contact.email }}
 {{ $arrow := partial "icon.html" "arrow" }}
@@ -11,12 +10,23 @@
     <div class="jobs-hero__text">
       <h1>{{ .Title }}</h1>
       {{ with $p.intro }}<p class="jobs-intro">{{ partial "url.html" (string ($.RenderString .)) | safeHTML }}</p>{{ end }}
-      {{ if not $p.positions }}{{ with $p.opening }}<p class="jobs-status">{{ partial "url.html" (string ($.RenderString .)) | safeHTML }}</p>{{ end }}{{ end }}
-      <ul class="jobs-quick btn-row">
-        <li><a class="text-action" href="{{ "research/" | relURL }}">Research {{ $arrow }}</a></li>
-        <li><a class="text-action" href="{{ "people/" | relURL }}">Meet the team {{ $arrow }}</a></li>
-        <li><a class="text-action" href="{{ "people/#lab-life" | relURL }}">Lab life {{ $arrow }}</a></li>
-      </ul>
+      {{ if not $p.positions }}{{ with $p.opening }}
+      <div class="jobs-status" role="note">
+        <span class="jobs-status__label">Current openings</span>
+        <p>{{ partial "url.html" (string ($.RenderString .)) | safeHTML }}</p>
+      </div>
+      {{ end }}{{ end }}
+      {{ with $p.apply }}
+      <div class="jobs-apply">
+        <p class="jobs-apply__text">{{ partial "url.html" (string ($.RenderString .text)) | safeHTML }}</p>
+        {{ with $email }}
+        <div class="jobs-mail">
+          <a class="btn" href="mailto:{{ . }}">{{ partial "icon.html" "mail" }}<span>Email us</span></a>
+          <a class="jobs-mail__addr" href="mailto:{{ . }}">{{ . }}</a>
+        </div>
+        {{ end }}
+      </div>
+      {{ end }}
     </div>
     {{ with $p.photo }}
     <figure class="jobs-photo">
@@ -37,18 +47,6 @@
       {{ if $href }}</a>{{ else }}</div>{{ end }}</li>
       {{ end }}
     </ul>
-  </section>
-  {{ end }}
-
-  {{ with $p.apply }}
-  <section class="jobs-apply" aria-label="How to apply">
-    <p class="jobs-apply__text">{{ partial "url.html" (string ($.RenderString .text)) | safeHTML }}</p>
-    {{ with $email }}
-    <div class="jobs-mail">
-      <a class="btn" href="mailto:{{ . }}">{{ partial "icon.html" "mail" }}<span>Email us</span></a>
-      <a class="jobs-mail__addr" href="mailto:{{ . }}">{{ . }}</a>
-    </div>
-    {{ end }}
   </section>
   {{ end }}
 </div>
