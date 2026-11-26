@@ -47,6 +47,9 @@ main:
   - title: Team
     url: '@root@people/'
     text: Current members and alumni
+  - title: Lab life
+    url: '@root@people/#lab-life'
+    text: Snapshots from Cologne and beyond
   - title: Jobs
     url: '@root@jobs/'
     text: Open positions

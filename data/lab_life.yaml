@@ -1,0 +1,36 @@
+# Lab life snapshots (/people/#lab-life, layouts/_partials/people-page.html).
+# Add a new photo to assets/media/ and append an entry here. Each snapshot opens full-size in the image viewer.
+#   image    file in assets/media/ (landscape 4:3 works best)
+#   tag      short occasion or place label on the print margin
+#   caption  one playful sentence shown under the photo and in the image viewer
+#   alt      plain description of what the photo shows (for screen readers)
+
+- image: media/lab-life-karneval.jpg
+  tag: Karneval · Building 30
+  caption: Weiberfastnacht in the Neurology corridor — Kölsch, penguins, and a beekeeper under the Annals of Neurology cover.
+  alt: Seven Netstim lab members in Karneval costumes — bunny ears, two penguins, reindeer antlers, leopard print, a chef hat, and a yellow bee jumpsuit — posing in the Neurology corridor under framed journal covers
+
+- image: media/lab-life-summer.jpg
+  tag: Summer outing
+  caption: Afternoon under the apple trees — extended crew, kids, and Pepsi all accounted for.
+  alt: The Netstim lab and families standing together outdoors under apple trees on a sunny afternoon, with Pepsi the dog in the center
+
+- image: media/lab-life-office-party.jpg
+  tag: Office celebration
+  caption: Cake on the desk, Christmas tree behind us, and a strictly mandatory gold party hat.
+  alt: Seven lab members gathered around a small Christmas tree in the Cologne office with a cake on the table and Andreas Horn wearing a gold party hat
+
+- image: media/lab-life-weihnachtsmarkt.jpg
+  tag: Cologne Weihnachtsmarkt
+  caption: Glühwein research under oversized ornaments (Pepsi approved).
+  alt: Five lab members in winter coats and hats smiling with Pepsi the dog underneath glowing red ornaments and gold stars at a Cologne Christmas market at night
+
+- image: media/lab-life-dbs-summit.jpg
+  tag: 3rd DBS Expert Summit
+  caption: Between talks — conference lanyards on, coffee cups out.
+  alt: Six Netstim lab members seated together on a lounge sofa with coffee cups and conference lanyards at the 3rd DBS Expert Summit
+
+- image: media/team-2026-stack.jpg
+  tag: Cologne campus
+  caption: Strict lab hierarchy, demonstrated outdoors.
+  alt: Netstim team members arranged in three stacked rows outdoors, each placing their hands on the head of the person in front of them

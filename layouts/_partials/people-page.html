@@ -40,15 +40,6 @@
     </button></li>
   {{ end }}
   </ul>
-  <section class="people-join" aria-labelledby="join-h">
-    {{ with $.Params.group_photo }}<div class="people-join__photo">{{ partial "picture.html" (dict "src" .src "alt" .alt "width" 1536 "sizes" "(max-width: 767px) 100vw, 760px") }}</div>{{ end }}
-    <div class="people-join__text">
-      <h2 id="join-h">Interested in joining?</h2>
-      <p>We are always open to applications, also from people who bring their own grant or fellowship.</p>
-      <a class="text-action" href="{{ "jobs/" | relURL }}">Open positions {{ partial "icon.html" "arrow" }}</a>
-      {{ with $.Params.group_photo.credit }}<p class="people-join__credit">Photo: {{ . }}</p>{{ end }}
-    </div>
-  </section>
   {{ range $team }}{{ $person := . }}{{ $id := anchorize .name }}
   <dialog class="person-modal" id="person-{{ $id }}" aria-labelledby="person-{{ $id }}-name" tabindex="-1">
     <form method="dialog" class="person-modal__close"><button class="icon-button" aria-label="Close">{{ partial "icon.html" "close" }}</button></form>
@@ -73,6 +64,40 @@
     </div>
   </dialog>
   {{ end }}
+</div>
+{{ with hugo.Data.lab_life }}
+<section id="lab-life" class="lab-life" aria-labelledby="lab-life-h">
+  <div class="wrap">
+    <div class="lab-life__head">
+      <h2 id="lab-life-h">Lab life</h2>
+      <p class="lab-life__lede">Snapshots from outside the electrode reconstructions — Karneval, summer outings, conferences, and cake.</p>
+    </div>
+    <ul class="lab-life__board gallery" aria-label="Lab life photos">
+      {{ range . }}{{ $full := "" }}{{ with resources.Get .image }}{{ $full = (.Resize "1800x webp q88").RelPermalink }}{{ end }}
+      <li class="snapshot">
+        <a class="snapshot__link" href="{{ $full }}" data-lightbox data-caption="{{ with .tag }}{{ . }} — {{ end }}{{ .caption }}">
+          <span class="snapshot__frame">{{ partial "picture.html" (dict "src" .image "alt" .alt "width" 900 "sizes" "(max-width: 639px) calc(100vw - 64px), (max-width: 1023px) 44vw, 380px") }}</span>
+          <span class="snapshot__meta">
+            {{ with .tag }}<span class="snapshot__tag">{{ . }}</span>{{ end }}
+            <span class="snapshot__caption">{{ .caption }}</span>
+          </span>
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</section>
+{{ end }}
+<div class="wrap page-body people-after">
+  <section class="people-join" aria-labelledby="join-h">
+    {{ with $.Params.group_photo }}<div class="people-join__photo">{{ partial "picture.html" (dict "src" .src "alt" .alt "width" 1536 "sizes" "(max-width: 767px) 100vw, 760px") }}</div>{{ end }}
+    <div class="people-join__text">
+      <h2 id="join-h">Interested in joining?</h2>
+      <p>We are always open to applications, also from people who bring their own grant or fellowship.</p>
+      <a class="text-action" href="{{ "jobs/" | relURL }}">Open positions {{ partial "icon.html" "arrow" }}</a>
+      {{ with $.Params.group_photo.credit }}<p class="people-join__credit">Photo: {{ . }}</p>{{ end }}
+    </div>
+  </section>
 </div>
 {{ with $alumni }}
 <section class="wrap page-body people-alumni" aria-labelledby="alumni-h">
