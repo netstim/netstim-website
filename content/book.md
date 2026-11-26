@@ -17,4 +17,6 @@ article: true
 lead: Edited by Andreas Horn
 ---
 
-If 600 pages on connectomic deep brain stimulation sounds like your kind of bedtime reading, you’re in luck. *Connectomic Deep Brain Stimulation* brings together researchers across neuroimaging, neurophysiology, neurosurgery, and computational modeling to cover how human brain connectomics guides DBS — from electrode reconstruction and electric-field estimation to symptom-specific targeting in movement disorders, depression, and OCD.
+If 600 pages on connectomic deep brain stimulation sounds like your kind of bedtime reading, you’re in luck. Opening with a foreword by Andrea Kühn and Michael Fox, *Connectomic Deep Brain Stimulation* brings together international leaders across 26 full-color chapters — from electrode localization, electric-field and pathway-activation modeling, and normative connectomes to clinical targeting in movement disorders, depression, and OCD.
+
+While much of the book centers on neuroimaging, dedicated chapters also cover subcortical electrophysiology, histological and postmortem datasets, fMRI under active DBS, surgical planning, lesion network mapping, and dynamical whole-brain models.
