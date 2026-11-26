@@ -68,17 +68,19 @@
 {{ with hugo.Data.lab_life }}
 <section id="lab-life" class="lab-life" aria-labelledby="lab-life-h">
   <div class="wrap gallery">
-    <div class="lab-life__mosaic">
-      <div class="lab-life__copy">
-        <h2 id="lab-life-h">{{ .title | default "Lab life" }}</h2>
-        {{ with .text }}<p>{{ . }}</p>{{ end }}
-      </div>
-      {{ range $i, $p := .photos }}{{ $full := "" }}{{ with resources.Get $p.image }}{{ $full = (.Resize "2000x webp q90").RelPermalink }}{{ end }}
-      <a class="lab-life__photo lab-life__photo--{{ add $i 1 }}" href="{{ $full }}" data-lightbox data-caption="" aria-label="{{ $p.alt }}">
-        {{ partial "picture.html" (dict "src" $p.image "alt" $p.alt "width" 1200 "sizes" "(max-width: 859px) calc(50vw - 24px), 580px") }}
-      </a>
-      {{ end }}
+    <div class="lab-life__head">
+      <h2 id="lab-life-h">{{ .title | default "Lab life" }}</h2>
+      {{ with .text }}<p>{{ . }}</p>{{ end }}
     </div>
+    <ul class="lab-life__masonry" aria-label="Lab life photos">
+      {{ range $i, $p := .photos }}{{ $full := "" }}{{ with resources.Get $p.image }}{{ $full = (.Resize "2000x webp q90").RelPermalink }}{{ end }}
+      <li class="lab-life__tile lab-life__tile--{{ add (mod $i 6) 1 }}">
+        <a class="lab-life__photo" href="{{ $full }}" data-lightbox data-caption="" aria-label="{{ $p.alt }}">
+          {{ partial "picture.html" (dict "src" $p.image "alt" $p.alt "width" 1000 "sizes" "(max-width: 767px) calc(50vw - 24px), 380px") }}
+        </a>
+      </li>
+      {{ end }}
+    </ul>
   </div>
 </section>
 {{ end }}

@@ -1,18 +1,18 @@
 # Lab life (/people/#lab-life, layouts/_partials/people-page.html).
-# Centered culture text framed by a staggered 6-photo collage (every photo opens full-size in the image
-# viewer). Add new photos under `photos`.
+# Split editorial header over a 3-column varied-height photo masonry wall (every photo opens full-size in
+# the image viewer). Add new photos under `photos`.
 title: Lab life
 text: Good science takes serious focus, good coffee, and people you actually enjoy spending the day with. Between neuroimaging pipelines and paper drafts, we’re a mix of neuroscientists, clinicians, engineers, and one opinionated lab dog who rarely turn down cake, an afternoon outside, or dressing up for Cologne Carnival.
 photos:
-- image: media/lab-life-karneval.jpg
-  alt: Netstim lab members in Karneval costumes in the Neurology corridor at University Hospital Cologne
-- image: media/lab-life-summer.jpg
-  alt: The Netstim lab and families together outdoors under apple trees in summer with Pepsi the dog
 - image: media/team-2026-stack.jpg
   alt: Netstim team members stacked in three rows outdoors on the Cologne campus
-- image: media/lab-life-weihnachtsmarkt.jpg
-  alt: Lab members with Pepsi the dog under ornaments and lights at a Cologne Christmas market
 - image: media/lab-life-dbs-summit.jpg
   alt: Lab members sitting together with coffee between sessions at the 3rd DBS Expert Summit
+- image: media/lab-life-summer.jpg
+  alt: The Netstim lab and families together outdoors under apple trees in summer with Pepsi the dog
 - image: media/lab-life-office-party.jpg
   alt: Lab members gathered around the office Christmas tree with cake
+- image: media/lab-life-weihnachtsmarkt.jpg
+  alt: Lab members with Pepsi the dog under ornaments and lights at a Cologne Christmas market
+- image: media/lab-life-karneval.jpg
+  alt: Netstim lab members in Karneval costumes in the Neurology corridor at University Hospital Cologne
