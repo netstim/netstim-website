@@ -65,7 +65,7 @@
       <dl class="series__facts">
         {{ with $d }}
         <div><dt>{{ partial "icon.html" "calendar" }}When</dt><dd>{{ .day }}<span class="series__chip">{{ partial "icon.html" "clock" }}{{ .time }}</span></dd></div>
-        <div><dt>{{ partial "icon.html" "pin" }}Where</dt><dd>{{ .room }}{{ with .building }}{{ if $d.map }}<a class="series__sub series__map" href="{{ $d.map }}" rel="noopener">{{ . }}<span class="sr-only"> (map, another site)</span>{{ $external }}</a>{{ else }}<span class="series__sub">{{ . }}</span>{{ end }}{{ end }}</dd></div>
+        <div><dt>{{ partial "icon.html" "pin" }}Where</dt><dd>{{ .room }}{{ with .building }}<span class="series__sub">{{ . }}</span>{{ end }}{{ with .maps }}<span class="series__maps">{{ range . }}<a class="series__map" href="{{ .url }}" rel="noopener">{{ .label }}{{ $external }}</a>{{ end }}</span>{{ end }}</dd></div>
         {{ end }}
         {{ range .facts }}
         <div><dt>{{ partial "icon.html" .icon }}{{ .label }}</dt>

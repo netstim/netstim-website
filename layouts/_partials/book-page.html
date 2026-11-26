@@ -1,61 +1,63 @@
-{{- /* The book (/book/). Two-column editorial monograph layout: sticky left rail holds the tactile hardcover
-       object on a quiet tinted plinth, direct order/read links, and the colophon (facts + ISBNs/DOI); the right
-       column carries the title, concise overview (content/book.md), and a printed-press Table of Contents from
-       data/book.yaml. */ -}}
+{{- /* The book (/book/): calm hero above the fold (cover beside title, brief overview and order/read links),
+       followed by selective disclosure below: 5 collapsible Parts for Contents and a collapsible Publication
+       details row so the page breathes instead of dumping 26 chapters and ISBNs at once. */ -}}
 {{ $b := hugo.Data.book }}
 {{ $ext := partial "icon.html" "external" }}
-{{ $chapterCount := 0 }}{{ range $b.parts }}{{ $chapterCount = add $chapterCount (len .chapters) }}{{ end }}
 <div class="book">
-  <aside class="book__aside" aria-label="Book cover and publication details">
+  <div class="book__hero">
     <div class="book__cover">
-      <span class="book3d"><span class="book3d__body"><span class="book3d__front">{{ partial "picture.html" (dict "src" $b.cover "alt" (printf "Cover of %s" $b.title) "width" 520 "sizes" "(max-width: 767px) 200px, (max-width: 1439px) 26vw, 320px" "eager" true) }}</span></span></span>
+      <span class="book3d"><span class="book3d__body"><span class="book3d__front">{{ partial "picture.html" (dict "src" $b.cover "alt" (printf "Cover of %s" $b.title) "width" 520 "sizes" "(max-width: 767px) 200px, 280px" "eager" true) }}</span></span></span>
     </div>
-    {{ with $b.actions }}
-    <div class="book__actions">
-      {{ range where . "primary" true }}
-      <a class="btn book__buy" href="{{ .url }}" rel="noopener">{{ .label }} {{ $ext }}</a>
+    <div class="book__intro">
+      <h1>{{ .Title }}</h1>
+      <p class="book__meta">{{ .Params.lead }} · Academic Press, 2021</p>
+      <div class="book__text">{{ partial "render.html" .Content }}</div>
+      {{ with $b.actions }}
+      <div class="book__actions">
+        {{ range where . "primary" true }}<a class="btn" href="{{ .url }}" rel="noopener">{{ .label }} {{ $ext }}</a>{{ end }}
+        {{ range where . "primary" "ne" true }}<a class="text-action" href="{{ .url }}" rel="noopener">{{ .label }} {{ $ext }}</a>{{ end }}
+      </div>
       {{ end }}
-      <div class="book__secondary">
-        {{ range where . "primary" "ne" true }}
-        <a class="text-action" href="{{ .url }}" rel="noopener">{{ .label }} {{ $ext }}</a>
+    </div>
+  </div>
+
+  <div class="book__details">
+    <section class="book__section" aria-labelledby="contents-h">
+      <h2 id="contents-h">Contents</h2>
+      <div class="book__accordions">
+        {{ range $b.parts }}
+        <details class="book-part">
+          <summary>
+            <span class="book-part__title"><span class="book-part__roman">Part {{ .part }}</span> {{ .title }}</span>
+            <span class="book-part__count">{{ len .chapters }} chapters</span>
+          </summary>
+          <ol class="book-chapters">
+            {{ range .chapters }}
+            <li value="{{ .n }}">
+              <span class="book-chapters__n" aria-hidden="true">{{ .n }}</span>
+              <span class="book-chapters__body">
+                {{ if .doi }}<a class="book-chapters__title" href="https://doi.org/{{ .doi }}" rel="noopener"><span class="sr-only">Chapter {{ .n }}: </span>{{ .title }}</a>
+                {{ else }}<span class="book-chapters__title"><span class="sr-only">Chapter {{ .n }}: </span>{{ .title }}</span>{{ end }}
+                <span class="book-chapters__authors">{{ .authors }}</span>
+              </span>
+              {{ with .page }}<span class="book-chapters__page"><span class="sr-only">page </span>{{ . }}</span>{{ end }}
+            </li>
+            {{ end }}
+          </ol>
+        </details>
         {{ end }}
       </div>
-    </div>
-    {{ end }}
-    <dl class="book__colophon">
-      {{ range $b.facts }}
-      <div><dt>{{ .label }}</dt><dd>{{ .value }}</dd></div>
-      {{ end }}
-      {{ with $b.identifiers }}{{ range .rows }}
-      <div><dt>{{ .label }}</dt><dd>{{ if .url }}<a href="{{ .url }}" rel="noopener">{{ .value }}</a>{{ else }}{{ .value }}{{ end }}</dd></div>
-      {{ end }}{{ end }}
-    </dl>
-  </aside>
-  <div class="book__about">
-    <div class="book__text">{{ partial "render.html" .Content }}</div>
+    </section>
+
+    <details class="book-meta-fold">
+      <summary>
+        <span>Publication details</span>
+        <span class="book-meta-fold__hint">600 pages · ISBN 978-0-12-821861-7</span>
+      </summary>
+      <dl class="book__colophon">
+        {{ range $b.facts }}<div><dt>{{ .label }}</dt><dd>{{ .value }}</dd></div>{{ end }}
+        {{ with $b.identifiers }}{{ range .rows }}<div><dt>{{ .label }}</dt><dd>{{ if .url }}<a href="{{ .url }}" rel="noopener">{{ .value }}</a>{{ else }}{{ .value }}{{ end }}</dd></div>{{ end }}{{ end }}
+      </dl>
+    </details>
   </div>
-  <section class="toc" aria-labelledby="contents-h">
-    <div class="toc__bar">
-      <h2 id="contents-h">Contents</h2>
-      <p class="toc__summary">{{ $chapterCount }} chapters · {{ len $b.parts }} parts</p>
-    </div>
-    {{ range $b.parts }}
-    <div class="toc__part">
-      <h3 class="toc__head"><span class="toc__label">Part {{ .part }}</span><span class="toc__part-title">{{ .title }}</span></h3>
-      <ol class="toc__list">
-        {{ range .chapters }}
-        <li value="{{ .n }}">
-          <span class="toc__n" aria-hidden="true">{{ printf "%02d" .n }}</span>
-          <span class="toc__text">
-            {{ if .doi }}<a class="toc__title" href="https://doi.org/{{ .doi }}" rel="noopener"><span class="sr-only">Chapter {{ .n }}: </span>{{ .title }}<span class="toc__ext" aria-hidden="true"> {{ $ext }}</span></a>
-            {{ else }}<span class="toc__title"><span class="sr-only">Chapter {{ .n }}: </span>{{ .title }}</span>{{ end }}
-            <span class="toc__authors">{{ .authors }}</span>
-          </span>
-          {{ with .page }}<span class="toc__page"><span class="sr-only">page </span>{{ . }}</span>{{ end }}
-        </li>
-        {{ end }}
-      </ol>
-    </div>
-    {{ end }}
-  </section>
 </div>

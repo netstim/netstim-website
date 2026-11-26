@@ -1,86 +1,92 @@
-/* Stimu-Latte (layouts/_partials/stimu-latte-page.html). The flyer is the picture of the page: on the left
-   and in view while the text scrolls (first and full-width on a phone). Beside it the club's facts as
-   property rows like a Notion page (an icon and a muted label, then the value), the next session on a
-   coffee-tinted panel, and the past sessions as dated rows by year. */
-.latte { --latte: #8a5a2b; --latte-soft: color-mix(in oklab, var(--latte) 11%, var(--bg));
-  display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; align-items: start; }
-[data-theme="dark"] .latte { --latte: #d9a46e; --latte-soft: color-mix(in oklab, var(--latte) 14%, var(--bg)); }
+/* Stimu-Latte (layouts/_partials/stimu-latte-page.html): calm hero above the fold (flyer beside title,
+   practical facts with Add-to-calendar and UKK Navi / Google Maps pills, mailing list CTA), followed by
+   collapsible Past sessions by year. */
+.latte {
+  --latte: #8a5a2b; --latte-soft: color-mix(in oklab, var(--latte) 9%, var(--surface));
+  width: min(100% - 2 * var(--gut), var(--container)); margin-inline: auto; padding-block: clamp(32px, 5vw, 64px) var(--section);
+}
+[data-theme="dark"] .latte { --latte: #d9a46e; --latte-soft: color-mix(in oklab, var(--latte) 12%, var(--surface)); }
 .latte svg { flex: none; }
 
-/* the flyer */
-.flyer { max-width: 420px; }
-.flyer a { display: block; border-radius: var(--r-md); overflow: hidden; box-shadow: 0 0 0 1px var(--line), 0 24px 48px -28px rgb(0 0 0 / .4); }
-.flyer img { width: 100%; height: auto; }
-.flyer figcaption { margin-top: 12px; color: var(--muted); font-size: 13px; line-height: 1.4; }
+.latte__hero { display: grid; grid-template-columns: minmax(0, 1fr); gap: 36px; align-items: center; }
+.flyer { margin: 0; max-width: 400px; }
+.flyer__plinth { padding: 20px; border-radius: var(--r-lg); border: 1px solid var(--line); background: var(--latte-soft); }
+.flyer a { display: block; border-radius: var(--r-sm); overflow: hidden; box-shadow: 0 1px 2px rgb(0 0 0 / .08), 0 16px 32px -16px rgb(0 0 0 / .35); transition: transform 240ms cubic-bezier(.2, .8, .2, 1); }
+.flyer img { display: block; width: 100%; height: auto; }
+[data-theme="dark"] .flyer img { filter: brightness(.92); }
+.flyer figcaption { margin-top: 10px; color: var(--muted); font-size: 12.5px; line-height: 1.4; }
 
-/* the facts */
-.props { display: grid; gap: 2px; margin: 0; }
-.props__row { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 4px 16px; align-items: start; padding-block: 7px; }
-.props dt { display: flex; align-items: center; gap: 9px; color: var(--muted); font-size: 15px; line-height: 24px; }
-.props dt svg { width: 17px; height: 17px; align-self: center; }
-.props dd { margin: 0; font-size: 16px; line-height: 24px; }
-.props__sub { display: block; color: var(--muted); font-size: 14px; line-height: 20px; }
-/* the building links to a map */
-.props__map { display: flex; width: fit-content; align-items: center; gap: 4px; min-height: 44px; margin-block: -12px; text-decoration-color: var(--line-strong); text-underline-offset: 4px; }
-.props__map svg { width: 14px; height: 14px; }
-.props__when { display: flex; flex-wrap: wrap; gap: 4px 10px; }
-.props__chip { display: inline-flex; align-items: center; gap: 5px; padding: 2px 9px 2px 7px; border-radius: 6px;
-  background: var(--surface); font-size: 14px; font-weight: 500; line-height: 20px; font-variant-numeric: tabular-nums; white-space: nowrap; }
-.props__chip svg { width: 14px; height: 14px; color: var(--muted); }
-.props__row:has(.props__join) { align-items: center; padding-top: 12px; }
-.props__join { min-height: 44px; padding: 0 18px; white-space: nowrap; }
-.props__join svg { width: 16px; height: 16px; }
+.latte__intro { max-width: 38rem; }
+.latte__lead { margin-top: 14px; color: var(--muted); font-size: 18px; line-height: 1.55; text-wrap: pretty; }
 
-/* the next session */
-.next { margin-top: 28px; padding: 22px 24px 24px; border-radius: var(--r-md); background: var(--latte-soft); }
-.next__label { color: var(--latte); font-size: 14px; font-weight: 600; letter-spacing: 0; line-height: 1.4; }
-.next__date { margin-top: 6px; font-size: clamp(22px, 1vw + 16px, 28px); font-weight: 500; line-height: 1.2; letter-spacing: -.025em; }
-.next__meta { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 20px; margin: 12px 0 0; padding: 0; font-size: 15px; }
-.next__meta li { display: inline-flex; align-items: center; gap: 7px; }
-.next__meta svg { width: 16px; height: 16px; color: var(--latte); }
-.next__paper { margin-top: 16px; font-size: 17px; font-weight: 500; line-height: 1.4; }
-.next__source { margin-top: 4px; color: var(--muted); font-size: 15px; line-height: 1.5; }
+.latte__facts { margin: 26px 0 0; border-top: 1px solid var(--line); }
+.latte__facts > div { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: 6px 16px; align-items: start; padding: 13px 0; border-bottom: 1px solid var(--line); }
+.latte__facts dt { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 14.5px; line-height: 24px; }
+.latte__facts dt svg { width: 16px; height: 16px; }
+.latte__facts dd { margin: 0; display: grid; gap: 4px; font-size: 15.5px; line-height: 24px; color: var(--ink); font-variant-numeric: tabular-nums; }
+.latte__sub { color: var(--muted); font-size: 13.5px; line-height: 1.4; margin-top: -2px; }
+.latte__pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.latte__pill {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 5px 12px;
+  border: 1px solid var(--line-strong); border-radius: 999px; background: var(--surface);
+  color: var(--ink); font-size: 13px; font-weight: 500; line-height: 1.2; text-decoration: none;
+  transition: transform 150ms cubic-bezier(.2, .8, .2, 1);
+}
+.latte__pill svg { width: 14px; height: 14px; color: var(--muted); }
+.latte__pill:active { opacity: .75; transform: scale(.98); }
 
-/* past sessions */
-.past { margin-top: 56px; }
-.past h2 { font-size: clamp(22px, 1vw + 15px, 26px); font-weight: 500; letter-spacing: -.025em; line-height: 1.2; }
-.past__year { margin-top: 28px; color: var(--muted); font-size: 14px; font-weight: 500; letter-spacing: 0; line-height: 1.4; font-variant-numeric: tabular-nums; }
-.past h2 + .past__year { margin-top: 20px; }
-.sessions { list-style: none; margin: 8px 0 0; padding: 0; border-top: 1px solid var(--line-strong); }
-.session { display: grid; grid-template-columns: 3.75rem minmax(0, 1fr) auto; gap: 0 16px; align-items: start; padding: 12px 0; border-bottom: 1px solid var(--line); }
-.session__date { color: var(--muted); font-size: 14px; line-height: 1.6; font-variant-numeric: tabular-nums; white-space: nowrap; }
-.session__paper { font-size: 16px; font-weight: 500; line-height: 1.4; letter-spacing: -.005em; }
-.session__meta { margin-top: 2px; color: var(--muted); font-size: 14px; line-height: 1.45; }
+.next { margin-top: 22px; padding: 16px 20px; border: 1px solid var(--line); border-radius: var(--r-md); background: var(--latte-soft); }
+.next__label { color: var(--latte); font-size: 13px; font-weight: 600; }
+.next__paper { margin-top: 4px; font-size: 16px; font-weight: 500; line-height: 1.4; }
+.next__source { margin-top: 2px; color: var(--muted); font-size: 14px; }
+
+.latte__cta { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 26px; }
+.latte__cta .btn svg { width: 16px; height: 16px; }
+.latte__note { color: var(--muted); font-size: 14px; }
+
+/* past sessions: clean collapsible years */
+.past { margin-top: clamp(56px, 7vw, 88px); padding-top: 40px; border-top: 1px solid var(--line); }
+.past h2 { font-size: 20px; font-weight: 500; letter-spacing: -.015em; margin-bottom: 16px; }
+.past__years { border-top: 1px solid var(--line); }
+.past-year { border-bottom: 1px solid var(--line); }
+.past-year summary {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto 20px; gap: 8px 20px; align-items: center;
+  min-height: 58px; padding: 14px 0; list-style: none; cursor: pointer; color: var(--ink);
+}
+.past-year summary::-webkit-details-marker { display: none; }
+.past-year summary::after { content: "+"; text-align: right; color: var(--muted); font-size: 20px; font-weight: 400; line-height: 1; }
+.past-year[open] summary::after { content: "–"; }
+.past-year__label { font-size: 17px; font-weight: 500; font-variant-numeric: tabular-nums; }
+.past-year__count { color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }
+
+.sessions { list-style: none; margin: 0; padding: 0 0 16px; }
+.session { display: grid; grid-template-columns: 3.75rem minmax(0, 1fr) auto; gap: 0 16px; align-items: baseline; padding: 11px 0; border-top: 1px solid var(--line); }
+.session:first-child { border-top: 0; }
+.session__date { color: var(--muted); font-size: 14px; line-height: 1.5; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.session__paper { font-size: 15px; font-weight: 500; line-height: 1.42; text-wrap: pretty; }
+.session__meta { margin-top: 2px; color: var(--muted); font-size: 13.5px; line-height: 1.45; }
 .session__source::before { content: "·"; margin-inline: 7px; }
-/* a session with a flyer: the whole row opens it in the image viewer */
 .session--flyer { position: relative; }
 .session__paper a { color: inherit; text-decoration: none; }
 .session__paper a::after { content: ""; position: absolute; inset: 0; }
 .session--flyer:active { opacity: .7; }
-.session__flyer { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); font-size: 14px; line-height: 1.6; }
-.session__flyer svg { width: 16px; height: 16px; }
+.session__flyer { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); font-size: 13.5px; line-height: 1.5; }
+.session__flyer svg { width: 15px; height: 15px; }
+
 @media (hover: hover) {
-  .flyer a { transition: transform 200ms cubic-bezier(.2, .65, .3, 1); }
-  .flyer a:hover { transform: translateY(-2px); }
-  .props__map:hover { color: var(--action); text-decoration-color: currentColor; }
+  .flyer a:hover { transform: translateY(-3px); }
+  .latte__pill:hover { border-color: var(--ink); color: var(--action); }
+  .latte__pill:hover svg { color: var(--action); }
+  .past-year summary:hover .past-year__label { color: var(--action); }
   .session--flyer:hover :is(.session__paper, .session__flyer) { color: var(--action); }
 }
+@media (min-width: 860px) {
+  .latte__hero { grid-template-columns: clamp(320px, 34vw, 400px) minmax(0, 1fr); gap: clamp(44px, 6vw, 88px); }
+  .flyer { max-width: none; }
+}
 @media (max-width: 479px) {
-  .props__row { grid-template-columns: 6rem minmax(0, 1fr); gap: 4px 12px; }
-  .props__join { padding: 8px 16px; white-space: normal; }
+  .latte__facts > div { grid-template-columns: 5.5rem minmax(0, 1fr); gap: 4px 12px; }
   .session__source { display: block; }
   .session__source::before { content: none; }
-  .next { padding: 18px 18px 20px; }
   .session { grid-template-columns: 3.25rem minmax(0, 1fr) auto; gap: 0 12px; }
-}
-@media (min-width: 768px) {
-  .latte--flyer { grid-template-columns: clamp(260px, 34vw, 420px) minmax(0, 1fr); gap: 0 clamp(40px, 6vw, 88px); }
-  .latte__body { max-width: 44rem; }
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  .props__row { grid-template-columns: 6.5rem minmax(0, 1fr); }
-}
-/* the flyer stays in view while the sessions scroll, on screens tall enough to show all of it */
-@media (min-width: 768px) and (min-height: 780px) {
-  .flyer { position: sticky; top: calc(var(--nav) + 24px); }
 }
