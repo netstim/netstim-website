@@ -65,7 +65,7 @@ hero:
     alt: Animation of a directional DBS lead positioned in the subthalamic nucleus with one active stimulation contact
 research:
   title: Research
-  lede: Where to stimulate, and the code we built to figure it out.
+  lede: Trying to figure out where in the brain to stimulate.
   link: {label: Research overview, url: '@root@research/'}
   cards:
   - title: Deep Brain Stimulation
