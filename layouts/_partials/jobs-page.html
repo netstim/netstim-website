@@ -1,31 +1,17 @@
 {{- /* Jobs (/jobs/; everything from the front matter of content/jobs.md).
-       1. Two-column editorial split aligned top-to-bottom with the team photo: heading, short human intro
-          with inline links, clean unboxed property rows (Openings / To apply), and email CTA.
-       2. Open positions (only shown when `positions` has entries). */ -}}
+       Matches the house architecture of Lead-DBS and Resources:
+       1. Two-column hero (5fr text / 6fr photo): title, lead, brief status line, and direct email CTA.
+       2. Open positions (4fr / 8fr ruled rows, shown automatically when `positions` is non-empty).
+       3. Career-stage guidance (`tracks`: 4fr left heading / 8fr reading column under hairlines). */ -}}
 {{ $p := .Params }}
 {{ $email := $p.email | default hugo.Data.contact.email }}
 {{ $arrow := partial "icon.html" "arrow" }}
-<div class="jobs-page">
+<div class="wrap jobs-page">
   <div class="jobs-hero">
     <div class="jobs-hero__text">
       <h1>{{ .Title }}</h1>
+      {{ with $p.lead }}<p class="jobs-lead">{{ . }}</p>{{ end }}
       {{ with $p.intro }}<p class="jobs-intro">{{ partial "url.html" (string ($.RenderString .)) | safeHTML }}</p>{{ end }}
-      {{ if or (and (not $p.positions) $p.opening) $p.apply }}
-      <dl class="jobs-facts">
-        {{ if not $p.positions }}{{ with $p.opening }}
-        <div>
-          <dt>Openings</dt>
-          <dd>{{ partial "url.html" (string ($.RenderString .)) | safeHTML }}</dd>
-        </div>
-        {{ end }}{{ end }}
-        {{ with $p.apply }}
-        <div>
-          <dt>To apply</dt>
-          <dd>{{ partial "url.html" (string ($.RenderString .text)) | safeHTML }}</dd>
-        </div>
-        {{ end }}
-      </dl>
-      {{ end }}
       {{ with $email }}
       <div class="jobs-mail">
         <a class="btn" href="mailto:{{ . }}">{{ partial "icon.html" "mail" }}<span>Email us</span></a>
@@ -42,16 +28,23 @@
   </div>
 
   {{ with $p.positions }}
-  <section class="jobs-open" aria-labelledby="jobs-open">
+  <section class="jobs-section" aria-labelledby="jobs-open">
     <h2 id="jobs-open">Open positions</h2>
     <ul class="jobs-rows">
       {{ range . }}{{ $href := "" }}{{ with .url }}{{ $href = partial "url.html" . }}{{ end }}{{ $ext := hasPrefix $href "http" }}
       <li>{{ if $href }}<a class="jobs-row" href="{{ $href }}"{{ if $ext }} rel="noopener"{{ end }}>{{ else }}<div class="jobs-row">{{ end }}
-        <span class="jobs-row__text"><span class="jobs-row__title jobs-row__title--position">{{ .title }}</span>{{ with .text }}<span class="jobs-row__note">{{ . }}</span>{{ end }}</span>
+        <span class="jobs-row__text"><span class="jobs-row__title">{{ .title }}</span>{{ with .text }}<span class="jobs-row__note">{{ . }}</span>{{ end }}</span>
         {{ if $ext }}<span class="sr-only"> (another site)</span>{{ partial "icon.html" "external" }}{{ else if $href }}{{ $arrow }}{{ end }}
       {{ if $href }}</a>{{ else }}</div>{{ end }}</li>
       {{ end }}
     </ul>
+  </section>
+  {{ end }}
+
+  {{ range $p.tracks }}
+  <section class="jobs-section" aria-labelledby="track-{{ anchorize .title }}">
+    <h2 id="track-{{ anchorize .title }}">{{ .title }}</h2>
+    <p class="jobs-track__text">{{ partial "url.html" (string ($.RenderString .text)) | safeHTML }}</p>
   </section>
   {{ end }}
 </div>

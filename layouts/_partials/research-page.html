@@ -8,19 +8,40 @@
 {{ else }}
 {{ $arrow := partial "icon.html" "arrow" }}
 {{ $external := partial "icon.html" "external" }}
-<div class="wrap page-body">
-  {{ with .Params.action }}<p class="research-action"><a class="text-action" href="{{ partial "url.html" .url }}" rel="noopener">{{ .label }}<span class="sr-only"> (another site)</span>{{ $external }}</a></p>{{ end }}
+<div class="wrap resources-page">
+  <header class="resources-head">
+    <div>
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.lead }}<p class="resources-head__lead">{{ . }}</p>{{ end }}
+    </div>
+    {{ with .Params.action }}<a class="btn resources-head__btn" href="{{ partial "url.html" .url }}" rel="noopener">{{ .label }} {{ $external }}</a>{{ end }}
+  </header>
   {{ with .Params.cards }}
   <ul class="research-cards">
     {{ range . }}{{ $href := partial "url.html" .url }}{{ $ext := hasPrefix $href "http" }}
     <li><a class="research-card" href="{{ $href }}"{{ if $ext }} rel="noopener"{{ end }}>
-      <span class="research-card__frame{{ if .contain }} research-card__frame--contain{{ end }}">{{ partial "picture.html" (dict "src" .image "alt" (.alt | default "") "width" 1200 "sizes" "(max-width: 767px) 100vw, 600px") }}</span>
+      <span class="research-card__frame{{ if .contain }} research-card__frame--contain{{ end }}">{{ partial "picture.html" (dict "src" .image "alt" (.alt | default "") "width" 1200 "sizes" "(max-width: 767px) 100vw, 420px") }}</span>
       <span class="research-card__title">{{ .title }}{{ if $ext }}<span class="sr-only"> (another site)</span>{{ $external }}{{ else }}{{ $arrow }}{{ end }}</span>
       <span class="research-card__text">{{ .text }}</span>
     </a></li>
     {{ end }}
   </ul>
   {{ end }}
-  {{ with .Params.links }}{{ partial "research-links.html" . }}{{ end }}
+  {{ with .Params.links }}
+  <section class="resources-more" aria-labelledby="resources-more-h">
+    <h2 id="resources-more-h">Documentation &amp; code</h2>
+    <ul class="resources-list">
+      {{ range . }}{{ $href := partial "url.html" .url }}{{ $ext := hasPrefix $href "http" }}
+      <li><a class="resources-list__row" href="{{ $href }}"{{ if $ext }} rel="noopener"{{ end }}>
+        <span class="resources-list__body">
+          <span class="resources-list__title">{{ .title }}</span>
+          {{ with .text }}<span class="resources-list__text">{{ . }}</span>{{ end }}
+        </span>
+        {{ if $ext }}<span class="sr-only"> (another site)</span>{{ $external }}{{ else }}{{ $arrow }}{{ end }}
+      </a></li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ end }}
 </div>
 {{ end }}

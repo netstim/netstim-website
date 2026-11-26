@@ -1,5 +1,5 @@
 <main id="main" tabindex="-1" class="page">
-  {{ if and (not (in (slice "book" "stimu-latte" "jobs") .Params.family)) (not .Params.compact) }}{{ partial "page-head.html" . }}{{ end }}
+  {{ if and (not (in (slice "book" "stimu-latte" "jobs") .Params.family)) (not .Params.compact) (not .Params.resources_page) }}{{ partial "page-head.html" . }}{{ end }}
   {{ if eq .Params.family "people" }}{{ partial "people-page.html" . }}
   {{ else if eq .Params.family "posters" }}{{ partial "posters-page.html" . }}
   {{ else if eq .Params.family "research" }}{{ partial "research-page.html" . }}

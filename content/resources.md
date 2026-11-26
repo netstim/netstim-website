@@ -2,9 +2,12 @@
 title: Resources
 url: /resources/
 family: research
+resources_page: true
 crumbs:
 - title: Home
   url: '@root@'
+- title: Research
+  url: '@root@research/'
 - title: Resources
 lead: Open-source software, brain atlases, and connectomes hosted on lead-dbs.org.
 # Compact pointer hub: downloads, manuals, and support all live on lead-dbs.org.
@@ -21,7 +24,7 @@ cards:
   url: https://www.lead-dbs.org/helpsupport/knowledge-base/atlasesresources/normative-connectomes/
 - title: Brain atlases
   text: Over 60 subcortical atlases in MNI space, including DISTAL.
-  image: media/3fd9ad4b3593-distal_atlas-1500x1500.png
+  image: media/research-leaddbs-step-electrodes.jpg
   url: https://www.lead-dbs.org/helpsupport/knowledge-base/atlasesresources/atlases-2/
 links:
 - title: Manual and tutorials
