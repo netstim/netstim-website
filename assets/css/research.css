@@ -20,9 +20,12 @@
       its caption and the text under each other). Under 700px everything is one column in the order of
       the source: the title and the question, the plate, the text; an upright figure gets a square plate,
       the wide picture runs from edge to edge of the window, and the links are ruled rows. */
+.page-head:has(+ .research-overview) { padding-bottom: clamp(40px, 5vw, 64px); }
 .page-head:has(+ .research-overview) .page-lead { max-width: 52rem; margin-top: 24px; color: var(--ink); font-size: clamp(19px, 1vw + 12px, 25px); line-height: 1.4; letter-spacing: -.02em; }
 .research-overview { --col-gap: 24px; --plate: var(--surface); padding-top: 0; padding-bottom: 0; }
-.theme-group--rows { padding-block: 40px 56px; }
+.theme-group--rows { padding-block: 0; }
+.theme-band { padding-block: 44px; }
+.theme-band--tinted { --plate: var(--bg); background: var(--surface); }
 .theme-group__themes { display: grid; grid-template-columns: minmax(0, 1fr); row-gap: 56px; }
 .theme { display: grid; grid-template-columns: minmax(0, 1fr); align-content: start; scroll-margin-top: calc(var(--nav) + 24px); }
 .theme__title, .theme-group__title { font-size: clamp(24px, 1.2vw + 15px, 32px); font-weight: 500; line-height: 1.16; letter-spacing: -.024em; text-wrap: balance; }
@@ -164,7 +167,7 @@
    or at the left in a `left` row); a `wide` row is the title, the picture across the page, the text. The
    pair is two abreast, the plate first, and every part of the two areas on one line (the rows are shared) */
 @media (min-width: 700px) {
-  .theme-group--rows { padding-block: 56px 72px; }
+  .theme-band { padding-block: 56px; }
   .theme-group__themes { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--col-gap); row-gap: 72px; }
   .theme-group--rows .theme { grid-column: 1 / -1; grid-template-columns: subgrid; grid-template-rows: auto auto auto 1fr; }
   .theme-group--rows .theme > * { grid-column: 1 / span 6; }
@@ -193,7 +196,7 @@
 }
 /* from 1024px the text keeps to five columns, in a row and in the pair */
 @media (min-width: 1024px) {
-  .theme-group--rows { padding-block: 72px 96px; }
+  .theme-band { padding-block: 72px; }
   .theme-group--rows .theme-group__themes { row-gap: 96px; }
   .theme-group--rows .theme > * { grid-column: 1 / span 5; }
   .theme-group--rows .theme--left > * { grid-column: 7 / span 5; }

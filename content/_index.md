@@ -70,13 +70,12 @@ research:
     url: '@root@research/lead-dbs/'
 people:
   title: People
-  link: {label: Meet the team, url: '@root@people/'}
-  card:
-    title: Get in touch
-    text: Whether you’re interested in joining the lab, starting a collaboration, or talking brain stimulation and open tools, we’re always glad to hear from you.
-    links:
-    - {label: Join the lab, url: '@root@jobs/'}
-    - {label: Lab manual, url: '@root@internal/onboarding/'}
+  subtitle: Get in touch
+  text: Whether you’re interested in joining the lab, starting a collaboration, or talking brain stimulation and open tools, we’re always glad to hear from you.
+  links:
+  - {label: Meet the team, url: '@root@people/'}
+  - {label: Join the lab, url: '@root@jobs/'}
+  - {label: Lab manual, url: '@root@internal/onboarding/'}
   photos:
   - image: media/team-2026-arch.jpg
     alt: The Netstim team outdoors under a mirrored arch sculpture on the hospital campus

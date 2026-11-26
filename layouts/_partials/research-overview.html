@@ -28,18 +28,43 @@
   {{ range $g, $group := .Params.groups }}
   {{ $pair := eq .layout "pair" }}
   <section class="theme-group theme-group--{{ if $pair }}pair{{ else }}rows{{ end }}" aria-labelledby="group-{{ $g }}">
+    {{ if $pair }}
     <div class="wrap">
       <h2 class="{{ if eq .heading false }}sr-only{{ else }}theme-group__title{{ end }}" id="group-{{ $g }}">{{ .title }}</h2>
       <div class="theme-group__themes">
         {{ range $i, $t := .themes }}
         {{ $tall := false }}{{ with .image }}{{ with resources.Get . }}{{ $tall = gt .Height .Width }}{{ end }}{{ end }}
         {{ $whole := or $tall (eq .drawing true) }}
-        {{- /* a row's turn: right, left, wide, and again; a figure shown whole is never the wide one */ -}}
-        {{ $turn := "" }}
-        {{ if not $pair }}
-          {{ $turn = .layout | default (index (slice "right" "left" "wide") (mod $i 3)) }}
-          {{ if or (not (in (slice "right" "left" "wide") $turn)) (and (eq $turn "wide") (or $whole .drawing (not .image))) }}{{ $turn = "right" }}{{ end }}
+        <article class="theme"{{ with .id }} id="{{ . }}"{{ end }}>
+          <h3 class="theme__title">{{ .title }}</h3>
+          {{ with .question }}<p class="theme__question">{{ . }}</p>{{ end }}
+          {{ with .image }}
+          <figure class="theme__media">
+            {{ $sizes := "(max-width: 699px) calc(100vw - 40px), (max-width: 1439px) 45vw, 628px" }}
+            <div class="theme__frame{{ if $whole }} theme__frame--whole{{ end }}{{ if eq $t.drawing "light" }} theme__frame--light{{ else if $t.drawing }} theme__frame--drawing{{ end }}{{ if $tall }} theme__frame--tall{{ end }}">
+              {{- partial "picture.html" (dict "src" . "alt" ($t.alt | default "") "width" 1200 "sizes" $sizes "eager" (and (eq $g 0) $t.first)) -}}
+            </div>
+            {{ with $t.caption }}<figcaption>{{ partial "url.html" (. | markdownify) | safeHTML }}</figcaption>{{ end }}
+          </figure>
+          {{ end }}
+          {{ with .text }}<p class="theme__lede">{{ . }}</p>{{ end }}
+          {{ with .links }}<p class="theme__links">{{ range . }}{{ $href := partial "url.html" .url }}{{ $ext := hasPrefix $href "http" }}<a class="text-action" href="{{ $href }}"{{ if $ext }} rel="noopener"{{ end }}>{{ .label }}{{ if $ext }}<span class="sr-only"> (another site)</span>{{ partial "icon.html" "external" }}{{ else }}{{ partial "icon.html" "arrow" }}{{ end }}</a>{{ end }}</p>{{ end }}
+        </article>
         {{ end }}
+      </div>
+    </div>
+    {{ else }}
+    <div class="wrap">
+      <h2 class="{{ if eq .heading false }}sr-only{{ else }}theme-group__title{{ end }}" id="group-{{ $g }}">{{ .title }}</h2>
+    </div>
+    {{ range $i, $t := .themes }}
+    {{ $tall := false }}{{ with .image }}{{ with resources.Get . }}{{ $tall = gt .Height .Width }}{{ end }}{{ end }}
+    {{ $whole := or $tall (eq .drawing true) }}
+    {{- /* a row's turn: right, left, wide, and again; a figure shown whole is never the wide one */ -}}
+    {{ $turn := .layout | default (index (slice "right" "left" "wide") (mod $i 3)) }}
+    {{ if or (not (in (slice "right" "left" "wide") $turn)) (and (eq $turn "wide") (or $whole .drawing (not .image))) }}{{ $turn = "right" }}{{ end }}
+    <div class="theme-band{{ if eq (mod $i 2) 0 }} theme-band--tinted{{ end }}">
+      <div class="wrap theme-group__themes">
         <article class="theme{{ with $turn }} theme--{{ . }}{{ end }}"{{ with .id }} id="{{ . }}"{{ end }}>
           <h3 class="theme__title">{{ .title }}</h3>
           {{ with .question }}<p class="theme__question">{{ . }}</p>{{ end }}
@@ -57,9 +82,10 @@
           {{ with .text }}<p class="theme__lede">{{ . }}</p>{{ end }}
           {{ with .links }}<p class="theme__links">{{ range . }}{{ $href := partial "url.html" .url }}{{ $ext := hasPrefix $href "http" }}<a class="text-action" href="{{ $href }}"{{ if $ext }} rel="noopener"{{ end }}>{{ .label }}{{ if $ext }}<span class="sr-only"> (another site)</span>{{ partial "icon.html" "external" }}{{ else }}{{ partial "icon.html" "arrow" }}{{ end }}</a>{{ end }}</p>{{ end }}
         </article>
-        {{ end }}
       </div>
     </div>
+    {{ end }}
+    {{ end }}
   </section>
   {{ end }}
 </div>

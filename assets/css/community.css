@@ -7,14 +7,14 @@
    picture at the left again (`plain`). A dated entry (an announcement) is a soft-gray band across the
    window instead: a smaller flyer, three columns, and the text at mid-height beside it. Under 768px the
    picture stands over the text. */
+.page-head:has(+ .community) { padding-bottom: clamp(36px, 4.5vw, 56px); }
+.community { padding-top: 0; }
 .series__row { display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; padding-block: 48px; }
-.series + .series:not(.series--band) > .series__row { border-top: 1px solid var(--line); }
-.series--band + .series > .series__row { border-top: 0; }
-.series:first-child > .series__row { padding-top: 0; }
-.series:last-child:not(.series--band) > .series__row { padding-bottom: 0; }
-.series--band { background: var(--surface); }
-/* a band at the end of the page meets the footer */
-.community:has(> .series--band:last-child) { padding-bottom: 0; }
+.series:last-child:not(.series--tinted) > .series__row { padding-bottom: 0; }
+.series--tinted { background: var(--surface); }
+.series--tinted .series__chip { background: var(--bg); }
+/* a tinted band at the end of the page meets the footer */
+.community:has(> .series--tinted:last-child) { padding-bottom: 0; }
 .series svg { flex: none; }
 
 /* the picture */

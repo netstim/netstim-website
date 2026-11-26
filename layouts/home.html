@@ -72,27 +72,17 @@
   {{ end }}
 
   {{ with $p.people }}
-  {{ $peopleBanner := dict "slides" (.photos | default slice) "sizes" "(max-width: 1023px) 100vw, min(58vw, 720px)" "loop" false }}
+  {{ $peopleBanner := dict "slides" (.photos | default slice) "sizes" "(max-width: 1023px) 100vw, min(55vw, 680px)" "loop" false }}
   <section class="home-section home-people" aria-labelledby="people-h">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="section-head__title"><h2 id="people-h">{{ .title }}</h2></div>
-        {{ with .link }}<a class="text-action" href="{{ partial "url.html" .url }}">{{ .label }} {{ $arrow }}</a>{{ end }}
-      </div>
-      <div class="home-people__grid">
-        {{ partial "inline/home-banner.html" $peopleBanner }}
-        {{ with .card }}
-        <div class="home-people__card">
-          <div class="home-people__card-body">
-            <h3>{{ .title }}</h3>
-            {{ with .text }}<p>{{ . }}</p>{{ end }}
-          </div>
-          <ul class="home-links btn-row">
-            {{ range .links }}<li><a class="text-action" href="{{ partial "url.html" .url }}">{{ .label }} {{ $arrow }}</a></li>{{ end }}
-            {{ with hugo.Data.contact.email }}<li><a class="text-action" href="mailto:{{ . }}">Email us {{ $arrow }}</a></li>{{ end }}
-          </ul>
-        </div>
-        {{ end }}
+    <div class="wrap home-people__grid">
+      {{ partial "inline/home-banner.html" $peopleBanner }}
+      <div class="home-people__words">
+        <h2 id="people-h"><span class="home-people__title">{{ .title }}</span>{{ with .subtitle }}<span class="sr-only"> — </span><span class="home-people__subtitle">{{ . }}</span>{{ end }}</h2>
+        {{ with .text }}<p class="home-people__text">{{ . }}</p>{{ end }}
+        <ul class="home-links btn-row">
+          {{ range .links }}<li><a class="text-action" href="{{ partial "url.html" .url }}">{{ .label }} {{ $arrow }}</a></li>{{ end }}
+          {{ with hugo.Data.contact.email }}<li><a class="text-action" href="mailto:{{ . }}">Email us {{ $arrow }}</a></li>{{ end }}
+        </ul>
       </div>
     </div>
   </section>

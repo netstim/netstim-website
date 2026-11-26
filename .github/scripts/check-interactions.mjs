@@ -94,14 +94,16 @@ try {
       await page.keyboard.press('Escape');
       assert.equal(await viewer.isVisible(), false);
       assert(await cover.evaluate(el => el === document.activeElement));
-      // the opening: the pictures change by themselves, and the round button stops and starts that
-      const pictures = page.locator('[data-banner-toggle]');
-      assert(await pictures.isVisible());
-      assert(await pictures.evaluate(el => el.offsetWidth >= 44 && el.offsetHeight >= 44));
-      await pictures.click();
-      assert.equal(await pictures.getAttribute('aria-label'), 'Play the changing pictures');
-      await pictures.click();
-      assert.equal(await pictures.getAttribute('aria-label'), 'Pause the changing pictures');
+      // the opening (and People section): the pictures change by themselves, and the round button stops and starts that
+      for (const selector of ['.home-intro [data-banner-toggle]', '.home-people [data-banner-toggle]']) {
+        const pictures = page.locator(selector);
+        assert(await pictures.isVisible());
+        assert(await pictures.evaluate(el => el.offsetWidth >= 44 && el.offsetHeight >= 44));
+        await pictures.click();
+        assert.equal(await pictures.getAttribute('aria-label'), 'Play the changing pictures');
+        await pictures.click();
+        assert.equal(await pictures.getAttribute('aria-label'), 'Pause the changing pictures');
+      }
 
       await page.goto(at('publications/talks/'));
       assert.equal(await page.locator('iframe').count(), 0);
