@@ -28,8 +28,6 @@
     orcid: https://orcid.org/0000-0002-0695-6025
     researchgate: https://www.researchgate.net/profile/Andreas_Horn
     x: https://x.com/andreashorn_
-    publons: http://publons.com/a/1317885/
-    researcherid: http://researcherid.com/rid/B-8988-2017
     # TODO(netstim): the CV link is dead (404 on 2026-11-24); put the current PDF under static/ and link it here.
     # cv: http://www.andreas-horn.de/Horn_CV.pdf
   bio: |

@@ -98,15 +98,15 @@
 .topic-compact__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-top: 26px; }
 .topic-compact__actions .btn svg { width: 16px; height: 16px; }
 .topic-compact__media .topic-hero__frame { aspect-ratio: 4 / 3; }
-.topic-compact__papers { margin-top: clamp(48px, 6vw, 72px); padding-top: 28px; border-top: 1px solid var(--line); display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px 40px; }
-.topic-compact__papers h2 { font-size: clamp(21px, .6vw + 17px, 24px); font-weight: 500; line-height: 1.25; letter-spacing: -.018em; }
-.topic-compact__papers .paper-list { max-width: var(--measure); border-bottom: 0; }
+.topic-compact__papers { margin-top: clamp(48px, 6vw, 72px); padding-top: 28px; border-top: 1px solid var(--line); }
+.topic-compact__papers h2 { margin-bottom: 18px; font-size: clamp(20px, .5vw + 17px, 23px); font-weight: 500; line-height: 1.25; letter-spacing: -.018em; }
+.topic-compact__papers .paper-list { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0 28px; border-bottom: 0; }
 .topic-compact__papers .paper-list li:first-child :is(a, .paper-list__row) { padding-top: 0; border-top: 0; }
 @media (min-width: 900px) {
   .topic-compact__hero { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(40px, 5.5vw, 72px); }
-}
-@media (min-width: 1024px) {
-  .topic-compact__papers, .resources-more { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); }
+  .topic-compact__papers .paper-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .topic-compact__papers .paper-list :is(a, .paper-list__row) { padding: 14px 0 0; border-top: 1px solid var(--line); }
+  .topic-compact__papers .paper-list li:first-child :is(a, .paper-list__row) { padding-top: 14px; border-top: 1px solid var(--line); }
 }
 [data-theme="dark"] :is(.theme__frame, .topic-hero__frame) :is(img, video), [data-theme="dark"] .topic-body :is(p, .image-block) > img { filter: brightness(.88); }
 /* a white-ground picture that keeps its colors stays a light plate in the dark theme (white, dimmed like the picture) */
@@ -131,18 +131,17 @@
 .research-card:active { opacity: .7; }
 [data-theme="dark"] .research-card__frame img { filter: brightness(.9); }
 [data-theme="dark"] .research-card__frame--contain img { filter: invert(.915) hue-rotate(180deg); mix-blend-mode: lighten; }
-.resources-more { margin-top: clamp(48px, 6vw, 72px); padding-top: 28px; border-top: 1px solid var(--line); display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px 40px; }
-.resources-more h2 { font-size: clamp(21px, .6vw + 17px, 24px); font-weight: 500; line-height: 1.25; letter-spacing: -.018em; }
-.resources-list { list-style: none; margin: 0; padding: 0; max-width: var(--measure); }
-.resources-list__row { display: grid; grid-template-columns: minmax(0, 1fr) 18px; gap: 16px; align-items: center; padding: 14px 0; border-top: 1px solid var(--line); color: var(--ink); text-decoration: none; }
-.resources-list li:first-child .resources-list__row { padding-top: 0; border-top: 0; }
+.resources-more { margin-top: clamp(48px, 6vw, 72px); padding-top: 28px; border-top: 1px solid var(--line); }
+.resources-more h2 { margin-bottom: 18px; font-size: clamp(20px, .5vw + 17px, 23px); font-weight: 500; line-height: 1.25; letter-spacing: -.018em; }
+.resources-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 0 36px; }
+.resources-list__row { display: grid; grid-template-columns: minmax(0, 1fr) 18px; gap: 16px; align-items: center; padding: 16px 0; border-top: 1px solid var(--line); color: var(--ink); text-decoration: none; }
 .resources-list__body { display: grid; gap: 2px; }
 .resources-list__title { font-size: 16px; font-weight: 500; line-height: 1.35; }
 .resources-list__text { color: var(--muted); font-size: 14.5px; line-height: 1.45; }
 .resources-list__row svg { width: 17px; height: 17px; color: var(--muted); transition: transform 150ms cubic-bezier(.2, .65, .3, 1); }
 .resources-list__row:active { opacity: .7; }
-@media (min-width: 1024px) {
-  .resources-more { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); }
+@media (min-width: 768px) {
+  .resources-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (hover: hover) {
   .resources-list__row:hover .resources-list__title, .resources-list__row:hover svg { color: var(--action); }

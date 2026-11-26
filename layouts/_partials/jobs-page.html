@@ -41,10 +41,14 @@
   </section>
   {{ end }}
 
-  {{ range $p.tracks }}
-  <section class="jobs-section" aria-labelledby="track-{{ anchorize .title }}">
-    <h2 id="track-{{ anchorize .title }}">{{ .title }}</h2>
-    <p class="jobs-track__text">{{ partial "url.html" (string ($.RenderString .text)) | safeHTML }}</p>
-  </section>
+  {{ with $p.tracks }}
+  <div class="jobs-tracks">
+    {{ range . }}
+    <section class="jobs-track" aria-labelledby="track-{{ anchorize .title }}">
+      <h2 id="track-{{ anchorize .title }}">{{ .title }}</h2>
+      <p class="jobs-track__text">{{ partial "url.html" (string ($.RenderString .text)) | safeHTML }}</p>
+    </section>
+    {{ end }}
+  </div>
   {{ end }}
 </div>
