@@ -6,7 +6,7 @@
   <ul class="poster-grid">
   {{ range hugo.Data.poster_list }}
     <li id="{{ .id }}"><button type="button" class="poster-card" data-person="poster-{{ .id }}" aria-haspopup="dialog">
-      <span class="poster-card__plinth" data-morph>{{ partial "picture.html" (merge .image (dict "alt" "" "sizes" "(max-width: 639px) 45vw, 300px")) }}</span>
+      <span class="poster-card__plinth">{{ partial "picture.html" (merge .image (dict "alt" "" "sizes" "(max-width: 639px) 45vw, 300px")) }}</span>
       <span class="poster-card__who">{{ .who }}</span>
       <span class="poster-card__title">{{ .title }}</span>
     </button></li>
@@ -16,7 +16,7 @@
   <dialog class="person-dialog poster-dialog" id="poster-{{ .id }}" aria-labelledby="poster-{{ .id }}-title" tabindex="-1" autofocus>
     <form method="dialog" class="person-dialog__close"><button class="icon-button" aria-label="Close">{{ partial "icon.html" "close" }}</button></form>
     <div class="poster-dialog__poster">
-      <a href="{{ partial "url.html" (.full | default .image.original) }}" class="poster-dialog__frame" data-morph target="_blank" rel="noopener">{{ partial "picture.html" (merge .image (dict "alt" (printf "Poster: %s" .title) "sizes" "(max-width: 767px) 90vw, 560px")) }}</a>
+      <a href="{{ partial "url.html" (.full | default .image.original) }}" class="poster-dialog__frame" target="_blank" rel="noopener">{{ partial "picture.html" (merge .image (dict "alt" (printf "Poster: %s" .title) "sizes" "(max-width: 767px) 90vw, 560px")) }}</a>
       <a class="text-action" href="{{ partial "url.html" (.full | default .image.original) }}" target="_blank" rel="noopener">Open the full-size poster ↗</a>
     </div>
     <div class="poster-dialog__text prose">

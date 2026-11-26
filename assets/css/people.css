@@ -7,14 +7,14 @@
 .portrait-frame img { width: 100%; height: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 22%; filter: grayscale(1) contrast(1.04); }
 /* no photo yet: the same frame, the person's initials in it */
 .portrait-frame--empty { display: grid; place-items: center; background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); color: var(--muted); font-size: clamp(28px, 3.4vw, 44px); font-weight: 400; line-height: 1; letter-spacing: .02em; }
-/* the head of the lab: the portrait in the grid's first column, the text across the other three */
-.person-feature { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 24px 48px; align-items: start; margin-bottom: 56px; padding-bottom: 56px; border-bottom: 1px solid var(--line); }
-.person-feature__photo .portrait-frame { margin-bottom: 0; }
-.person-feature__text { grid-column: 2; max-width: 40rem; }
-.person-feature h2 { font-size: var(--t-h2); }
+/* the head of the lab: the portrait at the left, the text beside it with links aligned to the portrait's bottom */
+.person-feature { display: grid; grid-template-columns: minmax(280px, 340px) minmax(0, 1fr); gap: 24px 48px; align-items: stretch; margin-bottom: 56px; padding-bottom: 56px; border-bottom: 1px solid var(--line); }
+.person-feature__photo { align-self: start; }
+.person-feature__text { grid-column: 2; display: flex; flex-direction: column; max-width: 44rem; }
+.person-feature h2 { margin-top: -4px; font-size: var(--t-h2); }
 .person-feature__role { margin-top: 8px; color: var(--muted); font-size: 16px; line-height: 1.4; }
-.person-feature__bio { margin-top: 18px; font-size: var(--t-lead); line-height: 1.55; }
-.person-feature .person-links { margin-top: 12px; padding-top: 0; border-top: 0; }
+.person-feature__bio { margin-top: 16px; padding-bottom: 16px; font-size: 16px; line-height: 1.58; }
+.person-feature .person-links { margin-top: auto; padding-top: 10px; margin-bottom: -12px; border-top: 1px solid var(--line); }
 /* "Interested in joining?" under the team: the group photo and the way to Jobs on one soft-gray panel */
 .people-join { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); overflow: hidden; margin-top: 72px; border-radius: var(--r-lg); background: var(--surface); }
 .people-join__photo img { display: block; width: 100%; height: 100%; min-height: 300px; object-fit: cover; object-position: 50% 40%; }
@@ -31,6 +31,7 @@
 }
 .person-card .portrait-frame img { transition: transform 400ms cubic-bezier(.2, .65, .3, 1); }
 .person-card .portrait-frame { margin-bottom: 14px; }
+.person-feature__photo.person-card .portrait-frame { margin-bottom: 0; }
 .person-card__role { margin-top: 2px; color: var(--muted); font-size: 14px; line-height: 1.4; }
 .person-card__name { font-size: 17px; font-weight: 500; line-height: 1.3; letter-spacing: -.01em; text-wrap: balance; }
 .person-card:focus-visible { outline-offset: 6px; border-radius: var(--r-md); }
@@ -39,32 +40,19 @@
   .person-card:hover .portrait-frame img { transform: scale(1.03); }
   .person-card:hover .person-card__name { color: var(--action); }
 }
-/* the person dialog */
+/* the person dialog: one consistent framed card for every team member (with or without a photo) */
 .person-modal {
-  width: min(880px, calc(100% - 48px)); max-width: none; height: fit-content; max-height: calc(100dvh - 48px); padding: 0;
-  overflow-y: auto; overscroll-behavior: contain; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--bg); box-shadow: var(--shadow-3);
+  position: fixed; width: min(880px, calc(100% - 48px)); max-width: none; height: min(540px, calc(100dvh - 48px)); max-height: calc(100dvh - 48px);
+  padding: 0; overflow: hidden; overscroll-behavior: contain; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--bg); box-shadow: var(--shadow-3);
 }
 .person-modal:focus-visible { outline: none; }
-.person-modal[open] { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 0 44px; align-items: start; padding: 0 44px 44px; }
-.person-modal--text { width: min(600px, calc(100% - 48px)); }
-.person-modal--text[open] { grid-template-columns: minmax(0, 1fr); }
-/* the close button stays in the corner while the text scrolls under it */
-.person-modal__close { grid-column: 1 / -1; position: sticky; top: 0; z-index: 2; display: flex; justify-content: flex-end; height: 44px; margin-right: -36px; padding-top: 8px; pointer-events: none; }
-.person-modal__close .icon-button { pointer-events: auto; border-radius: 999px; background: var(--bg); }
-.person-modal__photo { position: sticky; top: 44px; }
-.person-modal__credit { margin-top: 16px; color: var(--muted); font-size: 12px; line-height: 1.4; }
-/* with a photo: the portrait fills the left of the panel from edge to edge, the text sits beside it */
-@media (min-width: 768px) {
-  .person-modal:not(.person-modal--text) { width: min(1000px, calc(100% - 48px)); }
-  .person-modal:not(.person-modal--text)[open] { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); grid-template-rows: 56px auto; gap: 0; align-items: stretch; padding: 0; }
-  .person-modal:not(.person-modal--text) .person-modal__close { grid-column: 2; grid-row: 1; margin-right: 0; padding: 12px 12px 0 0; }
-  .person-modal:not(.person-modal--text) .person-modal__photo { grid-column: 1; grid-row: 1 / span 2; position: relative; top: auto; min-height: min(600px, calc(100dvh - 48px)); }
-  .person-modal__photo .portrait-frame { position: absolute; inset: 0; aspect-ratio: auto; border-radius: 0; }
-  .person-modal__photo .portrait-frame img { aspect-ratio: auto; object-position: 50% 25%; }
-  .person-modal:not(.person-modal--text) .person-modal__text { grid-column: 2; grid-row: 2; align-self: center; padding: 8px 56px 52px 52px; }
-  .person-modal:not(.person-modal--text) .person-modal__text h2 { font-size: 34px; }
-}
-.person-modal__text h2 { padding-right: 16px; font-size: 30px; font-weight: 450; line-height: 1.1; letter-spacing: -.035em; }
+.person-modal[open] { display: grid; grid-template-columns: clamp(220px, 32%, 280px) minmax(0, 1fr); gap: 0 44px; align-items: stretch; padding: 44px; }
+.person-modal__close { position: absolute; top: 16px; right: 16px; z-index: 2; }
+.person-modal__close .icon-button { border-radius: 999px; background: var(--bg); }
+.person-modal__photo { align-self: start; }
+.person-modal__credit { margin-top: 10px; color: var(--muted); font-size: 12px; line-height: 1.4; }
+.person-modal__text { min-height: 0; max-height: 100%; overflow-y: auto; overscroll-behavior: contain; padding-right: 12px; }
+.person-modal__text h2 { margin-top: -3px; padding-right: 36px; font-size: 32px; font-weight: 450; line-height: 1.1; letter-spacing: -.035em; }
 .person-modal__role { margin-top: 8px; color: var(--muted); font-size: 16px; line-height: 1.4; }
 .person-modal__bio { margin-top: 20px; font-size: 16px; line-height: 1.62; overflow-wrap: break-word; }
 .person-modal__bio p + p { margin-top: 14px; }
@@ -77,20 +65,15 @@
   .person-links a:hover, .person-links a:hover svg { color: var(--action); }
   .person-links a:hover { text-decoration: underline; }
 }
-/* motion (also the poster dialog's): the photo grows from the card, the panel rises into place; nothing else
-   on the page moves. Without view transitions the panel alone fades in. */
-::view-transition-old(root), ::view-transition-new(root) { animation: none; }
-::view-transition-group(person-photo) { z-index: 3; animation-duration: 340ms; animation-timing-function: cubic-bezier(.2, .8, .2, 1); }
-::view-transition-old(person-photo), ::view-transition-new(person-photo) { animation: none; height: 100%; width: 100%; object-fit: cover; }
-::view-transition-old(person-photo) { display: none; }
-::view-transition-new(person-panel) { animation: modal-in 340ms cubic-bezier(.2, .8, .2, 1) both; }
-::view-transition-old(person-panel) { animation: modal-out 200ms cubic-bezier(.4, 0, 1, 1) both; }
-@keyframes modal-in { from { transform: translateY(16px) scale(.98); opacity: 0; } }
-@keyframes modal-out { to { transform: translateY(8px) scale(.98); opacity: 0; } }
-@supports not (view-transition-name: none) {
-  .person-modal[open] { transition: transform 300ms cubic-bezier(.2, .8, .2, 1), opacity 300ms cubic-bezier(.2, .8, .2, 1); }
-  @starting-style { .person-modal[open] { opacity: 0; transform: translateY(16px); } }
-}
+/* motion (also the poster dialog's): crisp fade and subtle scale with matching backdrop fade */
+.person-modal[open], .poster-dialog[open] { animation: modal-in 200ms cubic-bezier(.16, 1, .3, 1) both; }
+.person-modal[open]::backdrop, .poster-dialog[open]::backdrop { animation: backdrop-in 180ms ease-out both; }
+.person-modal.is-closing, .poster-dialog.is-closing { animation: modal-out 150ms cubic-bezier(.4, 0, 1, 1) both; }
+.person-modal.is-closing::backdrop, .poster-dialog.is-closing::backdrop { animation: backdrop-out 150ms ease-in both; }
+@keyframes modal-in { from { opacity: 0; transform: translateY(10px) scale(.985); } to { opacity: 1; transform: none; } }
+@keyframes modal-out { from { opacity: 1; transform: none; } to { opacity: 0; transform: translateY(6px) scale(.985); } }
+@keyframes backdrop-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes backdrop-out { from { opacity: 1; } to { opacity: 0; } }
 /* the alumni */
 .people-alumni { padding-top: 0; }
 .people-alumni > h2 { max-width: none; margin-bottom: 32px; padding-top: 48px; border-top: 1px solid var(--line); font-size: var(--t-h2); }
@@ -112,18 +95,20 @@
   .people-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 16px; }
   .person-feature { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 16px; margin-bottom: 40px; padding-bottom: 40px; }
   .person-feature__text { grid-column: 1 / -1; padding-left: 0; }
+  .person-feature h2 { margin-top: 0; }
+  .person-feature__bio { padding-bottom: 0; }
+  .person-feature .person-links { margin-top: 20px; margin-bottom: 0; }
   .people-join { grid-template-columns: minmax(0, 1fr); margin-top: 48px; }
   .people-join__photo img { min-height: 0; aspect-ratio: 2 / 1; }
   .people-join__text { padding: 24px 20px 28px; }
   .alumni-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 16px; }
   .alumnus__links a { padding-block: 13px; }
-  .person-modal, .person-modal--text { width: calc(100% - 24px); max-height: calc(100dvh - 24px); }
-  .person-modal[open] { display: block; padding: 0 20px 24px; }
-  .person-modal__close { margin-right: -12px; }
-  .person-modal__photo { position: static; }
+  .person-modal { width: calc(100% - 24px); height: auto; max-height: calc(100dvh - 24px); overflow-y: auto; }
+  .person-modal[open] { display: block; padding: 24px 20px 28px; }
+  .person-modal__close { top: 12px; right: 12px; }
   .person-modal__photo .portrait-frame { width: min(56%, 220px); }
-  .person-modal__text { margin-top: 20px; }
-  .person-modal__text h2 { font-size: 26px; }
+  .person-modal__text { max-height: none; overflow: visible; padding-right: 0; margin-top: 20px; }
+  .person-modal__text h2 { margin-top: 0; padding-right: 0; font-size: 26px; }
 }
 /* A person's own page (content/people--andreas-horn.md; layouts/_shortcodes/profile-aside.html,
    profile-lists.html). The head is the name and one quiet role line. Then the portrait at the left and,

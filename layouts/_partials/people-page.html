@@ -17,7 +17,7 @@
   {{ with $lead }}{{ $id := anchorize .name }}
   <section class="person-feature" aria-labelledby="lead-name">
     <button type="button" class="person-card person-feature__photo" data-person="person-{{ $id }}" data-slug="{{ $id }}" aria-haspopup="dialog" aria-label="More about {{ .name }}">
-      <span class="portrait-frame" data-morph>{{ partial "picture.html" (dict "src" (printf "media/%s" .photo) "alt" "" "sizes" "(max-width: 767px) 45vw, 300px") }}</span>
+      <span class="portrait-frame">{{ partial "picture.html" (dict "src" (printf "media/%s" .photo) "alt" "" "sizes" "(max-width: 767px) 45vw, 320px") }}</span>
     </button>
     <div class="person-feature__text">
       <h2 id="lead-name">{{ .name }}</h2>
@@ -33,7 +33,7 @@
   <ul class="people-grid" aria-label="Current members">
   {{ range after 1 $team }}{{ $id := anchorize .name }}
     <li><button type="button" class="person-card" data-person="person-{{ $id }}" data-slug="{{ $id }}" aria-haspopup="dialog">
-      {{ if .photo }}<span class="portrait-frame" data-morph>{{ partial "picture.html" (dict "src" (printf "media/%s" .photo) "alt" "" "sizes" "(max-width: 767px) 45vw, 300px") }}</span>
+      {{ if .photo }}<span class="portrait-frame">{{ partial "picture.html" (dict "src" (printf "media/%s" .photo) "alt" "" "sizes" "(max-width: 767px) 45vw, 300px") }}</span>
       {{ else }}<span class="portrait-frame portrait-frame--empty" aria-hidden="true">{{ $w := split .name " " }}{{ upper (printf "%s%s" (substr (index $w 0) 0 1) (substr (index $w (sub (len $w) 1)) 0 1)) }}</span>{{ end }}
       <span class="person-card__name">{{ .name }}</span>
       {{ with .role }}<span class="person-card__role">{{ . }}</span>{{ end }}
@@ -50,13 +50,16 @@
     </div>
   </section>
   {{ range $team }}{{ $person := . }}{{ $id := anchorize .name }}
-  <dialog class="person-modal{{ if not .photo }} person-modal--text{{ end }}" id="person-{{ $id }}" aria-labelledby="person-{{ $id }}-name" tabindex="-1">
+  <dialog class="person-modal" id="person-{{ $id }}" aria-labelledby="person-{{ $id }}-name" tabindex="-1">
     <form method="dialog" class="person-modal__close"><button class="icon-button" aria-label="Close">{{ partial "icon.html" "close" }}</button></form>
-    {{ with .photo }}
     <div class="person-modal__photo">
-      <span class="portrait-frame" data-morph>{{ partial "picture.html" (dict "src" (printf "media/%s" .) "alt" (printf "Portrait of %s" $person.name) "sizes" "(max-width: 767px) 90vw, 420px") }}</span>
+      {{ if .photo }}
+      <span class="portrait-frame">{{ partial "picture.html" (dict "src" (printf "media/%s" .photo) "alt" (printf "Portrait of %s" $person.name) "sizes" "(max-width: 767px) 90vw, 320px") }}</span>
+      {{ with .photo_credit }}<p class="person-modal__credit">Photo: {{ . }}</p>{{ end }}
+      {{ else }}
+      <span class="portrait-frame portrait-frame--empty" aria-hidden="true">{{ $w := split .name " " }}{{ upper (printf "%s%s" (substr (index $w 0) 0 1) (substr (index $w (sub (len $w) 1)) 0 1)) }}</span>
+      {{ end }}
     </div>
-    {{ end }}
     <div class="person-modal__text">
       <h2 id="person-{{ $id }}-name">{{ .name }}</h2>
       {{ with .role }}<p class="person-modal__role">{{ . }}</p>{{ end }}
@@ -67,7 +70,6 @@
         {{ range . }}<li><a href="{{ .href }}"{{ if .external }} rel="noopener" target="_blank"{{ end }}>{{ .label }}{{ if .external }}{{ partial "icon.html" "external" }}{{ end }}</a></li>{{ end }}
       </ul>
       {{ end }}
-      {{ if .photo }}{{ with .photo_credit }}<p class="person-modal__credit">Photo: {{ . }}</p>{{ end }}{{ end }}
     </div>
   </dialog>
   {{ end }}

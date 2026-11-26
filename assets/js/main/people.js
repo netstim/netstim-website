@@ -1,26 +1,20 @@
 // People and Posters (layouts/_partials/people-page.html, posters-page.html): a card opens its dialog.
 // - Each dialog has an address (#andreas-horn, #GoedeSummit): opening pushes it, Back closes the dialog, and
 //   opening the page at it opens the dialog.
-// - Where the browser has view transitions, the photo grows from the card into the dialog and the panel
-//   rises into place; only those two move (the page itself is not cross-faded). Reduced motion: at once.
+// - Opening and closing fade and scale the dialog and its backdrop in CSS (reduced motion: at once).
 // - The dialogs are native modals: the page behind is inert and does not scroll, Tab stays inside.
 // - Closing by the button, Escape, a click outside or Back all run the same close.
 // - Focus returns to the card, with a ring only when the dialog was opened from the keyboard.
 import { wireDialog } from './dialog.js';
 
 const still = matchMedia('(prefers-reduced-motion: reduce)');
-const morph = update => (document.startViewTransition && !still.matches)
-  ? document.startViewTransition(update)
-  : (update(), null);
 const entries = [];
 
 for (const card of document.querySelectorAll('[data-person]')) {
   const dialog = document.getElementById(card.dataset.person);
   if (!dialog) continue;
   const slug = card.dataset.slug || card.closest('li')?.id || '';
-  const thumb = card.querySelector('[data-morph]');
-  const photo = dialog.querySelector('[data-morph]');
-  const name = (el, value) => { if (el) el.style.viewTransitionName = value; };
+  const scroller = dialog.querySelector('.person-modal__text');
   let viaKeyboard = false;
   let pushed = false;
   let closing = false;
@@ -29,37 +23,35 @@ for (const card of document.querySelectorAll('[data-person]')) {
 
   const open = ({ push = true } = {}) => {
     if (dialog.open) return;
-    name(thumb, 'person-photo');
-    const t = morph(() => {
-      name(thumb, '');
-      name(photo, 'person-photo');
-      dialog.style.viewTransitionName = 'person-panel';
-      dialog.showModal();
-      dialog.focus({ preventScroll: true });
-      dialog.scrollTop = 0;
-    });
-    const done = () => { name(photo, ''); dialog.style.viewTransitionName = ''; };
-    t ? t.finished.finally(done) : done();
+    dialog.classList.remove('is-closing');
+    dialog.showModal();
+    dialog.focus({ preventScroll: true });
+    dialog.scrollTop = 0;
+    if (scroller) scroller.scrollTop = 0;
     if (push && slug) { history.pushState({ dialog: slug }, '', '#' + slug); pushed = true; }
   };
   const close = ({ fromHistory = false } = {}) => {
     if (!dialog.open || closing) return;
     closing = true;
-    name(photo, 'person-photo');
-    dialog.style.viewTransitionName = 'person-panel';
-    const t = morph(() => {
-      name(photo, '');
-      name(thumb, 'person-photo');
-      dialog.style.viewTransitionName = '';
-      dialog.close();
-    });
-    const done = () => {
+    const finish = () => {
+      if (!closing) return;
       closing = false;
-      name(thumb, '');
+      dialog.classList.remove('is-closing');
+      if (dialog.open) dialog.close();
       card.focus({ preventScroll: true, focusVisible: viaKeyboard });
       if (!viaKeyboard) card.classList.add('no-ring');
     };
-    t ? t.finished.finally(done) : done();
+    if (still.matches) {
+      finish();
+    } else {
+      dialog.classList.add('is-closing');
+      const timer = setTimeout(finish, 200);
+      dialog.addEventListener('animationend', event => {
+        if (event.target !== dialog) return;
+        clearTimeout(timer);
+        finish();
+      }, { once: true });
+    }
     if (!fromHistory && pushed) { pushed = false; history.back(); }
     else if (!fromHistory && location.hash === '#' + slug) history.replaceState(null, '', location.pathname + location.search);
     pushed = false;
