@@ -5,6 +5,7 @@ aliases:
 - /research-interests/normative-connectomes/
 family: research
 topic: true
+article: true
 crumbs:
 - title: Home
   url: '@root@'
@@ -13,9 +14,9 @@ crumbs:
 - title: Normative Connectomes
 wordpress_id: 110
 date: '2017-12-29T11:56:26+00:00'
-modified: '2026-11-24T00:00:00+00:00'
-lead: Group-average human brain connectomes used when patient-specific connectivity scans are unavailable.
-# A subject page (layouts/_partials/research-topic.html), see content/research--deep-brain-stimulation.md.
+modified: '2026-11-26T21:28:00+00:00'
+lead: Group-average wiring diagrams of the human brain built from large MRI cohorts.
+# A subject page (layouts/_partials/research-topic.html).
 # `drawing: true` is for a flat drawing on white: it is shown whole and blended into the gray frame, and the
 # dark theme turns its lightness around.
 figure:
@@ -26,6 +27,6 @@ figure:
 papers: [9SW4TFQH, KC8GHLXM, 6DJZZTVP, WKDSI5KR]
 ---
 
-A normative connectome is a group-average map of human brain connectivity built from diffusion or resting-state MRI across large cohorts and normalized to standard (MNI) space.
+Since 2014, we have worked on estimating average wiring diagrams of the human brain from diffusion and resting-state functional MRI across large cohorts — warping individual connectomes into standard (MNI) space and averaging them across the group.
 
-Normative connectomes do not replace patient-specific scans, but they make network analysis possible when individual connectivity MRI cannot be acquired — after [DBS surgery](@root@research/deep-brain-stimulation/), in retrospective multi-center cohorts, for noninvasive TMS targeting, and in lesion network mapping ([Wang et al., 2021](https://doi.org/10.1016/j.neuroimage.2020.117307)). Our group maintains structural and functional connectomes from healthy and patient cohorts (including HCP, GSP-1000, PPMI, and dTOR-985); all load directly in [Lead-DBS](@root@research/lead-dbs/) and are listed in the [connectome catalog on lead-dbs.org](https://www.lead-dbs.org/helpsupport/knowledge-base/atlasesresources/normative-connectomes/).
+Normative connectomes cannot replace patient-specific connectivity scans, but they make network analysis possible when individual data cannot be acquired: after [DBS surgery](@root@research/deep-brain-stimulation/), in noninvasive stimulation such as TMS, after stroke (to estimate pre-lesion connectivity), or across large retrospective clinical cohorts. Our structural and functional connectomes load directly in [Lead-DBS](@root@research/lead-dbs/) and are listed in the [connectome catalog on lead-dbs.org](https://www.lead-dbs.org/helpsupport/knowledge-base/atlasesresources/normative-connectomes/).

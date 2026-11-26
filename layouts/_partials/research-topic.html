@@ -39,23 +39,28 @@
   {{ end }}
 </div>
 {{ else }}
-{{ with .Params.figure }}
-<div class="wrap">
+<div class="topic-reading">
+  {{ with .Params.figure }}
   <figure class="topic-hero">
     {{ if .video }}{{ partial "research-loop.html" . }}
-    {{ else }}<div class="topic-hero__frame{{ if .drawing }} topic-hero__frame--drawing{{ end }}">{{ partial "picture.html" (dict "src" .image "alt" (.alt | default "") "sizes" "(max-width: 1360px) calc(100vw - 40px), 1280px" "eager" true) }}</div>{{ end }}
+    {{ else }}<div class="topic-hero__frame{{ if .drawing }} topic-hero__frame--drawing{{ end }}">{{ partial "picture.html" (dict "src" .image "alt" (.alt | default "") "sizes" "(max-width: 720px) calc(100vw - 40px), 672px" "eager" true) }}</div>{{ end }}
     {{ with .caption }}<figcaption>{{ partial "url.html" (. | markdownify) | safeHTML }}</figcaption>{{ end }}
   </figure>
+  {{ end }}
+  <div class="topic-body">
+    {{ partial "render.html" .Content }}
+    {{ with .Params.papers }}
+    <section class="topic-refs" aria-labelledby="key-papers">
+      <h2 id="key-papers">Key papers</h2>
+      {{ partial "research-papers.html" . }}
+    </section>
+    {{ end }}
+    {{ with .Params.people }}
+    <section class="topic-refs" aria-labelledby="people">
+      <h2 id="people">People</h2>
+      {{ partial "research-people.html" . }}
+    </section>
+    {{ end }}
+  </div>
 </div>
-{{ end }}
-<div class="wrap page-body topic-body">
-  {{ partial "render.html" .Content }}
-  {{ with .Params.papers }}<h2 id="key-papers">Key papers</h2>{{ partial "research-papers.html" . }}{{ end }}
-  {{ with .Params.people }}<h2 id="people">People</h2>{{ partial "research-people.html" . }}{{ end }}
-</div>
-{{ $here := .RelPermalink }}{{ $more := slice }}
-{{ range hugo.Data.nav.main }}{{ if eq .title "Research" }}{{ $top := .url }}{{ range .children }}{{ if and (ne .url $top) (ne (partial "url.html" .url) $here) }}{{ $more = $more | append . }}{{ end }}{{ end }}{{ end }}{{ end }}
-{{ with $more }}
-<nav class="wrap topic-more" aria-label="More in Research">{{ partial "research-links.html" . }}</nav>
-{{ end }}
 {{ end }}

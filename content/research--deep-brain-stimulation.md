@@ -5,6 +5,7 @@ aliases:
 - /research-interests/deep-brain-stimulation/
 family: research
 topic: true
+article: true
 crumbs:
 - title: Home
   url: '@root@'
