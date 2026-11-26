@@ -18,11 +18,10 @@
 # the facts beside the flyer
 day: One Wednesday a month
 time: "16:00–17:00"
-room: Library Neurology
-building: University Hospital Cologne
-# the "Where" line links here (a map search for the hospital's address)
-# TODO(netstim): the building or entrance of the neurology library, if a closer pin helps visitors.
-map: https://www.google.com/maps/search/?api=1&query=Kerpener+Stra%C3%9Fe+62%2C+50937+K%C3%B6ln
+room: Neurology Library (Building 30, 1st floor)
+building: University Hospital Cologne (UKK Navi)
+# the "Where" line links to the official Uniklinik Köln interactive campus navigator
+map: https://navi.uk-koeln.de/
 format: One paper, then coffee and discussion.
 bring: Bring your own mug.
 signup: https://docs.google.com/forms/d/e/1FAIpQLSdvZIRLZQ3rFrtcohDOZMAgQoeoVzXpP_aQBmg_hWDc0huBlg/viewform
