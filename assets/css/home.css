@@ -270,30 +270,38 @@
    funders' logos, smaller and lighter, in one row. Every logo is drawn in one tone (gray; white in the dark
    theme) and takes its colors under the pointer or keyboard focus; a filled seal (.funder--shaded) keeps
    its shades of gray. */
-.home-funding { padding-bottom: 48px; text-align: center; }
+.home-funding { padding-block: clamp(48px, 6vw, 72px); text-align: center; }
 .home-funding .funders__label { margin: 0; color: var(--muted); font-size: 14px; font-weight: 500; line-height: 1.4; letter-spacing: 0; }
-.funders { list-style: none; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 64px; margin: 16px 0 0; padding: 0; }
-.funders--past { gap: 4px 48px; margin-top: 10px; }
+.funders { list-style: none; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 64px; margin: 18px 0 0; padding: 0; }
+@media (min-width: 768px) {
+  .funders--pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: center; justify-items: start; gap: 8px 64px; }
+  .funders--pair li:first-child { justify-self: end; }
+}
+.funders--past { gap: 8px clamp(20px, 2.8vw, 44px); margin-top: 18px; }
 .funders + .funders__label { margin-top: 44px; }
-.funder { display: flex; align-items: center; gap: 14px; min-height: 64px; text-align: left; text-decoration: none; }
+.funder { display: flex; align-items: center; gap: 14px; min-height: 56px; text-align: left; text-decoration: none; }
+.funders--past .funder { min-height: 44px; }
 .funder__logo { display: block; flex: none; }
 .funder__logo img { display: block; max-width: 100%; height: auto; filter: brightness(0); opacity: .66; transition: filter 200ms ease, opacity 200ms ease; }
 .funder--shaded img { filter: grayscale(1) contrast(1.15); opacity: .85; }
 .funders--past .funder__logo img { opacity: .42; }
-.funder__name { max-width: 11em; color: var(--muted); font-size: 15px; font-weight: 500; line-height: 1.3; text-wrap: balance; }
+.funder__name { max-width: 11em; color: var(--ink); font-size: 15px; font-weight: 500; line-height: 1.3; opacity: .72; text-wrap: balance; transition: opacity 200ms ease; }
 .funder:focus-visible { outline-offset: 6px; }
 .funder:focus-visible img { filter: none; opacity: 1; }
-.funder:focus-visible .funder__name { color: var(--ink); }
+.funder:focus-visible .funder__name { opacity: 1; }
 @media (hover: hover) {
   .funder:hover img { filter: none; opacity: 1; }
-  .funder:hover .funder__name { color: var(--ink); }
+  .funder:hover .funder__name { opacity: 1; }
 }
 [data-theme="dark"] .funder__logo img { filter: brightness(0) invert(1); opacity: .78; }
 [data-theme="dark"] .funder--shaded img { filter: grayscale(1) invert(1) brightness(1.25); opacity: .78; }
+[data-theme="dark"] .funder__name { opacity: .78; }
 [data-theme="dark"] .funders--past .funder__logo img { opacity: .46; }
-[data-theme="dark"] .funder:focus-visible img { opacity: 1; }
+[data-theme="dark"] .funder:focus-visible img,
+[data-theme="dark"] .funder:focus-visible .funder__name { opacity: 1; }
 @media (hover: hover) {
-  [data-theme="dark"] .funder:hover img { opacity: 1; }
+  [data-theme="dark"] .funder:hover img,
+  [data-theme="dark"] .funder:hover .funder__name { opacity: 1; }
 }
 
 @media (max-width: 1023px) {
@@ -326,8 +334,8 @@
 
 /* funders on a phone: the current funders one under the other, the past logos wrapping in centered rows */
 @media (max-width: 767px) {
-  .funders { flex-direction: column; gap: 4px; }
-  .funders--past { flex-direction: row; gap: 0 28px; }
-  .home-funding { padding-bottom: 28px; }
+  .funders { flex-direction: column; gap: 12px; }
+  .funders--past { flex-direction: row; gap: 10px 28px; }
+  .home-funding { padding-block: 44px; }
   .funders + .funders__label { margin-top: 32px; }
 }

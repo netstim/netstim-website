@@ -173,7 +173,7 @@
   <section class="home-section home-funding" aria-labelledby="funding-h">
     <div class="wrap">
       <h2 class="funders__label" id="funding-h">{{ .title }}</h2>
-      <ul class="funders">
+      <ul class="funders{{ if eq (len .current) 2 }} funders--pair{{ end }}">
         {{ range .current }}
         <li><a class="funder{{ if .shaded }} funder--shaded{{ end }}" href="{{ .url }}" rel="noopener"{{ if and .src (not .name) }} title="{{ .alt }}"{{ end }}>
           {{- if .src }}<span class="funder__logo">{{ partial "picture.html" (dict "src" .src "alt" (cond (not .name) .alt "") "width" .width "sizes" (printf "%dpx" (int .width)) "original" .original) }}</span>{{ end -}}

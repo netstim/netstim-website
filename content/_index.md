@@ -140,25 +140,25 @@ funding:
     original: https://www.nimh.nih.gov/themes/nimhtheme/nimh-logo.svg
     alt: National Institute of Mental Health (NIMH), National Institutes of Health
     url: https://www.nimh.nih.gov/
-    width: 176
+    width: 196
   past:
   - src: media/57c49ab4b6d9-DFG_Logo.png
     original: https://www.netstim.org/wp-content/uploads/2019/04/DFG_Logo-300x107.png
     alt: German Research Foundation (DFG)
     url: https://www.dfg.de/
-    width: 62
+    width: 68
   - src: media/faa4a95d93b4-Dystonia-Medical-Research-Foundation.png
     original: https://www.netstim.org/wp-content/uploads/2019/04/Dystonia-Medical-Research-Foundation-300x98.png
     alt: Dystonia Medical Research Foundation
     url: https://dystonia-foundation.org/
-    width: 118
+    width: 124
   - src: media/95e381583581-logo_bihealth_en.png
     original: https://www.netstim.org/wp-content/uploads/2019/04/logo_bihealth_en-300x146.png
     alt: Berlin Institute of Health
     url: https://www.bihealth.org/
-    width: 82
+    width: 88
   - src: media/35c4f19ac7b0-stiftungcharite-1500x275.png
-    original: https://www.netstim.org/wp-content/uploads/2019/04/stiftungcharite-300x55.png
+    original: https://www.netstim.org/wp-content/uploads/2019/04/stiftungcharite-1500x275.png
     alt: Stiftung Charité
     url: https://www.stiftung-charite.de/
     width: 148
@@ -166,7 +166,7 @@ funding:
     original: https://www.netstim.org/wp-content/uploads/2019/04/Logo-Thiemann-Stiftung-web-300x161.png
     alt: Thiemann Foundation for Parkinson’s Disease Research
     url: https://thiemannstiftung.de/
-    width: 78
+    width: 76
   # The logo file from ffor.org with its white background made clear; nothing else changed.
   - src: media/ffor-logo.png
     original: https://images.squarespace-cdn.com/content/v1/5f17cc921d92df1a46dad36c/1600811005112-S3K5WLVVN3D65BR17X95/FFOR_Logo_Website.jpg
@@ -179,5 +179,5 @@ funding:
     original: https://neurodegenerationresearch.eu/wp-content/uploads/2025/11/JPND-Logo-Colour2.png
     alt: EU Joint Programme – Neurodegenerative Disease Research (JPND)
     url: https://neurodegenerationresearch.eu/
-    width: 86
+    width: 84
 ---
