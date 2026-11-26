@@ -41,7 +41,7 @@
   {{ if $shown }}{{ if .start }}{{ $kind = "band" }}{{ else }}{{ $kind = cond (eq (mod $turn 2) 0) "flip" "plain" }}{{ $turn = add $turn 1 }}{{ end }}{{ end }}
   {{ $shown = add $shown 1 }}
   {{ $sizes := "(max-width: 767px) 280px, (max-width: 1279px) 32vw, 420px" }}
-  <section class="series series--{{ $kind }}{{ if $tinted }} series--tinted{{ end }}" aria-labelledby="series-{{ $i }}">
+  <section{{ with .id }} id="{{ . }}"{{ end }} class="series series--{{ $kind }}{{ if $tinted }} series--tinted{{ end }}" aria-labelledby="series-{{ $i }}">
     <div class="wrap series__row">
     <div class="series__media">
       {{ if $poster }}{{ with resources.Get $poster }}{{ $full := .Resize (printf "%dx webp q88" (math.Min 1200 .Width | int)) }}

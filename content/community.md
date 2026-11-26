@@ -45,7 +45,8 @@ cards:
   # TODO(netstim): the newest episodes (number, guest, date, link) and where to listen (Spotify, Apple
   # Podcasts, YouTube). The page can list them like the Stimu-Latte sessions once they are entered here.
   url: https://www.stimulatingbrains.org
-- title: Hands-on Lead-DBS workshop
+- id: workshops # linked from content/jobs.md (/community/#workshops); keep this id on the current workshop entry
+  title: Hands-on Lead-DBS workshop
   kicker: Save the date
   text: A two-day practical workshop with an early preview of Lead-DBS 4.0, rebuilt in Python.
   poster: media/lead-dbs-workshop-2027-flyer.png
