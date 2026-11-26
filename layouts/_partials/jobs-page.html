@@ -1,29 +1,31 @@
 {{- /* Jobs (/jobs/; everything from the front matter of content/jobs.md).
-       1. A warm two-column hero: welcoming intro + status note + links to Team & Lab life on the left,
-          a crisp 3:2 team photo on the right (never upscaled full-width).
+       1. Calm two-column hero: title, one concise welcoming paragraph, status note, and quick links on the
+          left beside the single crisp 3:2 team photo on the right.
        2. Open positions (only shown when `positions` has entries).
-       3. Two balanced columns below: "Working in the lab" on the left, and a quiet tinted contact card
-          ("How to get in touch") on the right. */ -}}
+       3. One clean, unboxed apply row below a hairline — no extra cards or redundant section clutter. */ -}}
 {{ $p := .Params }}
 {{ $email := $p.email | default hugo.Data.contact.email }}
 {{ $arrow := partial "icon.html" "arrow" }}
-<div class="wrap jobs-hero">
-  <div class="jobs-hero__text">
-    {{ with $p.intro }}<p class="jobs-intro">{{ partial "url.html" (string ($.RenderString .)) | safeHTML }}</p>{{ end }}
-    {{ if not $p.positions }}{{ with $p.opening }}<p class="jobs-status">{{ partial "url.html" (string ($.RenderString .)) | safeHTML }}</p>{{ end }}{{ end }}
-    <ul class="jobs-quick btn-row">
-      <li><a class="text-action" href="{{ "people/" | relURL }}">Meet the team {{ $arrow }}</a></li>
-      <li><a class="text-action" href="{{ "people/#lab-life" | relURL }}">Lab life {{ $arrow }}</a></li>
-    </ul>
+<div class="jobs-page">
+  <div class="jobs-hero">
+    <div class="jobs-hero__text">
+      <h1>{{ .Title }}</h1>
+      {{ with $p.intro }}<p class="jobs-intro">{{ partial "url.html" (string ($.RenderString .)) | safeHTML }}</p>{{ end }}
+      {{ if not $p.positions }}{{ with $p.opening }}<p class="jobs-status">{{ partial "url.html" (string ($.RenderString .)) | safeHTML }}</p>{{ end }}{{ end }}
+      <ul class="jobs-quick btn-row">
+        <li><a class="text-action" href="{{ "research/" | relURL }}">Research {{ $arrow }}</a></li>
+        <li><a class="text-action" href="{{ "people/" | relURL }}">Meet the team {{ $arrow }}</a></li>
+        <li><a class="text-action" href="{{ "people/#lab-life" | relURL }}">Lab life {{ $arrow }}</a></li>
+      </ul>
+    </div>
+    {{ with $p.photo }}
+    <figure class="jobs-photo">
+      {{ partial "picture.html" (dict "src" .src "alt" .alt "width" 1400 "sizes" "(max-width: 899px) calc(100vw - 40px), 620px" "eager" true) }}
+      {{ with .credit }}<figcaption>Photo: {{ . }}</figcaption>{{ end }}
+    </figure>
+    {{ end }}
   </div>
-  {{ with $p.photo }}
-  <figure class="jobs-photo">
-    {{ partial "picture.html" (dict "src" .src "alt" .alt "width" 1200 "sizes" "(max-width: 900px) calc(100vw - 40px), 580px" "eager" true) }}
-    {{ with .credit }}<figcaption>Photo: {{ . }}</figcaption>{{ end }}
-  </figure>
-  {{ end }}
-</div>
-<div class="wrap page-body jobs">
+
   {{ with $p.positions }}
   <section class="jobs-open" aria-labelledby="jobs-open">
     <h2 id="jobs-open">Open positions</h2>
@@ -37,21 +39,16 @@
     </ul>
   </section>
   {{ end }}
-  <div class="jobs-grid">
-    {{ range $i, $s := $p.sections }}
-    <section class="jobs-section{{ if .email }} jobs-section--apply{{ end }}" aria-labelledby="jobs-s{{ $i }}">
-      <h2 id="jobs-s{{ $i }}">{{ .title }}</h2>
-      <div class="jobs-section__body">
-        {{ with .text }}<p>{{ partial "url.html" (string ($.RenderString .)) | safeHTML }}</p>{{ end }}
-        {{ with .list }}<ul class="jobs-list">{{ range . }}<li>{{ partial "url.html" (string ($.RenderString .)) | safeHTML }}</li>{{ end }}</ul>{{ end }}
-        {{ if and .email $email }}
-        <div class="jobs-mail">
-          <a class="btn" href="mailto:{{ $email }}">{{ partial "icon.html" "mail" }}<span>Email us</span></a>
-          <a class="jobs-mail__addr" href="mailto:{{ $email }}">{{ $email }}</a>
-        </div>
-        {{ end }}
-      </div>
-    </section>
+
+  {{ with $p.apply }}
+  <section class="jobs-apply" aria-label="How to apply">
+    <p class="jobs-apply__text">{{ partial "url.html" (string ($.RenderString .text)) | safeHTML }}</p>
+    {{ with $email }}
+    <div class="jobs-mail">
+      <a class="btn" href="mailto:{{ . }}">{{ partial "icon.html" "mail" }}<span>Email us</span></a>
+      <a class="jobs-mail__addr" href="mailto:{{ . }}">{{ . }}</a>
+    </div>
     {{ end }}
-  </div>
+  </section>
+  {{ end }}
 </div>
