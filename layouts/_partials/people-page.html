@@ -45,8 +45,7 @@
     <form method="dialog" class="person-modal__close"><button class="icon-button" aria-label="Close">{{ partial "icon.html" "close" }}</button></form>
     <div class="person-modal__photo">
       {{ if .photo }}
-      <span class="portrait-frame">{{ partial "picture.html" (dict "src" (printf "media/%s" .photo) "alt" (printf "Portrait of %s" $person.name) "sizes" "(max-width: 767px) 90vw, 320px") }}</span>
-      {{ with .photo_credit }}<p class="person-modal__credit">Photo: {{ . }}</p>{{ end }}
+      <span class="portrait-frame">{{ partial "picture.html" (dict "src" (printf "media/%s" .photo) "alt" (printf "Portrait of %s" $person.name) "sizes" "(max-width: 767px) 90vw, 440px") }}</span>
       {{ else }}
       <span class="portrait-frame portrait-frame--empty" aria-hidden="true">{{ $w := split .name " " }}{{ upper (printf "%s%s" (substr (index $w 0) 0 1) (substr (index $w (sub (len $w) 1)) 0 1)) }}</span>
       {{ end }}
@@ -61,26 +60,23 @@
         {{ range . }}<li><a href="{{ .href }}"{{ if .external }} rel="noopener" target="_blank"{{ end }}>{{ .label }}{{ if .external }}{{ partial "icon.html" "external" }}{{ end }}</a></li>{{ end }}
       </ul>
       {{ end }}
+      {{ if .photo }}{{ with .photo_credit }}<p class="person-modal__credit">Photo: {{ . }}</p>{{ end }}{{ end }}
     </div>
   </dialog>
   {{ end }}
 </div>
 {{ with hugo.Data.lab_life }}
 <section id="lab-life" class="lab-life" aria-labelledby="lab-life-h">
-  <div class="wrap">
-    <div class="lab-life__head">
-      <h2 id="lab-life-h">Lab life</h2>
-      <p class="lab-life__lede">Snapshots from outside the electrode reconstructions — Karneval, summer outings, conferences, and cake.</p>
+  <div class="wrap lab-life__grid">
+    <div class="lab-life__text">
+      <h2 id="lab-life-h">{{ .title | default "Lab life" }}</h2>
+      {{ with .text }}<p>{{ . }}</p>{{ end }}
     </div>
-    <ul class="lab-life__board gallery" aria-label="Lab life photos">
-      {{ range . }}{{ $full := "" }}{{ with resources.Get .image }}{{ $full = (.Resize "1800x webp q88").RelPermalink }}{{ end }}
-      <li class="snapshot">
-        <a class="snapshot__link" href="{{ $full }}" data-lightbox data-caption="{{ with .tag }}{{ . }} — {{ end }}{{ .caption }}">
-          <span class="snapshot__frame">{{ partial "picture.html" (dict "src" .image "alt" .alt "width" 900 "sizes" "(max-width: 639px) calc(100vw - 64px), (max-width: 1023px) 44vw, 380px") }}</span>
-          <span class="snapshot__meta">
-            {{ with .tag }}<span class="snapshot__tag">{{ . }}</span>{{ end }}
-            <span class="snapshot__caption">{{ .caption }}</span>
-          </span>
+    <ul class="lab-life__mosaic gallery" aria-label="Lab life photos">
+      {{ range .photos }}{{ $full := "" }}{{ with resources.Get .image }}{{ $full = (.Resize "1800x webp q88").RelPermalink }}{{ end }}
+      <li>
+        <a class="lab-life__photo" href="{{ $full }}" data-lightbox data-caption="" aria-label="{{ .alt }}">
+          {{ partial "picture.html" (dict "src" .image "alt" .alt "width" 1200 "sizes" "(max-width: 767px) calc(100vw - 40px), (max-width: 1023px) 50vw, 520px") }}
         </a>
       </li>
       {{ end }}

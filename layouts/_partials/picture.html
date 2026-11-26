@@ -4,12 +4,13 @@
   {{- $width := $.width | default 0 -}}
   {{- with resources.Get . -}}
     {{- if and (eq .ResourceType "image") (in (slice "jpeg" "png" "webp") .MediaType.SubType) -}}
-      {{- $max := math.Min 1600 .Width | int -}}
-      {{- $build := .Resize (printf "%dx webp q85" $max) -}}
+      {{- $orig := . -}}
+      {{- $max := math.Min 2400 .Width | int -}}
+      {{- $build := $orig.Resize (printf "%dx webp q90" $max) -}}
       {{- $sizes := slice -}}
-      {{- range slice 80 180 360 600 900 1200 -}}
+      {{- range slice 180 360 600 900 1200 1600 -}}
         {{- if lt . $max -}}
-          {{- $size := $build.Resize (printf "%dx webp q84" .) -}}
+          {{- $size := $orig.Resize (printf "%dx webp q90" .) -}}
           {{- $sizes = $sizes | append (printf "%s %dw" $size.RelPermalink .) -}}
         {{- end -}}
       {{- end -}}

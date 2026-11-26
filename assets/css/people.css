@@ -41,22 +41,24 @@
   .person-card:hover .portrait-frame img { transform: scale(1.03); }
   .person-card:hover .person-card__name { color: var(--action); }
 }
-/* the person dialog: one consistent framed card for every team member (with or without a photo) */
+/* the person dialog: balanced two-column card for every team member, framed portrait filling the left to match the text without inner scrollbars */
 .person-modal {
-  position: fixed; width: min(880px, calc(100% - 48px)); max-width: none; height: min(540px, calc(100dvh - 48px)); max-height: calc(100dvh - 48px);
-  padding: 0; overflow: hidden; overscroll-behavior: contain; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--bg); box-shadow: var(--shadow-3);
+  position: fixed; width: min(1000px, calc(100% - 48px)); max-width: none; height: fit-content; max-height: calc(100dvh - 48px);
+  padding: 0; overflow-y: auto; overscroll-behavior: contain; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--bg); box-shadow: var(--shadow-3);
 }
 .person-modal:focus-visible { outline: none; }
-.person-modal[open] { display: grid; grid-template-columns: clamp(220px, 32%, 280px) minmax(0, 1fr); gap: 0 44px; align-items: stretch; padding: 44px; }
-.person-modal__close { position: absolute; top: 16px; right: 16px; z-index: 2; }
+.person-modal[open] { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 0; align-items: stretch; }
+.person-modal__close { position: absolute; top: 14px; right: 14px; z-index: 2; }
 .person-modal__close .icon-button { border-radius: 999px; background: var(--bg); }
-.person-modal__photo { align-self: start; }
-.person-modal__credit { margin-top: 10px; color: var(--muted); font-size: 12px; line-height: 1.4; }
-.person-modal__text { min-height: 0; max-height: 100%; overflow-y: auto; overscroll-behavior: contain; padding-right: 12px; }
-.person-modal__text h2 { margin-top: -3px; padding-right: 36px; font-size: 32px; font-weight: 450; line-height: 1.1; letter-spacing: -.035em; }
+.person-modal__photo { position: relative; min-height: min(500px, calc(100dvh - 96px)); padding: 16px 0 16px 16px; }
+.person-modal__photo .portrait-frame { position: relative; width: 100%; height: 100%; aspect-ratio: auto; border-radius: var(--r-md); }
+.person-modal__photo .portrait-frame img { position: absolute; inset: 0; aspect-ratio: auto; object-position: 50% 22%; }
+.person-modal__credit { margin-top: 14px; color: var(--muted); font-size: 12px; line-height: 1.4; }
+.person-modal__text { align-self: center; padding: 40px 48px 40px 44px; }
+.person-modal__text h2 { padding-right: 36px; font-size: 32px; font-weight: 450; line-height: 1.1; letter-spacing: -.035em; }
 .person-modal__role { margin-top: 8px; color: var(--muted); font-size: 16px; line-height: 1.4; }
-.person-modal__bio { margin-top: 20px; font-size: 16px; line-height: 1.62; overflow-wrap: break-word; }
-.person-modal__bio p + p { margin-top: 14px; }
+.person-modal__bio { margin-top: 18px; font-size: 15.5px; line-height: 1.58; overflow-wrap: break-word; }
+.person-modal__bio p + p { margin-top: 12px; }
 .person-modal__more { margin-top: 12px; }
 .person-links { list-style: none; display: flex; flex-wrap: wrap; gap: 0 22px; margin: 20px 0 0; padding: 10px 0 0; border-top: 1px solid var(--line); }
 .person-links a { display: inline-flex; align-items: center; gap: 2px; min-height: 44px; color: var(--ink); font-size: 15px; font-weight: 500; text-decoration: none; }
@@ -75,40 +77,34 @@
 @keyframes modal-out { from { opacity: 1; transform: none; } to { opacity: 0; transform: translateY(6px) scale(.985); } }
 @keyframes backdrop-in { from { opacity: 0; } to { opacity: 1; } }
 @keyframes backdrop-out { from { opacity: 1; } to { opacity: 0; } }
-/* Lab life: a playful pinboard of full-color instant prints (data/lab_life.yaml) */
-.lab-life { overflow-x: clip; padding-block: clamp(56px, 7vw, 88px); background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.lab-life__head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 10px 32px; margin-bottom: 44px; }
-.lab-life__head h2 { font-size: var(--t-h2); }
-.lab-life__lede { max-width: 48ch; color: var(--muted); font-size: 17px; line-height: 1.5; }
-.lab-life__board.gallery { list-style: none; margin: 0; padding: 14px 0 28px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 44px 32px; align-items: start; }
-.snapshot {
-  position: relative; background: var(--bg); border: 1px solid var(--line); border-radius: 4px;
-  box-shadow: 0 1px 2px rgb(0 0 0 / .07), 0 12px 26px -12px rgb(0 0 0 / .2);
-  transition: transform 260ms cubic-bezier(.2, .8, .2, 1);
-}
-[data-theme="dark"] .snapshot { box-shadow: 0 2px 4px rgb(0 0 0 / .32), 0 16px 32px -12px rgb(0 0 0 / .6); }
-.snapshot::before {
-  content: ""; position: absolute; top: -6px; left: 50%; z-index: 1; width: 12px; height: 12px; margin-left: -6px;
-  border-radius: 50%; background: var(--coral); box-shadow: 0 2px 4px rgb(0 0 0 / .28); pointer-events: none;
-}
-.snapshot:nth-child(even)::before { background: var(--brand); }
-.snapshot:nth-child(6n+1) { transform: rotate(-1.7deg); }
-.snapshot:nth-child(6n+2) { transform: translateY(20px) rotate(1.3deg); }
-.snapshot:nth-child(6n+3) { transform: rotate(-1.1deg); }
-.snapshot:nth-child(6n+4) { transform: translateY(-4px) rotate(1.6deg); }
-.snapshot:nth-child(6n+5) { transform: translateY(16px) rotate(-1.4deg); }
-.snapshot:nth-child(6n+6) { transform: rotate(1.2deg); }
-.lab-life__board.gallery .snapshot__link { display: block; padding: 12px 12px 18px; overflow: visible; border-radius: 4px; color: inherit; text-decoration: none; cursor: zoom-in; }
-.snapshot__frame { display: block; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 2px; background: var(--surface); }
-.snapshot__frame img { width: 100%; height: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 25%; border-radius: 0; }
-.snapshot__meta { display: block; padding: 14px 4px 0; }
-.snapshot__tag { display: inline-block; margin-bottom: 6px; color: var(--brand); font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
-.snapshot__caption { display: block; color: var(--ink); font-size: 14px; line-height: 1.48; text-wrap: pretty; }
+/* Lab life: relaxed text beside an asymmetric mosaic of candid color photos (data/lab_life.yaml) */
+.lab-life { padding-block: clamp(56px, 7vw, 88px); background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.lab-life__grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; align-items: start; }
+.lab-life__text h2 { font-size: var(--t-h2); }
+.lab-life__text p { max-width: 34ch; margin-top: 16px; color: var(--muted); font-size: 17px; line-height: 1.6; text-wrap: pretty; }
+.lab-life__mosaic.gallery { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 12px; }
+.lab-life__mosaic.gallery > li { min-width: 0; }
+.lab-life__mosaic.gallery > li:nth-child(6n+1) { grid-column: span 7; }
+.lab-life__mosaic.gallery > li:nth-child(6n+2) { grid-column: span 5; }
+.lab-life__mosaic.gallery > li:nth-child(6n+3) { grid-column: span 12; }
+.lab-life__mosaic.gallery > li:nth-child(6n+4),
+.lab-life__mosaic.gallery > li:nth-child(6n+5),
+.lab-life__mosaic.gallery > li:nth-child(6n+6) { grid-column: span 4; }
+.lab-life__mosaic.gallery .lab-life__photo { display: block; height: 100%; overflow: hidden; border-radius: var(--r-md); background: var(--bg); cursor: zoom-in; }
+.lab-life__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 25%; border-radius: 0; transition: transform 400ms cubic-bezier(.2, .65, .3, 1); }
+.lab-life__mosaic.gallery > li:nth-child(6n+1) img { aspect-ratio: 4 / 3; object-position: 50% 12%; }
+.lab-life__mosaic.gallery > li:nth-child(6n+2) img { aspect-ratio: 10 / 10.5; object-position: 50% 14%; }
+.lab-life__mosaic.gallery > li:nth-child(6n+3) img { aspect-ratio: 16 / 10; object-position: 50% 40%; }
+.lab-life__mosaic.gallery > li:nth-child(6n+4) img,
+.lab-life__mosaic.gallery > li:nth-child(6n+5) img,
+.lab-life__mosaic.gallery > li:nth-child(6n+6) img { aspect-ratio: 4 / 3; }
+[data-theme="dark"] .lab-life__photo img { filter: brightness(.92); }
 @media (hover: hover) {
-  .snapshot:hover, .snapshot:focus-within { z-index: 2; transform: rotate(0deg) translateY(-6px) scale(1.025); }
+  .lab-life__photo:hover img { transform: scale(1.03); }
 }
-@media (prefers-reduced-motion: reduce) {
-  .snapshot:nth-child(n) { transform: none; }
+@media (min-width: 1024px) {
+  .lab-life__grid { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 56px; }
+  .lab-life__text { position: sticky; top: calc(var(--nav) + 32px); }
 }
 /* the alumni */
 .people-alumni { padding-top: 0; }
@@ -125,7 +121,6 @@
   .alumnus__links a:hover { color: var(--action); text-decoration: underline; }
 }
 @media (max-width: 1023px) {
-  .lab-life__board.gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 24px; }
   .alumni-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
 @media (max-width: 767px) {
@@ -135,22 +130,25 @@
   .person-feature h2 { margin-top: 0; }
   .person-feature__bio { padding-bottom: 0; }
   .person-feature .person-links { margin-top: 20px; margin-bottom: 0; }
-  .lab-life__head { margin-bottom: 28px; }
-  .lab-life__board.gallery { grid-template-columns: minmax(0, 1fr); gap: 28px; padding: 8px 6px 12px; }
-  .snapshot:nth-child(odd) { transform: rotate(-.8deg); }
-  .snapshot:nth-child(even) { transform: rotate(.8deg); }
+  .lab-life__mosaic.gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .lab-life__mosaic.gallery > li:nth-child(n) { grid-column: span 1; }
+  .lab-life__mosaic.gallery > li:nth-child(6n+3) { grid-column: span 2; }
+  .lab-life__mosaic.gallery > li:nth-child(n) img { aspect-ratio: 4 / 3; }
+  .lab-life__mosaic.gallery > li:nth-child(6n+3) img { aspect-ratio: 16 / 10; }
   .people-after { padding-top: 40px; padding-bottom: 40px; }
   .people-join { grid-template-columns: minmax(0, 1fr); }
   .people-join__photo img { min-height: 0; aspect-ratio: 2 / 1; }
   .people-join__text { padding: 24px 20px 28px; }
   .alumni-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 16px; }
   .alumnus__links a { padding-block: 13px; }
-  .person-modal { width: calc(100% - 24px); height: auto; max-height: calc(100dvh - 24px); overflow-y: auto; }
+  .person-modal { width: calc(100% - 24px); max-height: calc(100dvh - 24px); }
   .person-modal[open] { display: block; padding: 24px 20px 28px; }
   .person-modal__close { top: 12px; right: 12px; }
-  .person-modal__photo .portrait-frame { width: min(56%, 220px); }
-  .person-modal__text { max-height: none; overflow: visible; padding-right: 0; margin-top: 20px; }
-  .person-modal__text h2 { margin-top: 0; padding-right: 0; font-size: 26px; }
+  .person-modal__photo { min-height: 0; padding: 0; }
+  .person-modal__photo .portrait-frame { width: min(56%, 220px); height: auto; aspect-ratio: 4 / 5; }
+  .person-modal__photo .portrait-frame img { position: static; aspect-ratio: 4 / 5; }
+  .person-modal__text { padding: 0; margin-top: 20px; }
+  .person-modal__text h2 { padding-right: 0; font-size: 26px; }
 }
 /* A person's own page (content/people--andreas-horn.md; layouts/_shortcodes/profile-aside.html,
    profile-lists.html). The head is the name and one quiet role line. Then the portrait at the left and,
