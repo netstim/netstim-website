@@ -13,9 +13,14 @@ cover: media/4cb5be70722a-Connectomic-Deep-Brain-Stimulation-1249x1536.png
 # TODO(netstim): Crossref lists the foreword (10.1016/B978-0-12-821861-7.10000-4) as Michael D. Fox, Andrea A. Kühn;
 # check the order of the two names against the printed book.
 facts:
-- {label: Published, value: "Academic Press (Elsevier), September 2021"}
+- {label: Published, value: "Academic Press (Elsevier), Sep 2021"}
 - {label: Foreword, value: Andrea Kühn and Michael Fox}
 - {label: Length, value: "26 chapters, 600 pages"}
+
+actions:
+- {label: Order from Elsevier, url: "https://shop.elsevier.com/books/connectomic-deep-brain-stimulation/horn/978-0-12-821861-7", primary: true}
+- {label: ScienceDirect, url: "https://www.sciencedirect.com/book/9780128218617/connectomic-deep-brain-stimulation"}
+- {label: Amazon, url: "https://www.amazon.com/Connectomic-Deep-Brain-Stimulation-Andreas/dp/0128218614/"}
 
 # one small line under the text: `label` names the number; a row with `url` is a link
 identifiers:

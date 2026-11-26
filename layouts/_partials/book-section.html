@@ -1,11 +1,14 @@
 {{- /* Home: the Connectomic DBS book (content/_index.md `book`), beside the news: the section heading and link
-       matching News beside it, and a full-height quiet plate showcasing the standing 3D book (.book3d, home.css). */ -}}
+       matching News beside it, and a full-height tinted plinth showcasing the hardcover book (.book3d, home.css). */ -}}
 <div class="home-book">
   <div class="section-head">
     <div class="section-head__title"><h2 id="book-h">{{ .label }}</h2>{{ with .lede }}<p class="section-head__lede">{{ . }}</p>{{ end }}</div>
     {{ with .link }}<a class="text-action" href="{{ partial "url.html" $.url }}">{{ . }} {{ partial "icon.html" "arrow" }}</a>{{ end }}
   </div>
   <a class="book-card" href="{{ partial "url.html" .url }}" aria-label="{{ .title }} — {{ .link | default "About the book" }}">
-    <span class="book-card__plate"><span class="book3d"><span class="book3d__body">{{ partial "picture.html" (dict "src" .image "alt" "" "width" 560 "sizes" "(max-width: 767px) 184px, 264px") }}</span></span></span>
+    <span class="book-card__plate">
+      <span class="book3d"><span class="book3d__body"><span class="book3d__front">{{ partial "picture.html" (dict "src" .image "alt" "" "width" 560 "sizes" "(max-width: 767px) 196px, 280px") }}</span></span></span>
+      <span class="book-card__meta">Academic Press · 600 pages</span>
+    </span>
   </a>
 </div>

@@ -192,20 +192,48 @@
 .news-list__picture::after { content: ""; position: absolute; inset: 0; border: 1px solid var(--line); border-radius: inherit; pointer-events: none; }
 .news-list__picture img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; transition: transform 500ms cubic-bezier(.2, .65, .3, 1); }
 [data-theme="dark"] .news-list__picture img { filter: brightness(.92); }
-.book-card { position: relative; display: flex; flex-direction: column; text-decoration: none; border-radius: var(--r-md); }
-.book-card__plate { flex: 1 0 auto; display: grid; place-items: center; padding: 48px 32px; border-radius: var(--r-md); background: var(--surface); }
-.book3d { --bw: 264px; --bd: calc(var(--bw) * .115); display: block; perspective: calc(var(--bw) * 6); }
-.book3d__body { position: relative; display: block; width: var(--bw); aspect-ratio: 1249 / 1536; transform-style: preserve-3d; transform: rotateY(-24deg); transition: transform 500ms cubic-bezier(.2, .65, .3, 1); }
-.book3d__body img { position: relative; display: block; width: 100%; height: 100%; border-radius: 1px 3px 3px 1px; transform: translateZ(calc(var(--bd) / 2)); }
-.book3d__body::before { content: ""; position: absolute; inset: 1% 0 1% auto; width: var(--bd); background: var(--book-paper, #f3f1ec); box-shadow: inset 0 0 0 1px rgb(0 0 0 / .05), inset 4px 0 5px -3px rgb(0 0 0 / .22), inset -4px 0 5px -3px rgb(0 0 0 / .22); transform: translateX(calc(50% - 2px)) rotateY(90deg); }
-.book3d__body::after { content: ""; position: absolute; inset: 0; border-radius: 1px 3px 3px 1px; background: var(--book-back, #d5dde7); box-shadow: -10px 12px 26px -4px rgb(0 0 0 / .3), -2px 3px 6px rgb(0 0 0 / .12); transform: translateZ(calc(var(--bd) / -2)); }
-[data-theme="dark"] .book3d { --book-paper: #b9b6af; --book-back: #8f98a3; }
-[data-theme="dark"] .book3d img { filter: brightness(.9); }
+.book-card { position: relative; display: flex; flex-direction: column; text-decoration: none; border-radius: var(--r-lg); }
+.book-card__plate {
+  flex: 1 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 28px;
+  padding: 48px 32px 32px; border-radius: var(--r-lg); border: 1px solid var(--line);
+  background: color-mix(in oklab, var(--brand) 8%, var(--surface));
+}
+[data-theme="dark"] .book-card__plate { background: color-mix(in oklab, var(--brand) 12%, var(--surface)); }
+.book-card__meta { color: var(--muted); font-size: 13.5px; letter-spacing: .01em; }
+.book3d { --bw: 268px; --bd: calc(var(--bw) * .105); display: block; perspective: calc(var(--bw) * 9); }
+.book3d__body {
+  position: relative; display: block; width: var(--bw); aspect-ratio: 1249 / 1536;
+  transform-style: preserve-3d; transform: rotateY(-15deg) rotateX(1.5deg);
+  transition: transform 420ms cubic-bezier(.2, .8, .2, 1);
+}
+.book3d__front {
+  position: relative; display: block; width: 100%; height: 100%; overflow: hidden;
+  border-radius: 2px 4px 4px 2px; transform: translateZ(calc(var(--bd) / 2));
+}
+.book3d__front img { display: block; width: 100%; height: 100%; }
+.book3d__front::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  box-shadow: inset 14px 0 12px -10px rgb(0 0 0 / .28), inset 5px 0 3px -3px rgb(255 255 255 / .75), inset 1px 0 0 rgb(0 0 0 / .12), inset 0 0 0 1px rgb(0 0 0 / .08);
+}
+.book3d__body::before {
+  content: ""; position: absolute; inset: 3px 0 3px auto; width: var(--bd);
+  background: var(--book-paper, #f1eee7);
+  box-shadow: inset 0 0 0 1px rgb(0 0 0 / .06), inset 4px 0 6px -3px rgb(0 0 0 / .22), inset -3px 0 4px -2px rgb(0 0 0 / .14);
+  transform: translateX(calc(50% - 1px)) rotateY(90deg);
+}
+.book3d__body::after {
+  content: ""; position: absolute; inset: 0; border-radius: 2px 4px 4px 2px;
+  background: var(--book-back, #cfd7e0);
+  box-shadow: -12px 16px 32px -6px rgb(15 23 30 / .26), -3px 5px 10px -2px rgb(15 23 30 / .14);
+  transform: translateZ(calc(var(--bd) / -2));
+}
+[data-theme="dark"] .book3d { --book-paper: #b9b5ad; --book-back: #7d8792; }
+[data-theme="dark"] .book3d__front img { filter: brightness(.92); }
 .news-list li:active, .book-card:active { opacity: .7; }
 @media (hover: hover) {
   .news-list li:hover a { color: var(--action); }
   .news-list li:hover img { transform: scale(1.04); }
-  .book-card:hover .book3d__body { transform: rotateY(-8deg); }
+  .book-card:hover .book3d__body { transform: rotateY(-6deg) rotateX(0deg) translateY(-4px); }
 }
 @media (min-width: 1024px) {
   .home-split { grid-template-rows: auto 1fr; row-gap: 0; }

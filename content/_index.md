@@ -106,7 +106,7 @@ news:
 book:
   label: The book
   title: Connectomic Deep Brain Stimulation
-  lede: Andy wrote a book!
+  lede: Edited by Andreas Horn.
   image: media/4cb5be70722a-Connectomic-Deep-Brain-Stimulation-1249x1536.png
   url: '@root@book/'
   link: About the book
