@@ -50,42 +50,40 @@ try {
       await page.waitForURL(at('research/normative-connectomes/'));
 
       await page.goto(at('publications/'));
-      // every year is a row that opens; the newest is open, and one button opens them all and hands the focus to the first year it opened
-      const firstRows = await page.locator('.pub-row:visible').count();
-      assert(firstRows >= 10 && firstRows < 60);
-      const closed = page.locator('.pub-year > summary').last();
-      await closed.click();
-      assert(await page.locator('.pub-row:visible').count() > firstRows);
-      await closed.click();
-      assert.equal(await page.locator('.pub-row:visible').count(), firstRows);
-      await page.getByRole('button', {name:'Open all years', exact:true}).click();
+      // Publications opens on Selected; clicking "All N publications" switches to the News-style All papers view
+      const selectedCount = await page.locator('.sel-paper:visible').count();
+      assert(selectedCount >= 5);
+      assert.equal(await page.locator('.pub-row:visible').count(), 0);
+      await page.locator('[data-bib-open-all]').click();
+      await page.waitForURL(/\?view=all$/);
       const allRows = await page.locator('.pub-row:visible').count();
       assert(allRows > 190);
-      assert(await page.getByRole('button', {name:'Open all years', exact:true}).count() === 0);
-      assert(await page.evaluate(() => document.activeElement.matches('.pub-year > summary')));
-      // the filter and the topic search every year, also while only the newest is open
-      await page.reload();
+      // the filter and topic narrow papers across all years and hide empty years
       await page.getByRole('searchbox', {name:'Filter publications'}).fill('2015');
       assert(await page.locator('.pub-row:visible').count() > 0);
-      assert(await page.locator('.pub-row:visible').count() < firstRows);
+      assert(await page.locator('.pub-row:visible').count() < allRows);
       await page.getByRole('searchbox', {name:'Filter publications'}).fill('dysfunctome');
       assert(await page.locator('.pub-row:visible').count() < allRows);
       assert.match(await page.locator('[data-bib-count]').textContent(), /of \d+ papers/);
       await page.getByRole('searchbox', {name:'Filter publications'}).fill('');
-      assert.equal(await page.locator('.pub-row:visible').count(), firstRows);
+      assert.equal(await page.locator('.pub-row:visible').count(), allRows);
       await page.getByRole('combobox', {name:'Topic'}).selectOption('lead-dbs');
       await page.waitForURL(/\?topic=lead-dbs$/);
       const topicRows = await page.locator('.pub-row:visible').count();
       assert(topicRows > 0 && topicRows < allRows);
       assert.equal(await page.locator('.pub-row:visible:not([data-topics~="lead-dbs"])').count(), 0);
-      // the address alone gives the same list (Research links to it), and Back returns to every paper
+      // the address alone gives the same list (Research links to it), and Back returns to it
       await page.reload();
       assert.equal(await page.locator('.pub-row:visible').count(), topicRows);
       assert.equal(await page.getByRole('combobox', {name:'Topic'}).inputValue(), 'lead-dbs');
       await page.getByRole('combobox', {name:'Topic'}).selectOption('');
-      assert.equal(await page.locator('.pub-row:visible').count(), firstRows);
+      assert.equal(await page.locator('.pub-row:visible').count(), allRows);
       await page.goBack();
       assert.equal(await page.locator('.pub-row:visible').count(), topicRows);
+      // switching back to Selected hides All and returns to selected papers
+      await page.getByRole('tab', {name:'Selected', exact:true}).click();
+      assert.equal(await page.locator('.sel-paper:visible').count(), selectedCount);
+      assert.equal(await page.locator('.pub-row:visible').count(), 0);
       await page.goto(at(''));
       const cover = page.locator('.home-covers a[data-lightbox]').first();
       await cover.click();
@@ -109,6 +107,25 @@ try {
       assert.equal(await page.locator('iframe').count(), 0);
       await page.locator('.video-start').first().click();
       assert.match(await page.locator('iframe').first().getAttribute('src'), /^https:\/\/(www\.youtube-nocookie\.com|player\.vimeo\.com)\//);
+
+      // Research on a phone: an area is its title, then its plate, then the text; its links are rows of touch height
+      await page.goto(at('research/'));
+      assert(await page.locator('.theme').evaluateAll(list => list.length >= 3 && list.every(theme => {
+        const top = part => theme.querySelector(part).getBoundingClientRect().top;
+        return top('.theme__title') < top('.theme__media') && top('.theme__media') < top('.theme__lede');
+      })));
+      assert(await page.locator('.theme__links a').evaluateAll(list => list.every(link => link.offsetHeight >= 44)));
+      // Publications on a phone: Selected opens by default, switching to All shows the topic select beside "All papers" and filters without overflow
+      await page.goto(at('publications/'));
+      const selected = await page.locator('.sel-paper').count();
+      assert.equal(await page.locator('.sel-paper:visible').count(), selected);
+      await page.getByRole('tab', {name:/^All \(/}).click();
+      const phoneTopic = page.getByRole('combobox', {name:'Topic'});
+      assert(await phoneTopic.evaluate(el => el.offsetHeight >= 44 && Math.abs(el.getBoundingClientRect().top - document.getElementById('publications-h').getBoundingClientRect().top) < 44));
+      await phoneTopic.selectOption('tms');
+      assert(await page.locator('.pub-row:visible').count() > 0);
+      assert.equal(await page.locator('.pub-row:visible:not([data-topics~="tms"])').count(), 0);
+      assert(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth));
       await ctx.close();
 
       // the desktop menu: the arrow button opens its sheet by keyboard, the arrow keys and Tab move
@@ -153,6 +170,35 @@ try {
       assert(await bar.getByRole('link', {name:/^Posters/}).isVisible());
       await desk.mouse.click(640, 700);
       await bar.getByRole('link', {name:/^Posters/}).waitFor({state:'hidden', timeout:5000});
+      // Research on a desktop: the rows take turns (a plate at the right, a smaller one at the left, one across the
+      // page), so the plates are not one size. Yet every plate, title and paragraph starts on one of two lines, the
+      // page title's or the seventh column's, and stays inside the page's column; no plate lies over its own text;
+      // the first row's text starts on the line of the page title
+      await desk.goto(at('research/'));
+      const areas = await desk.locator('.theme').evaluateAll(list => list.map(theme => Object.fromEntries(['frame', 'title', 'lede'].map(part => {
+        const box = theme.querySelector(`.theme__${part}`).getBoundingClientRect();
+        return [part, [box.left, box.right, box.top, box.bottom].map(Math.round)];
+      }))));
+      assert(areas.length >= 3);
+      const [pageLeft, pageRight, titleLeft] = await desk.evaluate(() => {
+        const page = document.querySelector('.theme-group__themes').getBoundingClientRect();
+        return [page.left, page.right, document.querySelector('h1').getBoundingClientRect().left].map(Math.round);
+      });
+      const parts = areas.flatMap(area => Object.values(area));
+      assert(parts.every(([left, right]) => left >= pageLeft && right <= pageRight));
+      const starts = new Set(parts.map(([left]) => left));
+      assert(starts.size === 2 && starts.has(titleLeft));
+      assert(new Set(areas.map(({frame}) => frame[1] - frame[0])).size >= 2);
+      const apart = (a, b) => a[1] <= b[0] || b[1] <= a[0] || a[3] <= b[2] || b[3] <= a[2];
+      assert(areas.every(({frame, title, lede}) => apart(frame, title) && apart(frame, lede)));
+      assert(areas[0].title[0] === titleLeft && areas[0].lede[0] === titleLeft);
+      // Publications on a desktop: every title, selected or all, and the filter box start on one line
+      await desk.goto(at('publications/'));
+      const selLefts = await desk.evaluate(() => [...new Set([...document.querySelectorAll('.sel-paper h3')].map(el => Math.round(el.getBoundingClientRect().left)))]);
+      assert.equal(selLefts.length, 1);
+      await desk.getByRole('tab', {name:/^All \(/}).click();
+      const allLefts = await desk.evaluate(() => [...new Set([...document.querySelectorAll('.pub-row h4, .bib-filter')].map(el => Math.round(el.getBoundingClientRect().left)))]);
+      assert.deepEqual(allLefts, selLefts);
       await wide.close();
     } finally { await browser.close(); }
   }

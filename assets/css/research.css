@@ -1,17 +1,25 @@
 /* The Research family (layouts/_partials/research-page.html).
 
    1. The overview (research-overview.html), on one grid of twelve columns with 24px between them. The lead
-      under the title is a statement in ink. Every figure is the same plate: 4:3, 12px corners, soft gray
-      on the page's white and white on the gray band, with its caption 12px under it. A picture fills the
-      plate; a figure drawn on white or an upright one is shown whole inside it.
-      The research areas are rows: the text in columns 1–5 (title, the question in medium weight, one
-      paragraph, one line of links), starting on the line of the page title, and the plate in columns
-      7–12 with its top on the capitals of the title. The methods stand on a soft-gray band across the
-      window: a heading and the areas two abreast, six columns each, so the second starts on the line of
-      the plates above; plate, title, question, text and links of the two share their lines (a subgrid),
-      and the text keeps to five columns.
-      Under 1024px a row is one column and under 700px so is the pair, in the order of the source: the
-      title and the question, the plate, the text; on a phone the links are ruled rows. */
+      under the title is a statement in ink. A figure is a plate: 12px corners, soft gray on the page's
+      white and white on the gray band, with its caption 12px under it. A picture fills the plate; a
+      figure drawn on white or an upright one is shown whole inside it.
+      The research areas are rows (title, the question in medium weight, one paragraph, one line of
+      links), and the rows take turns so that the page is not one row three times:
+      - right: the text in columns 1–5, starting on the line of the page title, and a 4:3 plate in
+        columns 7–12 with its top on the capitals of the title;
+      - left: a smaller plate in columns 1–5 (a square; 5:6 for an upright figure) and the text in
+        columns 7–11, on the line where the plate above starts;
+      - wide: the title and the question, the picture across the twelve columns (2:1), then the caption
+        at the left and the text in columns 7–12. More air above it than between the other rows.
+      Everything starts on one of two lines: the page title's, or the seventh column's.
+      A `pair` group stands on a soft-gray band across the window: a heading and the areas two abreast,
+      six columns each; plate (4:3), title, question, text and links of the two share their lines (a
+      subgrid), and the text keeps to five columns.
+      From 700px to 1023px a row is six columns of text and six of plate (the wide one: the picture, then
+      its caption and the text under each other). Under 700px everything is one column in the order of
+      the source: the title and the question, the plate, the text; an upright figure gets a square plate,
+      the wide picture runs from edge to edge of the window, and the links are ruled rows. */
 .page-head:has(+ .research-overview) .page-lead { max-width: 52rem; margin-top: 24px; color: var(--ink); font-size: clamp(19px, 1vw + 12px, 25px); line-height: 1.4; letter-spacing: -.02em; }
 .research-overview { --col-gap: 24px; --plate: var(--surface); padding-top: 0; padding-bottom: 0; }
 .theme-group--rows { padding-block: 40px 56px; }
@@ -24,7 +32,6 @@
 .theme__frame img { width: 100%; height: 100%; object-fit: cover; }
 .theme__frame--whole img { padding: 12px; object-fit: contain; }
 .theme__frame:is(.theme__frame--light, .theme__frame--drawing) img { mix-blend-mode: multiply; }
-.theme__dark, [data-theme="dark"] .theme__frame--swap img:not(.theme__dark) { display: none; }
 .theme__media figcaption { margin-top: 12px; color: var(--muted); font-size: 13px; line-height: 1.5; text-wrap: balance; }
 .topic-hero figcaption { margin-top: 10px; color: var(--muted); font-size: 13px; line-height: 1.5; }
 .theme__media figcaption a, .topic-hero figcaption a { color: inherit; text-decoration-color: var(--line-strong); }
@@ -107,9 +114,6 @@
 [data-theme="dark"] .theme__frame--light { background: #e0e0e0; }
 [data-theme="dark"] .theme__frame--light img { mix-blend-mode: normal; }
 [data-theme="dark"] :is(.topic-hero__frame--drawing, .theme__frame--drawing) img { filter: invert(.915) hue-rotate(180deg); mix-blend-mode: lighten; }
-/* a figure with a dark twin (`image_dark`): in the dark theme the twin, whole, on the black it was rendered on */
-[data-theme="dark"] .theme__frame--swap { background: var(--render); }
-[data-theme="dark"] .theme__frame.theme__frame--swap img.theme__dark { display: block; filter: brightness(.88) contrast(1.06); mix-blend-mode: normal; }
 
 /* 3. Resources: a paragraph, the main link, picture cards (a real figure on a white plate, its name with an
       arrow and one line; the whole card is the link), further places as ruled rows, the papers to cite.
@@ -118,7 +122,8 @@
 .research-cards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 24px; }
 .research-card { display: grid; align-content: start; gap: 6px; color: var(--ink); text-decoration: none; }
 .research-card__frame { display: block; overflow: hidden; margin-bottom: 14px; aspect-ratio: 4 / 3; border: 1px solid var(--line); border-radius: var(--r-md); background: #fff; }
-.research-card__frame img { width: 100%; height: 100%; object-fit: cover; object-position: 0 50%; transition: transform 500ms cubic-bezier(.2, .65, .3, 1); }
+.research-card__frame img { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 500ms cubic-bezier(.2, .65, .3, 1); }
+.research-card__frame--contain img { padding: 12px; object-fit: contain; }
 .research-card__title { display: flex; align-items: center; gap: 8px; font-size: 20px; font-weight: 500; line-height: 1.3; letter-spacing: -.015em; }
 .research-card__title svg { flex: none; width: 18px; height: 18px; color: var(--muted); transition: transform 150ms cubic-bezier(.2, .65, .3, 1); }
 .research-card__text { max-width: 36ch; color: var(--muted); font-size: 15px; line-height: 1.5; }
@@ -151,17 +156,28 @@
 /* a phone: an upright figure gets a square plate; the links of an area are ruled rows, the arrow at the right */
 @media (max-width: 699px) {
   .theme__frame--tall { aspect-ratio: 1; }
+  .theme--wide .theme__frame { margin-inline: calc(-1 * var(--gut)); aspect-ratio: 3 / 2; border-radius: 0; }
   .theme__links { display: grid; align-self: stretch; gap: 0; margin-top: 20px; border-bottom: 1px solid var(--line); }
   .theme__links .text-action { justify-content: space-between; min-height: 48px; border-top: 1px solid var(--line); font-size: 16px; text-decoration: none; }
 }
-/* from 700px the twelve columns: a row is the text and the plate, six columns each; the pair is two abreast,
-   the plate first, and every part of the two areas on one line (the rows are shared) */
+/* from 700px the twelve columns: a row is the text and the plate, six columns each (the plate at the right,
+   or at the left in a `left` row); a `wide` row is the title, the picture across the page, the text. The
+   pair is two abreast, the plate first, and every part of the two areas on one line (the rows are shared) */
 @media (min-width: 700px) {
   .theme-group--rows { padding-block: 56px 72px; }
   .theme-group__themes { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--col-gap); row-gap: 72px; }
   .theme-group--rows .theme { grid-column: 1 / -1; grid-template-columns: subgrid; grid-template-rows: auto auto auto 1fr; }
   .theme-group--rows .theme > * { grid-column: 1 / span 6; }
   .theme-group--rows .theme > .theme__media { grid-column: 7 / -1; grid-row: 1 / -1; margin-top: 0; }
+  .theme-group--rows .theme--left > * { grid-column: 7 / -1; }
+  .theme-group--rows .theme--left > .theme__media { grid-column: 1 / span 6; }
+  .theme--left .theme__frame { aspect-ratio: 1; }
+  .theme--left .theme__frame--tall { aspect-ratio: 5 / 6; }
+  .theme-group--rows .theme--wide { grid-template-rows: none; }
+  .theme-group--rows .theme--wide > * { grid-column: 1 / span 9; }
+  .theme-group--rows .theme--wide > .theme__media { grid-column: 1 / -1; grid-row: auto; margin-top: 28px; }
+  .theme--wide .theme__frame { aspect-ratio: 2 / 1; }
+  .theme-group--rows .theme--wide > .theme__lede { margin-top: 24px; }
   /* the capitals of the title on the top of the plate */
   .theme-group--rows .theme__title { margin-top: -.2em; }
   .theme__question, .theme__lede { margin-top: 12px; }
@@ -180,6 +196,18 @@
   .theme-group--rows { padding-block: 72px 96px; }
   .theme-group--rows .theme-group__themes { row-gap: 96px; }
   .theme-group--rows .theme > * { grid-column: 1 / span 5; }
+  .theme-group--rows .theme--left > * { grid-column: 7 / span 5; }
+  .theme-group--rows .theme--left > .theme__media { grid-column: 1 / span 5; }
+  /* the wide row: the figure shares the row lines, so that its caption (left) and the text (from the seventh
+     column) start on one line under the picture */
+  .theme-group--rows .theme--wide { margin-top: 24px; }
+  .theme-group--rows .theme--wide > .theme__title { grid-column: 1 / span 8; grid-row: 1; }
+  .theme-group--rows .theme--wide > .theme__question { grid-column: 1 / span 8; grid-row: 2; }
+  .theme-group--rows .theme--wide > .theme__media { grid-row: 3 / span 3; display: grid; grid-template-columns: subgrid; grid-template-rows: subgrid; margin-top: 32px; }
+  .theme--wide .theme__frame { grid-column: 1 / -1; }
+  .theme--wide figcaption { grid-column: 1 / span 4; grid-row: 2 / span 2; }
+  .theme-group--rows .theme--wide > .theme__lede { grid-column: 7 / -1; grid-row: 4; margin-top: 28px; }
+  .theme-group--rows .theme--wide > .theme__links { grid-column: 7 / -1; grid-row: 5; }
   .theme-group--pair { padding-block: 88px 96px; }
   .theme-group__title { margin-bottom: 40px; }
   .theme-group--pair .theme > :not(.theme__media) { max-width: calc(100% - (100% + var(--col-gap)) / 6); }

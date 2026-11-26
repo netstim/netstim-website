@@ -1,62 +1,71 @@
-// Publications (layouts/_partials/bibliography.html): every year is a row that opens and closes (a native
-// <details>, so it also works without this script). The topic select narrows the papers to one topic, the
-// filter box to those whose title, authors or journal contain every typed word; both apply together and
-// search every year, open or not: a year with a match opens and says how many, a year without one hides.
-// The topic is kept in the address (?topic=lead-dbs), so a filtered list can be shared and Back returns to
-// the list before. Without a filter the years are as the visitor left them. "Open all years" opens them all.
-// A link to a paper in a closed year (#zp-ID-…) opens that year.
-// The selected papers above the list: a phone shows the first five (publications.css); "Show 4 more" shows
-// the rest and hands the focus to the first of them.
-const selMore = document.querySelector('[data-sel-more]');
-if (selMore) {
-  selMore.querySelector('button').addEventListener('click', () => {
-    const list = selMore.previousElementSibling;
-    list.classList.add('is-open');
-    selMore.hidden = true;
-    list.children[5]?.querySelector('a')?.focus({ preventScroll: true });
-  });
-}
-const bibliography = document.querySelector('[data-bibliography]');
-if (bibliography) {
+// Publications (layouts/_partials/bibliography.html): two views ("Selected" and "All"), switched from the top
+// tab bar or the "All N publications" button at the end of Selected.
+// Opening a topic (?topic=…), ?view=all, or a direct paper anchor (#zp-ID-…) switches straight to All.
+// In All, the topic select narrows papers to one topic and the filter box matches every typed word against
+// title, authors, journal and year; empty years hide automatically.
+const pageRoot = document.querySelector('[data-pub-page]');
+if (pageRoot) {
+  const switchBtns = [...pageRoot.querySelectorAll('[data-bib-view]')];
+  const openAllBtn = pageRoot.querySelector('[data-bib-open-all]');
+  const selectedPanel = pageRoot.querySelector('[data-bib-panel="selected"]');
+  const allPanel = pageRoot.querySelector('[data-bib-panel="all"]');
+  const bibliography = pageRoot.querySelector('[data-bibliography]');
+
   const input = bibliography.querySelector('[data-bib-filter]');
   const select = bibliography.querySelector('[data-bib-topic]');
   const count = bibliography.querySelector('[data-bib-count]');
   const empty = bibliography.querySelector('[data-bib-empty]');
-  const more = bibliography.querySelector('[data-bib-more]');
   const fold = text => text.normalize('NFKD').replace(/\p{Diacritic}/gu, '').toLowerCase();
-  const years = [...bibliography.querySelectorAll('[data-bib-year]')].map(year => {
-    const n = year.querySelector('[data-bib-year-n]');
-    return {
-      year,
-      n,
-      total: Number(n.dataset.total),
-      rows: [...year.querySelectorAll('.pub-row')].map(row => ({
-        row,
-        text: fold(`${row.textContent} ${row.dataset.year}`),
-        topics: (row.dataset.topics || '').split(' '),
-      })),
-    };
-  });
-  const total = years.reduce((sum, { total }) => sum + total, 0);
+
+  const years = [...bibliography.querySelectorAll('[data-bib-year]')].map(year => ({
+    year,
+    rows: [...year.querySelectorAll('.pub-row')].map(row => ({
+      row,
+      text: fold(`${row.textContent} ${row.dataset.year}`),
+      topics: (row.dataset.topics || '').split(' '),
+    })),
+  }));
+  const total = years.reduce((sum, { rows }) => sum + rows.length, 0);
   const papers = n => `${n} ${n === 1 ? 'paper' : 'papers'}`;
   const known = [...select.options].map(option => option.value);
-  const inAddress = () => {
-    const topic = new URLSearchParams(location.search).get('topic') || '';
-    return known.includes(topic) ? topic : '';
-  };
-  // the year of a row named in the address (an old Zotpress anchor)
-  const linked = () => {
-    const row = location.hash.length > 1 && document.getElementById(decodeURIComponent(location.hash.slice(1)));
-    return (row && years.find(({ year }) => year.contains(row))) || null;
-  };
-  // the years the visitor has open while nothing is filtered
-  const open = new Set(years.filter(({ year }) => year.open));
-  let topic = inAddress();
-  let filtering = false;
 
-  const apply = () => {
+  const readState = () => {
+    const params = new URLSearchParams(location.search);
+    const rawTopic = params.get('topic') || '';
+    const topic = known.includes(rawTopic) ? rawTopic : '';
+    const hasHashRow = location.hash.length > 1 && Boolean(bibliography.querySelector(`#${CSS.escape(decodeURIComponent(location.hash.slice(1)))}`));
+    const view = (params.get('view') === 'all' || Boolean(topic) || hasHashRow || !selectedPanel) ? 'all' : 'selected';
+    return { view, topic };
+  };
+
+  let { view, topic } = readState();
+
+  const pushUrl = () => {
+    const url = new URL(location.href);
+    if (topic) {
+      url.searchParams.set('topic', topic);
+      url.searchParams.delete('view');
+    } else {
+      url.searchParams.delete('topic');
+      if (view === 'all') url.searchParams.set('view', 'all');
+      else url.searchParams.delete('view');
+    }
+    history.pushState(null, '', url);
+  };
+
+  const applyView = () => {
+    const showAll = view === 'all' || !selectedPanel;
+    if (selectedPanel) selectedPanel.hidden = showAll;
+    allPanel.hidden = !showAll;
+    for (const btn of switchBtns) {
+      const active = btn.dataset.bibView === (showAll ? 'all' : 'selected');
+      btn.classList.toggle('is-active', active);
+      btn.setAttribute('aria-selected', String(active));
+    }
+  };
+
+  const applyFilter = () => {
     const words = fold(input.value).split(/\s+/).filter(Boolean);
-    filtering = Boolean(topic) || words.length > 0;
     let shown = 0;
     for (const entry of years) {
       let matches = 0;
@@ -66,51 +75,71 @@ if (bibliography) {
         if (match) matches += 1;
       }
       entry.year.hidden = matches === 0;
-      entry.year.open = filtering ? matches > 0 : open.has(entry);
-      entry.n.textContent = matches === entry.total ? papers(entry.total) : `${matches} of ${entry.total}`;
       shown += matches;
     }
     select.value = topic;
     count.textContent = shown === total ? papers(total) : `${shown} of ${total} papers`;
     empty.hidden = shown > 0;
-    more.hidden = filtering || open.size === years.length;
   };
 
-  for (const entry of years) {
-    // the visitor (or the browser's own search) opened or closed a year
-    entry.year.addEventListener('toggle', () => {
-      if (filtering) return;
-      if (entry.year.open) open.add(entry); else open.delete(entry);
-      more.hidden = open.size === years.length;
+  const apply = () => {
+    applyView();
+    applyFilter();
+  };
+
+  for (const btn of switchBtns) {
+    btn.addEventListener('click', () => {
+      const next = btn.dataset.bibView;
+      if (next === view) return;
+      view = next;
+      if (view === 'selected') {
+        topic = '';
+        input.value = '';
+      }
+      pushUrl();
+      apply();
     });
   }
+
+  if (openAllBtn) {
+    openAllBtn.addEventListener('click', () => {
+      view = 'all';
+      pushUrl();
+      apply();
+      pageRoot.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      input.focus({ preventScroll: true });
+    });
+  }
+
   select.addEventListener('change', () => {
     topic = select.value;
-    const url = new URL(location.href);
-    if (topic) url.searchParams.set('topic', topic); else url.searchParams.delete('topic');
-    history.pushState(null, '', url);
+    view = 'all';
+    pushUrl();
     apply();
   });
-  more.querySelector('button').addEventListener('click', () => {
-    const first = years.find(entry => !open.has(entry));
-    for (const entry of years) open.add(entry);
-    apply();
-    // the button is gone: go on at the first year it opened
-    first?.year.querySelector('summary').focus({ preventScroll: true });
-  });
-  addEventListener('popstate', () => { topic = inAddress(); apply(); });
-  const reveal = () => {
-    const entry = linked();
-    if (!entry) return;
-    open.add(entry);
-    apply();
-    document.getElementById(decodeURIComponent(location.hash.slice(1))).scrollIntoView();
-  };
-  addEventListener('hashchange', reveal);
-  input.addEventListener('input', apply);
+
+  input.addEventListener('input', applyFilter);
   input.addEventListener('focus', () => {
     if (matchMedia('(max-width: 767px)').matches) bibliography.scrollIntoView({ block: 'start' });
   });
+
+  const reveal = () => {
+    if (location.hash.length <= 1) return;
+    const id = decodeURIComponent(location.hash.slice(1));
+    const row = document.getElementById(id);
+    if (row && bibliography.contains(row)) {
+      view = 'all';
+      apply();
+      row.scrollIntoView();
+    }
+  };
+
+  addEventListener('popstate', () => {
+    ({ view, topic } = readState());
+    apply();
+  });
+  addEventListener('hashchange', reveal);
+
   apply();
   reveal();
 }

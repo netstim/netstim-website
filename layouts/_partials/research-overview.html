@@ -1,21 +1,29 @@
 {{- /* The Research overview (content/research.md). Front matter `groups:` is a list of groups (`title`), each
-       with `themes:`, the research areas. Everything stands on one grid of twelve columns (research.css),
-       and every figure is the same plate: one shape, round corners, a caption 12px under it. A group is
-       laid out one of two ways (`layout`):
-       - `rows` (the default): a row per area on the page's white. The text is in columns 1–5, starting
-         on the line of the page title; the plate is in columns 7–12, its top on the top of the heading.
+       with `themes:`, the research areas. Everything stands on one grid of twelve columns (research.css).
+       A figure is a plate: round corners, a caption 12px under it. A group is laid out one of two ways
+       (`layout`):
+       - `rows` (the default): a row per area on the page's white. The rows are not one mould; they take
+         turns in threes, by their place in the group (an area's own `layout: right`, `left` or `wide`
+         overrides its turn):
+         - `right`: the text in columns 1–5, on the line of the page title; the plate (4:3) in columns
+           7–12, its top on the top of the heading.
+         - `left`: a smaller plate in columns 1–5 (a square; an upright figure gets 5:6 and is shown
+           nearly at its own shape) and the text in columns 7–11, so it starts on the line where the
+           plate above starts.
+         - `wide`: the heading and the question, then the picture across all twelve columns (2:1), then
+           its caption at the left and the text in columns 7–12. Only for a picture that fills its plate;
+           a drawing or an upright figure takes `right` instead.
        - `pair`: a soft-gray band across the window with the group's title and the areas two abreast (six
-         columns each, so the second starts on the same line as the plates above), each under its plate.
-         The parts of the two areas (plate and caption, title, question, text, links) share their lines.
+         columns each), each under its plate (4:3). The parts of the two areas share their lines.
        `heading: false` keeps a group's title for screen readers only.
        An area is a `title`, an optional `question` (the open question, in medium weight over the text),
        one paragraph (`text`), one line of `links` (label, url) and one figure (`image`, `alt`, `caption`).
        In the source the heading and the question come first, then the figure, then the text: that is the
-       order on a phone and for a screen reader; the grid places the plate beside or above them.
+       order on a phone (one column under 700px) and for a screen reader; the grid places the plate beside
+       or between them.
        A picture fills its plate (cut to the plate's shape). A figure drawn on white (`drawing: true`) and
        an upright figure are shown whole inside it. `drawing: true` is turned around in the dark theme;
-       `drawing: light` is a white-ground picture that stays a light plate there; `image_dark` is the same
-       picture on a dark ground, shown in its place in the dark theme. */ -}}
+       `drawing: light` is a white-ground picture that stays a light plate there. */ -}}
 <div class="page-body research-overview">
   {{ range $g, $group := .Params.groups }}
   {{ $pair := eq .layout "pair" }}
@@ -23,19 +31,25 @@
     <div class="wrap">
       <h2 class="{{ if eq .heading false }}sr-only{{ else }}theme-group__title{{ end }}" id="group-{{ $g }}">{{ .title }}</h2>
       <div class="theme-group__themes">
-        {{ range .themes }}{{ $t := . }}
+        {{ range $i, $t := .themes }}
         {{ $tall := false }}{{ with .image }}{{ with resources.Get . }}{{ $tall = gt .Height .Width }}{{ end }}{{ end }}
         {{ $whole := or $tall (eq .drawing true) }}
-        <article class="theme"{{ with .id }} id="{{ . }}"{{ end }}>
+        {{- /* a row's turn: right, left, wide, and again; a figure shown whole is never the wide one */ -}}
+        {{ $turn := "" }}
+        {{ if not $pair }}
+          {{ $turn = .layout | default (index (slice "right" "left" "wide") (mod $i 3)) }}
+          {{ if or (not (in (slice "right" "left" "wide") $turn)) (and (eq $turn "wide") (or $whole .drawing (not .image))) }}{{ $turn = "right" }}{{ end }}
+        {{ end }}
+        <article class="theme{{ with $turn }} theme--{{ . }}{{ end }}"{{ with .id }} id="{{ . }}"{{ end }}>
           <h3 class="theme__title">{{ .title }}</h3>
           {{ with .question }}<p class="theme__question">{{ . }}</p>{{ end }}
           {{ with .image }}
           <figure class="theme__media">
-            {{ $sizes := "(max-width: 699px) calc(100vw - 40px), (max-width: 1023px) calc(100vw - 96px), (max-width: 1439px) 45vw, 628px" }}
-            {{ if $pair }}{{ $sizes = "(max-width: 699px) calc(100vw - 40px), (max-width: 1439px) 45vw, 628px" }}{{ end }}
-            <div class="theme__frame{{ if $whole }} theme__frame--whole{{ end }}{{ if eq $t.drawing "light" }} theme__frame--light{{ else if $t.drawing }} theme__frame--drawing{{ end }}{{ if $t.image_dark }} theme__frame--swap{{ end }}{{ if $tall }} theme__frame--tall{{ end }}">
-              {{- partial "picture.html" (dict "src" . "alt" ($t.alt | default "") "width" 1200 "sizes" $sizes "eager" (and (eq $g 0) $t.first)) -}}
-              {{- with $t.image_dark }}{{ partial "picture.html" (dict "src" . "alt" ($t.alt | default "") "width" 1200 "sizes" $sizes "class" "theme__dark") }}{{ end -}}
+            {{ $sizes := "(max-width: 699px) calc(100vw - 40px), (max-width: 1439px) 45vw, 628px" }}
+            {{ if eq $turn "left" }}{{ $sizes = "(max-width: 699px) calc(100vw - 40px), (max-width: 1023px) 45vw, (max-width: 1439px) 37vw, 520px" }}{{ end }}
+            {{ if eq $turn "wide" }}{{ $sizes = "(max-width: 699px) 100vw, (max-width: 1439px) calc(100vw - 96px), 1280px" }}{{ end }}
+            <div class="theme__frame{{ if $whole }} theme__frame--whole{{ end }}{{ if eq $t.drawing "light" }} theme__frame--light{{ else if $t.drawing }} theme__frame--drawing{{ end }}{{ if $tall }} theme__frame--tall{{ end }}">
+              {{- partial "picture.html" (dict "src" . "alt" ($t.alt | default "") "width" (cond (eq $turn "wide") 1600 1200) "sizes" $sizes "eager" (and (eq $g 0) $t.first)) -}}
             </div>
             {{ with $t.caption }}<figcaption>{{ partial "url.html" (. | markdownify) | safeHTML }}</figcaption>{{ end }}
           </figure>

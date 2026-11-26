@@ -1,14 +1,20 @@
-{{- /* The Community page (content/community.md `cards`): one row per series under a hairline. On the left
-       the picture: the flyer (`poster`; a click opens it large), or else the logo as it is. On the right a
-       small kicker, the title (the link), one line, the facts as property rows (an icon, a muted label,
-       the value) and, for Stimu-Latte (`from: stimu-latte`), the next session and the newest past ones
-       from data/stimu_latte.yaml. On a phone the picture stands over the text. A row past its `until`
-       day is left out. */ -}}
+{{- /* The Community page (content/community.md `cards`): one row per series, on a grid of twelve columns.
+       A row is the picture (the flyer, `poster`; a click opens it large; or else the logo as it is) and the
+       text: a small kicker, the title (the link), one line, the facts as property rows (an icon, a muted
+       label, the value) and, for Stimu-Latte (`from: stimu-latte`), the next session and the newest past
+       ones from data/stimu_latte.yaml. The rows are not one mould (community.css):
+       - `lead`, the first row: the picture in columns 1–4, the text in columns 6–12.
+       - `band`, a dated entry (`start`, an announcement): a soft-gray band across the window, a smaller
+         flyer (three columns) with the text at mid-height beside it.
+       - the others take turns under a hairline: `flip` (the text at the left on the line of the page
+         title, the picture at the right at mid-height), then `plain` (the picture at the left), and again.
+       On a phone the picture stands over the text. A row past its `until` day is left out. */ -}}
 {{ $arrow := partial "icon.html" "arrow" }}
 {{ $external := partial "icon.html" "external" }}
 {{- /* to preview another day: HUGO_PARAMS_TODAY=2026-10-01 hugo … */ -}}
 {{ $today := site.Params.today | default (now.Format "2006-01-02") }}
-<div class="wrap page-body">
+<div class="page-body community">
+  {{ $shown := 0 }}{{ $turn := 0 }}
   {{ range $i, $card := .Params.cards }}
   {{ if or (not .until) (ge .until $today) }}
   {{ $href := partial "url.html" .url }}{{ $ext := hasPrefix $href "http" }}
@@ -30,15 +36,20 @@
     {{ end }}
     {{ $past = first (cond (not $next) 3 2) $past }}
   {{ end }}
-  <section class="series" aria-labelledby="series-{{ $i }}">
+  {{ $kind := "lead" }}
+  {{ if $shown }}{{ if .start }}{{ $kind = "band" }}{{ else }}{{ $kind = cond (eq (mod $turn 2) 0) "flip" "plain" }}{{ $turn = add $turn 1 }}{{ end }}{{ end }}
+  {{ $shown = add $shown 1 }}
+  {{ $sizes := "(max-width: 767px) 280px, (max-width: 1279px) 32vw, 420px" }}
+  <section class="series series--{{ $kind }}" aria-labelledby="series-{{ $i }}">
+    <div class="wrap series__row">
     <div class="series__media">
       {{ if $poster }}{{ with resources.Get $poster }}{{ $full := .Resize (printf "%dx webp q88" (math.Min 1200 .Width | int)) }}
       <a class="series__flyer" href="{{ $full.RelPermalink }}" data-lightbox title="{{ $caption }}">
-        {{ partial "picture.html" (dict "src" $poster "alt" $alt "width" 420 "sizes" "(max-width: 767px) 280px, (max-width: 1279px) 32vw, 420px" "eager" (eq $i 0)) }}
+        {{ partial "picture.html" (dict "src" $poster "alt" $alt "width" 420 "sizes" $sizes "eager" (eq $i 0)) }}
       </a>
       {{ end }}{{ else if .image }}
       <a class="series__logo" href="{{ $href }}"{{ if $ext }} rel="noopener"{{ end }} tabindex="-1" aria-hidden="true">
-        {{ partial "picture.html" (dict "src" .image "alt" "" "width" 420 "sizes" "(max-width: 767px) 280px, (max-width: 1279px) 32vw, 420px") }}
+        {{ partial "picture.html" (dict "src" .image "alt" "" "width" 420 "sizes" $sizes) }}
       </a>
       {{ end }}
     </div>
@@ -101,6 +112,7 @@
         {{ $ics := resources.FromString (printf "calendar/%s.ics" (urlize .title)) (delimit $lines "\r\n") }}
         <p class="series__links"><a class="series__more" href="{{ $ics.RelPermalink }}" download>{{ partial "icon.html" "download" }} Add to calendar</a></p>
       {{ end }}
+    </div>
     </div>
   </section>
   {{ end }}

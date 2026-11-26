@@ -4,10 +4,10 @@
 // the one before it is on show. The duet layout also has a silent video loop, which plays while the photos
 // change. Nothing moves under reduced motion, while the pictures are out of view or the tab is in the
 // background, or after the visitor has pressed the pause button.
-const banner = document.querySelector('[data-banner]');
-const toggle = banner?.querySelector('[data-banner-toggle]');
 const still = matchMedia('(prefers-reduced-motion: reduce)');
-if (banner && toggle) {
+for (const banner of document.querySelectorAll('[data-banner]')) {
+  const toggle = banner.querySelector('[data-banner-toggle]');
+  if (!toggle) continue;
   const HOLD = 6000;
   const FADE = 1000;
   const video = banner.querySelector('[data-banner-video]');

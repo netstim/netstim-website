@@ -1,11 +1,20 @@
-/* Community (layouts/_partials/community-page.html): one row per series under a hairline. The picture
-   stands in the left third (a flyer as the sheet it is; a logo as it is, with no plate), the text in the right
-   two thirds: a kicker, the title, one line, the facts as property rows like /stimu-latte/ (an icon and a
-   muted label, then the value) and, for the journal club, its newest sessions as dated rows. Under 768px
-   the picture stands over the text. */
-.series { display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; padding-block: 48px; border-top: 1px solid var(--line); }
-.series:first-child { padding-top: 0; border-top: 0; }
-.series:last-child { padding-bottom: 0; }
+/* Community (layouts/_partials/community-page.html): one row per series on a grid of twelve columns, and
+   the rows are not one mould. The first is the lead: the picture in columns 1–4 (a flyer as the sheet it
+   is; a logo as it is, with no plate), the text in columns 6–12: a kicker, the title, one line, the facts as
+   property rows like /stimu-latte/ (an icon and a muted label, then the value) and, for the journal club,
+   its newest sessions as dated rows. The rows after it stand under a hairline and take turns: the text at
+   the left on the line of the page title with the picture at the right at mid-height (`flip`), then the
+   picture at the left again (`plain`). A dated entry (an announcement) is a soft-gray band across the
+   window instead: a smaller flyer, three columns, and the text at mid-height beside it. Under 768px the
+   picture stands over the text. */
+.series__row { display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; padding-block: 48px; }
+.series + .series:not(.series--band) > .series__row { border-top: 1px solid var(--line); }
+.series--band + .series > .series__row { border-top: 0; }
+.series:first-child > .series__row { padding-top: 0; }
+.series:last-child:not(.series--band) > .series__row { padding-bottom: 0; }
+.series--band { background: var(--surface); }
+/* a band at the end of the page meets the footer */
+.community:has(> .series--band:last-child) { padding-bottom: 0; }
 .series svg { flex: none; }
 
 /* the picture */
@@ -87,6 +96,18 @@
   .series__meta span::before { content: none; }
 }
 @media (min-width: 768px) {
-  .series { grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: 0 clamp(40px, 7vw, 96px); align-items: start; padding-block: 64px; }
-  .series__media { max-width: none; }
+  .series__row { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 0 24px; align-items: start; padding-block: 64px; }
+  .series__media { grid-column: 1 / span 4; grid-row: 1; max-width: none; }
+  .series__body { grid-column: 6 / -1; grid-row: 1; }
+  .series--lead > .series__row { padding-bottom: 80px; }
+  .series--flip > .series__row { align-items: center; }
+  .series--flip .series__media { grid-column: 8 / -1; }
+  .series--flip .series__body { grid-column: 1 / span 6; }
+  .series--band > .series__row { align-items: center; padding-block: 72px; }
+}
+/* from 1024px the pictures after the lead are smaller: four columns at the right, three in the band */
+@media (min-width: 1024px) {
+  .series--flip .series__media { grid-column: 9 / -1; }
+  .series--band .series__media { grid-column: 1 / span 3; }
+  .series--band .series__body { grid-column: 5 / -1; }
 }

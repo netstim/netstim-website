@@ -13,7 +13,7 @@ main:
   children:
   - title: Overview
     url: '@root@research/'
-    text: Research areas and software
+    text: What the lab works on
   - title: Deep Brain Stimulation
     url: '@root@research/deep-brain-stimulation/'
     text: Mapping stimulated brain circuits
@@ -23,6 +23,9 @@ main:
   - title: Lead-DBS
     url: '@root@research/lead-dbs/'
     text: Open-source toolbox for electrode reconstruction
+  - title: Resources
+    url: '@root@resources/'
+    text: Software, connectomes and atlases to download
 - title: Publications
   url: '@root@publications/'
   children:

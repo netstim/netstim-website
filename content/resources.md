@@ -11,21 +11,22 @@ lead: Open-source software, brain atlases, and connectomes for deep brain stimul
 # people download most as picture cards (`cards`), then the other places to go as a ruled list (`links`)
 # and how to cite the toolbox (`cite`: Zotero keys from data/publications.yaml). The documentation,
 # downloads and help live on lead-dbs.org; this page only points there.
-intro: Lead-DBS is a free, open-source MATLAB toolbox for localizing DBS electrodes from MRI and CT, modeling stimulation fields, and mapping connected brain networks. We have developed it since 2012 with contributors from over 20 institutions. Software downloads, documentation, and user support are hosted on lead-dbs.org.
+intro: Our open-source software, normative connectomes, and subcortical brain atlases are freely available for research and hosted on lead-dbs.org, together with documentation, walkthroughs, and community support.
 action: {label: Visit lead-dbs.org, url: 'https://www.lead-dbs.org/'}
 cards:
 - title: Lead-DBS
-  text: Core toolbox, including Lead Group, Lead Connectome, and Lead-OR.
-  image: media/research-leaddbs-rendering.png
+  text: Open-source MATLAB toolbox for electrode localization, stimulation modeling, and connectivity analysis, including Lead Group, Lead Connectome, and Lead-OR.
+  image: media/research-leaddbs-step-stimulation.jpg
   url: https://www.lead-dbs.org/download/
 - title: Normative connectomes
   text: Group-average structural and functional connectomes in MNI space from large MRI cohorts.
   image: media/research-connectome-horn2014.png
+  contain: true
   url: https://www.lead-dbs.org/helpsupport/knowledge-base/atlasesresources/normative-connectomes/
 - title: Brain atlases
   text: Over 60 subcortical atlases in MNI space, including the DISTAL atlas.
   image: media/3fd9ad4b3593-distal_atlas-1500x1500.png
-  url: https://www.lead-dbs.org/helpsupport/knowledge-base/atlasesresources/atlases/
+  url: https://www.lead-dbs.org/helpsupport/knowledge-base/atlasesresources/atlases-2/
 links:
 - title: Manual and tutorials
   text: Step-by-step manual, walkthrough videos, and practice datasets.

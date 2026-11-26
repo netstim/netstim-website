@@ -19,7 +19,7 @@ http://localhost:1313 to see a change before you push it. A push to `main` rebui
 | change the menu or its sheets, footer links | `data/nav.yaml` (see “The menu” below) |
 | change the book's facts or chapters | `data/book.yaml` |
 | change Home (opening, research cards, community, funders, past funders) | the front matter of `content/_index.md` |
-| change the words or photos of the Home opening | `hero:` in `content/_index.md`: `title` and `place` (the small line), `tagline` (the large line, a few words), `text` (one or two sentences), `links`, and `photos` (image in `assets/media/`, `alt`), which are shown in turn in the order written: team, render, team, render. `tall: false` keeps a wide photo out of the tall frame, which would cut people off |
+| change the words or photos of the Home opening | `hero:` in `content/_index.md`: `title` (the large line) and `place` (gray, under it), `text` (one or two sentences), `links`, and `photos` (image in `assets/media/`, `alt`), which are shown in turn in the order written: team, render, team, render. `tall: false` keeps a wide photo out of the tall frame, which would cut people off |
 | add a funder | an entry under `funding:` in `content/_index.md` (`current` or `past`): the funder's own logo file in `assets/media/` as `src` (with a clear background, since every logo is drawn in one tone), its `url`, `alt`, and `width` (the logo's width on the page in px; adjust until the row looks even). A current funder also takes `name`, set beside the logo, unless the logo spells the name out. `shaded: true` is for a filled seal, which keeps its shades of gray. Never draw a logo; without `src` the `name` is shown as text |
 | change a research area on the overview (title, text, figure, links) | the `groups:` list in the front matter of `content/research.md` (see “Research pages” below) |
 | change a research subject page | `content/research--*.md`: the text is Markdown, the picture, papers and people are front matter |
@@ -77,8 +77,8 @@ The overview (`content/research.md`) has no text of its own: `lead` is the two s
 and its front matter lists `groups` (each a `title` and its `themes`, the research areas). A group is shown
 one of two ways:
 
-- `layout: rows` (the default): large rows on white, the figure and the text side by side, swapping sides
-  from row to row (the first row has its figure at the left). Use it for the research areas.
+- `layout: rows` (the default): a row per area on white, the text at the left and the figure at the right
+  (never mirrored). Use it for the research areas.
 - `layout: pair`: a soft-gray band with the group's title and its areas two abreast, each under its figure.
   Use it for two (or four) short entries, such as the methods.
 - `heading: false` hides a group's title (screen readers still get it).
@@ -88,7 +88,7 @@ An area:
 ```yaml
 - id: deep-brain-stimulation           # the anchor: /research/#deep-brain-stimulation
   title: Tailoring deep brain stimulation
-  question: The open question, in one sentence.   # optional; set larger over the text
+  question: The open question, in one sentence.   # optional; in medium weight over the text
   text: Two or three sentences on what we do.
   image: media/research-figure.png     # a real figure in assets/media/
   alt: What the figure shows
@@ -97,18 +97,19 @@ An area:
   - {label: More on deep brain stimulation, url: '@root@research/deep-brain-stimulation/'}
 ```
 
-- Figures have no frame. In a row a figure is shown whole in its own shape (an upright one stays narrow); in
-  a pair it is cut to 3:2. A render with its own ground needs nothing more.
-- `drawing: true` is for a figure drawn on white: it stands free on the page (in a pair it is shown whole
-  and blended into the band), and the dark theme turns its lightness around. `drawing: light` is for a
-  white-ground picture that must keep its colors (a tissue section, a 3D render, a map whose colors carry
-  values): it stays a light plate in the dark theme.
-- `image_dark` (optional) is the same picture on a dark ground; the dark theme shows it instead.
+- Every figure is shown in the same plate (4:3, round corners). A picture fills the plate and is cut to
+  its shape, so keep the subject near the middle. An upright figure (taller than wide) and a `drawing: true`
+  figure are shown whole inside the plate instead; on a phone an upright figure gets a square plate.
+- `drawing: true` is for a figure drawn on white: it is blended into the plate, and the dark theme turns its
+  lightness around. `drawing: light` is for a white-ground picture that must keep its colors (a tissue
+  section, a 3D render, a map whose colors carry values): it stays a light plate in the dark theme.
 - `first: true` marks the first figure of the page, which loads at once.
 - A link to the papers on a subject is `'@root@publications/?topic=lesion-mapping'` (the topics are listed
   in `data/publication_topics.yaml`).
 - Key papers and people are not shown here: they are on the subject pages (below) and on People.
 - State only what a paper supports, and keep an area to one short paragraph, one figure and one line of links.
+  Keep a caption to one or two lines: in the pair the two captions share a line, and the longer one sets
+  where both titles start.
 - A figure taken from a paper needs a license that allows it (CC BY) and the paper named in the caption.
 
 A subject page (`content/research--*.md`, front matter `family: research` and `topic: true`):

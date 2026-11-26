@@ -9,8 +9,8 @@
 <main id="main" tabindex="-1" class="home">
 
   {{ with $p.hero }}
-  {{- /* The opening. The words: the name and the place as one small line (the page's heading), the field as
-         the large line (`tagline`), one or two sentences and two links. The pictures: real photos and the
+  {{- /* The opening. The words: the name as the large line with the place under it in gray (the page's
+         heading), an optional `tagline` as a short line in ink (not used), one or two sentences and two links. The pictures: real photos and the
          lab's own renders in one frame, where the people and the work take turns. `layout` picks one of
          three compositions (TEMPORARY: two go once the owner has chosen):
            statement  the words first, the field line large; then one 3:2 frame with every photo in turn. On a
@@ -32,7 +32,7 @@
   {{ $sizes := "(max-width: 639px) 100vw, (max-width: 1023px) calc(100vw - 96px), min(56vw, 760px)" }}
   {{ if eq $layout "picture" }}
     {{ $photos = where $photos "tall" "ne" false }}
-    {{ $sizes = "(max-width: 767px) 100vw, 50vw" }}
+    {{ $sizes = "(max-width: 767px) 100vw, min(52vw, 680px)" }}
   {{ else if eq $layout "duet" }}
     {{ $photos = where $photos "people" true }}
   {{ end }}
@@ -52,7 +52,7 @@
   {{ end }}
 
   {{ with $p.research }}
-  <section class="home-section" aria-labelledby="research-h">
+  <section class="home-section home-section--tinted" aria-labelledby="research-h">
     <div class="wrap">
       <div class="section-head">
         <div class="section-head__title"><h2 id="research-h">{{ .title }}</h2>{{ with .lede }}<p class="section-head__lede">{{ . }}</p>{{ end }}</div>
@@ -67,6 +67,33 @@
         </a></li>
         {{ end }}
       </ul>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ with $p.people }}
+  {{ $peopleBanner := dict "slides" (.photos | default slice) "sizes" "(max-width: 1023px) 100vw, min(58vw, 720px)" "loop" false }}
+  <section class="home-section home-people" aria-labelledby="people-h">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-head__title"><h2 id="people-h">{{ .title }}</h2></div>
+        {{ with .link }}<a class="text-action" href="{{ partial "url.html" .url }}">{{ .label }} {{ $arrow }}</a>{{ end }}
+      </div>
+      <div class="home-people__grid">
+        {{ partial "inline/home-banner.html" $peopleBanner }}
+        {{ with .card }}
+        <div class="home-people__card">
+          <div class="home-people__card-body">
+            <h3>{{ .title }}</h3>
+            {{ with .text }}<p>{{ . }}</p>{{ end }}
+          </div>
+          <ul class="home-links btn-row">
+            {{ range .links }}<li><a class="text-action" href="{{ partial "url.html" .url }}">{{ .label }} {{ $arrow }}</a></li>{{ end }}
+            {{ with hugo.Data.contact.email }}<li><a class="text-action" href="mailto:{{ . }}">Email us {{ $arrow }}</a></li>{{ end }}
+          </ul>
+        </div>
+        {{ end }}
+      </div>
     </div>
   </section>
   {{ end }}

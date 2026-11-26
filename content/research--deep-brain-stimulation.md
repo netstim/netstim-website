@@ -20,8 +20,8 @@ lead: We map the brain networks modulated by deep brain stimulation in movement 
 # data/publications.yaml) and the people (`people`: names from data/people.yaml).
 figure:
   image: media/full-abb_1.jpg
-  alt: Two DBS electrodes reaching the subthalamic nucleus, shown in orange among neighboring structures and fiber tracts
-  caption: Two DBS electrodes in the subthalamic nucleus (orange) of a patient with Parkinson’s disease, reconstructed in Lead-DBS.
+  alt: Bilateral DBS electrodes localized in the subthalamic nucleus alongside the red nucleus, pallidum, and surrounding fiber tracts on BigBrain slices
+  caption: Bilateral subthalamic DBS electrode reconstruction with surrounding nuclei and white-matter pathways in Lead-DBS.
 papers: [HQ2AQ43J, SYFUNAC6, IWKLRKGE, B6AUQJ5A, 3YCUAHU5]
 people: [Ilkem Aysu Sahin, Patricia Zvarova, Ellen Younger, Adriana Arrais, Jan Philipp Payonk]
 ---
@@ -34,14 +34,12 @@ Electrical stimulation spreads beyond the target nucleus along passing white-mat
 
 Comparing stimulated connections across patients links specific tracts to clinical benefit. Connectivity profiles predicted motor outcomes of subthalamic DBS in Parkinson’s disease ([Horn et al., 2017](https://doi.org/10.1002/ana.24974)), and in obsessive-compulsive disorder this approach identified a single fiber tract associated with symptom relief across surgical targets and centers ([Li et al., 2020](https://doi.org/10.1038/s41467-020-16734-3)).
 
-<!-- TODO(netstim): complete this caption. The picture is the lab's render Li_et_al_light.png; if it shows the tract of Li et al., 2020, say so, and say what red, blue and the dots stand for. -->
-![Bundles of red and blue fiber tracts with scattered dots, over a high-resolution scan of the human brain](media/research-dbs-tracts.jpg "Fiber tracts rendered in Lead-DBS over a high-resolution scan of the human brain.")
+![Obsessive-compulsive disorder DBS response tract showing positively (red) and negatively (blue) associated white-matter fibers and active stimulation sites on BigBrain slices](media/research-dbs-tracts.jpg "Obsessive-compulsive disorder DBS response tract: fibers positively (red) and negatively (blue) associated with clinical improvement, with active stimulation sites across cohorts (Li et al., 2020), rendered in Lead-DBS.")
 
 ## Symptom-specific circuits
 
 Different symptoms respond to different networks. In Parkinson’s disease, tremor, rigidity, slowness of movement, and gait each improve with stimulation of distinct circuits ([Rajamani et al., 2024](https://doi.org/10.1038/s41467-024-48731-1)). Across Parkinson’s disease, dystonia, Tourette’s syndrome, and obsessive-compulsive disorder, stimulation sites map onto separate frontal circuits, a framework we call the dysfunctome ([Hollunder et al., 2024](https://doi.org/10.1038/s41593-024-01570-1)).
 
-<!-- TODO(netstim): confirm this caption. The picture comes from the news post on the Falling Walls award "for the lab's work on mapping the human dysfunctome"; the cohort it shows is not named there. -->
-![Many DBS electrodes drawn as colored rods on both sides of a horizontal section of the human brain](media/dca20e656347-fw24-science-summit-ls-andreashorn-electrode-placements.png "DBS electrode placements from multiple patients projected onto a single brain slice.")
+![Multi-cohort DBS electrodes color-coded by disorder reconstructed in MNI space over an axial BigBrain slice](media/dca20e656347-fw24-science-summit-ls-andreashorn-electrode-placements.png "Multi-cohort DBS electrode reconstructions across four neurological and psychiatric disorders normalized to MNI space for dysfunctome mapping (Hollunder et al., 2024).")
 
 A current direction is pairing these circuit maps with adaptive DBS, which adjusts stimulation to a patient’s current symptoms ([Horn & Neumann, 2025](https://doi.org/10.1038/s41582-025-01131-5)).

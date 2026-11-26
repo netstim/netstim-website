@@ -1,19 +1,15 @@
-{{- /* The publications (data/publications.yaml, the lab's Zotero library). One list in two parts, on one
-       grid: a narrow column at the left (the picture, the year, the journal) and the paper at the right,
-       so every title starts on the same line down the page.
-       Selected papers (data/selected_papers.yaml): a row each, the paper's own picture at the left, then
-       the title (the link to the DOI), the authors, and the journal and year. A phone shows the first
-       five and a "Show 4 more" button for the rest (publications.css; every row without scripts).
-       All papers: one row per year, newest first, that opens and closes (a native <details>; the newest
-       years are open until ten papers show). A paper is the journal at the left, the title and the
-       authors as "Surname AB" (as many as Zotero's citation gives). Authors who are or were in the lab
-       (data/people.yaml, matched by surname and first initial) stand in ink among the gray names, at the
-       same weight.
-       Above the years: a filter box and the topics as a native <select> (data/publication_topics.yaml,
-       by Zotero key; the choice is kept in the address as ?topic=…). Both search every year, open or
-       not; that and the "Open all years" button are the work of assets/js/main/publications.js.
-       Without scripts the box, the select and the button are not shown (publications.css) and the years
-       still open one by one. The old Zotpress anchors (#zp-ID-…) stay on the rows. */ -}}
+{{- /* The publications (data/publications.yaml, the lab's Zotero library). One page in two views, on one
+       grid: a narrow column at the left (240px: the figure in Selected, the sticky year numeral in All, as on
+       News) and the paper at the right, so every title and the filter box start on the same line.
+       A top switch chooses between Selected (default, unless ?view=all, ?topic=… or a #zp-ID-… hash is in
+       the address) and All.
+       Selected papers (data/selected_papers.yaml): generous spacing around each paper, its own figure at the
+       left, the title (link to the DOI), authors and journal/year, and an "All N publications" button at the
+       bottom that opens the All view.
+       All papers: News-style year bands, newest first—a large sticky year numeral on the left and the paper
+       rows on the right (title in ink, authors as "Surname AB" with lab members in ink, and journal inline).
+       Above the years: a filter box and topic <select> (data/publication_topics.yaml, kept in ?topic=…).
+       Without scripts the switch and filter controls are hidden and both Selected and All are shown stacked. */ -}}
 {{ $members := slice }}
 {{ range hugo.Data.people }}{{ with .name }}
   {{ $parts := split . " " }}{{ $last := index $parts (sub (len $parts) 1) }}
@@ -49,78 +45,76 @@
 {{ end }}
 {{ $dated := slice }}{{ range $years }}{{ if ne . "Without a date" }}{{ $dated = $dated | append . }}{{ end }}{{ end }}
 {{ $order := sort $dated "value" "desc" }}{{ if in $years "Without a date" }}{{ $order = $order | append "Without a date" }}{{ end }}
-{{- /* Selected papers (data/selected_papers.yaml, Zotero keys in order). The title is the link to the DOI
-       and the whole row opens it. A paper without a picture is left out. */ -}}
-{{ with hugo.Data.selected_papers }}
-{{ $nsel := 0 }}{{ range . }}{{ if reflect.IsMap . }}{{ if .image }}{{ $nsel = add $nsel 1 }}{{ end }}{{ end }}{{ end }}
-<section class="bib-selected" aria-labelledby="selected-h">
-  <div class="bib-head">
-    <h2 id="selected-h">Selected papers</h2>
-    <p class="bib-jump"><a href="#publications-h">All {{ len $pubs }} papers <span aria-hidden="true">↓</span></a></p>
+{{ $hasSelected := gt (len (hugo.Data.selected_papers | default slice)) 0 }}
+<div class="pub-page" data-pub-page>
+  {{ if $hasSelected }}
+  <div class="bib-switch" role="tablist" aria-label="Publication views" data-bib-switch>
+    <button type="button" class="bib-switch__btn is-active" role="tab" aria-selected="true" aria-controls="selected-panel" data-bib-view="selected">Selected</button>
+    <button type="button" class="bib-switch__btn" role="tab" aria-selected="false" aria-controls="zotpress-lib-79dba5b0098bd35c40ebe35903c37972" data-bib-view="all">All ({{ len $pubs }})</button>
   </div>
-  <ol class="sel-list">
-    {{ range . }}{{ $key := . }}{{ $title := "" }}{{ $image := "" }}{{ $whole := false }}{{ $drawing := false }}{{ if reflect.IsMap . }}{{ $key = .key }}{{ $title = .title }}{{ $image = .image }}{{ $whole = .whole }}{{ $drawing = .drawing }}{{ end }}{{ $hit := where hugo.Data.publications "key" $key }}
-    {{ if not $hit }}{{ errorf "data/selected_papers.yaml: no paper with the key %s in data/publications.yaml" $key }}{{ end }}
-    {{ if $image }}{{ with index $hit 0 }}
-    {{ $p := partial "inline/bib-paper.html" (dict "paper" . "memberRE" $memberRE) }}
-    <li class="sel-paper">
-      <span class="sel-paper__figure{{ if $drawing }} sel-paper__figure--drawing{{ end }}{{ if $whole }} sel-paper__figure--whole{{ end }}" aria-hidden="true">{{ partial "picture.html" (dict "src" $image "alt" "" "width" 240 "sizes" "(max-width: 767px) 104px, (max-width: 1023px) 200px, 240px") }}</span>
-      <div class="sel-paper__text">
-        <h3>{{ if $p.doi }}<a href="{{ $p.doi }}" rel="noopener">{{ $title | default $p.title }}</a>{{ else }}{{ $title | default $p.title }}{{ end }}</h3>
-        <p class="sel-paper__by">{{ $p.names | safeHTML }}</p>
-        <p class="sel-paper__venue">{{ with $p.journal }}<span class="pub-journal">{{ . }}</span> · {{ end }}{{ $p.year }}</p>
-      </div>
-    </li>
-    {{ end }}{{ end }}{{ end }}
-  </ol>
-  {{ if gt $nsel 5 }}<p class="sel-more" data-sel-more><button type="button" class="bib-more__button">Show {{ sub $nsel 5 }} more</button></p>{{ end }}
-</section>
-{{ end }}
-<section class="bibliography" id="zotpress-lib-79dba5b0098bd35c40ebe35903c37972" aria-labelledby="publications-h" data-bibliography>
-  <div class="bib-head">
-    <h2 id="publications-h">All papers</h2>
-    <div class="bib-tools">
-      <label class="bib-filter"><span class="sr-only">Filter publications</span>
-        {{ partial "icon.html" "search" }}<input type="search" placeholder="Title, author or journal" data-bib-filter>
-      </label>
-      <label class="bib-topic"><span class="sr-only">Topic</span>
-        <select data-bib-topic>
-          <option value="">All topics</option>
-          {{ range $topics }}{{ $topic := . }}{{ with index $topicCount .id }}
-          <option value="{{ $topic.id }}">{{ $topic.label }} ({{ . }})</option>
-          {{ end }}{{ end }}
-        </select>{{ partial "icon.html" "chevron" }}
-      </label>
-      <p class="bib-count" role="status" data-bib-count>{{ len $pubs }} papers</p>
-    </div>
-  </div>
-  {{- /* the newest years are open until ten papers show; every other year waits closed */ -}}
-  {{ $n := 0 }}
-  <div class="pub-years">
-  {{ range $order }}{{ $y := . }}{{ $list := index $by $y }}
-  <details class="pub-year" data-bib-year{{ if lt $n 10 }} open{{ end }}>
-    <summary>
-      <h3 class="pub-year__label">{{ $y }}</h3>
-      <span class="pub-year__n" data-bib-year-n data-total="{{ len $list }}">{{ len $list }} {{ if eq (len $list) 1 }}paper{{ else }}papers{{ end }}</span>
-      <span class="pub-year__sign" aria-hidden="true"></span>
-    </summary>
-    <ol class="pub-rows">
-      {{ range $list }}
-        {{ $p := partial "inline/bib-paper.html" (dict "paper" . "memberRE" $memberRE) }}
-        <li class="pub-row" id="zp-ID-5249585-{{ .key }}" data-year="{{ $y }}"{{ with index $tagged .key }} data-topics="{{ delimit . " " }}"{{ end }}>
-          <h4>{{ if $p.doi }}<a href="{{ $p.doi }}" rel="noopener">{{ $p.title }}</a>{{ else }}{{ $p.title }}{{ end }}</h4>
-          <p class="pub-row__by">{{ $p.names | safeHTML }}</p>
-          {{ with $p.journal }}<p class="pub-row__journal pub-journal">{{ . }}</p>{{ end }}
-        </li>
-      {{ end }}
-    </ol>
-  </details>
-  {{ $n = add $n (len $list) }}
   {{ end }}
-  </div>
-  <p class="bib-empty" hidden data-bib-empty>No paper matches.</p>
-  <p class="bib-more" data-bib-more><button type="button" class="bib-more__button">Open all years</button></p>
-</section>
+  {{- /* Selected papers (data/selected_papers.yaml, Zotero keys in order). The title is the link to the DOI
+         and the whole row opens it. A paper without a picture is left out. */ -}}
+  {{ with hugo.Data.selected_papers }}
+  <section class="bib-selected" id="selected-panel" aria-labelledby="selected-h" data-bib-panel="selected">
+    <h2 class="sr-only" id="selected-h">Selected papers</h2>
+    <ol class="sel-list">
+      {{ range . }}{{ $key := . }}{{ $title := "" }}{{ $image := "" }}{{ $whole := false }}{{ $drawing := false }}{{ if reflect.IsMap . }}{{ $key = .key }}{{ $title = .title }}{{ $image = .image }}{{ $whole = .whole }}{{ $drawing = .drawing }}{{ end }}{{ $hit := where hugo.Data.publications "key" $key }}
+      {{ if not $hit }}{{ errorf "data/selected_papers.yaml: no paper with the key %s in data/publications.yaml" $key }}{{ end }}
+      {{ if $image }}{{ with index $hit 0 }}
+      {{ $p := partial "inline/bib-paper.html" (dict "paper" . "memberRE" $memberRE) }}
+      <li class="sel-paper">
+        <span class="sel-paper__figure{{ if $drawing }} sel-paper__figure--drawing{{ end }}{{ if $whole }} sel-paper__figure--whole{{ end }}" aria-hidden="true">{{ partial "picture.html" (dict "src" $image "alt" "" "width" 240 "sizes" "(max-width: 767px) 104px, (max-width: 1023px) 200px, 240px") }}</span>
+        <div class="sel-paper__text">
+          <h3>{{ if $p.doi }}<a href="{{ $p.doi }}" rel="noopener">{{ $title | default $p.title }}</a>{{ else }}{{ $title | default $p.title }}{{ end }}</h3>
+          <p class="sel-paper__by">{{ $p.names | safeHTML }}</p>
+          <p class="sel-paper__venue">{{ with $p.journal }}<span class="pub-journal">{{ . }}</span> · {{ end }}{{ $p.year }}</p>
+        </div>
+      </li>
+      {{ end }}{{ end }}{{ end }}
+    </ol>
+    <div class="sel-footer">
+      <button type="button" class="bib-all-btn" data-bib-open-all>All {{ len $pubs }} publications {{ partial "icon.html" "arrow" }}</button>
+    </div>
+  </section>
+  {{ end }}
+  <section class="bibliography" id="zotpress-lib-79dba5b0098bd35c40ebe35903c37972" aria-labelledby="publications-h" data-bibliography data-bib-panel="all">
+    <div class="bib-head">
+      <h2 id="publications-h">All papers</h2>
+      <div class="bib-tools">
+        <label class="bib-filter"><span class="sr-only">Filter publications</span>
+          {{ partial "icon.html" "search" }}<input type="search" placeholder="Title, author or journal" data-bib-filter>
+        </label>
+        <label class="bib-topic"><span class="sr-only">Topic</span>
+          <select data-bib-topic>
+            <option value="">All topics</option>
+            {{ range $topics }}{{ $topic := . }}{{ with index $topicCount .id }}
+            <option value="{{ $topic.id }}">{{ $topic.label }} ({{ . }})</option>
+            {{ end }}{{ end }}
+          </select>{{ partial "icon.html" "chevron" }}
+        </label>
+        <p class="bib-count" role="status" data-bib-count>{{ len $pubs }} papers</p>
+      </div>
+    </div>
+    <div class="pub-years">
+    {{ range $order }}{{ $y := . }}{{ $list := index $by $y }}
+    <section class="pub-year" data-bib-year>
+      <h3 class="pub-year__label{{ if eq $y "Without a date" }} pub-year__label--undated{{ end }}">{{ $y }}</h3>
+      <ol class="pub-rows">
+        {{ range $list }}
+          {{ $p := partial "inline/bib-paper.html" (dict "paper" . "memberRE" $memberRE) }}
+          <li class="pub-row" id="zp-ID-5249585-{{ .key }}" data-year="{{ $y }}"{{ with index $tagged .key }} data-topics="{{ delimit . " " }}"{{ end }}>
+            <h4>{{ if $p.doi }}<a href="{{ $p.doi }}" rel="noopener">{{ $p.title }}</a>{{ else }}{{ $p.title }}{{ end }}</h4>
+            <p class="pub-row__by">{{ $p.names | safeHTML }}{{ with $p.journal }}<span class="pub-row__journal"> · {{ . }}</span>{{ end }}</p>
+          </li>
+        {{ end }}
+      </ol>
+    </section>
+    {{ end }}
+    </div>
+    <p class="bib-empty" hidden data-bib-empty>No paper matches.</p>
+  </section>
+</div>
 {{- /* What a row shows of one paper: the DOI link, the title, the journal, the year and the authors.
        The lab's own people are marked in the citation's form ("Horn, A."); then every name is shortened
        to "Horn A": the initials are joined (three passes reach eight of them), the comma and the full

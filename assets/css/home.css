@@ -19,10 +19,10 @@
    (`hero.layout` in content/_index.md; TEMPORARY, two go once one is chosen): statement, picture, duet. */
 .home-intro { padding-top: clamp(16px, 3.4vw, 48px); }
 .home-intro__grid { display: grid; grid-template-columns: minmax(0, 1fr); }
-.home-intro h1 { font-size: 15px; font-weight: 500; line-height: 1.4; letter-spacing: -.005em; }
+.home-intro h1 { font-size: clamp(34px, 10.4vw, 44px); font-weight: 540; line-height: 1.04; letter-spacing: -.03em; text-wrap: balance; }
 .home-intro__name, .home-intro__place { display: block; }
-.home-intro__place { color: var(--muted); font-weight: 400; }
-.home-intro__statement { margin-top: 14px; font-size: clamp(34px, 10.4vw, 44px); font-weight: 540; line-height: 1.04; letter-spacing: -.03em; text-wrap: balance; }
+.home-intro__place { margin-top: .3em; color: var(--muted); font-size: .54em; font-weight: 400; line-height: 1.2; letter-spacing: -.018em; }
+.home-intro__statement { margin-top: 24px; font-size: var(--t-lead); font-weight: 600; line-height: 1.4; letter-spacing: -.01em; }
 .home-intro__words { display: grid; gap: 10px; margin-top: 22px; }
 .home-intro__text { max-width: 34em; font-size: var(--t-lead); line-height: 1.5; letter-spacing: -.01em; text-wrap: pretty; }
 .home-links { list-style: none; margin: 0; padding: 0; }
@@ -49,10 +49,7 @@
   .home-banner__toggle:hover { opacity: 1; }
 }
 @media (min-width: 640px) {
-  .home-intro h1 { font-size: 17px; }
-  .home-intro__name, .home-intro__place { display: inline-block; }
-  .home-intro__name { margin-right: .6em; }
-  .home-intro__statement { margin-top: 12px; font-size: 52px; }
+  .home-intro h1 { font-size: 52px; }
   .home-banner { margin-inline: 0; margin-top: 32px; }
   .home-frame { border-radius: var(--r-lg); }
   .home-banner__toggle { right: 10px; bottom: 10px; }
@@ -64,15 +61,15 @@
 @media (min-width: 1024px) {
   .home-intro--statement .home-intro__grid { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); column-gap: clamp(32px, 4.4vw, 64px); }
   .home-intro--statement h1, .home-intro--statement .home-intro__statement { grid-column: 1 / -1; }
-  .home-intro--statement .home-intro__statement { font-size: clamp(56px, 4.6vw + 6px, 72px); }
+  .home-intro--statement h1 { font-size: clamp(56px, 4.6vw + 6px, 72px); }
   .home-intro--statement .home-banner { margin-top: 44px; }
   .home-intro--statement .home-intro__words { align-content: space-between; margin: 39px 0 -9px; }
   .home-intro--statement .home-intro__text { font-size: clamp(20px, 1.1vw + 7px, 23px); line-height: 1.42; letter-spacing: -.015em; }
 }
 
 /* picture: the frame first. On a phone it is a square right under the header, the words after it. From
-   768px it is the right half of the window, out to the window's edge, and the words stand beside it at
-   mid-height (the two empty 1fr rows hold them there). */
+   768px the words and the frame sit side by side inside the page container, aligned with the header and
+   the sections below, with the words centered vertically beside the picture. */
 .home-intro--picture { padding-top: 0; }
 .home-intro--picture .home-banner { margin-top: 0; }
 .home-intro--picture .home-frame { aspect-ratio: 1; }
@@ -82,12 +79,13 @@
   .home-intro--picture .home-frame { aspect-ratio: 3 / 2; border-radius: 0; }
 }
 @media (min-width: 768px) {
-  .home-intro--picture .home-intro__grid { width: auto; margin: 0; padding-left: max(var(--gut), (100% - var(--container)) / 2); grid-template-columns: minmax(0, 1fr) 50%; grid-template-rows: 1fr auto auto auto 1fr; column-gap: clamp(28px, 4vw, 56px); }
-  .home-intro--picture .home-banner { grid-column: 2; grid-row: 1 / -1; align-self: start; }
-  .home-intro--picture .home-frame { aspect-ratio: 10 / 9; max-height: min(700px, 100svh - var(--nav) - 40px); width: 100%; border-radius: var(--r-lg) 0 0 var(--r-lg); }
-  .home-intro--picture h1 { grid-row: 2; margin-top: 0; }
-  .home-intro--picture .home-intro__statement { grid-row: 3; font-size: clamp(40px, 4.3vw, 62px); }
-  .home-intro--picture .home-intro__words { grid-row: 4; gap: 14px; margin-top: 28px; }
+  .home-intro--picture { padding-top: clamp(20px, 3vw, 44px); }
+  .home-intro--picture .home-intro__grid { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); grid-template-rows: 1fr auto auto auto 1fr; column-gap: clamp(32px, 4.4vw, 64px); }
+  .home-intro--picture .home-banner { grid-column: 2; grid-row: 1 / -1; align-self: center; }
+  .home-intro--picture .home-frame { aspect-ratio: 4 / 3; max-height: min(560px, 100svh - var(--nav) - 80px); width: 100%; border-radius: var(--r-lg); }
+  .home-intro--picture h1 { grid-row: 2; margin-top: 0; font-size: clamp(38px, 4vw, 56px); }
+  .home-intro--picture .home-intro__statement { grid-row: 3; }
+  .home-intro--picture .home-intro__words { grid-row: 4; gap: 14px; margin-top: 24px; }
 }
 
 /* duet: the people and the work at once. The team photos change in the 3:2 frame; the silent loop is a
@@ -107,7 +105,7 @@
 @media (min-width: 1200px) {
   .home-intro--duet .home-intro__grid { grid-template-columns: minmax(0, 60fr) minmax(0, 40fr); }
   .home-intro--duet h1, .home-intro--duet .home-intro__statement, .home-intro--duet .home-banner { grid-column: 1 / -1; }
-  .home-intro--duet .home-intro__statement { font-size: clamp(56px, 4.6vw + 6px, 72px); }
+  .home-intro--duet h1 { font-size: clamp(56px, 4.6vw + 6px, 72px); }
   .home-intro--duet .home-banner { grid-row: 3; margin-top: 44px; }
   .home-intro--duet .home-banner { padding-bottom: 56px; }
   .home-intro--duet .home-frame { width: 60%; }
@@ -117,11 +115,25 @@
 
 /* the opening arrives once: the words rise a little, the pictures fade in (opacity and transform only) */
 @media (prefers-reduced-motion: no-preference) {
-  .home-banner { animation: intro-fade 1000ms 120ms ease-out both; }
+  .home-intro .home-banner { animation: intro-fade 1000ms 120ms ease-out both; }
   .home-intro h1, .home-intro__statement, .home-intro__words { animation: intro-rise 700ms cubic-bezier(.2, .65, .3, 1) both; }
 }
 @keyframes intro-rise { from { opacity: 0; transform: translateY(14px); } }
 @keyframes intro-fade { from { opacity: 0; } }
+
+/* people: full 3:2 rotating group photos beside a matching-height tinted Get in touch card */
+.home-people__grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; }
+.home-people .home-banner { margin-top: 0; }
+.home-people .home-frame { aspect-ratio: 3 / 2; }
+.home-people__card { display: flex; flex-direction: column; justify-content: space-between; gap: 28px; padding: clamp(24px, 2.8vw, 36px); border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--surface); }
+.home-people__card-body { display: grid; gap: 12px; }
+.home-people__card h3 { font-size: clamp(22px, .6vw + 18px, 26px); font-weight: 500; line-height: 1.2; letter-spacing: -.02em; }
+.home-people__card p { max-width: 34em; color: var(--muted); font-size: var(--t-read); line-height: 1.55; text-wrap: pretty; }
+@media (min-width: 1024px) {
+  .home-people__grid { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 24px; align-items: stretch; }
+  .home-people .home-banner { height: 100%; }
+  .home-people .home-frame { height: 100%; }
+}
 
 /* 2 research: three cards, a real figure filling its frame with the title and one line under it. On a phone
    they are three compact rows instead, the words at the left under the heading and the figure as a small square at the
@@ -180,43 +192,31 @@
 .news-list__picture::after { content: ""; position: absolute; inset: 0; border: 1px solid var(--line); border-radius: inherit; pointer-events: none; }
 .news-list__picture img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; transition: transform 500ms cubic-bezier(.2, .65, .3, 1); }
 [data-theme="dark"] .news-list__picture img { filter: brightness(.92); }
-.book-card { position: relative; display: flex; flex-direction: column; }
-.book-card__plate { flex: 1 0 auto; display: grid; place-items: center; padding: 36px 24px; border-radius: var(--r-md); background: var(--surface); }
-.book3d { --bw: 196px; --bd: calc(var(--bw) * .115); display: block; perspective: calc(var(--bw) * 6); }
-.book3d__body { position: relative; display: block; width: var(--bw); aspect-ratio: 1249 / 1536; transform-style: preserve-3d; transform: rotateY(-26deg); transition: transform 500ms cubic-bezier(.2, .65, .3, 1); }
+.book-card { position: relative; display: flex; flex-direction: column; text-decoration: none; border-radius: var(--r-md); }
+.book-card__plate { flex: 1 0 auto; display: grid; place-items: center; padding: 48px 32px; border-radius: var(--r-md); background: var(--surface); }
+.book3d { --bw: 264px; --bd: calc(var(--bw) * .115); display: block; perspective: calc(var(--bw) * 6); }
+.book3d__body { position: relative; display: block; width: var(--bw); aspect-ratio: 1249 / 1536; transform-style: preserve-3d; transform: rotateY(-24deg); transition: transform 500ms cubic-bezier(.2, .65, .3, 1); }
 .book3d__body img { position: relative; display: block; width: 100%; height: 100%; border-radius: 1px 3px 3px 1px; transform: translateZ(calc(var(--bd) / 2)); }
 .book3d__body::before { content: ""; position: absolute; inset: 1% 0 1% auto; width: var(--bd); background: var(--book-paper, #f3f1ec); box-shadow: inset 0 0 0 1px rgb(0 0 0 / .05), inset 4px 0 5px -3px rgb(0 0 0 / .22), inset -4px 0 5px -3px rgb(0 0 0 / .22); transform: translateX(calc(50% - 2px)) rotateY(90deg); }
 .book3d__body::after { content: ""; position: absolute; inset: 0; border-radius: 1px 3px 3px 1px; background: var(--book-back, #d5dde7); box-shadow: -10px 12px 26px -4px rgb(0 0 0 / .3), -2px 3px 6px rgb(0 0 0 / .12); transform: translateZ(calc(var(--bd) / -2)); }
 [data-theme="dark"] .book3d { --book-paper: #b9b6af; --book-back: #8f98a3; }
 [data-theme="dark"] .book3d img { filter: brightness(.9); }
-.book-card__text { padding-top: 20px; }
-.book-card h3 { font-size: 20px; font-weight: 500; line-height: 1.3; letter-spacing: -.015em; }
-.book-facts { display: grid; gap: 6px; margin: 12px 0 0; font-size: 15px; line-height: 1.45; }
-.book-facts div { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 10px; align-items: start; }
-.book-facts dt { color: var(--muted); }
-.book-facts dt svg { display: block; width: 18px; height: 18px; margin-top: 2px; }
-.book-facts dd { margin: 0; color: var(--ink); text-wrap: pretty; }
-.book-card .text-action { margin-top: 8px; }
-.book-card .text-action::after { content: ""; position: absolute; inset: 0; }
 .news-list li:active, .book-card:active { opacity: .7; }
 @media (hover: hover) {
   .news-list li:hover a { color: var(--action); }
   .news-list li:hover img { transform: scale(1.04); }
   .book-card:hover .book3d__body { transform: rotateY(-8deg); }
-  .book-card:hover .text-action { text-decoration-color: currentColor; }
 }
 @media (min-width: 1024px) {
   .home-split { grid-template-rows: auto 1fr; row-gap: 0; }
   .home-news, .home-book { display: grid; grid-template-rows: subgrid; grid-row: span 2; }
-  .home-split:has(.home-news .section-head__lede) .home-book .section-head { align-items: start; }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .news-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 40px; }
   .news-list li { align-items: start; gap: 20px; }
   .news-list h3 { font-size: 18px; }
-  .book-card { flex-direction: row; align-items: center; gap: 40px; }
-  .book-card__plate { flex: 0 0 44%; }
-  .book-card__text { padding-top: 0; }
+  .book-card__plate { padding: 40px 24px; }
+  .book-card .book3d { --bw: 224px; }
 }
 
 /* 5 community: two cards, each its logo on a colored panel, then the title, one line and where it goes */
@@ -281,8 +281,8 @@
   .news-list li { gap: 16px; }
   .news-list h3 { font-size: 18px; }
   .news-list__picture { width: 88px; }
-  .book-card__plate { padding: 28px 20px; }
-  .book-card .book3d { --bw: 164px; }
+  .book-card__plate { padding: 32px 20px; }
+  .book-card .book3d { --bw: 184px; }
 }
 
 @media (max-width: 767px) {

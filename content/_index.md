@@ -11,8 +11,8 @@ modified: '2025-10-14T21:15:43+00:00'
 # The home page (layouts/home.html), top to bottom: the opening (who we are, with photos that change), research,
 # the publications as journal covers (data/covers.yaml), news (the newest posts, automatic) beside the book, community,
 # and the funders. Keep every text to one line or two; `lede` is the short line under a section heading.
-# The opening (`hero`): `title` and `place` are the page's heading, set as one small line (the name, then
-# the place in gray); `tagline` names the field in a few words and is the large line (sentence case);
+# The opening (`hero`): `title` and `place` are the page's heading: the name as the large line, the place
+# under it in gray (a `tagline`, a short line in ink above the sentences, is possible but left out on purpose);
 # `text` is one or two sentences, 30 to 40 words; `links` are two at most. `photos` are the pictures of the
 # one frame, shown in turn in the order written here and changing every few seconds: write them as team,
 # render, team, render, so the people and the work alternate. Without scripts the first one is shown.
@@ -28,36 +28,29 @@ hero:
   layout: picture
   title: Institute for Network Stimulation
   place: University Hospital Cologne
-  tagline: Connectomic brain stimulation
   text: We map the circuits that deep brain stimulation acts on to relieve neurological and psychiatric symptoms, and build the open-source Lead-DBS toolbox so other labs can do the same.
   links:
   - {label: Meet the team, url: '@root@people/'}
   - {label: Join the lab, url: '@root@jobs/'}
   photos:
-  # TODO(netstim): photographer and date for the 2026 team photos
-  - image: media/team-2026-arch.jpg
-    alt: The Netstim team outdoors under a mirrored arch sculpture on the hospital campus
-    people: true
-    tall: false
   # TODO(netstim): which study these two Lead-DBS scenes come from (LEAD_Scene3 and LEAD_Scene6c in the
   # lab's render folder), so the alt texts can name the structures and a credit can be given.
   - image: media/opening-leaddbs-tracts.jpg
     alt: Lead-DBS render of two electrodes among colored fiber tracts and deep brain nuclei, over a section of the brain
     focus: right
-  - image: media/team-2026-stack.jpg
-    alt: The Netstim team in three stacked rows outdoors, each with their hands on the head of the person below
-    focus: upper
-    people: true
+  - image: media/research-dbs-tracts.jpg
+    alt: Lead-DBS fiber tract reconstruction over intersecting BigBrain slices showing red and blue pathways associated with deep brain stimulation response
   - image: media/opening-leaddbs-coronal.jpg
-    alt: Lead-DBS render of two electrodes among fiber tracts and deep brain nuclei, over a section of the brain
-    tall: false
+    alt: Coronal Lead-DBS render of bilateral electrodes among colored fiber tracts and deep brain nuclei over a histological brain section
+  - image: media/research-leaddbs-step-connectivity.jpg
+    alt: Bilateral DBS electrodes with modeled stimulation fields and surrounding white-matter tracts in Lead-DBS
   # duet only: a silent MP4 in assets/media/ (H.264, no sound track, about 4 MB at most), its still, and
   # `start`, the second of the video that the still shows (playing begins there, so nothing jumps).
   loop:
     video: media/research-leaddbs-electrode.mp4
     image: media/research-leaddbs-electrode-poster.jpg
     start: 12
-    alt: Animation of a DBS electrode sliding into an orange nucleus beside a red one, where one of its contacts lights up
+    alt: Animation of a directional DBS lead positioned in the subthalamic nucleus with one active stimulation contact
 research:
   title: Research
   lede: The questions we work on and the software we build.
@@ -75,10 +68,25 @@ research:
     text: Open-source toolbox developed since 2012 for electrode reconstruction and network modeling.
     image: media/home-card-leaddbs.jpg
     url: '@root@research/lead-dbs/'
+people:
+  title: People
+  link: {label: Meet the team, url: '@root@people/'}
+  card:
+    title: Get in touch
+    text: Whether you’re interested in joining the lab, starting a collaboration, or talking brain stimulation and open tools, we’re always glad to hear from you.
+    links:
+    - {label: Join the lab, url: '@root@jobs/'}
+    - {label: Lab manual, url: '@root@internal/onboarding/'}
+  photos:
+  - image: media/team-2026-arch.jpg
+    alt: The Netstim team outdoors under a mirrored arch sculpture on the hospital campus
+  - image: media/team-2026-stack.jpg
+    alt: The Netstim team in three stacked rows outdoors, each with their hands on the head of the person below
+    focus: upper
 # the journal covers themselves are the rows of data/covers.yaml
 covers:
   title: Publications
-  lede: Some things we've figured out along the way.
+  lede: A few things that we've figured out along the way.
   link: {label: All publications, url: '@root@publications/'}
 news:
   title: News

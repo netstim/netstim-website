@@ -15,7 +15,7 @@
   <ul class="research-cards">
     {{ range . }}{{ $href := partial "url.html" .url }}{{ $ext := hasPrefix $href "http" }}
     <li><a class="research-card" href="{{ $href }}"{{ if $ext }} rel="noopener"{{ end }}>
-      <span class="research-card__frame">{{ partial "picture.html" (dict "src" .image "alt" (.alt | default "") "width" 1200 "sizes" "(max-width: 767px) 100vw, 600px") }}</span>
+      <span class="research-card__frame{{ if .contain }} research-card__frame--contain{{ end }}">{{ partial "picture.html" (dict "src" .image "alt" (.alt | default "") "width" 1200 "sizes" "(max-width: 767px) 100vw, 600px") }}</span>
       <span class="research-card__title">{{ .title }}{{ if $ext }}<span class="sr-only"> (another site)</span>{{ $external }}{{ else }}{{ $arrow }}{{ end }}</span>
       <span class="research-card__text">{{ .text }}</span>
     </a></li>

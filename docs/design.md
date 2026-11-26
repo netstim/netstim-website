@@ -14,15 +14,16 @@ its own blue and teal. The tokens live in `assets/css/base.css`; `check-design.p
   one line.
 - **Calm type and shape.** Page titles 34–46px with light tracking (no tight, giant headlines); corners 6, 8
   and 12px (`--r-sm/md/lg`): soft, never fully square, never bubbly. On Home, white and soft-gray sections
-  alternate (the covers and the community sit on the gray band).
-- **The Home opening** says what the lab does before it says what it is called. The name and the place are
-  one small line (the page's heading); the field (`hero.tagline`) is the large line, 34–44px on a phone and
-  up to 62px on a desktop, the one place where the site sets type this large (weight 540, never tracked
-  out); then one or two sentences in ink (`hero.text`) and two links. The pictures are real photos and the
+  alternate (Research, the covers, and Community sit on the gray band).
+- **The Home opening** leads with the lab's name. The name (the page's heading) is the large line, 34–44px
+  on a phone and up to 62px on a desktop, with the place under it in gray; then one or two sentences in ink (`hero.text`)
+  and the two links. No tagline: the owner found a field line between the name and the sentences added nothing. The name is the one
+  place where the site sets type this large (weight 540, never tracked out). The pictures are real photos and the
   lab's own renders in one frame, where the people and the work take turns by a slow crossfade every few
   seconds (`assets/js/main/banner.js`). `hero.layout: picture` puts the frame first: on a phone a square
-  from edge to edge right under the header, the words after it; from 768px the right half of the window,
-  out to the window's edge (12px corners at its left), with the words beside it at mid-height. A small
+  from edge to edge right under the header, the words after it; from 768px a 4:3 frame in the right column
+  of the page container (12px corners on all sides), aligned with the header and sections below, with the
+  words beside it at mid-height. A small
   pause button sits in the frame's lower right corner; nothing changes under reduced motion or without
   scripts, where the first picture stands. No words on the pictures, no zoom, no arrows or dots. Photos
   must belong together (the same people and light, the lab's own renders on their light ground); stage-lit
@@ -53,16 +54,23 @@ its own blue and teal. The tokens live in `assets/css/base.css`; `check-design.p
     Where the right margin is taken by small pictures, the figures beside it keep to the column.
   - A click on a picture opens the image viewer whenever the viewer has more to show than the page.
 - **Research pages** lead with figures (`assets/css/research.css`).
-  - **The overview** is the title, two sentences and a few research areas in two groups (the areas; the
-    methods and software), each group under a rule and a small heading in ink. Every area is the same row
-    and has the same four parts: at the left the title (24–30px), one short paragraph (for an area the
-    open question is its first sentence) and one line of links (the subject page, or a topic of the
-    Publications page); at the right one real figure (3:2, 7 of 12 columns) with a one-line caption.
-    Nothing else: no labels above titles, no paper or people lists (those are on the subject pages and on
-    People), no mirrored rows, no video stills. Every figure sits in the same soft-gray frame; a figure
-    drawn on white is blended into it (`drawing: true`, which the dark theme turns around;
-    `drawing: light` blends in the light theme only). Under 1024px a row is one column, the figure on
-    top. It does not repeat Home's three card pictures.
+  - **The overview** is the title, two sentences in ink and four areas in two groups, all on one grid of
+    twelve columns (24px between them). Every figure is the same plate: 4:3, 12px corners, soft gray on
+    the page's white and white on the gray band, its caption (13px, gray) 12px under it. A picture fills
+    the plate; a figure drawn on white or an upright one is shown whole inside it (`drawing: true` is
+    turned around in the dark theme; `drawing: light` stays a light plate there). The research areas are
+    rows: the text in columns 1–5, on the line of the page title, and the plate in columns 7–12; the text
+    is top-aligned, the capitals of the title on the top of the plate. Rows are not mirrored. The methods
+    and software stand on a soft-gray band under a heading: two abreast, six columns each, so the second
+    starts on the line of the plates above; plate, title, question, text and links of the two share
+    their lines, and the text keeps to five columns. An area has the same parts everywhere: the title
+    (32px in a row, 26px in the pair), the open question in medium weight (20px), one short paragraph
+    (17–18px) and one line of links (the subject page, or a topic of the Publications page). Nothing
+    else: no labels above titles, no paper or people lists (those are on the subject pages and on
+    People), no video stills. From 700px to 1023px a row is six columns of text and six of plate. On a
+    phone everything is one column in the order title, question, plate, caption, text; an upright figure
+    gets a square plate, and the links are ruled rows with the arrow at the right. It does not repeat
+    Home's three card pictures.
   - **A subject page** opens with the title, one sentence and one wide picture (16:7; a flat drawing on
     white is shown whole in the same soft-gray frame, and the dark theme turns its lightness around). The
     picture may be a silent loop instead (Lead-DBS): a self-hosted MP4 with a still, muted, playing only
@@ -89,7 +97,7 @@ its own blue and teal. The tokens live in `assets/css/base.css`; `check-design.p
 - **Links stay in the text.** No stacks of "Learn more about X" under a paragraph that already links X.
 - **Community** is one row per series under a hairline: the picture in the left third (a flyer as the sheet it is, opening in the image viewer; a logo as it is, with no plate except the light one the dark theme needs), and in the right two thirds a small kicker, the title, one line, the facts as property rows and, for the journal club, its three newest sessions. No cards.
 - **Jobs** is built like a subject page: the title, one sentence (no open positions) and the wide group photo with its credit; then sections with the heading in the left third under a hairline and the content in the right two thirds (one column under 1024px). Like the Hsu lab's page it is practical and short: one paragraph on the lab (linking Research rather than repeating it), then how to apply with a short list of what to send. Open positions are ruled rows that run to the page's right edge (title, a gray line, an arrow). The address to write to is shown as the address itself, underlined. No status chip, no button, no cards.
-- **Publications** is one list in two parts on one grid: a narrow column at the left (240px: the picture, the year, the journal) and the paper at the right, so every title on the page starts on the same line. Type leads, pictures accompany. Selected papers: a row each, the paper's own picture at the left (3:2, 8px corners; a journal cover is shown whole on the soft-gray frame), then the title (20–24px), the authors and the journal and year; a plain link at the heading's right jumps to the full list. All papers: one row per year (the year in 22px, how many papers, a plus) that opens and closes; the newest year is open. A paper is the journal in gray italics at the left, the title in ink and the authors as "Horn A" in gray, under a hairline; the lab's own people stand in ink at the same weight, nothing is bold. Above the years one row of two plain fields: the filter box and the topics as a native select; both search every year, and a year then says "2 of 32". "Open all years" is a text link under the list. On a phone it is one column: the selected papers keep a small picture at the left, the journal moves under the authors. No cards, no chips or tab bar, no grid of pictures, no paper without a picture among the selected, no icons, no arrow after each title.
+- **Publications** is one list in two parts on one grid: a narrow column at the left (240px: the picture, the year, the journal) and the paper at the right, so every title on the page starts on the same line. Type leads, pictures accompany. Selected papers: a row each, the paper's own picture at the left (3:2, 8px corners; a journal cover is shown whole on the soft-gray frame), then the title (20–24px, its capitals on the top of the picture), the authors and the journal and year; a plain link at the heading's right jumps to the full list. All papers: one row per year (the year in 22px, how many papers, a plus) that opens and closes; the newest year is open. A paper is the journal in gray italics at the left, the title in ink and the authors as "Horn A" in gray, under a hairline; the lab's own people stand in ink at the same weight, nothing is bold. Above the years one row of two plain fields: the filter box and the topics as a native select; both search every year, and a year then says "2 of 32". "Open all years" is a text link under the list. On a phone it is one column: the first five selected papers keep a small picture at the left and a "Show 4 more" text button shows the rest; the topics stand beside the "All papers" heading and the filter box under them; in a paper the journal moves under the authors. No cards, no chips or tab bar, no grid of pictures, no paper without a picture among the selected, no icons, no arrow after each title.
 - **A person's own page** (Andreas Horn) is not a CV dump: the name and one role line; the portrait at the left with the email address and the profile links under it as two icon rows, the biography beside it at reading size. Then sections with the heading in the portrait's column under a hairline that crosses the page: the awards first, as large ruled rows; positions and education along a rail (a filled dot for a position still held); publications and press as plain ruled rows. Every list keeps its years in one narrow column; a row that links ends in an arrow (↗ to another site), nothing in the lists is underlined. No cards, no icons for profile sites.
 - **Logos** (funders) sit centered without boxes: a small line and the current funders, then a second small line and the past funders smaller and lighter. They are gray at rest and take their color on hover and focus; each links to the funder.
 
