@@ -80,7 +80,7 @@
 /* Lab life: split editorial header over a 3-column varied-height photo masonry wall. */
 .lab-life { padding-block: clamp(56px, 7vw, 88px); background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .lab-life .gallery { display: block; }
-.lab-life__head { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px 48px; align-items: baseline; padding-bottom: 24px; margin-bottom: 28px; border-bottom: 1px solid var(--line); }
+.lab-life__head { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px 48px; align-items: baseline; margin-bottom: 36px; }
 .lab-life__head h2 { font-size: var(--t-h2); }
 .lab-life__head p { max-width: 44rem; color: var(--ink); font-size: var(--t-read); line-height: 1.65; text-wrap: pretty; }
 .lab-life__masonry { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
